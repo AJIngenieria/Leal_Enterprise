@@ -41,13 +41,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="fBodega.cs" />
-    <Compile Include="fGestion_Empleados.cs" />
-    <Compile Include="fImpuesto.cs" />
-    <Compile Include="fServicio.cs" />
-    <Compile Include="fSistema_Equipos.cs" />
-    <Compile Include="fSistema_Usuarios.cs" />
-    <Compile Include="fSucurzal.cs" />
+    <Compile Include="Almacen\fBodega.cs" />
+    <Compile Include="Gestion Humana\fGestion_Empleados.cs" />
+    <Compile Include="Financiera\fImpuesto.cs" />
+    <Compile Include="Produccion\fServicio.cs" />
+    <Compile Include="Sistema\fEquipos.cs" />
+    <Compile Include="Sistema\fUsuarios.cs" />
+    <Compile Include="Sistema\fSucurzal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

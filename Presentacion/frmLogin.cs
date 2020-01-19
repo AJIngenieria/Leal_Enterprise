@@ -94,7 +94,7 @@ namespace Presentacion
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
 
-                    DataTable Datos_Seguridad = Negocio.fSistema_Equipos.Seguridad_SQL(Equipo_SQL, HDD_SQL, MacSeguridad_SQL);
+                    DataTable Datos_Seguridad = Negocio.fEquipos.Seguridad_SQL(Equipo_SQL, HDD_SQL, MacSeguridad_SQL);
                     //Evaluamos si  existen los Datos
                     if (Datos_Seguridad.Rows.Count == 0)
                     {
@@ -105,7 +105,7 @@ namespace Presentacion
 
                         ////<<<<<<----- Al pasar las pruebas de seguridad se procede a verificar los usuarios ingresados
 
-                        DataTable Datos = Negocio.fSistema_Usuarios.Login_SQL(this.TBUsuario.Text, this.TBContraseña.Text);
+                        DataTable Datos = Negocio.fUsuarios.Login_SQL(this.TBUsuario.Text, this.TBContraseña.Text);
                         //Evaluamos si  existen los Datos
                         if (Datos.Rows.Count == 0)
                         {

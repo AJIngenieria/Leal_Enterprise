@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    public class Conexion_Sistema_Usuarios
+    public class Conexion_Usuarios
     {
         public DataTable Lista()
         {

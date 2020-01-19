@@ -41,15 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Conexion_Bodega.cs" />
-    <Compile Include="Conexion_Empleados.cs" />
-    <Compile Include="Conexion_Impuesto.cs" />
-    <Compile Include="Conexion_Servicio.cs" />
-    <Compile Include="Conexion_Sistema_Equipos.cs" />
-    <Compile Include="Conexion_Sistema_Usuarios.cs" />
-    <Compile Include="Conexion_SQLSeguridad.cs" />
-    <Compile Include="Conexion_SQLServer.cs" />
-    <Compile Include="Conexion_Sucurzal.cs" />
+    <Compile Include="Almacen\Conexion_Bodega.cs" />
+    <Compile Include="Gestion Humana\Conexion_Empleados.cs" />
+    <Compile Include="Financiera\Conexion_Impuesto.cs" />
+    <Compile Include="Produccion\Conexion_Servicio.cs" />
+    <Compile Include="Sistema\Conexion_Equipos.cs" />
+    <Compile Include="Sistema\Conexion_Usuarios.cs" />
+    <Compile Include="Conexiones_SQL\Conexion_SQLSeguridad.cs" />
+    <Compile Include="Conexiones_SQL\Conexion_SQLServer.cs" />
+    <Compile Include="Sistema\Conexion_Sucurzal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -10,23 +10,23 @@ using System.Data;
 
 namespace Negocio
 {
-    public class fSistema_Equipos
+    public class fEquipos
     {
         public static DataTable Lista()
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             return Datos.Lista();
         }
 
         public static DataTable Buscar(string filtro)
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             return Datos.Buscar(filtro);
         }
 
         public static DataTable Seguridad_SQL(string equipo, string hdd, string macseguridad)
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             return Datos.Seguridad_SQL(equipo, hdd, macseguridad);
         }
 
@@ -40,7 +40,7 @@ namespace Negocio
                 int auto
             )
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             Entidad_Equipos Obj = new Entidad_Equipos();
 
             //Datos Basicos
@@ -65,7 +65,7 @@ namespace Negocio
 
             )
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             Entidad_Equipos Obj = new Entidad_Equipos();
 
             Obj.Equipo = equipo;
@@ -80,7 +80,7 @@ namespace Negocio
 
         public static string Eliminar(int IDEliminar_SQL, int auto)
         {
-            Conexion_Sistema_Equipos Datos = new Conexion_Sistema_Equipos();
+            Conexion_Equipos Datos = new Conexion_Equipos();
             return Datos.Eliminar(IDEliminar_SQL, auto);
         }
     }

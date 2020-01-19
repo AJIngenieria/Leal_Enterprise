@@ -10,17 +10,17 @@ using System.Data;
 
 namespace Negocio
 {
-    public class fSistema_Usuarios
+    public class fUsuarios
     {
         public static DataTable Lista()
         {
-            Conexion_Sistema_Usuarios Datos = new Conexion_Sistema_Usuarios();
+            Conexion_Usuarios Datos = new Conexion_Usuarios();
             return Datos.Lista();
         }
 
         public static DataTable Login_SQL(string usuario, string contraseña)
         {
-            Conexion_Sistema_Usuarios Datos = new Conexion_Sistema_Usuarios();
+            Conexion_Usuarios Datos = new Conexion_Usuarios();
             return Datos.Login_SQL(usuario, contraseña);
         }
 
@@ -41,7 +41,7 @@ namespace Negocio
 
             )
         {
-            Conexion_Sistema_Usuarios Datos = new Conexion_Sistema_Usuarios();
+            Conexion_Usuarios Datos = new Conexion_Usuarios();
             Entidad_Usuarios Obj = new Entidad_Usuarios();
 
             //Llaves Primarias
@@ -92,7 +92,7 @@ namespace Negocio
                 int guardar, int eliminar, int editar, int consultar
             )
         {
-            Conexion_Sistema_Usuarios Datos = new Conexion_Sistema_Usuarios();
+            Conexion_Usuarios Datos = new Conexion_Usuarios();
             Entidad_Usuarios Obj = new Entidad_Usuarios();
 
             //Llaves Primarias
@@ -130,7 +130,7 @@ namespace Negocio
 
         public static string Eliminar(int IDEliminar_SQL, int auto)
         {
-            Conexion_Sistema_Usuarios Datos = new Conexion_Sistema_Usuarios();
+            Conexion_Usuarios Datos = new Conexion_Usuarios();
             return Datos.Eliminar(IDEliminar_SQL, auto);
         }
     }
