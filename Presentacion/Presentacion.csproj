@@ -73,6 +73,12 @@
     <Compile Include="Financiera\frmImpuesto.Designer.cs">
       <DependentUpon>frmImpuesto.cs</DependentUpon>
     </Compile>
+    <Compile Include="Almacen\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Almacen\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Financiera\frmImpuesto.resx">
       <DependentUpon>frmImpuesto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Almacen\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

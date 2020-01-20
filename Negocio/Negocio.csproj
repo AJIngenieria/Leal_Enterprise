@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen\fBodega.cs" />
+    <Compile Include="fCliente.cs" />
     <Compile Include="Gestion Humana\fGestion_Empleados.cs" />
     <Compile Include="Financiera\fImpuesto.cs" />
     <Compile Include="Produccion\fServicio.cs" />

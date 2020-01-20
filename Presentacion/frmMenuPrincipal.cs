@@ -162,5 +162,18 @@ namespace Presentacion
             frmSucurzal.Consultar = Convert.ToString(this.SQL_Consultar);
             frmSucurzal.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmCliente frmCliente = new frmCliente();
+            frmCliente.MdiParent = this;
+            frmCliente.Show();
+
+            frmCliente.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmCliente.Editar = Convert.ToString(this.SQL_Editar);
+            frmCliente.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmCliente.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }
