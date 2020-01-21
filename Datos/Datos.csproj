@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Almacen\Conexion_Bodega.cs" />
-    <Compile Include="Conexion_Cliente.cs" />
+    <Compile Include="Almacen\Conexion_Cliente.cs" />
+    <Compile Include="Conexion_Producto.cs" />
     <Compile Include="Gestion Humana\Conexion_Empleados.cs" />
     <Compile Include="Financiera\Conexion_Impuesto.cs" />
     <Compile Include="Produccion\Conexion_Servicio.cs" />

@@ -76,7 +76,15 @@ namespace Presentacion
 
         private void datosBasicosToolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            frmProductos frmProductos = new frmProductos();
+            frmProductos.MdiParent = this;
+            frmProductos.Show();
 
+            frmProductos.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmProductos.Editar = Convert.ToString(this.SQL_Editar);
+            frmProductos.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmProductos.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmProductos.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
         private void impuestosToolStripMenuItem_Click(object sender, EventArgs e)
