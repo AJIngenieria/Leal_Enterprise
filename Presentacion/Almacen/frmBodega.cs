@@ -385,7 +385,7 @@ namespace Presentacion
                 {
                     if (TBBuscar.Text != "")
                     {
-                        this.DGResultados.DataSource = fGestion_Empleados.Buscar(this.TBBuscar.Text, 1);
+                        this.DGResultados.DataSource = fBodega.Buscar(this.TBBuscar.Text, 1);
                         //this.DGResultadoss.Columns[1].Visible = false;
 
                         lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGResultados.Rows.Count);
@@ -610,6 +610,11 @@ namespace Presentacion
         {
             this.TBMedidas.BackColor = Color.Azure;
         }
+        
+        private void TBBuscar_Enter(object sender, EventArgs e)
+        {
+            this.TBBuscar.BackColor = Color.Azure;
+        }
 
         //******************** FOCUS LEVAE  DATOS BASICOS ********************
         private void TBBodega_Leave(object sender, EventArgs e)
@@ -740,6 +745,11 @@ namespace Presentacion
             this.TBMedidas.BackColor = Color.FromArgb(3, 155, 229);
         }
 
+        private void TBBuscar_Leave(object sender, EventArgs e)
+        {
+            this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
         private void TBBuscar_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -750,10 +760,9 @@ namespace Presentacion
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 0;
                     this.TBBuscar.Select();
                 }
             }
@@ -776,10 +785,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -853,10 +861,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -930,10 +937,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1007,10 +1013,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1084,10 +1089,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1161,10 +1165,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1238,10 +1241,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1315,10 +1317,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1392,10 +1393,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1469,10 +1469,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1546,10 +1545,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1623,10 +1621,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1700,10 +1697,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1777,10 +1773,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1854,10 +1849,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1931,10 +1925,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -2008,10 +2001,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -2085,10 +2077,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -2162,10 +2153,9 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))

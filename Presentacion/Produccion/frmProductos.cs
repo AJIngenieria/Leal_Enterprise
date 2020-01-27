@@ -167,6 +167,7 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
+                //this.PB_Imagen.Image = Properties.Resources.
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBNombre.Focus();
@@ -221,46 +222,65 @@ namespace Presentacion
 
                 else
                 {
+                    //Parametros para poder guardar la imagen del producto
+
+                    System.IO.MemoryStream ms = new System.IO.MemoryStream();
+                    this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    byte[] Imagen_Producto = ms.GetBuffer();
+
                     if (this.Digitar)
                     {
-                        rptaDatosBasicos = fprod.Guardar_DatosBasicos
+                        rptaDatosBasicos = fProductos.Guardar_DatosBasicos
 
                             (
                                  //Datos Auxiliares
-                                 1,
+                                 1, Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text,
-                                 this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
+                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
+                                 this.CBOrigen.Text, this.CBGrupo.Text, this.CBTipo.Text, this.CBEmpaque.Text,
 
                                  //
-                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text, this.TBValor01.Text,
+                                 this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBValor03.Text,
 
                                  //
-                                 this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
+                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text,
 
+                                 //
+                                 this.CBUnidad.Text, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                                 this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBPesoUnidad.Text, this.TBPeso.Text, Imagen_Producto,
+
+                                 //                                 
                                  1
                             );
                     }
 
                     else
                     {
-                        rptaDatosBasicos = fprod.Editar_DatosBasicos
+                        rptaDatosBasicos = fProductos.Editar_DatosBasicos
 
                             (
                                  //Datos Auxiliares
-                                 1, Convert.ToInt32(this.TBIdcliente.Text),
+                                 1, Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text,
-                                 this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
+                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
+                                 this.CBOrigen.Text, this.CBGrupo.Text, this.CBTipo.Text, this.CBEmpaque.Text,
 
                                  //
-                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text, this.TBValor01.Text,
+                                 this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBValor03.Text,
 
                                  //
-                                 this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
+                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text,
 
+                                 //
+                                 this.CBUnidad.Text, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                                 this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBPesoUnidad.Text, this.TBPeso.Text, Imagen_Producto,
+
+                                 //                                 
                                  2
                             );
                     }

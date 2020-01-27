@@ -183,5 +183,23 @@ namespace Presentacion
             frmCliente.Consultar = Convert.ToString(this.SQL_Consultar);
             frmCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+        
+        private void tipoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoDeCliente frmTipoDeCliente = new frmTipoDeCliente();
+            frmTipoDeCliente.MdiParent = this;
+            frmTipoDeCliente.Show();
+
+            frmTipoDeCliente.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmTipoDeCliente.Editar = Convert.ToString(this.SQL_Editar);
+            frmTipoDeCliente.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmTipoDeCliente.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmTipoDeCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void equiposToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

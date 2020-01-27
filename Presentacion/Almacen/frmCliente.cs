@@ -56,6 +56,7 @@ namespace Presentacion
 
             //Focus a Texboxt y Combobox
             this.TBNombre.Select();
+            this.Combobox_Tipo();
 
             //Ocultacion de Texboxt
             this.TBIdcliente.Visible = false;
@@ -77,7 +78,6 @@ namespace Presentacion
             this.TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDocumento.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBDocumento.Text = Campo;
-
             this.TBTelefono.ReadOnly = false;
             this.TBTelefono.BackColor = Color.FromArgb(3, 155, 229);
             this.TBMovil.ReadOnly = false;
@@ -91,6 +91,48 @@ namespace Presentacion
             this.TBDepartamento.ReadOnly = false;
             this.TBDepartamento.BackColor = Color.FromArgb(3, 155, 229);
 
+            //Datos de Envio
+            this.TBPais_01.ReadOnly = false;
+            this.TBPais_01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCiudad_01.ReadOnly = false;
+            this.TBCiudad_01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBReceptor.ReadOnly = false;
+            this.TBReceptor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDireccionPrincipal.ReadOnly = false;
+            this.TBDireccionPrincipal.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDireccion01.ReadOnly = false;
+            this.TBDireccion01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDireccion02.ReadOnly = false;
+            this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBTelefono_01.ReadOnly = false;
+            this.TBTelefono_01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBMovil_01.ReadOnly = false;
+            this.TBMovil_01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBObservacion_01.ReadOnly = false;
+            this.TBObservacion_01.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Datos Financieros
+            this.TBLimiteDeCredito.ReadOnly = false;
+            this.TBLimiteDeCredito.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDiasdecredito.ReadOnly = false;
+            this.TBDiasdecredito.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDiasDeProrroga.ReadOnly = false;
+            this.TBDiasDeProrroga.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBInteresesmora.ReadOnly = false;
+            this.TBInteresesmora.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBancoPrincipal.ReadOnly = false;
+            this.TBBancoPrincipal.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBancoAuxiliar.ReadOnly = false;
+            this.TBBancoAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCuenta01.ReadOnly = false;
+            this.TBCuenta01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCuenta02.ReadOnly = false;
+            this.TBCuenta02.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCreditoMinimo.ReadOnly = false;
+            this.TBCreditoMinimo.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCreditoMaximo.ReadOnly = false;
+            this.TBCreditoMaximo.BackColor = Color.FromArgb(3, 155, 229);
+            
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
@@ -114,6 +156,25 @@ namespace Presentacion
                 this.TBPais.Clear();
                 this.TBCiudad.Clear();
                 this.TBDepartamento.Clear();
+
+                //Datos de Envio
+                this.TBPais_01.Clear();
+                this.TBCiudad_01.Clear();
+                this.TBReceptor.Clear();
+                this.TBDireccionPrincipal.Clear();
+                this.TBDireccion01.Clear();
+                this.TBDireccion02.Clear();
+                this.TBTelefono_01.Clear();
+                this.TBMovil_01.Clear();
+                this.TBObservacion_01.Clear();
+
+                //Datos Financieros
+                this.TBBancoPrincipal.Clear();
+                this.TBBancoAuxiliar.Clear();
+                this.TBCuenta01.Clear();
+                this.TBCuenta02.Clear();
+                this.TBCreditoMinimo.Clear();
+                this.TBCreditoMaximo.Clear();
 
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
@@ -147,6 +208,20 @@ namespace Presentacion
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = true;
                 this.btnImprimir.Enabled = false;
+            }
+        }
+        
+        private void Combobox_Tipo()
+        {
+            try
+            {
+                this.CBTipo.DataSource = fTipoDeCliente.Lista();
+                this.CBTipo.ValueMember = "Codigo";
+                this.CBTipo.DisplayMember = "Tipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
