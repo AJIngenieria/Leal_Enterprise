@@ -71,6 +71,12 @@
             this.label13 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.TPDatosFinancieros = new System.Windows.Forms.TabPage();
+            this.TBInteresesmora = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.TBDiasDeProrroga = new System.Windows.Forms.TextBox();
+            this.TBDiasdecredito = new System.Windows.Forms.TextBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
             this.TBLimiteDeCredito = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -97,12 +103,6 @@
             this.lblTotal = new System.Windows.Forms.Label();
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.TBDiasdecredito = new System.Windows.Forms.TextBox();
-            this.TBDiasDeProrroga = new System.Windows.Forms.TextBox();
-            this.label31 = new System.Windows.Forms.Label();
-            this.TBInteresesmora = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -357,7 +357,7 @@
             this.TPDatosDeEnvio.Padding = new System.Windows.Forms.Padding(3);
             this.TPDatosDeEnvio.Size = new System.Drawing.Size(410, 257);
             this.TPDatosDeEnvio.TabIndex = 1;
-            this.TPDatosDeEnvio.Text = "Envios";
+            this.TPDatosDeEnvio.Text = "Datos de Envios";
             this.TPDatosDeEnvio.UseVisualStyleBackColor = true;
             // 
             // TBReceptor
@@ -532,8 +532,59 @@
             this.TPDatosFinancieros.Name = "TPDatosFinancieros";
             this.TPDatosFinancieros.Size = new System.Drawing.Size(410, 257);
             this.TPDatosFinancieros.TabIndex = 3;
-            this.TPDatosFinancieros.Text = "Financiera";
+            this.TPDatosFinancieros.Text = "Datos Financieros";
             this.TPDatosFinancieros.UseVisualStyleBackColor = true;
+            // 
+            // TBInteresesmora
+            // 
+            this.TBInteresesmora.Location = new System.Drawing.Point(105, 61);
+            this.TBInteresesmora.Name = "TBInteresesmora";
+            this.TBInteresesmora.Size = new System.Drawing.Size(90, 21);
+            this.TBInteresesmora.TabIndex = 21;
+            this.TBInteresesmora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(5, 64);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(97, 15);
+            this.label31.TabIndex = 20;
+            this.label31.Text = "Interes por Mora";
+            // 
+            // TBDiasDeProrroga
+            // 
+            this.TBDiasDeProrroga.Location = new System.Drawing.Point(307, 32);
+            this.TBDiasDeProrroga.Name = "TBDiasDeProrroga";
+            this.TBDiasDeProrroga.Size = new System.Drawing.Size(90, 21);
+            this.TBDiasDeProrroga.TabIndex = 19;
+            this.TBDiasDeProrroga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TBDiasdecredito
+            // 
+            this.TBDiasdecredito.Location = new System.Drawing.Point(105, 34);
+            this.TBDiasdecredito.Name = "TBDiasdecredito";
+            this.TBDiasdecredito.Size = new System.Drawing.Size(90, 21);
+            this.TBDiasdecredito.TabIndex = 18;
+            this.TBDiasdecredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(201, 35);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(100, 15);
+            this.label30.TabIndex = 17;
+            this.label30.Text = "Dias de Prorroga";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(5, 35);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(91, 15);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Dias de Credito";
             // 
             // TBLimiteDeCredito
             // 
@@ -732,16 +783,16 @@
             // 
             // TBBuscar
             // 
-            this.TBBuscar.Location = new System.Drawing.Point(122, 19);
+            this.TBBuscar.Location = new System.Drawing.Point(123, 20);
             this.TBBuscar.Name = "TBBuscar";
-            this.TBBuscar.Size = new System.Drawing.Size(282, 21);
+            this.TBBuscar.Size = new System.Drawing.Size(384, 21);
             this.TBBuscar.TabIndex = 3;
             this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 20);
+            this.label10.Location = new System.Drawing.Point(6, 23);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 15);
             this.label10.TabIndex = 2;
@@ -764,11 +815,11 @@
             this.DGResultados.BackgroundColor = System.Drawing.Color.White;
             this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGResultados.Location = new System.Drawing.Point(6, 44);
+            this.DGResultados.Location = new System.Drawing.Point(6, 46);
             this.DGResultados.Name = "DGResultados";
             this.DGResultados.ReadOnly = true;
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(500, 270);
+            this.DGResultados.Size = new System.Drawing.Size(500, 268);
             this.DGResultados.TabIndex = 0;
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
@@ -785,57 +836,6 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leal Enterprise - Consulta de Clientes Registrados";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(5, 35);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(91, 15);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "Dias de Credito";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(201, 35);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(100, 15);
-            this.label30.TabIndex = 17;
-            this.label30.Text = "Dias de Prorroga";
-            // 
-            // TBDiasdecredito
-            // 
-            this.TBDiasdecredito.Location = new System.Drawing.Point(105, 34);
-            this.TBDiasdecredito.Name = "TBDiasdecredito";
-            this.TBDiasdecredito.Size = new System.Drawing.Size(90, 21);
-            this.TBDiasdecredito.TabIndex = 18;
-            this.TBDiasdecredito.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TBDiasDeProrroga
-            // 
-            this.TBDiasDeProrroga.Location = new System.Drawing.Point(307, 32);
-            this.TBDiasDeProrroga.Name = "TBDiasDeProrroga";
-            this.TBDiasDeProrroga.Size = new System.Drawing.Size(90, 21);
-            this.TBDiasDeProrroga.TabIndex = 19;
-            this.TBDiasDeProrroga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(5, 64);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(97, 15);
-            this.label31.TabIndex = 20;
-            this.label31.Text = "Interes por Mora";
-            // 
-            // TBInteresesmora
-            // 
-            this.TBInteresesmora.Location = new System.Drawing.Point(105, 61);
-            this.TBInteresesmora.Name = "TBInteresesmora";
-            this.TBInteresesmora.Size = new System.Drawing.Size(90, 21);
-            this.TBInteresesmora.TabIndex = 21;
-            this.TBInteresesmora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // frmCliente
             // 
