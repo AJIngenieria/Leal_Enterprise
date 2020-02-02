@@ -31,38 +31,55 @@ namespace Negocio
 
                 //Datos Basicos
                 int idsucurzal, string bodega, string descripcion, string director, string ciudad, string movil,
-                string telefono, string correo, string direccion01, string direccion02, string recepcion, string despacho,
-                string numerodepc, string numerodecelulares, string numerodeimpresoras, string otrosequipos, string iniciolaboral,
-                string finlaboral, string diadepagos, string medidasgenerales,
+                string telefono, string correo, string direccion01, string direccion02, 
+                
+                string recepcion, string despacho, string iniciolaboral,
+                string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
+
+                //
+                string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
+                string celulares, string balanzadigital, string balanzamanual, string montacarga,
                 int estado
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
             Entidad_Bodega Obj = new Entidad_Bodega();
-
+            
+            //Llaves Auxiliares
             Obj.Idsucurzal = idsucurzal;
+
+            //Datos Basicos
+            Obj.Estado = estado;
             Obj.Bodega = bodega;
             Obj.Descripcion = descripcion;
             Obj.Director = director;
             Obj.Ciudad = ciudad;
-            Obj.Movil = movil;
             Obj.Telefono = telefono;
+            Obj.Movil = movil;
             Obj.Correo = correo;
+            
+            //Datos Auxiliares Bodega
+            Obj.Recepcion = recepcion;
+            Obj.Despacho = despacho;
+            Obj.InicioLaboral = iniciolaboral;
+            Obj.FinLaboral = finlaboral;
+            Obj.Dimensiones = dimensiones;
+            Obj.DiaDePagos = diadepagos;
+            Obj.DiaDeDespacho = diadedespacho;
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
 
-            //
-            Obj.Recepcion = recepcion;
-            Obj.Despacho = despacho;
-            Obj.NumeroPC = numerodepc;
-            Obj.NumeroCelulares = numerodecelulares;
-            Obj.NumeroImpresora = numerodeimpresoras;
-            Obj.OtrosEquipos = otrosequipos;
-            Obj.InicioLaboral = iniciolaboral;
-            Obj.FinLaboral = finlaboral;
-            Obj.DiaDePagos = diadepagos;
-            Obj.MedidasLaborales = medidasgenerales;
-            Obj.Estado = estado;
+            //Equipos Electronicos
+            Obj.PCDeMeza = pcdemeza;
+            Obj.PCPortatiles = pcportatiles;
+            Obj.ImpresoraLaser = impresoralaser;
+            Obj.ImpresoraCartucho = impresoracartucho;
+            Obj.ImpresoraTiquetes = impresoratiquetes;
+            Obj.Marquilladora = marquilladora;
+            Obj.Celulares = celulares;
+            Obj.BalanzaDigital = balanzadigital;
+            Obj.BalanzaManual = balanzamanual;
+            Obj.MontaCarga = montacarga;
 
             Obj.Auto = auto;
             return Datos.Guardar_DatosBasicos(Obj);
@@ -75,39 +92,56 @@ namespace Negocio
 
                 //Datos Basicos
                 int idsucurzal, string bodega, string descripcion, string director, string ciudad, string movil,
-                string telefono, string correo, string direccion01, string direccion02, string recepcion, string despacho,
-                string numerodepc, string numerodecelulares, string numerodeimpresoras, string otrosequipos, string iniciolaboral,
-                string finlaboral, string diadepagos, string medidasgenerales,
+                string telefono, string correo, string direccion01, string direccion02,
+
+                string recepcion, string despacho, string iniciolaboral,
+                string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
+
+                //
+                string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
+                string celulares, string balanzadigital, string balanzamanual, string montacarga,
                 int estado
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
             Entidad_Bodega Obj = new Entidad_Bodega();
 
+            //Llaves Auxiliares
             Obj.Idbodega = idbodega;
             Obj.Idsucurzal = idsucurzal;
+
+            //Datos Basicos
+            Obj.Estado = estado;
             Obj.Bodega = bodega;
             Obj.Descripcion = descripcion;
             Obj.Director = director;
             Obj.Ciudad = ciudad;
-            Obj.Movil = movil;
             Obj.Telefono = telefono;
+            Obj.Movil = movil;
             Obj.Correo = correo;
+
+            //Datos Auxiliares Bodega
+            Obj.Recepcion = recepcion;
+            Obj.Despacho = despacho;
+            Obj.InicioLaboral = iniciolaboral;
+            Obj.FinLaboral = finlaboral;
+            Obj.Dimensiones = dimensiones;
+            Obj.DiaDePagos = diadepagos;
+            Obj.DiaDeDespacho = diadedespacho;
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
 
-            //
-            Obj.Recepcion = recepcion;
-            Obj.Despacho = despacho;
-            Obj.NumeroPC = numerodepc;
-            Obj.NumeroCelulares = numerodecelulares;
-            Obj.NumeroImpresora = numerodeimpresoras;
-            Obj.OtrosEquipos = otrosequipos;
-            Obj.InicioLaboral = iniciolaboral;
-            Obj.FinLaboral = finlaboral;
-            Obj.DiaDePagos = diadepagos;
-            Obj.MedidasLaborales = medidasgenerales;
-            Obj.Estado = estado;
+            //Equipos Electronicos
+            Obj.PCDeMeza = pcdemeza;
+            Obj.PCPortatiles = pcportatiles;
+            Obj.ImpresoraLaser = impresoralaser;
+            Obj.ImpresoraCartucho = impresoracartucho;
+            Obj.ImpresoraTiquetes = impresoratiquetes;
+            Obj.Marquilladora = marquilladora;
+            Obj.Celulares = celulares;
+            Obj.BalanzaDigital = balanzadigital;
+            Obj.BalanzaManual = balanzamanual;
+            Obj.MontaCarga = montacarga;
 
             Obj.Auto = auto;
             return Datos.Editar_DatosBasicos(Obj);

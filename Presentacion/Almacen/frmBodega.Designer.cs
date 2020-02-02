@@ -215,6 +215,7 @@
             this.CBSucurzal.Size = new System.Drawing.Size(300, 23);
             this.CBSucurzal.Sorted = true;
             this.CBSucurzal.TabIndex = 3;
+            this.CBSucurzal.SelectedIndexChanged += new System.EventHandler(this.CBSucurzal_SelectedIndexChanged);
             // 
             // TBCorreo
             // 
@@ -659,9 +660,9 @@
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(6, 36);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(77, 15);
+            this.label13.Size = new System.Drawing.Size(64, 15);
             this.label13.TabIndex = 43;
-            this.label13.Text = "PC Portatiles";
+            this.label13.Text = "PC Portatil";
             // 
             // TBPcportatiles
             // 

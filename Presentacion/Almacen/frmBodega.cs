@@ -153,6 +153,7 @@ namespace Presentacion
                 this.Habilitar();
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
+                this.TCPrincipal.SelectedIndex = 0;
                 this.TBBodega.Select();
             }
 
@@ -233,9 +234,10 @@ namespace Presentacion
 
                                  //Panel Datos Basicos
                                  Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
-                                 this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBPcdemeza.Text,
-                                 this.TBCelulares.Text, this.TBImpresoraLaser.Text, this.TBBalanzaManual.Text, this.TBInicioLaboral.Text,
-                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBMedidas.Text, 1
+                                 this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
+                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
+                                 this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,
+                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text, 1
                             );
                     }
 
@@ -249,9 +251,10 @@ namespace Presentacion
 
                                  //Panel Datos Basicos
                                  Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
-                                 this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBPcdemeza.Text,
-                                 this.TBCelulares.Text, this.TBImpresoraLaser.Text, this.TBBalanzaManual.Text, this.TBInicioLaboral.Text,
-                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBMedidas.Text, 1
+                                 this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
+                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
+                                 this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,
+                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text, 1
                             );
                     }
 
@@ -479,6 +482,18 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+        
+        private void CBSucurzal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (this.CBSucurzal.SelectedIndex == 0)
+            {
+                this.TBBodega.Select();
+            }
+            else
+            {
+                this.TBBodega.Select();
             }
         }
 
@@ -2905,6 +2920,5 @@ namespace Presentacion
         {
             this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
-
     }
 }

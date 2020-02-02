@@ -94,23 +94,31 @@ namespace Datos
                 Comando.Parameters.Add("@Movil", SqlDbType.VarChar).Value = Obj.Movil;
                 Comando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Obj.Telefono;
                 Comando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Obj.Correo;
-                Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
-                Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
-
-                //
-                Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;
-                Comando.Parameters.Add("@Despacho", SqlDbType.VarChar).Value = Obj.Despacho;
-                Comando.Parameters.Add("@NumeroPC", SqlDbType.VarChar).Value = Obj.NumeroPC;
-                Comando.Parameters.Add("@NumeroImpresora", SqlDbType.VarChar).Value = Obj.NumeroImpresora;
-                Comando.Parameters.Add("@NumeroCelulares", SqlDbType.VarChar).Value = Obj.NumeroCelulares;
-                Comando.Parameters.Add("@OtrosEquipos", SqlDbType.VarChar).Value = Obj.OtrosEquipos;
-                Comando.Parameters.Add("@InicioLaboral", SqlDbType.VarChar).Value = Obj.InicioLaboral;
-                Comando.Parameters.Add("@FinLaboral", SqlDbType.VarChar).Value = Obj.FinLaboral;
-                Comando.Parameters.Add("@DiaDePagos", SqlDbType.VarChar).Value = Obj.DiaDePagos;
-                Comando.Parameters.Add("@MedidasLaborales", SqlDbType.VarChar).Value = Obj.MedidasLaborales;
                 Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
 
-
+                //Panel Datos Auxiliares
+                Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;
+                Comando.Parameters.Add("@Despacho", SqlDbType.VarChar).Value = Obj.Despacho;
+                Comando.Parameters.Add("@InicioLaboral", SqlDbType.VarChar).Value = Obj.InicioLaboral;
+                Comando.Parameters.Add("@FinLaboral", SqlDbType.VarChar).Value = Obj.FinLaboral;
+                Comando.Parameters.Add("@Medidas", SqlDbType.VarChar).Value = Obj.Dimensiones;
+                Comando.Parameters.Add("@DiaDePagos", SqlDbType.VarChar).Value = Obj.DiaDePagos;
+                Comando.Parameters.Add("@DiaDeDespacho", SqlDbType.VarChar).Value = Obj.DiaDeDespacho;
+                Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
+                Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
+                
+                //Panel Equipos Electronicos
+                Comando.Parameters.Add("@PC", SqlDbType.VarChar).Value = Obj.PCDeMeza;
+                Comando.Parameters.Add("@Portatiles", SqlDbType.VarChar).Value = Obj.PCPortatiles;
+                Comando.Parameters.Add("@Laser", SqlDbType.VarChar).Value = Obj.ImpresoraLaser;
+                Comando.Parameters.Add("@Cartucho", SqlDbType.VarChar).Value = Obj.ImpresoraCartucho;
+                Comando.Parameters.Add("@Tickets", SqlDbType.VarChar).Value = Obj.ImpresoraTiquetes;
+                Comando.Parameters.Add("@Marquilladora", SqlDbType.VarChar).Value = Obj.Marquilladora;
+                Comando.Parameters.Add("@Celulares", SqlDbType.VarChar).Value = Obj.Celulares;
+                Comando.Parameters.Add("@Balanza_Digital", SqlDbType.VarChar).Value = Obj.BalanzaDigital;
+                Comando.Parameters.Add("@Balanza_Manual", SqlDbType.VarChar).Value = Obj.BalanzaManual;
+                Comando.Parameters.Add("@Monta_Carga", SqlDbType.VarChar).Value = Obj.MontaCarga;
+                
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Realizar el Registro";
             }
@@ -150,24 +158,33 @@ namespace Datos
                 Comando.Parameters.Add("@Movil", SqlDbType.VarChar).Value = Obj.Movil;
                 Comando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Obj.Telefono;
                 Comando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Obj.Correo;
+                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
+
+                //Panel Datos Auxiliares
+                Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;
+                Comando.Parameters.Add("@Despacho", SqlDbType.VarChar).Value = Obj.Despacho;
+                Comando.Parameters.Add("@InicioLaboral", SqlDbType.VarChar).Value = Obj.InicioLaboral;
+                Comando.Parameters.Add("@FinLaboral", SqlDbType.VarChar).Value = Obj.FinLaboral;
+                Comando.Parameters.Add("@Medidas", SqlDbType.VarChar).Value = Obj.Dimensiones;
+                Comando.Parameters.Add("@DiaDePagos", SqlDbType.VarChar).Value = Obj.DiaDePagos;
+                Comando.Parameters.Add("@DiaDeDespacho", SqlDbType.VarChar).Value = Obj.DiaDeDespacho;
                 Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
                 Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
 
-                //
-                Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;
-                Comando.Parameters.Add("@Despacho", SqlDbType.VarChar).Value = Obj.Despacho; 
-                Comando.Parameters.Add("@NumeroPC", SqlDbType.VarChar).Value = Obj.NumeroPC; 
-                Comando.Parameters.Add("@NumeroImpresora", SqlDbType.VarChar).Value = Obj.NumeroImpresora;
-                Comando.Parameters.Add("@NumeroCelulares", SqlDbType.VarChar).Value = Obj.NumeroCelulares;
-                Comando.Parameters.Add("@OtrosEquipos", SqlDbType.VarChar).Value = Obj.OtrosEquipos;
-                Comando.Parameters.Add("@InicioLaboral", SqlDbType.VarChar).Value = Obj.InicioLaboral;
-                Comando.Parameters.Add("@FinLaboral", SqlDbType.VarChar).Value = Obj.FinLaboral;
-                Comando.Parameters.Add("@DiaDePagos", SqlDbType.VarChar).Value = Obj.DiaDePagos;
-                Comando.Parameters.Add("@MedidasLaborales", SqlDbType.VarChar).Value = Obj.MedidasLaborales;
-                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
+                //Panel Equipos Electronicos
+                Comando.Parameters.Add("@PC", SqlDbType.VarChar).Value = Obj.PCDeMeza;
+                Comando.Parameters.Add("@Portatiles", SqlDbType.VarChar).Value = Obj.PCPortatiles;
+                Comando.Parameters.Add("@Laser", SqlDbType.VarChar).Value = Obj.ImpresoraLaser;
+                Comando.Parameters.Add("@Cartucho", SqlDbType.VarChar).Value = Obj.ImpresoraCartucho;
+                Comando.Parameters.Add("@Tickets", SqlDbType.VarChar).Value = Obj.ImpresoraTiquetes;
+                Comando.Parameters.Add("@Marquilladora", SqlDbType.VarChar).Value = Obj.Marquilladora;
+                Comando.Parameters.Add("@Celulares", SqlDbType.VarChar).Value = Obj.Celulares;
+                Comando.Parameters.Add("@Balanza_Digital", SqlDbType.VarChar).Value = Obj.BalanzaDigital;
+                Comando.Parameters.Add("@Balanza_Manual", SqlDbType.VarChar).Value = Obj.BalanzaManual;
+                Comando.Parameters.Add("@Monta_Carga", SqlDbType.VarChar).Value = Obj.MontaCarga;
 
                 SqlCon.Open();
-                Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "Error al Actualizar el Registro";
+                Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Actualizar el Registro";
             }
             catch (Exception ex)
             {
