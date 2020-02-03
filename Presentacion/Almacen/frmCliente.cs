@@ -142,7 +142,7 @@ namespace Presentacion
             if (!Digitar)
             {
                 //Panel - Datos Basicos
-
+                this.CBTipo.SelectedIndex = 0;
                 this.TBCodigo.Clear();
                 this.TBCodigo.Text = Campo;
                 this.TBNombre.Clear();
@@ -169,6 +169,12 @@ namespace Presentacion
                 this.TBObservacion_01.Clear();
 
                 //Datos Financieros
+                this.CBTieneCredito.SelectedIndex = 0;
+                this.TBLimiteDeCredito.Clear();
+                this.TBDiasdecredito.Clear();
+                this.TBDiasDeProrroga.Clear();
+                this.TBInteresesmora.Clear();
+
                 this.TBBancoPrincipal.Clear();
                 this.TBBancoAuxiliar.Clear();
                 this.TBCuenta01.Clear();
@@ -245,6 +251,10 @@ namespace Presentacion
                 {
                     MensajeError("Ingrese el Codigo del Cliente");
                 }
+                else if (this.CBTipo.SelectedIndex == 0)
+                {
+                    MensajeError("Seleccione el Tipo de Cliente");
+                }
 
                 else
                 {
@@ -257,14 +267,17 @@ namespace Presentacion
                                  1,
 
                                  //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text,
-                                 this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
+                                 Convert.ToInt32(this.CBTipo.SelectedValue), this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text,
+                                 this.TBMovil.Text, this.TBCorreo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
 
                                  //
-                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBReceptor.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
+                                 this.TBDireccion02.Text, this.TBTelefono_01.Text, this.TBMovil_01.Text, this.TBObservacion_01.Text,
 
                                  //
-                                 this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
+                                 this.CBTieneCredito.Text, this.TBLimiteDeCredito.Text, this.TBDiasdecredito.Text, this.TBDiasDeProrroga.Text,
+                                 this.TBInteresesmora.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text,
+                                 this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
 
                                  1
                             );
@@ -279,14 +292,17 @@ namespace Presentacion
                                  1, Convert.ToInt32(this.TBIdcliente.Text),
 
                                  //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text,
-                                 this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
+                                 Convert.ToInt32(this.CBTipo.SelectedValue), this.TBCodigo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBTelefono.Text,
+                                 this.TBMovil.Text, this.TBCorreo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBDepartamento.Text,
 
                                  //
-                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBReceptor.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
+                                 this.TBDireccion02.Text, this.TBTelefono_01.Text, this.TBMovil_01.Text, this.TBObservacion_01.Text,
 
                                  //
-                                 this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
+                                 this.CBTieneCredito.Text, this.TBLimiteDeCredito.Text, this.TBDiasdecredito.Text, this.TBDiasDeProrroga.Text,
+                                 this.TBInteresesmora.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text,
+                                 this.TBCuenta01.Text, this.TBCuenta02.Text, this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text,
 
                                  2
                             );
@@ -390,7 +406,7 @@ namespace Presentacion
                 this.TBBuscar.Clear();
 
                 //Se Limpian las Filas y Columnas de la tabla
-                DGResultados.DataSource = null;
+                this.DGResultados.DataSource = null;
                 this.DGResultados.Enabled = false;
                 this.lblTotal.Text = "Datos Registrados: 0";
 

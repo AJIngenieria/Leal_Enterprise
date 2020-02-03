@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    public class Conexion_Cliente
+    public class Conexion_Proveedor
     {
         public DataTable Lista()
         {
@@ -20,7 +20,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Consulta.Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("Consulta.Proveedor", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 SqlCon.Open();
                 Resultado = Comando.ExecuteReader();
@@ -48,7 +48,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Consulta.Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("Consulta.Proveedor", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Auto;
@@ -72,14 +72,14 @@ namespace Datos
             }
         }
 
-        public string Guardar_DatosBasicos(Entidad_Cliente Obj)
+        public string Guardar_DatosBasicos(Entidad_Proveedor Obj)
         {
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Almacen.LI_Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("Almacen.LI_Proveedor", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -138,14 +138,14 @@ namespace Datos
             }
             return Rpta;
         }
-        public string Editar_DatosBasicos(Entidad_Cliente Obj)
+        public string Editar_DatosBasicos(Entidad_Proveedor Obj)
         {
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Almacen.LI_Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("Almacen.LI_Proveedor", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -212,7 +212,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Consulta.Cliente", SqlCon);
+                SqlCommand Comando = new SqlCommand("Consulta.Proveedor", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Panel Datos Basicos
@@ -235,5 +235,6 @@ namespace Datos
             }
             return Rpta;
         }
+
     }
 }

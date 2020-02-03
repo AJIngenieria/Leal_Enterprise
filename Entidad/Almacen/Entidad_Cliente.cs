@@ -8,8 +8,9 @@ namespace Entidad
 {
     public class Entidad_Cliente
     {
-        //Llave primaria
+        //Llave primaria y Auxiliares
         private int _Idcliente;
+        private int _Idtipo;
 
         //Datos Basicos
         private string _Codigo;
@@ -30,8 +31,16 @@ namespace Entidad
         private string _Direccion01_Envios;
         private string _Direccion02_Envios;
         private string _Receptor_Envios;
+        private string _Telefono_Envios;
+        private string _Movil_Envios;
+        private string _Observacion_Envios;
 
         //Financiera
+        private string _Credito;
+        private string _LimiteDeCredito;
+        private string _DiasDeCredito;
+        private string _DiasDeProrroga;
+        private string _InteresesPorMora;
         private string _BancoPrincipal;
         private string _Cuenta01;
         private string _BancoAuxiliar;
@@ -45,6 +54,7 @@ namespace Entidad
         private string _Filtro;
 
         public int Idcliente { get => _Idcliente; set => _Idcliente = value; }
+        public int Idtipo { get => _Idtipo; set => _Idtipo = value; }
         public string Codigo { get => _Codigo; set => _Codigo = value; }
         public string Cliente { get => _Cliente; set => _Cliente = value; }
         public string Documento { get => _Documento; set => _Documento = value; }
@@ -61,6 +71,14 @@ namespace Entidad
         public string Direccion01_Envios { get => _Direccion01_Envios; set => _Direccion01_Envios = value; }
         public string Direccion02_Envios { get => _Direccion02_Envios; set => _Direccion02_Envios = value; }
         public string Receptor_Envios { get => _Receptor_Envios; set => _Receptor_Envios = value; }
+        public string Telefono_Envios { get => _Telefono_Envios; set => _Telefono_Envios = value; }
+        public string Movil_Envios { get => _Movil_Envios; set => _Movil_Envios = value; }
+        public string Observacion_Envios { get => _Observacion_Envios; set => _Observacion_Envios = value; }
+        public string Credito { get => _Credito; set => _Credito = value; }
+        public string LimiteDeCredito { get => _LimiteDeCredito; set => _LimiteDeCredito = value; }
+        public string DiasDeCredito { get => _DiasDeCredito; set => _DiasDeCredito = value; }
+        public string DiasDeProrroga { get => _DiasDeProrroga; set => _DiasDeProrroga = value; }
+        public string InteresesPorMora { get => _InteresesPorMora; set => _InteresesPorMora = value; }
         public string BancoPrincipal { get => _BancoPrincipal; set => _BancoPrincipal = value; }
         public string Cuenta01 { get => _Cuenta01; set => _Cuenta01 = value; }
         public string BancoAuxiliar { get => _BancoAuxiliar; set => _BancoAuxiliar = value; }

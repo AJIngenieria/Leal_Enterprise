@@ -27,19 +27,21 @@ namespace Negocio
         public static string Guardar_DatosBasicos
             (
                 //Datos Auxiliares y Llaves Primaria
-                int estado,
+                int estado, int idtipo,
 
                 //Datos Basicos
                 string codigo, string nombre, string documento, string telefono, string movil,
                 string correo, string pais, string ciudad, string departamento,
-                
-                //
-                string pais_de, string ciudad_de, 
-                string direccionprincipal_de, string direccion01_de, string direccion02_de,
 
                 //
-                string bancoprincipal, string bancoauxiliar, string cuenta01, string cuenta02,
-                string creditominimo, string creditomaximo,
+                string pais_de, string ciudad_de, string receptor,
+                string direccionprincipal_de, string direccion01_de, string direccion02_de,
+                string telefono_de, string movil_de, string observacion_de,
+
+                //
+                string credito, string limitedecredito, string diasdecredito, string diasdeprorroga,
+                string interesesmora, string bancoprincipal, string bancoauxiliar, string cuenta01,
+                string cuenta02, string creditominimo, string creditomaximo,
                 int auto
             )
         {
@@ -47,6 +49,7 @@ namespace Negocio
             Entidad_Cliente Obj = new Entidad_Cliente();
 
             Obj.Codigo = codigo;
+            Obj.Idtipo = idtipo;
             Obj.Cliente = nombre;
             Obj.Documento = documento;
             Obj.Movil = movil;
@@ -59,11 +62,20 @@ namespace Negocio
             //
             Obj.Pais_Envios = pais_de;
             Obj.Ciudad_Envios = ciudad_de;
+            Obj.Receptor_Envios = receptor;
             Obj.DireccionPrincipal_Envios = direccionprincipal_de;
             Obj.Direccion01_Envios = direccion01_de;
             Obj.Direccion02_Envios = direccion02_de;
+            Obj.Telefono_Envios = telefono_de;
+            Obj.Movil_Envios = movil_de;
+            Obj.Observacion_Envios = observacion_de;
 
             //
+            Obj.Credito = credito;
+            Obj.LimiteDeCredito = limitedecredito;
+            Obj.DiasDeCredito = diasdecredito;
+            Obj.DiasDeProrroga = diasdeprorroga;
+            Obj.InteresesPorMora = interesesmora;
             Obj.BancoPrincipal = bancoprincipal;
             Obj.BancoAuxiliar = bancoauxiliar;
             Obj.Cuenta01 = cuenta01;
@@ -78,20 +90,22 @@ namespace Negocio
 
         public static string Editar_DatosBasicos
             (
-                ///Datos Auxiliares y Llaves Primaria
-                int estado, int idcliente,
+                //Datos Auxiliares y Llaves Primaria
+                int estado, int idcliente, int idtipo,
 
                 //Datos Basicos
                 string codigo, string nombre, string documento, string telefono, string movil,
                 string correo, string pais, string ciudad, string departamento,
 
                 //
-                string pais_de, string ciudad_de,
+                string pais_de, string ciudad_de, string receptor,
                 string direccionprincipal_de, string direccion01_de, string direccion02_de,
+                string telefono_de, string movil_de, string observacion_de,
 
                 //
-                string bancoprincipal, string bancoauxiliar, string cuenta01, string cuenta02,
-                string creditominimo, string creditomaximo,
+                string credito, string limitedecredito, string diasdecredito, string diasdeprorroga,
+                string interesesmora, string bancoprincipal, string bancoauxiliar, string cuenta01,
+                string cuenta02, string creditominimo, string creditomaximo,
                 int auto
             )
         {
@@ -100,6 +114,7 @@ namespace Negocio
 
             Obj.Idcliente = idcliente;
             Obj.Codigo = codigo;
+            Obj.Idtipo = idtipo;
             Obj.Cliente = nombre;
             Obj.Documento = documento;
             Obj.Movil = movil;
@@ -112,11 +127,20 @@ namespace Negocio
             //
             Obj.Pais_Envios = pais_de;
             Obj.Ciudad_Envios = ciudad_de;
+            Obj.Receptor_Envios = receptor;
             Obj.DireccionPrincipal_Envios = direccionprincipal_de;
             Obj.Direccion01_Envios = direccion01_de;
             Obj.Direccion02_Envios = direccion02_de;
+            Obj.Telefono_Envios = telefono_de;
+            Obj.Movil_Envios = movil_de;
+            Obj.Observacion_Envios = observacion_de;
 
             //
+            Obj.Credito = credito;
+            Obj.LimiteDeCredito = limitedecredito;
+            Obj.DiasDeCredito = diasdecredito;
+            Obj.DiasDeProrroga = diasdeprorroga;
+            Obj.InteresesPorMora = interesesmora;
             Obj.BancoPrincipal = bancoprincipal;
             Obj.BancoAuxiliar = bancoauxiliar;
             Obj.Cuenta01 = cuenta01;
