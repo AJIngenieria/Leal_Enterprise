@@ -76,7 +76,6 @@ namespace Presentacion
             this.Botones();
             this.Habilitar();
             this.CBTipo.SelectedIndex = 0;
-            this.CBMoneda.SelectedIndex = 0;
             this.CBRetencion.SelectedIndex = 0;
             
             //Focus a Texboxt
@@ -114,7 +113,7 @@ namespace Presentacion
             this.TBCorreo.ReadOnly = false;
             this.TBCorreo.BackColor = Color.FromArgb(3, 155, 229);
 
-            //Panel - Otros Datos
+            //Panel - Datos de Envio
             this.TBPais_01.ReadOnly = false;
             this.TBPais_01.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCiudad_01.ReadOnly = false;
@@ -127,6 +126,10 @@ namespace Presentacion
             this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
             this.TBReceptor.ReadOnly = false;
             this.TBReceptor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBTelefono_01.ReadOnly = false;
+            this.TBTelefono_01.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBMovil_01.ReadOnly = false;
+            this.TBMovil_01.BackColor = Color.FromArgb(3, 155, 229);
             this.TBObservacion.ReadOnly = false;
             this.TBObservacion.BackColor = Color.FromArgb(3, 155, 229);
 
@@ -145,12 +148,6 @@ namespace Presentacion
             this.TBCreditoMinimo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCreditoMaximo.ReadOnly = false;
             this.TBCreditoMaximo.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBUltimoCredito.ReadOnly = false;
-            this.TBUltimoCredito.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCreditoMora.ReadOnly = false;
-            this.TBCreditoMora.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCreditoTotal.ReadOnly = false;
-            this.TBCreditoTotal.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDiasProrroga.ReadOnly = false;
             this.TBDiasProrroga.BackColor = Color.FromArgb(3, 155, 229);
         }
@@ -177,11 +174,12 @@ namespace Presentacion
             this.TBDireccion02.Clear();
             this.TBDireccion01.Clear();
             this.TBReceptor.Clear();
+            this.TBTelefono_01.Clear();
+            this.TBMovil_01.Clear();
             this.TBObservacion.Clear();
 
 
             //Datos Financieros
-            this.CBMoneda.SelectedIndex = 0;
             this.CBRetencion.SelectedIndex = 0;
             this.TBValorRetencion.Clear();
             this.TBBancoPrincipal.Clear();
@@ -191,9 +189,6 @@ namespace Presentacion
             this.TBCreditoMinimo.Clear();
             this.TBCreditoMaximo.Clear();
             this.TBCreditoMaximo.Clear();
-            this.TBUltimoCredito.Clear();
-            this.TBCreditoMora.Clear();
-            this.TBCreditoTotal.Clear();
             this.TBDiasProrroga.Clear();
         }
 
@@ -245,19 +240,19 @@ namespace Presentacion
 
                 if (this.TBNombre.Text == Campo)
                 {
-                    MensajeError("Ingrese el nombre del Cliente a registrar");
+                    MensajeError("Ingrese el nombre del Proveedor a registrar");
                 }
                 else if (this.TBDocumento.Text == Campo)
                 {
-                    MensajeError("Ingrese el numero del Documento del Cliente");
+                    MensajeError("Ingrese el numero del Documento del Proveedor");
                 }
-                else if (this.TBCodigo.Text == Campo)
+                else if (this.TBRepresentante.Text == Campo)
                 {
-                    MensajeError("Ingrese el Codigo del Cliente");
+                    MensajeError("Ingrese el nombre del Representante del Proveedor a registrar");
                 }
                 else if (this.CBTipo.SelectedIndex == 0)
                 {
-                    MensajeError("Seleccione el Tipo de Cliente");
+                    MensajeError("Seleccione el Tipo de Proveedor");
                 }
 
                 else
@@ -277,12 +272,11 @@ namespace Presentacion
 
                                 //Panel Datos De Envio
                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
-                                this.TBDireccion02.Text, this.TBReceptor.Text, this.TBObservacion.Text,
+                                this.TBDireccion02.Text, this.TBTelefono_01.Text,this.TBMovil_01.Text,this.TBReceptor.Text, this.TBObservacion.Text,
 
                                 //Panel Datos Financieros
                                 this.CBRetencion.Text, this.TBValorRetencion.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text,
-                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, this.TBUltimoCredito.Text, this.TBCreditoMora.Text,
-                                this.TBCreditoTotal.Text, 1
+                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, 1
                             );
                     }
 
@@ -294,18 +288,17 @@ namespace Presentacion
                                  //Datos Auxiliares y llave primaria
                                  2, Convert.ToInt32(this.TBIdproveedor.Text),
 
-                                 //Panel Datos Basicos
-                                 this.CBTipo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBRepresentante.Text, this.TBPais.Text,
-                                 this.TBCiudad.Text, this.TBNacionalidad.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text, this.DTFechadeinicio.Value,
+                                //Panel Datos Basicos
+                                this.CBTipo.Text, this.TBNombre.Text, this.TBDocumento.Text, this.TBRepresentante.Text, this.TBPais.Text,
+                                this.TBCiudad.Text, this.TBNacionalidad.Text, this.TBTelefono.Text, this.TBMovil.Text, this.TBCorreo.Text, this.DTFechadeinicio.Value,
 
-                                 //Panel Datos De Envio
-                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
-                                 this.TBDireccion02.Text, this.TBReceptor.Text, this.TBObservacion.Text,
+                                //Panel Datos De Envio
+                                this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
+                                this.TBDireccion02.Text, this.TBTelefono_01.Text, this.TBMovil_01.Text, this.TBReceptor.Text, this.TBObservacion.Text,
 
                                 //Panel Datos Financieros
                                 this.CBRetencion.Text, this.TBValorRetencion.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text,
-                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, this.TBUltimoCredito.Text, this.TBCreditoMora.Text,
-                                this.TBCreditoTotal.Text, 1
+                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, 1
                             );
                     }
 
@@ -398,7 +391,7 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
 
-                this.Limpiar();
+                this.Limpiar_Datos();
                 this.TBBuscar.Clear();
 
                 //Se Limpian las Filas y Columnas de la tabla
@@ -492,7 +485,7 @@ namespace Presentacion
                     }
                     else
                     {
-                        this.Limpiar();
+                        this.Limpiar_Datos();
 
                         //Se Limpian las Filas y Columnas de la tabla
                         DGResultados.DataSource = null;
@@ -518,95 +511,98 @@ namespace Presentacion
 
         private void TBIdproveedor_TextChanged(object sender, EventArgs e)
         {
-            try
-            //SE REALIZA LA CONSULTA A LA BASE DE DATOS POR MEDIO DEL Idcliente
-            //Y ASI AUTOCOMPLETAR LOS CAMPOS DE TEXTOS NECESARIOS O CONSULTADOS
-            {
+            //try
+            ////SE REALIZA LA CONSULTA A LA BASE DE DATOS POR MEDIO DEL Idcliente
+            ////Y ASI AUTOCOMPLETAR LOS CAMPOS DE TEXTOS NECESARIOS O CONSULTADOS
+            //{
 
-                // ENVIAN LOS DATOS A LA BASE DE DATOS Y SE EVALUAN QUE EXISTEN O ESTEN REGISTRADOS
+            //    // ENVIAN LOS DATOS A LA BASE DE DATOS Y SE EVALUAN QUE EXISTEN O ESTEN REGISTRADOS
 
-                DataTable Datos = CapaNegocio.fAlmacen_Proveedor.Buscar_Proveedor(2, this.TBIdproveedor.Text);
-                //Evaluamos si  existen los Datos
-                if (Datos.Rows.Count == 0)
-                {
-                    MessageBox.Show("No se encontraron registros en la base de datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
+            //    DataTable Datos = CapaNegocio.fAlmacen_Proveedor.Buscar_Proveedor(2, this.TBIdproveedor.Text);
+            //    //Evaluamos si  existen los Datos
+            //    if (Datos.Rows.Count == 0)
+            //    {
+            //        MessageBox.Show("No se encontraron registros en la base de datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //    else
+            //    {
 
-                    //Panel Datos Basicos
-                    Proveedor = Datos.Rows[0][0].ToString();
-                    Documento = Datos.Rows[0][0].ToString();
-                    Telefono = Datos.Rows[0][0].ToString();
-                    Movil = Datos.Rows[0][0].ToString();
-                    Correo = Datos.Rows[0][0].ToString();
-                    Pais = Datos.Rows[0][0].ToString();
-                    Ciudad = Datos.Rows[0][0].ToString();
-                    Nacionalidad = Datos.Rows[0][0].ToString();
+            //        //Panel Datos Basicos
+            //        Proveedor = Datos.Rows[0][0].ToString();
+            //        Documento = Datos.Rows[0][0].ToString();
+            //        Telefono = Datos.Rows[0][0].ToString();
+            //        Movil = Datos.Rows[0][0].ToString();
+            //        Correo = Datos.Rows[0][0].ToString();
+            //        Pais = Datos.Rows[0][0].ToString();
+            //        Ciudad = Datos.Rows[0][0].ToString();
+            //        Nacionalidad = Datos.Rows[0][0].ToString();
 
-                    //Panel Datos de Envio
-                    Pais_DE = Datos.Rows[0][0].ToString();
-                    Ciudad_DE = Datos.Rows[0][0].ToString();
-                    DireccionPrincipal = Datos.Rows[0][0].ToString();
-                    Direccion01 = Datos.Rows[0][0].ToString();
-                    Direccion02 = Datos.Rows[0][0].ToString();
-                    Receptor = Datos.Rows[0][0].ToString();
-                    Observacion = Datos.Rows[0][0].ToString();
+            //        //Panel Datos de Envio
+            //        Pais_DE = Datos.Rows[0][0].ToString();
+            //        Ciudad_DE = Datos.Rows[0][0].ToString();
+            //        DireccionPrincipal = Datos.Rows[0][0].ToString();
+            //        Direccion01 = Datos.Rows[0][0].ToString();
+            //        Direccion02 = Datos.Rows[0][0].ToString();
+            //        Receptor = Datos.Rows[0][0].ToString();
+            //        Observacion = Datos.Rows[0][0].ToString();
 
-                    //Panel Datos Financiero
-                    BancoPrincipal = Datos.Rows[0][0].ToString();
-                    BancoAuxiliar = Datos.Rows[0][0].ToString();
-                    Cuenta01 = Datos.Rows[0][0].ToString();
-                    Cuenta02 = Datos.Rows[0][0].ToString();
-                    CreditoMinimo = Datos.Rows[0][0].ToString();
-                    CreditoMaximo = Datos.Rows[0][0].ToString();
-                    UltimoCredito = Datos.Rows[0][0].ToString();
-                    Mora = Datos.Rows[0][0].ToString();
-                    TotalCredito = Datos.Rows[0][0].ToString();
+            //        //Panel Datos Financiero
+            //        BancoPrincipal = Datos.Rows[0][0].ToString();
+            //        BancoAuxiliar = Datos.Rows[0][0].ToString();
+            //        Cuenta01 = Datos.Rows[0][0].ToString();
+            //        Cuenta02 = Datos.Rows[0][0].ToString();
+            //        CreditoMinimo = Datos.Rows[0][0].ToString();
+            //        CreditoMaximo = Datos.Rows[0][0].ToString();
+            //        UltimoCredito = Datos.Rows[0][0].ToString();
+            //        Mora = Datos.Rows[0][0].ToString();
+            //        TotalCredito = Datos.Rows[0][0].ToString();
 
 
-                    //SE PROCEDE A LLENAR LOS CAMPOS DE TEXTO SEGUN LA CONSULTA REALIZADA
+            //        //SE PROCEDE A LLENAR LOS CAMPOS DE TEXTO SEGUN LA CONSULTA REALIZADA
 
-                    this.TBNombre.Text = Proveedor;
-                    this.TBDocumento.Text = Documento;
-                    this.TBTelefono.Text = Telefono;
-                    this.TBMovil.Text = Movil;
-                    this.TBCorreo.Text = Correo;
-                    this.TBPais.Text = Pais;
-                    this.TBCiudad.Text = Ciudad;
-                    this.TBRepresentante.Text = Representante;
+            //        this.TBNombre.Text = Proveedor;
+            //        this.TBDocumento.Text = Documento;
+            //        this.TBTelefono.Text = Telefono;
+            //        this.TBMovil.Text = Movil;
+            //        this.TBCorreo.Text = Correo;
+            //        this.TBPais.Text = Pais;
+            //        this.TBCiudad.Text = Ciudad;
+            //        this.TBRepresentante.Text = Representante;
 
-                    //
-                    this.TBPais_01.Text = Pais_DE;
-                    this.TBCiudad_01.Text = Ciudad_DE;
-                    this.TBDireccion01.Text = Direccion01;
-                    this.TBDireccion02.Text = Direccion02;
-                    this.TBReceptor.Text = Receptor;
-                    this.TBObservacion.Text = Observacion;
+            //        //
+            //        this.TBPais_01.Text = Pais_DE;
+            //        this.TBCiudad_01.Text = Ciudad_DE;
+            //        this.TBDireccion01.Text = Direccion01;
+            //        this.TBDireccion02.Text = Direccion02;
+            //        this.TBReceptor.Text = Receptor;
+            //        this.TBObservacion.Text = Observacion;
 
-                    //
-                    this.TBBancoPrincipal.Text = BancoPrincipal;
-                    this.TBBancoAuxiliar.Text = BancoAuxiliar;
-                    this.TBCuenta01.Text = Cuenta01;
-                    this.TBCuenta02.Text = Cuenta02;
-                    this.TBCreditoMinimo.Text = CreditoMinimo;
-                    this.TBCreditoMaximo.Text = CreditoMaximo;
-                    this.TBUltimoCredito.Text = UltimoCredito;
-                    this.TBCreditoMora.Text = Mora;
-                    this.TBCreditoTotal.Text = TotalCredito;
+            //        //
+            //        this.TBBancoPrincipal.Text = BancoPrincipal;
+            //        this.TBBancoAuxiliar.Text = BancoAuxiliar;
+            //        this.TBCuenta01.Text = Cuenta01;
+            //        this.TBCuenta02.Text = Cuenta02;
+            //        this.TBCreditoMinimo.Text = CreditoMinimo;
+            //        this.TBCreditoMaximo.Text = CreditoMaximo;
+            //        this.TBUltimoCredito.Text = UltimoCredito;
+            //        this.TBCreditoMora.Text = Mora;
+            //        this.TBCreditoTotal.Text = TotalCredito;
 
-                }
+            //    }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message + ex.StackTrace);
+            //}
         }
 
         private void CBTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (this.CBTipo.SelectedIndex != 0)
+            {
+                this.TBNombre.Select();
+            }
         }
 
         private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -684,150 +680,2007 @@ namespace Presentacion
 
         private void TBNombre_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBDocumento.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBNombre.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBNombre.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDocumento_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBRepresentante.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDocumento.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDocumento.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBRepresentante_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBPais.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBRepresentante.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBRepresentante.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBPais_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCiudad.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBPais.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBPais.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCiudad_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBNacionalidad.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCiudad.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCiudad.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBNacionalidad_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBTelefono.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBNacionalidad.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBNacionalidad.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBTelefono_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBMovil.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBTelefono.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBTelefono.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBMovil_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCorreo.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBMovil.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBMovil.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCorreo_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBNombre.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBReceptor.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCorreo.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCorreo.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         //******************** PANEL DATOS DE ENVIO ********************
 
         private void TBReceptor_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBPais_01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBReceptor.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBReceptor.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBPais_01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCiudad_01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBPais_01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBPais_01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCiudad_01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBDireccionPrincipal.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCiudad_01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCiudad_01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDireccionPrincipal_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBDireccion01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccionPrincipal.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccionPrincipal.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDireccion01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBDireccion02.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccion01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccion01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDireccion02_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBTelefono_01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccion02.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDireccion02.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBTelefono_01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBMovil_01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBTelefono_01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBTelefono_01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBMovil_01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBObservacion.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBMovil_01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBMovil_01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBObservacion_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBReceptor.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBBancoPrincipal.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBObservacion.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBObservacion.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         //
         private void TBValorRetencion_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBBancoPrincipal.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBValorRetencion.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBValorRetencion.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBBancoPrincipal_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCuenta01.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBBancoPrincipal.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBBancoPrincipal.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCuenta01_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBBancoAuxiliar.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCuenta01.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCuenta01.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBBancoAuxiliar_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCuenta02.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBBancoAuxiliar.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBBancoAuxiliar.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCuenta02_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCreditoMinimo.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCuenta02.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCuenta02.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCreditoMinimo_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBCreditoMaximo.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCreditoMinimo.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCreditoMinimo.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBCreditoMaximo_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-        }
+                    this.TBDiasProrroga.Select();
+                }
 
-        private void TBUltimoCredito_KeyUp(object sender, KeyEventArgs e)
-        {
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
-        }
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
 
-        private void TBCreditoMora_KeyUp(object sender, KeyEventArgs e)
-        {
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-        }
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
-        private void TBCreditoTotal_KeyUp(object sender, KeyEventArgs e)
-        {
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCreditoMaximo.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCreditoMaximo.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDiasProrroga_KeyUp(object sender, KeyEventArgs e)
         {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
+                    this.TBBancoPrincipal.Select();
+                }
+
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                {
+                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
+                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
+
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBNombre.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDiasProrroga.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDiasProrroga.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         //******************** FOCUS ENTER  DATOS BASICOS ********************
@@ -835,126 +2688,334 @@ namespace Presentacion
         private void TBNombre_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCodigo.Text == Campo)
+            if (TBNombre.Text == Campo)
             {
-                this.TBCodigo.BackColor = Color.Azure;
-                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCodigo.Clear();
+                this.TBNombre.BackColor = Color.Azure;
+                this.TBNombre.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBNombre.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCodigo.BackColor = Color.Azure;
+                this.TBNombre.BackColor = Color.Azure;
             }
         }
 
         private void TBDocumento_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCodigo.Text == Campo)
+            if (TBDocumento.Text == Campo)
             {
-                this.TBCodigo.BackColor = Color.Azure;
-                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCodigo.Clear();
+                this.TBDocumento.BackColor = Color.Azure;
+                this.TBDocumento.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBDocumento.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCodigo.BackColor = Color.Azure;
+                this.TBDocumento.BackColor = Color.Azure;
             }
         }
 
         private void TBRepresentante_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCodigo.Text == Campo)
+            if (TBRepresentante.Text == Campo)
             {
-                this.TBCodigo.BackColor = Color.Azure;
-                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCodigo.Clear();
+                this.TBRepresentante.BackColor = Color.Azure;
+                this.TBRepresentante.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBRepresentante.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCodigo.BackColor = Color.Azure;
+                this.TBRepresentante.BackColor = Color.Azure;
             }
         }
 
         private void TBPais_Enter(object sender, EventArgs e)
         {
-
+            this.TBPais.BackColor = Color.Azure;
         }
 
         private void TBCiudad_Enter(object sender, EventArgs e)
         {
-
+            this.TBCiudad.BackColor = Color.Azure;
         }
 
         private void TBNacionalidad_Enter(object sender, EventArgs e)
         {
-
+            this.TBNacionalidad.BackColor = Color.Azure;
         }
 
         private void TBTelefono_Enter(object sender, EventArgs e)
         {
-
+            this.TBTelefono.BackColor = Color.Azure;
         }
 
         private void TBMovil_Enter(object sender, EventArgs e)
         {
-
+            this.TBMovil.BackColor = Color.Azure;
         }
 
         private void TBCorreo_Enter(object sender, EventArgs e)
         {
-
+            this.TBCorreo.BackColor = Color.Azure;
         }
 
         //******************** FOCUS ENTER  DATOS DE ENVIO ********************
 
         private void TBReceptor_Enter(object sender, EventArgs e)
         {
-
+            this.TBReceptor.BackColor = Color.Azure;
         }
 
         private void TBPais_01_Enter(object sender, EventArgs e)
         {
-
+            this.TBPais_01.BackColor = Color.Azure;
         }
 
         private void TBCiudad_01_Enter(object sender, EventArgs e)
         {
-
+            this.TBCiudad_01.BackColor = Color.Azure;
         }
 
         private void TBDireccionPrincipal_Enter(object sender, EventArgs e)
         {
-
+            this.TBDireccionPrincipal.BackColor = Color.Azure;
         }
 
         private void TBDireccion01_Enter(object sender, EventArgs e)
         {
-
+            this.TBDireccion01.BackColor = Color.Azure;
         }
 
         private void TBDireccion02_Enter(object sender, EventArgs e)
         {
-
+            this.TBDireccion02.BackColor = Color.Azure;
         }
 
         private void TBTelefono_01_Enter(object sender, EventArgs e)
         {
-
+            this.TBTelefono_01.BackColor = Color.Azure;
         }
 
         private void TBMovil_01_Enter(object sender, EventArgs e)
         {
-
+            this.TBMovil_01.BackColor = Color.Azure;
         }
 
         private void TBObservacion_Enter(object sender, EventArgs e)
         {
-
+            this.TBObservacion.BackColor = Color.Azure;
         }
+
+        //******************** FOCUS ENTER  DATOS FINANCIEROS ********************
+        private void TBValorRetencion_Enter(object sender, EventArgs e)
+        {
+            this.TBValorRetencion.BackColor = Color.Azure;
+        }
+
+        private void TBBancoPrincipal_Enter(object sender, EventArgs e)
+        {
+            this.TBBancoPrincipal.BackColor = Color.Azure;
+        }
+
+        private void TBCuenta01_Enter(object sender, EventArgs e)
+        {
+            this.TBCuenta01.BackColor = Color.Azure;
+        }
+
+        private void TBBancoAuxiliar_Enter(object sender, EventArgs e)
+        {
+            this.TBBancoAuxiliar.BackColor = Color.Azure;
+        }
+
+        private void TBCuenta02_Enter(object sender, EventArgs e)
+        {
+            this.TBCuenta02.BackColor = Color.Azure;
+        }
+
+        private void TBCreditoMinimo_Enter(object sender, EventArgs e)
+        {
+            this.TBCreditoMinimo.BackColor = Color.Azure;
+        }
+
+        private void TBCreditoMaximo_Enter(object sender, EventArgs e)
+        {
+            this.TBCreditoMaximo.BackColor = Color.Azure;
+        }
+
+        private void TBDiasProrroga_Enter(object sender, EventArgs e)
+        {
+            this.TBDiasProrroga.BackColor = Color.Azure;
+        }
+
+        //******************** FOCUS LEAVE DATOS BASICOS ********************
+        private void TBNombre_Leave(object sender, EventArgs e)
+        {
+            if (TBNombre.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBNombre.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBNombre.Text = Campo;
+                this.TBNombre.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                TBNombre.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBDocumento_Leave(object sender, EventArgs e)
+        {
+            if (TBDocumento.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBDocumento.Text = Campo;
+                this.TBDocumento.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBRepresentante_Leave(object sender, EventArgs e)
+        {
+            if (TBRepresentante.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBRepresentante.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBRepresentante.Text = Campo;
+                this.TBRepresentante.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                TBRepresentante.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBPais_Leave(object sender, EventArgs e)
+        {
+            this.TBPais.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCiudad_Leave(object sender, EventArgs e)
+        {
+            this.TBCiudad.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBNacionalidad_Leave(object sender, EventArgs e)
+        {
+            this.TBNacionalidad.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBTelefono_Leave(object sender, EventArgs e)
+        {
+            this.TBTelefono.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBMovil_Leave(object sender, EventArgs e)
+        {
+            this.TBMovil.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCorreo_Leave(object sender, EventArgs e)
+        {
+            this.TBCorreo.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        //******************** FOCUS LEAVE DATOS DE ENVIO ********************
+        private void TBReceptor_Leave(object sender, EventArgs e)
+        {
+            this.TBReceptor.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBPais_01_Leave(object sender, EventArgs e)
+        {
+            this.TBPais_01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCiudad_01_Leave(object sender, EventArgs e)
+        {
+            this.TBCiudad_01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBDireccionPrincipal_Leave(object sender, EventArgs e)
+        {
+            this.TBDireccionPrincipal.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBDireccion01_Leave(object sender, EventArgs e)
+        {
+            this.TBDireccion01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBDireccion02_Leave(object sender, EventArgs e)
+        {
+            this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBTelefono_01_Leave(object sender, EventArgs e)
+        {
+            this.TBTelefono_01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBMovil_01_Leave(object sender, EventArgs e)
+        {
+            this.TBMovil_01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBObservacion_Leave(object sender, EventArgs e)
+        {
+            this.TBObservacion.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        //******************** FOCUS LEAVE DATOS FINANCIEROS ********************
+        private void TBValorRetencion_Leave(object sender, EventArgs e)
+        {
+            this.TBValorRetencion.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBBancoPrincipal_Leave(object sender, EventArgs e)
+        {
+            this.TBBancoPrincipal.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCuenta01_Leave(object sender, EventArgs e)
+        {
+            this.TBCuenta01.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBBancoAuxiliar_Leave(object sender, EventArgs e)
+        {
+            this.TBBancoAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCuenta02_Leave(object sender, EventArgs e)
+        {
+            this.TBCuenta02.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCreditoMinimo_Leave(object sender, EventArgs e)
+        {
+            this.TBCreditoMinimo.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCreditoMaximo_Leave(object sender, EventArgs e)
+        {
+            this.TBCreditoMaximo.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBDiasProrroga_Leave(object sender, EventArgs e)
+        {
+            this.TBDiasProrroga.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
     }
 }

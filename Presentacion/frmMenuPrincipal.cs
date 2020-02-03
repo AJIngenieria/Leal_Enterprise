@@ -201,5 +201,18 @@ namespace Presentacion
         {
 
         }
+
+        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmProveedor frmProveedor = new frmProveedor();
+            frmProveedor.MdiParent = this;
+            frmProveedor.Show();
+
+            frmProveedor.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmProveedor.Editar = Convert.ToString(this.SQL_Editar);
+            frmProveedor.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmProveedor.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmProveedor.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }

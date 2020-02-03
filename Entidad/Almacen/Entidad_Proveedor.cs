@@ -34,22 +34,20 @@ namespace Entidad
         private string _Direccion_P;
         private string _Direccion01;
         private string _Direccion02;
+        private string _Telefono_DE;
+        private string _Movil__DE;
         private string _Receptor;
         private string _Observacion;
 
         //Datos Financieros
         private string _Retencion;
         private string _ValorRetencion;
-        private string _Moneda;
         private string _BancoPrincipal;
         private string _BancoAuxiliar;
         private string _Cuenta01;
         private string _Cuenta02;
         private string _CreditoMin;
         private string _CreditoMax;
-        private string _UltimoCredito;
-        private string _Mora;
-        private string _CreditoTotal;
         private string _Prorroga;
 
         //Datos Auxiliares
@@ -78,20 +76,18 @@ namespace Entidad
         public string Observacion { get => _Observacion; set => _Observacion = value; }
         public string Retencion { get => _Retencion; set => _Retencion = value; }
         public string ValorRetencion { get => _ValorRetencion; set => _ValorRetencion = value; }
-        public string Moneda { get => _Moneda; set => _Moneda = value; }
         public string BancoPrincipal { get => _BancoPrincipal; set => _BancoPrincipal = value; }
         public string BancoAuxiliar { get => _BancoAuxiliar; set => _BancoAuxiliar = value; }
         public string Cuenta01 { get => _Cuenta01; set => _Cuenta01 = value; }
         public string Cuenta02 { get => _Cuenta02; set => _Cuenta02 = value; }
         public string CreditoMin { get => _CreditoMin; set => _CreditoMin = value; }
         public string CreditoMax { get => _CreditoMax; set => _CreditoMax = value; }
-        public string UltimoCredito { get => _UltimoCredito; set => _UltimoCredito = value; }
-        public string Mora { get => _Mora; set => _Mora = value; }
-        public string CreditoTotal { get => _CreditoTotal; set => _CreditoTotal = value; }
-        public string Prorroga { get => _Prorroga; set => _Prorroga = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }
         public int Estado { get => _Estado; set => _Estado = value; }
+        public string Telefono_DE { get => _Telefono_DE; set => _Telefono_DE = value; }
+        public string Movil__DE { get => _Movil__DE; set => _Movil__DE = value; }
+        public string Prorroga { get => _Prorroga; set => _Prorroga = value; }
     }
 }

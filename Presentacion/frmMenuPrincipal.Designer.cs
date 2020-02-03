@@ -39,6 +39,7 @@
             this.salidaDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.trasladoDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.ordenDeDespachoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDePedidoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reservaDeInventarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -165,7 +166,6 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
-            this.ordenDeDespachoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -258,6 +258,12 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(186, 6);
             // 
+            // ordenDeDespachoToolStripMenuItem
+            // 
+            this.ordenDeDespachoToolStripMenuItem.Name = "ordenDeDespachoToolStripMenuItem";
+            this.ordenDeDespachoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.ordenDeDespachoToolStripMenuItem.Text = "Orden de Despacho";
+            // 
             // ordenDePedidoToolStripMenuItem
             // 
             this.ordenDePedidoToolStripMenuItem.Name = "ordenDePedidoToolStripMenuItem";
@@ -269,6 +275,7 @@
             this.proveedorToolStripMenuItem.Name = "proveedorToolStripMenuItem";
             this.proveedorToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
             this.proveedorToolStripMenuItem.Text = "Proveedor";
+            this.proveedorToolStripMenuItem.Click += new System.EventHandler(this.proveedorToolStripMenuItem_Click);
             // 
             // reservaDeInventarioToolStripMenuItem
             // 
@@ -1172,12 +1179,6 @@
             this.toolStripLabel7.Name = "toolStripLabel7";
             this.toolStripLabel7.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel7.Text = "------";
-            // 
-            // ordenDeDespachoToolStripMenuItem
-            // 
-            this.ordenDeDespachoToolStripMenuItem.Name = "ordenDeDespachoToolStripMenuItem";
-            this.ordenDeDespachoToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
-            this.ordenDeDespachoToolStripMenuItem.Text = "Orden de Despacho";
             // 
             // frmMenuPrincipal
             // 

@@ -37,12 +37,11 @@ namespace Negocio
 
                 //Datos de Envio
                 string pais_DE, string ciudad_DE, string direccion_P, string direccion01,
-                string direccion02, string receptor, string observacion,
+                string direccion02, string telefono_de, string movil_de, string receptor, string observacion,
 
                 //Datos Financieros
                 string retencion, string valorretencion, string bancoPrincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditoMin, string creditoMax, string ultimoCredito,
-                string mora, string creditoTotal, int estado
+                string cuenta02, string creditoMin, string creditoMax, int estado
                                 
             )
         {
@@ -68,6 +67,8 @@ namespace Negocio
             Obj.Direccion_P = direccion_P;
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
+            Obj.Telefono_DE = telefono_de;
+            Obj.Movil__DE = movil_de;
             Obj.Receptor = receptor;
             Obj.Observacion = observacion;
 
@@ -80,9 +81,6 @@ namespace Negocio
             Obj.Cuenta02 = cuenta02;
             Obj.CreditoMin = creditoMin;
             Obj.CreditoMax = creditoMax;
-            Obj.UltimoCredito = ultimoCredito;
-            Obj.Mora = mora;
-            Obj.CreditoTotal = creditoTotal;
 
             //Datos Auxiliares
             Obj.Auto = auto;
@@ -101,12 +99,11 @@ namespace Negocio
 
                 //Datos de Envio
                 string pais_DE, string ciudad_DE, string direccion_P, string direccion01,
-                string direccion02, string receptor, string observacion,
+                string direccion02, string telefono_de, string movil_de, string receptor, string observacion,
 
                 //Datos Financieros
                 string retencion, string valorretencion, string bancoPrincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditoMin, string creditoMax, string ultimoCredito,
-                string mora, string creditoTotal, int estado
+                string cuenta02, string creditoMin, string creditoMax, int estado
             )
         {
             Conexion_Proveedor Datos = new Conexion_Proveedor();
@@ -132,6 +129,8 @@ namespace Negocio
             Obj.Direccion_P = direccion_P;
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
+            Obj.Telefono_DE = telefono_de;
+            Obj.Movil__DE = movil_de;
             Obj.Receptor = receptor;
             Obj.Observacion = observacion;
 
@@ -144,9 +143,6 @@ namespace Negocio
             Obj.Cuenta02 = cuenta02;
             Obj.CreditoMin = creditoMin;
             Obj.CreditoMax = creditoMax;
-            Obj.UltimoCredito = ultimoCredito;
-            Obj.Mora = mora;
-            Obj.CreditoTotal = creditoTotal;
 
             //Datos Auxiliares
             Obj.Auto = auto;
