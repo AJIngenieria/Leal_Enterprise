@@ -240,5 +240,18 @@ namespace Presentacion
             frmMarca.Consultar = Convert.ToString(this.SQL_Consultar);
             frmMarca.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void origenesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmOrigenes frmAuxiliares = new frmOrigenes();
+            frmAuxiliares.MdiParent = this;
+            frmAuxiliares.Show();
+
+            frmAuxiliares.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmAuxiliares.Editar = Convert.ToString(this.SQL_Editar);
+            frmAuxiliares.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmAuxiliares.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmAuxiliares.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }

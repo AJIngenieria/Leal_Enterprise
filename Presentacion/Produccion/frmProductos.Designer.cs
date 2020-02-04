@@ -233,11 +233,6 @@
             this.CBOrigen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBOrigen.FormattingEnabled = true;
-            this.CBOrigen.Items.AddRange(new object[] {
-            "-",
-            "Exterior",
-            "Local",
-            "Nacional"});
             this.CBOrigen.Location = new System.Drawing.Point(280, 168);
             this.CBOrigen.Name = "CBOrigen";
             this.CBOrigen.Size = new System.Drawing.Size(121, 23);
@@ -268,10 +263,6 @@
             this.CBGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBGrupo.FormattingEnabled = true;
-            this.CBGrupo.Items.AddRange(new object[] {
-            "-",
-            "Dotacion",
-            "Inventario"});
             this.CBGrupo.Location = new System.Drawing.Point(101, 198);
             this.CBGrupo.Name = "CBGrupo";
             this.CBGrupo.Size = new System.Drawing.Size(121, 23);
@@ -312,16 +303,6 @@
             this.CBTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBTipo.FormattingEnabled = true;
-            this.CBTipo.Items.AddRange(new object[] {
-            "-",
-            "Casero",
-            "Consumible",
-            "Electronico",
-            "Farmaco",
-            "Mecanico",
-            "Natural",
-            "Otros",
-            "Quimico"});
             this.CBTipo.Location = new System.Drawing.Point(280, 197);
             this.CBTipo.Name = "CBTipo";
             this.CBTipo.Size = new System.Drawing.Size(121, 23);

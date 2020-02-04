@@ -79,6 +79,12 @@
     <Compile Include="Almacen\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Sistema\frmOrigenes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmOrigenes.Designer.cs">
+      <DependentUpon>frmOrigenes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -150,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmOrigenes.resx">
+      <DependentUpon>frmOrigenes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

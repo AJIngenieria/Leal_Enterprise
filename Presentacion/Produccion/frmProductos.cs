@@ -263,6 +263,10 @@ namespace Presentacion
                 this.CBBodega.ValueMember = "Codigo";
                 this.CBBodega.DisplayMember = "Bodega";
 
+                this.CBOrigen.DataSource = fOrigen.Lista();
+                this.CBOrigen.ValueMember = "Codigo";
+                this.CBOrigen.DisplayMember = "Origen";
+
                 //this.CBTipo.DataSource = fTipoDeCliente.Lista();
                 //this.CBTipo.ValueMember = "Codigo";
                 //this.CBTipo.DisplayMember = "Tipo";
