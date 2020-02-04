@@ -28,8 +28,6 @@ namespace Presentacion
             this.TBContraseña.BackColor = Color.FromArgb(3, 155, 229);
 
             //Informe de Sesion
-            this.TBInicioDeSesion.Enabled = false;
-            this.TBInicioDeSesion.BackColor = Color.FromArgb(253, 254, 254);
             this.TBCopyrigth.Enabled = false;
             this.TBCopyrigth.BackColor = Color.FromArgb(253, 254, 254);
             this.TBDesarrollo.Enabled = false;

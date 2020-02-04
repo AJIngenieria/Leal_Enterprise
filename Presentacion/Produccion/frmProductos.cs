@@ -54,6 +54,7 @@ namespace Presentacion
             //Inicio de Clase y Botones
             this.Botones();
             this.Habilitar();
+            this.Limpiar_Datos();
             this.AutoCompletar_Combobox();
 
             //Focus a Texboxt y Combobox
@@ -182,6 +183,11 @@ namespace Presentacion
                 this.TBPresentacion.Text = Campo;
                 this.TBReferencia.ReadOnly = false;
                 this.TBLotedeingreso.ReadOnly = false;
+                this.CBMarca.SelectedIndex = 0;
+                this.CBOrigen.SelectedIndex = 0;
+                this.CBGrupo.SelectedIndex = 0;
+                this.CBTipo.SelectedIndex = 0;
+                this.CBEmpaque.SelectedIndex = 0;
 
                 //Panel - Precios
                 this.CBOfertable.SelectedIndex = 0;
@@ -213,7 +219,7 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
-                //this.PB_Imagen.Image = Properties.Resources.
+                this.PB_Imagen.Image = Properties.Resources.Logo;
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBNombre.Focus();
@@ -249,17 +255,23 @@ namespace Presentacion
         {
             try
             {
-                this.CBTipo.DataSource = fTipoDeCliente.Lista();
-                this.CBTipo.ValueMember = "Codigo";
-                this.CBTipo.DisplayMember = "Tipo";
+                this.CBMarca.DataSource = fMarca.Lista();
+                this.CBMarca.ValueMember = "Codigo";
+                this.CBMarca.DisplayMember = "Marca";
+
+                this.CBBodega.DataSource = fBodega.Lista();
+                this.CBBodega.ValueMember = "Codigo";
+                this.CBBodega.DisplayMember = "Bodega";
+
+                //this.CBTipo.DataSource = fTipoDeCliente.Lista();
+                //this.CBTipo.ValueMember = "Codigo";
+                //this.CBTipo.DisplayMember = "Tipo";
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-
 
         private void Guardar_SQL()
         {
@@ -2824,6 +2836,19 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void PB_Imagen_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog dialog = new OpenFileDialog();
+
+            DialogResult result = dialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                this.PB_Imagen.SizeMode = PictureBoxSizeMode.StretchImage;
+                this.PB_Imagen.Image = Image.FromFile(dialog.FileName);
             }
         }
     }

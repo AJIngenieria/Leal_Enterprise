@@ -228,5 +228,17 @@ namespace Presentacion
             frmTipoDeCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarca frmMarca = new frmMarca();
+            frmMarca.MdiParent = this;
+            frmMarca.Show();
+
+            frmMarca.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmMarca.Editar = Convert.ToString(this.SQL_Editar);
+            frmMarca.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmMarca.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmMarca.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }
