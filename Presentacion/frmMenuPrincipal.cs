@@ -253,5 +253,44 @@ namespace Presentacion
             frmAuxiliares.Consultar = Convert.ToString(this.SQL_Consultar);
             frmAuxiliares.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void grupoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGrupo frmGrupo = new frmGrupo();
+            frmGrupo.MdiParent = this;
+            frmGrupo.Show();
+
+            frmGrupo.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmGrupo.Editar = Convert.ToString(this.SQL_Editar);
+            frmGrupo.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmGrupo.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmGrupo.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void tipoDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoDeProducto frmTipoDeProducto = new frmTipoDeProducto();
+            frmTipoDeProducto.MdiParent = this;
+            frmTipoDeProducto.Show();
+
+            frmTipoDeProducto.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmTipoDeProducto.Editar = Convert.ToString(this.SQL_Editar);
+            frmTipoDeProducto.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmTipoDeProducto.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmTipoDeProducto.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void empaquesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpaque frmEmpaque = new frmEmpaque();
+            frmEmpaque.MdiParent = this;
+            frmEmpaque.Show();
+
+            frmEmpaque.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmEmpaque.Editar = Convert.ToString(this.SQL_Editar);
+            frmEmpaque.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmEmpaque.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmEmpaque.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }

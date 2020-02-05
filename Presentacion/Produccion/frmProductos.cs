@@ -62,6 +62,14 @@ namespace Presentacion
 
             //Ocultacion de Texboxt
             this.TBIdproducto.Visible = false;
+
+            //Panel - Cantidades - Otros Datos
+            this.CBUnidad.SelectedIndex = 0;
+            this.CBOfertable.SelectedIndex = 0;
+            this.CBVentaPublico.SelectedIndex = 0;
+            this.CBVence.SelectedIndex = 0;
+            this.CBPesoUnidad.SelectedIndex = 0;
+
         }
 
         private void Habilitar()
@@ -183,7 +191,7 @@ namespace Presentacion
                 this.TBPresentacion.Text = Campo;
                 this.TBReferencia.ReadOnly = false;
                 this.TBLotedeingreso.ReadOnly = false;
-                this.CBMarca.SelectedIndex = 0;
+                this.CBMarca.SelectedItem = 0;
                 this.CBOrigen.SelectedIndex = 0;
                 this.CBGrupo.SelectedIndex = 0;
                 this.CBTipo.SelectedIndex = 0;
@@ -203,12 +211,18 @@ namespace Presentacion
                 this.TBOferta03.Text = Numerico;
 
                 //Panel Ubicacion - Imagen
+                this.CBBodega.SelectedIndex = 0;
                 this.TBUbicacion.Clear();
                 this.TBEstante.Clear();
                 this.TBNivel.Clear();
 
                 //Panel - Cantidades - Otros Datos
-                this.CBUnidad.SelectedItem = 0;
+                this.CBUnidad.SelectedIndex = 0;
+                this.CBProveedor.SelectedIndex = 0;
+                this.CBImpuesto.SelectedIndex = 0;
+                this.CBVence.SelectedIndex = 0;
+                this.CBPesoUnidad.SelectedIndex = 0;
+
                 this.TBCantidadMinima.Text = Numerico;
                 this.TBCantidadMaxima.Text = Numerico;
                 this.TBCantidadMininaCliente.Text = Numerico;
@@ -255,21 +269,37 @@ namespace Presentacion
         {
             try
             {
-                this.CBMarca.DataSource = fMarca.Lista();
-                this.CBMarca.ValueMember = "Codigo";
-                this.CBMarca.DisplayMember = "Marca";
-
+                this.CBEmpaque.DataSource = fEmpaque.Lista();
+                this.CBEmpaque.ValueMember = "Codigo";
+                this.CBEmpaque.DisplayMember = "Empaque";
+                
                 this.CBBodega.DataSource = fBodega.Lista();
                 this.CBBodega.ValueMember = "Codigo";
                 this.CBBodega.DisplayMember = "Bodega";
+
+                this.CBGrupo.DataSource = fGrupo.Lista();
+                this.CBGrupo.ValueMember = "Codigo";
+                this.CBGrupo.DisplayMember = "Grupo";
+
+                this.CBImpuesto.DataSource = fImpuesto.Lista();
+                this.CBImpuesto.ValueMember = "Codigo";
+                this.CBImpuesto.DisplayMember = "Impuesto";
+
+                this.CBMarca.DataSource = fMarca.Lista();
+                this.CBMarca.ValueMember = "Codigo";
+                this.CBMarca.DisplayMember = "Marca";
 
                 this.CBOrigen.DataSource = fOrigen.Lista();
                 this.CBOrigen.ValueMember = "Codigo";
                 this.CBOrigen.DisplayMember = "Origen";
 
-                //this.CBTipo.DataSource = fTipoDeCliente.Lista();
-                //this.CBTipo.ValueMember = "Codigo";
-                //this.CBTipo.DisplayMember = "Tipo";
+                this.CBProveedor.DataSource = fProveedor.Lista();
+                this.CBProveedor.ValueMember = "Codigo";
+                this.CBProveedor.DisplayMember = "Proveedor";
+
+                this.CBTipo.DataSource = fTipoDeProducto.Lista();
+                this.CBTipo.ValueMember = "Codigo";
+                this.CBTipo.DisplayMember = "Tipo";
             }
             catch (Exception ex)
             {
@@ -297,6 +327,10 @@ namespace Presentacion
                 {
                     MensajeError("Ingrese el Codigo del Producto");
                 }
+                else if (this.CBBodega.SelectedIndex == 0)
+                {
+                    MensajeError("Seleccione la Bodega donde se Ubicara el Producto");
+                }
 
                 else
                 {
@@ -304,6 +338,7 @@ namespace Presentacion
 
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
                     this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
                     byte[] Imagen_Producto = ms.GetBuffer();
 
@@ -313,7 +348,8 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 1, Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
+                                 1, Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), 
+                                 Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
@@ -341,7 +377,8 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 1, Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
+                                 1, Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue),
+                                 Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
@@ -2183,7 +2220,18 @@ namespace Presentacion
 
         private void TBPresentacion_Enter(object sender, EventArgs e)
         {
-            this.TBPresentacion.BackColor = Color.Azure;
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBPresentacion.Text == Campo)
+            {
+                this.TBPresentacion.BackColor = Color.Azure;
+                this.TBPresentacion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBPresentacion.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBPresentacion.BackColor = Color.Azure;
+            }
         }
 
         //******************** FOCUS ENTER PRECIOS ********************
@@ -2474,7 +2522,18 @@ namespace Presentacion
 
         private void TBPresentacion_Leave(object sender, EventArgs e)
         {
-            this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
+            if (TBPresentacion.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBPresentacion.Text = Campo;
+                this.TBPresentacion.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
+            }
         }
 
         //******************** FOCUS LEAVE PRECIOS ********************

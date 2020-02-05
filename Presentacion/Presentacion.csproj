@@ -79,11 +79,29 @@
     <Compile Include="Almacen\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\frmOrigenes.cs">
+    <Compile Include="Sistema\frmEmpaque.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\frmOrigenes.Designer.cs">
-      <DependentUpon>frmOrigenes.cs</DependentUpon>
+    <Compile Include="Sistema\frmEmpaque.Designer.cs">
+      <DependentUpon>frmEmpaque.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\frmTipoDeProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmTipoDeProducto.Designer.cs">
+      <DependentUpon>frmTipoDeProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\frmGrupo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmGrupo.Designer.cs">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Sistema\frmOrigen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Sistema\frmOrigen.Designer.cs">
+      <DependentUpon>frmOrigen.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
@@ -157,8 +175,17 @@
     <EmbeddedResource Include="Almacen\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\frmOrigenes.resx">
-      <DependentUpon>frmOrigenes.cs</DependentUpon>
+    <EmbeddedResource Include="Sistema\frmEmpaque.resx">
+      <DependentUpon>frmEmpaque.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmTipoDeProducto.resx">
+      <DependentUpon>frmTipoDeProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmGrupo.resx">
+      <DependentUpon>frmGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Sistema\frmOrigen.resx">
+      <DependentUpon>frmOrigen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -294,6 +321,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

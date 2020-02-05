@@ -44,8 +44,11 @@
     <Compile Include="Almacen\fBodega.cs" />
     <Compile Include="Almacen\fCliente.cs" />
     <Compile Include="Almacen\fProveedor.cs" />
-    <Compile Include="fMarca.cs" />
-    <Compile Include="fOrigen.cs" />
+    <Compile Include="Sistema\fEmpaque.cs" />
+    <Compile Include="Sistema\fGrupo.cs" />
+    <Compile Include="Sistema\fTipoDeProducto.cs" />
+    <Compile Include="Sistema\fMarca.cs" />
+    <Compile Include="Sistema\fOrigen.cs" />
     <Compile Include="Sistema\fTipoDeCliente.cs" />
     <Compile Include="Produccion\fProductos.cs" />
     <Compile Include="Gestion Humana\fGestion_Empleados.cs" />
