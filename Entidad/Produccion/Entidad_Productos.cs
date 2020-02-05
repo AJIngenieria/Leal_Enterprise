@@ -24,10 +24,7 @@ namespace Entidad
         private string _Descripcion;
         private string _Lote;
         private string _Presentacion;
-        private string _Origen;
-        private string _Grupo;
-        private string _Tipo;
-        private string _Empaque;
+        private DateTime _Vencimiento;
         private int _Estado;
 
         //Precios
@@ -48,16 +45,22 @@ namespace Entidad
         private string _Nivel;
         private byte[] _Imagen;
 
-        //Otros Datos
-        private string _Unidaddeventa;
+        //Canrtidades
         private string _CantidadCompraMinima;
         private string _CantidadCompraMaxima;
         private string _CantidadMinimaCliente;
         private string _CantidadMaximaCliente;
-        private string _Vencimiento;
+        private string _Vence;
         private DateTime _FechaVencimiento;
+        private string _Unidaddeventa;
         private string _UnidadDePeso;
         private string _Peso;
+
+        //Panel Cantidad 02
+        private int _Idorigen;
+        private int _Idgrupo;
+        private int _Iftipo;
+        private int _Idempaque;
 
         //Datos Auxiliares
         private int _Auto;
@@ -75,10 +78,7 @@ namespace Entidad
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
         public string Lote { get => _Lote; set => _Lote = value; }
         public string Presentacion { get => _Presentacion; set => _Presentacion = value; }
-        public string Origen { get => _Origen; set => _Origen = value; }
-        public string Grupo { get => _Grupo; set => _Grupo = value; }
-        public string Tipo { get => _Tipo; set => _Tipo = value; }
-        public string Empaque { get => _Empaque; set => _Empaque = value; }
+        public DateTime Vencimiento { get => _Vencimiento; set => _Vencimiento = value; }
         public int Estado { get => _Estado; set => _Estado = value; }
         public string ProductoOfertable { get => _ProductoOfertable; set => _ProductoOfertable = value; }
         public string ValorFinal { get => _ValorFinal; set => _ValorFinal = value; }
@@ -94,15 +94,19 @@ namespace Entidad
         public string Estante { get => _Estante; set => _Estante = value; }
         public string Nivel { get => _Nivel; set => _Nivel = value; }
         public byte[] Imagen { get => _Imagen; set => _Imagen = value; }
-        public string Unidaddeventa { get => _Unidaddeventa; set => _Unidaddeventa = value; }
         public string CantidadCompraMinima { get => _CantidadCompraMinima; set => _CantidadCompraMinima = value; }
         public string CantidadCompraMaxima { get => _CantidadCompraMaxima; set => _CantidadCompraMaxima = value; }
         public string CantidadMinimaCliente { get => _CantidadMinimaCliente; set => _CantidadMinimaCliente = value; }
         public string CantidadMaximaCliente { get => _CantidadMaximaCliente; set => _CantidadMaximaCliente = value; }
-        public string Vencimiento { get => _Vencimiento; set => _Vencimiento = value; }
+        public string Vence { get => _Vence; set => _Vence = value; }
         public DateTime FechaVencimiento { get => _FechaVencimiento; set => _FechaVencimiento = value; }
+        public string Unidaddeventa { get => _Unidaddeventa; set => _Unidaddeventa = value; }
         public string UnidadDePeso { get => _UnidadDePeso; set => _UnidadDePeso = value; }
         public string Peso { get => _Peso; set => _Peso = value; }
+        public int Idorigen { get => _Idorigen; set => _Idorigen = value; }
+        public int Idgrupo { get => _Idgrupo; set => _Idgrupo = value; }
+        public int Iftipo { get => _Iftipo; set => _Iftipo = value; }
+        public int Idempaque { get => _Idempaque; set => _Idempaque = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }

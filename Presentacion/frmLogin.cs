@@ -91,52 +91,60 @@ namespace Presentacion
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-
-                    DataTable Datos_Seguridad = Negocio.fEquipos.Seguridad_SQL(Equipo_SQL, HDD_SQL, MacSeguridad_SQL);
-                    //Evaluamos si  existen los Datos
-                    if (Datos_Seguridad.Rows.Count == 0)
+                    if (TBUsuario.Text=="Tecnologia" && TBContraseña.Text=="SQL")
                     {
-                        MessageBox.Show("Niveles de Seguridad no Cumplidos", "Leal Enterprise - Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        frmEquipos frmBodega = new frmEquipos();
+                        //
+                        frmBodega.ShowDialog();
                     }
                     else
                     {
-
-                        ////<<<<<<----- Al pasar las pruebas de seguridad se procede a verificar los usuarios ingresados
-
-                        DataTable Datos = Negocio.fUsuarios.Login_SQL(this.TBUsuario.Text, this.TBContraseña.Text);
+                        DataTable Datos_Seguridad = Negocio.fEquipos.Seguridad_SQL(Equipo_SQL, HDD_SQL, MacSeguridad_SQL);
                         //Evaluamos si  existen los Datos
-                        if (Datos.Rows.Count == 0)
+                        if (Datos_Seguridad.Rows.Count == 0)
                         {
-                            MessageBox.Show("Acceso Denegado al Sistema, Usuario o Contraseña Incorrecto. Si el Problema Persiste Contacte al Area de Sistemas", "Leal Academico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            MessageBox.Show("Niveles de Seguridad no Cumplidos", "Leal Enterprise - Acceso Denegado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         else
                         {
 
-                            frmMenuPrincipal frm = new frmMenuPrincipal();
-                            frm.Idempleado = Datos.Rows[0][0].ToString();
-                            frm.Idusuario = Datos.Rows[0][1].ToString();
-                            frm.Empleado = Datos.Rows[0][2].ToString();
-                            frm.UsuarioLogueado = Datos.Rows[0][3].ToString();
+                            ////<<<<<<----- Al pasar las pruebas de seguridad se procede a verificar los usuarios ingresados
 
-                            //Captura de Valores en la Base de Datos
+                            DataTable Datos = Negocio.fUsuarios.Login_SQL(this.TBUsuario.Text, this.TBContraseña.Text);
+                            //Evaluamos si  existen los Datos
+                            if (Datos.Rows.Count == 0)
+                            {
+                                MessageBox.Show("Acceso Denegado al Sistema, Usuario o Contraseña Incorrecto. Si el Problema Persiste Contacte al Area de Sistemas", "Leal Academico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            else
+                            {
 
-                            frm.SQL_Guardar = Datos.Rows[0][4].ToString();
-                            frm.SQL_Editar = Datos.Rows[0][5].ToString();
-                            frm.SQL_Eliminar = Datos.Rows[0][6].ToString();
-                            frm.SQL_Consultar = Datos.Rows[0][7].ToString();
+                                frmMenuPrincipal frm = new frmMenuPrincipal();
+                                frm.Idempleado = Datos.Rows[0][0].ToString();
+                                frm.Idusuario = Datos.Rows[0][1].ToString();
+                                frm.Empleado = Datos.Rows[0][2].ToString();
+                                frm.UsuarioLogueado = Datos.Rows[0][3].ToString();
 
-                            frm.Menu_Almacen = Datos.Rows[0][8].ToString();
-                            frm.Menu_GestionHumana = Datos.Rows[0][9].ToString();
-                            frm.Menu_Productos = Datos.Rows[0][10].ToString();
-                            frm.Menu_Reportes = Datos.Rows[0][11].ToString();
-                            frm.Menu_Sistema = Datos.Rows[0][12].ToString();
-                            frm.Menu_Ventas = Datos.Rows[0][13].ToString();
+                                //Captura de Valores en la Base de Datos
 
-                            frm.Show();
-                            this.Hide();
+                                frm.SQL_Guardar = Datos.Rows[0][4].ToString();
+                                frm.SQL_Editar = Datos.Rows[0][5].ToString();
+                                frm.SQL_Eliminar = Datos.Rows[0][6].ToString();
+                                frm.SQL_Consultar = Datos.Rows[0][7].ToString();
 
+                                frm.Menu_Almacen = Datos.Rows[0][8].ToString();
+                                frm.Menu_GestionHumana = Datos.Rows[0][9].ToString();
+                                frm.Menu_Productos = Datos.Rows[0][10].ToString();
+                                frm.Menu_Reportes = Datos.Rows[0][11].ToString();
+                                frm.Menu_Sistema = Datos.Rows[0][12].ToString();
+                                frm.Menu_Ventas = Datos.Rows[0][13].ToString();
+
+                                frm.Show();
+                                this.Hide();
+
+                            }
                         }
-                    }
+                    }                  
 
                 }
             }

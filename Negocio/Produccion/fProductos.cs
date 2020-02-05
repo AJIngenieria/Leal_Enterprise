@@ -27,29 +27,27 @@ namespace Negocio
         public static string Guardar_DatosBasicos
             (
                 //Datos Auxiliares y Llaves Primaria
-                int estado, int idmarca, int idbodega,
-                int idproveedor, int idimpuesto,
+                int idmarca, int idbodega, int idproveedor, int idimpuesto,
 
-                //Datos Basicos 
-                string codigo, string producto, string referencia, string descripcion, string lote,
-                string presentacion, string origen, string grupo, string tipo, string empaque,
+                //Datos Basicos
+                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion, DateTime vencimiento,
 
                 //Precios
-                string productoOfertable, string valorFinal, string valorcompraminima, string valorcompramaxima,
-                string valor01, string valor02, string valor03, string oferta01,
-                string oferta02, string oferta03,
+                string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
+                string valor02, string valor03, string oferta01, string oferta02, string oferta03,
 
                 //Ubicacion[]
-                string ubicacion, string estante, string nivel,
+                string ubicacion, string estante, string nivel, byte[] imagen,
 
-                //Otros Datos
-                string unidaddeventa, string cantidadcompraminima, string cantidadcompramaxima,
-                string cantidadminimacliente, string cantidadmaximacliente, string vencimiento,
-                DateTime fechavencimiento, string unidaddepeso, string peso, byte[] imagen,
+                //Canrtidades
+                string cantidadCompraMinima, string cantidadCompraMaxima, string cantidadMinimaCliente, string cantidadMaximaCliente,
+                string vence, DateTime fechaVencimiento, string unidaddeventa, string unidadDePeso, string peso,
 
-                //
+                //Panel Cantidad 02
+                int idorigen, int idgrupo, int idtipo, int idempaque,
+
+                //Datos Auxiliares
                 int auto
-
             )
         {
             Conexion_Producto Datos = new Conexion_Producto();
@@ -68,16 +66,13 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Lote = lote;
             Obj.Presentacion = presentacion;
-            Obj.Origen = origen;
-            Obj.Grupo = grupo;
-            Obj.Tipo = tipo;
-            Obj.Empaque = empaque;
+            Obj.Vencimiento = vencimiento;
 
             //Precios
             Obj.ProductoOfertable = productoOfertable;
             Obj.ValorFinal = valorFinal;
-            Obj.ValorCompraMinima = valorcompraminima;
-            Obj.ValorCompraMaxima = valorcompramaxima;
+            Obj.ValorCompraMinima = valorCompraMinima;
+            Obj.ValorCompraMaxima = valorCompraMaxima;
             Obj.Valor01 = valor01;
             Obj.Valor02 = valor02;
             Obj.Valor03 = valor03;
@@ -91,18 +86,24 @@ namespace Negocio
             Obj.Nivel = nivel;
             Obj.Imagen = imagen;
 
-            //Otros Datos
+            //Canrtidades
+            Obj.CantidadCompraMinima = cantidadCompraMinima;
+            Obj.CantidadCompraMaxima = cantidadCompraMaxima;
+            Obj.CantidadMinimaCliente = cantidadMinimaCliente;
+            Obj.CantidadMaximaCliente = cantidadMaximaCliente;
+            Obj.Vence = vence;
+            Obj.FechaVencimiento = fechaVencimiento;
             Obj.Unidaddeventa = unidaddeventa;
-            Obj.CantidadCompraMinima = cantidadcompraminima;
-            Obj.CantidadCompraMaxima = cantidadcompramaxima;
-            Obj.CantidadMinimaCliente = cantidadminimacliente;
-            Obj.CantidadMaximaCliente = cantidadmaximacliente;
-            Obj.Vencimiento = vencimiento;
-            Obj.FechaVencimiento = fechavencimiento;
-            Obj.UnidadDePeso = unidaddepeso;
+            Obj.UnidadDePeso = unidadDePeso;
             Obj.Peso = peso;
 
-            Obj.Estado = estado;
+            //Panel Cantidad 02
+            Obj.Idorigen = idorigen;
+            Obj.Idgrupo = idgrupo;
+            Obj.Iftipo = idtipo;
+            Obj.Idempaque = idempaque;
+
+            //Datos Auxiliares
             Obj.Auto = auto;
 
             return Datos.Guardar_DatosBasicos(Obj);
@@ -110,29 +111,28 @@ namespace Negocio
 
         public static string Editar_DatosBasicos
             (
-                
-                //Datos Auxiliares y Llaves Primaria
-                int estado, int idproducto, int idmarca, int idbodega,
-                int idproveedor, int idimpuesto,
 
-                //Datos Basicos 
-                string codigo, string producto, string referencia, string descripcion, string lote,
-                string presentacion, string origen, string grupo, string tipo, string empaque,
+                //Datos Auxiliares y Llaves Primaria
+                int idmarca, int idbodega, int idproveedor, int idimpuesto,
+
+                //Datos Basicos
+                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion, DateTime vencimiento,
 
                 //Precios
-                string productoOfertable, string valorFinal, string valorcompraminima, string valorcompramaxima,
-                string valor01, string valor02, string valor03, string oferta01,
-                string oferta02, string oferta03,
+                string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
+                string valor02, string valor03, string oferta01, string oferta02, string oferta03,
 
                 //Ubicacion[]
-                string ubicacion, string estante, string nivel,
+                string ubicacion, string estante, string nivel, byte[] imagen,
 
-                //Otros Datos
-                string unidaddeventa, string cantidadcompraminima, string cantidadcompramaxima,
-                string cantidadminimacliente, string cantidadmaximacliente, string vencimiento,
-                DateTime fechavencimiento, string unidaddepeso, string peso, byte[] imagen,
+                //Canrtidades
+                string cantidadCompraMinima, string cantidadCompraMaxima, string cantidadMinimaCliente, string cantidadMaximaCliente,
+                string vence, DateTime fechaVencimiento, string unidaddeventa, string unidadDePeso, string peso,
 
-                //
+                //Panel Cantidad 02
+                int idorigen, int idgrupo, int idtipo, int idempaque,
+
+                //Datos Auxiliares
                 int auto
             )
         {
@@ -140,7 +140,6 @@ namespace Negocio
             Entidad_Productos Obj = new Entidad_Productos();
 
             //Datos Auxiliares y Llaves Primaria
-            Obj.Idproducto = idproducto;
             Obj.Idmarca = idmarca;
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
@@ -153,16 +152,13 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Lote = lote;
             Obj.Presentacion = presentacion;
-            Obj.Origen = origen;
-            Obj.Grupo = grupo;
-            Obj.Tipo = tipo;
-            Obj.Empaque = empaque;
+            Obj.Vencimiento = vencimiento;
 
             //Precios
             Obj.ProductoOfertable = productoOfertable;
             Obj.ValorFinal = valorFinal;
-            Obj.ValorCompraMinima = valorcompraminima;
-            Obj.ValorCompraMaxima = valorcompramaxima;
+            Obj.ValorCompraMinima = valorCompraMinima;
+            Obj.ValorCompraMaxima = valorCompraMaxima;
             Obj.Valor01 = valor01;
             Obj.Valor02 = valor02;
             Obj.Valor03 = valor03;
@@ -176,18 +172,24 @@ namespace Negocio
             Obj.Nivel = nivel;
             Obj.Imagen = imagen;
 
-            //Otros Datos
+            //Canrtidades
+            Obj.CantidadCompraMinima = cantidadCompraMinima;
+            Obj.CantidadCompraMaxima = cantidadCompraMaxima;
+            Obj.CantidadMinimaCliente = cantidadMinimaCliente;
+            Obj.CantidadMaximaCliente = cantidadMaximaCliente;
+            Obj.Vence = vence;
+            Obj.FechaVencimiento = fechaVencimiento;
             Obj.Unidaddeventa = unidaddeventa;
-            Obj.CantidadCompraMinima = cantidadcompraminima;
-            Obj.CantidadCompraMaxima = cantidadcompramaxima;
-            Obj.CantidadMinimaCliente = cantidadminimacliente;
-            Obj.CantidadMaximaCliente = cantidadmaximacliente;
-            Obj.Vencimiento = vencimiento;
-            Obj.FechaVencimiento = fechavencimiento;
-            Obj.UnidadDePeso = unidaddepeso;
+            Obj.UnidadDePeso = unidadDePeso;
             Obj.Peso = peso;
 
-            Obj.Estado = estado;
+            //Panel Cantidad 02
+            Obj.Idorigen = idorigen;
+            Obj.Idgrupo = idgrupo;
+            Obj.Iftipo = idtipo;
+            Obj.Idempaque = idempaque;
+
+            //Datos Auxiliares
             Obj.Auto = auto;
 
             return Datos.Editar_DatosBasicos(Obj);
