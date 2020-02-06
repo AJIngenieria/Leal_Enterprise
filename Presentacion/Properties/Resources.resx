@@ -133,6 +133,9 @@
   <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BV_Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BV_Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Reportes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Reportes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -157,11 +160,11 @@
   <data name="BR_Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BR_Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo_Leal_Enterprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo_Leal_Enterprise.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Gestion_Humana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gestion_Humana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BV_Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BV_Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BV_Nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BV_Nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -169,8 +172,8 @@
   <data name="BR_Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BR_Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BV_Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BV_Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BV_Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BV_Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BV_Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BV_Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,7 +184,7 @@
   <data name="Almacen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Almacen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Fondo_LealEnterprise" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Fondo_LealEnterprise.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

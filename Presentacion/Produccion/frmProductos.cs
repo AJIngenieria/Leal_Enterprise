@@ -69,7 +69,7 @@ namespace Presentacion
             this.CBVence.SelectedIndex = 0;
             this.CBPesoUnidad.SelectedIndex = 0;
 
-            this.PB_Imagen.Image = Properties.Resources.Logo;
+            //this.PB_Imagen.Image = Properties.Resources.Logo;
 
         }
 
@@ -234,7 +234,7 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
-                this.PB_Imagen.Image = Properties.Resources.Logo;
+                //this.PB_Imagen.Image = Properties.Resources.Logo;
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBNombre.Focus();

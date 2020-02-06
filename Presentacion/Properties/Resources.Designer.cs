@@ -233,6 +233,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Fondo_LealEnterprise {
+            get {
+                object obj = ResourceManager.GetObject("Fondo_LealEnterprise", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Gestion_Humana {
             get {
                 object obj = ResourceManager.GetObject("Gestion_Humana", resourceCulture);
@@ -243,9 +253,9 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Logo {
+        internal static System.Drawing.Bitmap Logo_Leal_Enterprise {
             get {
-                object obj = ResourceManager.GetObject("Logo", resourceCulture);
+                object obj = ResourceManager.GetObject("Logo_Leal_Enterprise", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

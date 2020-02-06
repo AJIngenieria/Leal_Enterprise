@@ -350,10 +350,10 @@
     <Folder Include="SQL Server\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo.png" />
+    <None Include="Resources\Logo_Leal_Enterprise.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Logo.jpg" />
+    <None Include="Resources\Fondo_LealEnterprise.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -198,7 +198,7 @@ namespace Datos
             return Rpta;
         }
 
-        public string Eliminar(int IDEliminar_Sql, int Auto)
+        public string Eliminar(int IDEliminar_Sql, int auto)
         {
             string Rpta = "";
             SqlConnection SqlCon = new SqlConnection();
@@ -209,7 +209,7 @@ namespace Datos
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Panel Datos Basicos
-                Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Auto;
+                Comando.Parameters.Add("@Eliminar", SqlDbType.Int).Value = auto;
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = IDEliminar_Sql;
 
                 SqlCon.Open();

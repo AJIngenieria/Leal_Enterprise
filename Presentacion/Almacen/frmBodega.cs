@@ -387,7 +387,7 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        //this.Digitar = true;
+                        this.Digitar = true;
                         this.Limpiar_Datos();
                     }
 
@@ -426,7 +426,46 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (Eliminar == "1")
+            {
 
+                DialogResult Opcion;
+                string Respuesta = "";
+                int Eliminacion;
+
+                Opcion = MessageBox.Show("Desea Eliminar el Registro Seleccionado", "Leal Enterprise", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    if (DGResultados.SelectedRows.Count > 0)
+                    {
+                        Eliminacion = Convert.ToInt32(DGResultados.CurrentRow.Cells["Codigo"].Value.ToString());
+                        Respuesta = Negocio.fBodega.Eliminar(Eliminacion, 0);
+                    }
+
+                    if (Respuesta.Equals("OK"))
+                    {
+                        this.MensajeOk("Registro Eliminado Correctamente");
+                    }
+                    else
+                    {
+                        this.MensajeError(Respuesta);
+                    }
+
+                    //Botones Comunes
+                    this.Digitar = true;
+                    this.TBBuscar.Clear();
+                    this.Botones();
+
+                    //Se regresa el focus al campo principal
+                    this.TCPrincipal.SelectedIndex = 0;
+                    this.TBBodega.Select();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado Para Realizar Eliminaciones en el Sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
