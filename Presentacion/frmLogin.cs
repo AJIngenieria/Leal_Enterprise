@@ -93,9 +93,9 @@ namespace Presentacion
                 {
                     if (TBUsuario.Text=="Tecnologia" && TBContraseña.Text=="SQL")
                     {
-                        frmEquipos frmBodega = new frmEquipos();
+                        frmEquipos frmEquipos = new frmEquipos();
                         //
-                        frmBodega.ShowDialog();
+                        frmEquipos.ShowDialog();
                     }
                     else
                     {

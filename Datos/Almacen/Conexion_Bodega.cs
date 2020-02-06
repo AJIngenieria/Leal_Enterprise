@@ -94,7 +94,6 @@ namespace Datos
                 Comando.Parameters.Add("@Movil", SqlDbType.VarChar).Value = Obj.Movil;
                 Comando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Obj.Telefono;
                 Comando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Obj.Correo;
-                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
 
                 //Panel Datos Auxiliares
                 Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;
@@ -158,7 +157,6 @@ namespace Datos
                 Comando.Parameters.Add("@Movil", SqlDbType.VarChar).Value = Obj.Movil;
                 Comando.Parameters.Add("@Telefono", SqlDbType.VarChar).Value = Obj.Telefono;
                 Comando.Parameters.Add("@Correo", SqlDbType.VarChar).Value = Obj.Correo;
-                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
 
                 //Panel Datos Auxiliares
                 Comando.Parameters.Add("@Recepcion", SqlDbType.VarChar).Value = Obj.Recepcion;

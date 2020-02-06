@@ -38,8 +38,7 @@ namespace Negocio
 
                 //
                 string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
-                string celulares, string balanzadigital, string balanzamanual, string montacarga,
-                int estado
+                string celulares, string balanzadigital, string balanzamanual, string montacarga
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -49,7 +48,6 @@ namespace Negocio
             Obj.Idsucurzal = idsucurzal;
 
             //Datos Basicos
-            Obj.Estado = estado;
             Obj.Bodega = bodega;
             Obj.Descripcion = descripcion;
             Obj.Director = director;
@@ -99,8 +97,7 @@ namespace Negocio
 
                 //
                 string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
-                string celulares, string balanzadigital, string balanzamanual, string montacarga,
-                int estado
+                string celulares, string balanzadigital, string balanzamanual, string montacarga
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -111,7 +108,6 @@ namespace Negocio
             Obj.Idsucurzal = idsucurzal;
 
             //Datos Basicos
-            Obj.Estado = estado;
             Obj.Bodega = bodega;
             Obj.Descripcion = descripcion;
             Obj.Director = director;

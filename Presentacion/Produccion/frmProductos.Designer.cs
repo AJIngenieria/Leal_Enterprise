@@ -167,6 +167,8 @@
             // 
             // TPDatosBasicos
             // 
+            this.TPDatosBasicos.BackColor = System.Drawing.Color.White;
+            this.TPDatosBasicos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPDatosBasicos.Controls.Add(this.CBEmpaque);
             this.TPDatosBasicos.Controls.Add(this.label22);
             this.TPDatosBasicos.Controls.Add(this.TBIdproducto);
@@ -196,7 +198,6 @@
             this.TPDatosBasicos.Size = new System.Drawing.Size(411, 288);
             this.TPDatosBasicos.TabIndex = 0;
             this.TPDatosBasicos.Text = "Datos";
-            this.TPDatosBasicos.UseVisualStyleBackColor = true;
             // 
             // CBEmpaque
             // 
@@ -430,6 +431,8 @@
             // 
             // TPCostosyprecios
             // 
+            this.TPCostosyprecios.BackColor = System.Drawing.Color.White;
+            this.TPCostosyprecios.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPCostosyprecios.Controls.Add(this.TBOferta03);
             this.TPCostosyprecios.Controls.Add(this.label23);
             this.TPCostosyprecios.Controls.Add(this.CBVentaPublico);
@@ -455,7 +458,6 @@
             this.TPCostosyprecios.Size = new System.Drawing.Size(411, 288);
             this.TPCostosyprecios.TabIndex = 3;
             this.TPCostosyprecios.Text = "Precios";
-            this.TPCostosyprecios.UseVisualStyleBackColor = true;
             // 
             // TBOferta03
             // 
@@ -672,6 +674,8 @@
             // 
             // TPUbicacion
             // 
+            this.TPUbicacion.BackColor = System.Drawing.Color.White;
+            this.TPUbicacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPUbicacion.Controls.Add(this.CBBodega);
             this.TPUbicacion.Controls.Add(this.label24);
             this.TPUbicacion.Controls.Add(this.groupBox3);
@@ -687,7 +691,6 @@
             this.TPUbicacion.Size = new System.Drawing.Size(411, 288);
             this.TPUbicacion.TabIndex = 4;
             this.TPUbicacion.Text = "Ubicacion - Imagen";
-            this.TPUbicacion.UseVisualStyleBackColor = true;
             // 
             // CBBodega
             // 
@@ -722,7 +725,6 @@
             // 
             // PB_Imagen
             // 
-            this.PB_Imagen.BackgroundImage = global::Presentacion.Properties.Resources.Logo;
             this.PB_Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.PB_Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.PB_Imagen.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -792,6 +794,8 @@
             // 
             // TPOtrosDatos
             // 
+            this.TPOtrosDatos.BackColor = System.Drawing.Color.White;
+            this.TPOtrosDatos.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.TPOtrosDatos.Controls.Add(this.CBPesoUnidad);
             this.TPOtrosDatos.Controls.Add(this.TBPeso);
             this.TPOtrosDatos.Controls.Add(this.label36);
@@ -818,7 +822,6 @@
             this.TPOtrosDatos.Size = new System.Drawing.Size(411, 288);
             this.TPOtrosDatos.TabIndex = 5;
             this.TPOtrosDatos.Text = "Cantidades - Otros Datos";
-            this.TPOtrosDatos.UseVisualStyleBackColor = true;
             // 
             // CBPesoUnidad
             // 

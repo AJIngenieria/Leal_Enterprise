@@ -79,7 +79,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Produccion.LI_Producto", SqlCon);
+                SqlCommand Comando = new SqlCommand("Produccion.LI_Productos", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -99,16 +99,15 @@ namespace Datos
 
                 //Panel Precios -- Campos Obligatorios
 
-                Comando.Parameters.Add("@idmarca", SqlDbType.Int).Value = Obj.Idmarca;
                 Comando.Parameters.Add("@Ofertable", SqlDbType.VarChar).Value = Obj.ProductoOfertable;
                 Comando.Parameters.Add("@VentaFinal", SqlDbType.VarChar).Value = Obj.ValorFinal;
                 Comando.Parameters.Add("@ValorCompraMinima", SqlDbType.VarChar).Value = Obj.ValorCompraMinima;
                 Comando.Parameters.Add("@ValorCompraMaxima", SqlDbType.VarChar).Value = Obj.ValorCompraMaxima;
 
                 //Panel Precios Campos NO Obligatorios
-                Comando.Parameters.Add("@Valor01", SqlDbType.VarChar).Value = Obj.Valor01;
-                Comando.Parameters.Add("@Valor02", SqlDbType.VarChar).Value = Obj.Valor02;
-                Comando.Parameters.Add("@Valor03", SqlDbType.VarChar).Value = Obj.Valor03;
+                Comando.Parameters.Add("@Venta01", SqlDbType.VarChar).Value = Obj.Valor01;
+                Comando.Parameters.Add("@Venta02", SqlDbType.VarChar).Value = Obj.Valor02;
+                Comando.Parameters.Add("@Venta03", SqlDbType.VarChar).Value = Obj.Valor03;
                 Comando.Parameters.Add("@Oferta01", SqlDbType.VarChar).Value = Obj.Oferta01;
                 Comando.Parameters.Add("@Oferta02", SqlDbType.VarChar).Value = Obj.Oferta02;
                 Comando.Parameters.Add("@Oferta03", SqlDbType.VarChar).Value = Obj.Oferta03;
@@ -120,14 +119,14 @@ namespace Datos
                 Comando.Parameters.Add("@Ubicacion", SqlDbType.VarChar).Value = Obj.Ubicacion;
                 Comando.Parameters.Add("@Estante", SqlDbType.VarChar).Value = Obj.Estante;
                 Comando.Parameters.Add("@Nivel", SqlDbType.VarChar).Value = Obj.Nivel;
-                Comando.Parameters.Add("@Imagen", SqlDbType.VarChar).Value = Obj.Imagen;
+                Comando.Parameters.Add("@Imagen", SqlDbType.Image).Value = Obj.Imagen;
 
                 //Panel Cantidad -- Campos Obligatorios
                 Comando.Parameters.Add("@idimpuesto", SqlDbType.Int).Value = Obj.Idimpuesto;
 
                 //Panel Cantidad -- Campos NO Obligatorios
                 Comando.Parameters.Add("@Idproveedor", SqlDbType.Int).Value = Obj.Idproveedor;
-                Comando.Parameters.Add("@Compraminia", SqlDbType.VarChar).Value = Obj.CantidadCompraMinima;
+                Comando.Parameters.Add("@Compraminima", SqlDbType.VarChar).Value = Obj.CantidadCompraMinima;
                 Comando.Parameters.Add("@Compramaxima", SqlDbType.VarChar).Value = Obj.CantidadCompraMaxima;
                 Comando.Parameters.Add("@minimacliente", SqlDbType.VarChar).Value = Obj.CantidadMinimaCliente;
                 Comando.Parameters.Add("@maximacliente", SqlDbType.VarChar).Value = Obj.CantidadMaximaCliente;
@@ -159,7 +158,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Produccion.LI_Producto", SqlCon);
+                SqlCommand Comando = new SqlCommand("Produccion.LI_Productos", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -200,7 +199,7 @@ namespace Datos
                 Comando.Parameters.Add("@Ubicacion", SqlDbType.VarChar).Value = Obj.Ubicacion;
                 Comando.Parameters.Add("@Estante", SqlDbType.VarChar).Value = Obj.Estante;
                 Comando.Parameters.Add("@Nivel", SqlDbType.VarChar).Value = Obj.Nivel;
-                Comando.Parameters.Add("@Imagen", SqlDbType.VarChar).Value = Obj.Imagen;
+                Comando.Parameters.Add("@Imagen", SqlDbType.Image).Value = Obj.Imagen;
 
                 //Panel Cantidad -- Campos Obligatorios
                 Comando.Parameters.Add("@idimpuesto", SqlDbType.Int).Value = Obj.Idimpuesto;

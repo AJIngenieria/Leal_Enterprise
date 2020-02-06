@@ -22,7 +22,6 @@ namespace Entidad
         private string _Telefono;
         private string _Movil;
         private string _Correo;
-        private int _Estado;
 
         //Datos Auxiliares Bodega
         private string _Recepcion;
@@ -61,7 +60,6 @@ namespace Entidad
         public string Telefono { get => _Telefono; set => _Telefono = value; }
         public string Movil { get => _Movil; set => _Movil = value; }
         public string Correo { get => _Correo; set => _Correo = value; }
-        public int Estado { get => _Estado; set => _Estado = value; }
         public string Recepcion { get => _Recepcion; set => _Recepcion = value; }
         public string Despacho { get => _Despacho; set => _Despacho = value; }
         public string InicioLaboral { get => _InicioLaboral; set => _InicioLaboral = value; }

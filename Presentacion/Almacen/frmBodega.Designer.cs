@@ -804,6 +804,7 @@
             this.TBIdbodega.Name = "TBIdbodega";
             this.TBIdbodega.Size = new System.Drawing.Size(29, 21);
             this.TBIdbodega.TabIndex = 31;
+            this.TBIdbodega.TextChanged += new System.EventHandler(this.TBIdbodega_TextChanged);
             // 
             // lblTotal
             // 

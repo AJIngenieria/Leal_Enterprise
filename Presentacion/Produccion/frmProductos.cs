@@ -54,7 +54,6 @@ namespace Presentacion
             //Inicio de Clase y Botones
             this.Botones();
             this.Habilitar();
-            this.Limpiar_Datos();
             this.AutoCompletar_Combobox();
 
             //Focus a Texboxt y Combobox
@@ -69,6 +68,8 @@ namespace Presentacion
             this.CBVentaPublico.SelectedIndex = 0;
             this.CBVence.SelectedIndex = 0;
             this.CBPesoUnidad.SelectedIndex = 0;
+
+            this.PB_Imagen.Image = Properties.Resources.Logo;
 
         }
 
@@ -237,6 +238,8 @@ namespace Presentacion
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBNombre.Focus();
+                this.TCPrincipal.SelectedIndex = 0;
+
             }
 
         }
@@ -348,25 +351,19 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 1, Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue), 
+                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
                                  Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOrigen.Text, this.CBGrupo.Text, this.CBTipo.Text, this.CBEmpaque.Text,
-
+                                 this.DTFechadevencimiento.Value,this.CBOfertable.Text,this.CBVentaPublico.Text,this.TBValorCompraMinina.Text,this.TBValorCompraMaxima.Text,
+                                 this.TBValor01.Text,this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text,this.TBOferta03.Text,
                                  //
-                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text, this.TBValor01.Text,
-                                 this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBValor03.Text,
-
+                                 this.TBUbicacion.Text, this.TBEstante.Text,this.TBNivel.Text,Imagen_Producto,this.TBCantidadMinima.Text,this.TBCantidadMaxima.Text,this.TBCantidadMininaCliente.Text,
+                                 this.TBCantidadMaximaCliente.Text,this.CBVence.Text,this.DTFechadevencimiento.Value,this.CBUnidad.Text,this.CBPesoUnidad.Text,this.TBPeso.Text,
+                                 Convert.ToInt32(this.CBOrigen.SelectedValue),Convert.ToInt32(this.CBGrupo.SelectedValue),Convert.ToInt32(CBTipo.SelectedValue),Convert.ToInt32(this.CBEmpaque.SelectedValue),
+                                 
                                  //
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text,
-
-                                 //
-                                 this.CBUnidad.Text, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                                 this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBPesoUnidad.Text, this.TBPeso.Text, Imagen_Producto,
-
-                                 //                                 
                                  1
                             );
                     }
@@ -377,25 +374,19 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 1, Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue),
-                                 Convert.ToInt32(this.CBProveedor.SelectedValue), Convert.ToInt32(this.CBImpuesto.SelectedValue),
+                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
+                                 Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOrigen.Text, this.CBGrupo.Text, this.CBTipo.Text, this.CBEmpaque.Text,
+                                 this.DTFechadevencimiento.Value, this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                                 this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
+                                 //
+                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
+                                 this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
+                                 Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
 
                                  //
-                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text, this.TBValor01.Text,
-                                 this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBValor03.Text,
-
-                                 //
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text,
-
-                                 //
-                                 this.CBUnidad.Text, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                                 this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBPesoUnidad.Text, this.TBPeso.Text, Imagen_Producto,
-
-                                 //                                 
                                  2
                             );
                     }

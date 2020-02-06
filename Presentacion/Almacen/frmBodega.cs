@@ -17,10 +17,8 @@ namespace Presentacion
         // Variable con la cual se define si el procecimiento 
         // A realizar es Editar, Guardar, Buscar,Eliminar
         private bool Digitar = true;
-        public bool Filtro = true;
         private string Campo = "Campo Obligatorio - Leal Enterprise";
-
-
+        
         //Variable para Captura el Empleado Logueado
         public int Idempleado;
 
@@ -35,14 +33,36 @@ namespace Presentacion
 
         //Panel Datos Basicos
         public string Idbodega = "";
-        public string Idsucurzal = "";
-        public string Nombre = "";
-        public string Tipo = "";
-        public string Ciudad = "";
-        public string Telefono = "";
-        public string Movil = "";
-        public string Correo = "";
-        public string Responsable = "";
+        private string Idsucurzal = "";
+        private string Nombre = "";
+        private string Descripcion = "";
+        private string Director = "";
+        private string Ciudad = "";
+        private string Telefono = "";
+        private string Movil = "";
+        private string Correo = "";
+
+        private string Recepcion = "";
+        private string Despacho = "";
+        private string InicioLaboral = "";
+        private string FinalLaboral = "";
+        private string Diadepagos = "";
+        private string Diadedespacho = "";
+        private string Medidas = "";
+        private string Direccion01 = "";
+        private string Direccion02 = "";
+
+        private string PC = "";
+        private string Portatiles = "";
+        private string Laser = "";
+        private string Cartucho = "";
+        private string Tickets = "";
+        private string Marquilladora = "";
+        private string Celulares = "";
+        private string Balanza_Digital = "";
+        private string Balanza_Manual = "";
+        private string Monta_Carga = "";
+
         public frmBodega()
         {
             InitializeComponent();
@@ -91,16 +111,12 @@ namespace Presentacion
             this.TBDireccion01.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDireccion02.ReadOnly = false;
             this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
+
+            //
             this.TBRecepcion.ReadOnly = false;
             this.TBRecepcion.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDespacho.ReadOnly = false;
             this.TBDespacho.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBPcdemeza.ReadOnly = false;
-            this.TBPcdemeza.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBImpresoraLaser.ReadOnly = false;
-            this.TBImpresoraLaser.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCelulares.ReadOnly = false;
-            this.TBCelulares.BackColor = Color.FromArgb(3, 155, 229);
             this.TBBalanzaManual.ReadOnly = false;
             this.TBBalanzaManual.BackColor = Color.FromArgb(3, 155, 229);
             this.TBInicioLaboral.ReadOnly = false;
@@ -109,9 +125,33 @@ namespace Presentacion
             this.TBFinalHorarioLaboral.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDiadepagos.ReadOnly = false;
             this.TBDiadepagos.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDiaDespacho.ReadOnly = false;
+            this.TBDiaDespacho.BackColor = Color.FromArgb(3, 155, 229);
             this.TBMedidas.ReadOnly = false;
             this.TBMedidas.BackColor = Color.FromArgb(3, 155, 229);
-            
+
+            //
+            this.TBPcdemeza.ReadOnly = false;
+            this.TBPcdemeza.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBPcportatiles.ReadOnly = false;
+            this.TBPcportatiles.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBImpresoraCartucho.ReadOnly = false;
+            this.TBImpresoraCartucho.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBImpresoraLaser.ReadOnly = false;
+            this.TBImpresoraLaser.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBImpresoraTickets.ReadOnly = false;
+            this.TBImpresoraTickets.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBMarquilladora.ReadOnly = false;
+            this.TBMarquilladora.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCelulares.ReadOnly = false;
+            this.TBCelulares.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBalanzaDigital.ReadOnly = false;
+            this.TBBalanzaDigital.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBalanzaManual.ReadOnly = false;
+            this.TBBalanzaManual.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBMontaCarga.ReadOnly = false;
+            this.TBMontaCarga.BackColor = Color.FromArgb(3, 155, 229);
+
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
@@ -122,9 +162,10 @@ namespace Presentacion
             {
                 //Panel - Datos Basicos
 
+                this.TBIdbodega.Clear();
                 this.CBSucurzal.SelectedIndex = 0;
                 this.TBBodega.Clear();
-                this.TBBodega.Text = Campo;
+                //this.TBBodega.Text = Campo;
                 this.TBDescripcion.Clear();
                 this.TBDescripcion.Text = Campo;
                 this.TBDirector.Clear();
@@ -136,21 +177,32 @@ namespace Presentacion
                 this.TBCorreo.Clear();
                 this.TBDireccion01.Clear();
                 this.TBDireccion02.Clear();
+
+                //
                 this.TBRecepcion.Clear();
                 this.TBDespacho.Clear();
-                this.TBPcdemeza.Clear();
-                this.TBImpresoraLaser.Clear();
-                this.TBCelulares.Clear();
                 this.TBBalanzaManual.Clear();
                 this.TBInicioLaboral.Clear();
                 this.TBFinalHorarioLaboral.Clear();
                 this.TBDiadepagos.Clear();
+                this.TBDiaDespacho.Clear();
                 this.TBMedidas.Clear();
+
+                //
+                this.TBPcdemeza.Clear();
+                this.TBPcportatiles.Clear();
+                this.TBImpresoraCartucho.Clear();
+                this.TBImpresoraLaser.Clear();
+                this.TBImpresoraTickets.Clear();
+                this.TBMarquilladora.Clear();
+                this.TBCelulares.Clear();
+                this.TBBalanzaDigital.Clear();
+                this.TBBalanzaManual.Clear();
+                this.TBMontaCarga.Clear();
 
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
                 this.Botones();
-                this.Habilitar();
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TCPrincipal.SelectedIndex = 0;
@@ -164,21 +216,21 @@ namespace Presentacion
             if (Digitar)
             {
                 ////El boton btnGuardar Mantendra su imagen original
-                //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = false;
                 this.btnImprimir.Enabled = false;
             }
-            else if (!Digitar)
+            else
             {
                 ////El boton btnGuardar cambiara su imagen original de Guardar a Editar
-                //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Editar;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
 
-                this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = true;
+                this.btnEliminar.Enabled = false;
                 this.btnImprimir.Enabled = false;
             }
         }
@@ -237,7 +289,7 @@ namespace Presentacion
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
                                  this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
                                  this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,
-                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text, 1
+                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text
                             );
                     }
 
@@ -254,7 +306,7 @@ namespace Presentacion
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
                                  this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
                                  this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,
-                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text, 1
+                                 this.TBCelulares.Text, this.TBBalanzaDigital.Text, this.TBBalanzaManual.Text, this.TBMontaCarga.Text
                             );
                     }
 
@@ -277,7 +329,8 @@ namespace Presentacion
                     }
 
                     //Llamada de Clase
-                    this.Digitar = false;
+                    this.Digitar = true;
+                    this.Botones();
                     this.Limpiar_Datos();
                 }
 
@@ -317,7 +370,7 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = false;
+                        this.Digitar = true;
                         this.Limpiar_Datos();
                     }
                 }
@@ -334,7 +387,7 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = false;
+                        //this.Digitar = true;
                         this.Limpiar_Datos();
                     }
 
@@ -352,13 +405,14 @@ namespace Presentacion
             try
             {
                 this.Digitar = true;
+                this.Botones();
                 this.Limpiar_Datos();
-                this.TBBuscar.Clear();
-
+                
                 //Se Limpian las Filas y Columnas de la tabla
-                DGResultados.DataSource = null;
+                this.DGResultados.DataSource = null;
                 this.DGResultados.Enabled = false;
                 this.lblTotal.Text = "Datos Registrados: 0";
+                this.TBBuscar.Clear();
 
                 //Se restablece la imagen predeterminada del boton
                 //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
@@ -422,20 +476,104 @@ namespace Presentacion
             }
         }
 
+        private void TBIdbodega_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable Datos = Negocio.fBodega.Buscar(this.TBIdbodega.Text, 2);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    Idsucurzal = Datos.Rows[0][0].ToString();
+                    Nombre = Datos.Rows[0][1].ToString();
+                    Descripcion = Datos.Rows[0][2].ToString();
+                    Director = Datos.Rows[0][3].ToString();
+                    Ciudad = Datos.Rows[0][4].ToString();
+                    Telefono = Datos.Rows[0][5].ToString();
+                    Movil = Datos.Rows[0][6].ToString();
+                    Correo = Datos.Rows[0][7].ToString();
+
+                    Recepcion = Datos.Rows[0][8].ToString();
+                    Despacho = Datos.Rows[0][9].ToString();
+                    InicioLaboral = Datos.Rows[0][10].ToString();
+                    FinalLaboral = Datos.Rows[0][11].ToString();
+                    Diadepagos = Datos.Rows[0][12].ToString();
+                    Diadedespacho = Datos.Rows[0][13].ToString();
+                    Medidas = Datos.Rows[0][14].ToString();
+                    Direccion01 = Datos.Rows[0][15].ToString();
+                    Direccion02 = Datos.Rows[0][16].ToString();
+
+                    PC = Datos.Rows[0][17].ToString();
+                    Portatiles = Datos.Rows[0][18].ToString();
+                    Laser = Datos.Rows[0][19].ToString();
+                    Cartucho = Datos.Rows[0][20].ToString();
+                    Tickets = Datos.Rows[0][21].ToString();
+                    Marquilladora = Datos.Rows[0][22].ToString();
+                    Celulares = Datos.Rows[0][23].ToString();
+                    Balanza_Digital = Datos.Rows[0][24].ToString();
+                    Balanza_Manual = Datos.Rows[0][25].ToString();
+                    Monta_Carga = Datos.Rows[0][26].ToString();
+
+                    //Se procede a completar los campos de texto segun las consulta
+                    //Realizada anteriormente en la base de datos
+                    this.CBSucurzal.SelectedValue = Idsucurzal;
+                    this.TBBodega.Text = Nombre;
+                    this.TBDescripcion.Text = Descripcion;
+                    this.TBDirector.Text = Director;
+                    this.TBCiudad.Text = Ciudad;
+                    this.TBTelefono.Text = Telefono;
+                    this.TBMovil.Text = Movil;
+                    this.TBCorreo.Text = Correo;
+
+                    //
+                    this.TBRecepcion.Text = Recepcion;
+                    this.TBDespacho.Text = Despacho;
+                    this.TBInicioLaboral.Text = InicioLaboral;
+                    this.TBFinalHorarioLaboral.Text = FinalLaboral;
+                    this.TBMedidas.Text = Medidas;
+                    this.TBDiadepagos.Text = Diadepagos;
+                    this.TBDespacho.Text = Despacho;
+                    this.TBDireccion01.Text = Direccion01;
+                    this.TBDireccion02.Text = Direccion02;
+
+                    //
+                    this.TBPcdemeza.Text = PC;
+                    this.TBPcportatiles.Text = Portatiles;
+                    this.TBImpresoraLaser.Text = Laser;
+                    this.TBImpresoraCartucho.Text = Cartucho;
+                    this.TBImpresoraTickets.Text = Tickets;
+                    this.TBCelulares.Text = Celulares;
+                    this.TBBalanzaDigital.Text = Balanza_Digital;
+                    this.TBBalanzaManual.Text = Balanza_Manual;
+                    this.TBMontaCarga.Text = Monta_Carga;
+                    
+                }            
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
         private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                this.Digitar = false;
-
                 if (Editar == "1")
                 {
                     //
-                    this.TBIdbodega.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                    this.TBBodega.Select();
+                    this.Digitar = false;
+                    this.Botones();
 
-                    //
-                    this.Limpiar_Datos();
+                    //Se procede a completar los campos de textos segun
+                    //la consulta realizada en la base de datos
+                    this.TBIdbodega.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
 
                 }
                 else
@@ -455,27 +593,20 @@ namespace Presentacion
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    this.Digitar = false;
-
                     if (Editar == "1")
                     {
                         //
+                        this.Digitar = false;
+                        this.Botones();
+
+                        //Se procede a completar los campos de textos segun
+                        //la consulta realizada en la base de datos
                         this.TBIdbodega.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                        this.TBBodega.Select();
 
-                        //Se procede Habilitar los campos de Textos y Botones
-                        //cuando se le realice el evento Clip del Boton Ediatar/Guardar
-
-                        this.Habilitar();
-                        this.btnGuardar.Enabled = true;
-                        this.btnCancelar.Enabled = true;
-
-                        //
-                        this.Limpiar_Datos();
                     }
                     else
                     {
-                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Actualizar Datos", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Actualizar Datos en el Sistema", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                     }
                 }
             }
@@ -773,7 +904,7 @@ namespace Presentacion
         
         private void TBDiaDespacho_Leave(object sender, EventArgs e)
         {
-            this.TBDiadepagos.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDiaDespacho.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBDireccion01_Leave_1(object sender, EventArgs e)
@@ -2839,7 +2970,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-        
+
         private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
         {
             if (Digitar)
@@ -2920,5 +3051,6 @@ namespace Presentacion
         {
             this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
+
     }
 }
