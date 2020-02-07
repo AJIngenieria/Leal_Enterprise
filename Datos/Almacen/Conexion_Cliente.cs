@@ -216,7 +216,7 @@ namespace Datos
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Panel Datos Basicos
-                Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Auto;
+                Comando.Parameters.Add("@Eliminar", SqlDbType.Int).Value = Auto;
                 Comando.Parameters.Add("@Idcliente", SqlDbType.Int).Value = IDEliminar_Sql;
 
                 SqlCon.Open();

@@ -34,15 +34,41 @@ namespace Presentacion
         //Parametros para AutoCompletar los Texboxt
 
         //Panel Datos Basicos
-        public string Idbodega = "";
-        public string Idsucurzal = "";
-        public string Nombre = "";
-        public string Tipo = "";
-        public string Ciudad = "";
-        public string Telefono = "";
-        public string Movil = "";
-        public string Correo = "";
-        public string Responsable = "";
+        private string Codigo = "";
+        private string Idtipo = "";
+        private string Nombre = "";
+        private string Documento = "";
+        private string Telefono = "";
+        private string Movil = "";
+        private string Correo = "";
+        private string Pais = "";
+        private string Ciudad = "";
+        private string Departamento = "";
+
+        //Panel Datos de Envio
+        private string PaisDeEnvio = "";
+        private string CiudadDeEnvio = "";
+        private string Receptor = "";
+        private string DireccionPrincipal = "";
+        private string Direccion01 = "";
+        private string Direccion02 = "";
+        private string TelefonoDeEnvio = "";
+        private string MovilDeEnvio = "";
+        private string Observacion = "";
+
+        //Panel Datos Financieros
+        private string Credito = "";
+        private string LimiteDeCredito = "";
+        private string Diasdecredito = "";
+        private string Diasdeprorroga = "";
+        private string Interesespormora = "";
+        private string Creditominimo = "";
+        private string Creditomaximo = "";
+        private string Bancoprincipal = "";
+        private string Bancoauxiliar = "";
+        private string Cuenta01 = "";
+        private string Cuenta02 = "";
+
         public frmCliente()
         {
             InitializeComponent();
@@ -53,10 +79,10 @@ namespace Presentacion
             //Inicio de Clase y Botones
             this.Botones();
             this.Habilitar();
+            this.Combobox_Tipo();
 
             //Focus a Texboxt y Combobox
-            this.TBNombre.Select();
-            this.Combobox_Tipo();
+            this.TBIdcliente.Select();
 
             //Ocultacion de Texboxt
             this.TBIdcliente.Visible = false;
@@ -78,6 +104,7 @@ namespace Presentacion
             this.TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDocumento.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBDocumento.Text = Campo;
+
             this.TBTelefono.ReadOnly = false;
             this.TBTelefono.BackColor = Color.FromArgb(3, 155, 229);
             this.TBMovil.ReadOnly = false;
@@ -132,65 +159,62 @@ namespace Presentacion
             this.TBCreditoMinimo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCreditoMaximo.ReadOnly = false;
             this.TBCreditoMaximo.BackColor = Color.FromArgb(3, 155, 229);
-            
+
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void Limpiar_Datos()
         {
-            if (!Digitar)
-            {
-                //Panel - Datos Basicos
-                this.CBTipo.SelectedIndex = 0;
-                this.TBCodigo.Clear();
-                this.TBCodigo.Text = Campo;
-                this.TBNombre.Clear();
-                this.TBNombre.Text = Campo;
-                this.TBDocumento.Clear();
-                this.TBDocumento.Text = Campo;
+            //Panel - Datos Basicos
+            this.CBTipo.SelectedIndex = 0;
+            this.TBCodigo.Clear();
+            this.TBCodigo.Text = Campo;
+            this.TBNombre.Clear();
+            this.TBNombre.Text = Campo;
+            this.TBDocumento.Clear();
+            this.TBDocumento.Text = Campo;
 
-                this.TBTelefono.Clear();
-                this.TBMovil.Clear();
-                this.TBCorreo.Clear();
-                this.TBPais.Clear();
-                this.TBCiudad.Clear();
-                this.TBDepartamento.Clear();
+            this.TBTelefono.Clear();
+            this.TBMovil.Clear();
+            this.TBCorreo.Clear();
+            this.TBPais.Clear();
+            this.TBCiudad.Clear();
+            this.TBDepartamento.Clear();
 
-                //Datos de Envio
-                this.TBPais_01.Clear();
-                this.TBCiudad_01.Clear();
-                this.TBReceptor.Clear();
-                this.TBDireccionPrincipal.Clear();
-                this.TBDireccion01.Clear();
-                this.TBDireccion02.Clear();
-                this.TBTelefono_01.Clear();
-                this.TBMovil_01.Clear();
-                this.TBObservacion_01.Clear();
+            //Datos de Envio
+            this.TBPais_01.Clear();
+            this.TBCiudad_01.Clear();
+            this.TBReceptor.Clear();
+            this.TBDireccionPrincipal.Clear();
+            this.TBDireccion01.Clear();
+            this.TBDireccion02.Clear();
+            this.TBTelefono_01.Clear();
+            this.TBMovil_01.Clear();
+            this.TBObservacion_01.Clear();
 
-                //Datos Financieros
-                this.CBTieneCredito.SelectedIndex = 0;
-                this.TBLimiteDeCredito.Clear();
-                this.TBDiasdecredito.Clear();
-                this.TBDiasDeProrroga.Clear();
-                this.TBInteresesmora.Clear();
+            //Datos Financieros
+            this.CBTieneCredito.SelectedIndex = 0;
+            this.TBLimiteDeCredito.Clear();
+            this.TBDiasdecredito.Clear();
+            this.TBDiasDeProrroga.Clear();
+            this.TBInteresesmora.Clear();
 
-                this.TBBancoPrincipal.Clear();
-                this.TBBancoAuxiliar.Clear();
-                this.TBCuenta01.Clear();
-                this.TBCuenta02.Clear();
-                this.TBCreditoMinimo.Clear();
-                this.TBCreditoMaximo.Clear();
+            this.TBBancoPrincipal.Clear();
+            this.TBBancoAuxiliar.Clear();
+            this.TBCuenta01.Clear();
+            this.TBCuenta02.Clear();
+            this.TBCreditoMinimo.Clear();
+            this.TBCreditoMaximo.Clear();
 
-                //Se habilitan los botones a su estado por DEFAULT
-                this.Digitar = true;
-                this.Botones();
-                this.Habilitar();
+            //Se habilitan los botones a su estado por DEFAULT
+            this.Digitar = true;
+            this.Botones();
+            this.Habilitar();
 
-                //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TBNombre.Focus();
-            }
-
+            //Se realiza el FOCUS al panel y campo de texto iniciales
+            this.TCPrincipal.SelectedIndex = 0;
+            this.TBNombre.Focus();
         }
 
         private void Botones()
@@ -198,25 +222,25 @@ namespace Presentacion
             if (Digitar)
             {
                 ////El boton btnGuardar Mantendra su imagen original
-                //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = false;
                 this.btnImprimir.Enabled = false;
             }
-            else if (!Digitar)
+            else
             {
                 ////El boton btnGuardar cambiara su imagen original de Guardar a Editar
-                //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Editar;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
 
-                this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = true;
+                this.btnEliminar.Enabled = false;
                 this.btnImprimir.Enabled = false;
             }
         }
-        
+
         private void Combobox_Tipo()
         {
             try
@@ -327,7 +351,6 @@ namespace Presentacion
                     }
 
                     //Llamada de Clase
-                    this.Digitar = false;
                     this.Limpiar_Datos();
                 }
 
@@ -367,7 +390,6 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = false;
                         this.Limpiar_Datos();
                     }
                 }
@@ -384,12 +406,9 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = false;
                         this.Limpiar_Datos();
                     }
-
                 }
-
             }
             catch (Exception ex)
             {
@@ -401,17 +420,13 @@ namespace Presentacion
         {
             try
             {
-                this.Digitar = true;
                 this.Limpiar_Datos();
-                this.TBBuscar.Clear();
 
                 //Se Limpian las Filas y Columnas de la tabla
                 this.DGResultados.DataSource = null;
                 this.DGResultados.Enabled = false;
                 this.lblTotal.Text = "Datos Registrados: 0";
-
-                //Se restablece la imagen predeterminada del boton
-                //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+                this.TBBuscar.Clear();
 
             }
             catch (Exception ex)
@@ -422,7 +437,41 @@ namespace Presentacion
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+            if (Eliminar == "1")
+            {
 
+                DialogResult Opcion;
+                string Respuesta = "";
+                int Eliminacion;
+
+                Opcion = MessageBox.Show("Desea Eliminar el Registro Seleccionado", "Leal Enterprise", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+                if (Opcion == DialogResult.OK)
+                {
+                    if (DGResultados.SelectedRows.Count > 0)
+                    {
+                        Eliminacion = Convert.ToInt32(DGResultados.CurrentRow.Cells["Codigo"].Value.ToString());
+                        Respuesta = Negocio.fCliente.Eliminar(Eliminacion, 0);
+                    }
+
+                    if (Respuesta.Equals("OK"))
+                    {
+                        this.MensajeOk("Registro Eliminado Correctamente");
+                    }
+                    else
+                    {
+                        this.MensajeError(Respuesta);
+                    }
+
+                    //Botones Comunes
+                    this.TBBuscar.Clear();
+                    this.Limpiar_Datos();
+                }
+            }
+            else
+            {
+                MessageBox.Show("Acceso Denegado Para Realizar Eliminaciones en el Sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void btnImprimir_Click(object sender, EventArgs e)
@@ -455,9 +504,6 @@ namespace Presentacion
                         this.DGResultados.DataSource = null;
                         this.DGResultados.Enabled = false;
                         this.lblTotal.Text = "Datos Registrados: 0";
-
-                        this.btnEliminar.Enabled = false;
-                        this.btnImprimir.Enabled = false;
                     }
                 }
 
@@ -472,20 +518,117 @@ namespace Presentacion
             }
         }
 
+        private void TBIdcliente_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable Datos = Negocio.fCliente.Buscar(this.TBIdcliente.Text, 2);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    //Panel Datos Basicos
+                    Codigo = Datos.Rows[0][0].ToString();
+                    Idtipo = Datos.Rows[0][1].ToString();
+                    Nombre = Datos.Rows[0][2].ToString();
+                    Documento = Datos.Rows[0][3].ToString();
+                    Telefono = Datos.Rows[0][4].ToString();
+                    Movil = Datos.Rows[0][5].ToString();
+                    Correo = Datos.Rows[0][6].ToString();
+                    Pais = Datos.Rows[0][7].ToString();
+                    Ciudad = Datos.Rows[0][8].ToString();
+                    Departamento = Datos.Rows[0][9].ToString();
+
+                    //Panel Datos de Envio
+                    PaisDeEnvio = Datos.Rows[0][10].ToString();
+                    CiudadDeEnvio = Datos.Rows[0][11].ToString();
+                    Receptor = Datos.Rows[0][12].ToString();
+                    DireccionPrincipal = Datos.Rows[0][13].ToString();
+                    Direccion01 = Datos.Rows[0][14].ToString();
+                    Direccion02 = Datos.Rows[0][15].ToString();
+                    TelefonoDeEnvio = Datos.Rows[0][16].ToString();
+                    MovilDeEnvio = Datos.Rows[0][17].ToString();
+                    Observacion = Datos.Rows[0][18].ToString();
+
+                    //Panel Datos Financieros
+                    Credito = Datos.Rows[0][19].ToString();
+                    LimiteDeCredito = Datos.Rows[0][20].ToString();
+                    Diasdecredito = Datos.Rows[0][21].ToString();
+                    Diasdeprorroga = Datos.Rows[0][22].ToString();
+                    Interesespormora = Datos.Rows[0][23].ToString();
+                    Creditominimo = Datos.Rows[0][24].ToString();
+                    Creditomaximo = Datos.Rows[0][25].ToString();
+                    Bancoprincipal = Datos.Rows[0][26].ToString();
+                    Bancoauxiliar = Datos.Rows[0][27].ToString();
+                    Cuenta01 = Datos.Rows[0][28].ToString();
+                    Cuenta02 = Datos.Rows[0][29].ToString();
+
+                    //Se procede a completar los campos de texto segun las consulta
+                    //Realizada anteriormente en la base de datos
+
+
+                    //Panel Datos Basicos
+                    this.TBCodigo.Text = Codigo;
+                    this.CBTipo.SelectedValue = Idtipo;
+                    this.TBNombre.Text = Nombre;
+                    this.TBDocumento.Text = Documento;
+                    this.TBTelefono.Text = Telefono;
+                    this.TBMovil.Text = Movil;
+                    this.TBCorreo.Text = Correo;
+                    this.TBPais.Text = Pais;
+                    this.TBCiudad.Text = Ciudad;
+                    this.TBDepartamento.Text = Departamento;
+
+                    //Panel Datos de Envio
+                    this.TBPais_01.Text = PaisDeEnvio;
+                    this.TBCiudad_01.Text = CiudadDeEnvio;
+                    this.TBReceptor.Text = Receptor;
+                    this.TBDireccionPrincipal.Text = DireccionPrincipal;
+                    this.TBDireccion01.Text = Direccion01;
+                    this.TBDireccion02.Text = Direccion02;
+                    this.TBTelefono_01.Text = TelefonoDeEnvio;
+                    this.TBMovil_01.Text = MovilDeEnvio;
+                    this.TBObservacion_01.Text = Observacion;
+
+                    //Panel Datos Financieros
+                    this.CBTieneCredito.Text = Credito;
+                    this.TBLimiteDeCredito.Text = LimiteDeCredito;
+                    this.TBDiasdecredito.Text = Diasdecredito;
+                    this.TBDiasDeProrroga.Text = Diasdeprorroga;
+                    this.TBInteresesmora.Text = Interesespormora;
+                    this.TBCreditoMinimo.Text = Creditominimo;
+                    this.TBCreditoMaximo.Text = Creditomaximo;
+                    this.TBBancoPrincipal.Text = Bancoprincipal;
+                    this.TBBancoAuxiliar.Text = Bancoauxiliar;
+                    this.TBCuenta01.Text = Cuenta01;
+                    this.TBCuenta02.Text = Cuenta02;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+
+        }
+
         private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                this.Digitar = false;
-
                 if (Editar == "1")
                 {
                     //
-                    this.TBIdcliente.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                    this.TBNombre.Select();
+                    this.Digitar = false;
+                    this.Botones();
 
-                    //
-                    this.Limpiar_Datos();
+                    //Se procede a completar los campos de textos segun
+                    //la consulta realizada en la base de datos
+                    this.TBIdcliente.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
 
                 }
                 else
@@ -505,27 +648,27 @@ namespace Presentacion
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    this.Digitar = false;
-
-                    if (Editar == "1")
+                    try
                     {
-                        //
-                        this.TBIdcliente.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                        this.TBNombre.Select();
+                        if (Editar == "1")
+                        {
+                            //
+                            this.Digitar = false;
+                            this.Botones();
 
-                        //Se procede Habilitar los campos de Textos y Botones
-                        //cuando se le realice el evento Clip del Boton Ediatar/Guardar
+                            //Se procede a completar los campos de textos segun
+                            //la consulta realizada en la base de datos
+                            this.TBIdcliente.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
 
-                        this.Habilitar();
-                        this.btnGuardar.Enabled = true;
-                        this.btnCancelar.Enabled = true;
-
-                        //
-                        this.Limpiar_Datos();
+                        }
+                        else
+                        {
+                            MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Actualizar Datos en el Sistema", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        }
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Actualizar Datos", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show(ex.Message + ex.StackTrace);
                     }
                 }
             }
@@ -595,7 +738,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -614,7 +756,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -672,7 +814,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -691,7 +832,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -749,7 +890,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -768,7 +908,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -826,7 +966,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -845,7 +984,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -920,9 +1059,8 @@ namespace Presentacion
 
                         if (result == DialogResult.Yes)
                         {
-                            //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -980,7 +1118,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -999,7 +1136,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1057,7 +1194,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1076,7 +1212,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1133,7 +1269,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1152,7 +1287,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1210,7 +1345,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1229,7 +1363,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1289,7 +1423,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1308,7 +1441,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1366,7 +1499,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1385,7 +1517,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1443,7 +1575,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1462,7 +1593,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1520,7 +1651,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1539,7 +1669,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1597,7 +1727,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1616,7 +1745,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1674,7 +1803,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1693,7 +1821,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1751,7 +1879,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1770,7 +1897,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1827,8 +1954,7 @@ namespace Presentacion
                                 MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
-                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.this.Guardar_SQL();
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1847,7 +1973,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1905,7 +2031,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1924,7 +2050,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1984,7 +2110,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2003,7 +2128,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2061,7 +2186,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2080,7 +2204,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2138,7 +2262,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2157,7 +2280,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2215,7 +2338,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2234,7 +2356,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2292,7 +2414,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2311,7 +2432,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2369,7 +2490,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2388,7 +2508,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2446,7 +2566,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2465,7 +2584,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2523,7 +2642,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2542,7 +2661,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2600,7 +2719,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2619,7 +2737,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2677,7 +2795,6 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2696,7 +2813,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2730,7 +2847,7 @@ namespace Presentacion
                 this.TBCodigo.BackColor = Color.Azure;
             }
         }
-        
+
         private void TBNombre_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos

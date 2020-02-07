@@ -158,57 +158,54 @@ namespace Presentacion
 
         private void Limpiar_Datos()
         {
-            if (!Digitar)
-            {
-                //Panel - Datos Basicos
+            //Panel - Datos Basicos
 
-                this.TBIdbodega.Clear();
-                this.CBSucurzal.SelectedIndex = 0;
-                this.TBBodega.Clear();
-                //this.TBBodega.Text = Campo;
-                this.TBDescripcion.Clear();
-                this.TBDescripcion.Text = Campo;
-                this.TBDirector.Clear();
-                this.TBDirector.Text = Campo;
+            this.TBIdbodega.Clear();
+            this.CBSucurzal.SelectedIndex = 0;
+            this.TBBodega.Clear();
+            //this.TBBodega.Text = Campo;
+            this.TBDescripcion.Clear();
+            this.TBDescripcion.Text = Campo;
+            this.TBDirector.Clear();
+            this.TBDirector.Text = Campo;
 
-                this.TBCiudad.Clear();
-                this.TBMovil.Clear();
-                this.TBTelefono.Clear();
-                this.TBCorreo.Clear();
-                this.TBDireccion01.Clear();
-                this.TBDireccion02.Clear();
+            this.TBCiudad.Clear();
+            this.TBMovil.Clear();
+            this.TBTelefono.Clear();
+            this.TBCorreo.Clear();
+            this.TBDireccion01.Clear();
+            this.TBDireccion02.Clear();
 
-                //
-                this.TBRecepcion.Clear();
-                this.TBDespacho.Clear();
-                this.TBBalanzaManual.Clear();
-                this.TBInicioLaboral.Clear();
-                this.TBFinalHorarioLaboral.Clear();
-                this.TBDiadepagos.Clear();
-                this.TBDiaDespacho.Clear();
-                this.TBMedidas.Clear();
+            //
+            this.TBRecepcion.Clear();
+            this.TBDespacho.Clear();
+            this.TBBalanzaManual.Clear();
+            this.TBInicioLaboral.Clear();
+            this.TBFinalHorarioLaboral.Clear();
+            this.TBDiadepagos.Clear();
+            this.TBDiaDespacho.Clear();
+            this.TBMedidas.Clear();
 
-                //
-                this.TBPcdemeza.Clear();
-                this.TBPcportatiles.Clear();
-                this.TBImpresoraCartucho.Clear();
-                this.TBImpresoraLaser.Clear();
-                this.TBImpresoraTickets.Clear();
-                this.TBMarquilladora.Clear();
-                this.TBCelulares.Clear();
-                this.TBBalanzaDigital.Clear();
-                this.TBBalanzaManual.Clear();
-                this.TBMontaCarga.Clear();
+            //
+            this.TBPcdemeza.Clear();
+            this.TBPcportatiles.Clear();
+            this.TBImpresoraCartucho.Clear();
+            this.TBImpresoraLaser.Clear();
+            this.TBImpresoraTickets.Clear();
+            this.TBMarquilladora.Clear();
+            this.TBCelulares.Clear();
+            this.TBBalanzaDigital.Clear();
+            this.TBBalanzaManual.Clear();
+            this.TBMontaCarga.Clear();
 
-                //Se habilitan los botones a su estado por DEFAULT
-                this.Digitar = true;
-                this.Botones();
+            //Se habilitan los botones a su estado por DEFAULT
+            this.Digitar = true;
+            this.Habilitar();
+            this.Botones();
 
-                //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TCPrincipal.SelectedIndex = 0;
-                this.TBBodega.Select();
-            }
-
+            //Se realiza el FOCUS al panel y campo de texto iniciales
+            this.TCPrincipal.SelectedIndex = 0;
+            this.TBBodega.Select();
         }
 
         private void Botones()
@@ -234,7 +231,6 @@ namespace Presentacion
                 this.btnImprimir.Enabled = false;
             }
         }
-
 
         private void Combobox_Sucurzal()
         {
@@ -329,11 +325,8 @@ namespace Presentacion
                     }
 
                     //Llamada de Clase
-                    this.Digitar = true;
-                    this.Botones();
                     this.Limpiar_Datos();
                 }
-
             }
             catch (Exception ex)
             {
@@ -370,7 +363,6 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = true;
                         this.Limpiar_Datos();
                     }
                 }
@@ -387,7 +379,6 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = true;
                         this.Limpiar_Datos();
                     }
 
@@ -404,8 +395,6 @@ namespace Presentacion
         {
             try
             {
-                this.Digitar = true;
-                this.Botones();
                 this.Limpiar_Datos();
                 
                 //Se Limpian las Filas y Columnas de la tabla
@@ -413,10 +402,6 @@ namespace Presentacion
                 this.DGResultados.Enabled = false;
                 this.lblTotal.Text = "Datos Registrados: 0";
                 this.TBBuscar.Clear();
-
-                //Se restablece la imagen predeterminada del boton
-                //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-
             }
             catch (Exception ex)
             {
@@ -453,9 +438,8 @@ namespace Presentacion
                     }
 
                     //Botones Comunes
-                    this.Digitar = true;
+                    this.Limpiar_Datos();
                     this.TBBuscar.Clear();
-                    this.Botones();
 
                     //Se regresa el focus al campo principal
                     this.TCPrincipal.SelectedIndex = 0;
@@ -499,8 +483,6 @@ namespace Presentacion
                         this.DGResultados.Enabled = false;
                         this.lblTotal.Text = "Datos Registrados: 0";
 
-                        this.btnEliminar.Enabled = false;
-                        this.btnImprimir.Enabled = false;
                     }
                 }
 
@@ -1074,7 +1056,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1092,8 +1074,7 @@ namespace Presentacion
                         if (result == DialogResult.Yes)
                         {
                             //Llamada de Clase
-                            this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1150,7 +1131,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1169,7 +1150,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1226,7 +1207,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1245,7 +1226,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1302,7 +1283,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1321,7 +1302,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1378,7 +1359,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1397,7 +1378,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1454,7 +1435,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1473,7 +1454,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1530,7 +1511,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1549,7 +1530,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1606,7 +1587,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1625,7 +1606,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1682,7 +1663,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1701,7 +1682,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1758,7 +1739,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1777,7 +1758,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1834,7 +1815,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1853,7 +1834,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1910,7 +1891,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -1929,6 +1910,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
+                            this.Guardar_SQL();
                             this.Limpiar_Datos();
                         }
                         else
@@ -1986,7 +1968,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2005,7 +1987,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2062,7 +2044,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2081,6 +2063,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
+                            this.Guardar_SQL();
                             this.Limpiar_Datos();
                         }
                         else
@@ -2138,7 +2121,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2157,7 +2140,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2214,7 +2197,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2233,6 +2216,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
+                            this.Guardar_SQL();
                             this.Limpiar_Datos();
                         }
                         else
@@ -2290,7 +2274,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2309,7 +2293,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2366,7 +2350,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2385,7 +2369,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2442,7 +2426,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2461,7 +2445,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2518,7 +2502,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2537,7 +2521,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2594,7 +2578,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2613,7 +2597,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2670,7 +2654,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2689,7 +2673,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2746,7 +2730,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2765,7 +2749,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2822,7 +2806,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2841,7 +2825,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2898,7 +2882,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2917,7 +2901,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2974,7 +2958,7 @@ namespace Presentacion
 
                                 //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
                                 //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
+
                                 this.Limpiar_Datos();
                             }
                         }
@@ -2993,7 +2977,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
