@@ -82,7 +82,7 @@ namespace Presentacion
             this.Combobox_Tipo();
 
             //Focus a Texboxt y Combobox
-            this.TBIdcliente.Select();
+            this.TBNombre.Select();
 
             //Ocultacion de Texboxt
             this.TBIdcliente.Visible = false;
@@ -90,8 +90,7 @@ namespace Presentacion
 
         private void Habilitar()
         {
-            //Panel - Datos Basicos
-
+            
             this.TBCodigo.ReadOnly = false;
             this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
@@ -214,7 +213,7 @@ namespace Presentacion
 
             //Se realiza el FOCUS al panel y campo de texto iniciales
             this.TCPrincipal.SelectedIndex = 0;
-            this.TBNombre.Focus();
+            this.TBCodigo.Select();
         }
 
         private void Botones()
@@ -696,6 +695,23 @@ namespace Presentacion
         }
 
         //******************** PANEL DATOS BASICOS ********************
+
+        private void TBIdcliente_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+
+                    this.TBNombre.Select();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
 
         private void TBCodigo_KeyUp(object sender, KeyEventArgs e)
         {
@@ -2845,6 +2861,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2861,6 +2878,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBNombre.BackColor = Color.Azure;
+                this.TBNombre.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2877,6 +2895,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBDocumento.BackColor = Color.Azure;
+                this.TBDocumento.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 

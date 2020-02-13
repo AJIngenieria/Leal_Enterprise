@@ -339,6 +339,7 @@
             this.TBCodigo.Name = "TBCodigo";
             this.TBCodigo.Size = new System.Drawing.Size(125, 21);
             this.TBCodigo.TabIndex = 7;
+            this.TBCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCodigo.Enter += new System.EventHandler(this.TBCodigo_Enter);
             this.TBCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCodigo_KeyUp);
             this.TBCodigo.Leave += new System.EventHandler(this.TBCodigo_Leave);
@@ -1002,6 +1003,7 @@
             this.TBIdcliente.Size = new System.Drawing.Size(22, 21);
             this.TBIdcliente.TabIndex = 3;
             this.TBIdcliente.TextChanged += new System.EventHandler(this.TBIdcliente_TextChanged);
+            this.TBIdcliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBIdcliente_KeyUp);
             // 
             // btnImprimir
             // 

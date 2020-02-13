@@ -20,6 +20,7 @@ namespace Presentacion
 
         //Menu Principal
         public string Menu_Almacen = "";
+        public string Menu_Financiera = "";
         public string Menu_GestionHumana = "";
         public string Menu_Productos = "";
         public string Menu_Reportes = "";
@@ -46,6 +47,36 @@ namespace Presentacion
         {
             this.TSEmpleado.Text = Empleado;
             this.TSUsuario.Text = UsuarioLogueado;
+
+            this.Seguridad_SQL();
+        }
+
+        private void Seguridad_SQL()
+        {
+            if (Menu_Almacen == "0")
+            {
+                this.almacenToolStripMenuItem.Enabled = false;
+            }
+            else if (Menu_Financiera == "0")
+            {
+                this.financieraToolStripMenuItem.Enabled = false;
+            }
+            else if (Menu_GestionHumana == "0")
+            {
+                this.gestionHumanaToolStripMenuItem.Enabled = false;
+            }
+            else if (Menu_Productos == "0")
+            {
+                this.productosToolStripMenuItem.Enabled = false;
+            }
+            else if (Menu_Sistema == "0")
+            {
+                this.sistemaToolStripMenuItem.Enabled = false;
+            }
+            else if (Menu_Ventas == "0")
+            {
+                this.ventasToolStripMenuItem.Enabled = false;
+            }
         }
        
         private void datosBasicosToolStripMenuItem_Click(object sender, EventArgs e)
