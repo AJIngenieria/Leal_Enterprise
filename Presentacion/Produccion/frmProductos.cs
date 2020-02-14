@@ -2830,6 +2830,12 @@ namespace Presentacion
             }
         }
 
+
+        private void TBIdproducto_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -2839,7 +2845,7 @@ namespace Presentacion
                 if (Editar == "1")
                 {
                     //
-                    this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                    this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["ID"].Value);
                     this.TBNombre.Select();
 
                     //
@@ -2868,7 +2874,7 @@ namespace Presentacion
                     if (Editar == "1")
                     {
                         //
-                        this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                        this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["ID"].Value);
                         this.TBNombre.Select();
 
                         //Se procede Habilitar los campos de Textos y Botones
@@ -2905,5 +2911,6 @@ namespace Presentacion
                 this.PB_Imagen.Image = Image.FromFile(dialog.FileName);
             }
         }
+
     }
 }

@@ -323,5 +323,18 @@ namespace Presentacion
             frmEmpaque.Consultar = Convert.ToString(this.SQL_Consultar);
             frmEmpaque.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void ingresosDeBodegaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBodega_Ingresos frmBodega_Ingresos = new frmBodega_Ingresos();
+            frmBodega_Ingresos.MdiParent = this;
+            frmBodega_Ingresos.Show();
+
+            frmBodega_Ingresos.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmBodega_Ingresos.Editar = Convert.ToString(this.SQL_Editar);
+            frmBodega_Ingresos.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmBodega_Ingresos.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmBodega_Ingresos.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }
