@@ -24,7 +24,6 @@ namespace Entidad
         private string _Descripcion;
         private string _Lote;
         private string _Presentacion;
-        private DateTime _Vencimiento;
         private int _Estado;
 
         //Precios
@@ -59,7 +58,7 @@ namespace Entidad
         //Panel Cantidad 02
         private int _Idorigen;
         private int _Idgrupo;
-        private int _Iftipo;
+        private int _Idtipo;
         private int _Idempaque;
 
         //Datos Auxiliares
@@ -78,7 +77,6 @@ namespace Entidad
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
         public string Lote { get => _Lote; set => _Lote = value; }
         public string Presentacion { get => _Presentacion; set => _Presentacion = value; }
-        public DateTime Vencimiento { get => _Vencimiento; set => _Vencimiento = value; }
         public int Estado { get => _Estado; set => _Estado = value; }
         public string ProductoOfertable { get => _ProductoOfertable; set => _ProductoOfertable = value; }
         public string ValorFinal { get => _ValorFinal; set => _ValorFinal = value; }
@@ -105,7 +103,7 @@ namespace Entidad
         public string Peso { get => _Peso; set => _Peso = value; }
         public int Idorigen { get => _Idorigen; set => _Idorigen = value; }
         public int Idgrupo { get => _Idgrupo; set => _Idgrupo = value; }
-        public int Iftipo { get => _Iftipo; set => _Iftipo = value; }
+        public int Idtipo { get => _Idtipo; set => _Idtipo = value; }
         public int Idempaque { get => _Idempaque; set => _Idempaque = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }

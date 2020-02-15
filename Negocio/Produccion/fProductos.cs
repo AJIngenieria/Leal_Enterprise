@@ -30,7 +30,7 @@ namespace Negocio
                 int idmarca, int idbodega, int idproveedor, int idimpuesto,
 
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion, DateTime vencimiento,
+                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion,
 
                 //Precios
                 string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
@@ -66,7 +66,6 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Lote = lote;
             Obj.Presentacion = presentacion;
-            Obj.Vencimiento = vencimiento;
 
             //Precios
             Obj.ProductoOfertable = productoOfertable;
@@ -100,7 +99,7 @@ namespace Negocio
             //Panel Cantidad 02
             Obj.Idorigen = idorigen;
             Obj.Idgrupo = idgrupo;
-            Obj.Iftipo = idtipo;
+            Obj.Idtipo = idtipo;
             Obj.Idempaque = idempaque;
 
             //Datos Auxiliares
@@ -113,10 +112,10 @@ namespace Negocio
             (
 
                 //Datos Auxiliares y Llaves Primaria
-                int idmarca, int idbodega, int idproveedor, int idimpuesto,
+                int idproducto,int idmarca, int idbodega, int idproveedor, int idimpuesto,
 
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion, DateTime vencimiento,
+                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion,
 
                 //Precios
                 string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
@@ -140,6 +139,7 @@ namespace Negocio
             Entidad_Productos Obj = new Entidad_Productos();
 
             //Datos Auxiliares y Llaves Primaria
+            Obj.Idproducto = idproducto;
             Obj.Idmarca = idmarca;
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
@@ -152,7 +152,6 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Lote = lote;
             Obj.Presentacion = presentacion;
-            Obj.Vencimiento = vencimiento;
 
             //Precios
             Obj.ProductoOfertable = productoOfertable;
@@ -186,7 +185,7 @@ namespace Negocio
             //Panel Cantidad 02
             Obj.Idorigen = idorigen;
             Obj.Idgrupo = idgrupo;
-            Obj.Iftipo = idtipo;
+            Obj.Idtipo = idtipo;
             Obj.Idempaque = idempaque;
 
             //Datos Auxiliares

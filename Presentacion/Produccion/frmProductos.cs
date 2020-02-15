@@ -34,16 +34,52 @@ namespace Presentacion
 
         //Parametros para AutoCompletar los Texboxt
 
+        //Panel Datos Basicos - Llaves Primarias
+        private string Idproducto = "";
+        private string Idmarca = "";
+        private string Idorigen = "";
+        private string Idgrupo = "";
+        private string Idtipo = "";
+        private string Idempaque = "";
+        private string Idbodega = "";
+        private string Idproveedor = "";
+        private string Idimpuesto = "";
+
         //Panel Datos Basicos
-        public string Idbodega = "";
-        public string Idsucurzal = "";
-        public string Nombre = "";
-        public string Tipo = "";
-        public string Ciudad = "";
-        public string Telefono = "";
-        public string Movil = "";
-        public string Correo = "";
-        public string Responsable = "";
+        private string Codigo = "";
+        private string Barra = "";
+        private string Nombre = "";
+        private string Referencia = "";
+        private string Descripcion = "";
+        private string Lote = "";
+        private string Presentacion = "";
+
+        //Panel - Precios
+        private string Ofertable = "";
+        private string VentaFinal = "";
+        private string CompraMinima = "";
+        private string CompraMaxima = "";
+        private string ValorVenta01 = "";
+        private string ValorVenta02 = "";
+        private string ValorVenta03 = "";
+        private string Oferta01 = "";
+        private string Oferta02 = "";
+        private string Oferta03 = "";
+        private string Ubicacion = "";
+        private string Estante = "";
+        private string Nivel = "";
+        private string Imagen = "";
+
+        private string UnidadDeVenta = "";
+        private string CantidadCompraMinima = "";
+        private string CantidadCompraMaxima = "";
+        private string CantidadMinimaCliente = "";
+        private string CantidadMaximaCliente = "";
+        private string Vence = "";
+        private DateTime Fecha;
+        private string UnidadDePeso = "";
+        private string Peso = "";
+
         public frmProductos()
         {
             InitializeComponent();
@@ -69,7 +105,7 @@ namespace Presentacion
             this.CBVence.SelectedIndex = 0;
             this.CBPesoUnidad.SelectedIndex = 0;
 
-            //this.PB_Imagen.Image = Properties.Resources.Logo;
+            this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
 
         }
 
@@ -182,6 +218,8 @@ namespace Presentacion
             {
                 //Panel - Datos Basicos
 
+                this.TBIdproducto.Clear();
+
                 this.TBCodigo.Clear();
                 this.TBCodigo.Text = Campo;
                 this.TBNombre.Clear();
@@ -192,7 +230,7 @@ namespace Presentacion
                 this.TBPresentacion.Text = Campo;
                 this.TBReferencia.ReadOnly = false;
                 this.TBLotedeingreso.ReadOnly = false;
-                this.CBMarca.SelectedItem = 0;
+                this.CBMarca.SelectedIndex = 0;
                 this.CBOrigen.SelectedIndex = 0;
                 this.CBGrupo.SelectedIndex = 0;
                 this.CBTipo.SelectedIndex = 0;
@@ -234,14 +272,12 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
-                //this.PB_Imagen.Image = Properties.Resources.Logo;
+                this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBNombre.Focus();
                 this.TCPrincipal.SelectedIndex = 0;
-
             }
-
         }
 
         private void Botones()
@@ -250,7 +286,7 @@ namespace Presentacion
             {
                 ////El boton btnGuardar Mantendra su imagen original
                 //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = false;
@@ -260,14 +296,14 @@ namespace Presentacion
             {
                 ////El boton btnGuardar cambiara su imagen original de Guardar a Editar
                 //this.btnGuardar.Enabled = true;
-                //this.btnGuardar.Image = Properties.Resources.BV_Editar;
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = true;
                 this.btnImprimir.Enabled = false;
             }
         }
-        
+
         private void AutoCompletar_Combobox()
         {
             try
@@ -275,7 +311,7 @@ namespace Presentacion
                 this.CBEmpaque.DataSource = fEmpaque.Lista();
                 this.CBEmpaque.ValueMember = "Codigo";
                 this.CBEmpaque.DisplayMember = "Empaque";
-                
+
                 this.CBBodega.DataSource = fBodega.Lista();
                 this.CBBodega.ValueMember = "Codigo";
                 this.CBBodega.DisplayMember = "Bodega";
@@ -341,7 +377,7 @@ namespace Presentacion
 
                     System.IO.MemoryStream ms = new System.IO.MemoryStream();
                     this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Jpeg);
-                    this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+                    //this.PB_Imagen.Image.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
 
                     byte[] Imagen_Producto = ms.GetBuffer();
 
@@ -356,13 +392,13 @@ namespace Presentacion
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.DTFechadevencimiento.Value,this.CBOfertable.Text,this.CBVentaPublico.Text,this.TBValorCompraMinina.Text,this.TBValorCompraMaxima.Text,
-                                 this.TBValor01.Text,this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text,this.TBOferta03.Text,
+                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                                 this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
                                  //
-                                 this.TBUbicacion.Text, this.TBEstante.Text,this.TBNivel.Text,Imagen_Producto,this.TBCantidadMinima.Text,this.TBCantidadMaxima.Text,this.TBCantidadMininaCliente.Text,
-                                 this.TBCantidadMaximaCliente.Text,this.CBVence.Text,this.DTFechadevencimiento.Value,this.CBUnidad.Text,this.CBPesoUnidad.Text,this.TBPeso.Text,
-                                 Convert.ToInt32(this.CBOrigen.SelectedValue),Convert.ToInt32(this.CBGrupo.SelectedValue),Convert.ToInt32(CBTipo.SelectedValue),Convert.ToInt32(this.CBEmpaque.SelectedValue),
-                                 
+                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
+                                 this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
+                                 Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
+
                                  //
                                  1
                             );
@@ -374,13 +410,14 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
+                                 Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
                                  Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.DTFechadevencimiento.Value, this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
                                  this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
+                                 
                                  //
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
                                  this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
@@ -483,7 +520,7 @@ namespace Presentacion
         {
             try
             {
-                this.Digitar = true;
+                this.Digitar = false;
                 this.Limpiar_Datos();
                 this.TBBuscar.Clear();
 
@@ -592,7 +629,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -669,7 +706,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -746,7 +783,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -823,7 +860,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -900,7 +937,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -977,7 +1014,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1054,7 +1091,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1131,7 +1168,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1208,7 +1245,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1285,7 +1322,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1362,7 +1399,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1439,7 +1476,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1516,7 +1553,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1593,7 +1630,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1670,7 +1707,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1686,7 +1723,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-        
+
         private void TBEstante_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -1747,7 +1784,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1824,7 +1861,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1901,7 +1938,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1978,7 +2015,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2055,7 +2092,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2132,7 +2169,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2164,6 +2201,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2180,6 +2218,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBNombre.BackColor = Color.Azure;
+                this.TBNombre.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2201,6 +2240,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBDescripcion01.BackColor = Color.Azure;
+                this.TBDescripcion01.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2222,6 +2262,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBPresentacion.BackColor = Color.Azure;
+                this.TBPresentacion.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2239,6 +2280,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBValorCompraMinina.BackColor = Color.Azure;
+                this.TBValorCompraMinina.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2255,6 +2297,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBValorCompraMaxima.BackColor = Color.Azure;
+                this.TBValorCompraMaxima.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2271,6 +2314,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBValor01.BackColor = Color.Azure;
+                this.TBValor01.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2287,6 +2331,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBValor02.BackColor = Color.Azure;
+                this.TBValor02.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2303,6 +2348,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBValor03.BackColor = Color.Azure;
+                this.TBValor03.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2319,6 +2365,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBOferta01.BackColor = Color.Azure;
+                this.TBOferta01.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2335,6 +2382,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBOferta02.BackColor = Color.Azure;
+                this.TBOferta02.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2350,6 +2398,7 @@ namespace Presentacion
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBOferta03.ForeColor = Color.FromArgb(0, 0, 0);
                 this.TBOferta03.BackColor = Color.Azure;
             }
         }
@@ -2385,6 +2434,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCantidadMinima.BackColor = Color.Azure;
+                this.TBCantidadMinima.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2401,6 +2451,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCantidadMaxima.BackColor = Color.Azure;
+                this.TBCantidadMaxima.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2417,6 +2468,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCantidadMininaCliente.BackColor = Color.Azure;
+                this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2433,6 +2485,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCantidadMaximaCliente.BackColor = Color.Azure;
+                this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2449,6 +2502,7 @@ namespace Presentacion
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBPeso.BackColor = Color.Azure;
+                this.TBPeso.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2833,7 +2887,116 @@ namespace Presentacion
 
         private void TBIdproducto_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable Datos = Negocio.fProductos.Buscar(this.TBIdproducto.Text, 2);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
 
+                    //Panel Datos Basicos - Llaves Primarias
+                    Idmarca = Datos.Rows[0][0].ToString();
+                    Idorigen = Datos.Rows[0][1].ToString();
+                    Idgrupo = Datos.Rows[0][2].ToString();
+                    Idtipo = Datos.Rows[0][3].ToString();
+                    Idempaque = Datos.Rows[0][4].ToString();
+                    Idbodega = Datos.Rows[0][5].ToString();
+                    Idproveedor = Datos.Rows[0][6].ToString();
+                    Idimpuesto = Datos.Rows[0][7].ToString();
+
+                    //Panel Datos Basicos
+                    Codigo = Datos.Rows[0][8].ToString();
+                    Barra = Datos.Rows[0][9].ToString();
+                    Nombre = Datos.Rows[0][10].ToString();
+                    Referencia = Datos.Rows[0][11].ToString();
+                    Descripcion = Datos.Rows[0][12].ToString();
+                    Lote = Datos.Rows[0][13].ToString();
+                    Presentacion = Datos.Rows[0][14].ToString();
+
+                    //Panel - Precios
+                    Ofertable = Datos.Rows[0][15].ToString();
+                    VentaFinal = Datos.Rows[0][16].ToString();
+                    CompraMinima = Datos.Rows[0][17].ToString();
+                    CompraMaxima = Datos.Rows[0][18].ToString();
+                    ValorVenta01 = Datos.Rows[0][19].ToString();
+                    ValorVenta02 = Datos.Rows[0][20].ToString();
+                    ValorVenta03 = Datos.Rows[0][21].ToString();
+                    Oferta01 = Datos.Rows[0][22].ToString();
+                    Oferta02 = Datos.Rows[0][23].ToString();
+                    Oferta03 = Datos.Rows[0][24].ToString();
+                    Ubicacion = Datos.Rows[0][25].ToString();
+                    Estante = Datos.Rows[0][26].ToString();
+                    Nivel = Datos.Rows[0][27].ToString();
+                    Imagen = Datos.Rows[0][28].ToString();
+
+                    UnidadDeVenta = Datos.Rows[0][28].ToString();
+                    CantidadCompraMinima = Datos.Rows[0][29].ToString();
+                    CantidadCompraMaxima = Datos.Rows[0][30].ToString();
+                    CantidadMinimaCliente = Datos.Rows[0][31].ToString();
+                    CantidadMaximaCliente = Datos.Rows[0][32].ToString();
+                    Vence = Datos.Rows[0][33].ToString();
+                    //Fecha = Datos.Rows[0][34].date();
+                    UnidadDePeso = Datos.Rows[0][35].ToString();
+                    Peso = Datos.Rows[0][36].ToString();
+
+                    //Se procede a completar los campos de texto segun las consulta
+                    //Realizada anteriormente en la base de datos
+
+                    //Panel Datos Basicos - Llaves Primarias
+                    Convert.ToInt32(this.CBMarca.SelectedValue = Idmarca);
+                    this.CBOrigen.Text = Idorigen;
+                    this.CBGrupo.Text = Idgrupo;
+                    this.CBTipo.Text = Idtipo;
+                    this.CBEmpaque.Text = Idempaque;
+                    this.CBBodega.Text = Idbodega;
+                    this.CBProveedor.Text = Idproveedor;
+                    this.CBImpuesto.Text = Idimpuesto;
+
+                    //Panel Datos Basicos
+                    this.TBCodigo.Text = Codigo;
+                    this.TBCodigoDeBarra.Text = Barra;
+                    this.TBNombre.Text = Nombre;
+                    this.TBReferencia.Text = Referencia;
+                    this.TBDescripcion01.Text = Descripcion;
+                    this.TBLotedeingreso.Text = Lote;
+                    this.TBPresentacion.Text = Presentacion;
+
+                    //Panel - Precios
+                    this.CBOfertable.Text = Ofertable;
+                    this.CBVentaPublico.Text = VentaFinal;
+                    this.TBValorCompraMinina.Text = CompraMinima;
+                    this.TBValorCompraMaxima.Text = CompraMaxima;
+                    this.TBValor01.Text = ValorVenta01;
+                    this.TBValor02.Text = ValorVenta02;
+                    this.TBValor03.Text = ValorVenta03;
+                    this.TBOferta01.Text = Oferta01;
+                    this.TBOferta02.Text = Oferta02;
+                    this.TBOferta03.Text = Oferta03;
+                    this.TBUbicacion.Text = Ubicacion;
+                    this.TBEstante.Text = Estante;
+                    this.TBNivel.Text = Nivel;
+                    //this.PB_Imagen.ToString = Imagen;
+
+                    this.CBUnidad.Text= UnidadDeVenta;
+                    this.TBCantidadMinima.Text = CantidadCompraMinima;
+                    this.TBCantidadMaxima.Text = CantidadCompraMaxima;
+                    this.TBCantidadMininaCliente.Text = CantidadMinimaCliente;
+                    this.TBCantidadMaximaCliente.Text = CantidadMaximaCliente;
+                    this.CBVence.Text = Vence;
+                    //this.DTFechadevencimiento.MaxDate = Fecha;
+                    this.CBUnidad.Text = UnidadDePeso;
+                    this.TBPeso.Text = Peso;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -2848,8 +3011,7 @@ namespace Presentacion
                     this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["ID"].Value);
                     this.TBNombre.Select();
 
-                    //
-                    this.Limpiar_Datos();
+                    this.Botones();
 
                 }
                 else
@@ -2883,9 +3045,6 @@ namespace Presentacion
                         this.Habilitar();
                         this.btnGuardar.Enabled = true;
                         this.btnCancelar.Enabled = true;
-
-                        //
-                        this.Limpiar_Datos();
                     }
                     else
                     {
@@ -2912,5 +3071,85 @@ namespace Presentacion
             }
         }
 
+        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
+            }
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
+            }
+        }
+
+        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BR_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BR_Editar;
+            }
+        }
+
+        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
+        }
+
+        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
+        }
+
+        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
+        }
+
+        private void btnEliminar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
+        }
+
+        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
+        }
+
+        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
+        }
+
+        private void btnImprimir_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
+        }
+
+        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
+        }
     }
 }
