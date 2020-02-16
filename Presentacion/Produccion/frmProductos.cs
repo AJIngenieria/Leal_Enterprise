@@ -18,67 +18,47 @@ namespace Presentacion
         // A realizar es Editar, Guardar, Buscar,Eliminar
         private bool Digitar = true;
         public bool Filtro = true;
+
+        //Variables de Validaciones
+        public int Idempleado; //Variable para Captura el Empleado Logueado
         private string Campo = "Campo Obligatorio - Leal Enterprise";
         private string Numerico = "Campo Numerico - Leal Enterprise";
+        private string Vacio = "";
+        private string Valores = ""; //Especifica el Valor de venta Final en la base de datos 
+                                     //segun el valor seleccionado e ingresado en los campos
+
+        //********** Variables para AutoComplementar Combobox segun la Consulta en SQL **********
+
+        //Panel Datos Basicos
+        private string Empaque_SQL, Grupo_SQL, Marca_SQL, Origen_SQL, Tipo_SQL = "";
+        private string Bodega_SQL, Proveedor_SQL, Impuesto_SQL = "";
 
 
-        //Variable para Captura el Empleado Logueado
-        public int Idempleado;
+        //********** Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar **************
 
-        //Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar
         public string Guardar = "";
         public string Editar = "";
         public string Consultar = "";
         public string Eliminar = "";
         public string Imprimir = "";
 
-        //Parametros para AutoCompletar los Texboxt
+        //********** Parametros para AutoCompletar los Texboxt **********************************
 
         //Panel Datos Basicos - Llaves Primarias
-        private string Idproducto = "";
-        private string Idmarca = "";
-        private string Idorigen = "";
-        private string Idgrupo = "";
-        private string Idtipo = "";
-        private string Idempaque = "";
-        private string Idbodega = "";
-        private string Idproveedor = "";
-        private string Idimpuesto = "";
+        private string Idmarca, Idorigen, Idgrupo, Idtipo, Idempaque, Idbodega, Idproveedor, Idimpuesto = "";
 
         //Panel Datos Basicos
-        private string Codigo = "";
-        private string Barra = "";
-        private string Nombre = "";
-        private string Referencia = "";
-        private string Descripcion = "";
-        private string Lote = "";
-        private string Presentacion = "";
+        private string Codigo, Barra, Nombre, Referencia, Descripcion, Lote, Presentacion = "";
 
         //Panel - Precios
-        private string Ofertable = "";
-        private string VentaFinal = "";
-        private string CompraMinima = "";
-        private string CompraMaxima = "";
-        private string ValorVenta01 = "";
-        private string ValorVenta02 = "";
-        private string ValorVenta03 = "";
-        private string Oferta01 = "";
-        private string Oferta02 = "";
-        private string Oferta03 = "";
-        private string Ubicacion = "";
-        private string Estante = "";
-        private string Nivel = "";
-        private string Imagen = "";
+        private string Ofertable, VentaFinal, CompraMinima, CompraMaxima, ValorVenta01, ValorVenta02, ValorVenta03,
+                       Oferta01, Oferta02, Oferta03, Ubicacion, Estante, Nivel, Imagen;
 
-        private string UnidadDeVenta = "";
-        private string CantidadCompraMinima = "";
-        private string CantidadCompraMaxima = "";
-        private string CantidadMinimaCliente = "";
-        private string CantidadMaximaCliente = "";
-        private string Vence = "";
+        private string UnidadDeVenta, CantidadCompraMinima, CantidadCompraMaxima, CantidadMinimaCliente, CantidadMaximaCliente, Vence;
         private DateTime Fecha;
-        private string UnidadDePeso = "";
-        private string Peso = "";
+        private string UnidadDePeso, Peso;
+
+        //***********************************************************************************************************************
 
         public frmProductos()
         {
@@ -228,8 +208,8 @@ namespace Presentacion
                 this.TBDescripcion01.Text = Campo;
                 this.TBPresentacion.Clear();
                 this.TBPresentacion.Text = Campo;
-                this.TBReferencia.ReadOnly = false;
-                this.TBLotedeingreso.ReadOnly = false;
+                this.TBReferencia.Clear();
+                this.TBLotedeingreso.Clear();
                 this.CBMarca.SelectedIndex = 0;
                 this.CBOrigen.SelectedIndex = 0;
                 this.CBGrupo.SelectedIndex = 0;
@@ -346,6 +326,47 @@ namespace Presentacion
             }
         }
 
+        private void Vacio_SQL()
+        {
+            //Validaciones de Campos Numericos, Los cuales se deben guardar como vacio en la Base de Datos
+            //Para que no se guarden con el Texto "Campo Numerico - Leal Enterprise" el cual le indica al operador
+            //que dicho campo de texto solo acepta valores numericos
+
+            if (TBValorCompraMinina.Text == Numerico)
+            {
+                this.TBValorCompraMinina.Text = Vacio;
+            }
+            else if (TBValorCompraMaxima.Text == Numerico)
+            {
+                this.TBValorCompraMaxima.Text = Vacio;
+            }
+            else if (TBValor01.Text == Numerico)
+            {
+                this.TBValor01.Text = Vacio;
+            }
+            else if (TBValor02.Text == Numerico)
+            {
+                this.TBValor02.Text = Vacio;
+            }
+            else if (TBValor03.Text == Numerico)
+            {
+                this.TBValor03.Text = Vacio;
+            }
+            else if (TBOferta01.Text == Numerico)
+            {
+                this.TBOferta01.Text = Vacio;
+            }
+            else if (TBOferta02.Text == Numerico)
+            {
+                this.TBOferta02.Text = Vacio;
+            }
+            else if (TBOferta03.Text == Numerico)
+            {
+                this.TBOferta03.Text = Vacio;
+            }
+
+        }
+
         private void Guardar_SQL()
         {
             try
@@ -381,6 +402,9 @@ namespace Presentacion
 
                     byte[] Imagen_Producto = ms.GetBuffer();
 
+
+                    this.Vacio_SQL();
+
                     if (this.Digitar)
                     {
                         rptaDatosBasicos = fProductos.Guardar_DatosBasicos
@@ -392,7 +416,7 @@ namespace Presentacion
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                                 this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
                                  this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
                                  //
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
@@ -415,9 +439,9 @@ namespace Presentacion
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOfertable.Text, this.CBVentaPublico.Text, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                                 this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
                                  this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
-                                 
+
                                  //
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
                                  this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
@@ -566,6 +590,34 @@ namespace Presentacion
                 this.TBOferta01.ReadOnly = false;
                 this.TBOferta02.ReadOnly = false;
                 this.TBOferta03.ReadOnly = false;
+            }
+        }
+
+        private void CBVentaPublico_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBVentaPublico.SelectedIndex == 1)
+            {
+                Valores = this.TBOferta01.Text;
+            }
+            else if (CBVentaPublico.SelectedIndex == 2)
+            {
+                Valores = this.TBOferta02.Text;
+            }
+            else if (CBVentaPublico.SelectedIndex == 3)
+            {
+                Valores = this.TBOferta03.Text;
+            }
+            else if (CBVentaPublico.SelectedIndex == 4)
+            {
+                Valores = this.TBValor01.Text;
+            }
+            else if (CBVentaPublico.SelectedIndex == 5)
+            {
+                Valores = this.TBValor02.Text;
+            }
+            else if (CBVentaPublico.SelectedIndex == 6)
+            {
+                Valores = this.TBValor03.Text;
             }
         }
 
@@ -2506,7 +2558,7 @@ namespace Presentacion
             }
         }
 
-        //******************** FOCUS LEAVE CANTIDADES ********************
+        //******************** FOCUS LEAVE DATOS BASICOS ********************
         private void TBCodigo_Leave(object sender, EventArgs e)
         {
             if (TBCodigo.Text == string.Empty)
@@ -2516,7 +2568,6 @@ namespace Presentacion
                 this.TBCodigo.Text = Campo;
                 this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
@@ -2532,7 +2583,6 @@ namespace Presentacion
                 this.TBNombre.Text = Campo;
                 this.TBNombre.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 TBNombre.BackColor = Color.FromArgb(3, 155, 229);
@@ -2553,7 +2603,6 @@ namespace Presentacion
                 this.TBDescripcion01.Text = Campo;
                 this.TBDescripcion01.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 TBDescripcion01.BackColor = Color.FromArgb(3, 155, 229);
@@ -2574,7 +2623,6 @@ namespace Presentacion
                 this.TBPresentacion.Text = Campo;
                 this.TBPresentacion.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
@@ -2592,7 +2640,6 @@ namespace Presentacion
                 this.TBValorCompraMinina.Text = Numerico;
                 this.TBValorCompraMinina.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 this.TBValorCompraMinina.BackColor = Color.FromArgb(3, 155, 229);
@@ -2608,7 +2655,6 @@ namespace Presentacion
                 this.TBValorCompraMaxima.Text = Numerico;
                 this.TBValorCompraMaxima.ForeColor = Color.FromArgb(255, 255, 255);
             }
-
             else
             {
                 this.TBValorCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
@@ -2947,15 +2993,29 @@ namespace Presentacion
                     //Se procede a completar los campos de texto segun las consulta
                     //Realizada anteriormente en la base de datos
 
-                    //Panel Datos Basicos - Llaves Primarias
-                    Convert.ToInt32(this.CBMarca.SelectedValue = Idmarca);
-                    this.CBOrigen.Text = Idorigen;
-                    this.CBGrupo.Text = Idgrupo;
-                    this.CBTipo.Text = Idtipo;
-                    this.CBEmpaque.Text = Idempaque;
-                    this.CBBodega.Text = Idbodega;
-                    this.CBProveedor.Text = Idproveedor;
-                    this.CBImpuesto.Text = Idimpuesto;
+                    this.Marca_SQL = Idmarca;
+                    this.CBMarca.SelectedValue = Marca_SQL;
+
+                    this.Origen_SQL = Idorigen;
+                    this.CBOrigen.SelectedValue = Origen_SQL;
+
+                    this.Grupo_SQL = Idgrupo;
+                    this.CBGrupo.SelectedValue = Grupo_SQL;
+
+                    this.Tipo_SQL = Idtipo;
+                    this.CBTipo.SelectedValue = Tipo_SQL;
+
+                    this.Empaque_SQL = Idempaque;
+                    this.CBEmpaque.SelectedValue = Empaque_SQL;
+
+                    this.Bodega_SQL = Idbodega;
+                    this.CBBodega.SelectedValue = Bodega_SQL;
+
+                    this.Proveedor_SQL = Idproveedor;
+                    this.CBProveedor.SelectedValue = Proveedor_SQL;
+
+                    this.Impuesto_SQL = Idimpuesto;
+                    this.CBImpuesto.SelectedValue = Impuesto_SQL;
 
                     //Panel Datos Basicos
                     this.TBCodigo.Text = Codigo;
@@ -2982,7 +3042,7 @@ namespace Presentacion
                     this.TBNivel.Text = Nivel;
                     //this.PB_Imagen.ToString = Imagen;
 
-                    this.CBUnidad.Text= UnidadDeVenta;
+                    this.CBUnidad.Text = UnidadDeVenta;
                     this.TBCantidadMinima.Text = CantidadCompraMinima;
                     this.TBCantidadMaxima.Text = CantidadCompraMaxima;
                     this.TBCantidadMininaCliente.Text = CantidadMinimaCliente;
@@ -3151,5 +3211,6 @@ namespace Presentacion
         {
             this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
+
     }
 }

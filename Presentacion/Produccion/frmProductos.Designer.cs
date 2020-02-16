@@ -390,6 +390,7 @@
             // CBMarca
             // 
             this.CBMarca.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMarca.FormattingEnabled = true;
             this.CBMarca.Location = new System.Drawing.Point(101, 195);
             this.CBMarca.Name = "CBMarca";
@@ -522,6 +523,7 @@
             this.CBVentaPublico.Size = new System.Drawing.Size(242, 23);
             this.CBVentaPublico.Sorted = true;
             this.CBVentaPublico.TabIndex = 37;
+            this.CBVentaPublico.SelectedIndexChanged += new System.EventHandler(this.CBVentaPublico_SelectedIndexChanged);
             // 
             // label28
             // 

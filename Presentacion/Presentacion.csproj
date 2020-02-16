@@ -22,7 +22,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>1</ApplicationRevision>
+    <ApplicationRevision>2</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -59,6 +59,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Icono_Leal_Enterprise.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -99,6 +102,12 @@
     </Compile>
     <Compile Include="Almacen\frmBodega_Ingresos.Designer.cs">
       <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFiltro_Producto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltro_Producto.Designer.cs">
+      <DependentUpon>frmFiltro_Producto.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema\frmEquipos.cs">
       <SubType>Form</SubType>
@@ -204,6 +213,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Almacen\frmBodega_Ingresos.resx">
       <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltro_Producto.resx">
+      <DependentUpon>frmFiltro_Producto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>
@@ -363,6 +375,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Fondo_LealEnterprise.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Icono_Leal_Enterprise.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

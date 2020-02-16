@@ -59,8 +59,6 @@ namespace Presentacion
             this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBNu_Comprobante.ReadOnly = false;
             this.TBNu_Comprobante.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBProducto.ReadOnly = false;
-            this.TBProducto.BackColor = Color.FromArgb(3, 155, 229);
             this.TBValorDeCompra.ReadOnly = false;
             this.TBValorDeCompra.BackColor = Color.FromArgb(3, 155, 229);
             this.TBStockInicial.ReadOnly = false;
@@ -83,7 +81,6 @@ namespace Presentacion
 
                 this.TBCodigo.Clear();
                 this.TBNu_Comprobante.Clear();
-                this.TBProducto.Clear();
                 this.TBValorDeCompra.Clear();
                 this.TBStockInicial.Clear();
                 this.TBStockActual.Clear();
@@ -124,8 +121,8 @@ namespace Presentacion
 
         private void CrearTabla()
         {
-            this.DtDetalle.Columns.Add("ID", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.Int32"));
+            //this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("Articulo", System.Type.GetType("System.String"));
             this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
             this.DtDetalle.Columns.Add("Valor", System.Type.GetType("System.Int32"));
@@ -134,9 +131,45 @@ namespace Presentacion
             DGDetalleDeIngreso.DataSource = this.DtDetalle;
 
             this.DGDetalleDeIngreso.Columns[0].Visible = false;
+            //this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
+            //this.DGDetalleDeIngreso.Columns[1].Width = 90;
+            this.DGDetalleDeIngreso.Columns[1].HeaderText = "Articulo";
+            this.DGDetalleDeIngreso.Columns[1].Width = 305;
+            this.DGDetalleDeIngreso.Columns[2].HeaderText = "Cantidad";
+            this.DGDetalleDeIngreso.Columns[2].Width = 80;
+            this.DGDetalleDeIngreso.Columns[3].HeaderText = "Valor";
+            this.DGDetalleDeIngreso.Columns[3].Width = 90;
+            this.DGDetalleDeIngreso.Columns[4].HeaderText = "Total";
+            this.DGDetalleDeIngreso.Columns[4].Width = 90;
+
+            this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
+            this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
+            //this.DGDetalleDeIngreso.Columns[5].ReadOnly = true;
+        }
+        
+        public void Agregar_Detalle
+            (
+                int idarticulo, string nombre
+
+            //int cantidad, int precio
+            )
+        {
+            DataRow Fila = DtDetalle.NewRow();
+            Fila["Codigo"] = idarticulo;
+            //Fila["Codigo"] = codigo;
+            Fila["Articulo"] = nombre;
+            //Fila["Cantidad"] = cantidad;
+            //Fila["Valor"] = precio;
+            //Fila["Total"] = precio;
+            this.DtDetalle.Rows.Add(Fila);
+        }
+
+        private void Agregar_DetalleFiltro(int idarticulo, string codigo, string producto, string precio)
+        {
+            
             this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
             this.DGDetalleDeIngreso.Columns[1].Width = 90;
-            this.DGDetalleDeIngreso.Columns[2].HeaderText = "Articulo";
+            this.DGDetalleDeIngreso.Columns[2].HeaderText = "Producto";
             this.DGDetalleDeIngreso.Columns[2].Width = 305;
             this.DGDetalleDeIngreso.Columns[3].HeaderText = "Cantidad";
             this.DGDetalleDeIngreso.Columns[3].Width = 80;
@@ -247,22 +280,6 @@ namespace Presentacion
             MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
 
-        private void Agregar_Detalle
-            (
-                int idarticulo, string codigo, string nombre
-
-                //int cantidad, int precio
-            )
-        {
-            DataRow Fila = DtDetalle.NewRow();
-            Fila["ID"] = idarticulo;
-            Fila["Codigo"] = codigo;
-            Fila["Articulo"] = nombre;
-            //Fila["Cantidad"] = cantidad;
-            //Fila["Valor"] = precio;
-            //Fila["Total"] = precio;
-            this.DtDetalle.Rows.Add(Fila);
-        }
 
         private void TBCodigo_KeyUp(object sender, KeyEventArgs e)
         {
@@ -271,7 +288,7 @@ namespace Presentacion
                 if (e.KeyCode==Keys.Enter)
                 {
                     DataTable Tabla = new DataTable();
-                    Tabla = fProductos.Buscar(this.TBCodigo.Text.Trim(), 1);
+                    Tabla = fProductos.Buscar(this.TBCodigo.Text.Trim(), 4);
                     if (Tabla.Rows.Count <= 0)
                     {
                         this.MensajeError("no existe");
@@ -281,8 +298,8 @@ namespace Presentacion
                         this.Agregar_Detalle
                             (
                                 Convert.ToInt32(Tabla.Rows[0][0]),
-                                Convert.ToString(Tabla.Rows[0][1]),
-                                Convert.ToString(Tabla.Rows[0][2])
+                                Convert.ToString(Tabla.Rows[0][1])
+                                //Convert.ToString(Tabla.Rows[0][2])
                                 //Convert.ToInt32(Tabla.Rows[0][3]),
                                 //Convert.ToInt32(Tabla.Rows[0][4])
                             ); 
@@ -304,11 +321,6 @@ namespace Presentacion
         private void TBCodigo_Enter(object sender, EventArgs e)
         {
             this.TBCodigo.BackColor = Color.Azure;
-        }
-
-        private void TBProducto_Enter(object sender, EventArgs e)
-        {
-            this.TBProducto.BackColor = Color.Azure;
         }
 
         private void TBValorDeCompra_Enter(object sender, EventArgs e)
@@ -337,11 +349,6 @@ namespace Presentacion
             this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
         }
 
-        private void TBProducto_Leave(object sender, EventArgs e)
-        {
-            this.TBProducto.BackColor = Color.FromArgb(3, 155, 229);
-        }
-
         private void TBValorDeCompra_Leave(object sender, EventArgs e)
         {
             this.TBValorDeCompra.BackColor = Color.FromArgb(3, 155, 229);
@@ -355,6 +362,32 @@ namespace Presentacion
         private void TBStockActual_Leave(object sender, EventArgs e)
         {
             this.TBStockActual.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnImprimir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmFiltro_Producto frmFiltro_Producto = new frmFiltro_Producto();
+            frmFiltro_Producto.ShowDialog();
         }
     }
 }

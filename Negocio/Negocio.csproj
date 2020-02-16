@@ -44,7 +44,7 @@
     <Compile Include="Almacen\fBodega.cs" />
     <Compile Include="Almacen\fCliente.cs" />
     <Compile Include="Almacen\fProveedor.cs" />
-    <Compile Include="fIngreso_Bodega.cs" />
+    <Compile Include="Almacen\fIngreso_Bodega.cs" />
     <Compile Include="Sistema\fEmpaque.cs" />
     <Compile Include="Sistema\fGrupo.cs" />
     <Compile Include="Sistema\fTipoDeProducto.cs" />
