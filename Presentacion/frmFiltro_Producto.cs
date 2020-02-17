@@ -74,17 +74,26 @@ namespace Presentacion
         {
             try
             {
+                //frmBodega_Ingresos frmBI = new frmBodega_Ingresos();
+
+                //int codigo;
+                //string producto, precio;
+
+                //codigo = Convert.ToInt32(DGResultados.CurrentRow.Cells["Codigo"].Value);
+                //producto = Convert.ToString(DGResultados.CurrentRow.Cells["Producto"].Value);
+
+                //frmBI.Agregar_Detalle(codigo, producto);
+
                 frmBodega_Ingresos frmBI = new frmBodega_Ingresos();
 
-                int idarticulo;
-                string codigo, nombre, precio;
-
-                idarticulo = Convert.ToInt32(DGResultados.CurrentRow.Cells["Codigo"].Value);
-                //codigo = Convert.ToString(DGResultados.CurrentRow.Cells["Codigo"].Value);
-                nombre = Convert.ToString(DGResultados.CurrentRow.Cells["Producto"].Value);
-                //precio = Convert.ToString(DGResultados.CurrentRow.Cells["Precio"].Value);
-
-                frmBI.Agregar_Detalle(idarticulo, nombre);
+                frmBI.Agregar_Detalle
+                        (
+                            Convert.ToInt32(DGResultados.CurrentRow.Cells["Codigo"].Value),
+                            Convert.ToString(DGResultados.CurrentRow.Cells["Producto"].Value),
+                            Convert.ToString(DGResultados.CurrentRow.Cells["Precio"].Value)
+                        //Convert.ToInt32(Tabla.Rows[0][3]),
+                        //Convert.ToInt32(Tabla.Rows[0][4])
+                        );
             }
             catch (Exception ex)
             {

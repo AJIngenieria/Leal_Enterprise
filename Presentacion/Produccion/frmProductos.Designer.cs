@@ -228,6 +228,7 @@
             // 
             this.CBEmpaque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBEmpaque.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBEmpaque.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBEmpaque.FormattingEnabled = true;
             this.CBEmpaque.Items.AddRange(new object[] {
             "-",
@@ -236,16 +237,16 @@
             "Madera",
             "Otro",
             "Plastico"});
-            this.CBEmpaque.Location = new System.Drawing.Point(101, 254);
+            this.CBEmpaque.Location = new System.Drawing.Point(101, 249);
             this.CBEmpaque.Name = "CBEmpaque";
-            this.CBEmpaque.Size = new System.Drawing.Size(300, 23);
+            this.CBEmpaque.Size = new System.Drawing.Size(300, 21);
             this.CBEmpaque.Sorted = true;
             this.CBEmpaque.TabIndex = 37;
             // 
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(6, 257);
+            this.label22.Location = new System.Drawing.Point(6, 250);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(61, 15);
             this.label22.TabIndex = 36;
@@ -272,10 +273,11 @@
             // 
             this.CBOrigen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBOrigen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOrigen.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBOrigen.FormattingEnabled = true;
             this.CBOrigen.Location = new System.Drawing.Point(280, 195);
             this.CBOrigen.Name = "CBOrigen";
-            this.CBOrigen.Size = new System.Drawing.Size(121, 23);
+            this.CBOrigen.Size = new System.Drawing.Size(121, 21);
             this.CBOrigen.Sorted = true;
             this.CBOrigen.TabIndex = 34;
             // 
@@ -302,17 +304,18 @@
             // 
             this.CBGrupo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBGrupo.FormattingEnabled = true;
-            this.CBGrupo.Location = new System.Drawing.Point(101, 225);
+            this.CBGrupo.Location = new System.Drawing.Point(101, 222);
             this.CBGrupo.Name = "CBGrupo";
-            this.CBGrupo.Size = new System.Drawing.Size(121, 23);
+            this.CBGrupo.Size = new System.Drawing.Size(121, 21);
             this.CBGrupo.Sorted = true;
             this.CBGrupo.TabIndex = 25;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 225);
+            this.label13.Location = new System.Drawing.Point(6, 223);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(41, 15);
             this.label13.TabIndex = 24;
@@ -342,10 +345,11 @@
             // 
             this.CBTipo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBTipo.FormattingEnabled = true;
-            this.CBTipo.Location = new System.Drawing.Point(280, 224);
+            this.CBTipo.Location = new System.Drawing.Point(280, 222);
             this.CBTipo.Name = "CBTipo";
-            this.CBTipo.Size = new System.Drawing.Size(121, 23);
+            this.CBTipo.Size = new System.Drawing.Size(121, 21);
             this.CBTipo.Sorted = true;
             this.CBTipo.TabIndex = 20;
             // 
@@ -391,10 +395,11 @@
             // 
             this.CBMarca.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBMarca.FormattingEnabled = true;
             this.CBMarca.Location = new System.Drawing.Point(101, 195);
             this.CBMarca.Name = "CBMarca";
-            this.CBMarca.Size = new System.Drawing.Size(121, 23);
+            this.CBMarca.Size = new System.Drawing.Size(121, 21);
             this.CBMarca.Sorted = true;
             this.CBMarca.TabIndex = 6;
             // 
@@ -509,6 +514,7 @@
             // 
             this.CBVentaPublico.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBVentaPublico.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBVentaPublico.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBVentaPublico.FormattingEnabled = true;
             this.CBVentaPublico.Items.AddRange(new object[] {
             "-",
@@ -520,7 +526,7 @@
             "Valor 03"});
             this.CBVentaPublico.Location = new System.Drawing.Point(159, 35);
             this.CBVentaPublico.Name = "CBVentaPublico";
-            this.CBVentaPublico.Size = new System.Drawing.Size(242, 23);
+            this.CBVentaPublico.Size = new System.Drawing.Size(242, 21);
             this.CBVentaPublico.Sorted = true;
             this.CBVentaPublico.TabIndex = 37;
             this.CBVentaPublico.SelectedIndexChanged += new System.EventHandler(this.CBVentaPublico_SelectedIndexChanged);
@@ -538,6 +544,7 @@
             // 
             this.CBOfertable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBOfertable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBOfertable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBOfertable.FormattingEnabled = true;
             this.CBOfertable.Items.AddRange(new object[] {
             "-",
@@ -545,7 +552,7 @@
             "Si"});
             this.CBOfertable.Location = new System.Drawing.Point(159, 6);
             this.CBOfertable.Name = "CBOfertable";
-            this.CBOfertable.Size = new System.Drawing.Size(242, 23);
+            this.CBOfertable.Size = new System.Drawing.Size(242, 21);
             this.CBOfertable.Sorted = true;
             this.CBOfertable.TabIndex = 35;
             this.CBOfertable.SelectedIndexChanged += new System.EventHandler(this.CBOfertable_SelectedIndexChanged);
@@ -723,10 +730,11 @@
             // 
             this.CBBodega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBBodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBBodega.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBBodega.FormattingEnabled = true;
             this.CBBodega.Location = new System.Drawing.Point(74, 6);
             this.CBBodega.Name = "CBBodega";
-            this.CBBodega.Size = new System.Drawing.Size(331, 23);
+            this.CBBodega.Size = new System.Drawing.Size(331, 21);
             this.CBBodega.Sorted = true;
             this.CBBodega.TabIndex = 35;
             this.CBBodega.SelectedIndexChanged += new System.EventHandler(this.CBBodega_SelectedIndexChanged);
@@ -854,6 +862,7 @@
             // 
             this.CBPesoUnidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBPesoUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBPesoUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBPesoUnidad.FormattingEnabled = true;
             this.CBPesoUnidad.Items.AddRange(new object[] {
             "-",
@@ -863,7 +872,7 @@
             "TN"});
             this.CBPesoUnidad.Location = new System.Drawing.Point(111, 230);
             this.CBPesoUnidad.Name = "CBPesoUnidad";
-            this.CBPesoUnidad.Size = new System.Drawing.Size(58, 23);
+            this.CBPesoUnidad.Size = new System.Drawing.Size(58, 21);
             this.CBPesoUnidad.Sorted = true;
             this.CBPesoUnidad.TabIndex = 58;
             this.CBPesoUnidad.SelectedIndexChanged += new System.EventHandler(this.CBPesoUnidad_SelectedIndexChanged);
@@ -899,6 +908,7 @@
             // 
             this.CBVence.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBVence.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBVence.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBVence.FormattingEnabled = true;
             this.CBVence.Items.AddRange(new object[] {
             "-",
@@ -906,7 +916,7 @@
             "Si"});
             this.CBVence.Location = new System.Drawing.Point(75, 201);
             this.CBVence.Name = "CBVence";
-            this.CBVence.Size = new System.Drawing.Size(94, 23);
+            this.CBVence.Size = new System.Drawing.Size(94, 21);
             this.CBVence.Sorted = true;
             this.CBVence.TabIndex = 47;
             // 
@@ -923,10 +933,11 @@
             // 
             this.CBImpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBImpuesto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBImpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBImpuesto.FormattingEnabled = true;
             this.CBImpuesto.Location = new System.Drawing.Point(75, 172);
             this.CBImpuesto.Name = "CBImpuesto";
-            this.CBImpuesto.Size = new System.Drawing.Size(330, 23);
+            this.CBImpuesto.Size = new System.Drawing.Size(330, 21);
             this.CBImpuesto.Sorted = true;
             this.CBImpuesto.TabIndex = 45;
             // 
@@ -952,10 +963,11 @@
             // 
             this.CBProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBProveedor.FormattingEnabled = true;
             this.CBProveedor.Location = new System.Drawing.Point(75, 143);
             this.CBProveedor.Name = "CBProveedor";
-            this.CBProveedor.Size = new System.Drawing.Size(330, 23);
+            this.CBProveedor.Size = new System.Drawing.Size(330, 21);
             this.CBProveedor.Sorted = true;
             this.CBProveedor.TabIndex = 42;
             // 
@@ -1043,6 +1055,7 @@
             // 
             this.CBUnidad.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBUnidad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBUnidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBUnidad.FormattingEnabled = true;
             this.CBUnidad.Items.AddRange(new object[] {
             "-",
@@ -1055,7 +1068,7 @@
             "UNI"});
             this.CBUnidad.Location = new System.Drawing.Point(179, 6);
             this.CBUnidad.Name = "CBUnidad";
-            this.CBUnidad.Size = new System.Drawing.Size(226, 23);
+            this.CBUnidad.Size = new System.Drawing.Size(226, 21);
             this.CBUnidad.Sorted = true;
             this.CBUnidad.TabIndex = 18;
             this.CBUnidad.SelectedIndexChanged += new System.EventHandler(this.CBUnidad_SelectedIndexChanged);

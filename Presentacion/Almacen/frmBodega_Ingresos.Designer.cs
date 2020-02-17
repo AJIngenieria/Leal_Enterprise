@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBodega_Ingresos));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.TBStockActual = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.CBProveedor = new System.Windows.Forms.ComboBox();
@@ -41,12 +44,8 @@
             this.DGDetalleDeIngreso = new System.Windows.Forms.DataGridView();
             this.IDIngresos = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBStockInicial = new System.Windows.Forms.TextBox();
             this.TBNu_Comprobante = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.TBValorDeCompra = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.TBIdproducto = new System.Windows.Forms.TextBox();
@@ -58,11 +57,9 @@
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -79,12 +76,76 @@
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.tabControl1);
+            this.groupBox1.Controls.Add(this.IDIngresos);
+            this.groupBox1.Controls.Add(this.TBIdproducto);
             this.groupBox1.Location = new System.Drawing.Point(14, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(697, 519);
+            this.groupBox1.Size = new System.Drawing.Size(793, 519);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingreso a Bodegas - Leal Enterprise";
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Location = new System.Drawing.Point(174, 484);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
+            this.btnAgregar.TabIndex = 125;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
+            this.btnImprimir.Location = new System.Drawing.Point(706, 484);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(76, 26);
+            this.btnImprimir.TabIndex = 8;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
+            this.btnEliminar.Location = new System.Drawing.Point(624, 484);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(76, 26);
+            this.btnEliminar.TabIndex = 7;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
+            this.btnCancelar.Location = new System.Drawing.Point(92, 484);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(76, 26);
+            this.btnCancelar.TabIndex = 6;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
+            this.btnGuardar.Location = new System.Drawing.Point(10, 484);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(76, 26);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // tabControl1
             // 
@@ -93,29 +154,24 @@
             this.tabControl1.Location = new System.Drawing.Point(6, 20);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(681, 458);
+            this.tabControl1.Size = new System.Drawing.Size(778, 458);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.TBStockActual);
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.comboBox1);
             this.tabPage1.Controls.Add(this.label5);
             this.tabPage1.Controls.Add(this.label10);
             this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.CBProveedor);
             this.tabPage1.Controls.Add(this.lblTotal);
             this.tabPage1.Controls.Add(this.DGDetalleDeIngreso);
-            this.tabPage1.Controls.Add(this.IDIngresos);
             this.tabPage1.Controls.Add(this.label1);
-            this.tabPage1.Controls.Add(this.TBStockInicial);
             this.tabPage1.Controls.Add(this.TBNu_Comprobante);
-            this.tabPage1.Controls.Add(this.label8);
-            this.tabPage1.Controls.Add(this.TBValorDeCompra);
             this.tabPage1.Controls.Add(this.label6);
-            this.tabPage1.Controls.Add(this.label7);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label2);
-            this.tabPage1.Controls.Add(this.TBIdproducto);
             this.tabPage1.Controls.Add(this.label3);
             this.tabPage1.Controls.Add(this.CBComprobante);
             this.tabPage1.Controls.Add(this.TBCodigo);
@@ -123,33 +179,15 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 24);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(673, 430);
+            this.tabPage1.Size = new System.Drawing.Size(770, 430);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Datos de Ingreso";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // TBStockActual
-            // 
-            this.TBStockActual.Location = new System.Drawing.Point(544, 118);
-            this.TBStockActual.Name = "TBStockActual";
-            this.TBStockActual.Size = new System.Drawing.Size(122, 21);
-            this.TBStockActual.TabIndex = 124;
-            this.TBStockActual.Enter += new System.EventHandler(this.TBStockActual_Enter);
-            this.TBStockActual.Leave += new System.EventHandler(this.TBStockActual_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(465, 121);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(73, 15);
-            this.label5.TabIndex = 123;
-            this.label5.Text = "Stock Actual";
-            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(458, 38);
+            this.label10.Location = new System.Drawing.Point(458, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(31, 15);
             this.label10.TabIndex = 121;
@@ -158,7 +196,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(347, 38);
+            this.label9.Location = new System.Drawing.Point(347, 90);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(105, 15);
             this.label9.TabIndex = 120;
@@ -168,16 +206,17 @@
             // 
             this.CBProveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBProveedor.FormattingEnabled = true;
             this.CBProveedor.Location = new System.Drawing.Point(91, 6);
             this.CBProveedor.Name = "CBProveedor";
-            this.CBProveedor.Size = new System.Drawing.Size(250, 23);
+            this.CBProveedor.Size = new System.Drawing.Size(250, 21);
             this.CBProveedor.TabIndex = 119;
             // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(347, 67);
+            this.lblTotal.Location = new System.Drawing.Point(564, 90);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(126, 15);
             this.lblTotal.TabIndex = 118;
@@ -190,17 +229,17 @@
             this.DGDetalleDeIngreso.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalleDeIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalleDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGDetalleDeIngreso.Location = new System.Drawing.Point(8, 145);
+            this.DGDetalleDeIngreso.Location = new System.Drawing.Point(8, 114);
             this.DGDetalleDeIngreso.Name = "DGDetalleDeIngreso";
             this.DGDetalleDeIngreso.ReadOnly = true;
             this.DGDetalleDeIngreso.RowHeadersVisible = false;
             this.DGDetalleDeIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(658, 279);
+            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(753, 310);
             this.DGDetalleDeIngreso.TabIndex = 117;
             // 
             // IDIngresos
             // 
-            this.IDIngresos.Location = new System.Drawing.Point(626, 35);
+            this.IDIngresos.Location = new System.Drawing.Point(290, 486);
             this.IDIngresos.Name = "IDIngresos";
             this.IDIngresos.Size = new System.Drawing.Size(19, 21);
             this.IDIngresos.TabIndex = 116;
@@ -208,74 +247,38 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 9);
+            this.label1.Location = new System.Drawing.Point(6, 7);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 15);
             this.label1.TabIndex = 96;
             this.label1.Text = "Proveedor";
             // 
-            // TBStockInicial
-            // 
-            this.TBStockInicial.Location = new System.Drawing.Point(337, 118);
-            this.TBStockInicial.Name = "TBStockInicial";
-            this.TBStockInicial.Size = new System.Drawing.Size(122, 21);
-            this.TBStockInicial.TabIndex = 109;
-            this.TBStockInicial.Enter += new System.EventHandler(this.TBStockInicial_Enter);
-            this.TBStockInicial.Leave += new System.EventHandler(this.TBStockInicial_Leave);
-            // 
             // TBNu_Comprobante
             // 
-            this.TBNu_Comprobante.Location = new System.Drawing.Point(110, 64);
+            this.TBNu_Comprobante.Location = new System.Drawing.Point(511, 33);
             this.TBNu_Comprobante.Name = "TBNu_Comprobante";
-            this.TBNu_Comprobante.Size = new System.Drawing.Size(231, 21);
+            this.TBNu_Comprobante.Size = new System.Drawing.Size(250, 21);
             this.TBNu_Comprobante.TabIndex = 103;
             this.TBNu_Comprobante.Enter += new System.EventHandler(this.TBNu_Comprobante_Enter);
             this.TBNu_Comprobante.Leave += new System.EventHandler(this.TBNu_Comprobante_Leave);
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 121);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(64, 15);
-            this.label8.TabIndex = 110;
-            this.label8.Text = "V. Compra";
-            // 
-            // TBValorDeCompra
-            // 
-            this.TBValorDeCompra.Location = new System.Drawing.Point(91, 118);
-            this.TBValorDeCompra.Name = "TBValorDeCompra";
-            this.TBValorDeCompra.Size = new System.Drawing.Size(162, 21);
-            this.TBValorDeCompra.TabIndex = 111;
-            this.TBValorDeCompra.Enter += new System.EventHandler(this.TBValorDeCompra_Enter);
-            this.TBValorDeCompra.Leave += new System.EventHandler(this.TBValorDeCompra_Leave);
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 94);
+            this.label6.Location = new System.Drawing.Point(6, 87);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(84, 15);
             this.label6.TabIndex = 106;
             this.label6.Text = "Cod. Producto";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(259, 121);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(72, 15);
-            this.label7.TabIndex = 108;
-            this.label7.Text = "Stock Inicial";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 67);
+            this.label4.Location = new System.Drawing.Point(347, 33);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 15);
+            this.label4.Size = new System.Drawing.Size(147, 15);
             this.label4.TabIndex = 102;
-            this.label4.Text = "Nº Comprobante";
+            this.label4.Text = "Numero de Comprobante";
             // 
             // label2
             // 
@@ -288,7 +291,7 @@
             // 
             // TBIdproducto
             // 
-            this.TBIdproducto.Location = new System.Drawing.Point(651, 35);
+            this.TBIdproducto.Location = new System.Drawing.Point(315, 486);
             this.TBIdproducto.Name = "TBIdproducto";
             this.TBIdproducto.Size = new System.Drawing.Size(15, 21);
             this.TBIdproducto.TabIndex = 115;
@@ -296,7 +299,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 38);
+            this.label3.Location = new System.Drawing.Point(6, 33);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 15);
             this.label3.TabIndex = 100;
@@ -306,20 +309,22 @@
             // 
             this.CBComprobante.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBComprobante.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBComprobante.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBComprobante.FormattingEnabled = true;
             this.CBComprobante.Items.AddRange(new object[] {
             "Seleccione"});
-            this.CBComprobante.Location = new System.Drawing.Point(91, 35);
+            this.CBComprobante.Location = new System.Drawing.Point(91, 33);
             this.CBComprobante.Name = "CBComprobante";
-            this.CBComprobante.Size = new System.Drawing.Size(250, 23);
+            this.CBComprobante.Size = new System.Drawing.Size(250, 21);
             this.CBComprobante.TabIndex = 101;
             // 
             // TBCodigo
             // 
-            this.TBCodigo.Location = new System.Drawing.Point(91, 91);
+            this.TBCodigo.Location = new System.Drawing.Point(91, 87);
             this.TBCodigo.Name = "TBCodigo";
             this.TBCodigo.Size = new System.Drawing.Size(250, 21);
             this.TBCodigo.TabIndex = 105;
+            this.TBCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCodigo.Enter += new System.EventHandler(this.TBCodigo_Enter);
             this.TBCodigo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCodigo_KeyUp);
             this.TBCodigo.Leave += new System.EventHandler(this.TBCodigo_Leave);
@@ -327,10 +332,9 @@
             // DTAIAFechaDeIngreso
             // 
             this.DTAIAFechaDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DTAIAFechaDeIngreso.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.DTAIAFechaDeIngreso.Location = new System.Drawing.Point(511, 6);
             this.DTAIAFechaDeIngreso.Name = "DTAIAFechaDeIngreso";
-            this.DTAIAFechaDeIngreso.Size = new System.Drawing.Size(155, 21);
+            this.DTAIAFechaDeIngreso.Size = new System.Drawing.Size(250, 21);
             this.DTAIAFechaDeIngreso.TabIndex = 99;
             // 
             // tabPage2
@@ -377,74 +381,39 @@
             this.label12.TabIndex = 0;
             this.label12.Text = "Ingreso a Consultar";
             // 
-            // btnEliminar
+            // label5
             // 
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(518, 484);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(76, 26);
-            this.btnEliminar.TabIndex = 7;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 60);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(50, 15);
+            this.label5.TabIndex = 122;
+            this.label5.Text = "Bodega";
             // 
-            // btnCancelar
+            // comboBox1
             // 
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(92, 484);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 26);
-            this.btnCancelar.TabIndex = 6;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(350, 60);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(411, 21);
+            this.comboBox1.TabIndex = 123;
             // 
-            // btnGuardar
+            // textBox1
             // 
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 484);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(76, 26);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Location = new System.Drawing.Point(174, 484);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(75, 23);
-            this.btnAgregar.TabIndex = 125;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(600, 484);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(76, 26);
-            this.btnImprimir.TabIndex = 8;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.textBox1.Location = new System.Drawing.Point(91, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(250, 21);
+            this.textBox1.TabIndex = 124;
             // 
             // frmBodega_Ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(723, 540);
+            this.ClientSize = new System.Drawing.Size(821, 540);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -454,6 +423,7 @@
             this.Text = "Bodega - Ingresos de Bodega";
             this.Load += new System.EventHandler(this.frmBodega_Ingresos_Load);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -474,12 +444,8 @@
         private System.Windows.Forms.DataGridView DGDetalleDeIngreso;
         public System.Windows.Forms.TextBox IDIngresos;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox TBStockInicial;
         private System.Windows.Forms.TextBox TBNu_Comprobante;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox TBValorDeCompra;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         public System.Windows.Forms.TextBox TBIdproducto;
@@ -491,8 +457,6 @@
         private System.Windows.Forms.ComboBox CBProveedor;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox TBStockActual;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
@@ -501,5 +465,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
