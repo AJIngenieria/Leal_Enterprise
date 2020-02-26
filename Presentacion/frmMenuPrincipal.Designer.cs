@@ -174,6 +174,7 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.regularizacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -205,6 +206,7 @@
             this.toolStripSeparator4,
             this.devolucionesToolStripMenuItem,
             this.ingresosDeBodegaToolStripMenuItem,
+            this.regularizacionToolStripMenuItem,
             this.salidaDeInventarioToolStripMenuItem,
             this.trasladoDeInventarioToolStripMenuItem,
             this.toolStripSeparator5,
@@ -307,9 +309,10 @@
             this.transferenciasToolStripMenuItem1,
             this.pagoATercerosToolStripMenuItem,
             this.pagoAProveedoresToolStripMenuItem});
+            this.financieraToolStripMenuItem.Image = global::Presentacion.Properties.Resources.Financiera;
             this.financieraToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.financieraToolStripMenuItem.Name = "financieraToolStripMenuItem";
-            this.financieraToolStripMenuItem.Size = new System.Drawing.Size(73, 36);
+            this.financieraToolStripMenuItem.Size = new System.Drawing.Size(105, 36);
             this.financieraToolStripMenuItem.Text = "Financiera";
             // 
             // bancosToolStripMenuItem
@@ -1245,6 +1248,12 @@
             this.toolStripLabel7.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel7.Text = "------";
             // 
+            // regularizacionToolStripMenuItem
+            // 
+            this.regularizacionToolStripMenuItem.Name = "regularizacionToolStripMenuItem";
+            this.regularizacionToolStripMenuItem.Size = new System.Drawing.Size(189, 22);
+            this.regularizacionToolStripMenuItem.Text = "Regularizacion";
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1420,6 +1429,7 @@
         private System.Windows.Forms.ToolStripMenuItem grupoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tipoDeProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empaquesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem regularizacionToolStripMenuItem;
     }
 }
 

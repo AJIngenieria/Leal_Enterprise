@@ -233,6 +233,16 @@ namespace Presentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Financiera {
+            get {
+                object obj = ResourceManager.GetObject("Financiera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Fondo_LealEnterprise {
             get {
                 object obj = ResourceManager.GetObject("Fondo_LealEnterprise", resourceCulture);

@@ -114,7 +114,7 @@ namespace Presentacion
                             //Evaluamos si  existen los Datos
                             if (Datos.Rows.Count == 0)
                             {
-                                MessageBox.Show("Acceso Denegado al Sistema, Usuario o Contraseña Incorrecto. Si el Problema Persiste Contacte al Area de Sistemas", "Leal Academico", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                MessageBox.Show("Acceso Denegado al Sistema, Usuario o Contraseña Incorrecto. Si el Problema Persiste Contacte al Area de Sistemas", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             else
                             {

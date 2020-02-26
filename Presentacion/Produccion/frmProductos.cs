@@ -366,7 +366,7 @@ namespace Presentacion
             }
 
         }
-
+        
         private void Guardar_SQL()
         {
             try
@@ -387,9 +387,31 @@ namespace Presentacion
                 {
                     MensajeError("Ingrese el Codigo del Producto");
                 }
+
+                else if (this.CBGrupo.SelectedIndex == 0)
+                {
+                    MensajeError("Seleccione el Grupo al cual pertenece el Producto");
+                }
+
+                // <<<<<<------ Panel Ubicaciones ------>>>>>
+
                 else if (this.CBBodega.SelectedIndex == 0)
                 {
                     MensajeError("Seleccione la Bodega donde se Ubicara el Producto");
+                }
+
+                // <<<<<<------ Panel Precios ------>>>>>
+
+                else if (this.CBOfertable.SelectedIndex == 0)
+                {
+                    MensajeError("Por favor Seleccione si el Producto contine valores de Oferta al Publico");
+                    this.TCPrincipal.SelectedIndex = 1;
+                }
+
+                else if (this.CBVentaPublico.SelectedIndex == 0)
+                {
+                    MensajeError("Por favor Seleccione el valor de Venta Final al Publico");
+                    this.TCPrincipal.SelectedIndex = 1;
                 }
 
                 else
@@ -2642,6 +2664,10 @@ namespace Presentacion
             }
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBValorCompraMinina.Text);
+                this.TBValorCompraMinina.Text = Formato.ToString("##,##0.00");
+
                 this.TBValorCompraMinina.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2657,6 +2683,10 @@ namespace Presentacion
             }
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBValorCompraMaxima.Text);
+                this.TBValorCompraMaxima.Text = Formato.ToString("##,##0.00");
+
                 this.TBValorCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2673,6 +2703,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBValor01.Text);
+                this.TBValor01.Text = Formato.ToString("##,##0.00");
+
                 this.TBValor01.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2689,6 +2723,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBValor02.Text);
+                this.TBValor02.Text = Formato.ToString("##,##0.00");
+
                 this.TBValor02.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2705,6 +2743,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBValor03.Text);
+                this.TBValor03.Text = Formato.ToString("##,##0.00");
+
                 this.TBValor03.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2721,6 +2763,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBOferta01.Text);
+                this.TBOferta01.Text = Formato.ToString("##,##0.00");
+
                 this.TBOferta01.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2737,6 +2783,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBOferta02.Text);
+                this.TBOferta02.Text = Formato.ToString("##,##0.00");
+
                 this.TBOferta02.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
@@ -2753,6 +2803,10 @@ namespace Presentacion
 
             else
             {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBOferta03.Text);
+                this.TBOferta03.Text = Formato.ToString("##,##0.00");
+
                 this.TBOferta03.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
