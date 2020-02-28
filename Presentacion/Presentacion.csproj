@@ -79,28 +79,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Almacen\frmBodega.cs">
+    <Compile Include="Archivo\frmBodega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\frmBodega.Designer.cs">
+    <Compile Include="Archivo\frmBodega.Designer.cs">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </Compile>
-    <Compile Include="Financiera\frmImpuesto.cs">
+    <Compile Include="Archivo\frmImpuesto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Financiera\frmImpuesto.Designer.cs">
+    <Compile Include="Archivo\frmImpuesto.Designer.cs">
       <DependentUpon>frmImpuesto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\frmCliente.cs">
+    <Compile Include="Archivo\frmCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\frmCliente.Designer.cs">
+    <Compile Include="Archivo\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\frmBodega_Ingresos.cs">
+    <Compile Include="Archivo\frmBodega_Ingresos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\frmBodega_Ingresos.Designer.cs">
+    <Compile Include="Archivo\frmBodega_Ingresos.Designer.cs">
       <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
     </Compile>
     <Compile Include="Filtros\frmFiltro_Producto.cs">
@@ -109,10 +109,10 @@
     <Compile Include="Filtros\frmFiltro_Producto.Designer.cs">
       <DependentUpon>frmFiltro_Producto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\frmRegularizacion.cs">
+    <Compile Include="Archivo\frmRegularizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\frmRegularizacion.Designer.cs">
+    <Compile Include="Archivo\frmRegularizacion.Designer.cs">
       <DependentUpon>frmRegularizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmFacturacion.cs">
@@ -133,16 +133,16 @@
     <Compile Include="Sistema\frmEmpaque.Designer.cs">
       <DependentUpon>frmEmpaque.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\frmTipoDeProducto.cs">
+    <Compile Include="Archivo\frmTipoDeProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\frmTipoDeProducto.Designer.cs">
+    <Compile Include="Archivo\frmTipoDeProducto.Designer.cs">
       <DependentUpon>frmTipoDeProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\frmGrupo.cs">
+    <Compile Include="Archivo\frmGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\frmGrupo.Designer.cs">
+    <Compile Include="Archivo\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema\frmOrigen.cs">
@@ -157,16 +157,16 @@
     <Compile Include="frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Almacen\frmProveedor.cs">
+    <Compile Include="Archivo\frmProveedor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Almacen\frmProveedor.Designer.cs">
+    <Compile Include="Archivo\frmProveedor.Designer.cs">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\frmMarca.cs">
+    <Compile Include="Archivo\frmMarca.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\frmMarca.Designer.cs">
+    <Compile Include="Archivo\frmMarca.Designer.cs">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </Compile>
     <Compile Include="Sistema\frmTipoDeCliente.cs">
@@ -175,22 +175,22 @@
     <Compile Include="Sistema\frmTipoDeCliente.Designer.cs">
       <DependentUpon>frmTipoDeCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\frmProductos.cs">
+    <Compile Include="Archivo\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\frmProductos.Designer.cs">
+    <Compile Include="Archivo\frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produccion\frmServicio.cs">
+    <Compile Include="Archivo\frmServicio.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produccion\frmServicio.Designer.cs">
+    <Compile Include="Archivo\frmServicio.Designer.cs">
       <DependentUpon>frmServicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\frmSucurzal.cs">
+    <Compile Include="Archivo\frmSucurzal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Sistema\frmSucurzal.Designer.cs">
+    <Compile Include="Archivo\frmSucurzal.Designer.cs">
       <DependentUpon>frmSucurzal.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestion Humana\frmDepartamento.cs">
@@ -214,22 +214,22 @@
     <Compile Include="Sistema\Informacion_Computer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Almacen\frmBodega.resx">
+    <EmbeddedResource Include="Archivo\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Financiera\frmImpuesto.resx">
+    <EmbeddedResource Include="Archivo\frmImpuesto.resx">
       <DependentUpon>frmImpuesto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\frmCliente.resx">
+    <EmbeddedResource Include="Archivo\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\frmBodega_Ingresos.resx">
+    <EmbeddedResource Include="Archivo\frmBodega_Ingresos.resx">
       <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Producto.resx">
       <DependentUpon>frmFiltro_Producto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\frmRegularizacion.resx">
+    <EmbeddedResource Include="Archivo\frmRegularizacion.resx">
       <DependentUpon>frmRegularizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
@@ -241,10 +241,10 @@
     <EmbeddedResource Include="Sistema\frmEmpaque.resx">
       <DependentUpon>frmEmpaque.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\frmTipoDeProducto.resx">
+    <EmbeddedResource Include="Archivo\frmTipoDeProducto.resx">
       <DependentUpon>frmTipoDeProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\frmGrupo.resx">
+    <EmbeddedResource Include="Archivo\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmOrigen.resx">
@@ -253,22 +253,22 @@
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Almacen\frmProveedor.resx">
+    <EmbeddedResource Include="Archivo\frmProveedor.resx">
       <DependentUpon>frmProveedor.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\frmMarca.resx">
+    <EmbeddedResource Include="Archivo\frmMarca.resx">
       <DependentUpon>frmMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmTipoDeCliente.resx">
       <DependentUpon>frmTipoDeCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\frmProductos.resx">
+    <EmbeddedResource Include="Archivo\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produccion\frmServicio.resx">
+    <EmbeddedResource Include="Archivo\frmServicio.resx">
       <DependentUpon>frmServicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\frmSucurzal.resx">
+    <EmbeddedResource Include="Archivo\frmSucurzal.resx">
       <DependentUpon>frmSucurzal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion Humana\frmDepartamento.resx">
@@ -385,6 +385,8 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Financiera\" />
+    <Folder Include="Produccion\" />
     <Folder Include="SQL Server\" />
   </ItemGroup>
   <ItemGroup>

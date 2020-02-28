@@ -41,25 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Almacen\Conexion_Bodega.cs" />
-    <Compile Include="Almacen\Conexion_Cliente.cs" />
-    <Compile Include="Almacen\Conexion_Proveedor.cs" />
-    <Compile Include="Almacen\Conexion_Marca.cs" />
-    <Compile Include="Almacen\Conexion_Bodega_Ingresos.cs" />
+    <Compile Include="Archivo\Conexion_Bodega.cs" />
+    <Compile Include="Archivo\Conexion_Cliente.cs" />
+    <Compile Include="Archivo\Conexion_Proveedor.cs" />
+    <Compile Include="Archivo\Conexion_Marca.cs" />
+    <Compile Include="Archivo\Conexion_Bodega_Ingresos.cs" />
     <Compile Include="Sistema\Conexion_Empaque.cs" />
-    <Compile Include="Sistema\Conexion_TipoDeProducto.cs" />
-    <Compile Include="Sistema\Conexion_Grupo.cs" />
+    <Compile Include="Archivo\Conexion_TipoDeProducto.cs" />
+    <Compile Include="Archivo\Conexion_Grupo.cs" />
     <Compile Include="Sistema\Conexion_Origen.cs" />
     <Compile Include="Produccion\Conexion_Producto.cs" />
     <Compile Include="Sistema\Conexion_TipoDeCliente.cs" />
     <Compile Include="Gestion Humana\Conexion_Empleados.cs" />
     <Compile Include="Financiera\Conexion_Impuesto.cs" />
-    <Compile Include="Produccion\Conexion_Servicio.cs" />
+    <Compile Include="Archivo\Conexion_Servicio.cs" />
     <Compile Include="Sistema\Conexion_Equipos.cs" />
     <Compile Include="Sistema\Conexion_Usuarios.cs" />
     <Compile Include="Conexiones_SQL\Conexion_SQLSeguridad.cs" />
     <Compile Include="Conexiones_SQL\Conexion_SQLServer.cs" />
-    <Compile Include="Sistema\Conexion_Sucurzal.cs" />
+    <Compile Include="Archivo\Conexion_Sucurzal.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

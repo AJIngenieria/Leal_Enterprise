@@ -196,15 +196,7 @@ namespace Presentacion
 
         private void tipoDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmTipoDeProducto frmTipoDeProducto = new frmTipoDeProducto();
-            frmTipoDeProducto.MdiParent = this;
-            frmTipoDeProducto.Show();
-
-            frmTipoDeProducto.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmTipoDeProducto.Editar = Convert.ToString(this.SQL_Editar);
-            frmTipoDeProducto.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmTipoDeProducto.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmTipoDeProducto.Imprimir = Convert.ToString(this.SQL_Imprimir);
+            
         }
 
         private void empaquesToolStripMenuItem_Click(object sender, EventArgs e)
@@ -335,6 +327,19 @@ namespace Presentacion
             frmImpuesto.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmImpuesto.Consultar = Convert.ToString(this.SQL_Consultar);
             frmImpuesto.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void tiposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTipoDeProducto frmTipoDeProducto = new frmTipoDeProducto();
+            frmTipoDeProducto.MdiParent = this;
+            frmTipoDeProducto.Show();
+
+            frmTipoDeProducto.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmTipoDeProducto.Editar = Convert.ToString(this.SQL_Editar);
+            frmTipoDeProducto.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmTipoDeProducto.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmTipoDeProducto.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
     }
 }
