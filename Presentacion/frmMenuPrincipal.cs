@@ -22,7 +22,7 @@ namespace Presentacion
         public string Menu_Almacen = "";
         public string Menu_Financiera = "";
         public string Menu_GestionHumana = "";
-        public string Menu_Productos = "";
+        public string Menu_Inventario = "";
         public string Menu_Reportes = "";
         public string Menu_Sistema = "";
         public string Menu_Ventas = "";
@@ -55,7 +55,7 @@ namespace Presentacion
         {
             if (Menu_Almacen == "0")
             {
-                this.almacenToolStripMenuItem.Enabled = false;
+                this.ficheroToolStripMenuItem.Enabled = false;
             }
             else if (Menu_Financiera == "0")
             {
@@ -65,9 +65,9 @@ namespace Presentacion
             {
                 this.gestionHumanaToolStripMenuItem.Enabled = false;
             }
-            else if (Menu_Productos == "0")
+            else if (Menu_Inventario == "0")
             {
-                this.productosToolStripMenuItem.Enabled = false;
+                this.operacionesToolStripMenuItem.Enabled = false;
             }
             else if (Menu_Sistema == "0")
             {
@@ -103,32 +103,6 @@ namespace Presentacion
             frmDepartamento.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmDepartamento.Consultar = Convert.ToString(this.SQL_Consultar);
             frmDepartamento.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
-        private void datosBasicosToolStripMenuItem2_Click(object sender, EventArgs e)
-        {
-            frmProductos frmProductos = new frmProductos();
-            frmProductos.MdiParent = this;
-            frmProductos.Show();
-
-            frmProductos.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmProductos.Editar = Convert.ToString(this.SQL_Editar);
-            frmProductos.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmProductos.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmProductos.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
-        private void impuestosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmImpuesto frmImpuesto = new frmImpuesto();
-            frmImpuesto.MdiParent = this;
-            frmImpuesto.Show();
-
-            frmImpuesto.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmImpuesto.Editar = Convert.ToString(this.SQL_Editar);
-            frmImpuesto.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmImpuesto.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmImpuesto.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
         private void serviciosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -176,45 +150,6 @@ namespace Presentacion
             }
         }
 
-        private void bodegaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBodega frmBodega = new frmBodega();
-            frmBodega.MdiParent = this;
-            frmBodega.Show();
-
-            frmBodega.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmBodega.Editar = Convert.ToString(this.SQL_Editar);
-            frmBodega.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmBodega.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmBodega.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
-        private void sucurzalesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmSucurzal frmSucurzal = new frmSucurzal();
-            frmSucurzal.MdiParent = this;
-            frmSucurzal.Show();
-
-            frmSucurzal.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmSucurzal.Editar = Convert.ToString(this.SQL_Editar);
-            frmSucurzal.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmSucurzal.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmSucurzal.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
-        private void clienteToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmCliente frmCliente = new frmCliente();
-            frmCliente.MdiParent = this;
-            frmCliente.Show();
-
-            frmCliente.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmCliente.Editar = Convert.ToString(this.SQL_Editar);
-            frmCliente.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmCliente.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-        
         private void tipoDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmTipoDeCliente frmTipoDeCliente = new frmTipoDeCliente();
@@ -233,19 +168,6 @@ namespace Presentacion
 
         }
 
-        private void proveedorToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmProveedor frmProveedor = new frmProveedor();
-            frmProveedor.MdiParent = this;
-            frmProveedor.Show();
-
-            frmProveedor.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmProveedor.Editar = Convert.ToString(this.SQL_Editar);
-            frmProveedor.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmProveedor.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmProveedor.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
         private void tipoDeClienteToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmTipoDeCliente frmTipoDeCliente = new frmTipoDeCliente();
@@ -259,19 +181,6 @@ namespace Presentacion
             frmTipoDeCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
-        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmMarca frmMarca = new frmMarca();
-            frmMarca.MdiParent = this;
-            frmMarca.Show();
-
-            frmMarca.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmMarca.Editar = Convert.ToString(this.SQL_Editar);
-            frmMarca.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmMarca.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmMarca.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
         private void origenesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmOrigenes frmAuxiliares = new frmOrigenes();
@@ -283,19 +192,6 @@ namespace Presentacion
             frmAuxiliares.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmAuxiliares.Consultar = Convert.ToString(this.SQL_Consultar);
             frmAuxiliares.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
-        private void grupoToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmGrupo frmGrupo = new frmGrupo();
-            frmGrupo.MdiParent = this;
-            frmGrupo.Show();
-
-            frmGrupo.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmGrupo.Editar = Convert.ToString(this.SQL_Editar);
-            frmGrupo.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmGrupo.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmGrupo.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
         private void tipoDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -335,6 +231,110 @@ namespace Presentacion
             frmBodega_Ingresos.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmBodega_Ingresos.Consultar = Convert.ToString(this.SQL_Consultar);
             frmBodega_Ingresos.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void bodegaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmBodega frmBodega = new frmBodega();
+            frmBodega.MdiParent = this;
+            frmBodega.Show();
+
+            frmBodega.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmBodega.Editar = Convert.ToString(this.SQL_Editar);
+            frmBodega.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmBodega.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmBodega.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void clienteToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmCliente frmCliente = new frmCliente();
+            frmCliente.MdiParent = this;
+            frmCliente.Show();
+
+            frmCliente.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmCliente.Editar = Convert.ToString(this.SQL_Editar);
+            frmCliente.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmCliente.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void proveedorToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProveedor frmProveedor = new frmProveedor();
+            frmProveedor.MdiParent = this;
+            frmProveedor.Show();
+
+            frmProveedor.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmProveedor.Editar = Convert.ToString(this.SQL_Editar);
+            frmProveedor.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmProveedor.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmProveedor.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void sucurzalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSucurzal frmSucurzal = new frmSucurzal();
+            frmSucurzal.MdiParent = this;
+            frmSucurzal.Show();
+
+            frmSucurzal.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmSucurzal.Editar = Convert.ToString(this.SQL_Editar);
+            frmSucurzal.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmSucurzal.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmSucurzal.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmProductos frmProductos = new frmProductos();
+            frmProductos.MdiParent = this;
+            frmProductos.Show();
+
+            frmProductos.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmProductos.Editar = Convert.ToString(this.SQL_Editar);
+            frmProductos.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmProductos.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmProductos.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void gruposToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmGrupo frmGrupo = new frmGrupo();
+            frmGrupo.MdiParent = this;
+            frmGrupo.Show();
+
+            frmGrupo.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmGrupo.Editar = Convert.ToString(this.SQL_Editar);
+            frmGrupo.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmGrupo.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmGrupo.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMarca frmMarca = new frmMarca();
+            frmMarca.MdiParent = this;
+            frmMarca.Show();
+
+            frmMarca.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmMarca.Editar = Convert.ToString(this.SQL_Editar);
+            frmMarca.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmMarca.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmMarca.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void impuestosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            frmImpuesto frmImpuesto = new frmImpuesto();
+            frmImpuesto.MdiParent = this;
+            frmImpuesto.Show();
+
+            frmImpuesto.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmImpuesto.Editar = Convert.ToString(this.SQL_Editar);
+            frmImpuesto.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmImpuesto.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmImpuesto.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
     }
 }

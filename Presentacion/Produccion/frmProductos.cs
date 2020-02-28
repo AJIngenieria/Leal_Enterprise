@@ -237,8 +237,8 @@ namespace Presentacion
 
                 //Panel - Cantidades - Otros Datos
                 this.CBUnidad.SelectedIndex = 0;
-                this.CBProveedor.SelectedIndex = 0;
-                this.CBImpuesto.SelectedIndex = 0;
+                //this.CBProveedor.SelectedIndex = 0;
+                //this.CBImpuesto.SelectedIndex = 0;
                 this.CBVence.SelectedIndex = 0;
                 this.CBPesoUnidad.SelectedIndex = 0;
 
@@ -300,10 +300,6 @@ namespace Presentacion
                 this.CBGrupo.ValueMember = "Codigo";
                 this.CBGrupo.DisplayMember = "Grupo";
 
-                this.CBImpuesto.DataSource = fImpuesto.Lista();
-                this.CBImpuesto.ValueMember = "Codigo";
-                this.CBImpuesto.DisplayMember = "Impuesto";
-
                 this.CBMarca.DataSource = fMarca.Lista();
                 this.CBMarca.ValueMember = "Codigo";
                 this.CBMarca.DisplayMember = "Marca";
@@ -311,10 +307,6 @@ namespace Presentacion
                 this.CBOrigen.DataSource = fOrigen.Lista();
                 this.CBOrigen.ValueMember = "Codigo";
                 this.CBOrigen.DisplayMember = "Origen";
-
-                this.CBProveedor.DataSource = fProveedor.Lista();
-                this.CBProveedor.ValueMember = "Codigo";
-                this.CBProveedor.DisplayMember = "Proveedor";
 
                 this.CBTipo.DataSource = fTipoDeProducto.Lista();
                 this.CBTipo.ValueMember = "Codigo";
@@ -429,49 +421,49 @@ namespace Presentacion
 
                     if (this.Digitar)
                     {
-                        rptaDatosBasicos = fProductos.Guardar_DatosBasicos
+                        //rptaDatosBasicos = fProductos.Guardar_DatosBasicos
 
-                            (
-                                 //Datos Auxiliares
-                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
-                                 Convert.ToInt32(this.CBImpuesto.SelectedValue),
+                        //    (
+                        //         //Datos Auxiliares
+                        //         Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
+                        //         Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
-                                 //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
-                                 this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
-                                 //
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
-                                 this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
-                                 Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
+                        //         //Panel Datos Basicos
+                        //         this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
+                        //         this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                        //         this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
+                        //         //
+                        //         this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
+                        //         this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
+                        //         Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
 
-                                 //
-                                 1
-                            );
+                        //         //
+                        //         1
+                        //    );
                     }
 
                     else
                     {
-                        rptaDatosBasicos = fProductos.Editar_DatosBasicos
+                        //rptaDatosBasicos = fProductos.Editar_DatosBasicos
 
-                            (
-                                 //Datos Auxiliares
-                                 Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
-                                 Convert.ToInt32(this.CBImpuesto.SelectedValue),
+                        //    (
+                        //         ////Datos Auxiliares
+                        //         //Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.CBProveedor.SelectedValue),
+                        //         //Convert.ToInt32(this.CBImpuesto.SelectedValue),
 
-                                 //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
-                                 this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
-                                 this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
+                        //         ////Panel Datos Basicos
+                        //         //this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBLotedeingreso.Text, this.TBPresentacion.Text,
+                        //         //this.CBOfertable.Text, Valores, this.TBValorCompraMinina.Text, this.TBValorCompraMaxima.Text,
+                        //         //this.TBValor01.Text, this.TBValor02.Text, this.TBValor03.Text, this.TBOferta01.Text, this.TBOferta02.Text, this.TBOferta03.Text,
 
-                                 //
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
-                                 this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
-                                 Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
+                        //         ////
+                        //         //this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto, this.TBCantidadMinima.Text, this.TBCantidadMaxima.Text, this.TBCantidadMininaCliente.Text,
+                        //         //this.TBCantidadMaximaCliente.Text, this.CBVence.Text, this.DTFechadevencimiento.Value, this.CBUnidad.Text, this.CBPesoUnidad.Text, this.TBPeso.Text,
+                        //         //Convert.ToInt32(this.CBOrigen.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(CBTipo.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue),
 
-                                 //
-                                 2
-                            );
+                        //         ////
+                        //         //2
+                        //    );
                     }
 
                     if (rptaDatosBasicos.Equals("OK"))
@@ -2651,6 +2643,38 @@ namespace Presentacion
             }
         }
 
+        private void CBImportado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBImportado.SelectedIndex == 0)
+            {
+                this.TBValorImportacion.Enabled = false;
+            }
+            else if (CBImportado.SelectedIndex == 1)
+            {
+                this.TBValorImportacion.Enabled = true;
+            }
+            else if (CBImportado.SelectedIndex == 2)
+            {
+                this.TBValorImportacion.Enabled = true;
+            }
+        }
+
+        private void CBExportacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (CBExportacion.SelectedIndex == 0)
+            {
+                this.TBValorExportacion.Enabled = false;
+            }
+            else if (CBExportacion.SelectedIndex == 1)
+            {
+                this.TBValorExportacion.Enabled = true;
+            }
+            else if (CBExportacion.SelectedIndex == 2)
+            {
+                this.TBValorExportacion.Enabled = true;
+            }
+        }
+
         //******************** FOCUS LEAVE PRECIOS ********************
 
         private void TBValorCompraMinina_Leave(object sender, EventArgs e)
@@ -3066,14 +3090,14 @@ namespace Presentacion
                     this.CBBodega.SelectedValue = Bodega_SQL;
 
                     this.Proveedor_SQL = Idproveedor;
-                    this.CBProveedor.SelectedValue = Proveedor_SQL;
+                    //this.CBProveedor.SelectedValue = Proveedor_SQL;
 
                     this.Impuesto_SQL = Idimpuesto;
-                    this.CBImpuesto.SelectedValue = Impuesto_SQL;
+                    //this.CBImpuesto.SelectedValue = Impuesto_SQL;
 
                     //Panel Datos Basicos
                     this.TBCodigo.Text = Codigo;
-                    this.TBCodigoDeBarra.Text = Barra;
+                    //this.TBCodigoDeBarra.Text = Barra;
                     this.TBNombre.Text = Nombre;
                     this.TBReferencia.Text = Referencia;
                     this.TBDescripcion01.Text = Descripcion;
