@@ -50,7 +50,7 @@ namespace Presentacion
         //Panel Datos Basicos
         private string Codigo, Barra, Nombre, Referencia, Descripcion, Lote, Presentacion = "";
 
-        //Panel - Precios
+        //Panel - Valores
         private string Ofertable, VentaFinal, CompraMinima, CompraMaxima, ValorVenta01, ValorVenta02,
                        Oferta01, Oferta02, Ubicacion, Estante, Nivel, Imagen;
 
@@ -103,23 +103,20 @@ namespace Presentacion
             this.TBDescripcion01.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDescripcion01.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBDescripcion01.Text = Campo;
+            this.TBProveedor.ReadOnly = false;
+            this.TBProveedor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBProveedor.Text = Campo;
+            this.TBImpuesto.ReadOnly = false;
+            this.TBImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
+            this.TBImpuesto.Text = Campo;
 
             this.TBReferencia.ReadOnly = false;
             this.TBReferencia.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBLotedeingreso.ReadOnly = false;
-            this.TBLotedeingreso.BackColor = Color.FromArgb(3, 155, 229);
             this.TBPresentacion.ReadOnly = false;
             this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBPresentacion.ReadOnly = false;
-            this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBPresentacion.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBPresentacion.Text = Campo;
 
-            //
-            //this.TBValorExportacion.Enabled = false;
-            //this.TBValorExportacion.BackColor = Color.FromArgb(72, 209, 204);
-            //this.TBValorImportacion.Enabled = false;
-            //this.TBValorImportacion.BackColor = Color.FromArgb(72, 209, 204);
+
+            //Panel - Valores
             
             this.TBValorCompraMinina.ReadOnly = false;
             this.TBValorCompraMinina.BackColor = Color.FromArgb(3, 155, 229);
@@ -146,31 +143,25 @@ namespace Presentacion
             this.TBOferta02.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBOferta02.Text = Numerico;
 
-            //
-            this.TBUbicacion.ReadOnly = false;
-            this.TBUbicacion.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBEstante.ReadOnly = false;
-            this.TBEstante.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBNivel.ReadOnly = false;
-            this.TBNivel.BackColor = Color.FromArgb(3, 155, 229);
 
-            //Panel - Otros Datos
-            this.TBCantidadMinima.ReadOnly = false;
-            this.TBCantidadMinima.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCantidadMinima.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCantidadMinima.Text = Numerico;
-            this.TBCantidadMaxima.ReadOnly = false;
-            this.TBCantidadMaxima.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCantidadMaxima.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCantidadMaxima.Text = Numerico;
-            this.TBValorCompraMinina.ReadOnly = false;
-            this.TBValorCompraMinina.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorCompraMinina.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorCompraMinina.Text = Numerico;
-            this.TBValorCompraMaxima.ReadOnly = false;
-            this.TBValorCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorCompraMaxima.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorCompraMaxima.Text = Numerico;
+            this.TBImpuesto_ValorInicial.ReadOnly = false;
+            this.TBImpuesto_ValorInicial.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBImpuesto_ValorAuxiliar.ReadOnly = false;
+            this.TBImpuesto_ValorAuxiliar.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBImpuesto_OfertaInicial.ReadOnly = false;
+            this.TBImpuesto_OfertaInicial.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBImpuesto_OfertaAuxiliar.ReadOnly = false;
+            this.TBImpuesto_OfertaAuxiliar.BackColor = Color.FromArgb(72, 209, 204);
+
+            this.TBCantidadCompraMinima.ReadOnly = false;
+            this.TBCantidadCompraMinima.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCantidadCompraMinima.ForeColor = Color.FromArgb(255, 255, 255);
+            this.TBCantidadCompraMinima.Text = Numerico;
+            this.TBCantidadCompraMaxima.ReadOnly = false;
+            this.TBCantidadCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCantidadCompraMaxima.ForeColor = Color.FromArgb(255, 255, 255);
+            this.TBCantidadCompraMaxima.Text = Numerico;
+
             this.TBCantidadMininaCliente.ReadOnly = false;
             this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(255, 255, 255);
@@ -179,11 +170,27 @@ namespace Presentacion
             this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBCantidadMaximaCliente.Text = Numerico;
-            //this.TBPeso.ReadOnly = false;
-            //this.TBPeso.BackColor = Color.FromArgb(3, 155, 229);
-            //this.TBPeso.ForeColor = Color.FromArgb(255, 255, 255);
-            //this.TBPeso.Text = Numerico;
 
+            //Panel - Ubicacion
+            this.TBUbicacion.ReadOnly = false;
+            this.TBUbicacion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBEstante.ReadOnly = false;
+            this.TBEstante.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBNivel.ReadOnly = false;
+            this.TBNivel.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Panel - Lote
+
+            this.TBLotedeingreso.ReadOnly = false;
+            this.TBLotedeingreso.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValor_Lote.ReadOnly = false;
+            this.TBValor_Lote.BackColor = Color.FromArgb(3, 155, 229);
+            
+            //Panel - Codigo de Barra
+
+            this.TBCodigodeBarra.ReadOnly = false;
+            this.TBCodigodeBarra.BackColor = Color.FromArgb(3, 155, 229);
+            
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
@@ -211,7 +218,7 @@ namespace Presentacion
                 this.CBTipo.SelectedIndex = 0;
                 this.CBEmpaque.SelectedIndex = 0;
 
-                //Panel - Precios
+                //Panel - Valores
                 this.CBProductosOfertable.Checked = false;
                 this.CBVentaPublico.SelectedIndex = 0;
 
@@ -234,8 +241,8 @@ namespace Presentacion
                 //this.CBImpuesto.SelectedIndex = 0;
                 //this.CBPesoUnidad.SelectedIndex = 0;
 
-                this.TBCantidadMinima.Text = Numerico;
-                this.TBCantidadMaxima.Text = Numerico;
+                this.TBCantidadCompraMinima.Text = Numerico;
+                this.TBCantidadCompraMaxima.Text = Numerico;
                 this.TBCantidadMininaCliente.Text = Numerico;
                 this.TBCantidadMaximaCliente.Text = Numerico;
                 //this.TBPeso.Text = Numerico;
@@ -371,7 +378,7 @@ namespace Presentacion
                     MensajeError("Seleccione la Bodega donde se Ubicara el Producto");
                 }
 
-                // <<<<<<------ Panel Precios ------>>>>>
+                // <<<<<<------ Panel Valores ------>>>>>
 
                 else if (this.CBProductosOfertable.Checked == false)
                 {
@@ -1681,7 +1688,7 @@ namespace Presentacion
                     //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
                     this.TCPrincipal.SelectedIndex = 3;
-                    this.TBCantidadMinima.Select();
+                    this.TBCantidadCompraMinima.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1758,7 +1765,7 @@ namespace Presentacion
                     //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
                     this.TCPrincipal.SelectedIndex = 3;
-                    this.TBCantidadMinima.Select();
+                    this.TBCantidadCompraMinima.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1835,7 +1842,7 @@ namespace Presentacion
                     //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
 
                     this.TCPrincipal.SelectedIndex = 3;
-                    this.TBCantidadMinima.Select();
+                    this.TBCantidadCompraMinima.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1903,7 +1910,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBCantidadMaxima.Select();
+                    this.TBCantidadCompraMaxima.Select();
                 }
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
@@ -1944,7 +1951,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMinima.Select();
+                            this.TBCantidadCompraMinima.Select();
                         }
                     }
                     else
@@ -1961,7 +1968,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMinima.Select();
+                            this.TBCantidadCompraMinima.Select();
                         }
                     }
                 }
@@ -2021,7 +2028,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMaxima.Select();
+                            this.TBCantidadCompraMaxima.Select();
                         }
                     }
                     else
@@ -2038,7 +2045,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMaxima.Select();
+                            this.TBCantidadCompraMaxima.Select();
                         }
                     }
                 }
@@ -2134,7 +2141,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBCantidadMinima.Select();
+                    this.TBCantidadCompraMinima.Select();
                 }
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
@@ -2283,7 +2290,19 @@ namespace Presentacion
             }
         }
 
-        //******************** FOCUS ENTER PRECIOS ********************
+        private void TBProveedor_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBImpuesto_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //******************** FOCUS ENTER Valores ********************
+
         private void TBValorCompraMinina_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
@@ -2385,7 +2404,52 @@ namespace Presentacion
                 this.TBOferta02.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
-        
+
+        private void TBImpuesto_ValorInicial_Enter(object sender, EventArgs e)
+        {
+            this.TBImpuesto_ValorInicial.BackColor = Color.Azure;
+        }
+
+        private void TBImpuesto_ValorAuxiliar_Enter(object sender, EventArgs e)
+        {
+            this.TBImpuesto_ValorAuxiliar.BackColor = Color.Azure;
+        }
+
+        private void TBImpuesto_OfertaInicial_Enter(object sender, EventArgs e)
+        {
+            this.TBImpuesto_OfertaInicial.BackColor = Color.Azure;
+        }
+
+        private void TBImpuesto_OfertaAuxiliar_Enter(object sender, EventArgs e)
+        {
+            this.TBImpuesto_OfertaAuxiliar.BackColor = Color.Azure;
+        }
+
+        private void TBCantidadCompraMinima_Enter(object sender, EventArgs e)
+        {
+            this.TBCantidadCompraMinima.BackColor = Color.Azure;
+        }
+
+        private void TBCantidadCompraMaxima_Enter(object sender, EventArgs e)
+        {
+            this.TBCantidadCompraMaxima.BackColor = Color.Azure;
+        }
+
+        private void TBCantidadMininaCliente_Enter_1(object sender, EventArgs e)
+        {
+            this.TBCantidadMininaCliente.BackColor = Color.Azure;
+        }
+
+        private void TBCantidadMaximaCliente_Enter_1(object sender, EventArgs e)
+        {
+            this.TBCantidadMaximaCliente.BackColor = Color.Azure;
+        }
+
+        private void TBUnidadDeVenta_Enter(object sender, EventArgs e)
+        {
+            this.TBUnidadDeVenta.BackColor = Color.Azure;
+        }
+
         //******************** FOCUS ENTER UBICACION ********************
         private void TBUbicacion_Enter(object sender, EventArgs e)
         {
@@ -2407,34 +2471,34 @@ namespace Presentacion
         private void TBCantidadMinima_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCantidadMinima.Text == Numerico)
+            if (TBCantidadCompraMinima.Text == Numerico)
             {
-                this.TBCantidadMinima.BackColor = Color.Azure;
-                this.TBCantidadMinima.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCantidadMinima.Clear();
+                this.TBCantidadCompraMinima.BackColor = Color.Azure;
+                this.TBCantidadCompraMinima.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCantidadCompraMinima.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCantidadMinima.BackColor = Color.Azure;
-                this.TBCantidadMinima.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCantidadCompraMinima.BackColor = Color.Azure;
+                this.TBCantidadCompraMinima.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
         private void TBCantidadMaxima_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCantidadMaxima.Text == Numerico)
+            if (TBCantidadCompraMaxima.Text == Numerico)
             {
-                this.TBCantidadMaxima.BackColor = Color.Azure;
-                this.TBCantidadMaxima.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCantidadMaxima.Clear();
+                this.TBCantidadCompraMaxima.BackColor = Color.Azure;
+                this.TBCantidadCompraMaxima.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCantidadCompraMaxima.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCantidadMaxima.BackColor = Color.Azure;
-                this.TBCantidadMaxima.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCantidadCompraMaxima.BackColor = Color.Azure;
+                this.TBCantidadCompraMaxima.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -2543,6 +2607,16 @@ namespace Presentacion
             }
         }
 
+        private void TBProveedor_Leave(object sender, EventArgs e)
+        {
+            this.TBProveedor.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBImpuesto_Leave(object sender, EventArgs e)
+        {
+            this.TBImpuesto.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
         private void CBImportado_CheckedChanged(object sender, EventArgs e)
         {
             //if (CBImportado.Checked == true)
@@ -2600,7 +2674,7 @@ namespace Presentacion
             }
         }
 
-        //******************** FOCUS LEAVE PRECIOS ********************
+        //******************** FOCUS LEAVE VALORES ********************
 
         private void TBValorCompraMinina_Leave(object sender, EventArgs e)
         {
@@ -2660,6 +2734,36 @@ namespace Presentacion
             }
         }
 
+        private void TBCantidadCompraMinima_Leave(object sender, EventArgs e)
+        {
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadCompraMinima.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCantidadCompraMaxima_Leave(object sender, EventArgs e)
+        {
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCantidadMininaCliente_Leave_1(object sender, EventArgs e)
+        {
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBCantidadMaximaCliente_Leave_1(object sender, EventArgs e)
+        {
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBUnidadDeVenta_Leave(object sender, EventArgs e)
+        {
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
+        }
+        
         private void TBValor02_Leave(object sender, EventArgs e)
         {
             if (TBValor02.Text == string.Empty)
@@ -2720,6 +2824,86 @@ namespace Presentacion
             }
         }
 
+        private void TBImpuesto_ValorInicial_Leave(object sender, EventArgs e)
+        {
+            if (TBImpuesto_ValorInicial.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBImpuesto_ValorInicial.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBImpuesto_ValorInicial.Text = Numerico;
+                this.TBImpuesto_ValorInicial.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBImpuesto_ValorInicial.Text);
+                this.TBImpuesto_ValorInicial.Text = Formato.ToString("##,##0.00");
+
+                this.TBImpuesto_ValorInicial.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBImpuesto_ValorAuxiliar_Leave(object sender, EventArgs e)
+        {
+            if (TBImpuesto_ValorAuxiliar.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBImpuesto_ValorAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBImpuesto_ValorAuxiliar.Text = Numerico;
+                this.TBImpuesto_ValorAuxiliar.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBImpuesto_ValorAuxiliar.Text);
+                this.TBImpuesto_ValorAuxiliar.Text = Formato.ToString("##,##0.00");
+
+                this.TBImpuesto_ValorAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBImpuesto_OfertaInicial_Leave(object sender, EventArgs e)
+        {
+            if (TBImpuesto_OfertaInicial.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBImpuesto_OfertaInicial.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBImpuesto_OfertaInicial.Text = Numerico;
+                this.TBImpuesto_OfertaInicial.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBImpuesto_OfertaInicial.Text);
+                this.TBImpuesto_OfertaInicial.Text = Formato.ToString("##,##0.00");
+
+                this.TBImpuesto_OfertaInicial.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBImpuesto_OfertaAuxiliar_Leave(object sender, EventArgs e)
+        {
+            if (TBImpuesto_OfertaAuxiliar.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBImpuesto_OfertaAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBImpuesto_OfertaAuxiliar.Text = Numerico;
+                this.TBImpuesto_OfertaAuxiliar.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+
+            else
+            {
+                //Formato del Campo de Texto
+                double Formato = Convert.ToDouble(this.TBImpuesto_OfertaAuxiliar.Text);
+                this.TBImpuesto_OfertaAuxiliar.Text = Formato.ToString("##,##0.00");
+
+                this.TBImpuesto_OfertaAuxiliar.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
         //******************** FOCUS LEAVE UBICACION ********************
         private void TBUbicacion_Leave(object sender, EventArgs e)
         {
@@ -2739,33 +2923,33 @@ namespace Presentacion
         //******************** FOCUS LEAVE CANTIDADES ********************
         private void TBCantidadMinima_Leave(object sender, EventArgs e)
         {
-            if (TBCantidadMinima.Text == string.Empty)
+            if (TBCantidadCompraMinima.Text == string.Empty)
             {
                 //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBCantidadMinima.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBCantidadMinima.Text = Numerico;
-                this.TBCantidadMinima.ForeColor = Color.FromArgb(255, 255, 255);
+                this.TBCantidadCompraMinima.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCantidadCompraMinima.Text = Numerico;
+                this.TBCantidadCompraMinima.ForeColor = Color.FromArgb(255, 255, 255);
             }
 
             else
             {
-                this.TBCantidadMinima.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCantidadCompraMinima.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
         private void TBCantidadMaxima_Leave(object sender, EventArgs e)
         {
-            if (TBCantidadMaxima.Text == string.Empty)
+            if (TBCantidadCompraMaxima.Text == string.Empty)
             {
                 //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBCantidadMaxima.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBCantidadMaxima.Text = Numerico;
-                this.TBCantidadMaxima.ForeColor = Color.FromArgb(255, 255, 255);
+                this.TBCantidadCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCantidadCompraMaxima.Text = Numerico;
+                this.TBCantidadCompraMaxima.ForeColor = Color.FromArgb(255, 255, 255);
             }
 
             else
             {
-                this.TBCantidadMaxima.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCantidadCompraMaxima.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
@@ -2815,7 +2999,7 @@ namespace Presentacion
         {
             if (CBUnidad.SelectedIndex != 0)
             {
-                this.TBCantidadMinima.Select();
+                this.TBCantidadCompraMinima.Select();
             }
         }
 
@@ -2903,7 +3087,7 @@ namespace Presentacion
                     Lote = Datos.Rows[0][13].ToString();
                     Presentacion = Datos.Rows[0][14].ToString();
 
-                    //Panel - Precios
+                    //Panel - Valores
                     Ofertable = Datos.Rows[0][15].ToString();
                     VentaFinal = Datos.Rows[0][16].ToString();
                     CompraMinima = Datos.Rows[0][17].ToString();
@@ -2962,7 +3146,7 @@ namespace Presentacion
                     this.TBLotedeingreso.Text = Lote;
                     this.TBPresentacion.Text = Presentacion;
 
-                    //Panel - Precios
+                    //Panel - Valores
                     //this.CBOfertable.Text = Ofertable;
                     this.CBVentaPublico.Text = VentaFinal;
                     this.TBValorCompraMinina.Text = CompraMinima;
@@ -2977,8 +3161,8 @@ namespace Presentacion
                     //this.PB_Imagen.ToString = Imagen;
 
                     this.CBUnidad.Text = UnidadDeVenta;
-                    this.TBCantidadMinima.Text = CantidadCompraMinima;
-                    this.TBCantidadMaxima.Text = CantidadCompraMaxima;
+                    this.TBCantidadCompraMinima.Text = CantidadCompraMinima;
+                    this.TBCantidadCompraMaxima.Text = CantidadCompraMaxima;
                     this.TBCantidadMininaCliente.Text = CantidadMinimaCliente;
                     this.TBCantidadMaximaCliente.Text = CantidadMaximaCliente;
                     //this.CBVence.Text = Vence;
