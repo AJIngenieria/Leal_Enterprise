@@ -145,12 +145,6 @@
     <Compile Include="Archivo\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="Sistema\frmOrigen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Sistema\frmOrigen.Designer.cs">
-      <DependentUpon>frmOrigen.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -246,9 +240,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Archivo\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Sistema\frmOrigen.resx">
-      <DependentUpon>frmOrigen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
@@ -397,6 +388,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono_Leal_Enterprise.ico" />
+    <None Include="Resources\Compras.png" />
     <None Include="Resources\Financiera.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -30,17 +30,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFiltro_Producto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.TBBuscar = new System.Windows.Forms.TextBox();
+            this.DGFiltro_Resultados = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.DGResultados = new System.Windows.Forms.DataGridView();
+            this.TBBuscar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGFiltro_Resultados)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.DGResultados);
+            this.groupBox1.Controls.Add(this.DGFiltro_Resultados);
             this.groupBox1.Controls.Add(this.lblTotal);
             this.groupBox1.Controls.Add(this.TBBuscar);
             this.groupBox1.Controls.Add(this.label1);
@@ -51,14 +51,31 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta de Procutos - Leal Enterprise";
             // 
-            // label1
+            // DGFiltro_Resultados
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Producto a Consultar";
+            this.DGFiltro_Resultados.AllowUserToAddRows = false;
+            this.DGFiltro_Resultados.AllowUserToDeleteRows = false;
+            this.DGFiltro_Resultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGFiltro_Resultados.BackgroundColor = System.Drawing.Color.White;
+            this.DGFiltro_Resultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGFiltro_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGFiltro_Resultados.Location = new System.Drawing.Point(6, 62);
+            this.DGFiltro_Resultados.Name = "DGFiltro_Resultados";
+            this.DGFiltro_Resultados.ReadOnly = true;
+            this.DGFiltro_Resultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGFiltro_Resultados.Size = new System.Drawing.Size(500, 250);
+            this.DGFiltro_Resultados.TabIndex = 3;
+            this.DGFiltro_Resultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
+            this.DGFiltro_Resultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(6, 44);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(111, 15);
+            this.lblTotal.TabIndex = 2;
+            this.lblTotal.Text = "Datos Registrados:";
             // 
             // TBBuscar
             // 
@@ -70,31 +87,14 @@
             this.TBBuscar.Enter += new System.EventHandler(this.TBBuscar_Enter);
             this.TBBuscar.Leave += new System.EventHandler(this.TBBuscar_Leave);
             // 
-            // lblTotal
+            // label1
             // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 44);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(111, 15);
-            this.lblTotal.TabIndex = 2;
-            this.lblTotal.Text = "Datos Registrados:";
-            // 
-            // DGResultados
-            // 
-            this.DGResultados.AllowUserToAddRows = false;
-            this.DGResultados.AllowUserToDeleteRows = false;
-            this.DGResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGResultados.BackgroundColor = System.Drawing.Color.White;
-            this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGResultados.Location = new System.Drawing.Point(6, 62);
-            this.DGResultados.Name = "DGResultados";
-            this.DGResultados.ReadOnly = true;
-            this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(500, 250);
-            this.DGResultados.TabIndex = 3;
-            this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
-            this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Producto a Consultar";
             // 
             // frmFiltro_Producto
             // 
@@ -112,7 +112,7 @@
             this.Load += new System.EventHandler(this.frmFiltro_Producto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DGFiltro_Resultados)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -120,7 +120,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DataGridView DGResultados;
+        private System.Windows.Forms.DataGridView DGFiltro_Resultados;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox TBBuscar;
         private System.Windows.Forms.Label label1;

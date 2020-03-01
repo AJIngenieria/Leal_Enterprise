@@ -135,7 +135,7 @@ namespace Presentacion
                                 frm.Menu_Almacen = Datos.Rows[0][8].ToString();
                                 frm.Menu_Financiera = Datos.Rows[0][9].ToString();
                                 frm.Menu_GestionHumana = Datos.Rows[0][10].ToString();
-                                frm.Menu_Productos = Datos.Rows[0][11].ToString();
+                                //frm.Menu_Productos = Datos.Rows[0][11].ToString();
                                 frm.Menu_Reportes = Datos.Rows[0][12].ToString();
                                 frm.Menu_Sistema = Datos.Rows[0][13].ToString();
                                 frm.Menu_Ventas = Datos.Rows[0][14].ToString();

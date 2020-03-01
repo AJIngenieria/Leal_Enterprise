@@ -40,8 +40,7 @@ namespace Negocio
 
                 //
                 string credito, string limitedecredito, string diasdecredito, string diasdeprorroga,
-                string interesesmora, string bancoprincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditominimo, string creditomaximo,
+                string interesesmora, string creditominimo, string creditomaximo,
                 int auto
             )
         {
@@ -76,10 +75,6 @@ namespace Negocio
             Obj.DiasDeCredito = diasdecredito;
             Obj.DiasDeProrroga = diasdeprorroga;
             Obj.InteresesPorMora = interesesmora;
-            Obj.BancoPrincipal = bancoprincipal;
-            Obj.BancoAuxiliar = bancoauxiliar;
-            Obj.Cuenta01 = cuenta01;
-            Obj.Cuenta02 = cuenta02;
             Obj.CreditoMinimo = creditominimo;
             Obj.CreditoMaximo = creditomaximo;
             
@@ -104,8 +99,7 @@ namespace Negocio
 
                 //
                 string credito, string limitedecredito, string diasdecredito, string diasdeprorroga,
-                string interesesmora, string bancoprincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditominimo, string creditomaximo,
+                string interesesmora, string creditominimo, string creditomaximo,
                 int auto
             )
         {
@@ -141,10 +135,6 @@ namespace Negocio
             Obj.DiasDeCredito = diasdecredito;
             Obj.DiasDeProrroga = diasdeprorroga;
             Obj.InteresesPorMora = interesesmora;
-            Obj.BancoPrincipal = bancoprincipal;
-            Obj.BancoAuxiliar = bancoauxiliar;
-            Obj.Cuenta01 = cuenta01;
-            Obj.Cuenta02 = cuenta02;
             Obj.CreditoMinimo = creditominimo;
             Obj.CreditoMaximo = creditomaximo;
 

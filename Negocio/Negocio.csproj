@@ -49,7 +49,6 @@
     <Compile Include="Archivo\fGrupo.cs" />
     <Compile Include="Archivo\fTipoDeProducto.cs" />
     <Compile Include="Archivo\fMarca.cs" />
-    <Compile Include="Sistema\fOrigen.cs" />
     <Compile Include="Sistema\fTipoDeCliente.cs" />
     <Compile Include="Archivo\fProductos.cs" />
     <Compile Include="Gestion Humana\fGestion_Empleados.cs" />

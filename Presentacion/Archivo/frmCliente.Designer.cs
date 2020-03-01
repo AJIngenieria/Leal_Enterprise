@@ -86,14 +86,6 @@
             this.label24 = new System.Windows.Forms.Label();
             this.TBCreditoMinimo = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.TBCuenta02 = new System.Windows.Forms.TextBox();
-            this.TBCuenta01 = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.TBBancoAuxiliar = new System.Windows.Forms.TextBox();
-            this.TBBancoPrincipal = new System.Windows.Forms.TextBox();
             this.TBIdcliente = new System.Windows.Forms.TextBox();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -697,14 +689,6 @@
             this.TPDatosFinancieros.Controls.Add(this.label24);
             this.TPDatosFinancieros.Controls.Add(this.TBCreditoMinimo);
             this.TPDatosFinancieros.Controls.Add(this.label23);
-            this.TPDatosFinancieros.Controls.Add(this.TBCuenta02);
-            this.TPDatosFinancieros.Controls.Add(this.TBCuenta01);
-            this.TPDatosFinancieros.Controls.Add(this.label22);
-            this.TPDatosFinancieros.Controls.Add(this.label21);
-            this.TPDatosFinancieros.Controls.Add(this.label20);
-            this.TPDatosFinancieros.Controls.Add(this.label19);
-            this.TPDatosFinancieros.Controls.Add(this.TBBancoAuxiliar);
-            this.TPDatosFinancieros.Controls.Add(this.TBBancoPrincipal);
             this.TPDatosFinancieros.Location = new System.Drawing.Point(4, 24);
             this.TPDatosFinancieros.Name = "TPDatosFinancieros";
             this.TPDatosFinancieros.Size = new System.Drawing.Size(410, 257);
@@ -895,106 +879,6 @@
             this.label23.Size = new System.Drawing.Size(91, 15);
             this.label23.TabIndex = 8;
             this.label23.Text = "Credito Minimo";
-            // 
-            // TBCuenta02
-            // 
-            this.TBCuenta02.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBCuenta02.Location = new System.Drawing.Point(105, 223);
-            this.TBCuenta02.Name = "TBCuenta02";
-            this.TBCuenta02.Size = new System.Drawing.Size(300, 21);
-            this.TBCuenta02.TabIndex = 7;
-            this.TBCuenta02.Enter += new System.EventHandler(this.TBCuenta02_Enter);
-            this.TBCuenta02.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCuenta02_KeyUp);
-            this.TBCuenta02.Leave += new System.EventHandler(this.TBCuenta02_Leave);
-            // 
-            // TBCuenta01
-            // 
-            this.TBCuenta01.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBCuenta01.Location = new System.Drawing.Point(105, 169);
-            this.TBCuenta01.Name = "TBCuenta01";
-            this.TBCuenta01.Size = new System.Drawing.Size(300, 21);
-            this.TBCuenta01.TabIndex = 6;
-            this.TBCuenta01.Enter += new System.EventHandler(this.TBCuenta01_Enter);
-            this.TBCuenta01.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCuenta01_KeyUp);
-            this.TBCuenta01.Leave += new System.EventHandler(this.TBCuenta01_Leave);
-            // 
-            // label22
-            // 
-            this.label22.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(5, 223);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 15);
-            this.label22.TabIndex = 5;
-            this.label22.Text = "Nu. Cuenta 02";
-            // 
-            // label21
-            // 
-            this.label21.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(5, 169);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(85, 15);
-            this.label21.TabIndex = 4;
-            this.label21.Text = "Nu. Cuenta 01";
-            // 
-            // label20
-            // 
-            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(5, 196);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(85, 15);
-            this.label20.TabIndex = 3;
-            this.label20.Text = "Banco Auxiliar";
-            // 
-            // label19
-            // 
-            this.label19.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(5, 142);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(93, 15);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "Banco Principal";
-            // 
-            // TBBancoAuxiliar
-            // 
-            this.TBBancoAuxiliar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBBancoAuxiliar.Location = new System.Drawing.Point(105, 196);
-            this.TBBancoAuxiliar.Name = "TBBancoAuxiliar";
-            this.TBBancoAuxiliar.Size = new System.Drawing.Size(300, 21);
-            this.TBBancoAuxiliar.TabIndex = 1;
-            this.TBBancoAuxiliar.Enter += new System.EventHandler(this.TBBancoAuxiliar_Enter);
-            this.TBBancoAuxiliar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBBancoAuxiliar_KeyUp);
-            this.TBBancoAuxiliar.Leave += new System.EventHandler(this.TBBancoAuxiliar_Leave);
-            // 
-            // TBBancoPrincipal
-            // 
-            this.TBBancoPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBBancoPrincipal.Location = new System.Drawing.Point(105, 142);
-            this.TBBancoPrincipal.Name = "TBBancoPrincipal";
-            this.TBBancoPrincipal.Size = new System.Drawing.Size(300, 21);
-            this.TBBancoPrincipal.TabIndex = 0;
-            this.TBBancoPrincipal.Enter += new System.EventHandler(this.TBBancoPrincipal_Enter);
-            this.TBBancoPrincipal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBBancoPrincipal_KeyUp);
-            this.TBBancoPrincipal.Leave += new System.EventHandler(this.TBBancoPrincipal_Leave);
             // 
             // TBIdcliente
             // 
@@ -1216,14 +1100,6 @@
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TextBox TBCreditoMinimo;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox TBCuenta02;
-        private System.Windows.Forms.TextBox TBCuenta01;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox TBBancoAuxiliar;
-        private System.Windows.Forms.TextBox TBBancoPrincipal;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Label lblTotal;

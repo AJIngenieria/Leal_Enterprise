@@ -181,19 +181,6 @@ namespace Presentacion
             frmTipoDeCliente.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
 
-        private void origenesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmOrigenes frmAuxiliares = new frmOrigenes();
-            frmAuxiliares.MdiParent = this;
-            frmAuxiliares.Show();
-
-            frmAuxiliares.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmAuxiliares.Editar = Convert.ToString(this.SQL_Editar);
-            frmAuxiliares.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmAuxiliares.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmAuxiliares.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
         private void tipoDeProductoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
@@ -211,20 +198,7 @@ namespace Presentacion
             frmEmpaque.Consultar = Convert.ToString(this.SQL_Consultar);
             frmEmpaque.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
-
-        private void ingresosDeBodegaToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            frmBodega_Ingresos frmBodega_Ingresos = new frmBodega_Ingresos();
-            frmBodega_Ingresos.MdiParent = this;
-            frmBodega_Ingresos.Show();
-
-            frmBodega_Ingresos.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmBodega_Ingresos.Editar = Convert.ToString(this.SQL_Editar);
-            frmBodega_Ingresos.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmBodega_Ingresos.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmBodega_Ingresos.Imprimir = Convert.ToString(this.SQL_Imprimir);
-        }
-
+        
         private void bodegaToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmBodega frmBodega = new frmBodega();
@@ -340,6 +314,19 @@ namespace Presentacion
             frmTipoDeProducto.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmTipoDeProducto.Consultar = Convert.ToString(this.SQL_Consultar);
             frmTipoDeProducto.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
+
+        private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmBodega_Ingresos frmBodega_Ingresos = frmBodega_Ingresos.GetInstancia();
+            frmBodega_Ingresos.MdiParent = this;
+            frmBodega_Ingresos.Show();
+
+            frmBodega_Ingresos.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmBodega_Ingresos.Editar = Convert.ToString(this.SQL_Editar);
+            frmBodega_Ingresos.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmBodega_Ingresos.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmBodega_Ingresos.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
     }
 }

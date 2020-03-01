@@ -115,10 +115,6 @@ namespace Datos
                 Comando.Parameters.Add("@Dias", SqlDbType.VarChar).Value = Obj.DiasDeCredito;
                 Comando.Parameters.Add("@Prorroga", SqlDbType.VarChar).Value = Obj.DiasDeProrroga;
                 Comando.Parameters.Add("@Intereses", SqlDbType.VarChar).Value = Obj.InteresesPorMora;
-                Comando.Parameters.Add("@Banco01", SqlDbType.VarChar).Value = Obj.BancoPrincipal;
-                Comando.Parameters.Add("@Banco02", SqlDbType.VarChar).Value = Obj.BancoAuxiliar;
-                Comando.Parameters.Add("@Cuenta01", SqlDbType.VarChar).Value = Obj.Cuenta01;
-                Comando.Parameters.Add("@Cuenta02", SqlDbType.VarChar).Value = Obj.Cuenta02;
                 Comando.Parameters.Add("@CreditoMin", SqlDbType.VarChar).Value = Obj.CreditoMinimo;
                 Comando.Parameters.Add("@CreditoMax", SqlDbType.VarChar).Value = Obj.CreditoMaximo;
 
@@ -181,10 +177,6 @@ namespace Datos
                 Comando.Parameters.Add("@Dias", SqlDbType.VarChar).Value = Obj.DiasDeCredito;
                 Comando.Parameters.Add("@Prorroga", SqlDbType.VarChar).Value = Obj.DiasDeProrroga;
                 Comando.Parameters.Add("@Intereses", SqlDbType.VarChar).Value = Obj.InteresesPorMora;
-                Comando.Parameters.Add("@Banco01", SqlDbType.VarChar).Value = Obj.BancoPrincipal;
-                Comando.Parameters.Add("@Banco02", SqlDbType.VarChar).Value = Obj.BancoAuxiliar;
-                Comando.Parameters.Add("@Cuenta01", SqlDbType.VarChar).Value = Obj.Cuenta01;
-                Comando.Parameters.Add("@Cuenta02", SqlDbType.VarChar).Value = Obj.Cuenta02;
                 Comando.Parameters.Add("@CreditoMin", SqlDbType.VarChar).Value = Obj.CreditoMinimo;
                 Comando.Parameters.Add("@CreditoMax", SqlDbType.VarChar).Value = Obj.CreditoMaximo;
 

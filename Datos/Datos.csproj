@@ -49,7 +49,6 @@
     <Compile Include="Sistema\Conexion_Empaque.cs" />
     <Compile Include="Archivo\Conexion_TipoDeProducto.cs" />
     <Compile Include="Archivo\Conexion_Grupo.cs" />
-    <Compile Include="Sistema\Conexion_Origen.cs" />
     <Compile Include="Produccion\Conexion_Producto.cs" />
     <Compile Include="Sistema\Conexion_TipoDeCliente.cs" />
     <Compile Include="Gestion Humana\Conexion_Empleados.cs" />

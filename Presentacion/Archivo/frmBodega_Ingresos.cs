@@ -14,6 +14,17 @@ namespace Presentacion
 {
     public partial class frmBodega_Ingresos : Form
     {
+        private static frmBodega_Ingresos _Instancia;
+
+        public static frmBodega_Ingresos GetInstancia()
+        {
+            if (_Instancia == null)
+            {
+                _Instancia = new frmBodega_Ingresos();
+            }
+            return _Instancia;
+        }
+
         private DataTable DtDetalle = new DataTable();
 
         // Variable con la cual se define si el procecimiento 
@@ -143,7 +154,7 @@ namespace Presentacion
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
 
-                this.DGDetalleDeIngreso.Columns[0].Visible = false;
+                //this.DGDetalleDeIngreso.Columns[0].Visible = false;
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalleDeIngreso.Columns[0].Width = 70;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
@@ -228,37 +239,11 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            
         }
 
-        private void Agregar_DetalleFiltro(int idproducto, string codigo, string producto, int precio)
+        public void setProducto(string Idproducto)
         {
-            try
-            {
-                this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
-                this.DGDetalleDeIngreso.Columns[0].Width = 90;
-                this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
-                this.DGDetalleDeIngreso.Columns[1].Width = 90;
-                this.DGDetalleDeIngreso.Columns[2].HeaderText = "Producto";
-                this.DGDetalleDeIngreso.Columns[2].Width = 305;
-                this.DGDetalleDeIngreso.Columns[3].HeaderText = "Cantidad";
-                this.DGDetalleDeIngreso.Columns[3].Width = 80;
-                this.DGDetalleDeIngreso.Columns[4].HeaderText = "Precio";
-                this.DGDetalleDeIngreso.Columns[4].Width = 90;
-                this.DGDetalleDeIngreso.Columns[5].HeaderText = "Total";
-                this.DGDetalleDeIngreso.Columns[5].Width = 90;
-
-                this.DGDetalleDeIngreso.Columns[0].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[6].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[10].ReadOnly = true;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+            this.TBCodigo_Producto.Text = Idproducto;
         }
 
         private void Guardar_SQL()
@@ -599,5 +584,9 @@ namespace Presentacion
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
         }
 
+        private void frmBodega_Ingresos_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
+        }
     }
 }

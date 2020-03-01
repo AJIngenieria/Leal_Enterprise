@@ -41,10 +41,6 @@ namespace Entidad
         private string _DiasDeCredito;
         private string _DiasDeProrroga;
         private string _InteresesPorMora;
-        private string _BancoPrincipal;
-        private string _Cuenta01;
-        private string _BancoAuxiliar;
-        private string _Cuenta02;
         private string _CreditoMinimo;
         private string _CreditoMaximo;
 
@@ -79,10 +75,6 @@ namespace Entidad
         public string DiasDeCredito { get => _DiasDeCredito; set => _DiasDeCredito = value; }
         public string DiasDeProrroga { get => _DiasDeProrroga; set => _DiasDeProrroga = value; }
         public string InteresesPorMora { get => _InteresesPorMora; set => _InteresesPorMora = value; }
-        public string BancoPrincipal { get => _BancoPrincipal; set => _BancoPrincipal = value; }
-        public string Cuenta01 { get => _Cuenta01; set => _Cuenta01 = value; }
-        public string BancoAuxiliar { get => _BancoAuxiliar; set => _BancoAuxiliar = value; }
-        public string Cuenta02 { get => _Cuenta02; set => _Cuenta02 = value; }
         public string CreditoMinimo { get => _CreditoMinimo; set => _CreditoMinimo = value; }
         public string CreditoMaximo { get => _CreditoMaximo; set => _CreditoMaximo = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
