@@ -45,7 +45,7 @@
     <Compile Include="Archivo\fCliente.cs" />
     <Compile Include="Archivo\fProveedor.cs" />
     <Compile Include="Archivo\fIngreso_Bodega.cs" />
-    <Compile Include="Sistema\fEmpaque.cs" />
+    <Compile Include="Archivo\fEmpaque.cs" />
     <Compile Include="Archivo\fGrupo.cs" />
     <Compile Include="Archivo\fTipoDeProducto.cs" />
     <Compile Include="Archivo\fMarca.cs" />

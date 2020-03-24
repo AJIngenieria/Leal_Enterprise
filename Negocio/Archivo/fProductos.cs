@@ -26,25 +26,29 @@ namespace Negocio
 
         public static string Guardar_DatosBasicos
             (
+
                 //Datos Auxiliares y Llaves Primaria
-                int idmarca, int idbodega, int idproveedor, int idimpuesto,
+                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,
 
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion,
+                string codigo, string producto, string referencia, string descripcion,
+                string presentacion, string unidad, string pesounidad,
+
+                int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
 
                 //Precios
-                string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
-                string valor02, string valor03, string oferta01, string oferta02, string oferta03,
+                string valorfinal, string valordecompra, string valordeventa, string cantidadminima,
+                string cantidadmaxima, string valorimportacion, string valorexportacion, string gastosdeenvio,
+                string otrosgastos,
 
                 //Ubicacion[]
                 string ubicacion, string estante, string nivel, byte[] imagen,
 
-                //Canrtidades
-                string cantidadCompraMinima, string cantidadCompraMaxima, string cantidadMinimaCliente, string cantidadMaximaCliente,
-                string vence, DateTime fechaVencimiento, string unidaddeventa, string unidadDePeso, string peso,
+                //Lote
+                string lote, string lote_valorinicial, DateTime lote_fechavencimiento,
 
-                //Panel Cantidad 02
-                int idorigen, int idgrupo, int idtipo, int idempaque,
+                //Panel Codigo de Barra
+                string codigodebarra,
 
                 //Datos Auxiliares
                 int auto
@@ -58,26 +62,33 @@ namespace Negocio
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
             Obj.Idimpuesto = idimpuesto;
+            Obj.Idempaque = idempaque;
 
             //Datos Basicos
             Obj.Codigo = codigo;
             Obj.Producto = producto;
             Obj.Referencia = referencia;
             Obj.Descripcion = descripcion;
-            Obj.Lote = lote;
             Obj.Presentacion = presentacion;
+            Obj.Unidad = unidad;
+            Obj.PesoUnidad = pesounidad;
 
-            //Precios
-            Obj.ProductoOfertable = productoOfertable;
-            Obj.ValorFinal = valorFinal;
-            Obj.ValorCompraMinima = valorCompraMinima;
-            Obj.ValorCompraMaxima = valorCompraMaxima;
-            Obj.Valor01 = valor01;
-            Obj.Valor02 = valor02;
-            Obj.Valor03 = valor03;
-            Obj.Oferta01 = oferta01;
-            Obj.Oferta02 = oferta02;
-            Obj.Oferta03 = oferta03;
+            Obj.ManejaVencimiento = manejavencimiento;
+            Obj.ManejaImpuesto = manejaimpuesto;
+            Obj.Importado = importado;
+            Obj.Exportado = exportado;
+            Obj.Ofertable = ofertable;
+
+            //Valores
+            Obj.ValorFinal = valorfinal;
+            Obj.ValorDeCompra = valordecompra;
+            Obj.ValorDeVenta = valordeventa;
+            Obj.CantidadMinima = cantidadminima;
+            Obj.CantidadMaxima = cantidadmaxima;
+            Obj.ValorImportacion = valorimportacion;
+            Obj.ValorExportacion = valorexportacion;
+            Obj.GastosDeEnvio = gastosdeenvio;
+            Obj.OtrosGastos = otrosgastos;
 
             //Ubicacion[]
             Obj.Ubicacion = ubicacion;
@@ -85,22 +96,13 @@ namespace Negocio
             Obj.Nivel = nivel;
             Obj.Imagen = imagen;
 
-            //Canrtidades
-            Obj.CantidadCompraMinima = cantidadCompraMinima;
-            Obj.CantidadCompraMaxima = cantidadCompraMaxima;
-            Obj.CantidadMinimaCliente = cantidadMinimaCliente;
-            Obj.CantidadMaximaCliente = cantidadMaximaCliente;
-            Obj.Vence = vence;
-            Obj.FechaVencimiento = fechaVencimiento;
-            Obj.Unidaddeventa = unidaddeventa;
-            Obj.UnidadDePeso = unidadDePeso;
-            Obj.Peso = peso;
+            //Panel Lote
+            Obj.Lote = lote;
+            Obj.Lote_ValorInicial = lote_valorinicial;
+            Obj.FechaVencimiento = lote_fechavencimiento;
 
-            //Panel Cantidad 02
-            Obj.Idorigen = idorigen;
-            Obj.Idgrupo = idgrupo;
-            Obj.Idtipo = idtipo;
-            Obj.Idempaque = idempaque;
+            //Panel Codigo de Barra
+            Obj.CodigoDeBarra = codigodebarra;
 
             //Datos Auxiliares
             Obj.Auto = auto;
@@ -110,26 +112,29 @@ namespace Negocio
 
         public static string Editar_DatosBasicos
             (
+                
 
                 //Datos Auxiliares y Llaves Primaria
-                int idproducto,int idmarca, int idbodega, int idproveedor, int idimpuesto,
+                int idproducto, int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,
 
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion, string lote, string presentacion,
+                string codigo, string producto, string referencia, string descripcion,
+                string presentacion, string unidad, string pesounidad,
+                int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
 
                 //Precios
-                string productoOfertable, string valorFinal, string valorCompraMinima, string valorCompraMaxima, string valor01,
-                string valor02, string valor03, string oferta01, string oferta02, string oferta03,
+                string valorfinal, string valordecompra, string valordeventa, string cantidadminima,
+                string cantidadmaxima, string valorimportacion, string valorexportacion, string gastosdeenvio,
+                string otrosgastos,
 
                 //Ubicacion[]
                 string ubicacion, string estante, string nivel, byte[] imagen,
+                
+                //Lote
+                string lote, string lote_valorinicial, DateTime lote_fechavencimiento,
 
-                //Canrtidades
-                string cantidadCompraMinima, string cantidadCompraMaxima, string cantidadMinimaCliente, string cantidadMaximaCliente,
-                string vence, DateTime fechaVencimiento, string unidaddeventa, string unidadDePeso, string peso,
-
-                //Panel Cantidad 02
-                int idorigen, int idgrupo, int idtipo, int idempaque,
+                //Panel Codigo de Barra
+                string codigodebarra,
 
                 //Datos Auxiliares
                 int auto
@@ -144,26 +149,33 @@ namespace Negocio
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
             Obj.Idimpuesto = idimpuesto;
+            Obj.Idempaque = idempaque;
 
             //Datos Basicos
             Obj.Codigo = codigo;
             Obj.Producto = producto;
             Obj.Referencia = referencia;
             Obj.Descripcion = descripcion;
-            Obj.Lote = lote;
             Obj.Presentacion = presentacion;
+            Obj.Unidad = unidad;
+            Obj.PesoUnidad = pesounidad;
 
-            //Precios
-            Obj.ProductoOfertable = productoOfertable;
-            Obj.ValorFinal = valorFinal;
-            Obj.ValorCompraMinima = valorCompraMinima;
-            Obj.ValorCompraMaxima = valorCompraMaxima;
-            Obj.Valor01 = valor01;
-            Obj.Valor02 = valor02;
-            Obj.Valor03 = valor03;
-            Obj.Oferta01 = oferta01;
-            Obj.Oferta02 = oferta02;
-            Obj.Oferta03 = oferta03;
+            Obj.ManejaVencimiento = manejavencimiento;
+            Obj.ManejaImpuesto = manejaimpuesto;
+            Obj.Importado = importado;
+            Obj.Exportado = exportado;
+            Obj.Ofertable = ofertable;
+
+            //Valores
+            Obj.ValorFinal = valorfinal;
+            Obj.ValorDeCompra = valordecompra;
+            Obj.ValorDeVenta = valordeventa;
+            Obj.CantidadMinima = cantidadminima;
+            Obj.CantidadMaxima = cantidadmaxima;
+            Obj.ValorImportacion = valorimportacion;
+            Obj.ValorExportacion = valorexportacion;
+            Obj.GastosDeEnvio = gastosdeenvio;
+            Obj.OtrosGastos = otrosgastos;
 
             //Ubicacion[]
             Obj.Ubicacion = ubicacion;
@@ -171,22 +183,13 @@ namespace Negocio
             Obj.Nivel = nivel;
             Obj.Imagen = imagen;
 
-            //Canrtidades
-            Obj.CantidadCompraMinima = cantidadCompraMinima;
-            Obj.CantidadCompraMaxima = cantidadCompraMaxima;
-            Obj.CantidadMinimaCliente = cantidadMinimaCliente;
-            Obj.CantidadMaximaCliente = cantidadMaximaCliente;
-            Obj.Vence = vence;
-            Obj.FechaVencimiento = fechaVencimiento;
-            Obj.Unidaddeventa = unidaddeventa;
-            Obj.UnidadDePeso = unidadDePeso;
-            Obj.Peso = peso;
+            //Panel Lote
+            Obj.Lote = lote;
+            Obj.Lote_ValorInicial = lote_valorinicial;
+            Obj.FechaVencimiento = lote_fechavencimiento;
 
-            //Panel Cantidad 02
-            Obj.Idorigen = idorigen;
-            Obj.Idgrupo = idgrupo;
-            Obj.Idtipo = idtipo;
-            Obj.Idempaque = idempaque;
+            //Panel Codigo de Barra
+            Obj.CodigoDeBarra = codigodebarra;
 
             //Datos Auxiliares
             Obj.Auto = auto;

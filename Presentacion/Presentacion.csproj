@@ -121,6 +121,18 @@
     <Compile Include="frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filtros\frmFiltro_Proveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtros\frmFiltro_Proveedor.Designer.cs">
+      <DependentUpon>frmFiltro_Proveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmFiltro_Impuestos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmFiltro_Impuestos.Designer.cs">
+      <DependentUpon>frmFiltro_Impuestos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sistema\frmEquipos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -228,6 +240,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtros\frmFiltro_Proveedor.resx">
+      <DependentUpon>frmFiltro_Proveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmFiltro_Impuestos.resx">
+      <DependentUpon>frmFiltro_Impuestos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>

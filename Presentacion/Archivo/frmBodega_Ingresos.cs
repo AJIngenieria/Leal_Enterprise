@@ -154,7 +154,7 @@ namespace Presentacion
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
 
-                //this.DGDetalleDeIngreso.Columns[0].Visible = false;
+                this.DGDetalleDeIngreso.Columns[0].Visible = false;
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalleDeIngreso.Columns[0].Width = 70;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
@@ -224,21 +224,67 @@ namespace Presentacion
             
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, int precio)
+        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string precio)
         {
             try
             {
-                DataRow Fila = DtDetalle.NewRow();
-                Fila["Idproducto"] = idproducto;
-                Fila["Codigo"] = codigo;
-                Fila["Descripcion"] = nombre;
-                Fila["V. Compra"] = precio;
-                this.DtDetalle.Rows.Add(Fila);
+                bool Agregar = true;
+                foreach (DataRow FilaTemporal in DtDetalle.Rows)
+                {
+                    if (Convert.ToInt32(FilaTemporal["Idproducto"]) == idproducto)
+                    {
+                        Agregar = false;
+                        this.MensajeError("El Producto ya se encuentra agregado en la lista.");
+                    }
+                }
+
+                if (Agregar)
+                {
+                    DataRow Fila = DtDetalle.NewRow();
+                    Fila["Idproducto"] = idproducto;
+                    Fila["Codigo"] = codigo;
+                    Fila["Descripcion"] = nombre;
+                    Fila["V. Venta"] = precio;
+                    this.DtDetalle.Rows.Add(Fila);
+
+                    //this.Calculo_Totales();
+                }
+                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void Calculo_Totales()
+        {
+            try
+            {
+                int Total = 0;
+                decimal SubTotal = 0;
+
+                if (DGDetalleDeIngreso.Rows.Count == 0)
+                {
+                    Total = 0;
+                }
+                else
+                {
+                    foreach (DataRow FilaTemporal in DtDetalle.Rows)
+                    {
+                        Total = Total + Convert.ToInt32(FilaTemporal["Total"]);
+                    }
+
+                    //SubTotal = Total/(1+tbimpuesto.text));
+                    lblTotalIngresado.Text = Total.ToString("#0.00#"); 
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+            
         }
 
         public void setProducto(string Idproducto)
@@ -512,7 +558,7 @@ namespace Presentacion
                                 Convert.ToInt32(Tabla.Rows[0][0]),
                                 Convert.ToString(Tabla.Rows[0][1]),
                                 Convert.ToString(Tabla.Rows[0][2]),
-                                Convert.ToInt32(Tabla.Rows[0][3])
+                                Convert.ToString(Tabla.Rows[0][3])
                             );
                         this.TBCodigo_Producto.Clear();
                     }
@@ -587,6 +633,81 @@ namespace Presentacion
         private void frmBodega_Ingresos_FormClosing(object sender, FormClosingEventArgs e)
         {
             _Instancia = null;
+        }
+
+        private void DGDetalleDeIngreso_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            this.Calculo_Totales();
+        }
+
+        private void DGDetalleDeIngreso_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                int cantidad = 0;
+                int Descuento = 0;
+                decimal precio_unit = 0;
+                decimal precio_total = 0;
+                decimal General_Total = 0;
+                decimal Precio_Compra = 0;
+
+                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "U. Cajas")
+                {
+                    try
+                    {
+                        cantidad = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Debe ingresar una cantidad !");
+                    }
+                    try
+                    {
+                        precio_unit = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Debe ingresar un precio !");
+                    }
+                    if (!(cantidad == 0) && !(precio_unit == 0))
+                    {
+                        precio_total = cantidad * precio_unit;
+                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[6].Value = precio_total;
+                    }
+                }
+
+                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "Descuento")
+                {
+                    try
+                    {
+                        Descuento = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[9].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Ingrese un descuento si este llega aplicar");
+                    }
+
+                    try
+                    {
+                        Precio_Compra = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Debe ingresar el Valor de Compra");
+                    }
+
+                    if (!(Precio_Compra == 0))
+                    {
+                        General_Total = Precio_Compra - Descuento;
+                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[10].Value = General_Total;
+                    }
+                    
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

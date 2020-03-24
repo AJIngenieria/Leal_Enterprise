@@ -39,7 +39,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotalIngresado = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.CBComprobante = new System.Windows.Forms.ComboBox();
             this.CBMoneda = new System.Windows.Forms.ComboBox();
@@ -66,6 +66,8 @@
             this.label12 = new System.Windows.Forms.Label();
             this.IDIngresos = new System.Windows.Forms.TextBox();
             this.TBIdproducto = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -155,6 +157,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.label9);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.groupBox2);
             this.tabPage1.Controls.Add(this.CBComprobante);
@@ -196,7 +200,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblTotal);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lblTotalIngresado);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Location = new System.Drawing.Point(761, 6);
             this.groupBox2.Name = "groupBox2";
@@ -214,14 +218,14 @@
             this.lblTotal.TabIndex = 118;
             this.lblTotal.Text = "Productos Ingresados";
             // 
-            // label9
+            // lblTotalIngresado
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 50);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(105, 15);
-            this.label9.TabIndex = 120;
-            this.label9.Text = "Valor del Ingreso: ";
+            this.lblTotalIngresado.AutoSize = true;
+            this.lblTotalIngresado.Location = new System.Drawing.Point(6, 50);
+            this.lblTotalIngresado.Name = "lblTotalIngresado";
+            this.lblTotalIngresado.Size = new System.Drawing.Size(105, 15);
+            this.lblTotalIngresado.TabIndex = 120;
+            this.lblTotalIngresado.Text = "Valor del Ingreso: ";
             // 
             // label2
             // 
@@ -266,7 +270,6 @@
             // DGDetalleDeIngreso
             // 
             this.DGDetalleDeIngreso.AllowUserToAddRows = false;
-            this.DGDetalleDeIngreso.AllowUserToDeleteRows = false;
             this.DGDetalleDeIngreso.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalleDeIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalleDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -275,6 +278,8 @@
             this.DGDetalleDeIngreso.RowHeadersVisible = false;
             this.DGDetalleDeIngreso.Size = new System.Drawing.Size(1026, 310);
             this.DGDetalleDeIngreso.TabIndex = 141;
+            this.DGDetalleDeIngreso.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalleDeIngreso_CellEndEdit);
+            this.DGDetalleDeIngreso.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DGDetalleDeIngreso_RowsRemoved);
             // 
             // TBCodigoID
             // 
@@ -493,6 +498,22 @@
             this.TBIdproducto.Size = new System.Drawing.Size(15, 21);
             this.TBIdproducto.TabIndex = 115;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(511, 63);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(31, 15);
+            this.label9.TabIndex = 148;
+            this.label9.Text = "Lote";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(598, 60);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(150, 21);
+            this.textBox1.TabIndex = 149;
+            // 
             // frmBodega_Ingresos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -535,8 +556,7 @@
         public System.Windows.Forms.TextBox TBIdproducto;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Label lblTotalIngresado;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridView DGResultados;
@@ -562,5 +582,8 @@
         private System.Windows.Forms.Label label8;
         public System.Windows.Forms.TextBox TBCodigo_Producto;
         public System.Windows.Forms.DataGridView DGDetalleDeIngreso;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label9;
     }
 }

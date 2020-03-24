@@ -253,7 +253,7 @@ namespace Presentacion
 
         private void productosToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            frmProductos frmProductos = new frmProductos();
+            frmProductos frmProductos = frmProductos.GetInstancia();
             frmProductos.MdiParent = this;
             frmProductos.Show();
 

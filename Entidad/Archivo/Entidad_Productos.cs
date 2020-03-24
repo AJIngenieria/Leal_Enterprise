@@ -14,29 +14,38 @@ namespace Entidad
         //Llaves Auxiliares
         private int _Idmarca;
         private int _Idbodega;
+        private int _Idgrupo;
+        private int _Idtipo;
+        private int _Idlote;
         private int _Idproveedor;
         private int _Idimpuesto;
+        private int _Idempaque;
 
         //Datos Basicos
         private string _Codigo;
         private string _Producto;
         private string _Referencia;
         private string _Descripcion;
-        private string _Lote;
         private string _Presentacion;
-        private int _Estado;
+        private string _Unidad;
+        private string _PesoUnidad;
 
-        //Precios
-        private string _ProductoOfertable;
+        private int _ManejaVencimiento;
+        private int _ManejaImpuesto;
+        private int _Importado;
+        private int _Exportado;
+        private int _Ofertable;
+
+        //Valores
         private string _ValorFinal;
-        private string _ValorCompraMinima;
-        private string _ValorCompraMaxima;
-        private string _Valor01;
-        private string _Valor02;
-        private string _Valor03;
-        private string _Oferta01;
-        private string _Oferta02;
-        private string _Oferta03;
+        private string _ValorDeCompra;
+        private string _ValorDeVenta;
+        private string _CantidadMinima;
+        private string _CantidadMaxima;
+        private string _ValorImportacion;
+        private string _ValorExportacion;
+        private string _GastosDeEnvio;
+        private string _OtrosGastos;
 
         //Ubicacion[]
         private string _Ubicacion;
@@ -44,22 +53,13 @@ namespace Entidad
         private string _Nivel;
         private byte[] _Imagen;
 
-        //Canrtidades
-        private string _CantidadCompraMinima;
-        private string _CantidadCompraMaxima;
-        private string _CantidadMinimaCliente;
-        private string _CantidadMaximaCliente;
-        private string _Vence;
+        //Panel Lote
+        private string _Lote;
+        private string _Lote_ValorInicial;
         private DateTime _FechaVencimiento;
-        private string _Unidaddeventa;
-        private string _UnidadDePeso;
-        private string _Peso;
 
-        //Panel Cantidad 02
-        private int _Idorigen;
-        private int _Idgrupo;
-        private int _Idtipo;
-        private int _Idempaque;
+        //Panel Codigo de Barra
+        private string _CodigoDeBarra;
 
         //Datos Auxiliares
         private int _Auto;
@@ -69,44 +69,43 @@ namespace Entidad
         public int Idproducto { get => _Idproducto; set => _Idproducto = value; }
         public int Idmarca { get => _Idmarca; set => _Idmarca = value; }
         public int Idbodega { get => _Idbodega; set => _Idbodega = value; }
+        public int Idgrupo { get => _Idgrupo; set => _Idgrupo = value; }
+        public int Idtipo { get => _Idtipo; set => _Idtipo = value; }
+        public int Idlote { get => _Idlote; set => _Idlote = value; }
         public int Idproveedor { get => _Idproveedor; set => _Idproveedor = value; }
         public int Idimpuesto { get => _Idimpuesto; set => _Idimpuesto = value; }
         public string Codigo { get => _Codigo; set => _Codigo = value; }
         public string Producto { get => _Producto; set => _Producto = value; }
         public string Referencia { get => _Referencia; set => _Referencia = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
-        public string Lote { get => _Lote; set => _Lote = value; }
         public string Presentacion { get => _Presentacion; set => _Presentacion = value; }
-        public int Estado { get => _Estado; set => _Estado = value; }
-        public string ProductoOfertable { get => _ProductoOfertable; set => _ProductoOfertable = value; }
+        public string Unidad { get => _Unidad; set => _Unidad = value; }
+        public string PesoUnidad { get => _PesoUnidad; set => _PesoUnidad = value; }
+        public int ManejaVencimiento { get => _ManejaVencimiento; set => _ManejaVencimiento = value; }
+        public int ManejaImpuesto { get => _ManejaImpuesto; set => _ManejaImpuesto = value; }
+        public int Importado { get => _Importado; set => _Importado = value; }
+        public int Exportado { get => _Exportado; set => _Exportado = value; }
+        public int Ofertable { get => _Ofertable; set => _Ofertable = value; }
         public string ValorFinal { get => _ValorFinal; set => _ValorFinal = value; }
-        public string ValorCompraMinima { get => _ValorCompraMinima; set => _ValorCompraMinima = value; }
-        public string ValorCompraMaxima { get => _ValorCompraMaxima; set => _ValorCompraMaxima = value; }
-        public string Valor01 { get => _Valor01; set => _Valor01 = value; }
-        public string Valor02 { get => _Valor02; set => _Valor02 = value; }
-        public string Valor03 { get => _Valor03; set => _Valor03 = value; }
-        public string Oferta01 { get => _Oferta01; set => _Oferta01 = value; }
-        public string Oferta02 { get => _Oferta02; set => _Oferta02 = value; }
-        public string Oferta03 { get => _Oferta03; set => _Oferta03 = value; }
+        public string ValorDeCompra { get => _ValorDeCompra; set => _ValorDeCompra = value; }
+        public string ValorDeVenta { get => _ValorDeVenta; set => _ValorDeVenta = value; }
+        public string CantidadMinima { get => _CantidadMinima; set => _CantidadMinima = value; }
+        public string CantidadMaxima { get => _CantidadMaxima; set => _CantidadMaxima = value; }
+        public string ValorImportacion { get => _ValorImportacion; set => _ValorImportacion = value; }
+        public string ValorExportacion { get => _ValorExportacion; set => _ValorExportacion = value; }
+        public string GastosDeEnvio { get => _GastosDeEnvio; set => _GastosDeEnvio = value; }
+        public string OtrosGastos { get => _OtrosGastos; set => _OtrosGastos = value; }
         public string Ubicacion { get => _Ubicacion; set => _Ubicacion = value; }
         public string Estante { get => _Estante; set => _Estante = value; }
         public string Nivel { get => _Nivel; set => _Nivel = value; }
         public byte[] Imagen { get => _Imagen; set => _Imagen = value; }
-        public string CantidadCompraMinima { get => _CantidadCompraMinima; set => _CantidadCompraMinima = value; }
-        public string CantidadCompraMaxima { get => _CantidadCompraMaxima; set => _CantidadCompraMaxima = value; }
-        public string CantidadMinimaCliente { get => _CantidadMinimaCliente; set => _CantidadMinimaCliente = value; }
-        public string CantidadMaximaCliente { get => _CantidadMaximaCliente; set => _CantidadMaximaCliente = value; }
-        public string Vence { get => _Vence; set => _Vence = value; }
-        public DateTime FechaVencimiento { get => _FechaVencimiento; set => _FechaVencimiento = value; }
-        public string Unidaddeventa { get => _Unidaddeventa; set => _Unidaddeventa = value; }
-        public string UnidadDePeso { get => _UnidadDePeso; set => _UnidadDePeso = value; }
-        public string Peso { get => _Peso; set => _Peso = value; }
-        public int Idorigen { get => _Idorigen; set => _Idorigen = value; }
-        public int Idgrupo { get => _Idgrupo; set => _Idgrupo = value; }
-        public int Idtipo { get => _Idtipo; set => _Idtipo = value; }
-        public int Idempaque { get => _Idempaque; set => _Idempaque = value; }
+        public string Lote { get => _Lote; set => _Lote = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }
+        public int Idempaque { get => _Idempaque; set => _Idempaque = value; }
+        public string CodigoDeBarra { get => _CodigoDeBarra; set => _CodigoDeBarra = value; }
+        public string Lote_ValorInicial { get => _Lote_ValorInicial; set => _Lote_ValorInicial = value; }
+        public DateTime FechaVencimiento { get => _FechaVencimiento; set => _FechaVencimiento = value; }
     }
 }

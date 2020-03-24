@@ -79,7 +79,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Sistema.LI_TipoDeProducto", SqlCon);
+                SqlCommand Comando = new SqlCommand("Productos.LI_TipoDeProducto", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -114,7 +114,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Sistema.LI_TipoDeProducto", SqlCon);
+                SqlCommand Comando = new SqlCommand("Productos.LI_TipoDeProducto", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares

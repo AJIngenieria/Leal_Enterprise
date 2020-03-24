@@ -46,7 +46,7 @@
     <Compile Include="Archivo\Entidad_Proveedor.cs" />
     <Compile Include="Archivo\Entidad_Marca.cs" />
     <Compile Include="Archivo\Entidad_Ingreso.cs" />
-    <Compile Include="Sistema\Entidad_Empaque.cs" />
+    <Compile Include="Archivo\Entidad_Empaque.cs" />
     <Compile Include="Archivo\Entidad_TipoDeProducto.cs" />
     <Compile Include="Archivo\Entidad_Grupo.cs" />
     <Compile Include="Sistema\Entidad_TipoDeCliente.cs" />
