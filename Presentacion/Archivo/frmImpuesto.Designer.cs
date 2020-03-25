@@ -44,6 +44,7 @@
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.TBIdimpuesto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -51,6 +52,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TBIdimpuesto);
             this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.TBImpuesto);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -245,6 +247,13 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Impuesto Registrados - Leal ";
             // 
+            // TBIdimpuesto
+            // 
+            this.TBIdimpuesto.Location = new System.Drawing.Point(126, 224);
+            this.TBIdimpuesto.Name = "TBIdimpuesto";
+            this.TBIdimpuesto.Size = new System.Drawing.Size(100, 21);
+            this.TBIdimpuesto.TabIndex = 11;
+            // 
             // frmImpuesto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -286,5 +295,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TextBox TBIdimpuesto;
     }
 }

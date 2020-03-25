@@ -349,7 +349,6 @@ namespace Presentacion
                     this.TBImpuesto.Select();
 
                     //
-                    this.TCPrincipal.SelectedIndex = 0;
                     this.btnGuardar.Image = Properties.Resources.BV_Editar;
                 }
                 else
@@ -483,15 +482,6 @@ namespace Presentacion
 
                 this.TBValor.Select();
             }
-
-            else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-            {
-                //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                this.TCPrincipal.SelectedIndex = 1;
-                this.TBBuscar.Select();
-            }
             else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
             {
                 //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -553,15 +543,6 @@ namespace Presentacion
 
                 this.TBDescripcion.Select();
             }
-
-            else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-            {
-                //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                this.TCPrincipal.SelectedIndex = 1;
-                this.TBBuscar.Select();
-            }
             else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
             {
                 //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -622,15 +603,6 @@ namespace Presentacion
                 //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                 this.TBImpuesto.Select();
-            }
-
-            else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-            {
-                //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                this.TCPrincipal.SelectedIndex = 1;
-                this.TBBuscar.Select();
             }
             else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
             {
