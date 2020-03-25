@@ -103,7 +103,7 @@ namespace Presentacion
                 //this.PB_Imagen.Image = Properties.Resources.
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TBIdmarca.Focus();
+                this.TBObservacion.Focus();
             }
 
         }
@@ -308,7 +308,44 @@ namespace Presentacion
 
         private void TBBuscar_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Consultar == "1")
+                {
+                    if (TBBuscar.Text != "")
+                    {
+                        this.DGResultados.DataSource = fMarca.Buscar(this.TBBuscar.Text, 1);
+                        //this.DGResultadoss.Columns[1].Visible = false;
 
+                        lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGResultados.Rows.Count);
+
+                        this.btnEliminar.Enabled = true;
+                        this.btnImprimir.Enabled = true;
+                        this.DGResultados.Enabled = true;
+                    }
+                    else
+                    {
+                        this.Limpiar_Datos();
+
+                        //Se Limpian las Filas y Columnas de la tabla
+                        this.DGResultados.DataSource = null;
+                        this.DGResultados.Enabled = false;
+                        this.lblTotal.Text = "Datos Registrados: 0";
+
+                        this.btnEliminar.Enabled = false;
+                        this.btnImprimir.Enabled = false;
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show(" El Usuario Iniciado no Contiene Permisos Para Realizar Consultas", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBNombre_Enter(object sender, EventArgs e)
@@ -365,7 +402,8 @@ namespace Presentacion
 
             else
             {
-                TBNombre.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBNombre.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBNombre.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
@@ -381,7 +419,8 @@ namespace Presentacion
 
             else
             {
-                TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBDescripcion.BackColor = Color.FromArgb(0, 0, 0);
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
@@ -860,5 +899,33 @@ namespace Presentacion
             }
         }
 
+        private void DGResultados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                this.Digitar = false;
+
+                if (Editar == "1")
+                {
+                    //
+                    this.TBIdmarca.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                    this.TBNombre.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Marca"].Value);
+                    this.TBDescripcion.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Descripcion"].Value);
+                    this.TBReferencia.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Referencia"].Value);
+                    this.TBObservacion.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Observacion"].Value);
+
+                    //
+                    this.TBNombre.Select();
+                }
+                else
+                {
+                    MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Actualizar Datos en el Sistema", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
     }
 }

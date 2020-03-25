@@ -77,9 +77,9 @@
             // 
             // TBBuscar
             // 
-            this.TBBuscar.Location = new System.Drawing.Point(133, 20);
+            this.TBBuscar.Location = new System.Drawing.Point(135, 20);
             this.TBBuscar.Name = "TBBuscar";
-            this.TBBuscar.Size = new System.Drawing.Size(373, 21);
+            this.TBBuscar.Size = new System.Drawing.Size(371, 21);
             this.TBBuscar.TabIndex = 1;
             this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
             // 
@@ -88,9 +88,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.Size = new System.Drawing.Size(123, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Producto a Consultar";
+            this.label1.Text = "Impuesto a Consultar";
             // 
             // frmFiltro_Impuestos
             // 
@@ -103,7 +103,7 @@
             this.MaximizeBox = false;
             this.Name = "frmFiltro_Impuestos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmFiltro_Impuestos";
+            this.Text = "Filtro de Impuestos - Leal Enterprise";
             this.Load += new System.EventHandler(this.frmFiltro_Impuestos_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

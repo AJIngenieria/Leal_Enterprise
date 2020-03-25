@@ -42,8 +42,8 @@ namespace Presentacion
             {
                 if (TBBuscar.Text != "")
                 {
-                    this.DGFiltro_Resultados.DataSource = fProveedor.Buscar(this.TBBuscar.Text, 4);
-                    this.DGFiltro_Resultados.Columns[0].Visible = false;
+                    this.DGFiltro_Resultados.DataSource = fProveedor.Buscar(this.TBBuscar.Text, 1);
+                    //this.DGFiltro_Resultados.Columns[0].Visible = false;
 
                     lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
                     this.DGFiltro_Resultados.Enabled = true;

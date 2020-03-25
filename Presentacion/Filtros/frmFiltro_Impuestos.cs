@@ -23,8 +23,7 @@ namespace Presentacion
         {
 
         }
-
-
+        
         //Mensaje de confirmacion
         private void MensajeOk(string mensaje)
         {
@@ -43,7 +42,7 @@ namespace Presentacion
             {
                 if (TBBuscar.Text != "")
                 {
-                    this.DGFiltro_Resultados.DataSource = fImpuesto.Buscar(this.TBBuscar.Text, 4);
+                    this.DGFiltro_Resultados.DataSource = fImpuesto.Buscar(this.TBBuscar.Text, 1);
                     this.DGFiltro_Resultados.Columns[0].Visible = false;
 
                     lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
@@ -72,10 +71,11 @@ namespace Presentacion
                 frmProductos frmPro = frmProductos.GetInstancia();
                 if (frmPro.Examinar)
                 {
-                    string idimpuesto, impuesto;
+                    string idimpuesto, impuesto,valor;
                     idimpuesto = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                     impuesto = this.DGFiltro_Resultados.CurrentRow.Cells["Impuesto"].Value.ToString();
-                    frmPro.setImpuesto(idimpuesto, impuesto);
+                    valor = this.DGFiltro_Resultados.CurrentRow.Cells["Valor"].Value.ToString();
+                    frmPro.setImpuesto(idimpuesto, impuesto,valor);
                     this.Hide();
                 }
             }

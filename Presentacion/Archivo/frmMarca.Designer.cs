@@ -69,7 +69,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(398, 216);
+            this.groupBox1.Size = new System.Drawing.Size(398, 266);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Marcas - Leal Enterprise";
@@ -80,7 +80,7 @@
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(311, 182);
+            this.btnImprimir.Location = new System.Drawing.Point(308, 189);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(76, 26);
             this.btnImprimir.TabIndex = 12;
@@ -93,7 +93,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(229, 182);
+            this.btnEliminar.Location = new System.Drawing.Point(226, 189);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(76, 26);
             this.btnEliminar.TabIndex = 11;
@@ -106,7 +106,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(91, 182);
+            this.btnCancelar.Location = new System.Drawing.Point(88, 189);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 26);
             this.btnCancelar.TabIndex = 10;
@@ -119,7 +119,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(9, 182);
+            this.btnGuardar.Location = new System.Drawing.Point(6, 189);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(76, 26);
             this.btnGuardar.TabIndex = 9;
@@ -128,7 +128,7 @@
             // 
             // TBIdmarca
             // 
-            this.TBIdmarca.Location = new System.Drawing.Point(157, 155);
+            this.TBIdmarca.Location = new System.Drawing.Point(154, 162);
             this.TBIdmarca.Name = "TBIdmarca";
             this.TBIdmarca.Size = new System.Drawing.Size(62, 21);
             this.TBIdmarca.TabIndex = 8;
@@ -136,7 +136,7 @@
             // 
             // TBObservacion
             // 
-            this.TBObservacion.Location = new System.Drawing.Point(87, 128);
+            this.TBObservacion.Location = new System.Drawing.Point(84, 135);
             this.TBObservacion.Name = "TBObservacion";
             this.TBObservacion.Size = new System.Drawing.Size(300, 21);
             this.TBObservacion.TabIndex = 7;
@@ -147,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 131);
+            this.label4.Location = new System.Drawing.Point(3, 138);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(75, 15);
             this.label4.TabIndex = 6;
@@ -155,7 +155,7 @@
             // 
             // TBReferencia
             // 
-            this.TBReferencia.Location = new System.Drawing.Point(87, 101);
+            this.TBReferencia.Location = new System.Drawing.Point(84, 108);
             this.TBReferencia.Name = "TBReferencia";
             this.TBReferencia.Size = new System.Drawing.Size(300, 21);
             this.TBReferencia.TabIndex = 5;
@@ -166,7 +166,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 104);
+            this.label3.Location = new System.Drawing.Point(3, 111);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 15);
             this.label3.TabIndex = 4;
@@ -174,7 +174,7 @@
             // 
             // TBDescripcion
             // 
-            this.TBDescripcion.Location = new System.Drawing.Point(87, 74);
+            this.TBDescripcion.Location = new System.Drawing.Point(84, 81);
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(300, 21);
             this.TBDescripcion.TabIndex = 3;
@@ -185,7 +185,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 77);
+            this.label2.Location = new System.Drawing.Point(3, 84);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 2;
@@ -193,7 +193,7 @@
             // 
             // TBNombre
             // 
-            this.TBNombre.Location = new System.Drawing.Point(87, 47);
+            this.TBNombre.Location = new System.Drawing.Point(84, 54);
             this.TBNombre.Name = "TBNombre";
             this.TBNombre.Size = new System.Drawing.Size(300, 21);
             this.TBNombre.TabIndex = 1;
@@ -204,7 +204,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 50);
+            this.label1.Location = new System.Drawing.Point(3, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 0;
@@ -218,7 +218,7 @@
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Location = new System.Drawing.Point(416, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(516, 216);
+            this.groupBox2.Size = new System.Drawing.Size(516, 266);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Marcas Registradas - Leal Enterprise";
@@ -246,7 +246,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 188);
+            this.lblTotal.Location = new System.Drawing.Point(6, 248);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 15);
             this.lblTotal.TabIndex = 1;
@@ -261,22 +261,23 @@
             this.DGResultados.Location = new System.Drawing.Point(6, 47);
             this.DGResultados.Name = "DGResultados";
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(500, 138);
+            this.DGResultados.Size = new System.Drawing.Size(500, 198);
             this.DGResultados.TabIndex = 0;
+            this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             // 
             // frmMarca
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(945, 238);
+            this.ClientSize = new System.Drawing.Size(945, 290);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
             this.Name = "frmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Produccion - Marca";
+            this.Text = "Archivo - Marca";
             this.Load += new System.EventHandler(this.frmMarca_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

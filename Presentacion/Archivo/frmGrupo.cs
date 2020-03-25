@@ -60,7 +60,7 @@ namespace Presentacion
             this.TBGrupo.Select();
 
             //Ocultacion de Texboxt
-            this.TBIdorigen.Visible = false;
+            this.TBIdgrupo.Visible = false;
         }
 
         private void Habilitar()
@@ -101,7 +101,7 @@ namespace Presentacion
                 this.Habilitar();
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TBIdorigen.Focus();
+                this.TBObservacion.Focus();
             }
 
         }
@@ -172,7 +172,7 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 2, Convert.ToInt32(this.TBIdorigen.Text),
+                                 2, Convert.ToInt32(this.TBIdgrupo.Text),
 
                                  //Panel Datos Basicos
                                  this.TBGrupo.Text, this.TBDescripcion.Text, this.TBObservacion.Text,
@@ -354,12 +354,12 @@ namespace Presentacion
                 if (Editar == "1")
                 {
                     //
-                    this.TBIdorigen.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                    this.TBIdgrupo.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                    this.TBGrupo.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Grupo"].Value);
+                    this.TBDescripcion.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Descripcion"].Value);
+                    this.TBObservacion.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Observacion"].Value);
+
                     this.TBGrupo.Select();
-
-                    //
-                    this.Limpiar_Datos();
-
                 }
                 else
                 {
@@ -681,7 +681,8 @@ namespace Presentacion
 
             else
             {
-                TBGrupo.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBGrupo.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBGrupo.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
@@ -697,7 +698,8 @@ namespace Presentacion
 
             else
             {
-                TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 
@@ -713,7 +715,8 @@ namespace Presentacion
 
             else
             {
-                TBObservacion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBObservacion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBObservacion.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
         

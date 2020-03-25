@@ -41,7 +41,7 @@ namespace Negocio
 
                 //Datos Financieros
                 string retencion, string valorretencion, string bancoPrincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditoMin, string creditoMax, int estado
+                string cuenta02, string creditoMin, string creditoMax, string prorroga, int estado
                                 
             )
         {
@@ -81,6 +81,7 @@ namespace Negocio
             Obj.Cuenta02 = cuenta02;
             Obj.CreditoMin = creditoMin;
             Obj.CreditoMax = creditoMax;
+            Obj.Prorroga = prorroga;
 
             //Datos Auxiliares
             Obj.Auto = auto;
@@ -103,7 +104,7 @@ namespace Negocio
 
                 //Datos Financieros
                 string retencion, string valorretencion, string bancoPrincipal, string bancoauxiliar, string cuenta01,
-                string cuenta02, string creditoMin, string creditoMax, int estado
+                string cuenta02, string creditoMin, string creditoMax, string prorroga, int estado
             )
         {
             Conexion_Proveedor Datos = new Conexion_Proveedor();
@@ -143,6 +144,7 @@ namespace Negocio
             Obj.Cuenta02 = cuenta02;
             Obj.CreditoMin = creditoMin;
             Obj.CreditoMax = creditoMax;
+            Obj.Prorroga = prorroga;
 
             //Datos Auxiliares
             Obj.Auto = auto;

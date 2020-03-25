@@ -58,7 +58,7 @@
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Location = new System.Drawing.Point(418, 14);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(503, 181);
+            this.groupBox2.Size = new System.Drawing.Size(503, 264);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Empaques Registrados - Leal Enterprise";
@@ -66,7 +66,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 155);
+            this.lblTotal.Location = new System.Drawing.Point(6, 246);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 15);
             this.lblTotal.TabIndex = 3;
@@ -99,7 +99,7 @@
             this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGResultados.Location = new System.Drawing.Point(6, 47);
             this.DGResultados.Name = "DGResultados";
-            this.DGResultados.Size = new System.Drawing.Size(491, 103);
+            this.DGResultados.Size = new System.Drawing.Size(491, 196);
             this.DGResultados.TabIndex = 0;
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
@@ -119,14 +119,14 @@
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Location = new System.Drawing.Point(12, 14);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(400, 181);
+            this.groupBox1.Size = new System.Drawing.Size(400, 264);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Empaques - Leal Enterprise";
             // 
             // TBIdorigen
             // 
-            this.TBIdorigen.Location = new System.Drawing.Point(174, 149);
+            this.TBIdorigen.Location = new System.Drawing.Point(179, 182);
             this.TBIdorigen.Name = "TBIdorigen";
             this.TBIdorigen.Size = new System.Drawing.Size(39, 21);
             this.TBIdorigen.TabIndex = 10;
@@ -134,7 +134,7 @@
             // 
             // TBObservacion
             // 
-            this.TBObservacion.Location = new System.Drawing.Point(88, 99);
+            this.TBObservacion.Location = new System.Drawing.Point(93, 132);
             this.TBObservacion.Name = "TBObservacion";
             this.TBObservacion.Size = new System.Drawing.Size(300, 21);
             this.TBObservacion.TabIndex = 9;
@@ -145,7 +145,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 102);
+            this.label3.Location = new System.Drawing.Point(12, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(75, 15);
             this.label3.TabIndex = 8;
@@ -153,7 +153,7 @@
             // 
             // TBDescripcion
             // 
-            this.TBDescripcion.Location = new System.Drawing.Point(88, 72);
+            this.TBDescripcion.Location = new System.Drawing.Point(93, 105);
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(300, 21);
             this.TBDescripcion.TabIndex = 7;
@@ -164,7 +164,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 75);
+            this.label2.Location = new System.Drawing.Point(12, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(72, 15);
             this.label2.TabIndex = 6;
@@ -172,7 +172,7 @@
             // 
             // TBGrupo
             // 
-            this.TBGrupo.Location = new System.Drawing.Point(88, 45);
+            this.TBGrupo.Location = new System.Drawing.Point(93, 78);
             this.TBGrupo.Name = "TBGrupo";
             this.TBGrupo.Size = new System.Drawing.Size(300, 21);
             this.TBGrupo.TabIndex = 5;
@@ -183,7 +183,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(7, 50);
+            this.label1.Location = new System.Drawing.Point(12, 83);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 15);
             this.label1.TabIndex = 4;
@@ -195,7 +195,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 149);
+            this.btnGuardar.Location = new System.Drawing.Point(15, 182);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(76, 26);
             this.btnGuardar.TabIndex = 0;
@@ -208,7 +208,7 @@
             this.btnImprimir.FlatAppearance.BorderSize = 0;
             this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnImprimir.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(312, 149);
+            this.btnImprimir.Location = new System.Drawing.Point(317, 182);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(76, 26);
             this.btnImprimir.TabIndex = 3;
@@ -221,7 +221,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(92, 149);
+            this.btnCancelar.Location = new System.Drawing.Point(97, 182);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 26);
             this.btnCancelar.TabIndex = 1;
@@ -234,7 +234,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(230, 149);
+            this.btnEliminar.Location = new System.Drawing.Point(235, 182);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(76, 26);
             this.btnEliminar.TabIndex = 2;
@@ -246,13 +246,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(933, 209);
+            this.ClientSize = new System.Drawing.Size(933, 290);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "frmEmpaque";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Sistema - Empaque";
+            this.Text = "Archivo - Empaque";
             this.Load += new System.EventHandler(this.frmEmpaque_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();

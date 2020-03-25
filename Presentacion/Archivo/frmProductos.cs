@@ -27,7 +27,7 @@ namespace Presentacion
         }
 
         // Variable con la cual se define si el procecimiento 
-        // A realizar es Editar, Guardar, Buscar,Eliminar
+        // A realizar es Editar, Guardar, Buscar, Eliminar
         private bool Digitar = true;
         public bool Filtro = true;
         public bool Examinar = true;
@@ -35,6 +35,7 @@ namespace Presentacion
         //Variables de Validaciones
         public int Idempleado; //Variable para Captura el Empleado Logueado
         private string Campo = "Campo Obligatorio - Leal Enterprise";
+        private string Campo_Obligatorio = "Campo Obligatorio";
         private string Numerico = "Campo Numerico - Leal Enterprise";
         private string Vacio = "";
         private string Valores = ""; //Especifica el Valor de venta Final en la base de datos segun el valor seleccionado e ingresado en los campos
@@ -71,7 +72,7 @@ namespace Presentacion
         private DateTime Fecha;
         private string UnidadDePeso;
 
-        //***********************************************************************************************************************
+        //***************************************************************************************
 
         public frmProductos()
         {
@@ -128,7 +129,9 @@ namespace Presentacion
             this.TBImpuesto.Enabled = false;
             this.TBImpuesto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBImpuesto.Text = Campo;
+            this.TBImpuesto.Text = Campo_Obligatorio;
+            this.TBImpuesto_Valor.Enabled = false;
+            this.TBImpuesto_Valor.BackColor = Color.FromArgb(72, 209, 204);
 
             this.TBUnidadDeVenta.Enabled = false;
             this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
@@ -215,6 +218,9 @@ namespace Presentacion
                 this.TBPresentacion.Clear();
                 this.TBPresentacion.Text = Campo;
                 this.TBReferencia.Clear();
+                this.TBProveedor.Clear();
+                this.TBImpuesto.Clear();
+                this.TBImpuesto_Valor.Clear();
                 this.CBMarca.SelectedIndex = 0;
                 this.CBGrupo.SelectedIndex = 0;
                 this.CBTipo.SelectedIndex = 0;
@@ -325,10 +331,11 @@ namespace Presentacion
             this.TBProveedor.Text = proveedor;
         }
 
-        public void setImpuesto(string idimpuesto, string impuesto)
+        public void setImpuesto(string idimpuesto, string impuesto, string valor)
         {
             this.TBIdimpuesto.Text = idimpuesto;
             this.TBImpuesto.Text = impuesto;
+            this.TBImpuesto_Valor.Text = valor;
         }
 
         private void Validaciones_SQL()

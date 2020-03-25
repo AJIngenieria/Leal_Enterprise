@@ -78,9 +78,9 @@
             // 
             // TBBuscar
             // 
-            this.TBBuscar.Location = new System.Drawing.Point(133, 20);
+            this.TBBuscar.Location = new System.Drawing.Point(140, 20);
             this.TBBuscar.Name = "TBBuscar";
-            this.TBBuscar.Size = new System.Drawing.Size(373, 21);
+            this.TBBuscar.Size = new System.Drawing.Size(366, 21);
             this.TBBuscar.TabIndex = 1;
             this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
             // 
@@ -89,9 +89,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(6, 23);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(121, 15);
+            this.label1.Size = new System.Drawing.Size(128, 15);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Producto a Consultar";
+            this.label1.Text = "Proveedor a Consultar";
             // 
             // frmFiltro_Proveedor
             // 
@@ -104,7 +104,7 @@
             this.MaximizeBox = false;
             this.Name = "frmFiltro_Proveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmFiltro_Proveedor";
+            this.Text = "Filtro de Proveedor - Leal Enterprise";
             this.Load += new System.EventHandler(this.frmFiltro_Proveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -15,8 +15,16 @@ namespace Presentacion
     public partial class frmProveedor : Form
     {
         // Variable con la cual se define si el procecimiento 
-        // A realizar es Editar, Guardar, Buscar,Eliminar
+        // A realizar es Editar, Guardar, Buscar, Eliminar
         private bool Digitar = true;
+        public bool Filtro = true;
+        public bool Examinar = true;
+
+        //Variables de Validaciones
+        public int Idempleado; //Variable para Captura el Empleado Logueado
+        private string Campo = "Campo Obligatorio - Leal Enterprise";
+        private string Numerico = "Campo Numerico - Leal Enterprise";
+        private string Vacio = "";
 
         //Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar
         public string Guardar = "";
@@ -25,46 +33,20 @@ namespace Presentacion
         public string Eliminar = "";
         public string Imprimir = "";
 
-        //Parametros para AutoCompletar los Texboxt
-
-        private string Campo = "Campo Obligatorio - Leal Enterprise";
-
+        //********** Parametros para AutoCompletar los Texboxt **********************************
+               
         //Panel Datos Basicos
-        public string Idproveedor = "";
-        public string Proveedor = "";
-        public string Documento = "";
-        public string Representante = "";
-        public string Telefono = "";
-        public string Movil = "";
-        public string Correo = "";
-        public string Pais = "";
-        public string Ciudad = "";
-        public string Nacionalidad = "";
-        public string FechaDeInicio = "";
+        public string Idproveedor, Tipo, Proveedor, Documento, Representante, Telefono, Movil, Correo, Pais, Ciudad, Nacionalidad, FechaDeInicio = "";
 
         //Panel Datos de Envio
-        public string Pais_DE = "";
-        public string Ciudad_DE = "";
-        public string DireccionPrincipal = "";
-        public string Direccion01 = "";
-        public string Direccion02 = "";
-        public string Receptor = "";
-        public string Observacion = "";
+        public string Pais_DE, Ciudad_DE, DireccionPrincipal, Direccion01, Direccion02, Receptor, Telefono_Envio, Movil_Envio, Observacion = "";
 
         //Panel Datos Financiero
-        public string Retencion = "";
-        public string Valor_Retencion = "";
-        public string Moneda = "";
-        public string BancoPrincipal = "";
-        public string BancoAuxiliar = "";
-        public string Cuenta01 = "";
-        public string Cuenta02 = "";
-        public string CreditoMinimo = "";
-        public string CreditoMaximo = "";
-        public string UltimoCredito = "";
-        public string Mora = "";
-        public string TotalCredito = "";
-        public string Prorroga = "";
+        public string Retencion, Valor_Retencion, BancoPrincipal, BancoAuxiliar, Cuenta01, Cuenta02 = "";
+        public string CreditoMinimo, CreditoMaximo, Prorroga = "";
+
+        //***************************************************************************************
+
         public frmProveedor()
         {
             InitializeComponent();
@@ -190,6 +172,11 @@ namespace Presentacion
             this.TBCreditoMaximo.Clear();
             this.TBCreditoMaximo.Clear();
             this.TBDiasProrroga.Clear();
+
+            //se realiza la seleccion al campo de texto para asi este salte
+            //al campo siguiente inicial el cual es TBNombre.Text
+            this.TCPrincipal.SelectedIndex = 0;
+            this.TBCorreo.Select();
         }
 
         private void Botones()
@@ -262,7 +249,7 @@ namespace Presentacion
                         rptaDatosBasicos = fProveedor.Guardar_DatosBasicos
 
                             (
-                                
+
                                 //Datos Auxiliares y llave primaria
                                 1,
 
@@ -272,11 +259,11 @@ namespace Presentacion
 
                                 //Panel Datos De Envio
                                 this.TBPais_01.Text, this.TBCiudad_01.Text, this.TBDireccionPrincipal.Text, this.TBDireccion01.Text,
-                                this.TBDireccion02.Text, this.TBTelefono_01.Text,this.TBMovil_01.Text,this.TBReceptor.Text, this.TBObservacion.Text,
+                                this.TBDireccion02.Text, this.TBTelefono_01.Text, this.TBMovil_01.Text, this.TBReceptor.Text, this.TBObservacion.Text,
 
                                 //Panel Datos Financieros
                                 this.CBRetencion.Text, this.TBValorRetencion.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text,
-                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, 1
+                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, this.TBDiasProrroga.Text, 1
                             );
                     }
 
@@ -298,7 +285,7 @@ namespace Presentacion
 
                                 //Panel Datos Financieros
                                 this.CBRetencion.Text, this.TBValorRetencion.Text, this.TBBancoPrincipal.Text, this.TBBancoAuxiliar.Text, this.TBCuenta01.Text, this.TBCuenta02.Text,
-                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, 1
+                                this.TBCreditoMinimo.Text, this.TBCreditoMaximo.Text, this.TBDiasProrroga.Text, 1
                             );
                     }
 
@@ -394,14 +381,17 @@ namespace Presentacion
                 this.Limpiar_Datos();
                 this.TBBuscar.Clear();
 
-                //Se Limpian las Filas y Columnas de la tabla
-                DGResultados.DataSource = null;
-                this.DGResultados.Enabled = false;
-                this.lblTotal.Text = "Datos Registrados: 0";
-
                 //Se restablece la imagen predeterminada del boton
                 this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
+                //Se Limpian las Filas y Columnas de la tabla
+                this.DGResultados.DataSource = null;
+                this.DGResultados.Enabled = false;
+                this.lblTotal.Text = "Datos Registrados: 0";
+
+                //Focus
+                this.TCPrincipal.SelectedIndex = 0;
+                this.TBCorreo.Select();
             }
             catch (Exception ex)
             {
@@ -511,90 +501,98 @@ namespace Presentacion
 
         private void TBIdproveedor_TextChanged(object sender, EventArgs e)
         {
-            //try
-            ////SE REALIZA LA CONSULTA A LA BASE DE DATOS POR MEDIO DEL Idcliente
-            ////Y ASI AUTOCOMPLETAR LOS CAMPOS DE TEXTOS NECESARIOS O CONSULTADOS
-            //{
+            try
+            //SE REALIZA LA CONSULTA A LA BASE DE DATOS POR MEDIO DEL Idcliente
+            //Y ASI AUTOCOMPLETAR LOS CAMPOS DE TEXTOS NECESARIOS O CONSULTADOS
+            {
 
-            //    // ENVIAN LOS DATOS A LA BASE DE DATOS Y SE EVALUAN QUE EXISTEN O ESTEN REGISTRADOS
+                // ENVIAN LOS DATOS A LA BASE DE DATOS Y SE EVALUAN QUE EXISTEN O ESTEN REGISTRADOS
 
-            //    DataTable Datos = CapaNegocio.fAlmacen_Proveedor.Buscar_Proveedor(2, this.TBIdproveedor.Text);
-            //    //Evaluamos si  existen los Datos
-            //    if (Datos.Rows.Count == 0)
-            //    {
-            //        MessageBox.Show("No se encontraron registros en la base de datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //    else
-            //    {
+                DataTable Datos = Negocio.fProveedor.Buscar(this.TBIdproveedor.Text, 2);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("No se encontraron registros en la base de datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
 
-            //        //Panel Datos Basicos
-            //        Proveedor = Datos.Rows[0][0].ToString();
-            //        Documento = Datos.Rows[0][0].ToString();
-            //        Telefono = Datos.Rows[0][0].ToString();
-            //        Movil = Datos.Rows[0][0].ToString();
-            //        Correo = Datos.Rows[0][0].ToString();
-            //        Pais = Datos.Rows[0][0].ToString();
-            //        Ciudad = Datos.Rows[0][0].ToString();
-            //        Nacionalidad = Datos.Rows[0][0].ToString();
+                    //Panel Datos Basicos
+                    Tipo = Datos.Rows[0][0].ToString();
+                    Proveedor = Datos.Rows[0][1].ToString();
+                    Documento = Datos.Rows[0][2].ToString();
+                    Representante = Datos.Rows[0][3].ToString();
+                    Pais = Datos.Rows[0][4].ToString();
+                    Ciudad = Datos.Rows[0][5].ToString();
+                    Nacionalidad = Datos.Rows[0][6].ToString();
+                    Telefono = Datos.Rows[0][7].ToString();
+                    Movil = Datos.Rows[0][8].ToString();
+                    Correo = Datos.Rows[0][9].ToString();
+                    FechaDeInicio = Datos.Rows[0][10].ToString();
 
-            //        //Panel Datos de Envio
-            //        Pais_DE = Datos.Rows[0][0].ToString();
-            //        Ciudad_DE = Datos.Rows[0][0].ToString();
-            //        DireccionPrincipal = Datos.Rows[0][0].ToString();
-            //        Direccion01 = Datos.Rows[0][0].ToString();
-            //        Direccion02 = Datos.Rows[0][0].ToString();
-            //        Receptor = Datos.Rows[0][0].ToString();
-            //        Observacion = Datos.Rows[0][0].ToString();
+                    //Panel Datos de Envio
+                    Receptor = Datos.Rows[0][11].ToString();
+                    Pais_DE = Datos.Rows[0][12].ToString();
+                    Ciudad_DE = Datos.Rows[0][13].ToString();
+                    DireccionPrincipal = Datos.Rows[0][14].ToString();
+                    Direccion01 = Datos.Rows[0][15].ToString();
+                    Direccion02 = Datos.Rows[0][16].ToString();
+                    Telefono_Envio = Datos.Rows[0][17].ToString();
+                    Movil_Envio = Datos.Rows[0][18].ToString();
+                    Observacion = Datos.Rows[0][19].ToString();
 
-            //        //Panel Datos Financiero
-            //        BancoPrincipal = Datos.Rows[0][0].ToString();
-            //        BancoAuxiliar = Datos.Rows[0][0].ToString();
-            //        Cuenta01 = Datos.Rows[0][0].ToString();
-            //        Cuenta02 = Datos.Rows[0][0].ToString();
-            //        CreditoMinimo = Datos.Rows[0][0].ToString();
-            //        CreditoMaximo = Datos.Rows[0][0].ToString();
-            //        UltimoCredito = Datos.Rows[0][0].ToString();
-            //        Mora = Datos.Rows[0][0].ToString();
-            //        TotalCredito = Datos.Rows[0][0].ToString();
+                    //Panel Datos Financiero
+                    Retencion = Datos.Rows[0][20].ToString();
+                    Valor_Retencion = Datos.Rows[0][21].ToString();
+                    BancoPrincipal = Datos.Rows[0][22].ToString();
+                    Cuenta01 = Datos.Rows[0][23].ToString();
+                    BancoAuxiliar = Datos.Rows[0][24].ToString();
+                    Cuenta02 = Datos.Rows[0][25].ToString();
+                    CreditoMinimo = Datos.Rows[0][26].ToString();
+                    CreditoMaximo = Datos.Rows[0][27].ToString();
+                    Prorroga = Datos.Rows[0][28].ToString();
 
+                    //SE PROCEDE A LLENAR LOS CAMPOS DE TEXTO SEGUN LA CONSULTA REALIZADA
 
-            //        //SE PROCEDE A LLENAR LOS CAMPOS DE TEXTO SEGUN LA CONSULTA REALIZADA
+                    this.CBTipo.Text = Tipo;
+                    this.TBNombre.Text = Proveedor;
+                    this.TBDocumento.Text = Documento;
+                    this.TBRepresentante.Text = Representante;
+                    this.TBPais.Text = Pais;
+                    this.TBCiudad.Text = Ciudad;
+                    this.TBNacionalidad.Text = Nacionalidad;
+                    this.TBTelefono.Text = Telefono;
+                    this.TBMovil.Text = Movil;
+                    this.TBCorreo.Text = Correo;
+                    this.DTFechadeinicio.Text = FechaDeInicio;
 
-            //        this.TBNombre.Text = Proveedor;
-            //        this.TBDocumento.Text = Documento;
-            //        this.TBTelefono.Text = Telefono;
-            //        this.TBMovil.Text = Movil;
-            //        this.TBCorreo.Text = Correo;
-            //        this.TBPais.Text = Pais;
-            //        this.TBCiudad.Text = Ciudad;
-            //        this.TBRepresentante.Text = Representante;
+                    //
+                    this.TBReceptor.Text = Receptor;
+                    this.TBPais_01.Text = Pais_DE;
+                    this.TBCiudad_01.Text = Ciudad_DE;
+                    this.TBDireccionPrincipal.Text = DireccionPrincipal;
+                    this.TBDireccion01.Text = Direccion01;
+                    this.TBDireccion02.Text = Direccion02;
+                    this.TBTelefono_01.Text = Telefono_Envio;
+                    this.TBMovil_01.Text = Movil_Envio;
+                    this.TBObservacion.Text = Observacion;
 
-            //        //
-            //        this.TBPais_01.Text = Pais_DE;
-            //        this.TBCiudad_01.Text = Ciudad_DE;
-            //        this.TBDireccion01.Text = Direccion01;
-            //        this.TBDireccion02.Text = Direccion02;
-            //        this.TBReceptor.Text = Receptor;
-            //        this.TBObservacion.Text = Observacion;
-
-            //        //
-            //        this.TBBancoPrincipal.Text = BancoPrincipal;
-            //        this.TBBancoAuxiliar.Text = BancoAuxiliar;
-            //        this.TBCuenta01.Text = Cuenta01;
-            //        this.TBCuenta02.Text = Cuenta02;
-            //        this.TBCreditoMinimo.Text = CreditoMinimo;
-            //        this.TBCreditoMaximo.Text = CreditoMaximo;
-            //        this.TBUltimoCredito.Text = UltimoCredito;
-            //        this.TBCreditoMora.Text = Mora;
-            //        this.TBCreditoTotal.Text = TotalCredito;
-
-            //    }
-
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show(ex.Message + ex.StackTrace);
-            //}
+                    //
+                    this.CBRetencion.Text = Retencion;
+                    this.TBValorRetencion.Text = Valor_Retencion;
+                    this.TBBancoPrincipal.Text = BancoPrincipal;
+                    this.TBCuenta01.Text = Cuenta01;
+                    this.TBBancoAuxiliar.Text = BancoAuxiliar;
+                    this.TBCuenta02.Text = Cuenta02;               
+                    this.TBCreditoMinimo.Text = CreditoMinimo;
+                    this.TBCreditoMaximo.Text = CreditoMaximo;
+                    this.TBDiasProrroga.Text = Prorroga;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void CBTipo_SelectedIndexChanged(object sender, EventArgs e)
@@ -617,10 +615,8 @@ namespace Presentacion
                     this.TBIdproveedor.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
                     this.TBNombre.Select();
 
-                    //Se procede Habilitar los campos de Textos y Botones
-                    //cuando se le realice el evento Clip del Boton Ediatar/Guardar
+                    //Cuando se le realice el evento Clip del Boton Ediatar/Guardar
 
-                    this.Habilitar();
                     this.btnGuardar.Enabled = true;
                     this.btnCancelar.Enabled = true;
 
@@ -656,7 +652,6 @@ namespace Presentacion
                         //Se procede Habilitar los campos de Textos y Botones
                         //cuando se le realice el evento Clip del Boton Ediatar/Guardar
 
-                        this.Habilitar();
                         this.btnGuardar.Enabled = true;
                         this.btnCancelar.Enabled = true;
 
@@ -738,7 +733,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -815,7 +810,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -892,7 +887,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -969,7 +964,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1046,7 +1041,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1123,7 +1118,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1200,7 +1195,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1277,7 +1272,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1354,7 +1349,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1433,7 +1428,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1510,7 +1505,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1587,7 +1582,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1664,7 +1659,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1741,7 +1736,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1818,7 +1813,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1895,7 +1890,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -1972,7 +1967,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2049,7 +2044,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2127,7 +2122,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2204,7 +2199,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2281,7 +2276,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2358,7 +2353,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2435,7 +2430,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2512,7 +2507,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2589,7 +2584,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -2666,7 +2661,7 @@ namespace Presentacion
                         {
                             //Llamada de Clase
                             this.Digitar = false;
-                            this.Limpiar_Datos();
+                            this.Guardar_SQL();
                         }
                         else
                         {
@@ -3015,6 +3010,87 @@ namespace Presentacion
         private void TBDiasProrroga_Leave(object sender, EventArgs e)
         {
             this.TBDiasProrroga.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
+            }
+        }
+
+        private void btnGuardar_MouseLeave(object sender, EventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BV_Editar;
+            }
+        }
+
+        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (Digitar)
+            {
+                this.btnGuardar.Image = Properties.Resources.BR_Guardar;
+            }
+            else
+            {
+                this.btnGuardar.Image = Properties.Resources.BR_Editar;
+            }
+        }
+
+        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
+        }
+
+        private void btnCancelar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
+        }
+
+        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
+        }
+
+        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
+        }
+
+        private void btnEliminar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
+        }
+
+        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
+        }
+
+        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
+        }
+
+        private void btnImprimir_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
+        }
+
+        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
 
     }

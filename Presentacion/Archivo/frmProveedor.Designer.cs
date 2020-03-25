@@ -152,7 +152,7 @@
             // 
             this.DGResultados.AllowUserToAddRows = false;
             this.DGResultados.AllowUserToDeleteRows = false;
-            this.DGResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.DGResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGResultados.BackgroundColor = System.Drawing.Color.White;
             this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -177,6 +177,9 @@
             this.btnImprimir.TabIndex = 2;
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            this.btnImprimir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImprimir_MouseDown);
+            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
+            this.btnImprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnImprimir_MouseMove);
             // 
             // btnEliminar
             // 
@@ -190,6 +193,9 @@
             this.btnEliminar.TabIndex = 1;
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            this.btnEliminar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnEliminar_MouseDown);
+            this.btnEliminar.MouseLeave += new System.EventHandler(this.btnEliminar_MouseLeave);
+            this.btnEliminar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnEliminar_MouseMove);
             // 
             // groupBox1
             // 
@@ -226,6 +232,9 @@
             this.btnCancelar.TabIndex = 3;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnCancelar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseDown);
+            this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
+            this.btnCancelar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseMove);
             // 
             // btnGuardar
             // 
@@ -239,6 +248,9 @@
             this.btnGuardar.TabIndex = 2;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnGuardar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnGuardar_MouseDown);
+            this.btnGuardar.MouseLeave += new System.EventHandler(this.btnGuardar_MouseLeave);
+            this.btnGuardar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnGuardar_MouseMove);
             // 
             // TCPrincipal
             // 
@@ -869,6 +881,7 @@
             // 
             this.CBRetencion.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBRetencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBRetencion.FormattingEnabled = true;
             this.CBRetencion.Items.AddRange(new object[] {
             "-",
@@ -877,7 +890,7 @@
             "Exento de retencion"});
             this.CBRetencion.Location = new System.Drawing.Point(106, 6);
             this.CBRetencion.Name = "CBRetencion";
-            this.CBRetencion.Size = new System.Drawing.Size(134, 23);
+            this.CBRetencion.Size = new System.Drawing.Size(134, 21);
             this.CBRetencion.Sorted = true;
             this.CBRetencion.TabIndex = 1;
             // 
