@@ -266,12 +266,15 @@
             // 
             // DGResultados
             // 
+            this.DGResultados.AllowUserToAddRows = false;
+            this.DGResultados.AllowUserToDeleteRows = false;
             this.DGResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGResultados.BackgroundColor = System.Drawing.Color.White;
             this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGResultados.Location = new System.Drawing.Point(6, 47);
             this.DGResultados.Name = "DGResultados";
+            this.DGResultados.ReadOnly = true;
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGResultados.Size = new System.Drawing.Size(500, 198);
             this.DGResultados.TabIndex = 0;

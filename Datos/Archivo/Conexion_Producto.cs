@@ -99,6 +99,8 @@ namespace Datos
                 Comando.Parameters.Add("@Exportado", SqlDbType.Int).Value = Obj.Exportado;
                 Comando.Parameters.Add("@Impuesto", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Ofertable", SqlDbType.Int).Value = Obj.Ofertable;
+                Comando.Parameters.Add("@UnidadDeVenta", SqlDbType.VarChar).Value = Obj.Unidad;
+                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
 
                 Comando.Parameters.Add("@Idgrupo", SqlDbType.Int).Value = Obj.Idgrupo;
                 Comando.Parameters.Add("@Idtipo", SqlDbType.Int).Value = Obj.Idtipo;
@@ -179,6 +181,8 @@ namespace Datos
                 Comando.Parameters.Add("@Exportado", SqlDbType.Int).Value = Obj.Exportado;
                 Comando.Parameters.Add("@Impuesto", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Ofertable", SqlDbType.Int).Value = Obj.Ofertable;
+                Comando.Parameters.Add("@UnidadDeVenta", SqlDbType.VarChar).Value = Obj.Unidad;
+                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
 
                 Comando.Parameters.Add("@Idgrupo", SqlDbType.Int).Value = Obj.Idgrupo;
                 Comando.Parameters.Add("@Idtipo", SqlDbType.Int).Value = Obj.Idtipo;

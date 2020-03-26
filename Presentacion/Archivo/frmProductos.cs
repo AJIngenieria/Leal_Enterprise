@@ -44,12 +44,13 @@ namespace Presentacion
 
         private string Checkbox_Vencimiento, Checkbox_Ofertable, Checkbox_Impuesto, Checkbox_Importado, Checkbox_Exportado = "";
 
-        //********** Variables para AutoComplementar Combobox segun la Consulta en SQL **********
+        //********** Variables para AutoComplementar Combobox y Chexboxt segun la Consulta en SQL **********
 
         //Panel Datos Basicos
         private string Bodega_SQL, Empaque_SQL, Grupo_SQL, Marca_SQL, Tipo_SQL = "";
+        private string Vencimiento_SQL, Impuesto_SQL, Importado_SQL, Exportado_SQL, Ofertable_SQL = "";
 
-        //********** Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar **************
+        //********** Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar *************************
 
         public string Guardar = "";
         public string Editar = "";
@@ -60,17 +61,25 @@ namespace Presentacion
         //********** Parametros para AutoCompletar los Texboxt **********************************
 
         //Panel Datos Basicos - Llaves Primarias
-        private string Idmarca, Idorigen, Idgrupo, Idtipo, Idempaque, Idbodega, Idproveedor, Idimpuesto = "";
+        private string Idmarca, Idgrupo, Idtipo, Idempaque, Idbodega, Idproveedor, Idimpuesto = "";
 
         //Panel Datos Basicos
-        private string Codigo, Barra, Nombre, Referencia, Descripcion, Lote, Presentacion = "";
+        private string Codigo, Nombre, Referencia, Descripcion, Presentacion = "";
+        private string ManejaVencimiento, Importado, Exportado, ManjenaImpuesto = "";
+        private string Ofertable, UnidadDeVenta, ValorUnidad = "";
 
         //Panel - Valores
-        private string Ofertable, CompraMinima, CompraMaxima, ValorVenta01, ValorVenta02, Ubicacion, Estante, Nivel, Imagen;
+        private string ValorCompra, ValorCompra_SinImpuesto, ValorFinal, CantidadMinima, CantidadMaxima = "";
+        private string ValorExportacion, ValorImportacion, ValorEnvio, OtrosGastos = "";
 
-        private string UnidadDeVenta, CantidadCompraMinima, CantidadCompraMaxima, CantidadMinimaCliente, CantidadMaximaCliente, Vence;
-        private DateTime Fecha;
-        private string UnidadDePeso;
+        //Panel - Ubicacion
+        private string Ubicacion, Estante, Nivel, Imagen = "";
+
+        //Panel - Lote
+        private string Lote, Valor_Lote, Fecha_Vencimiento = "";
+
+        //Panel - Codigo de Barra
+        private string CodigoDeBarra, Proveedor, Impuesto, Impuesto_Valor = "";
 
         //***************************************************************************************
 
@@ -94,7 +103,7 @@ namespace Presentacion
 
             //Panel - Cantidades - Otros Datos
             this.CBUnidad.SelectedIndex = 0;
-            this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
+            this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
 
             this.TCPrincipal.TabPages.Remove(this.TPLote);
             this.TCPrincipal.TabPages.Remove(this.TPCodigosdeBarra);
@@ -265,7 +274,7 @@ namespace Presentacion
                 this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TBNombre.Focus();
+                this.TBPresentacion.Select();
                 this.TCPrincipal.SelectedIndex = 0;
             }
         }
@@ -431,14 +440,6 @@ namespace Presentacion
                     MensajeError("Seleccione la Bodega donde se Ubicara el Producto");
                 }
 
-                // <<<<<<------ Panel Valores ------>>>>>
-
-                else if (this.CBOfertable.Checked == false)
-                {
-                    MensajeError("Por favor Seleccione si el Producto contine valores de Oferta al Publico");
-                    this.TCPrincipal.SelectedIndex = 0;
-                }
-
                 //else if (this.CBVentaPublico.SelectedIndex == 0)
                 //{
                 //    MensajeError("Por favor Seleccione el valor de Venta Final al Publico");
@@ -464,18 +465,19 @@ namespace Presentacion
 
                             (
                                  //Datos Auxiliares
-                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text), 
-                                 Convert.ToInt32(this.TBIdimpuesto.Text),Convert.ToInt32(CBEmpaque.SelectedValue),
+                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
+                                 Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
+                                 Convert.ToInt32(this.CBTipo.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
                                  this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
-                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado), 
+                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
                                  Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable),
 
                                  //Panel de Valores
-                                 this.TBValorVenta_SinImpuesto.Text, this.TBValordecompra.Text, this.TBValorVenta.Text, this.TBCantidadMininaCliente.Text, 
-                                 this.TBCantidadMaximaCliente.Text,this.TBValorImportacion.Text, this.TBValorExportacion.Text, this.TBGastodeEnvio.Text,
+                                 this.TBValorVenta_SinImpuesto.Text, this.TBValordecompra.Text, this.TBValorVenta.Text, this.TBCantidadMininaCliente.Text,
+                                 this.TBCantidadMaximaCliente.Text, this.TBValorImportacion.Text, this.TBValorExportacion.Text, this.TBGastodeEnvio.Text,
                                  this.TBOtrosGastos.Text,
 
                                  //Panel Ubicaciones
@@ -499,7 +501,8 @@ namespace Presentacion
                             (
                                  //Datos Auxiliares
                                  Convert.ToInt32(this.TBIdproducto.Text), Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue),
-                                 Convert.ToInt32(this.TBIdproveedor.Text), Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(this.CBEmpaque.SelectedValue),
+                                 Convert.ToInt32(this.TBIdproveedor.Text), Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue),
+                                 Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(this.CBTipo.SelectedValue),
 
                                  //Panel Datos Basicos
                                  this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
@@ -2693,43 +2696,55 @@ namespace Presentacion
 
                     //Panel Datos Basicos - Llaves Primarias
                     Idmarca = Datos.Rows[0][0].ToString();
-                    //Idorigen = Datos.Rows[0][1].ToString();
-                    Idgrupo = Datos.Rows[0][2].ToString();
-                    Idtipo = Datos.Rows[0][3].ToString();
-                    Idempaque = Datos.Rows[0][4].ToString();
-                    Idbodega = Datos.Rows[0][5].ToString();
-                    Idproveedor = Datos.Rows[0][6].ToString();
-                    Idimpuesto = Datos.Rows[0][7].ToString();
+                    Idgrupo = Datos.Rows[0][1].ToString();
+                    Idtipo = Datos.Rows[0][2].ToString();
+                    Idempaque = Datos.Rows[0][3].ToString();
+                    Idbodega = Datos.Rows[0][4].ToString();
+                    Idproveedor = Datos.Rows[0][5].ToString();
+                    Idimpuesto = Datos.Rows[0][6].ToString();
 
                     //Panel Datos Basicos
-                    Codigo = Datos.Rows[0][8].ToString();
-                    Barra = Datos.Rows[0][9].ToString();
-                    Nombre = Datos.Rows[0][10].ToString();
-                    Referencia = Datos.Rows[0][11].ToString();
-                    Descripcion = Datos.Rows[0][12].ToString();
-                    Lote = Datos.Rows[0][13].ToString();
-                    Presentacion = Datos.Rows[0][14].ToString();
+                    Codigo = Datos.Rows[0][7].ToString();
+                    Nombre = Datos.Rows[0][8].ToString();
+                    Referencia = Datos.Rows[0][9].ToString();
+                    Descripcion = Datos.Rows[0][10].ToString();
+                    Presentacion = Datos.Rows[0][11].ToString();
+                    ManejaVencimiento = Datos.Rows[0][12].ToString();
+                    Importado = Datos.Rows[0][13].ToString();
+                    Exportado = Datos.Rows[0][14].ToString();
+                    ManjenaImpuesto = Datos.Rows[0][15].ToString();
+                    Ofertable = Datos.Rows[0][16].ToString();
+                    UnidadDeVenta = Datos.Rows[0][17].ToString();
+                    ValorUnidad = Datos.Rows[0][18].ToString();
+                    
 
                     //Panel - Valores
-                    Ofertable = Datos.Rows[0][15].ToString();
-                    CompraMinima = Datos.Rows[0][17].ToString();
-                    CompraMaxima = Datos.Rows[0][18].ToString();
-                    ValorVenta01 = Datos.Rows[0][19].ToString();
-                    ValorVenta02 = Datos.Rows[0][20].ToString();
-                    Ubicacion = Datos.Rows[0][25].ToString();
-                    Estante = Datos.Rows[0][26].ToString();
-                    Nivel = Datos.Rows[0][27].ToString();
-                    Imagen = Datos.Rows[0][28].ToString();
+                    ValorCompra = Datos.Rows[0][19].ToString();
+                    ValorCompra_SinImpuesto = Datos.Rows[0][20].ToString();
+                    ValorFinal = Datos.Rows[0][21].ToString();
+                    CantidadMinima = Datos.Rows[0][22].ToString();
+                    CantidadMaxima = Datos.Rows[0][23].ToString();
+                    ValorExportacion = Datos.Rows[0][24].ToString();
+                    ValorImportacion = Datos.Rows[0][25].ToString();
+                    ValorEnvio = Datos.Rows[0][26].ToString();
+                    OtrosGastos = Datos.Rows[0][27].ToString();
 
-                    UnidadDeVenta = Datos.Rows[0][28].ToString();
-                    CantidadCompraMinima = Datos.Rows[0][29].ToString();
-                    CantidadCompraMaxima = Datos.Rows[0][30].ToString();
-                    CantidadMinimaCliente = Datos.Rows[0][31].ToString();
-                    CantidadMaximaCliente = Datos.Rows[0][32].ToString();
-                    Vence = Datos.Rows[0][33].ToString();
-                    //Fecha = Datos.Rows[0][34].date();
-                    UnidadDePeso = Datos.Rows[0][35].ToString();
-                    //Peso = Datos.Rows[0][36].ToString();
+                    //
+                    Ubicacion = Datos.Rows[0][28].ToString();
+                    Estante = Datos.Rows[0][29].ToString();
+                    Nivel = Datos.Rows[0][30].ToString();
+                    Imagen = Datos.Rows[0][31].ToString();
+
+                    //
+                    Lote = Datos.Rows[0][32].ToString();
+                    Valor_Lote = Datos.Rows[0][33].ToString();
+                    Fecha_Vencimiento = Datos.Rows[0][34].ToString();
+                    
+                    //
+                    CodigoDeBarra = Datos.Rows[0][35].ToString();
+                    Proveedor = Datos.Rows[0][36].ToString();
+                    Impuesto = Datos.Rows[0][37].ToString();
+                    Impuesto_Valor = Datos.Rows[0][38].ToString();
 
                     //Se procede a completar los campos de texto segun las consulta
                     //Realizada anteriormente en la base de datos
@@ -2749,40 +2764,94 @@ namespace Presentacion
                     this.Bodega_SQL = Idbodega;
                     this.CBBodega.SelectedValue = Bodega_SQL;
 
-                    //this.Proveedor_SQL = Idproveedor;
-                    //this.CBProveedor.SelectedValue = Proveedor_SQL;
-
-                    //this.Impuesto_SQL = Idimpuesto;
-                    //this.CBImpuesto.SelectedValue = Impuesto_SQL;
+                    //Panel Datos Basicos
+                    this.TBCodigo.Text = Codigo;
+                    this.TBIdproveedor.Text = Idproveedor;
+                    this.TBIdimpuesto.Text = Idimpuesto;
 
                     //Panel Datos Basicos
                     this.TBCodigo.Text = Codigo;
-                    //this.TBCodigoDeBarra.Text = Barra;
                     this.TBNombre.Text = Nombre;
                     this.TBReferencia.Text = Referencia;
                     this.TBDescripcion01.Text = Descripcion;
-                    this.TBLotedeingreso.Text = Lote;
                     this.TBPresentacion.Text = Presentacion;
-
+                    this.CBUnidad.Text = UnidadDeVenta;
+                    this.TBUnidadDeVenta.Text = ValorUnidad;
+                    
                     //Panel - Valores
-                    //this.CBOfertable.Text = Ofertable;
-                    //this.TBValorCompraMinina.Text = CompraMinima;
-                    //this.TBValorCompraMaxima.Text = CompraMaxima;
-                    this.TBValorVenta.Text = ValorVenta01;
-                    //this.TBValorAuxiliar.Text = ValorVenta02;
+                    this.TBValordecompra.Text = ValorCompra;
+                    this.TBValorVenta_SinImpuesto.Text = ValorCompra_SinImpuesto;
+                    this.TBValorVenta.Text = ValorFinal;
+                    this.TBCantidadMininaCliente.Text = CantidadMinima;
+                    this.TBCantidadMaximaCliente.Text = CantidadMaxima;
+                    this.TBValorImportacion.Text = ValorImportacion;
+                    this.TBValorExportacion.Text = ValorExportacion;
+                    this.TBGastodeEnvio.Text = ValorEnvio;
+                    this.TBOtrosGastos.Text = OtrosGastos;
+
+                    //
                     this.TBUbicacion.Text = Ubicacion;
                     this.TBEstante.Text = Estante;
                     this.TBNivel.Text = Nivel;
-                    //this.PB_Imagen.ToString = Imagen;
+                    //this.PB_Imagen.Image = Imagen;
 
-                    this.CBUnidad.Text = UnidadDeVenta;
-                    //this.TBCantidadCompraMinima.Text = CantidadCompraMinima;
-                    //this.TBCantidadCompraMaxima.Text = CantidadCompraMaxima;
-                    this.TBCantidadMininaCliente.Text = CantidadMinimaCliente;
-                    this.TBCantidadMaximaCliente.Text = CantidadMaximaCliente;
-                    //this.CBVence.Text = Vence;
-                    //this.DTFechadevencimiento.MaxDate = Fecha;
-                    this.CBUnidad.Text = UnidadDePeso;
+                    //
+                    this.TBLotedeingreso.Text = Lote;
+                    this.TBValor_Lote.Text = Valor_Lote;
+                    this.DTFechaDeVencimiento.Text = Fecha_Vencimiento;
+
+                    //
+                    this.TBCodigodeBarra.Text = CodigoDeBarra;
+                    this.TBProveedor.Text = Proveedor;
+                    this.TBImpuesto.Text = Impuesto;
+                    this.TBImpuesto_Valor.Text = Impuesto_Valor;
+
+                    //Se proceden a Validar los Chexboxt si estan activos o no
+
+                    if (ManejaVencimiento == "0")
+                    {
+                        this.CBVencimiento.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBVencimiento.Checked = true;
+                    }
+
+                    if (Importado == "0")
+                    {
+                        this.CBImportado.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBImportado.Checked = true;
+                    }
+
+                    if (Exportado == "0")
+                    {
+                        this.CBExportado.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBExportado.Checked = true;
+                    }
+
+                    if (ManjenaImpuesto == "0")
+                    {
+                        this.CBImpuesto.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBImpuesto.Checked = true;
+                    }
+
+                    if (Ofertable == "0")
+                    {
+                        this.CBOfertable.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBOfertable.Checked = true;
+                    }
                 }
             }
             catch (Exception ex)
@@ -2850,7 +2919,7 @@ namespace Presentacion
             }
         }
 
-        private void PB_Imagen_Click(object sender, EventArgs e)
+        private void PB_Imagen_Click_1(object sender, EventArgs e)
         {
             OpenFileDialog dialog = new OpenFileDialog();
 

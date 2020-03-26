@@ -28,7 +28,7 @@ namespace Negocio
             (
 
                 //Datos Auxiliares y Llaves Primaria
-                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,
+                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,int idgrupo, int idtipo,
 
                 //Datos Basicos
                 string codigo, string producto, string referencia, string descripcion,
@@ -63,6 +63,8 @@ namespace Negocio
             Obj.Idproveedor = idproveedor;
             Obj.Idimpuesto = idimpuesto;
             Obj.Idempaque = idempaque;
+            Obj.Idgrupo = idgrupo;
+            Obj.Idtipo = idtipo;
 
             //Datos Basicos
             Obj.Codigo = codigo;
@@ -115,7 +117,7 @@ namespace Negocio
                 
 
                 //Datos Auxiliares y Llaves Primaria
-                int idproducto, int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,
+                int idproducto, int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque, int idgrupo, int idtipo,
 
                 //Datos Basicos
                 string codigo, string producto, string referencia, string descripcion,
@@ -150,6 +152,8 @@ namespace Negocio
             Obj.Idproveedor = idproveedor;
             Obj.Idimpuesto = idimpuesto;
             Obj.Idempaque = idempaque;
+            Obj.Idgrupo = idgrupo;
+            Obj.Idtipo = idtipo;
 
             //Datos Basicos
             Obj.Codigo = codigo;
