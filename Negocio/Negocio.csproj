@@ -44,7 +44,7 @@
     <Compile Include="Archivo\fBodega.cs" />
     <Compile Include="Archivo\fCliente.cs" />
     <Compile Include="Archivo\fProveedor.cs" />
-    <Compile Include="Archivo\fIngreso_Bodega.cs" />
+    <Compile Include="Inventario\fIngreso_Bodega.cs" />
     <Compile Include="Archivo\fEmpaque.cs" />
     <Compile Include="Archivo\fGrupo.cs" />
     <Compile Include="Archivo\fTipoDeProducto.cs" />
@@ -71,7 +71,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Financiera\" />
-    <Folder Include="Produccion\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -224,7 +224,7 @@ namespace Presentacion
             
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string precio)
+        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string unidad_venta, string precio)
         {
             try
             {
@@ -244,6 +244,7 @@ namespace Presentacion
                     Fila["Idproducto"] = idproducto;
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
+                    Fila["Medida"] = unidad;
                     Fila["V. Venta"] = precio;
                     this.DtDetalle.Rows.Add(Fila);
 
@@ -558,7 +559,9 @@ namespace Presentacion
                                 Convert.ToInt32(Tabla.Rows[0][0]),
                                 Convert.ToString(Tabla.Rows[0][1]),
                                 Convert.ToString(Tabla.Rows[0][2]),
-                                Convert.ToString(Tabla.Rows[0][3])
+                                Convert.ToString(Tabla.Rows[0][4]),
+                                Convert.ToString(Tabla.Rows[0][5]),
+                                Convert.ToString(Tabla.Rows[0][6])
                             );
                         this.TBCodigo_Producto.Clear();
                     }

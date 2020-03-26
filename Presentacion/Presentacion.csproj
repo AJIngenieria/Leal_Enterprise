@@ -97,11 +97,11 @@
     <Compile Include="Archivo\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Archivo\frmBodega_Ingresos.cs">
+    <Compile Include="Inventario\frmInventario_Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Archivo\frmBodega_Ingresos.Designer.cs">
-      <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
+    <Compile Include="Inventario\frmInventario_Ingreso.Designer.cs">
+      <DependentUpon>frmInventario_Ingreso.cs</DependentUpon>
     </Compile>
     <Compile Include="Filtros\frmFiltro_Producto.cs">
       <SubType>Form</SubType>
@@ -115,10 +115,10 @@
     <Compile Include="Archivo\frmRegularizacion.Designer.cs">
       <DependentUpon>frmRegularizacion.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFacturacion.cs">
+    <Compile Include="Facturacion\frmFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFacturacion.Designer.cs">
+    <Compile Include="Facturacion\frmFacturacion.Designer.cs">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Filtros\frmFiltro_Proveedor.cs">
@@ -229,8 +229,8 @@
     <EmbeddedResource Include="Archivo\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Archivo\frmBodega_Ingresos.resx">
-      <DependentUpon>frmBodega_Ingresos.cs</DependentUpon>
+    <EmbeddedResource Include="Inventario\frmInventario_Ingreso.resx">
+      <DependentUpon>frmInventario_Ingreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Producto.resx">
       <DependentUpon>frmFiltro_Producto.cs</DependentUpon>
@@ -238,7 +238,7 @@
     <EmbeddedResource Include="Archivo\frmRegularizacion.resx">
       <DependentUpon>frmRegularizacion.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFacturacion.resx">
+    <EmbeddedResource Include="Facturacion\frmFacturacion.resx">
       <DependentUpon>frmFacturacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Proveedor.resx">
@@ -395,7 +395,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Financiera\" />
-    <Folder Include="Produccion\" />
     <Folder Include="SQL Server\" />
   </ItemGroup>
   <ItemGroup>

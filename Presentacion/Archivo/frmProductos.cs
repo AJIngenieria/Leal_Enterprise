@@ -99,7 +99,9 @@ namespace Presentacion
             this.TBNombre.Select();
 
             //Ocultacion de Texboxt
-            //this.TBIdproducto.Visible = false;
+            this.TBIdproducto.Visible = false;
+            this.TBIdimpuesto.Visible = false;
+            this.TBIdproveedor.Visible = false;
 
             //Panel - Cantidades - Otros Datos
             this.CBUnidad.SelectedIndex = 0;
@@ -271,11 +273,15 @@ namespace Presentacion
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
-                this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
+                this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
 
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBPresentacion.Select();
                 this.TCPrincipal.SelectedIndex = 0;
+
+                //Se ocultan los panel 
+                this.TCPrincipal.TabPages.Remove(this.TPLote);
+                this.TCPrincipal.TabPages.Remove(this.TPCodigosdeBarra);
             }
         }
 
@@ -648,7 +654,37 @@ namespace Presentacion
         {
 
         }
-        
+
+        private void btnAgregar_Ubicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Ubicacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_CodigoDeBarra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_CodigosDeBarra_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Lote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Lotes_Click(object sender, EventArgs e)
+        {
+
+        }
+
         //******************** FOCUS ENTER  DATOS BASICOS ********************
 
         private void TBCodigo_Enter(object sender, EventArgs e)
@@ -2852,6 +2888,15 @@ namespace Presentacion
                     {
                         this.CBOfertable.Checked = true;
                     }
+
+
+                    //Se realizan las consultas para llenar los DataGriview donde se mostrarian las ubicaciones, codigos de barra.
+
+                    //this.DGResultados.DataSource = fProductos.Buscar(this.TBBuscar.Text, 1);
+                    //this.DGResultados.Columns[0].Visible = false;
+
+                    //lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGResultados.Rows.Count);
+
                 }
             }
             catch (Exception ex)
@@ -2874,6 +2919,9 @@ namespace Presentacion
 
                     this.Botones();
 
+                    //Se habilitan los paneles que estan ocultos
+                    this.TCPrincipal.TabPages.Add(this.TPLote);
+                    this.TCPrincipal.TabPages.Add(this.TPCodigosdeBarra);
                 }
                 else
                 {

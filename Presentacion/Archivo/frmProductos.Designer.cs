@@ -113,7 +113,7 @@
             this.DTFechaDeVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.DGDetalles_Lotes = new System.Windows.Forms.DataGridView();
-            this.btnImprimir_Lotes = new System.Windows.Forms.Button();
+            this.btnAgregar_Lotes = new System.Windows.Forms.Button();
             this.label33 = new System.Windows.Forms.Label();
             this.TBValor_Lote = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -122,7 +122,7 @@
             this.TPCodigosdeBarra = new System.Windows.Forms.TabPage();
             this.TBCodigodeBarra = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
-            this.btnImprimir_CodigoDeBarra = new System.Windows.Forms.Button();
+            this.btnAgregar_CodigoDeBarra = new System.Windows.Forms.Button();
             this.btnEliminar_CodigosDeBarra = new System.Windows.Forms.Button();
             this.label44 = new System.Windows.Forms.Label();
             this.DGResultados_Codigos = new System.Windows.Forms.DataGridView();
@@ -135,6 +135,7 @@
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.DGResultados = new System.Windows.Forms.DataGridView();
+            this.btnEliminar_Lote = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -912,6 +913,7 @@
             this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(77, 27);
             this.btnEliminar_Ubicacion.TabIndex = 58;
             this.btnEliminar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnEliminar_Ubicacion.Click += new System.EventHandler(this.btnEliminar_Ubicacion_Click);
             // 
             // btnAgregar_Ubicacion
             // 
@@ -925,6 +927,7 @@
             this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(77, 27);
             this.btnAgregar_Ubicacion.TabIndex = 57;
             this.btnAgregar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnAgregar_Ubicacion.Click += new System.EventHandler(this.btnAgregar_Ubicacion_Click);
             // 
             // label28
             // 
@@ -1062,10 +1065,11 @@
             // 
             // TPLote
             // 
+            this.TPLote.Controls.Add(this.btnEliminar_Lote);
             this.TPLote.Controls.Add(this.DTFechaDeVencimiento);
             this.TPLote.Controls.Add(this.label34);
             this.TPLote.Controls.Add(this.DGDetalles_Lotes);
-            this.TPLote.Controls.Add(this.btnImprimir_Lotes);
+            this.TPLote.Controls.Add(this.btnAgregar_Lotes);
             this.TPLote.Controls.Add(this.label33);
             this.TPLote.Controls.Add(this.TBValor_Lote);
             this.TPLote.Controls.Add(this.label7);
@@ -1107,18 +1111,19 @@
             this.DGDetalles_Lotes.Size = new System.Drawing.Size(399, 221);
             this.DGDetalles_Lotes.TabIndex = 56;
             // 
-            // btnImprimir_Lotes
+            // btnAgregar_Lotes
             // 
-            this.btnImprimir_Lotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir_Lotes.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir_Lotes.FlatAppearance.BorderSize = 0;
-            this.btnImprimir_Lotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir_Lotes.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir_Lotes.Location = new System.Drawing.Point(328, 314);
-            this.btnImprimir_Lotes.Name = "btnImprimir_Lotes";
-            this.btnImprimir_Lotes.Size = new System.Drawing.Size(77, 27);
-            this.btnImprimir_Lotes.TabIndex = 54;
-            this.btnImprimir_Lotes.UseVisualStyleBackColor = true;
+            this.btnAgregar_Lotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_Lotes.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_Lotes.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_Lotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar_Lotes.Image = global::Presentacion.Properties.Resources.BV_Agregar;
+            this.btnAgregar_Lotes.Location = new System.Drawing.Point(328, 314);
+            this.btnAgregar_Lotes.Name = "btnAgregar_Lotes";
+            this.btnAgregar_Lotes.Size = new System.Drawing.Size(77, 27);
+            this.btnAgregar_Lotes.TabIndex = 54;
+            this.btnAgregar_Lotes.UseVisualStyleBackColor = true;
+            this.btnAgregar_Lotes.Click += new System.EventHandler(this.btnAgregar_Lotes_Click);
             // 
             // label33
             // 
@@ -1172,7 +1177,7 @@
             // 
             this.TPCodigosdeBarra.Controls.Add(this.TBCodigodeBarra);
             this.TPCodigosdeBarra.Controls.Add(this.label35);
-            this.TPCodigosdeBarra.Controls.Add(this.btnImprimir_CodigoDeBarra);
+            this.TPCodigosdeBarra.Controls.Add(this.btnAgregar_CodigoDeBarra);
             this.TPCodigosdeBarra.Controls.Add(this.btnEliminar_CodigosDeBarra);
             this.TPCodigosdeBarra.Controls.Add(this.label44);
             this.TPCodigosdeBarra.Controls.Add(this.DGResultados_Codigos);
@@ -1203,19 +1208,20 @@
             this.label35.TabIndex = 16;
             this.label35.Text = "Codigo de Barra";
             // 
-            // btnImprimir_CodigoDeBarra
+            // btnAgregar_CodigoDeBarra
             // 
-            this.btnImprimir_CodigoDeBarra.BackgroundImage = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir_CodigoDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnImprimir_CodigoDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir_CodigoDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir_CodigoDeBarra.FlatAppearance.BorderSize = 0;
-            this.btnImprimir_CodigoDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir_CodigoDeBarra.Location = new System.Drawing.Point(328, 314);
-            this.btnImprimir_CodigoDeBarra.Name = "btnImprimir_CodigoDeBarra";
-            this.btnImprimir_CodigoDeBarra.Size = new System.Drawing.Size(77, 27);
-            this.btnImprimir_CodigoDeBarra.TabIndex = 15;
-            this.btnImprimir_CodigoDeBarra.UseVisualStyleBackColor = true;
+            this.btnAgregar_CodigoDeBarra.BackgroundImage = global::Presentacion.Properties.Resources.BV_Agregar;
+            this.btnAgregar_CodigoDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAgregar_CodigoDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_CodigoDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregar_CodigoDeBarra.Location = new System.Drawing.Point(328, 314);
+            this.btnAgregar_CodigoDeBarra.Name = "btnAgregar_CodigoDeBarra";
+            this.btnAgregar_CodigoDeBarra.Size = new System.Drawing.Size(77, 27);
+            this.btnAgregar_CodigoDeBarra.TabIndex = 15;
+            this.btnAgregar_CodigoDeBarra.UseVisualStyleBackColor = true;
+            this.btnAgregar_CodigoDeBarra.Click += new System.EventHandler(this.btnAgregar_CodigoDeBarra_Click);
             // 
             // btnEliminar_CodigosDeBarra
             // 
@@ -1230,6 +1236,7 @@
             this.btnEliminar_CodigosDeBarra.Size = new System.Drawing.Size(77, 27);
             this.btnEliminar_CodigosDeBarra.TabIndex = 14;
             this.btnEliminar_CodigosDeBarra.UseVisualStyleBackColor = true;
+            this.btnEliminar_CodigosDeBarra.Click += new System.EventHandler(this.btnEliminar_CodigosDeBarra_Click);
             // 
             // label44
             // 
@@ -1371,6 +1378,21 @@
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
             // 
+            // btnEliminar_Lote
+            // 
+            this.btnEliminar_Lote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar_Lote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Lote.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Lote.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Lote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar_Lote.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
+            this.btnEliminar_Lote.Location = new System.Drawing.Point(245, 314);
+            this.btnEliminar_Lote.Name = "btnEliminar_Lote";
+            this.btnEliminar_Lote.Size = new System.Drawing.Size(77, 27);
+            this.btnEliminar_Lote.TabIndex = 59;
+            this.btnEliminar_Lote.UseVisualStyleBackColor = true;
+            this.btnEliminar_Lote.Click += new System.EventHandler(this.btnEliminar_Lote_Click);
+            // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1481,8 +1503,8 @@
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.DataGridView DGResultados_Codigos;
         private System.Windows.Forms.Button btnEliminar_CodigosDeBarra;
-        private System.Windows.Forms.Button btnImprimir_Lotes;
-        private System.Windows.Forms.Button btnImprimir_CodigoDeBarra;
+        private System.Windows.Forms.Button btnAgregar_Lotes;
+        private System.Windows.Forms.Button btnAgregar_CodigoDeBarra;
         private System.Windows.Forms.TextBox TBIdimpuesto;
         private System.Windows.Forms.TextBox TBIdproveedor;
         private System.Windows.Forms.TabPage TPImagen;
@@ -1520,5 +1542,6 @@
         private System.Windows.Forms.DateTimePicker DTFechaDeVencimiento;
         private System.Windows.Forms.TextBox TBImpuesto_Valor;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnEliminar_Lote;
     }
 }

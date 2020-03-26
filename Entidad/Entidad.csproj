@@ -61,7 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Financiera\" />
-    <Folder Include="Produccion\" />
+    <Folder Include="Inventario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
