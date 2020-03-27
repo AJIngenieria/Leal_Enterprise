@@ -104,7 +104,6 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            
         }
 
         private void DGResultados_KeyPress(object sender, KeyPressEventArgs e)

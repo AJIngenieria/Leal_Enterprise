@@ -158,23 +158,23 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalleDeIngreso.Columns[0].Width = 70;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
-                this.DGDetalleDeIngreso.Columns[1].Width = 85;
+                this.DGDetalleDeIngreso.Columns[1].Width = 130;
                 this.DGDetalleDeIngreso.Columns[2].HeaderText = "Descripcion";
                 this.DGDetalleDeIngreso.Columns[2].Width = 300;
                 this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
                 this.DGDetalleDeIngreso.Columns[3].Width = 55;
                 this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
-                this.DGDetalleDeIngreso.Columns[4].Width = 50;
+                this.DGDetalleDeIngreso.Columns[4].Width = 65;
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "U. Cajas";
-                this.DGDetalleDeIngreso.Columns[4].Width = 70;
+                this.DGDetalleDeIngreso.Columns[5].Width = 80;
                 this.DGDetalleDeIngreso.Columns[6].HeaderText = "U. Total";
-                this.DGDetalleDeIngreso.Columns[6].Width = 75;
+                this.DGDetalleDeIngreso.Columns[6].Width = 80;
                 this.DGDetalleDeIngreso.Columns[7].HeaderText = "V. Compra";
                 this.DGDetalleDeIngreso.Columns[7].Width = 90;
                 this.DGDetalleDeIngreso.Columns[8].HeaderText = "V. Venta";
                 this.DGDetalleDeIngreso.Columns[8].Width = 90;
                 this.DGDetalleDeIngreso.Columns[9].HeaderText = "Descuento";
-                this.DGDetalleDeIngreso.Columns[9].Width = 85;
+                this.DGDetalleDeIngreso.Columns[9].Width = 65;
                 this.DGDetalleDeIngreso.Columns[10].HeaderText = "Total";
                 this.DGDetalleDeIngreso.Columns[10].Width = 85;
 
@@ -224,7 +224,7 @@ namespace Presentacion
             
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string unidad_venta, string precio)
+        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra, string valor_venta)
         {
             try
             {
@@ -245,7 +245,8 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["V. Venta"] = precio;
+                    Fila["V. Compra"] = valor_compra;
+                    Fila["V. Venta"] = valor_venta;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -443,12 +444,13 @@ namespace Presentacion
 
         private void btnExaminar_Proveedor_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_Proveedor frmFiltro_Proveedor = new frmFiltro_Proveedor();
+            frmFiltro_Proveedor.ShowDialog();
         }
 
         private void btnExaminar_Bodega_Click(object sender, EventArgs e)
         {
-
+            frmfilt
         }
 
         private void btnExaminar_Producto_Click(object sender, EventArgs e)
@@ -559,9 +561,9 @@ namespace Presentacion
                                 Convert.ToInt32(Tabla.Rows[0][0]),
                                 Convert.ToString(Tabla.Rows[0][1]),
                                 Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
                                 Convert.ToString(Tabla.Rows[0][4]),
-                                Convert.ToString(Tabla.Rows[0][5]),
-                                Convert.ToString(Tabla.Rows[0][6])
+                                Convert.ToString(Tabla.Rows[0][5])
                             );
                         this.TBCodigo_Producto.Clear();
                     }
