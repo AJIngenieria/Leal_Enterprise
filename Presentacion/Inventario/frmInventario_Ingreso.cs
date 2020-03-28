@@ -12,15 +12,15 @@ using Negocio;
 
 namespace Presentacion
 {
-    public partial class frmBodega_Ingresos : Form
+    public partial class frmInventario_Ingreso : Form
     {
-        private static frmBodega_Ingresos _Instancia;
+        private static frmInventario_Ingreso _Instancia;
 
-        public static frmBodega_Ingresos GetInstancia()
+        public static frmInventario_Ingreso GetInstancia()
         {
             if (_Instancia == null)
             {
-                _Instancia = new frmBodega_Ingresos();
+                _Instancia = new frmInventario_Ingreso();
             }
             return _Instancia;
         }
@@ -28,11 +28,11 @@ namespace Presentacion
         private DataTable DtDetalle = new DataTable();
 
         // Variable con la cual se define si el procecimiento 
-        // A realizar es Editar, Guardar, Buscar,Eliminar
+        // A realizar es Editar, Guardar, Buscar, Eliminar
         private bool Digitar = true;
         public bool Filtro = true;
-        //private string Campo = "Campo Obligatorio - Leal Enterprise";
-        
+        public bool Examinar = true;
+
         //Variable para Captura el Empleado Logueado
         public int Idempleado;
 
@@ -43,12 +43,12 @@ namespace Presentacion
         public string Eliminar = "";
         public string Imprimir = "";
 
-        public frmBodega_Ingresos()
+        public frmInventario_Ingreso()
         {
             InitializeComponent();
         }
 
-        private void frmBodega_Ingresos_Load(object sender, EventArgs e)
+        private void frmInventario_Ingreso_Load(object sender, EventArgs e)
         {
             //Inicio de Clase y Botones
             this.Botones();
@@ -71,11 +71,11 @@ namespace Presentacion
             this.TBCodigo_Proveedor.ReadOnly = false;
             this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
             this.TBProveedor.Enabled = false;
-            this.TBProveedor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBProveedor.BackColor = Color.FromArgb(72, 209, 204);
             this.TBCodigo_Bodega.ReadOnly = false;
             this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
             this.TBBodega.Enabled = false;
-            this.TBBodega.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
             this.TBCodigo_Producto.ReadOnly = false;
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
             this.CBMoneda.Enabled = true;
@@ -146,10 +146,11 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("U. Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("U. Total", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("V. Venta", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("P. Compra", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("P. Venta", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Descuento", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("P. Descontado", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("P. Total", System.Type.GetType("System.Int32"));
 
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
@@ -169,14 +170,16 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].Width = 80;
                 this.DGDetalleDeIngreso.Columns[6].HeaderText = "U. Total";
                 this.DGDetalleDeIngreso.Columns[6].Width = 80;
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "V. Compra";
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "P. Compra";
                 this.DGDetalleDeIngreso.Columns[7].Width = 90;
-                this.DGDetalleDeIngreso.Columns[8].HeaderText = "V. Venta";
+                this.DGDetalleDeIngreso.Columns[8].HeaderText = "P. Venta";
                 this.DGDetalleDeIngreso.Columns[8].Width = 90;
                 this.DGDetalleDeIngreso.Columns[9].HeaderText = "Descuento";
                 this.DGDetalleDeIngreso.Columns[9].Width = 65;
-                this.DGDetalleDeIngreso.Columns[10].HeaderText = "Total";
-                this.DGDetalleDeIngreso.Columns[10].Width = 85;
+                this.DGDetalleDeIngreso.Columns[10].HeaderText = "P. Descontado";
+                this.DGDetalleDeIngreso.Columns[10].Width = 110;
+                this.DGDetalleDeIngreso.Columns[11].HeaderText = "P. Total";
+                this.DGDetalleDeIngreso.Columns[11].Width = 85;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -186,11 +189,13 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[6].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[10].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[11].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -203,6 +208,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -216,12 +222,30 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            
+        }
+
+        public void setProducto(string Idproducto)
+        {
+            this.TBCodigo_Producto.Text = Idproducto;
+        }
+
+        public void setProveedor(string idproveedor, string proveedor, string documento)
+        {
+            this.TBIdproveedor.Text = idproveedor;
+            this.TBProveedor.Text = proveedor;
+            this.TBCodigo_Proveedor.Text = documento;
+        }
+
+        public void setBodega(string idbodega, string bodega)
+        {
+            this.TBIdbodega.Text = idbodega;
+            this.TBBodega.Text = bodega;
         }
 
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra, string valor_venta)
@@ -245,8 +269,8 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["V. Compra"] = valor_compra;
-                    Fila["V. Venta"] = valor_venta;
+                    Fila["P. Compra"] = valor_compra;
+                    Fila["P. Venta"] = valor_venta;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -287,11 +311,6 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
             
-        }
-
-        public void setProducto(string Idproducto)
-        {
-            this.TBCodigo_Producto.Text = Idproducto;
         }
 
         private void Guardar_SQL()
@@ -450,7 +469,8 @@ namespace Presentacion
 
         private void btnExaminar_Bodega_Click(object sender, EventArgs e)
         {
-            frmfilt
+            frmFiltro_Bodega frmFiltro_Bodega = new frmFiltro_Bodega();
+            frmFiltro_Bodega.Show();
         }
 
         private void btnExaminar_Producto_Click(object sender, EventArgs e)
@@ -467,48 +487,6 @@ namespace Presentacion
         private void btnExaminar_Comprobante_Click(object sender, EventArgs e)
         {
 
-        }
-        
-        private void TBCodigo_Proveedor_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                if (e.KeyChar == Convert.ToChar(Keys.Enter))
-                {
-                    DataTable Tabla = new DataTable();
-                    Tabla = fProveedor.Buscar(this.TBCodigo_Bodega.Text.Trim(), 4);
-                    if (Tabla.Rows.Count <= 0)
-                    {
-                        this.MensajeError("El proveedor que desea agregar no se encuentra registrada en su Base de Datos");
-                    }
-                    else
-                    {
-                        //Captura de Valores en la Base de Datos
-                        this.TBProveedor.Text = Convert.ToString(Tabla.Rows[0][1]);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-        private void TBCodigo_Bodega_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                DataTable Tabla = new DataTable();
-                Tabla = fBodega.Buscar(this.TBCodigo_Bodega.Text.Trim(), 4);
-                if (Tabla.Rows.Count <= 0)
-                {
-                    this.MensajeError("La Bodega que desea agregar no se encuentra registrada en su Base de Datos");
-                }
-                else
-                {
-                    this.TBBodega.Text = Convert.ToString(Tabla.Rows[0][1]);
-                }
-            }
         }
 
         private void TBCodigo_Moneda_KeyPress(object sender, KeyPressEventArgs e)
@@ -635,7 +613,7 @@ namespace Presentacion
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
         }
 
-        private void frmBodega_Ingresos_FormClosing(object sender, FormClosingEventArgs e)
+        private void frmInventario_Ingreso_FormClosing(object sender, FormClosingEventArgs e)
         {
             _Instancia = null;
         }
@@ -651,10 +629,14 @@ namespace Presentacion
             {
                 int cantidad = 0;
                 int Descuento = 0;
+                int Porcentaje = 0;
                 decimal precio_unit = 0;
                 decimal precio_total = 0;
+                decimal Sub_Total = 0;
                 decimal General_Total = 0;
-                decimal Precio_Compra = 0;
+                decimal Precio_Venta = 0;
+                decimal Porcentaje_Total = 0;
+                decimal Divisor = 100;
 
                 if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "U. Cajas")
                 {
@@ -694,24 +676,97 @@ namespace Presentacion
 
                     try
                     {
-                        Precio_Compra = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        Precio_Venta = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[8].Value.ToString());
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Debe ingresar el Valor de Compra");
+                        MessageBox.Show("Debe Ingresar el Valor de Venta al Publico");
                     }
 
-                    if (!(Precio_Compra == 0))
+                    //Si la columna descuento tiene algun valor aplicado es decir 
+                    //Un descuento o porcentaje aplicado se realizara la siguiente validacion
+
+                    if (Descuento != 0)
                     {
-                        General_Total = Precio_Compra - Descuento;
+                        Porcentaje_Total = Precio_Venta * Descuento / Divisor;
+                        Sub_Total = Precio_Venta - Porcentaje_Total;
+
+                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[11].Value = Sub_Total;
+
+                        // Se calcula el valor total final 
+                        General_Total = Precio_Venta - Sub_Total;
+
                         DGDetalleDeIngreso.Rows[e.RowIndex].Cells[10].Value = General_Total;
+
                     }
-                    
+
+                    else if (Descuento == 0)
+                    {
+                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[10].Value = Precio_Venta;
+
+                        if (Sub_Total == 0)
+                        {
+
+                            //Si no se aplica ningun descuento se realizara lo siguiente. Lo cual es un calculo total sin descuento alguno
+                            General_Total = Precio_Venta - Descuento;
+
+                            DGDetalleDeIngreso.Rows[e.RowIndex].Cells[11].Value = General_Total;
+                        }
+                    }                    
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Proveedor_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProveedor.Buscar(this.TBCodigo_Bodega.Text.Trim(), 1);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El proveedor que desea agregar no se encuentra registrada en su Base de Datos");
+                    }
+                    else
+                    {
+                        //Captura de Valores en la Base de Datos
+                        this.TBProveedor.Text = Convert.ToString(Tabla.Rows[0][1]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCodigo_Bodega_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fBodega.Buscar(this.TBCodigo_Bodega.Text.Trim(), 1);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("La Bodega que desea agregar no se encuentra registrada en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.TBBodega.Text = Convert.ToString(Tabla.Rows[0][1]);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
     }

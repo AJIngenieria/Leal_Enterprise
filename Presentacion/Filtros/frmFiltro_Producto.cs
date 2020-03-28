@@ -86,13 +86,13 @@ namespace Presentacion
         {
             try
             {
-                frmBodega_Ingresos frmBI = new frmBodega_Ingresos();
+                frmInventario_Ingreso frmBI = new frmInventario_Ingreso();
 
                 
                 //string Codigo, Nombre;
                 //int precio;
 
-                frmBodega_Ingresos form = frmBodega_Ingresos.GetInstancia();
+                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
                 string Idproducto;
                 Idproducto = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                 //par2 = Convert.ToString(this.DGVResultados.CurrentRow.Cells["1"].Value);

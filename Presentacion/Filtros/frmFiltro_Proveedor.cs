@@ -69,12 +69,25 @@ namespace Presentacion
             try
             {
                 frmProductos frmPro = frmProductos.GetInstancia();
+                frmInventario_Ingreso frmInv = frmInventario_Ingreso.GetInstancia();
+
+
                 if (frmPro.Examinar)
                 {
                     string idproveedor, proveedor;
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                     proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
                     frmPro.setProveedor(idproveedor, proveedor);
+                    this.Hide();
+                }
+
+                else if (frmInv.Examinar)
+                {
+                    string idproveedor, proveedor, documento;
+                    idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
+                    proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
+                    documento = this.DGFiltro_Resultados.CurrentRow.Cells["Documento"].Value.ToString();
+                    frmInv.setProveedor(idproveedor, proveedor, documento);
                     this.Hide();
                 }
             }

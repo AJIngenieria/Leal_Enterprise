@@ -318,15 +318,15 @@ namespace Presentacion
 
         private void ingresosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmBodega_Ingresos frmBodega_Ingresos = frmBodega_Ingresos.GetInstancia();
-            frmBodega_Ingresos.MdiParent = this;
-            frmBodega_Ingresos.Show();
+            frmInventario_Ingreso frmInventario_Ingreso = frmInventario_Ingreso.GetInstancia();
+            frmInventario_Ingreso.MdiParent = this;
+            frmInventario_Ingreso.Show();
 
-            frmBodega_Ingresos.Guardar = Convert.ToString(this.SQL_Guardar);
-            frmBodega_Ingresos.Editar = Convert.ToString(this.SQL_Editar);
-            frmBodega_Ingresos.Eliminar = Convert.ToString(this.SQL_Eliminar);
-            frmBodega_Ingresos.Consultar = Convert.ToString(this.SQL_Consultar);
-            frmBodega_Ingresos.Imprimir = Convert.ToString(this.SQL_Imprimir);
+            frmInventario_Ingreso.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmInventario_Ingreso.Editar = Convert.ToString(this.SQL_Editar);
+            frmInventario_Ingreso.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmInventario_Ingreso.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmInventario_Ingreso.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
     }
 }

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Negocio;
+
 namespace Presentacion
 {
     public partial class frmFiltro_Bodega : Form
@@ -38,17 +40,16 @@ namespace Presentacion
         {
             try
             {
-                frmBodega_Ingresos frmBI = new frmBodega_Ingresos();
-                frmBodega_Ingr
-
+                frmInventario_Ingreso frmBI = new frmInventario_Ingreso();
+                
                 //string Codigo, Nombre;
                 //int precio;
 
-                frmBodega_Ingresos form = frmBodega_Ingresos.GetInstancia();
-                string Idproducto;
-                Idproducto = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
-                //par2 = Convert.ToString(this.DGVResultados.CurrentRow.Cells["1"].Value);
-                form.setProducto(Idproducto);
+                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
+                string idbodega, bodega;
+                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
+                bodega = this.DGFiltro_Resultados.CurrentRow.Cells["Bodega"].Value.ToString();
+                form.setBodega(idbodega, bodega);
                 this.Hide();
 
             }
@@ -64,7 +65,7 @@ namespace Presentacion
             {
                 if (TBBuscar.Text != "")
                 {
-                    this.DGFiltro_Resultados.DataSource = fProductos.Buscar(this.TBBuscar.Text, 4);
+                    this.DGFiltro_Resultados.DataSource = fBodega.Buscar(this.TBBuscar.Text, 1);
                     this.DGFiltro_Resultados.Columns[0].Visible = false;
 
                     lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);

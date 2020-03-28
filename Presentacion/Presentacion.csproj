@@ -97,10 +97,10 @@
     <Compile Include="Archivo\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmFiltro_Bodega.cs">
+    <Compile Include="Filtros\frmFiltro_Bodega.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmFiltro_Bodega.Designer.cs">
+    <Compile Include="Filtros\frmFiltro_Bodega.Designer.cs">
       <DependentUpon>frmFiltro_Bodega.cs</DependentUpon>
     </Compile>
     <Compile Include="Inventario\frmInventario_Ingreso.cs">
@@ -235,7 +235,7 @@
     <EmbeddedResource Include="Archivo\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmFiltro_Bodega.resx">
+    <EmbeddedResource Include="Filtros\frmFiltro_Bodega.resx">
       <DependentUpon>frmFiltro_Bodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmInventario_Ingreso.resx">
