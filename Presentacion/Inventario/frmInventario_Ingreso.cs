@@ -68,20 +68,22 @@ namespace Presentacion
 
             this.TBCodigoID.ReadOnly = false;
             this.TBCodigoID.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCodigo_Proveedor.ReadOnly = false;
-            this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
             this.TBProveedor.Enabled = false;
             this.TBProveedor.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBCodigo_Bodega.ReadOnly = false;
-            this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCodigo_Proveedor.ReadOnly = false;
+            this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
             this.TBBodega.Enabled = false;
             this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBCodigo_Bodega.ReadOnly = false;
+            this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBProducto.Enabled = false;
+            this.TBProducto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBCodigo_Producto.ReadOnly = false;
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
-            this.CBMoneda.Enabled = true;
-            this.CBMoneda.BackColor = Color.FromArgb(3, 155, 229);
-            this.CBComprobante.Enabled = false;
-            this.CBComprobante.BackColor = Color.FromArgb(3, 155, 229);
+            //this.CBMoneda.Enabled = true;
+            //this.CBMoneda.BackColor = Color.FromArgb(3, 155, 229);
+            //this.CBComprobante.Enabled = false;
+            //this.CBComprobante.BackColor = Color.FromArgb(3, 155, 229);
             
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
@@ -142,44 +144,32 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Descripcion", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Referencia", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("U. Cajas", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("U. Total", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("P. Compra", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("P. Venta", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Descuento", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("P. Descontado", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("P. Total", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("Precio de Compra", System.Type.GetType("System.Int32"));
 
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
 
                 this.DGDetalleDeIngreso.Columns[0].Visible = false;
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
-                this.DGDetalleDeIngreso.Columns[0].Width = 70;
+                this.DGDetalleDeIngreso.Columns[0].Width = 50;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
-                this.DGDetalleDeIngreso.Columns[1].Width = 130;
+                this.DGDetalleDeIngreso.Columns[1].Width = 150;
                 this.DGDetalleDeIngreso.Columns[2].HeaderText = "Descripcion";
-                this.DGDetalleDeIngreso.Columns[2].Width = 300;
-                this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
-                this.DGDetalleDeIngreso.Columns[3].Width = 55;
-                this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
-                this.DGDetalleDeIngreso.Columns[4].Width = 65;
-                this.DGDetalleDeIngreso.Columns[5].HeaderText = "U. Cajas";
-                this.DGDetalleDeIngreso.Columns[5].Width = 80;
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "U. Total";
-                this.DGDetalleDeIngreso.Columns[6].Width = 80;
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "P. Compra";
-                this.DGDetalleDeIngreso.Columns[7].Width = 90;
-                this.DGDetalleDeIngreso.Columns[8].HeaderText = "P. Venta";
-                this.DGDetalleDeIngreso.Columns[8].Width = 90;
-                this.DGDetalleDeIngreso.Columns[9].HeaderText = "Descuento";
-                this.DGDetalleDeIngreso.Columns[9].Width = 65;
-                this.DGDetalleDeIngreso.Columns[10].HeaderText = "P. Descontado";
-                this.DGDetalleDeIngreso.Columns[10].Width = 110;
-                this.DGDetalleDeIngreso.Columns[11].HeaderText = "P. Total";
-                this.DGDetalleDeIngreso.Columns[11].Width = 85;
+                this.DGDetalleDeIngreso.Columns[2].Width = 385;
+                this.DGDetalleDeIngreso.Columns[3].HeaderText = "Referencia";
+                this.DGDetalleDeIngreso.Columns[3].Width = 150;
+                this.DGDetalleDeIngreso.Columns[4].HeaderText = "Medida";
+                this.DGDetalleDeIngreso.Columns[4].Width = 74;
+                this.DGDetalleDeIngreso.Columns[5].HeaderText = "Cajas";
+                this.DGDetalleDeIngreso.Columns[5].Width = 90;
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Unidades";
+                this.DGDetalleDeIngreso.Columns[6].Width = 90;
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Precio de Compra";
+                this.DGDetalleDeIngreso.Columns[7].Width = 140;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -187,28 +177,24 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[6].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[10].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[11].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[4].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[7].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Format = "##,##0.00";
+                //this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
+                //this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Format = "##,##0.00";
+                //this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -219,10 +205,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[10].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[11].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
             }
             catch (Exception ex)
             {
@@ -248,7 +231,20 @@ namespace Presentacion
             this.TBBodega.Text = bodega;
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra, string valor_venta)
+        //Mensaje de confirmacion
+        private void MensajeOk(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+        }
+
+        //Mensaje de Error
+        private void MensajeError(string mensaje)
+        {
+            MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
+
+
+        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
             {
@@ -269,8 +265,7 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["P. Compra"] = valor_compra;
-                    Fila["P. Venta"] = valor_venta;
+                    Fila["Precio de Compra"] = valor_compra;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -398,17 +393,6 @@ namespace Presentacion
             }
         }
 
-        //Mensaje de confirmacion
-        private void MensajeOk(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
-        }
-
-        //Mensaje de Error
-        private void MensajeError(string mensaje)
-        {
-            MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
         
         private void TBProducto_KeyUp(object sender, KeyEventArgs e)
         {
@@ -540,8 +524,7 @@ namespace Presentacion
                                 Convert.ToString(Tabla.Rows[0][1]),
                                 Convert.ToString(Tabla.Rows[0][2]),
                                 Convert.ToString(Tabla.Rows[0][3]),
-                                Convert.ToString(Tabla.Rows[0][4]),
-                                Convert.ToString(Tabla.Rows[0][5])
+                                Convert.ToString(Tabla.Rows[0][4])
                             );
                         this.TBCodigo_Producto.Clear();
                     }
@@ -621,104 +604,6 @@ namespace Presentacion
         private void DGDetalleDeIngreso_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             this.Calculo_Totales();
-        }
-
-        private void DGDetalleDeIngreso_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-            try
-            {
-                int cantidad = 0;
-                int Descuento = 0;
-                int Porcentaje = 0;
-                decimal precio_unit = 0;
-                decimal precio_total = 0;
-                decimal Sub_Total = 0;
-                decimal General_Total = 0;
-                decimal Precio_Venta = 0;
-                decimal Porcentaje_Total = 0;
-                decimal Divisor = 100;
-
-                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "U. Cajas")
-                {
-                    try
-                    {
-                        cantidad = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Debe ingresar una cantidad !");
-                    }
-                    try
-                    {
-                        precio_unit = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[5].Value.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Debe ingresar un precio !");
-                    }
-                    if (!(cantidad == 0) && !(precio_unit == 0))
-                    {
-                        precio_total = cantidad * precio_unit;
-                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[6].Value = precio_total;
-                    }
-                }
-
-                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "Descuento")
-                {
-                    try
-                    {
-                        Descuento = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[9].Value.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Ingrese un descuento si este llega aplicar");
-                    }
-
-                    try
-                    {
-                        Precio_Venta = decimal.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[8].Value.ToString());
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show("Debe Ingresar el Valor de Venta al Publico");
-                    }
-
-                    //Si la columna descuento tiene algun valor aplicado es decir 
-                    //Un descuento o porcentaje aplicado se realizara la siguiente validacion
-
-                    if (Descuento != 0)
-                    {
-                        Porcentaje_Total = Precio_Venta * Descuento / Divisor;
-                        Sub_Total = Precio_Venta - Porcentaje_Total;
-
-                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[11].Value = Sub_Total;
-
-                        // Se calcula el valor total final 
-                        General_Total = Precio_Venta - Sub_Total;
-
-                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[10].Value = General_Total;
-
-                    }
-
-                    else if (Descuento == 0)
-                    {
-                        DGDetalleDeIngreso.Rows[e.RowIndex].Cells[10].Value = Precio_Venta;
-
-                        if (Sub_Total == 0)
-                        {
-
-                            //Si no se aplica ningun descuento se realizara lo siguiente. Lo cual es un calculo total sin descuento alguno
-                            General_Total = Precio_Venta - Descuento;
-
-                            DGDetalleDeIngreso.Rows[e.RowIndex].Cells[11].Value = General_Total;
-                        }
-                    }                    
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
         }
 
         private void TBCodigo_Proveedor_KeyUp(object sender, KeyEventArgs e)

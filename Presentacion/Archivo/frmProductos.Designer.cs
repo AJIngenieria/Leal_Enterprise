@@ -110,6 +110,7 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.PB_Imagen = new System.Windows.Forms.PictureBox();
             this.TPLote = new System.Windows.Forms.TabPage();
+            this.btnEliminar_Lote = new System.Windows.Forms.Button();
             this.DTFechaDeVencimiento = new System.Windows.Forms.DateTimePicker();
             this.label34 = new System.Windows.Forms.Label();
             this.DGDetalles_Lotes = new System.Windows.Forms.DataGridView();
@@ -135,7 +136,13 @@
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.DGResultados = new System.Windows.Forms.DataGridView();
-            this.btnEliminar_Lote = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.TBMinimoMayorista = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -163,21 +170,21 @@
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 433);
+            this.groupBox1.Size = new System.Drawing.Size(431, 448);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Leal Enterprise - Registro de Productos";
             // 
             // TBIdimpuesto
             // 
-            this.TBIdimpuesto.Location = new System.Drawing.Point(248, 404);
+            this.TBIdimpuesto.Location = new System.Drawing.Point(248, 419);
             this.TBIdimpuesto.Name = "TBIdimpuesto";
             this.TBIdimpuesto.Size = new System.Drawing.Size(21, 21);
             this.TBIdimpuesto.TabIndex = 14;
             // 
             // TBIdproveedor
             // 
-            this.TBIdproveedor.Location = new System.Drawing.Point(221, 404);
+            this.TBIdproveedor.Location = new System.Drawing.Point(221, 419);
             this.TBIdproveedor.Name = "TBIdproveedor";
             this.TBIdproveedor.Size = new System.Drawing.Size(21, 21);
             this.TBIdproveedor.TabIndex = 13;
@@ -188,7 +195,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(92, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(92, 416);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(76, 26);
             this.btnCancelar.TabIndex = 7;
@@ -209,7 +216,7 @@
             this.TCPrincipal.Location = new System.Drawing.Point(6, 20);
             this.TCPrincipal.Name = "TCPrincipal";
             this.TCPrincipal.SelectedIndex = 0;
-            this.TCPrincipal.Size = new System.Drawing.Size(419, 375);
+            this.TCPrincipal.Size = new System.Drawing.Size(419, 390);
             this.TCPrincipal.TabIndex = 0;
             // 
             // TPDatosBasicos
@@ -257,7 +264,7 @@
             this.TPDatosBasicos.Location = new System.Drawing.Point(4, 24);
             this.TPDatosBasicos.Name = "TPDatosBasicos";
             this.TPDatosBasicos.Padding = new System.Windows.Forms.Padding(3);
-            this.TPDatosBasicos.Size = new System.Drawing.Size(411, 347);
+            this.TPDatosBasicos.Size = new System.Drawing.Size(411, 362);
             this.TPDatosBasicos.TabIndex = 0;
             this.TPDatosBasicos.Text = "Datos";
             // 
@@ -284,7 +291,7 @@
             this.CBOfertable.AutoSize = true;
             this.CBOfertable.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBOfertable.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBOfertable.Location = new System.Drawing.Point(132, 322);
+            this.CBOfertable.Location = new System.Drawing.Point(132, 321);
             this.CBOfertable.Name = "CBOfertable";
             this.CBOfertable.Size = new System.Drawing.Size(58, 17);
             this.CBOfertable.TabIndex = 145;
@@ -326,7 +333,7 @@
             // label41
             // 
             this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(6, 322);
+            this.label41.Location = new System.Drawing.Point(6, 321);
             this.label41.Name = "label41";
             this.label41.Size = new System.Drawing.Size(109, 15);
             this.label41.TabIndex = 144;
@@ -337,7 +344,7 @@
             this.CBExportado.AutoSize = true;
             this.CBExportado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBExportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBExportado.Location = new System.Drawing.Point(333, 300);
+            this.CBExportado.Location = new System.Drawing.Point(333, 299);
             this.CBExportado.Name = "CBExportado";
             this.CBExportado.Size = new System.Drawing.Size(58, 17);
             this.CBExportado.TabIndex = 143;
@@ -350,7 +357,7 @@
             this.CBImportado.AutoSize = true;
             this.CBImportado.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBImportado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBImportado.Location = new System.Drawing.Point(132, 299);
+            this.CBImportado.Location = new System.Drawing.Point(132, 298);
             this.CBImportado.Name = "CBImportado";
             this.CBImportado.Size = new System.Drawing.Size(58, 17);
             this.CBImportado.TabIndex = 142;
@@ -361,7 +368,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(212, 300);
+            this.label21.Location = new System.Drawing.Point(212, 298);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(115, 15);
             this.label21.TabIndex = 141;
@@ -370,7 +377,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(6, 299);
+            this.label36.Location = new System.Drawing.Point(6, 298);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(115, 15);
             this.label36.TabIndex = 140;
@@ -381,7 +388,7 @@
             this.CBImpuesto.AutoSize = true;
             this.CBImpuesto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBImpuesto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBImpuesto.Location = new System.Drawing.Point(333, 279);
+            this.CBImpuesto.Location = new System.Drawing.Point(333, 276);
             this.CBImpuesto.Name = "CBImpuesto";
             this.CBImpuesto.Size = new System.Drawing.Size(58, 17);
             this.CBImpuesto.TabIndex = 135;
@@ -392,7 +399,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(212, 276);
+            this.label8.Location = new System.Drawing.Point(217, 275);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(103, 15);
             this.label8.TabIndex = 134;
@@ -403,7 +410,7 @@
             this.CBVencimiento.AutoSize = true;
             this.CBVencimiento.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBVencimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBVencimiento.Location = new System.Drawing.Point(132, 277);
+            this.CBVencimiento.Location = new System.Drawing.Point(132, 276);
             this.CBVencimiento.Name = "CBVencimiento";
             this.CBVencimiento.Size = new System.Drawing.Size(58, 17);
             this.CBVencimiento.TabIndex = 133;
@@ -666,7 +673,14 @@
             // 
             this.TPValores.BackColor = System.Drawing.Color.White;
             this.TPValores.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.TPValores.Controls.Add(this.textBox3);
+            this.TPValores.Controls.Add(this.TBMinimoMayorista);
+            this.TPValores.Controls.Add(this.label40);
+            this.TPValores.Controls.Add(this.label38);
+            this.TPValores.Controls.Add(this.label31);
+            this.TPValores.Controls.Add(this.textBox2);
             this.TPValores.Controls.Add(this.textBox1);
+            this.TPValores.Controls.Add(this.label23);
             this.TPValores.Controls.Add(this.TBOtrosGastos);
             this.TPValores.Controls.Add(this.label30);
             this.TPValores.Controls.Add(this.TBGastodeEnvio);
@@ -687,22 +701,22 @@
             this.TPValores.Controls.Add(this.label26);
             this.TPValores.Location = new System.Drawing.Point(4, 24);
             this.TPValores.Name = "TPValores";
-            this.TPValores.Size = new System.Drawing.Size(411, 347);
+            this.TPValores.Size = new System.Drawing.Size(411, 362);
             this.TPValores.TabIndex = 3;
             this.TPValores.Text = "Valores";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(109, 296);
+            this.textBox1.Location = new System.Drawing.Point(166, 112);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.Size = new System.Drawing.Size(240, 21);
             this.textBox1.TabIndex = 97;
             // 
             // TBOtrosGastos
             // 
-            this.TBOtrosGastos.Location = new System.Drawing.Point(109, 193);
+            this.TBOtrosGastos.Location = new System.Drawing.Point(113, 328);
             this.TBOtrosGastos.Name = "TBOtrosGastos";
-            this.TBOtrosGastos.Size = new System.Drawing.Size(290, 21);
+            this.TBOtrosGastos.Size = new System.Drawing.Size(293, 21);
             this.TBOtrosGastos.TabIndex = 96;
             this.TBOtrosGastos.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBOtrosGastos.Enter += new System.EventHandler(this.TBOtrosGastos_Enter);
@@ -712,7 +726,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(4, 196);
+            this.label30.Location = new System.Drawing.Point(4, 331);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(77, 15);
             this.label30.TabIndex = 95;
@@ -720,9 +734,9 @@
             // 
             // TBGastodeEnvio
             // 
-            this.TBGastodeEnvio.Location = new System.Drawing.Point(109, 166);
+            this.TBGastodeEnvio.Location = new System.Drawing.Point(113, 301);
             this.TBGastodeEnvio.Name = "TBGastodeEnvio";
-            this.TBGastodeEnvio.Size = new System.Drawing.Size(290, 21);
+            this.TBGastodeEnvio.Size = new System.Drawing.Size(293, 21);
             this.TBGastodeEnvio.TabIndex = 94;
             this.TBGastodeEnvio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBGastodeEnvio.Enter += new System.EventHandler(this.TBGastodeEnvio_Enter);
@@ -732,7 +746,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(4, 169);
+            this.label15.Location = new System.Drawing.Point(4, 304);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(89, 15);
             this.label15.TabIndex = 93;
@@ -741,7 +755,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(4, 142);
+            this.label11.Location = new System.Drawing.Point(4, 277);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(103, 15);
             this.label11.TabIndex = 92;
@@ -750,7 +764,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(4, 115);
+            this.label9.Location = new System.Drawing.Point(4, 250);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(103, 15);
             this.label9.TabIndex = 91;
@@ -759,17 +773,17 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(235, 34);
+            this.label32.Location = new System.Drawing.Point(4, 88);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(38, 15);
+            this.label32.Size = new System.Drawing.Size(152, 15);
             this.label32.TabIndex = 87;
-            this.label32.Text = "Impu.";
+            this.label32.Text = "Valor de Venta No Excento";
             // 
             // TBValorImportacion
             // 
-            this.TBValorImportacion.Location = new System.Drawing.Point(109, 112);
+            this.TBValorImportacion.Location = new System.Drawing.Point(113, 247);
             this.TBValorImportacion.Name = "TBValorImportacion";
-            this.TBValorImportacion.Size = new System.Drawing.Size(290, 21);
+            this.TBValorImportacion.Size = new System.Drawing.Size(293, 21);
             this.TBValorImportacion.TabIndex = 89;
             this.TBValorImportacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorImportacion.Enter += new System.EventHandler(this.TBValorImportacion_Enter);
@@ -778,9 +792,9 @@
             // 
             // TBValorVenta_SinImpuesto
             // 
-            this.TBValorVenta_SinImpuesto.Location = new System.Drawing.Point(109, 31);
+            this.TBValorVenta_SinImpuesto.Location = new System.Drawing.Point(166, 58);
             this.TBValorVenta_SinImpuesto.Name = "TBValorVenta_SinImpuesto";
-            this.TBValorVenta_SinImpuesto.Size = new System.Drawing.Size(120, 21);
+            this.TBValorVenta_SinImpuesto.Size = new System.Drawing.Size(240, 21);
             this.TBValorVenta_SinImpuesto.TabIndex = 86;
             this.TBValorVenta_SinImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorVenta_SinImpuesto.Enter += new System.EventHandler(this.TBValorVenta_SinImpuesto_Enter);
@@ -789,9 +803,9 @@
             // 
             // TBValorExportacion
             // 
-            this.TBValorExportacion.Location = new System.Drawing.Point(109, 139);
+            this.TBValorExportacion.Location = new System.Drawing.Point(113, 274);
             this.TBValorExportacion.Name = "TBValorExportacion";
-            this.TBValorExportacion.Size = new System.Drawing.Size(290, 21);
+            this.TBValorExportacion.Size = new System.Drawing.Size(293, 21);
             this.TBValorExportacion.TabIndex = 90;
             this.TBValorExportacion.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorExportacion.Enter += new System.EventHandler(this.TBValorExportacion_Enter);
@@ -800,9 +814,9 @@
             // 
             // TBValordecompra
             // 
-            this.TBValordecompra.Location = new System.Drawing.Point(109, 4);
+            this.TBValordecompra.Location = new System.Drawing.Point(166, 31);
             this.TBValordecompra.Name = "TBValordecompra";
-            this.TBValordecompra.Size = new System.Drawing.Size(290, 21);
+            this.TBValordecompra.Size = new System.Drawing.Size(240, 21);
             this.TBValordecompra.TabIndex = 83;
             this.TBValordecompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValordecompra.Enter += new System.EventHandler(this.TBValordecompra_Enter);
@@ -812,17 +826,17 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(4, 8);
+            this.label29.Location = new System.Drawing.Point(4, 34);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(99, 15);
+            this.label29.Size = new System.Drawing.Size(129, 15);
             this.label29.TabIndex = 82;
-            this.label29.Text = "Valor de Compra";
+            this.label29.Text = "Valor de Compra Final";
             // 
             // TBCantidadMaximaCliente
             // 
-            this.TBCantidadMaximaCliente.Location = new System.Drawing.Point(180, 85);
+            this.TBCantidadMaximaCliente.Location = new System.Drawing.Point(166, 166);
             this.TBCantidadMaximaCliente.Name = "TBCantidadMaximaCliente";
-            this.TBCantidadMaximaCliente.Size = new System.Drawing.Size(219, 21);
+            this.TBCantidadMaximaCliente.Size = new System.Drawing.Size(240, 21);
             this.TBCantidadMaximaCliente.TabIndex = 70;
             this.TBCantidadMaximaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCantidadMaximaCliente.Enter += new System.EventHandler(this.TBCantidadMaximaCliente_Enter_1);
@@ -831,9 +845,9 @@
             // 
             // TBCantidadMininaCliente
             // 
-            this.TBCantidadMininaCliente.Location = new System.Drawing.Point(180, 58);
+            this.TBCantidadMininaCliente.Location = new System.Drawing.Point(166, 139);
             this.TBCantidadMininaCliente.Name = "TBCantidadMininaCliente";
-            this.TBCantidadMininaCliente.Size = new System.Drawing.Size(219, 21);
+            this.TBCantidadMininaCliente.Size = new System.Drawing.Size(240, 21);
             this.TBCantidadMininaCliente.TabIndex = 69;
             this.TBCantidadMininaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCantidadMininaCliente.Enter += new System.EventHandler(this.TBCantidadMininaCliente_Enter_1);
@@ -843,26 +857,26 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(4, 85);
+            this.label17.Location = new System.Drawing.Point(4, 166);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(166, 15);
+            this.label17.Size = new System.Drawing.Size(155, 15);
             this.label17.TabIndex = 68;
-            this.label17.Text = "Cantidad Maxima por Cliente";
+            this.label17.Text = "Cantidad Maxima de Venta";
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(4, 61);
+            this.label16.Location = new System.Drawing.Point(4, 142);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(163, 15);
+            this.label16.Size = new System.Drawing.Size(152, 15);
             this.label16.TabIndex = 67;
-            this.label16.Text = "Cantidad Minima por Cliente";
+            this.label16.Text = "Cantidad Minima de Venta";
             // 
             // TBValorVenta
             // 
-            this.TBValorVenta.Location = new System.Drawing.Point(279, 31);
+            this.TBValorVenta.Location = new System.Drawing.Point(166, 85);
             this.TBValorVenta.Name = "TBValorVenta";
-            this.TBValorVenta.Size = new System.Drawing.Size(120, 21);
+            this.TBValorVenta.Size = new System.Drawing.Size(240, 21);
             this.TBValorVenta.TabIndex = 7;
             this.TBValorVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorVenta.Enter += new System.EventHandler(this.TBValor01_Enter);
@@ -872,11 +886,11 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(4, 34);
+            this.label26.Location = new System.Drawing.Point(4, 61);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(86, 15);
+            this.label26.Size = new System.Drawing.Size(133, 15);
             this.label26.TabIndex = 1;
-            this.label26.Text = "Valor de Venta";
+            this.label26.Text = "Valor de Venta Excento";
             // 
             // TPUbicacion
             // 
@@ -897,7 +911,7 @@
             this.TPUbicacion.Location = new System.Drawing.Point(4, 24);
             this.TPUbicacion.Name = "TPUbicacion";
             this.TPUbicacion.Padding = new System.Windows.Forms.Padding(3);
-            this.TPUbicacion.Size = new System.Drawing.Size(411, 347);
+            this.TPUbicacion.Size = new System.Drawing.Size(411, 362);
             this.TPUbicacion.TabIndex = 4;
             this.TPUbicacion.Text = "Ubicacion";
             // 
@@ -908,7 +922,7 @@
             this.btnEliminar_Ubicacion.FlatAppearance.BorderSize = 0;
             this.btnEliminar_Ubicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar_Ubicacion.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(243, 312);
+            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(243, 327);
             this.btnEliminar_Ubicacion.Name = "btnEliminar_Ubicacion";
             this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(77, 27);
             this.btnEliminar_Ubicacion.TabIndex = 58;
@@ -922,7 +936,7 @@
             this.btnAgregar_Ubicacion.FlatAppearance.BorderSize = 0;
             this.btnAgregar_Ubicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar_Ubicacion.Image = global::Presentacion.Properties.Resources.BV_Agregar;
-            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(326, 312);
+            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(326, 327);
             this.btnAgregar_Ubicacion.Name = "btnAgregar_Ubicacion";
             this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(77, 27);
             this.btnAgregar_Ubicacion.TabIndex = 57;
@@ -932,7 +946,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(6, 318);
+            this.label28.Location = new System.Drawing.Point(6, 333);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(147, 15);
             this.label28.TabIndex = 56;
@@ -948,7 +962,7 @@
             this.DGDetalles_Ubicacion.Name = "DGDetalles_Ubicacion";
             this.DGDetalles_Ubicacion.ReadOnly = true;
             this.DGDetalles_Ubicacion.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGDetalles_Ubicacion.Size = new System.Drawing.Size(397, 192);
+            this.DGDetalles_Ubicacion.Size = new System.Drawing.Size(397, 207);
             this.DGDetalles_Ubicacion.TabIndex = 36;
             // 
             // CBBodega
@@ -1036,7 +1050,7 @@
             this.TPImagen.Location = new System.Drawing.Point(4, 24);
             this.TPImagen.Name = "TPImagen";
             this.TPImagen.Padding = new System.Windows.Forms.Padding(3);
-            this.TPImagen.Size = new System.Drawing.Size(411, 347);
+            this.TPImagen.Size = new System.Drawing.Size(411, 362);
             this.TPImagen.TabIndex = 13;
             this.TPImagen.Text = "Imagen";
             this.TPImagen.UseVisualStyleBackColor = true;
@@ -1046,7 +1060,7 @@
             this.groupBox3.Controls.Add(this.PB_Imagen);
             this.groupBox3.Location = new System.Drawing.Point(7, 6);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(396, 335);
+            this.groupBox3.Size = new System.Drawing.Size(396, 350);
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Imagen del Producto";
@@ -1058,7 +1072,7 @@
             this.PB_Imagen.Cursor = System.Windows.Forms.Cursors.Hand;
             this.PB_Imagen.Location = new System.Drawing.Point(6, 20);
             this.PB_Imagen.Name = "PB_Imagen";
-            this.PB_Imagen.Size = new System.Drawing.Size(384, 309);
+            this.PB_Imagen.Size = new System.Drawing.Size(384, 324);
             this.PB_Imagen.TabIndex = 0;
             this.PB_Imagen.TabStop = false;
             this.PB_Imagen.Click += new System.EventHandler(this.PB_Imagen_Click_1);
@@ -1078,10 +1092,25 @@
             this.TPLote.Location = new System.Drawing.Point(4, 24);
             this.TPLote.Name = "TPLote";
             this.TPLote.Padding = new System.Windows.Forms.Padding(3);
-            this.TPLote.Size = new System.Drawing.Size(411, 347);
+            this.TPLote.Size = new System.Drawing.Size(411, 362);
             this.TPLote.TabIndex = 11;
             this.TPLote.Text = "Lote";
             this.TPLote.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar_Lote
+            // 
+            this.btnEliminar_Lote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar_Lote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Lote.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Lote.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Lote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar_Lote.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
+            this.btnEliminar_Lote.Location = new System.Drawing.Point(245, 329);
+            this.btnEliminar_Lote.Name = "btnEliminar_Lote";
+            this.btnEliminar_Lote.Size = new System.Drawing.Size(77, 27);
+            this.btnEliminar_Lote.TabIndex = 59;
+            this.btnEliminar_Lote.UseVisualStyleBackColor = true;
+            this.btnEliminar_Lote.Click += new System.EventHandler(this.btnEliminar_Lote_Click);
             // 
             // DTFechaDeVencimiento
             // 
@@ -1108,7 +1137,7 @@
             this.DGDetalles_Lotes.Name = "DGDetalles_Lotes";
             this.DGDetalles_Lotes.ReadOnly = true;
             this.DGDetalles_Lotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGDetalles_Lotes.Size = new System.Drawing.Size(399, 221);
+            this.DGDetalles_Lotes.Size = new System.Drawing.Size(399, 236);
             this.DGDetalles_Lotes.TabIndex = 56;
             // 
             // btnAgregar_Lotes
@@ -1118,7 +1147,7 @@
             this.btnAgregar_Lotes.FlatAppearance.BorderSize = 0;
             this.btnAgregar_Lotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAgregar_Lotes.Image = global::Presentacion.Properties.Resources.BV_Agregar;
-            this.btnAgregar_Lotes.Location = new System.Drawing.Point(328, 314);
+            this.btnAgregar_Lotes.Location = new System.Drawing.Point(328, 329);
             this.btnAgregar_Lotes.Name = "btnAgregar_Lotes";
             this.btnAgregar_Lotes.Size = new System.Drawing.Size(77, 27);
             this.btnAgregar_Lotes.TabIndex = 54;
@@ -1128,7 +1157,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(6, 317);
+            this.label33.Location = new System.Drawing.Point(6, 332);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(109, 15);
             this.label33.TabIndex = 51;
@@ -1184,7 +1213,7 @@
             this.TPCodigosdeBarra.Location = new System.Drawing.Point(4, 24);
             this.TPCodigosdeBarra.Name = "TPCodigosdeBarra";
             this.TPCodigosdeBarra.Padding = new System.Windows.Forms.Padding(3);
-            this.TPCodigosdeBarra.Size = new System.Drawing.Size(411, 347);
+            this.TPCodigosdeBarra.Size = new System.Drawing.Size(411, 362);
             this.TPCodigosdeBarra.TabIndex = 12;
             this.TPCodigosdeBarra.Text = "Codigos de Barra";
             this.TPCodigosdeBarra.UseVisualStyleBackColor = true;
@@ -1216,7 +1245,7 @@
             this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderSize = 0;
             this.btnAgregar_CodigoDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar_CodigoDeBarra.Location = new System.Drawing.Point(328, 314);
+            this.btnAgregar_CodigoDeBarra.Location = new System.Drawing.Point(328, 329);
             this.btnAgregar_CodigoDeBarra.Name = "btnAgregar_CodigoDeBarra";
             this.btnAgregar_CodigoDeBarra.Size = new System.Drawing.Size(77, 27);
             this.btnAgregar_CodigoDeBarra.TabIndex = 15;
@@ -1231,7 +1260,7 @@
             this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderSize = 0;
             this.btnEliminar_CodigosDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_CodigosDeBarra.Location = new System.Drawing.Point(245, 314);
+            this.btnEliminar_CodigosDeBarra.Location = new System.Drawing.Point(245, 329);
             this.btnEliminar_CodigosDeBarra.Name = "btnEliminar_CodigosDeBarra";
             this.btnEliminar_CodigosDeBarra.Size = new System.Drawing.Size(77, 27);
             this.btnEliminar_CodigosDeBarra.TabIndex = 14;
@@ -1241,7 +1270,7 @@
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(6, 317);
+            this.label44.Location = new System.Drawing.Point(6, 332);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(124, 15);
             this.label44.TabIndex = 3;
@@ -1259,12 +1288,12 @@
             this.DGResultados_Codigos.Name = "DGResultados_Codigos";
             this.DGResultados_Codigos.ReadOnly = true;
             this.DGResultados_Codigos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados_Codigos.Size = new System.Drawing.Size(399, 275);
+            this.DGResultados_Codigos.Size = new System.Drawing.Size(399, 290);
             this.DGResultados_Codigos.TabIndex = 2;
             // 
             // TBIdproducto
             // 
-            this.TBIdproducto.Location = new System.Drawing.Point(183, 404);
+            this.TBIdproducto.Location = new System.Drawing.Point(183, 419);
             this.TBIdproducto.Name = "TBIdproducto";
             this.TBIdproducto.Size = new System.Drawing.Size(21, 21);
             this.TBIdproducto.TabIndex = 12;
@@ -1276,7 +1305,7 @@
             this.btnGuardar.FlatAppearance.BorderSize = 0;
             this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 401);
+            this.btnGuardar.Location = new System.Drawing.Point(10, 416);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(76, 26);
             this.btnGuardar.TabIndex = 5;
@@ -1378,27 +1407,70 @@
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
             // 
-            // btnEliminar_Lote
+            // label23
             // 
-            this.btnEliminar_Lote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar_Lote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Lote.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Lote.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Lote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_Lote.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar_Lote.Location = new System.Drawing.Point(245, 314);
-            this.btnEliminar_Lote.Name = "btnEliminar_Lote";
-            this.btnEliminar_Lote.Size = new System.Drawing.Size(77, 27);
-            this.btnEliminar_Lote.TabIndex = 59;
-            this.btnEliminar_Lote.UseVisualStyleBackColor = true;
-            this.btnEliminar_Lote.Click += new System.EventHandler(this.btnEliminar_Lote_Click);
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(4, 7);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(156, 15);
+            this.label23.TabIndex = 98;
+            this.label23.Text = "Valor de Compra Promedio";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(166, 5);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(240, 21);
+            this.textBox2.TabIndex = 99;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(4, 115);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(142, 15);
+            this.label31.TabIndex = 100;
+            this.label31.Text = "Valor de Venta Mayorista";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(4, 196);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(157, 15);
+            this.label38.TabIndex = 101;
+            this.label38.Text = "Cantidad Minima Mayorista";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(4, 223);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(160, 15);
+            this.label40.TabIndex = 102;
+            this.label40.Text = "Cantidad Maxima Mayorista";
+            // 
+            // TBMinimoMayorista
+            // 
+            this.TBMinimoMayorista.Location = new System.Drawing.Point(166, 193);
+            this.TBMinimoMayorista.Name = "TBMinimoMayorista";
+            this.TBMinimoMayorista.Size = new System.Drawing.Size(240, 21);
+            this.TBMinimoMayorista.TabIndex = 103;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(166, 220);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(240, 21);
+            this.textBox3.TabIndex = 104;
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1078, 455);
+            this.ClientSize = new System.Drawing.Size(1078, 470);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1543,5 +1615,12 @@
         private System.Windows.Forms.TextBox TBImpuesto_Valor;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnEliminar_Lote;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox TBMinimoMayorista;
+        private System.Windows.Forms.Label label40;
     }
 }
