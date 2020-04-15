@@ -35,17 +35,22 @@ namespace Entidad
         private int _Importado;
         private int _Exportado;
         private int _Ofertable;
+        private int _VentaImpuesto;
+        private int _ManejaComision;
 
         //Valores
-        private string _ValorFinal;
-        private string _ValorDeCompra;
-        private string _ValorDeVenta;
-        private string _CantidadMinima;
-        private string _CantidadMaxima;
-        private string _ValorImportacion;
-        private string _ValorExportacion;
-        private string _GastosDeEnvio;
-        private string _OtrosGastos;
+        private string _Compra_Promedio;
+        private string _Compra_Final;
+        private string _Venta_Excento;
+        private string _Venta_NoExcento;
+        private string _Venta_Mayorista;
+        private string _Comision;
+        private string _Comision_Valor;
+        private string _Gasto_Envio;
+        private string _Minima_Cliente;
+        private string _Maxima_Cliente;
+        private string _Minima_Mayorista;
+        private string _Maxima_Mayorista;
 
         //Ubicacion[]
         private string _Ubicacion;
@@ -86,15 +91,6 @@ namespace Entidad
         public int Importado { get => _Importado; set => _Importado = value; }
         public int Exportado { get => _Exportado; set => _Exportado = value; }
         public int Ofertable { get => _Ofertable; set => _Ofertable = value; }
-        public string ValorFinal { get => _ValorFinal; set => _ValorFinal = value; }
-        public string ValorDeCompra { get => _ValorDeCompra; set => _ValorDeCompra = value; }
-        public string ValorDeVenta { get => _ValorDeVenta; set => _ValorDeVenta = value; }
-        public string CantidadMinima { get => _CantidadMinima; set => _CantidadMinima = value; }
-        public string CantidadMaxima { get => _CantidadMaxima; set => _CantidadMaxima = value; }
-        public string ValorImportacion { get => _ValorImportacion; set => _ValorImportacion = value; }
-        public string ValorExportacion { get => _ValorExportacion; set => _ValorExportacion = value; }
-        public string GastosDeEnvio { get => _GastosDeEnvio; set => _GastosDeEnvio = value; }
-        public string OtrosGastos { get => _OtrosGastos; set => _OtrosGastos = value; }
         public string Ubicacion { get => _Ubicacion; set => _Ubicacion = value; }
         public string Estante { get => _Estante; set => _Estante = value; }
         public string Nivel { get => _Nivel; set => _Nivel = value; }
@@ -107,5 +103,19 @@ namespace Entidad
         public string CodigoDeBarra { get => _CodigoDeBarra; set => _CodigoDeBarra = value; }
         public string Lote_ValorInicial { get => _Lote_ValorInicial; set => _Lote_ValorInicial = value; }
         public DateTime FechaVencimiento { get => _FechaVencimiento; set => _FechaVencimiento = value; }
+        public int VentaImpuesto { get => _VentaImpuesto; set => _VentaImpuesto = value; }
+        public int ManejaComision { get => _ManejaComision; set => _ManejaComision = value; }
+        public string Compra_Promedio { get => _Compra_Promedio; set => _Compra_Promedio = value; }
+        public string Compra_Final { get => _Compra_Final; set => _Compra_Final = value; }
+        public string Venta_Excento { get => _Venta_Excento; set => _Venta_Excento = value; }
+        public string Venta_NoExcento { get => _Venta_NoExcento; set => _Venta_NoExcento = value; }
+        public string Venta_Mayorista { get => _Venta_Mayorista; set => _Venta_Mayorista = value; }
+        public string Comision { get => _Comision; set => _Comision = value; }
+        public string Comision_Valor { get => _Comision_Valor; set => _Comision_Valor = value; }
+        public string Minima_Cliente { get => _Minima_Cliente; set => _Minima_Cliente = value; }
+        public string Maxima_Cliente { get => _Maxima_Cliente; set => _Maxima_Cliente = value; }
+        public string Minima_Mayorista { get => _Minima_Mayorista; set => _Minima_Mayorista = value; }
+        public string Maxima_Mayorista { get => _Maxima_Mayorista; set => _Maxima_Mayorista = value; }
+        public string Gasto_Envio { get => _Gasto_Envio; set => _Gasto_Envio = value; }
     }
 }

@@ -14,6 +14,15 @@ namespace Presentacion
 {
     public partial class frmFiltro_Producto : Form
     {
+        //********** Parametros para AutoCompletar los Texboxt **********************************
+
+        //Panel Datos Basicos
+        private string Codigo, Nombre, Referencia, Descripcion, Presentacion = "";
+        private string Marca, Grupo, Unidad, UnidadDeVenta, CantidadMinimaCliente, CantidadMaximaCliente = "";
+        private string CantidadMinimaMayorista, CantidadMaximaMayorista, Bodega, Stock, Lote = "";
+
+        //***************************************************************************************
+        
         public frmFiltro_Producto()
         {
             InitializeComponent();
@@ -127,7 +136,7 @@ namespace Presentacion
             {
                 if (TBBuscar.Text != "")
                 {
-                    this.DGFiltro_Resultados.DataSource = fProductos.Buscar(this.TBBuscar.Text, 4);
+                    this.DGFiltro_Resultados.DataSource = fProductos.Buscar(this.TBBuscar.Text, 1);
                     this.DGFiltro_Resultados.Columns[0].Visible = false;
 
                     this.lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
@@ -153,6 +162,45 @@ namespace Presentacion
             }
         }
         
+        private void TBIdproducto_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable Datos = Negocio.fProductos.Buscar(this.TBIdproducto.Text, 5);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    //Panel Datos Basicos
+                    Codigo = Datos.Rows[0][0].ToString();
+                    Nombre = Datos.Rows[0][1].ToString();
+                    Referencia = Datos.Rows[0][2].ToString();
+                    Descripcion = Datos.Rows[0][3].ToString();
+                    Presentacion = Datos.Rows[0][4].ToString();
+                    Marca = Datos.Rows[0][5].ToString();
+                    Grupo = Datos.Rows[0][6].ToString();
+                    Unidad = Datos.Rows[0][7].ToString();
+                    UnidadDeVenta = Datos.Rows[0][8].ToString();
+                    CantidadMinimaCliente = Datos.Rows[0][9].ToString();
+                    CantidadMaximaCliente = Datos.Rows[0][10].ToString();
+                    CantidadMinimaMayorista = Datos.Rows[0][11].ToString();
+                    CantidadMaximaMayorista = Datos.Rows[0][12].ToString();
+                    Bodega = Datos.Rows[0][13].ToString();
+                    Stock = Datos.Rows[0][14].ToString();
+                    Lote = Datos.Rows[0][15].ToString();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
         private void DGFiltro_Resultados_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -179,5 +227,6 @@ namespace Presentacion
         {
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
+
     }
 }

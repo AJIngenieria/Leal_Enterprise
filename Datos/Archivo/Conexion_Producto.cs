@@ -94,14 +94,16 @@ namespace Datos
                 //Panel Datos Basicos -- Campos NO Obligatorios
                 Comando.Parameters.Add("@Referencia", SqlDbType.VarChar).Value = Obj.Referencia;
                 Comando.Parameters.Add("@Presentacion", SqlDbType.VarChar).Value = Obj.Presentacion;
-                Comando.Parameters.Add("@Vencimiento", SqlDbType.Int).Value = Obj.ManejaVencimiento;
+                Comando.Parameters.Add("@Unidad", SqlDbType.VarChar).Value = Obj.Unidad;
+                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
+                Comando.Parameters.Add("@ManVenc", SqlDbType.Int).Value = Obj.ManejaVencimiento;
+                Comando.Parameters.Add("@ManImpu", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Importado", SqlDbType.Int).Value = Obj.Importado;
                 Comando.Parameters.Add("@Exportado", SqlDbType.Int).Value = Obj.Exportado;
-                Comando.Parameters.Add("@Impuesto", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Ofertable", SqlDbType.Int).Value = Obj.Ofertable;
-                Comando.Parameters.Add("@UnidadDeVenta", SqlDbType.VarChar).Value = Obj.Unidad;
-                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
-
+                Comando.Parameters.Add("@VenImpuesto", SqlDbType.Int).Value = Obj.VentaImpuesto;
+                Comando.Parameters.Add("@ManComision", SqlDbType.Int).Value = Obj.ManejaComision;
+                              
                 Comando.Parameters.Add("@Idgrupo", SqlDbType.Int).Value = Obj.Idgrupo;
                 Comando.Parameters.Add("@Idtipo", SqlDbType.Int).Value = Obj.Idtipo;
                 Comando.Parameters.Add("@Idempaque", SqlDbType.Int).Value = Obj.Idempaque;
@@ -110,15 +112,18 @@ namespace Datos
 
                 //Panel Precios -- Campos Obligatorios
 
-                Comando.Parameters.Add("@Compra", SqlDbType.VarChar).Value = Obj.ValorDeCompra;
-                Comando.Parameters.Add("@Venta", SqlDbType.VarChar).Value = Obj.ValorDeVenta;
-                Comando.Parameters.Add("@Imp_Venta", SqlDbType.VarChar).Value = Obj.ValorFinal;
-                Comando.Parameters.Add("@Minimo", SqlDbType.VarChar).Value = Obj.CantidadMinima;
-                Comando.Parameters.Add("@Maximo", SqlDbType.VarChar).Value = Obj.CantidadMaxima;
-                Comando.Parameters.Add("@Importacion", SqlDbType.VarChar).Value = Obj.ValorImportacion;
-                Comando.Parameters.Add("@Exportacion", SqlDbType.VarChar).Value = Obj.ValorExportacion;
-                Comando.Parameters.Add("@Envio", SqlDbType.VarChar).Value = Obj.GastosDeEnvio;
-                Comando.Parameters.Add("@Otros", SqlDbType.VarChar).Value = Obj.OtrosGastos;
+                Comando.Parameters.Add("@ComProm", SqlDbType.VarChar).Value = Obj.Compra_Promedio;
+                Comando.Parameters.Add("@ComFinal", SqlDbType.VarChar).Value = Obj.Compra_Final;
+                Comando.Parameters.Add("@VenExc", SqlDbType.VarChar).Value = Obj.Venta_Excento;
+                Comando.Parameters.Add("@VenNoExc", SqlDbType.VarChar).Value = Obj.Venta_NoExcento;
+                Comando.Parameters.Add("@VenMayor", SqlDbType.VarChar).Value = Obj.Venta_Mayorista;
+                Comando.Parameters.Add("@GasEnv", SqlDbType.VarChar).Value = Obj.Gasto_Envio;
+                Comando.Parameters.Add("@ComEmp", SqlDbType.VarChar).Value = Obj.Comision;
+                Comando.Parameters.Add("@ValCom", SqlDbType.VarChar).Value = Obj.Comision_Valor;
+                Comando.Parameters.Add("@MinVenta", SqlDbType.VarChar).Value = Obj.Minima_Cliente;
+                Comando.Parameters.Add("@MaxVenta", SqlDbType.VarChar).Value = Obj.Maxima_Cliente;
+                Comando.Parameters.Add("@MinMayorista", SqlDbType.VarChar).Value = Obj.Minima_Mayorista;
+                Comando.Parameters.Add("@MaxMayorista", SqlDbType.VarChar).Value = Obj.Maxima_Mayorista;
 
                 //Panel Ubicaciones -- Campos Obligatorios
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
@@ -192,15 +197,18 @@ namespace Datos
 
                 //Panel Precios -- Campos Obligatorios
 
-                Comando.Parameters.Add("@Compra", SqlDbType.VarChar).Value = Obj.ValorDeCompra;
-                Comando.Parameters.Add("@Venta", SqlDbType.VarChar).Value = Obj.ValorDeVenta;
-                Comando.Parameters.Add("@Imp_Venta", SqlDbType.VarChar).Value = Obj.ValorFinal;
-                Comando.Parameters.Add("@Minimo", SqlDbType.VarChar).Value = Obj.CantidadMinima;
-                Comando.Parameters.Add("@Maximo", SqlDbType.VarChar).Value = Obj.CantidadMaxima;
-                Comando.Parameters.Add("@Importacion", SqlDbType.VarChar).Value = Obj.ValorImportacion;
-                Comando.Parameters.Add("@Exportacion", SqlDbType.VarChar).Value = Obj.ValorExportacion;
-                Comando.Parameters.Add("@Envio", SqlDbType.VarChar).Value = Obj.GastosDeEnvio;
-                Comando.Parameters.Add("@Otros", SqlDbType.VarChar).Value = Obj.OtrosGastos;
+                Comando.Parameters.Add("@ComProm", SqlDbType.VarChar).Value = Obj.Compra_Promedio;
+                Comando.Parameters.Add("@ComFinal", SqlDbType.VarChar).Value = Obj.Compra_Final;
+                Comando.Parameters.Add("@VenExc", SqlDbType.VarChar).Value = Obj.Venta_Excento;
+                Comando.Parameters.Add("@VenNoExc", SqlDbType.VarChar).Value = Obj.Venta_NoExcento;
+                Comando.Parameters.Add("@VenMayor", SqlDbType.VarChar).Value = Obj.Venta_Mayorista;
+                Comando.Parameters.Add("@GasEnv", SqlDbType.VarChar).Value = Obj.Gasto_Envio;
+                Comando.Parameters.Add("@ComEmp", SqlDbType.VarChar).Value = Obj.Comision;
+                Comando.Parameters.Add("@ValCom", SqlDbType.VarChar).Value = Obj.Comision_Valor;
+                Comando.Parameters.Add("@MinVenta", SqlDbType.VarChar).Value = Obj.Minima_Cliente;
+                Comando.Parameters.Add("@MaxVenta", SqlDbType.VarChar).Value = Obj.Maxima_Cliente;
+                Comando.Parameters.Add("@MinMayorista", SqlDbType.VarChar).Value = Obj.Minima_Mayorista;
+                Comando.Parameters.Add("@MaxMayorista", SqlDbType.VarChar).Value = Obj.Maxima_Mayorista;
 
                 //Panel Ubicaciones -- Campos Obligatorios
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;

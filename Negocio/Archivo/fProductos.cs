@@ -28,18 +28,19 @@ namespace Negocio
             (
 
                 //Datos Auxiliares y Llaves Primaria
-                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque,int idgrupo, int idtipo,
+                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque, int idgrupo, int idtipo,
 
                 //Datos Basicos
                 string codigo, string producto, string referencia, string descripcion,
                 string presentacion, string unidad, string pesounidad,
 
                 int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
+                int ventaimpuesto, int manejacomision,
 
                 //Precios
-                string valorfinal, string valordecompra, string valordeventa, string cantidadminima,
-                string cantidadmaxima, string valorimportacion, string valorexportacion, string gastosdeenvio,
-                string otrosgastos,
+                string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
+                string gasto_envio, string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
+                string maxima_mayorista,
 
                 //Ubicacion[]
                 string ubicacion, string estante, string nivel, byte[] imagen,
@@ -77,20 +78,25 @@ namespace Negocio
 
             Obj.ManejaVencimiento = manejavencimiento;
             Obj.ManejaImpuesto = manejaimpuesto;
+            Obj.ManejaComision = manejacomision;
             Obj.Importado = importado;
             Obj.Exportado = exportado;
             Obj.Ofertable = ofertable;
+            Obj.VentaImpuesto = ventaimpuesto;
 
             //Valores
-            Obj.ValorFinal = valorfinal;
-            Obj.ValorDeCompra = valordecompra;
-            Obj.ValorDeVenta = valordeventa;
-            Obj.CantidadMinima = cantidadminima;
-            Obj.CantidadMaxima = cantidadmaxima;
-            Obj.ValorImportacion = valorimportacion;
-            Obj.ValorExportacion = valorexportacion;
-            Obj.GastosDeEnvio = gastosdeenvio;
-            Obj.OtrosGastos = otrosgastos;
+            Obj.Compra_Promedio = compra_promedio;
+            Obj.Compra_Final = compra_final;
+            Obj.Venta_Excento = venta_excento;
+            Obj.Venta_NoExcento = venta_noexcento;
+            Obj.Venta_Mayorista = venta_mayorista;
+            Obj.Comision = comision;
+            Obj.Comision_Valor = comision_valor;
+            Obj.Gasto_Envio = gasto_envio;
+            Obj.Minima_Cliente = minima_cliente;
+            Obj.Maxima_Cliente = maxima_cliente;
+            Obj.Minima_Mayorista = maxima_mayorista;
+            Obj.Maxima_Mayorista = maxima_mayorista;
 
             //Ubicacion[]
             Obj.Ubicacion = ubicacion;
@@ -114,7 +120,7 @@ namespace Negocio
 
         public static string Editar_DatosBasicos
             (
-                
+
 
                 //Datos Auxiliares y Llaves Primaria
                 int idproducto, int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque, int idgrupo, int idtipo,
@@ -122,16 +128,18 @@ namespace Negocio
                 //Datos Basicos
                 string codigo, string producto, string referencia, string descripcion,
                 string presentacion, string unidad, string pesounidad,
+
                 int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
+                int ventaimpuesto, int manejacomision,
 
                 //Precios
-                string valorfinal, string valordecompra, string valordeventa, string cantidadminima,
-                string cantidadmaxima, string valorimportacion, string valorexportacion, string gastosdeenvio,
-                string otrosgastos,
+                string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
+                string gasto_envio, string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
+                string maxima_mayorista,
 
                 //Ubicacion[]
                 string ubicacion, string estante, string nivel, byte[] imagen,
-                
+
                 //Lote
                 string lote, string lote_valorinicial, DateTime lote_fechavencimiento,
 
@@ -166,20 +174,25 @@ namespace Negocio
 
             Obj.ManejaVencimiento = manejavencimiento;
             Obj.ManejaImpuesto = manejaimpuesto;
+            Obj.ManejaComision = manejacomision;
             Obj.Importado = importado;
             Obj.Exportado = exportado;
             Obj.Ofertable = ofertable;
+            Obj.VentaImpuesto = ventaimpuesto;
 
             //Valores
-            Obj.ValorFinal = valorfinal;
-            Obj.ValorDeCompra = valordecompra;
-            Obj.ValorDeVenta = valordeventa;
-            Obj.CantidadMinima = cantidadminima;
-            Obj.CantidadMaxima = cantidadmaxima;
-            Obj.ValorImportacion = valorimportacion;
-            Obj.ValorExportacion = valorexportacion;
-            Obj.GastosDeEnvio = gastosdeenvio;
-            Obj.OtrosGastos = otrosgastos;
+            Obj.Compra_Promedio = compra_promedio;
+            Obj.Compra_Final = compra_final;
+            Obj.Venta_Excento = venta_excento;
+            Obj.Venta_NoExcento = venta_noexcento;
+            Obj.Venta_Mayorista = venta_mayorista;
+            Obj.Comision = comision;
+            Obj.Comision_Valor = comision_valor;
+            Obj.Gasto_Envio = gasto_envio;
+            Obj.Minima_Cliente = minima_cliente;
+            Obj.Maxima_Cliente = maxima_cliente;
+            Obj.Minima_Mayorista = maxima_mayorista;
+            Obj.Maxima_Mayorista = maxima_mayorista;
 
             //Ubicacion[]
             Obj.Ubicacion = ubicacion;

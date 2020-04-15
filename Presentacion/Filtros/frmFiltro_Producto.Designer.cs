@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFiltro_Producto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.DGFiltro_Resultados = new System.Windows.Forms.DataGridView();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -67,7 +68,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGFiltro_Resultados)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -87,6 +87,14 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filtro de Procutos - Leal Enterprise";
+            // 
+            // TBIdproducto
+            // 
+            this.TBIdproducto.Location = new System.Drawing.Point(222, 405);
+            this.TBIdproducto.Name = "TBIdproducto";
+            this.TBIdproducto.Size = new System.Drawing.Size(100, 21);
+            this.TBIdproducto.TabIndex = 5;
+            this.TBIdproducto.TextChanged += new System.EventHandler(this.TBIdproducto_TextChanged);
             // 
             // btnAgregar
             // 
@@ -435,13 +443,6 @@
             this.label6.Size = new System.Drawing.Size(42, 15);
             this.label6.TabIndex = 149;
             this.label6.Text = "Marca";
-            // 
-            // TBIdproducto
-            // 
-            this.TBIdproducto.Location = new System.Drawing.Point(222, 405);
-            this.TBIdproducto.Name = "TBIdproducto";
-            this.TBIdproducto.Size = new System.Drawing.Size(100, 21);
-            this.TBIdproducto.TabIndex = 5;
             // 
             // frmFiltro_Producto
             // 
