@@ -765,6 +765,7 @@
             this.TBMaximoMayorista.Name = "TBMaximoMayorista";
             this.TBMaximoMayorista.Size = new System.Drawing.Size(240, 21);
             this.TBMaximoMayorista.TabIndex = 120;
+            this.TBMaximoMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBMaximoMayorista.Enter += new System.EventHandler(this.TBMaximoMayorista_Enter);
             this.TBMaximoMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMaximoMayorista_KeyUp);
             this.TBMaximoMayorista.Leave += new System.EventHandler(this.TBMaximoMayorista_Leave);
@@ -775,6 +776,7 @@
             this.TBMinimoMayorista.Name = "TBMinimoMayorista";
             this.TBMinimoMayorista.Size = new System.Drawing.Size(240, 21);
             this.TBMinimoMayorista.TabIndex = 119;
+            this.TBMinimoMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBMinimoMayorista.TextChanged += new System.EventHandler(this.TBMinimoMayorista_TextChanged);
             this.TBMinimoMayorista.Enter += new System.EventHandler(this.TBMinimoMayorista_Enter);
             this.TBMinimoMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMinimoMayorista_KeyUp);
@@ -844,6 +846,7 @@
             this.TBValorParaComision.Name = "TBValorParaComision";
             this.TBValorParaComision.Size = new System.Drawing.Size(240, 21);
             this.TBValorParaComision.TabIndex = 105;
+            this.TBValorParaComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorParaComision.Enter += new System.EventHandler(this.TBValorParaComision_Enter);
             this.TBValorParaComision.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorParaComision_KeyUp);
             this.TBValorParaComision.Leave += new System.EventHandler(this.TBValorParaComision_Leave);
@@ -863,6 +866,7 @@
             this.TBValorComisionar.Name = "TBValorComisionar";
             this.TBValorComisionar.Size = new System.Drawing.Size(134, 21);
             this.TBValorComisionar.TabIndex = 103;
+            this.TBValorComisionar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TBComision
             // 
@@ -870,6 +874,7 @@
             this.TBComision.Name = "TBComision";
             this.TBComision.Size = new System.Drawing.Size(100, 21);
             this.TBComision.TabIndex = 102;
+            this.TBComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBComision.Enter += new System.EventHandler(this.TBComision_Enter);
             this.TBComision.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBComision_KeyUp);
             this.TBComision.Leave += new System.EventHandler(this.TBComision_Leave);
@@ -909,6 +914,7 @@
             this.TBVentaMayorista.Name = "TBVentaMayorista";
             this.TBVentaMayorista.Size = new System.Drawing.Size(240, 21);
             this.TBVentaMayorista.TabIndex = 97;
+            this.TBVentaMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBVentaMayorista.Enter += new System.EventHandler(this.TBVentaMayorista_Enter);
             this.TBVentaMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMayorista_KeyUp);
             this.TBVentaMayorista.Leave += new System.EventHandler(this.TBVentaMayorista_Leave);
@@ -1232,7 +1238,7 @@
             // 
             this.TBStockLote.Location = new System.Drawing.Point(130, 60);
             this.TBStockLote.Name = "TBStockLote";
-            this.TBStockLote.Size = new System.Drawing.Size(275, 21);
+            this.TBStockLote.Size = new System.Drawing.Size(84, 21);
             this.TBStockLote.TabIndex = 61;
             // 
             // label42
@@ -1261,30 +1267,32 @@
             // 
             // DTFechaDeVencimiento
             // 
-            this.DTFechaDeVencimiento.Location = new System.Drawing.Point(144, 87);
+            this.DTFechaDeVencimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DTFechaDeVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTFechaDeVencimiento.Location = new System.Drawing.Point(301, 60);
             this.DTFechaDeVencimiento.Name = "DTFechaDeVencimiento";
-            this.DTFechaDeVencimiento.Size = new System.Drawing.Size(261, 21);
+            this.DTFechaDeVencimiento.Size = new System.Drawing.Size(104, 21);
             this.DTFechaDeVencimiento.TabIndex = 58;
             // 
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(6, 87);
+            this.label34.Location = new System.Drawing.Point(220, 63);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(129, 15);
+            this.label34.Size = new System.Drawing.Size(75, 15);
             this.label34.TabIndex = 57;
-            this.label34.Text = "Fecha de Vencimiento";
+            this.label34.Text = "Vencimiento";
             // 
             // DGDetalles_Lotes
             // 
             this.DGDetalles_Lotes.AllowUserToAddRows = false;
             this.DGDetalles_Lotes.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalles_Lotes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGDetalles_Lotes.Location = new System.Drawing.Point(6, 114);
+            this.DGDetalles_Lotes.Location = new System.Drawing.Point(6, 87);
             this.DGDetalles_Lotes.Name = "DGDetalles_Lotes";
             this.DGDetalles_Lotes.ReadOnly = true;
             this.DGDetalles_Lotes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGDetalles_Lotes.Size = new System.Drawing.Size(399, 209);
+            this.DGDetalles_Lotes.Size = new System.Drawing.Size(399, 236);
             this.DGDetalles_Lotes.TabIndex = 56;
             // 
             // btnAgregar_Lotes
