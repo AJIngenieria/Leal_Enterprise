@@ -3435,7 +3435,6 @@ namespace Presentacion
 
                     this.Marca_SQL = Idmarca;
                     this.CBMarca.SelectedValue = Marca_SQL;                   
-
                     this.Grupo_SQL = Idgrupo;
                     this.CBGrupo.SelectedValue = Grupo_SQL;
 
