@@ -181,13 +181,15 @@ namespace Datos
                 //Panel Datos Basicos -- Campos NO Obligatorios
                 Comando.Parameters.Add("@Referencia", SqlDbType.VarChar).Value = Obj.Referencia;
                 Comando.Parameters.Add("@Presentacion", SqlDbType.VarChar).Value = Obj.Presentacion;
-                Comando.Parameters.Add("@Vencimiento", SqlDbType.Int).Value = Obj.ManejaVencimiento;
+                Comando.Parameters.Add("@Unidad", SqlDbType.VarChar).Value = Obj.Unidad;
+                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
+                Comando.Parameters.Add("@ManVenc", SqlDbType.Int).Value = Obj.ManejaVencimiento;
+                Comando.Parameters.Add("@ManImpu", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Importado", SqlDbType.Int).Value = Obj.Importado;
                 Comando.Parameters.Add("@Exportado", SqlDbType.Int).Value = Obj.Exportado;
-                Comando.Parameters.Add("@Impuesto", SqlDbType.Int).Value = Obj.ManejaImpuesto;
                 Comando.Parameters.Add("@Ofertable", SqlDbType.Int).Value = Obj.Ofertable;
-                Comando.Parameters.Add("@UnidadDeVenta", SqlDbType.VarChar).Value = Obj.Unidad;
-                Comando.Parameters.Add("@Unidad_Valor", SqlDbType.VarChar).Value = Obj.PesoUnidad;
+                Comando.Parameters.Add("@VenImpuesto", SqlDbType.Int).Value = Obj.VentaImpuesto;
+                Comando.Parameters.Add("@ManComision", SqlDbType.Int).Value = Obj.ManejaComision;
 
                 Comando.Parameters.Add("@Idgrupo", SqlDbType.Int).Value = Obj.Idgrupo;
                 Comando.Parameters.Add("@Idtipo", SqlDbType.Int).Value = Obj.Idtipo;

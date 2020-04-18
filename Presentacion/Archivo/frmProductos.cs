@@ -153,8 +153,8 @@ namespace Presentacion
             this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
             this.TBValorFinal.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBValorFinal.Text = Numerico;
-            this.TBValorVenta.ReadOnly = false;
-            this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorVenta.Enabled = false;
+            this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
             this.TBValorVenta.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBValorVenta.Text = Numerico;
             this.TBValorVenta_SinImpuesto.ReadOnly = false;
@@ -162,16 +162,16 @@ namespace Presentacion
             this.TBValorVenta_SinImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBValorVenta_SinImpuesto.Text = Numerico;
             
-            this.TBComision.ReadOnly = false;
-            this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBComision.Enabled = false;
+            this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
             this.TBComision.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBComision.Text = Numerico;
             this.TBValorComisionar.Enabled = false;
             this.TBValorComisionar.BackColor = Color.FromArgb(72, 209, 204);
             this.TBValorComisionar.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBValorComisionar.Text = Numerico;
-            this.TBValorParaComision.ReadOnly = false;
-            this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorParaComision.Enabled = false;
+            this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
             this.TBValorParaComision.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBValorParaComision.Text = Numerico;
 
@@ -588,7 +588,6 @@ namespace Presentacion
                                  this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
                                  this.TBGastodeEnvio.Text, this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
                                  this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
-
                                  //Panel Ubicaciones
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
 
@@ -1486,8 +1485,12 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+                    //Se procede a formatear el texboxt el cual le da formato de Moneda
+                    //double Formato = Convert.ToDouble(TBCompraPromedio.Text);
+                    //double Formato = 0;
+                    //this.TBCompraPromedio.Text = Formato.ToString("C");
 
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
                     this.TBValorFinal.Select();
                 }
 
@@ -2436,20 +2439,39 @@ namespace Presentacion
 
         private void CBVentaImpuesto_CheckedChanged(object sender, EventArgs e)
         {
-
+            if (CBVentaImpuesto.Checked)
+            {
+                this.TBValorVenta.Enabled = true;
+                this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
+            }
+            else
+            {
+                this.TBValorVenta.Enabled = false;
+                this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
+            }
         }
 
         private void CBManejaComision_CheckedChanged(object sender, EventArgs e)
         {
+            if (CBManejaComision.Checked)
+            {
+                this.TBComision.Enabled = true;
+                this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
+                
+                this.TBValorParaComision.Enabled = true;
+                this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
+            }
+            else
+            {
+                this.TBComision.Enabled = false;
+                this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
 
+                this.TBValorParaComision.Enabled = false;
+                this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
+            }
         }
 
         private void TBValorGeneral_Lote_KeyUp(object sender, KeyEventArgs e)
-        {
-
-        }
-
-        private void TBValorVenta_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -2471,6 +2493,10 @@ namespace Presentacion
             else
             {
                 this.TBCompraPromedio.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBCompraPromedio.Text);
+                this.TBCompraPromedio.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -2486,6 +2512,10 @@ namespace Presentacion
             else
             {
                 this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBVentaMayorista.Text);
+                this.TBVentaMayorista.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -3154,6 +3184,10 @@ namespace Presentacion
             else
             {
                 TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBValorFinal.Text);
+                this.TBValorFinal.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -3174,6 +3208,10 @@ namespace Presentacion
             else
             {
                 TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBValorVenta.Text);
+                this.TBValorVenta.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -3255,6 +3293,10 @@ namespace Presentacion
             else
             {
                 TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBValorVenta_SinImpuesto.Text);
+                this.TBValorVenta_SinImpuesto.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -3271,6 +3313,10 @@ namespace Presentacion
             else
             {
                 TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
+
+                //Se procede a formatear el texboxt el cual le da formato de Moneda
+                double Formato = Convert.ToDouble(TBGastodeEnvio.Text);
+                this.TBGastodeEnvio.Text = Formato.ToString("0,0.00");
             }
         }
 
@@ -3434,7 +3480,8 @@ namespace Presentacion
                     //Realizada anteriormente en la base de datos
 
                     this.Marca_SQL = Idmarca;
-                    this.CBMarca.SelectedValue = Marca_SQL;                   
+                    this.CBMarca.SelectedValue = Marca_SQL;
+                    
                     this.Grupo_SQL = Idgrupo;
                     this.CBGrupo.SelectedValue = Grupo_SQL;
 
@@ -3539,6 +3586,23 @@ namespace Presentacion
                         this.CBOfertable.Checked = true;
                     }
 
+                    if (VentaImpuesto == "0")
+                    {
+                        this.CBVentaImpuesto.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBVentaImpuesto.Checked = true;
+                    }
+
+                    if (ComisionEmpleado == "0")
+                    {
+                        this.CBManejaComision.Checked = false;
+                    }
+                    else
+                    {
+                        this.CBManejaComision.Checked = true;
+                    }
 
                     //Se realizan las consultas para llenar los DataGriview donde se mostrarian las ubicaciones, codigos de barra.
 
@@ -3566,6 +3630,37 @@ namespace Presentacion
                     //
                     this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["ID"].Value);
                     this.TBNombre.Select();
+                    
+                    //Se procede a formatear el texboxt el cual le da formato de Moneda
+                    double Formato01 = Convert.ToDouble(TBCompraPromedio.Text);
+                    this.TBCompraPromedio.Text = Formato01.ToString("0,0.00");
+
+                    double Formato02 = Convert.ToDouble(TBValorFinal.Text);
+                    this.TBValorFinal.Text = Formato02.ToString("0,0.00");
+
+                    double Formato03 = Convert.ToDouble(TBValorVenta_SinImpuesto.Text);
+                    this.TBValorVenta_SinImpuesto.Text = Formato03.ToString("0,0.00");
+
+                    double Formato04 = Convert.ToDouble(TBValorVenta.Text);
+                    this.TBValorVenta.Text = Formato04.ToString("0,0.00");
+
+                    double Formato05 = Convert.ToDouble(TBVentaMayorista.Text);
+                    this.TBVentaMayorista.Text = Formato05.ToString("0,0.00");
+
+                    double Formato06 = Convert.ToDouble(TBGastodeEnvio.Text);
+                    this.TBGastodeEnvio.Text = Formato06.ToString("0,0.00");
+
+                    double Formato07 = Convert.ToDouble(TBValorParaComision.Text);
+                    this.TBValorParaComision.Text = Formato07.ToString("0,0.00");
+
+                    //double Formato08 = Convert.ToDouble(TBCompraPromedio.Text);
+                    //this.TBCompraPromedio.Text = Formato08.ToString("0,0.00");
+
+                    //double Formato09 = Convert.ToDouble(TBCompraPromedio.Text);
+                    //this.TBCompraPromedio.Text = Formato09.ToString("0,0.00");
+
+                    //double Formato10 = Convert.ToDouble(TBCompraPromedio.Text);
+                    //this.TBCompraPromedio.Text = Formato10.ToString("0,0.00");
 
                     this.Botones();
 

@@ -995,7 +995,6 @@
             this.TBValorVenta.Size = new System.Drawing.Size(240, 21);
             this.TBValorVenta.TabIndex = 7;
             this.TBValorVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBValorVenta.TextChanged += new System.EventHandler(this.TBValorVenta_TextChanged);
             this.TBValorVenta.Enter += new System.EventHandler(this.TBValor01_Enter);
             this.TBValorVenta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorVenta_KeyUp);
             this.TBValorVenta.Leave += new System.EventHandler(this.TBValorVenta_Leave);

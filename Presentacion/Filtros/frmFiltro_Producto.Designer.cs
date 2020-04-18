@@ -108,6 +108,9 @@
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnAgregar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseDown);
+            this.btnAgregar.MouseLeave += new System.EventHandler(this.btnAgregar_MouseLeave);
+            this.btnAgregar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnAgregar_MouseMove);
             // 
             // DGFiltro_Resultados
             // 

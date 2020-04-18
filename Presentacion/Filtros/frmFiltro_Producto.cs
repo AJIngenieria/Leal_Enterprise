@@ -22,7 +22,7 @@ namespace Presentacion
         private string CantidadMinimaMayorista, CantidadMaximaMayorista, Bodega, Stock, Lote = "";
 
         //***************************************************************************************
-        
+
         public frmFiltro_Producto()
         {
             InitializeComponent();
@@ -166,7 +166,7 @@ namespace Presentacion
         {
             try
             {
-                DataTable Datos = Negocio.fProductos.Buscar(this.TBIdproducto.Text, 5);
+                DataTable Datos = Negocio.fProductos.Buscar(this.TBIdproducto.Text, 2);
                 //Evaluamos si  existen los Datos
                 if (Datos.Rows.Count == 0)
                 {
@@ -177,22 +177,41 @@ namespace Presentacion
                     //Captura de Valores en la Base de Datos
 
                     //Panel Datos Basicos
-                    Codigo = Datos.Rows[0][0].ToString();
-                    Nombre = Datos.Rows[0][1].ToString();
-                    Referencia = Datos.Rows[0][2].ToString();
-                    Descripcion = Datos.Rows[0][3].ToString();
-                    Presentacion = Datos.Rows[0][4].ToString();
-                    Marca = Datos.Rows[0][5].ToString();
-                    Grupo = Datos.Rows[0][6].ToString();
-                    Unidad = Datos.Rows[0][7].ToString();
-                    UnidadDeVenta = Datos.Rows[0][8].ToString();
-                    CantidadMinimaCliente = Datos.Rows[0][9].ToString();
-                    CantidadMaximaCliente = Datos.Rows[0][10].ToString();
-                    CantidadMinimaMayorista = Datos.Rows[0][11].ToString();
-                    CantidadMaximaMayorista = Datos.Rows[0][12].ToString();
-                    Bodega = Datos.Rows[0][13].ToString();
+                    Codigo = Datos.Rows[0][7].ToString();
+                    Nombre = Datos.Rows[0][8].ToString();
+                    Referencia = Datos.Rows[0][9].ToString();
+                    Descripcion = Datos.Rows[0][10].ToString();
+                    Presentacion = Datos.Rows[0][11].ToString();
                     Stock = Datos.Rows[0][14].ToString();
-                    Lote = Datos.Rows[0][15].ToString();
+                    Unidad = Datos.Rows[0][15].ToString();
+                    UnidadDeVenta = Datos.Rows[0][16].ToString();
+                    CantidadMinimaCliente = Datos.Rows[0][32].ToString();
+                    CantidadMaximaCliente = Datos.Rows[0][33].ToString();
+                    CantidadMinimaMayorista = Datos.Rows[0][34].ToString();
+                    CantidadMaximaMayorista = Datos.Rows[0][35].ToString();
+                    Bodega = Datos.Rows[0][36].ToString();
+                    Lote = Datos.Rows[0][40].ToString();
+                    Marca = Datos.Rows[0][44].ToString();
+                    Grupo = Datos.Rows[0][45].ToString();
+
+                    //Se lleva acabo el complemento de los campos de Texto
+                    this.TBCodigo.Text = Codigo;
+                    this.TBNombre.Text = Nombre;
+                    this.TBReferencia.Text = Referencia;
+                    this.TBDescripcion01.Text = Descripcion;
+                    this.TBPresentacion.Text = Presentacion;
+                    this.TBMarca.Text = Marca;
+                    this.TBGrupo.Text = Grupo;
+                    this.TBUnidad.Text = Unidad;
+                    this.TBUnidadDeVenta.Text = UnidadDeVenta;
+                    this.TBMininoCliente.Text = CantidadMinimaCliente;
+                    this.TBMaximoCliente.Text = CantidadMaximaCliente;
+                    this.TBMinimoMayorista.Text = CantidadMinimaMayorista;
+                    this.TBMaximaMayorista.Text = CantidadMaximaMayorista;
+                    this.TBBodega.Text = Bodega;
+                    this.TBStock.Text = Stock;
+                    this.TBlote.Text = Lote;
+
                 }
             }
             catch (Exception ex)
@@ -205,7 +224,7 @@ namespace Presentacion
         {
             try
             {
-                TBCodigo.Text = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
+                this.TBIdproducto.Text = this.DGFiltro_Resultados.CurrentRow.Cells["ID"].Value.ToString();
             }
             catch (Exception ex)
             {
@@ -226,6 +245,21 @@ namespace Presentacion
         private void TBBuscar_Leave(object sender, EventArgs e)
         {
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void btnAgregar_MouseDown(object sender, MouseEventArgs e)
+        {
+            this.btnAgregar.Image = Properties.Resources.BV_Agregar;
+        }
+
+        private void btnAgregar_MouseLeave(object sender, EventArgs e)
+        {
+            this.btnAgregar.Image = Properties.Resources.BV_Agregar;
+        }
+
+        private void btnAgregar_MouseMove(object sender, MouseEventArgs e)
+        {
+            this.btnAgregar.Image = Properties.Resources.BR_Agregar;
         }
 
     }
