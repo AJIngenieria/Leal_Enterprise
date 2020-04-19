@@ -95,7 +95,7 @@ namespace Negocio
             Obj.Gasto_Envio = gasto_envio;
             Obj.Minima_Cliente = minima_cliente;
             Obj.Maxima_Cliente = maxima_cliente;
-            Obj.Minima_Mayorista = maxima_mayorista;
+            Obj.Minima_Mayorista = minima_mayorista;
             Obj.Maxima_Mayorista = maxima_mayorista;
 
             //Ubicacion[]
@@ -191,7 +191,7 @@ namespace Negocio
             Obj.Gasto_Envio = gasto_envio;
             Obj.Minima_Cliente = minima_cliente;
             Obj.Maxima_Cliente = maxima_cliente;
-            Obj.Minima_Mayorista = maxima_mayorista;
+            Obj.Minima_Mayorista = minima_mayorista;
             Obj.Maxima_Mayorista = maxima_mayorista;
 
             //Ubicacion[]

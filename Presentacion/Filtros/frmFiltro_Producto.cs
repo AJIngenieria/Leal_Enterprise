@@ -18,7 +18,7 @@ namespace Presentacion
 
         //Panel Datos Basicos
         private string Codigo, Nombre, Referencia, Descripcion, Presentacion = "";
-        private string Marca, Grupo, Unidad, UnidadDeVenta, CantidadMinimaCliente, CantidadMaximaCliente = "";
+        private string Marca, Unidad, UnidadDeVenta, CantidadMinimaCliente, CantidadMaximaCliente = "";
         private string CantidadMinimaMayorista, CantidadMaximaMayorista, Bodega, Stock, Lote = "";
 
         //***************************************************************************************
@@ -66,8 +66,6 @@ namespace Presentacion
             this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
             this.TBMarca.ReadOnly = true;
             this.TBMarca.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBGrupo.ReadOnly = true;
-            this.TBGrupo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBUnidad.ReadOnly = true;
             this.TBUnidad.BackColor = Color.FromArgb(3, 155, 229);
             this.TBUnidadDeVenta.ReadOnly = true;
@@ -96,7 +94,6 @@ namespace Presentacion
             this.TBDescripcion01.Clear();
             this.TBPresentacion.Clear();
             this.TBMarca.Clear();
-            this.TBGrupo.Clear();
             this.TBUnidad.Clear();
             this.TBUnidadDeVenta.Clear();
             this.TBMininoCliente.Clear();
@@ -138,11 +135,22 @@ namespace Presentacion
                 {
                     this.DGFiltro_Resultados.DataSource = fProductos.Buscar(this.TBBuscar.Text, 1);
                     this.DGFiltro_Resultados.Columns[0].Visible = false;
-
+                    
                     this.lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
 
                     this.btnAgregar.Enabled = true;
                     this.DGFiltro_Resultados.Enabled = true;
+
+                    this.DGFiltro_Resultados.Columns[1].Width = 120;
+                    this.DGFiltro_Resultados.Columns[2].Width = 336;
+
+                    //Aliniacion de las Celdas de Cada Columna
+                    this.DGFiltro_Resultados.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    this.DGFiltro_Resultados.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                    //Alineacion de los Encabezados de Cada Columna
+                    this.DGFiltro_Resultados.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    this.DGFiltro_Resultados.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
                 else
                 {
@@ -192,8 +200,7 @@ namespace Presentacion
                     Bodega = Datos.Rows[0][36].ToString();
                     Lote = Datos.Rows[0][40].ToString();
                     Marca = Datos.Rows[0][44].ToString();
-                    Grupo = Datos.Rows[0][45].ToString();
-
+                    
                     //Se lleva acabo el complemento de los campos de Texto
                     this.TBCodigo.Text = Codigo;
                     this.TBNombre.Text = Nombre;
@@ -201,7 +208,6 @@ namespace Presentacion
                     this.TBDescripcion01.Text = Descripcion;
                     this.TBPresentacion.Text = Presentacion;
                     this.TBMarca.Text = Marca;
-                    this.TBGrupo.Text = Grupo;
                     this.TBUnidad.Text = Unidad;
                     this.TBUnidadDeVenta.Text = UnidadDeVenta;
                     this.TBMininoCliente.Text = CantidadMinimaCliente;

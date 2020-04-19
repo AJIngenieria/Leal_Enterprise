@@ -253,6 +253,12 @@ namespace Presentacion
                 this.TBImpuesto_Valor.Clear();
                 this.TBUnidadDeVenta.Clear();
 
+                this.CBMarca.SelectedItem = 0;
+                this.CBGrupo.SelectedItem = 0;
+                this.CBEmpaque.SelectedItem = 0;
+                this.CBTipo.SelectedItem = 0;
+                this.CBUnidad.SelectedItem = 0;
+
                 this.CBVencimiento.Checked = false;
                 this.CBImpuesto.Checked = false;
                 this.CBOfertable.Checked = false;
@@ -506,6 +512,8 @@ namespace Presentacion
                 else if (this.CBBodega.SelectedIndex == 0)
                 {
                     MensajeError("Seleccione la Bodega donde se Ubicara el Producto");
+                    this.TCPrincipal.SelectedIndex = 2;
+                    this.TBUbicacion.Select();
                 }
 
                 //else if (this.CBVentaPublico.SelectedIndex == 0)
@@ -542,13 +550,13 @@ namespace Presentacion
                                  this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
 
                                  Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
-                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable),Convert.ToInt32(Checkbox_VentaImpuesto),
+                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
                                  Convert.ToInt32(Checkbox_Comision),
 
                                  //Panel de Valores
-                                 this.TBCompraPromedio.Text,this.TBValorFinal.Text,this.TBValorVenta_SinImpuesto.Text,this.TBValorVenta.Text,this.TBVentaMayorista.Text,
-                                 this.TBGastodeEnvio.Text,this.TBComision.Text,this.TBValorParaComision.Text,this.TBCantidadMininaCliente.Text,this.TBCantidadMaximaCliente.Text,
-                                 this.TBMinimoMayorista.Text,this.TBMaximoMayorista.Text,                             
+                                 this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
+                                 this.TBGastodeEnvio.Text, this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                                 this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
                                  //Panel Ubicaciones
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
 
