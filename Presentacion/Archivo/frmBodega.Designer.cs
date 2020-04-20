@@ -97,6 +97,8 @@
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.label29 = new System.Windows.Forms.Label();
+            this.TBDocumento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -134,6 +136,8 @@
             // 
             // TPDatosBasicos
             // 
+            this.TPDatosBasicos.Controls.Add(this.TBDocumento);
+            this.TPDatosBasicos.Controls.Add(this.label29);
             this.TPDatosBasicos.Controls.Add(this.label2);
             this.TPDatosBasicos.Controls.Add(this.label10);
             this.TPDatosBasicos.Controls.Add(this.TBDescripcion);
@@ -170,7 +174,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 65);
+            this.label10.Location = new System.Drawing.Point(7, 92);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 15);
             this.label10.TabIndex = 15;
@@ -178,7 +182,7 @@
             // 
             // TBDescripcion
             // 
-            this.TBDescripcion.Location = new System.Drawing.Point(84, 65);
+            this.TBDescripcion.Location = new System.Drawing.Point(85, 92);
             this.TBDescripcion.Name = "TBDescripcion";
             this.TBDescripcion.Size = new System.Drawing.Size(300, 21);
             this.TBDescripcion.TabIndex = 14;
@@ -219,7 +223,7 @@
             // 
             // TBCorreo
             // 
-            this.TBCorreo.Location = new System.Drawing.Point(84, 200);
+            this.TBCorreo.Location = new System.Drawing.Point(85, 227);
             this.TBCorreo.Name = "TBCorreo";
             this.TBCorreo.Size = new System.Drawing.Size(300, 21);
             this.TBCorreo.TabIndex = 13;
@@ -230,7 +234,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 119);
+            this.label3.Location = new System.Drawing.Point(7, 146);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 15);
             this.label3.TabIndex = 4;
@@ -239,7 +243,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 200);
+            this.label7.Location = new System.Drawing.Point(7, 227);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 12;
@@ -247,7 +251,7 @@
             // 
             // TBCiudad
             // 
-            this.TBCiudad.Location = new System.Drawing.Point(84, 119);
+            this.TBCiudad.Location = new System.Drawing.Point(85, 146);
             this.TBCiudad.Name = "TBCiudad";
             this.TBCiudad.Size = new System.Drawing.Size(300, 21);
             this.TBCiudad.TabIndex = 5;
@@ -258,7 +262,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 92);
+            this.label6.Location = new System.Drawing.Point(7, 119);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 11;
@@ -266,7 +270,7 @@
             // 
             // TBMovil
             // 
-            this.TBMovil.Location = new System.Drawing.Point(84, 146);
+            this.TBMovil.Location = new System.Drawing.Point(85, 173);
             this.TBMovil.Name = "TBMovil";
             this.TBMovil.Size = new System.Drawing.Size(300, 21);
             this.TBMovil.TabIndex = 8;
@@ -277,7 +281,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 173);
+            this.label4.Location = new System.Drawing.Point(7, 200);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 6;
@@ -285,7 +289,7 @@
             // 
             // TBDirector
             // 
-            this.TBDirector.Location = new System.Drawing.Point(84, 92);
+            this.TBDirector.Location = new System.Drawing.Point(85, 119);
             this.TBDirector.Name = "TBDirector";
             this.TBDirector.Size = new System.Drawing.Size(300, 21);
             this.TBDirector.TabIndex = 10;
@@ -296,7 +300,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 146);
+            this.label5.Location = new System.Drawing.Point(7, 173);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 15);
             this.label5.TabIndex = 9;
@@ -304,7 +308,7 @@
             // 
             // TBTelefono
             // 
-            this.TBTelefono.Location = new System.Drawing.Point(84, 173);
+            this.TBTelefono.Location = new System.Drawing.Point(85, 200);
             this.TBTelefono.Name = "TBTelefono";
             this.TBTelefono.Size = new System.Drawing.Size(300, 21);
             this.TBTelefono.TabIndex = 7;
@@ -865,6 +869,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leal Enterprise - Consulta de Bodegas Registrados";
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 68);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 15);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Documento";
+            // 
+            // TBDocumento
+            // 
+            this.TBDocumento.Location = new System.Drawing.Point(87, 65);
+            this.TBDocumento.Name = "TBDocumento";
+            this.TBDocumento.Size = new System.Drawing.Size(299, 21);
+            this.TBDocumento.TabIndex = 17;
+            // 
             // frmBodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -966,5 +986,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TBDiaDespacho;
         private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox TBDocumento;
+        private System.Windows.Forms.Label label29;
     }
 }

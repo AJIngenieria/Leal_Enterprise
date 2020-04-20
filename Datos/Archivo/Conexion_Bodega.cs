@@ -88,6 +88,7 @@ namespace Datos
                 //Panel Datos Basicos
                 Comando.Parameters.Add("@Idsucurzal", SqlDbType.Int).Value = Obj.Idsucurzal;
                 Comando.Parameters.Add("@Bodega", SqlDbType.VarChar).Value = Obj.Bodega;
+                Comando.Parameters.Add("@Documento", SqlDbType.VarChar).Value = Obj.Documento;
                 Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
                 Comando.Parameters.Add("@Director", SqlDbType.VarChar).Value = Obj.Director;
                 Comando.Parameters.Add("@Ciudad", SqlDbType.VarChar).Value = Obj.Ciudad;
@@ -151,6 +152,7 @@ namespace Datos
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
                 Comando.Parameters.Add("@Idsucurzal", SqlDbType.Int).Value = Obj.Idsucurzal;
                 Comando.Parameters.Add("@Bodega", SqlDbType.VarChar).Value = Obj.Bodega;
+                Comando.Parameters.Add("@Documento", SqlDbType.VarChar).Value = Obj.Documento;
                 Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
                 Comando.Parameters.Add("@Director", SqlDbType.VarChar).Value = Obj.Director;
                 Comando.Parameters.Add("@Ciudad", SqlDbType.VarChar).Value = Obj.Ciudad;

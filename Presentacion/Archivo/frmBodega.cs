@@ -90,6 +90,8 @@ namespace Presentacion
             this.TBBodega.BackColor = Color.FromArgb(3, 155, 229);
             this.TBBodega.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBBodega.Text = Campo;
+            this.TBDocumento.ReadOnly = false;
+            this.TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDescripcion.ReadOnly = false;
             this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDescripcion.ForeColor = Color.FromArgb(255, 255, 255);
@@ -163,6 +165,7 @@ namespace Presentacion
             this.TBIdbodega.Clear();
             this.CBSucurzal.SelectedIndex = 0;
             this.TBBodega.Clear();
+            this.TBDocumento.Clear();
             //this.TBBodega.Text = Campo;
             this.TBDescripcion.Clear();
             this.TBDescripcion.Text = Campo;
@@ -281,7 +284,7 @@ namespace Presentacion
                                  1,
 
                                  //Panel Datos Basicos
-                                 Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
+                                 Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDocumento.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
                                  this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
                                  this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,
@@ -298,7 +301,7 @@ namespace Presentacion
                                  2,
 
                                  //Panel Datos Basicos
-                                 Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
+                                 Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDocumento.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
                                  this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, this.TBPcdemeza.Text,
                                  this.TBPcportatiles.Text, this.TBImpresoraLaser.Text, this.TBImpresoraCartucho.Text, this.TBImpresoraTickets.Text, this.TBMarquilladora.Text,

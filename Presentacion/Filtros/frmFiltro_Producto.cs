@@ -115,10 +115,10 @@ namespace Presentacion
                 //int precio;
 
                 frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
-                string Idproducto;
-                Idproducto = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
-                //par2 = Convert.ToString(this.DGVResultados.CurrentRow.Cells["1"].Value);
-                form.setProducto(Idproducto);
+                string idproducto, producto;
+                idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
+                form.setProducto(idproducto, producto);
                 this.Hide();
             }
             catch (Exception ex)
@@ -142,7 +142,7 @@ namespace Presentacion
                     this.DGFiltro_Resultados.Enabled = true;
 
                     this.DGFiltro_Resultados.Columns[1].Width = 120;
-                    this.DGFiltro_Resultados.Columns[2].Width = 336;
+                    this.DGFiltro_Resultados.Columns[2].Width = 337;
 
                     //Aliniacion de las Celdas de Cada Columna
                     this.DGFiltro_Resultados.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;

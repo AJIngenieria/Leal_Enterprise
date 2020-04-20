@@ -16,6 +16,7 @@ namespace Entidad
 
         //Datos Basicos
         private string _Bodega;
+        private string _Documento;
         private string _Descripcion;
         private string _Director;
         private string _Ciudad;
@@ -82,5 +83,6 @@ namespace Entidad
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }
         public string Marquilladora { get => _Marquilladora; set => _Marquilladora = value; }
+        public string Documento { get => _Documento; set => _Documento = value; }
     }
 }

@@ -148,7 +148,7 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Precio de Compra", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("Precio de Compra", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
@@ -205,7 +205,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+                               
             }
             catch (Exception ex)
             {
@@ -213,9 +213,10 @@ namespace Presentacion
             }
         }
 
-        public void setProducto(string Idproducto)
+        public void setProducto(string idproducto, string producto)
         {
-            this.TBCodigo_Producto.Text = Idproducto;
+            this.TBCodigo_Producto.Text = idproducto;
+            this.TBProducto.Text = producto;
         }
 
         public void setProveedor(string idproveedor, string proveedor, string documento)
@@ -225,10 +226,11 @@ namespace Presentacion
             this.TBCodigo_Proveedor.Text = documento;
         }
 
-        public void setBodega(string idbodega, string bodega)
+        public void setBodega(string idbodega, string bodega, string documento)
         {
             this.TBIdbodega.Text = idbodega;
             this.TBBodega.Text = bodega;
+            this.TBCodigo_Bodega.Text = documento;
         }
 
         //Mensaje de confirmacion
@@ -527,6 +529,7 @@ namespace Presentacion
                                 Convert.ToString(Tabla.Rows[0][4])
                             );
                         this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
                     }
                 }
             }

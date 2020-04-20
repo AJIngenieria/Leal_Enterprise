@@ -30,7 +30,7 @@ namespace Negocio
                 int auto,
 
                 //Datos Basicos
-                int idsucurzal, string bodega, string descripcion, string director, string ciudad, string movil,
+                int idsucurzal, string bodega, string documento, string descripcion, string director, string ciudad, string movil,
                 string telefono, string correo, string direccion01, string direccion02, 
                 
                 string recepcion, string despacho, string iniciolaboral,
@@ -49,6 +49,7 @@ namespace Negocio
 
             //Datos Basicos
             Obj.Bodega = bodega;
+            Obj.Documento = documento;
             Obj.Descripcion = descripcion;
             Obj.Director = director;
             Obj.Ciudad = ciudad;
@@ -89,7 +90,7 @@ namespace Negocio
                 int auto, int idbodega,
 
                 //Datos Basicos
-                int idsucurzal, string bodega, string descripcion, string director, string ciudad, string movil,
+                int idsucurzal, string bodega, string documento, string descripcion, string director, string ciudad, string movil,
                 string telefono, string correo, string direccion01, string direccion02,
 
                 string recepcion, string despacho, string iniciolaboral,
@@ -109,6 +110,7 @@ namespace Negocio
 
             //Datos Basicos
             Obj.Bodega = bodega;
+            Obj.Documento = documento;
             Obj.Descripcion = descripcion;
             Obj.Director = director;
             Obj.Ciudad = ciudad;

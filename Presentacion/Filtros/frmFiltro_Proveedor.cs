@@ -81,7 +81,7 @@ namespace Presentacion
                     this.Hide();
                 }
 
-                else if (frmInv.Examinar)
+                if (frmInv.Examinar)
                 {
                     string idproveedor, proveedor, documento;
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();

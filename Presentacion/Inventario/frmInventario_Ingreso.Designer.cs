@@ -36,6 +36,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label3 = new System.Windows.Forms.Label();
             this.TBProducto = new System.Windows.Forms.TextBox();
             this.TBOrden = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -66,7 +67,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.IDIngresos = new System.Windows.Forms.TextBox();
             this.TBIdproducto = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -172,12 +172,22 @@
             this.tabPage1.Text = "Datos de Ingreso";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(561, 36);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(102, 15);
+            this.label3.TabIndex = 152;
+            this.label3.Text = "Fecha de Ingreso";
+            // 
             // TBProducto
             // 
             this.TBProducto.Location = new System.Drawing.Point(224, 87);
             this.TBProducto.Name = "TBProducto";
             this.TBProducto.Size = new System.Drawing.Size(300, 21);
             this.TBProducto.TabIndex = 150;
+            this.TBProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // TBOrden
             // 
@@ -354,7 +364,6 @@
             this.TBCodigo_Proveedor.Name = "TBCodigo_Proveedor";
             this.TBCodigo_Proveedor.Size = new System.Drawing.Size(150, 21);
             this.TBCodigo_Proveedor.TabIndex = 125;
-            this.TBCodigo_Proveedor.Text = "802-007-113-587-521";
             this.TBCodigo_Proveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCodigo_Proveedor.Enter += new System.EventHandler(this.TBCodigo_Proveedor_Enter);
             this.TBCodigo_Proveedor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCodigo_Proveedor_KeyUp);
@@ -483,15 +492,6 @@
             this.TBIdproducto.Name = "TBIdproducto";
             this.TBIdproducto.Size = new System.Drawing.Size(15, 21);
             this.TBIdproducto.TabIndex = 115;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(561, 36);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(102, 15);
-            this.label3.TabIndex = 152;
-            this.label3.Text = "Fecha de Ingreso";
             // 
             // frmInventario_Ingreso
             // 

@@ -46,10 +46,11 @@ namespace Presentacion
                 //int precio;
 
                 frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
-                string idbodega, bodega;
-                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
-                bodega = this.DGFiltro_Resultados.CurrentRow.Cells["Bodega"].Value.ToString();
-                form.setBodega(idbodega, bodega);
+                string idbodega, bodega, documento;
+                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
+                documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
+                form.setBodega(idbodega, bodega, documento);
                 this.Hide();
 
             }
@@ -66,7 +67,7 @@ namespace Presentacion
                 if (TBBuscar.Text != "")
                 {
                     this.DGFiltro_Resultados.DataSource = fBodega.Buscar(this.TBBuscar.Text, 1);
-                    this.DGFiltro_Resultados.Columns[0].Visible = false;
+                    //this.DGFiltro_Resultados.Columns[0].Visible = false;
 
                     lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
                     this.DGFiltro_Resultados.Enabled = true;
