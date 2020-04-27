@@ -528,6 +528,9 @@ namespace Presentacion
                                 Convert.ToString(Tabla.Rows[0][3]),
                                 Convert.ToString(Tabla.Rows[0][4])
                             );
+
+                        lblTotal.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
+
                         this.TBCodigo_Producto.Clear();
                         this.TBProducto.Clear();
                     }
@@ -656,6 +659,11 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void TBBuscar_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

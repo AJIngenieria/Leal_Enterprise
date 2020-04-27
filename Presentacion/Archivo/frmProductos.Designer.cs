@@ -904,6 +904,7 @@
             this.TBCompraPromedio.Size = new System.Drawing.Size(240, 21);
             this.TBCompraPromedio.TabIndex = 99;
             this.TBCompraPromedio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCompraPromedio.TextChanged += new System.EventHandler(this.TBCompraPromedio_TextChanged);
             this.TBCompraPromedio.Enter += new System.EventHandler(this.TBCompraPromedio_Enter);
             this.TBCompraPromedio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraPromedio_KeyUp);
             this.TBCompraPromedio.Leave += new System.EventHandler(this.TBCompraPromedio_Leave);

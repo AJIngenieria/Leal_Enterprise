@@ -443,6 +443,7 @@
             this.TBBuscar.Name = "TBBuscar";
             this.TBBuscar.Size = new System.Drawing.Size(829, 21);
             this.TBBuscar.TabIndex = 1;
+            this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
             // 
             // btnEliminar
             // 

@@ -71,6 +71,9 @@ namespace Presentacion
 
                     lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGFiltro_Resultados.Rows.Count);
                     this.DGFiltro_Resultados.Enabled = true;
+
+                    this.DGFiltro_Resultados.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                    this.DGFiltro_Resultados.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 }
                 else
                 {
