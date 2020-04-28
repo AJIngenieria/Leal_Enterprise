@@ -767,6 +767,7 @@
             this.TBMaximoMayorista.TabIndex = 120;
             this.TBMaximoMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBMaximoMayorista.Enter += new System.EventHandler(this.TBMaximoMayorista_Enter);
+            this.TBMaximoMayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMaximoMayorista_KeyPress);
             this.TBMaximoMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMaximoMayorista_KeyUp);
             this.TBMaximoMayorista.Leave += new System.EventHandler(this.TBMaximoMayorista_Leave);
             // 
@@ -779,6 +780,7 @@
             this.TBMinimoMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBMinimoMayorista.TextChanged += new System.EventHandler(this.TBMinimoMayorista_TextChanged);
             this.TBMinimoMayorista.Enter += new System.EventHandler(this.TBMinimoMayorista_Enter);
+            this.TBMinimoMayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBMinimoMayorista_KeyPress);
             this.TBMinimoMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMinimoMayorista_KeyUp);
             this.TBMinimoMayorista.Leave += new System.EventHandler(this.TBMinimoMayorista_Leave);
             // 
@@ -808,6 +810,7 @@
             this.TBCantidadMaximaCliente.TabIndex = 116;
             this.TBCantidadMaximaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCantidadMaximaCliente.Enter += new System.EventHandler(this.TBCantidadMaximaCliente_Enter);
+            this.TBCantidadMaximaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCantidadMaximaCliente_KeyPress);
             this.TBCantidadMaximaCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCantidadMaximaCliente_KeyUp);
             this.TBCantidadMaximaCliente.Leave += new System.EventHandler(this.TBCantidadMaximaCliente_Leave);
             // 
@@ -819,6 +822,7 @@
             this.TBCantidadMininaCliente.TabIndex = 115;
             this.TBCantidadMininaCliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCantidadMininaCliente.Enter += new System.EventHandler(this.TBCantidadMininaCliente_Enter);
+            this.TBCantidadMininaCliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCantidadMininaCliente_KeyPress);
             this.TBCantidadMininaCliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCantidadMininaCliente_KeyUp);
             this.TBCantidadMininaCliente.Leave += new System.EventHandler(this.TBCantidadMininaCliente_Leave);
             // 
@@ -848,6 +852,7 @@
             this.TBValorParaComision.TabIndex = 105;
             this.TBValorParaComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorParaComision.Enter += new System.EventHandler(this.TBValorParaComision_Enter);
+            this.TBValorParaComision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValorParaComision_KeyPress);
             this.TBValorParaComision.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorParaComision_KeyUp);
             this.TBValorParaComision.Leave += new System.EventHandler(this.TBValorParaComision_Leave);
             // 
@@ -867,6 +872,7 @@
             this.TBValorComisionar.Size = new System.Drawing.Size(134, 21);
             this.TBValorComisionar.TabIndex = 103;
             this.TBValorComisionar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBValorComisionar.Leave += new System.EventHandler(this.TBValorComisionar_Leave);
             // 
             // TBComision
             // 
@@ -876,6 +882,7 @@
             this.TBComision.TabIndex = 102;
             this.TBComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBComision.Enter += new System.EventHandler(this.TBComision_Enter);
+            this.TBComision.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBComision_KeyPress);
             this.TBComision.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBComision_KeyUp);
             this.TBComision.Leave += new System.EventHandler(this.TBComision_Leave);
             // 
@@ -904,8 +911,8 @@
             this.TBCompraPromedio.Size = new System.Drawing.Size(240, 21);
             this.TBCompraPromedio.TabIndex = 99;
             this.TBCompraPromedio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBCompraPromedio.TextChanged += new System.EventHandler(this.TBCompraPromedio_TextChanged);
             this.TBCompraPromedio.Enter += new System.EventHandler(this.TBCompraPromedio_Enter);
+            this.TBCompraPromedio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCompraPromedio_KeyPress);
             this.TBCompraPromedio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraPromedio_KeyUp);
             this.TBCompraPromedio.Leave += new System.EventHandler(this.TBCompraPromedio_Leave);
             // 
@@ -917,6 +924,7 @@
             this.TBVentaMayorista.TabIndex = 97;
             this.TBVentaMayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBVentaMayorista.Enter += new System.EventHandler(this.TBVentaMayorista_Enter);
+            this.TBVentaMayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBVentaMayorista_KeyPress);
             this.TBVentaMayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMayorista_KeyUp);
             this.TBVentaMayorista.Leave += new System.EventHandler(this.TBVentaMayorista_Leave);
             // 
@@ -937,6 +945,7 @@
             this.TBGastodeEnvio.TabIndex = 94;
             this.TBGastodeEnvio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBGastodeEnvio.Enter += new System.EventHandler(this.TBGastodeEnvio_Enter);
+            this.TBGastodeEnvio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBGastodeEnvio_KeyPress);
             this.TBGastodeEnvio.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBGastodeEnvio_KeyUp);
             this.TBGastodeEnvio.Leave += new System.EventHandler(this.TBGastodeEnvio_Leave);
             // 
@@ -966,6 +975,7 @@
             this.TBValorVenta_SinImpuesto.TabIndex = 86;
             this.TBValorVenta_SinImpuesto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorVenta_SinImpuesto.Enter += new System.EventHandler(this.TBValorVenta_SinImpuesto_Enter);
+            this.TBValorVenta_SinImpuesto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValorVenta_SinImpuesto_KeyPress);
             this.TBValorVenta_SinImpuesto.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorVenta_SinImpuesto_KeyUp);
             this.TBValorVenta_SinImpuesto.Leave += new System.EventHandler(this.TBValorVenta_SinImpuesto_Leave);
             // 
@@ -977,6 +987,7 @@
             this.TBValorFinal.TabIndex = 83;
             this.TBValorFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorFinal.Enter += new System.EventHandler(this.TBValordecompra_Enter);
+            this.TBValorFinal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValorFinal_KeyPress);
             this.TBValorFinal.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorFinal_KeyUp);
             this.TBValorFinal.Leave += new System.EventHandler(this.TBValordecompra_Leave);
             // 
@@ -997,6 +1008,7 @@
             this.TBValorVenta.TabIndex = 7;
             this.TBValorVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBValorVenta.Enter += new System.EventHandler(this.TBValor01_Enter);
+            this.TBValorVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBValorVenta_KeyPress);
             this.TBValorVenta.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBValorVenta_KeyUp);
             this.TBValorVenta.Leave += new System.EventHandler(this.TBValorVenta_Leave);
             // 
@@ -1544,7 +1556,6 @@
             this.lblTotal.Size = new System.Drawing.Size(31, 15);
             this.lblTotal.TabIndex = 14;
             this.lblTotal.Text = "------";
-            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // DGResultados
             // 

@@ -38,9 +38,6 @@ namespace Presentacion
         public int Idempleado; //Variable para Captura el Empleado Logueado
         private string Campo = "Campo Obligatorio - Leal Enterprise";
         private string Campo_Obligatorio = "Campo Obligatorio";
-        private string Numerico = "Campo Numerico - Leal Enterprise";
-        private string Vacio = "";
-        private string Valores = ""; //Especifica el Valor de venta Final en la base de datos segun el valor seleccionado e ingresado en los campos
 
         //********** Variables para la Validacion de los checkbox en el Pane Datos Basicos
 
@@ -151,59 +148,33 @@ namespace Presentacion
 
             this.TBCompraPromedio.ReadOnly = false;
             this.TBCompraPromedio.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCompraPromedio.ForeColor = Color.FromArgb(255, 255, 255);
-            //this.TBCompraPromedio.Text = Numerico;
             this.TBValorFinal.ReadOnly = false;
             this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorFinal.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorFinal.Text = Numerico;
             this.TBValorVenta.Enabled = false;
             this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorVenta.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorVenta.Text = Numerico;
             this.TBValorVenta_SinImpuesto.ReadOnly = false;
             this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorVenta_SinImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorVenta_SinImpuesto.Text = Numerico;
             
             this.TBComision.Enabled = false;
             this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBComision.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBComision.Text = Numerico;
             this.TBValorComisionar.Enabled = false;
             this.TBValorComisionar.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorComisionar.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorComisionar.Text = Numerico;
             this.TBValorParaComision.Enabled = false;
             this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorParaComision.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBValorParaComision.Text = Numerico;
 
             this.TBVentaMayorista.ReadOnly = false;
             this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBVentaMayorista.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBVentaMayorista.Text = Numerico;
             this.TBMaximoMayorista.ReadOnly = false;
             this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBMaximoMayorista.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBMaximoMayorista.Text = Numerico;
             this.TBMinimoMayorista.ReadOnly = false;
             this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBMinimoMayorista.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBMinimoMayorista.Text = Numerico;
 
             this.TBCantidadMininaCliente.ReadOnly = false;
             this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCantidadMininaCliente.Text = Numerico;
             this.TBCantidadMaximaCliente.ReadOnly = false;
             this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCantidadMaximaCliente.Text = Numerico;
             this.TBGastodeEnvio.ReadOnly = false;
             this.TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBGastodeEnvio.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBGastodeEnvio.Text = Numerico;
 
             //Panel - Ubicacion
             this.TBUbicacion.ReadOnly = false;
@@ -273,34 +244,21 @@ namespace Presentacion
 
                 //Panel - Valores
                 this.TBCompraPromedio.Clear();
-                //this.TBCompraPromedio.Text = Numerico;
                 this.TBValorFinal.Clear();
-                this.TBValorFinal.Text = Numerico;
                 this.TBValorVenta.Clear();
-                this.TBValorVenta.Text = Numerico;
                 this.TBValorVenta_SinImpuesto.Clear();
-                this.TBValorVenta_SinImpuesto.Text = Numerico;
 
                 this.TBComision.Clear();
-                this.TBComision.Text = Numerico;
                 this.TBValorComisionar.Clear();
-                this.TBValorComisionar.Text = Numerico;
                 this.TBValorParaComision.Clear();
-                this.TBValorParaComision.Text = Numerico;
 
                 this.TBVentaMayorista.Clear();
-                this.TBVentaMayorista.Text = Numerico;
                 this.TBMaximoMayorista.Clear();
-                this.TBMaximoMayorista.Text = Numerico;
                 this.TBMinimoMayorista.Clear();
-                this.TBMinimoMayorista.Text = Numerico;
 
                 this.TBCantidadMininaCliente.Clear();
-                this.TBCantidadMininaCliente.Text = Numerico;
                 this.TBCantidadMaximaCliente.Clear();
-                this.TBCantidadMaximaCliente.Text = Numerico;
                 this.TBGastodeEnvio.Clear();
-                this.TBGastodeEnvio.Text = Numerico;
 
                 //Panel Ubicacion - Imagen
                 this.CBBodega.SelectedIndex = 0;
@@ -396,73 +354,9 @@ namespace Presentacion
             this.TBImpuesto.Text = impuesto;
             this.TBImpuesto_Valor.Text = valor;
         }
-
-        private void Formatos_MonedaSQL()
-        {
-            try
-            {
-                //double Formato0;
-                //if (TBCompraPromedio.Text != Numerico)
-                //{
-                //    Formato0 = Convert.ToDouble(TBCompraPromedio.Text);
-                //    this.TBCompraPromedio.Text = Formato0.ToString("C");
-                //}
-                ////else if (TBCompraPromedio.Text != Numerico)
-                ////{
-                ////    Formato0 = Convert.ToDouble(TBCompraPromedio.Text);
-                ////    this.TBCompraPromedio.Text = Formato0.ToString("###");
-                ////}
-
-
-                //Se procede a formatear el texboxt el cual le da formato de Moneda
-
-                //double Formato01 = Convert.ToDouble(TBCompraPromedio.Text);
-                //this.TBCompraPromedio.Text = Formato01.ToString("C");
-
-                //double Formato02 = Convert.ToDouble(TBValorVenta_SinImpuesto.Text);
-                //this.TBValorVenta_SinImpuesto.Text = Formato02.ToString("C");
-
-                //double Formato03 = Convert.ToDouble(TBValorVenta.Text);
-                //this.TBValorVenta.Text = Formato03.ToString("C");
-
-                //double Formato04 = Convert.ToDouble(TBGastodeEnvio.Text);
-                //this.TBGastodeEnvio.Text = Formato04.ToString("C");
-
-                //double Formato05 = Convert.ToDouble(TBValorParaComision.Text);
-                //this.TBValorParaComision.Text = Formato05.ToString("C");
-
-                //double Formato06 = Convert.ToDouble(Mon_Envio);
-                //this.Mon_Envio = Formato06.ToString("###");
-
-                //double Formato07 = Convert.ToDouble(Mon_Comision);
-                //this.Mon_Comision = Formato07.ToString("###");
-
-                //
-                this.Mon_Promedio = TBCompraPromedio.Text;
-                this.Mon_Final = TBValorFinal.Text;
-                this.Mon_Excento = TBValorVenta_SinImpuesto.Text;
-                this.Mon_NoExcento = TBValorVenta.Text;
-                this.Mon_Mayorista = TBVentaMayorista.Text;
-                this.Mon_Envio = TBGastodeEnvio.Text;
-                this.Mon_Comision = TBValorParaComision.Text;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
+                
         private void Validaciones_SQL()
         {
-            //Validaciones de Campos Numericos, Los cuales se deben guardar como vacio en la Base de Datos
-            //Para que no se guarden con el Texto "Campo Numerico - Leal Enterprise" el cual le indica al operador
-            //que dicho campo de texto solo acepta valores numericos
-
-            if (TBValorVenta.Text == Numerico)
-            {
-                this.TBValorVenta.Text = Vacio;
-            }
-
             //Se valida el valor de los checbox que se encuentran en el panel de datos basicos
             //En el cual si este esta seleccionado su valor sera 1 y si no esta seleccionado este seria 0
 
@@ -528,6 +422,15 @@ namespace Presentacion
             {
                 this.Checkbox_Comision = "0";
             }
+
+            //
+            this.Mon_Promedio = TBCompraPromedio.Text;
+            this.Mon_Final = TBValorFinal.Text;
+            this.Mon_Excento = TBValorVenta_SinImpuesto.Text;
+            this.Mon_NoExcento = TBValorVenta.Text;
+            this.Mon_Mayorista = TBVentaMayorista.Text;
+            this.Mon_Envio = TBGastodeEnvio.Text;
+            this.Mon_Comision = TBValorParaComision.Text;
         }
         
         private void Guardar_SQL()
@@ -592,7 +495,6 @@ namespace Presentacion
 
 
                     this.Validaciones_SQL();
-                    this.Formatos_MonedaSQL();
 
                     if (this.Digitar)
                     {
@@ -899,53 +801,20 @@ namespace Presentacion
         
         private void TBValor01_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBValorVenta.Text == Numerico)
-            {
-                this.TBValorVenta.BackColor = Color.Azure;
-                this.TBValorVenta.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBValorVenta.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBValorVenta.BackColor = Color.Azure;
-                this.TBValorVenta.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBValorVenta.BackColor = Color.Azure;
         }
 
         private void TBCantidadMininaCliente_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCantidadMininaCliente.Text == Numerico)
-            {
-                this.TBCantidadMininaCliente.BackColor = Color.Azure;
-                this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCantidadMininaCliente.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCantidadMininaCliente.BackColor = Color.Azure;
-                this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBCantidadMininaCliente.BackColor = Color.Azure;
         }
 
         private void TBCantidadMaximaCliente_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCantidadMaximaCliente.Text == Numerico)
-            {
-                this.TBCantidadMaximaCliente.BackColor = Color.Azure;
-                this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCantidadMaximaCliente.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCantidadMaximaCliente.BackColor = Color.Azure;
-                this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBCantidadMaximaCliente.BackColor = Color.Azure;
         }
         
         //******************** FOCUS ENTER UBICACION ********************
@@ -979,116 +848,44 @@ namespace Presentacion
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
                 this.TBCompraPromedio.BackColor = Color.Azure;
                 this.TBCompraPromedio.ForeColor = Color.FromArgb(0, 0, 0);
-
-                // El control TextBox ha tomado el foco. Referenciamos el control TextBox que ha desencadenado el evento.
-                TextBox tb = (TextBox)sender;
-
-                // Mostramos en el control TextBox el valor de la propiedad Tag sin formatear.
-                tb.Text = Convert.ToString(tb.Tag);
             }
         }
 
         private void TBValorParaComision_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBValorParaComision.Text == Numerico)
-            {
-                this.TBValorParaComision.BackColor = Color.Azure;
-                this.TBValorParaComision.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBValorParaComision.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBValorParaComision.BackColor = Color.Azure;
-                this.TBValorParaComision.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBValorParaComision.BackColor = Color.Azure;
         }
 
         private void TBValordecompra_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBValorFinal.Text == Numerico)
-            {
-                this.TBValorFinal.BackColor = Color.Azure;
-                this.TBValorFinal.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBValorFinal.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBValorFinal.BackColor = Color.Azure;
-                this.TBValorFinal.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBValorFinal.BackColor = Color.Azure;
         }
         
         private void TBVentaMayorista_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBVentaMayorista.Text == Numerico)
-            {
-                this.TBVentaMayorista.BackColor = Color.Azure;
-                this.TBVentaMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBVentaMayorista.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBVentaMayorista.BackColor = Color.Azure;
-                this.TBVentaMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBVentaMayorista.BackColor = Color.Azure;
         }
 
         private void TBMinimoMayorista_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBMinimoMayorista.Text == Numerico)
-            {
-                this.TBMinimoMayorista.BackColor = Color.Azure;
-                this.TBMinimoMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBMinimoMayorista.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBMinimoMayorista.BackColor = Color.Azure;
-                this.TBMinimoMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBMinimoMayorista.BackColor = Color.Azure;
         }
 
         private void TBMaximoMayorista_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBMaximoMayorista.Text == Numerico)
-            {
-                this.TBMaximoMayorista.BackColor = Color.Azure;
-                this.TBMaximoMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBMaximoMayorista.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBMaximoMayorista.BackColor = Color.Azure;
-                this.TBMaximoMayorista.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBMaximoMayorista.BackColor = Color.Azure;
         }
 
 
         private void TBGastodeEnvio_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBGastodeEnvio.Text == Numerico)
-            {
-                this.TBGastodeEnvio.BackColor = Color.Azure;
-                this.TBGastodeEnvio.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBGastodeEnvio.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBGastodeEnvio.BackColor = Color.Azure;
-                this.TBGastodeEnvio.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBGastodeEnvio.BackColor = Color.Azure;
         }
 
         //******************** FOCUS LEAVE DATOS BASICOS ********************
@@ -2495,9 +2292,270 @@ namespace Presentacion
 
         }
 
-        private void TBCompraPromedio_TextChanged(object sender, EventArgs e)
+        private void TBValorFinal_KeyPress(object sender, KeyPressEventArgs e)
         {
-                        
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBValorVenta_SinImpuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBValorVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBVentaMayorista_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBGastodeEnvio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBComision_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBValorParaComision_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCantidadMininaCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCantidadMaximaCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBMinimoMayorista_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBMaximoMayorista_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBValorComisionar_Leave(object sender, EventArgs e)
+        {
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCompraPromedio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
         }
 
         private void CBProductosOfertable_CheckedChanged(object sender, EventArgs e)
@@ -2565,8 +2623,6 @@ namespace Presentacion
             {
                 //Color de texboxt cuando este posee el FOCUS Activado
                 this.TBCompraPromedio.BackColor = Color.FromArgb(3, 155, 229);
-                //this.TBCompraPromedio.Text = Numerico;
-                this.TBCompraPromedio.ForeColor = Color.FromArgb(255, 255, 255);
             }
             else
             {
@@ -2593,57 +2649,50 @@ namespace Presentacion
                 // Y acto seguido formateamos el valor
                 // a monetario con dos decimales.
                 //
-                tb.Text = string.Format("{0:C2}", numero);
-
+                tb.Text = string.Format("{0:N2}", numero);
             }
            
         }
 
         private void TBVentaMayorista_Leave(object sender, EventArgs e)
         {
-            if (TBVentaMayorista.Text == string.Empty)
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
             {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBVentaMayorista.Text = Numerico;
-                this.TBVentaMayorista.ForeColor = Color.FromArgb(255, 255, 255);
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
             }
-            else
-            {
-                this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBComision_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBComision.Text == Numerico)
-            {
-                this.TBComision.BackColor = Color.Azure;
-                this.TBComision.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBComision.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBComision.BackColor = Color.Azure;
-                this.TBComision.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBComision.BackColor = Color.Azure;
         }
 
         private void TBComision_Leave(object sender, EventArgs e)
         {
-            if (TBComision.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBComision.Text = Numerico;
-                this.TBComision.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
-            }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBVentaMayorista_KeyUp(object sender, KeyEventArgs e)
@@ -2729,9 +2778,16 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-
-                    this.TBComision.Select();
+                    if (CBManejaComision.Checked)
+                    {
+                        //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+                        this.TBComision.Select();
+                    }
+                    else if (CBManejaComision.Checked == false)
+                    {
+                        this.TBCantidadMininaCliente.Select();
+                    }
+                    
                 }
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
@@ -2809,11 +2865,11 @@ namespace Presentacion
                     if (CBManejaComision.Checked)
                     {
                         //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                        this.TBCantidadMininaCliente.Select();
+                        this.TBValorParaComision.Select();
                     }
                     else
                     {
-                        this.TBValorParaComision.Select();
+                        this.TBCantidadMininaCliente.Select();
                     }
                 }
 
@@ -3116,77 +3172,55 @@ namespace Presentacion
 
         private void TBValorParaComision_Leave(object sender, EventArgs e)
         {
-            if (TBValorParaComision.Text == string.Empty)
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
             {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBValorParaComision.Text = Numerico;
-                this.TBValorParaComision.ForeColor = Color.FromArgb(255, 255, 255);
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
             }
-            else
-            {
-                this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
-            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBCantidadMininaCliente_Leave(object sender, EventArgs e)
         {
-            if (TBCantidadMininaCliente.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBCantidadMininaCliente.Text = Numerico;
-                this.TBCantidadMininaCliente.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBCantidadMaximaCliente_Leave(object sender, EventArgs e)
         {
-            if (TBCantidadMaximaCliente.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBCantidadMaximaCliente.Text = Numerico;
-                this.TBCantidadMaximaCliente.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBMinimoMayorista_Leave(object sender, EventArgs e)
         {
-            if (TBMinimoMayorista.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBMinimoMayorista.Text = Numerico;
-                this.TBMinimoMayorista.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBMaximoMayorista_Leave(object sender, EventArgs e)
         {
-            if (TBMaximoMayorista.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBMaximoMayorista.Text = Numerico;
-                this.TBMaximoMayorista.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBCodigodeBarra_KeyUp(object sender, KeyEventArgs e)
@@ -3275,37 +3309,60 @@ namespace Presentacion
 
         private void TBValordecompra_Leave(object sender, EventArgs e)
         {
-            if (TBValorFinal.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBValorFinal.Text = Numerico;
-                this.TBValorFinal.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-            else
-            {
-                TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
-            }
-        }
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
 
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
 
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBValorVenta_Leave(object sender, EventArgs e)
         {
-            if (TBValorVenta.Text == string.Empty)
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
             {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBValorVenta.Text = Numerico;
-                this.TBValorVenta.ForeColor = Color.FromArgb(255, 255, 255);
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
             }
-            else
-            {
-                TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
-            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBLotedeingreso_Enter(object sender, EventArgs e)
@@ -3359,50 +3416,67 @@ namespace Presentacion
 
         private void TBValorVenta_SinImpuesto_Enter(object sender, EventArgs e)
         {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBValorVenta_SinImpuesto.Text == Numerico)
-            {
-                this.TBValorVenta_SinImpuesto.BackColor = Color.Azure;
-                this.TBValorVenta_SinImpuesto.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBValorVenta_SinImpuesto.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBValorVenta_SinImpuesto.BackColor = Color.Azure;
-                this.TBValorVenta_SinImpuesto.ForeColor = Color.FromArgb(0, 0, 0);
-            }
+            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+            this.TBValorVenta_SinImpuesto.BackColor = Color.Azure;
         }
 
         private void TBValorVenta_SinImpuesto_Leave(object sender, EventArgs e)
         {
-            if (TBValorVenta_SinImpuesto.Text == string.Empty)
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
             {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBValorVenta_SinImpuesto.Text = Numerico;
-                this.TBValorVenta_SinImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
             }
-            else
-            {
-                TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
-            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
 
         private void TBGastodeEnvio_Leave(object sender, EventArgs e)
         {
-            if (TBGastodeEnvio.Text == string.Empty)
+            //Color de texboxt cuando este posee el FOCUS Activado
+            this.TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
             {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBGastodeEnvio.Text = Numerico;
-                this.TBGastodeEnvio.ForeColor = Color.FromArgb(255, 255, 255);
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
             }
-            else
-            {
-                TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
-            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBUnidadDeVenta_Enter(object sender, EventArgs e)
@@ -3712,38 +3786,11 @@ namespace Presentacion
 
                 if (Editar == "1")
                 {
-                    //
-                                      
                     this.TBIdproducto.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["ID"].Value);
                     this.TBNombre.Select();
 
-
-                    //this.Formatos_MonedaSQL();
-                    ////Se procede a formatear el texboxt el cual le da formato de Moneda
-                    //double Formato01 = Convert.ToDouble(TBCompraPromedio.Text);
-                    //this.TBCompraPromedio.Text = Formato01.ToString("C");
-
-                    //double Formato02 = Convert.ToDouble(TBValorFinal.Text);
-                    //this.TBValorFinal.Text = Formato02.ToString("C");
-
-                    //double Formato03 = Convert.ToDouble(TBValorVenta_SinImpuesto.Text);
-                    //this.TBValorVenta_SinImpuesto.Text = Formato03.ToString("C");
-
-                    //double Formato04 = Convert.ToDouble(TBValorVenta.Text);
-                    //this.TBValorVenta.Text = Formato04.ToString("C");
-
-                    //double Formato05 = Convert.ToDouble(TBVentaMayorista.Text);
-                    //this.TBVentaMayorista.Text = Formato05.ToString("C");
-
-                    //double Formato06 = Convert.ToDouble(TBGastodeEnvio.Text);
-                    //this.TBGastodeEnvio.Text = Formato06.ToString("C");
-
-                    //double Formato07 = Convert.ToDouble(TBValorParaComision.Text);
-                    //this.TBValorParaComision.Text = Formato07.ToString("C");
-
-
+                    //
                     this.Botones();
-
                 }
                 else
                 {
