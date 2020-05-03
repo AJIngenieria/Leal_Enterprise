@@ -122,7 +122,6 @@ namespace Presentacion
                 //this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
                 this.btnEliminar.Enabled = false;
-                this.btnCancelar.Enabled = false;
                 this.btnImprimir.Enabled = false;
             }
             else if (!Digitar)
@@ -132,7 +131,6 @@ namespace Presentacion
                 //this.btnGuardar.Image = Properties.Resources.BV_Editar;
 
                 this.btnEliminar.Enabled = false;
-                this.btnCancelar.Enabled = true;
                 this.btnImprimir.Enabled = false;
             }
         }

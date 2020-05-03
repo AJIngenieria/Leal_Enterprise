@@ -157,8 +157,6 @@ namespace Presentacion
             
             this.TBComision.Enabled = false;
             this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorComisionar.Enabled = false;
-            this.TBValorComisionar.BackColor = Color.FromArgb(72, 209, 204);
             this.TBValorParaComision.Enabled = false;
             this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
 
@@ -249,7 +247,6 @@ namespace Presentacion
                 this.TBValorVenta_SinImpuesto.Clear();
 
                 this.TBComision.Clear();
-                this.TBValorComisionar.Clear();
                 this.TBValorParaComision.Clear();
 
                 this.TBVentaMayorista.Clear();

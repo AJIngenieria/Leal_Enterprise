@@ -88,7 +88,6 @@
             this.label16 = new System.Windows.Forms.Label();
             this.TBValorParaComision = new System.Windows.Forms.TextBox();
             this.label50 = new System.Windows.Forms.Label();
-            this.TBValorComisionar = new System.Windows.Forms.TextBox();
             this.TBComision = new System.Windows.Forms.TextBox();
             this.label48 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -738,7 +737,6 @@
             this.TPValores.Controls.Add(this.label16);
             this.TPValores.Controls.Add(this.TBValorParaComision);
             this.TPValores.Controls.Add(this.label50);
-            this.TPValores.Controls.Add(this.TBValorComisionar);
             this.TPValores.Controls.Add(this.TBComision);
             this.TPValores.Controls.Add(this.label48);
             this.TPValores.Controls.Add(this.label31);
@@ -865,20 +863,11 @@
             this.label50.TabIndex = 104;
             this.label50.Text = "Valor para Comisionar";
             // 
-            // TBValorComisionar
-            // 
-            this.TBValorComisionar.Location = new System.Drawing.Point(271, 165);
-            this.TBValorComisionar.Name = "TBValorComisionar";
-            this.TBValorComisionar.Size = new System.Drawing.Size(134, 21);
-            this.TBValorComisionar.TabIndex = 103;
-            this.TBValorComisionar.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBValorComisionar.Leave += new System.EventHandler(this.TBValorComisionar_Leave);
-            // 
             // TBComision
             // 
             this.TBComision.Location = new System.Drawing.Point(165, 165);
             this.TBComision.Name = "TBComision";
-            this.TBComision.Size = new System.Drawing.Size(100, 21);
+            this.TBComision.Size = new System.Drawing.Size(240, 21);
             this.TBComision.TabIndex = 102;
             this.TBComision.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBComision.Enter += new System.EventHandler(this.TBComision_Enter);
@@ -1727,7 +1716,6 @@
         private System.Windows.Forms.CheckBox CBManejaComision;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox TBComision;
-        private System.Windows.Forms.TextBox TBValorComisionar;
         private System.Windows.Forms.TextBox TBValorParaComision;
         private System.Windows.Forms.Label label50;
         private System.Windows.Forms.TextBox TBMaximoMayorista;

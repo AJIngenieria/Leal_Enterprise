@@ -31,6 +31,8 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TCPrincipal = new System.Windows.Forms.TabControl();
             this.TPDatosBasicos = new System.Windows.Forms.TabPage();
+            this.TBDocumento = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
@@ -97,8 +99,6 @@
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label29 = new System.Windows.Forms.Label();
-            this.TBDocumento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -161,6 +161,22 @@
             this.TPDatosBasicos.TabIndex = 0;
             this.TPDatosBasicos.Text = "Datos Basicos";
             this.TPDatosBasicos.UseVisualStyleBackColor = true;
+            // 
+            // TBDocumento
+            // 
+            this.TBDocumento.Location = new System.Drawing.Point(85, 65);
+            this.TBDocumento.Name = "TBDocumento";
+            this.TBDocumento.Size = new System.Drawing.Size(300, 21);
+            this.TBDocumento.TabIndex = 17;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Location = new System.Drawing.Point(6, 68);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(71, 15);
+            this.label29.TabIndex = 16;
+            this.label29.Text = "Documento";
             // 
             // label2
             // 
@@ -868,22 +884,6 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leal Enterprise - Consulta de Bodegas Registrados";
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 68);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(71, 15);
-            this.label29.TabIndex = 16;
-            this.label29.Text = "Documento";
-            // 
-            // TBDocumento
-            // 
-            this.TBDocumento.Location = new System.Drawing.Point(87, 65);
-            this.TBDocumento.Name = "TBDocumento";
-            this.TBDocumento.Size = new System.Drawing.Size(299, 21);
-            this.TBDocumento.TabIndex = 17;
             // 
             // frmBodega
             // 
