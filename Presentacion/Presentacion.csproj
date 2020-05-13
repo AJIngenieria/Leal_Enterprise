@@ -103,6 +103,12 @@
     <Compile Include="Filtros\frmFiltro_Bodega.Designer.cs">
       <DependentUpon>frmFiltro_Bodega.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmGastosDeIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmGastosDeIngreso.Designer.cs">
+      <DependentUpon>frmGastosDeIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\frmInventario_Ingreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -237,6 +243,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Bodega.resx">
       <DependentUpon>frmFiltro_Bodega.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmGastosDeIngreso.resx">
+      <DependentUpon>frmGastosDeIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmInventario_Ingreso.resx">
       <DependentUpon>frmInventario_Ingreso.cs</DependentUpon>

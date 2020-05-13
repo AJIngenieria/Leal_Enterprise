@@ -646,9 +646,7 @@ namespace Presentacion
                         this.Digitar = false;
                         this.Limpiar_Datos();
                     }
-
                 }
-
             }
             catch (Exception ex)
             {

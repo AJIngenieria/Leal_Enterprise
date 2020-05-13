@@ -84,6 +84,43 @@ namespace Presentacion
             //this.CBMoneda.BackColor = Color.FromArgb(3, 155, 229);
             //this.CBComprobante.Enabled = false;
             //this.CBComprobante.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Texboxt de Datos - Parte Inferior del Formulario
+            this.TBCompraPromedio.Enabled = false;
+            this.TBCompraPromedio.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBCompraFinal.Enabled = false;
+            this.TBCompraFinal.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorVenta_SinImpuesto.Enabled = false;
+            this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorVenta.Enabled = false;
+            this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBVentaMayorista.Enabled = false;
+            this.TBVentaMayorista.BackColor = Color.FromArgb(72, 209, 204);
+
+            //
+            this.TBUbicacion.Enabled = false;
+            this.TBUbicacion.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBMarca.Enabled = false;
+            this.TBMarca.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBEstante.Enabled = false;
+            this.TBEstante.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBNivel.Enabled = false;
+            this.TBNivel.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBUnidad.Enabled = false;
+            this.TBUnidad.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBUnidad_Valor.Enabled = false;
+            this.TBUnidad_Valor.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBUnidad_Valor.ForeColor = Color.FromArgb(255, 255, 255);
+
+            //
+            this.TBValorPromedio_Final.Enabled = false;
+            this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorCompra_Final.Enabled = false;
+            this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorFinalExcento_Final.Enabled = false;
+            this.TBValorFinalExcento_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorVenta_Final.Enabled = false;
+            this.TBValorVenta_Final.BackColor = Color.FromArgb(255, 99, 71);
             
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
@@ -242,8 +279,7 @@ namespace Presentacion
         {
             MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-
+        
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
@@ -270,7 +306,6 @@ namespace Presentacion
 
                     //this.Calculo_Totales();
                 }
-                
             }
             catch (Exception ex)
             {
@@ -297,15 +332,13 @@ namespace Presentacion
                     }
 
                     //SubTotal = Total/(1+tbimpuesto.text));
-                    lblTotalIngresado.Text = Total.ToString("#0.00#"); 
+                    this.TBValorVenta_Final.Text = Total.ToString("#0.00#"); 
                 }
-                
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-            
         }
 
         private void Guardar_SQL()
@@ -427,7 +460,49 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (Digitar)
+                {
+                    if (Guardar == "1")
+                    {
+                        frmGastosDeIngreso frmGastosDeIngreso = new frmGastosDeIngreso();
+                        frmGastosDeIngreso.ShowDialog();
+                        //Metodo Guardar y editar
+                        //this.Guardar_SQL();
+                    }
 
+                    else
+                    {
+                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        //Llamada de Clase
+                        this.Digitar = false;
+                        this.Limpiar_Datos();
+                    }
+                }
+
+                else
+                {
+                    if (Editar == "1")
+                    {
+                        //Metodo Guardar y editar
+                        this.Guardar_SQL();
+                    }
+                    else
+                    {
+                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        //Llamada de Clase
+                        this.Digitar = false;
+                        this.Limpiar_Datos();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -662,6 +737,19 @@ namespace Presentacion
         private void TBBuscar_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void DGDetalleDeIngreso_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                this.TBUnidad.Text = DGDetalleDeIngreso.CurrentRow.Cells[4].Value.ToString();
+                this.TBCompraPromedio.Text = DGDetalleDeIngreso.CurrentRow.Cells[7].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
     }
 }
