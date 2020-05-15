@@ -109,17 +109,26 @@ namespace Presentacion
         {
             try
             {
-                frmInventario_Ingreso frmBI = new frmInventario_Ingreso();
+                frmInventario_Ingreso frmBI = frmInventario_Ingreso.GetInstancia();
+                frmOrdenDeCompra frmOC = frmOrdenDeCompra.GetInstancia();
 
-                //string Codigo, Nombre;
-                //int precio;
+                if (frmBI.Examinar)
+                {
+                    string idproducto, producto;
+                    idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
+                    frmBI.setProducto(idproducto, producto);
+                    this.Hide();
+                }
 
-                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
-                string idproducto, producto;
-                idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
-                producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
-                form.setProducto(idproducto, producto);
-                this.Hide();
+                if (frmOC.Examinar)
+                {
+                    string idproducto, producto;
+                    idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
+                    frmOC.setProducto(idproducto, producto);
+                    this.Hide();
+                }
             }
             catch (Exception ex)
             {
@@ -252,21 +261,5 @@ namespace Presentacion
         {
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
-
-        private void btnAgregar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnAgregar.Image = Properties.Resources.BV_Agregar;
-        }
-
-        private void btnAgregar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnAgregar.Image = Properties.Resources.BV_Agregar;
-        }
-
-        private void btnAgregar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnAgregar.Image = Properties.Resources.BR_Agregar;
-        }
-
     }
 }
