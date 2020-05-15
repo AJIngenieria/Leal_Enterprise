@@ -103,9 +103,6 @@ namespace Presentacion
             //Panel - Cantidades - Otros Datos
             this.CBUnidad.SelectedIndex = 0;
             this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
-
-            //
-            //this.Formatos_MonedaSQL();
         }
 
         private void Habilitar()

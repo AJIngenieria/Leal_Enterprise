@@ -173,6 +173,7 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
+            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -329,6 +330,7 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ordenDeCompraToolStripMenuItem,
             this.ordenDePedidoToolStripMenuItem1,
             this.comprasToolStripMenuItem1,
             this.devolucionDeComprasToolStripMenuItem,
@@ -1237,6 +1239,13 @@
             this.toolStripLabel7.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel7.Text = "------";
             // 
+            // ordenDeCompraToolStripMenuItem
+            // 
+            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
+            this.ordenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
+            this.ordenDeCompraToolStripMenuItem.Text = "Orden de Compra";
+            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            // 
             // frmMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1411,6 +1420,7 @@
         private System.Windows.Forms.ToolStripMenuItem ofertasToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem codigosDeBarraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem empaqueToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem ordenDeCompraToolStripMenuItem;
     }
 }
 

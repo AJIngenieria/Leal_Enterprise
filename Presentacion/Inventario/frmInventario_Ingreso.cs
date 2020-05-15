@@ -55,6 +55,8 @@ namespace Presentacion
             this.Habilitar();
             this.CrearTabla();
 
+            this.TBValorPromedio_Final.ForeColor = Color.White;
+
             //Focus a Texboxt y Combobox
             this.TBCodigoID.Focus();
 
@@ -80,14 +82,11 @@ namespace Presentacion
             this.TBProducto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBCodigo_Producto.ReadOnly = false;
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
-            //this.CBMoneda.Enabled = true;
-            //this.CBMoneda.BackColor = Color.FromArgb(3, 155, 229);
-            //this.CBComprobante.Enabled = false;
-            //this.CBComprobante.BackColor = Color.FromArgb(3, 155, 229);
-
+            
             //Texboxt de Datos - Parte Inferior del Formulario
             this.TBCompraPromedio.Enabled = false;
             this.TBCompraPromedio.BackColor = Color.FromArgb(72, 209, 204);
+            
             this.TBCompraFinal.Enabled = false;
             this.TBCompraFinal.BackColor = Color.FromArgb(72, 209, 204);
             this.TBValorVenta_SinImpuesto.Enabled = false;
@@ -114,13 +113,13 @@ namespace Presentacion
 
             //
             this.TBValorPromedio_Final.Enabled = false;
-            this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorPromedio_Final.BackColor = Color.FromArgb(224, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
-            this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorCompra_Final.BackColor = Color.FromArgb(224, 255, 255);
             this.TBValorFinalExcento_Final.Enabled = false;
-            this.TBValorFinalExcento_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorFinalExcento_Final.BackColor = Color.FromArgb(224, 255, 255);
             this.TBValorVenta_Final.Enabled = false;
-            this.TBValorVenta_Final.BackColor = Color.FromArgb(255, 99, 71);
+            this.TBValorVenta_Final.BackColor = Color.FromArgb(224, 255, 255);
             
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
@@ -604,6 +603,17 @@ namespace Presentacion
 
                         lblTotal.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
 
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[7].Value);
+                        }
+                        TBValorPromedio_Final.Text = Convert.ToString(total);
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
                         this.TBCodigo_Producto.Clear();
                         this.TBProducto.Clear();
                     }
@@ -750,6 +760,16 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
+        }
+
+        private void TBCompraPromedio_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TBCompraPromedio_Enter(object sender, EventArgs e)
+        {
+            this.TBCompraPromedio.ForeColor = Color.FromArgb(255, 255, 255);
         }
     }
 }
