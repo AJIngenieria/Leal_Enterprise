@@ -341,5 +341,18 @@ namespace Presentacion
             frmOrdenDeCompra.Consultar = Convert.ToString(this.SQL_Consultar);
             frmOrdenDeCompra.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void inventarioInicialToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmInventario_Inicial frmInventario_Inicial = frmInventario_Inicial.GetInstancia();
+            frmInventario_Inicial.MdiParent = this;
+            frmInventario_Inicial.Show();
+
+            frmInventario_Inicial.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmInventario_Inicial.Editar = Convert.ToString(this.SQL_Editar);
+            frmInventario_Inicial.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmInventario_Inicial.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmInventario_Inicial.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }

@@ -109,6 +109,24 @@
     <Compile Include="Financiera\frmCuentaPorPagar.Designer.cs">
       <DependentUpon>frmCuentaPorPagar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmFacturaDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmFacturaDeCompra.Designer.cs">
+      <DependentUpon>frmFacturaDeCompra.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Compras\frmTotalizarOrden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmTotalizarOrden.Designer.cs">
+      <DependentUpon>frmTotalizarOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventario\frmInventario_Inicial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventario\frmInventario_Inicial.Designer.cs">
+      <DependentUpon>frmInventario_Inicial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\frmGastosDeIngreso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,11 +271,17 @@
     <EmbeddedResource Include="Archivo\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmFacturaDeCompra.resx">
+      <DependentUpon>frmFacturaDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Bodega.resx">
       <DependentUpon>frmFiltro_Bodega.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Financiera\frmCuentaPorPagar.resx">
       <DependentUpon>frmCuentaPorPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmTotalizarOrden.resx">
+      <DependentUpon>frmTotalizarOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmGastosDeIngreso.resx">
       <DependentUpon>frmGastosDeIngreso.cs</DependentUpon>
@@ -282,6 +306,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_Impuestos.resx">
       <DependentUpon>frmFiltro_Impuestos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventario\frmInventario_Inicial.resx">
+      <DependentUpon>frmInventario_Inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Sistema\frmEquipos.resx">
       <DependentUpon>frmEquipos.cs</DependentUpon>

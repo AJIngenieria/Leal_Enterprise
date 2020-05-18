@@ -94,6 +94,8 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox4.SuspendLayout();
@@ -116,6 +118,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox1);
+            this.tabPage1.Controls.Add(this.label18);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
             this.tabPage1.Controls.Add(this.groupBox2);
@@ -587,9 +591,9 @@
             // 
             // TBCodigoID
             // 
-            this.TBCodigoID.Location = new System.Drawing.Point(644, 6);
+            this.TBCodigoID.Location = new System.Drawing.Point(703, 6);
             this.TBCodigoID.Name = "TBCodigoID";
-            this.TBCodigoID.Size = new System.Drawing.Size(286, 21);
+            this.TBCodigoID.Size = new System.Drawing.Size(227, 21);
             this.TBCodigoID.TabIndex = 139;
             this.TBCodigoID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.TBCodigoID.Enter += new System.EventHandler(this.TBCodigoID_Enter);
@@ -600,9 +604,9 @@
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(592, 9);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(46, 15);
+            this.label7.Size = new System.Drawing.Size(102, 15);
             this.label7.TabIndex = 138;
-            this.label7.Text = "Codigo";
+            this.label7.Text = "Orden de Ingreso";
             // 
             // btnExaminar_Producto
             // 
@@ -736,7 +740,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 24);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1097, 508);
+            this.tabPage2.Size = new System.Drawing.Size(1097, 510);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta de Ingreso";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -798,6 +802,23 @@
             this.label12.Size = new System.Drawing.Size(113, 15);
             this.label12.TabIndex = 0;
             this.label12.Text = "Ingreso a Consultar";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(703, 33);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(227, 21);
+            this.textBox1.TabIndex = 175;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(592, 36);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(105, 15);
+            this.label18.TabIndex = 174;
+            this.label18.Text = "Orden de Compra";
             // 
             // frmInventario_Ingreso
             // 
@@ -897,5 +918,7 @@
         private System.Windows.Forms.Button btnExaminar_Ubucacion;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label18;
     }
 }

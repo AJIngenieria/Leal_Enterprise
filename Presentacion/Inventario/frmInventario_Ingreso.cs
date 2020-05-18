@@ -37,11 +37,7 @@ namespace Presentacion
         public int Idempleado;
 
         //Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar
-        public string Guardar = "";
-        public string Editar = "";
-        public string Consultar = "";
-        public string Eliminar = "";
-        public string Imprimir = "";
+        public string Guardar, Editar, Consultar, Eliminar, Imprimir = "";
 
         public frmInventario_Ingreso()
         {

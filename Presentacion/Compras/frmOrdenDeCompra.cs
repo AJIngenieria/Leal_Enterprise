@@ -119,11 +119,6 @@ namespace Presentacion
             this.TBValorPromedio_Final.BackColor = Color.FromArgb(224, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
             this.TBValorCompra_Final.BackColor = Color.FromArgb(224, 255, 255);
-            this.TBValorFinalExcento_Final.Enabled = false;
-            this.TBValorFinalExcento_Final.BackColor = Color.FromArgb(224, 255, 255);
-            this.TBValorVenta_Final.Enabled = false;
-            this.TBValorVenta_Final.BackColor = Color.FromArgb(224, 255, 255);
-
         }
 
         private void Limpiar_Datos()
@@ -338,7 +333,7 @@ namespace Presentacion
                     }
 
                     //SubTotal = Total/(1+tbimpuesto.text));
-                    this.TBValorVenta_Final.Text = Total.ToString("#0.00#");
+                    //this.TBValorVenta_Final.Text = Total.ToString("#0.00#");
                 }
             }
             catch (Exception ex)
@@ -447,7 +442,15 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                frmTotalizarOrden frmTotalizarOrden = new frmTotalizarOrden();
+                frmTotalizarOrden.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void btnEliminar_Datos_Click(object sender, EventArgs e)
@@ -464,6 +467,11 @@ namespace Presentacion
         {
             frmFiltro_Producto frmFiltro_Producto = new frmFiltro_Producto();
             frmFiltro_Producto.ShowDialog();
+        }
+
+        private void CBOperacion_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
