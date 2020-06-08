@@ -46,7 +46,6 @@ namespace Entidad
         private string _Venta_Mayorista;
         private string _Comision;
         private string _Comision_Valor;
-        private string _Gasto_Envio;
         private string _Minima_Cliente;
         private string _Maxima_Cliente;
         private string _Minima_Mayorista;
@@ -116,6 +115,5 @@ namespace Entidad
         public string Maxima_Cliente { get => _Maxima_Cliente; set => _Maxima_Cliente = value; }
         public string Minima_Mayorista { get => _Minima_Mayorista; set => _Minima_Mayorista = value; }
         public string Maxima_Mayorista { get => _Maxima_Mayorista; set => _Maxima_Mayorista = value; }
-        public string Gasto_Envio { get => _Gasto_Envio; set => _Gasto_Envio = value; }
     }
 }

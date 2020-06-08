@@ -84,6 +84,8 @@
             this.TBValorVenta_SinImpuesto = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.TBValorVenta = new System.Windows.Forms.TextBox();
+            this.TBValorVenta_Final = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalleDeIngreso)).BeginInit();
             this.groupBox4.SuspendLayout();
@@ -100,8 +102,12 @@
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.btnCancelar);
+            this.groupBox1.Controls.Add(this.TBIdbodega);
+            this.groupBox1.Controls.Add(this.TBIdproveedor);
             this.groupBox1.Controls.Add(this.TBCodigo_Proveedor);
+            this.groupBox1.Controls.Add(this.TBIddetalle);
             this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.TBIdproducto);
             this.groupBox1.Controls.Add(this.TBProveedor);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
@@ -325,16 +331,14 @@
             // 
             // groupBox4
             // 
+            this.groupBox4.Controls.Add(this.label16);
+            this.groupBox4.Controls.Add(this.TBValorVenta_Final);
             this.groupBox4.Controls.Add(this.textBox1);
             this.groupBox4.Controls.Add(this.label15);
             this.groupBox4.Controls.Add(this.label14);
             this.groupBox4.Controls.Add(this.TBValorPromedio_Final);
             this.groupBox4.Controls.Add(this.TBValorCompra_Final);
             this.groupBox4.Controls.Add(this.label3);
-            this.groupBox4.Controls.Add(this.TBIdbodega);
-            this.groupBox4.Controls.Add(this.TBIdproveedor);
-            this.groupBox4.Controls.Add(this.TBIddetalle);
-            this.groupBox4.Controls.Add(this.TBIdproducto);
             this.groupBox4.Location = new System.Drawing.Point(745, 360);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(383, 122);
@@ -372,7 +376,7 @@
             // TBValorPromedio_Final
             // 
             this.TBValorPromedio_Final.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBValorPromedio_Final.Location = new System.Drawing.Point(168, 47);
+            this.TBValorPromedio_Final.Location = new System.Drawing.Point(168, 45);
             this.TBValorPromedio_Final.Name = "TBValorPromedio_Final";
             this.TBValorPromedio_Final.Size = new System.Drawing.Size(206, 21);
             this.TBValorPromedio_Final.TabIndex = 169;
@@ -381,7 +385,7 @@
             // TBValorCompra_Final
             // 
             this.TBValorCompra_Final.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBValorCompra_Final.Location = new System.Drawing.Point(168, 74);
+            this.TBValorCompra_Final.Location = new System.Drawing.Point(168, 69);
             this.TBValorCompra_Final.Name = "TBValorCompra_Final";
             this.TBValorCompra_Final.Size = new System.Drawing.Size(206, 21);
             this.TBValorCompra_Final.TabIndex = 170;
@@ -398,28 +402,28 @@
             // 
             // TBIdbodega
             // 
-            this.TBIdbodega.Location = new System.Drawing.Point(40, 95);
+            this.TBIdbodega.Location = new System.Drawing.Point(1022, 47);
             this.TBIdbodega.Name = "TBIdbodega";
             this.TBIdbodega.Size = new System.Drawing.Size(10, 21);
             this.TBIdbodega.TabIndex = 118;
             // 
             // TBIdproveedor
             // 
-            this.TBIdproveedor.Location = new System.Drawing.Point(88, 95);
+            this.TBIdproveedor.Location = new System.Drawing.Point(1070, 47);
             this.TBIdproveedor.Name = "TBIdproveedor";
             this.TBIdproveedor.Size = new System.Drawing.Size(10, 21);
             this.TBIdproveedor.TabIndex = 117;
             // 
             // TBIddetalle
             // 
-            this.TBIddetalle.Location = new System.Drawing.Point(72, 95);
+            this.TBIddetalle.Location = new System.Drawing.Point(1054, 47);
             this.TBIddetalle.Name = "TBIddetalle";
             this.TBIddetalle.Size = new System.Drawing.Size(10, 21);
             this.TBIddetalle.TabIndex = 116;
             // 
             // TBIdproducto
             // 
-            this.TBIdproducto.Location = new System.Drawing.Point(56, 95);
+            this.TBIdproducto.Location = new System.Drawing.Point(1038, 47);
             this.TBIdproducto.Name = "TBIdproducto";
             this.TBIdproducto.Size = new System.Drawing.Size(10, 21);
             this.TBIdproducto.TabIndex = 115;
@@ -681,6 +685,22 @@
             this.TBValorVenta.TabIndex = 161;
             this.TBValorVenta.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // TBValorVenta_Final
+            // 
+            this.TBValorVenta_Final.Location = new System.Drawing.Point(168, 95);
+            this.TBValorVenta_Final.Name = "TBValorVenta_Final";
+            this.TBValorVenta_Final.Size = new System.Drawing.Size(206, 21);
+            this.TBValorVenta_Final.TabIndex = 184;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 98);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(116, 15);
+            this.label16.TabIndex = 185;
+            this.label16.Text = "Valor de Venta Final";
+            // 
             // frmFacturaDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -765,5 +785,7 @@
         private System.Windows.Forms.TextBox TBValorVenta_SinImpuesto;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.TextBox TBValorVenta;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox TBValorVenta_Final;
     }
 }

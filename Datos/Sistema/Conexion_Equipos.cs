@@ -143,7 +143,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Seguridad.LI_Equipos", SqlCon);
+                SqlCommand Comando = new SqlCommand("Seguridad.LI_Equipo", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares

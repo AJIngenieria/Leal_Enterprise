@@ -127,20 +127,23 @@
   <data name="Almacen" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Almacen.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="btnImprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnImprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Ventas" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ventas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BV_Nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BV_Nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BV_Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BV_Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Configuracion" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Configuracion.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Financiera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Financiera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,9 +159,6 @@
   </data>
   <data name="BR_Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BR_Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BR_Nuevo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BR_Nuevo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -178,8 +178,8 @@
   <data name="BV_Eliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BV_Eliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BV_Guardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BV_Guardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="btnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\btnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BV_Cancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BV_Cancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -196,6 +196,9 @@
   <data name="Gestion_Humana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Gestion_Humana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BR_Agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BR_Agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="btnEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\btnEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -208,10 +211,7 @@
   <data name="BR_Editar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BR_Editar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BR_Agregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BR_Agregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="btnImprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\btnImprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Productos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Productos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Negocio;
+
 namespace Presentacion
 {
     public partial class frmOrdenDeCompra : Form
@@ -35,7 +37,7 @@ namespace Presentacion
 
         //Variables de Validaciones
         public int Idempleado; //Variable para Captura el Empleado Logueado
-        private string Campo_Obligatorio = "Campo Obligatorio";
+        private string Campo = "Campo Obligatorio";
 
         //********** Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar *************************
 
@@ -51,6 +53,7 @@ namespace Presentacion
             //Inicio de Clase y Botones
             this.Botones();
             this.Habilitar();
+            this.CrearTabla();
 
             //Focus a Texboxt y Combobox
             this.TBCodigo.Select();
@@ -70,55 +73,50 @@ namespace Presentacion
             this.TBCodigo.ReadOnly = false;
             this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCodigo.Text = Campo_Obligatorio;
+            this.TBCodigo.Text = Campo;
             this.TBCodigo_Proveedor.ReadOnly = false;
             this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCodigo_Proveedor.Text = Campo_Obligatorio;
+            this.TBCodigo_Proveedor.Text = Campo;
             this.TBCodigo_Producto.ReadOnly = false;
             this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo_Producto.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCodigo_Producto.Text = Campo_Obligatorio;
+            this.TBCodigo_Producto.Text = Campo;
+            this.TBCodigo_Bodega.ReadOnly = false;
+            this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCodigo_Bodega.ForeColor = Color.FromArgb(255, 255, 255);
+            this.TBCodigo_Bodega.Text = Campo;
 
             //
+            this.TBDescripcion.Enabled = true;
+            this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBodega.Enabled = false;
+            this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
             this.TBProveedor.Enabled = false;
             this.TBProveedor.BackColor = Color.FromArgb(72, 209, 204);
             this.TBProducto.Enabled = false;
             this.TBProducto.BackColor = Color.FromArgb(72, 209, 204);
 
             //Texboxt de Datos - Parte Inferior del Formulario
-            this.TBCompraPromedio.Enabled = false;
-            this.TBCompraPromedio.BackColor = Color.FromArgb(72, 209, 204);
 
-            this.TBCompraFinal.Enabled = false;
-            this.TBCompraFinal.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorVenta_SinImpuesto.Enabled = false;
-            this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorVenta.Enabled = false;
-            this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBVentaMayorista.Enabled = false;
-            this.TBVentaMayorista.BackColor = Color.FromArgb(72, 209, 204);
-
-            //
-            this.TBUbicacion.Enabled = false;
-            this.TBUbicacion.BackColor = Color.FromArgb(72, 209, 204);
             this.TBMarca.Enabled = false;
             this.TBMarca.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBUbicacion.Enabled = false;
+            this.TBUbicacion.BackColor = Color.FromArgb(72, 209, 204);
             this.TBEstante.Enabled = false;
             this.TBEstante.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBReferencia.Enabled = false;
+            this.TBReferencia.BackColor = Color.FromArgb(72, 209, 204);
             this.TBNivel.Enabled = false;
             this.TBNivel.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBUnidad.Enabled = false;
-            this.TBUnidad.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBUnidad_Valor.Enabled = false;
-            this.TBUnidad_Valor.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBUnidad_Valor.ForeColor = Color.FromArgb(255, 255, 255);
-
-            //
+            this.TBGrupo.Enabled = false;
+            this.TBGrupo.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBCreditoDisponible.Enabled = false;
+            this.TBCreditoDisponible.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorPromedio_Final.Enabled = false;
-            this.TBValorPromedio_Final.BackColor = Color.FromArgb(224, 255, 255);
+            this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
-            this.TBValorCompra_Final.BackColor = Color.FromArgb(224, 255, 255);
+            this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 255, 255);
         }
 
         private void Limpiar_Datos()
@@ -134,28 +132,22 @@ namespace Presentacion
                 this.TBIdproveedor.Clear();
 
                 this.TBCodigo.Clear();
-                this.TBCodigo.Text = Campo_Obligatorio;
+                this.TBCodigo.Text = Campo;
+                this.TBCodigo_Bodega.Clear();
+                this.TBCodigo_Bodega.Text = Campo;
                 this.TBCodigo_Producto.Clear();
-                this.TBCodigo_Producto.Text = Campo_Obligatorio;
+                this.TBCodigo_Producto.Text = Campo;
                 this.TBCodigo_Proveedor.Clear();
-                this.TBCodigo_Proveedor.Text = Campo_Obligatorio;
-                this.TBOrdendecompra.Clear();
+                this.TBCodigo_Proveedor.Text = Campo;
+                this.TBDescripcion.Clear();
                 this.TBProducto.Clear();
                 this.TBProveedor.Clear();
                 
                 //Panel Datos Basicos - Parte Inferior
-                this.TBCompraPromedio.Clear();
-                this.TBCompraFinal.Clear();
-                this.TBValorVenta.Clear();
-                this.TBValorVenta_SinImpuesto.Clear();
-                
-                this.TBUbicacion.Clear();
-                this.TBMarca.Clear();
                 this.TBEstante.Clear();
                 this.TBNivel.Clear();
-                this.TBUnidad.Clear();
-                this.TBUnidad_Valor.Clear();
-                                               
+                this.TBReferencia.Clear();
+                                            
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
                 this.Botones();
@@ -172,14 +164,18 @@ namespace Presentacion
             {
                 //Se procede a habilitar los botones de operacion para realizar registros en el sistema
                 this.btnGuardar.Enabled = true;
-                this.btnCancelar.Enabled = true;
-                this.btnEliminar.Enabled = false;
+                this.btnGuardar.Text = "Guardar";
+
+                this.btnCancelar.Enabled = false;
+                this.btnEliminar.Enabled = true;
                 this.btnImprimir.Enabled = false;
             }
             else if (!Digitar)
             {
                 //Se procede a habilitar los botones de operacion para Editar registros en el sistema
                 this.btnGuardar.Enabled = true;
+                this.btnGuardar.Text = "Editar";
+
                 this.btnCancelar.Enabled = true;
                 this.btnEliminar.Enabled = false;
                 this.btnImprimir.Enabled = false;
@@ -193,11 +189,13 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Descripcion", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Referencia", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Precio de Compra", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Desc.", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("V. Venta", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
                 this.DGDetalleDeIngreso.DataSource = this.DtDetalle;
@@ -206,19 +204,23 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalleDeIngreso.Columns[0].Width = 50;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
-                this.DGDetalleDeIngreso.Columns[1].Width = 150;
+                this.DGDetalleDeIngreso.Columns[1].Width = 88;
                 this.DGDetalleDeIngreso.Columns[2].HeaderText = "Descripcion";
-                this.DGDetalleDeIngreso.Columns[2].Width = 385;
-                this.DGDetalleDeIngreso.Columns[3].HeaderText = "Referencia";
-                this.DGDetalleDeIngreso.Columns[3].Width = 150;
-                this.DGDetalleDeIngreso.Columns[4].HeaderText = "Medida";
-                this.DGDetalleDeIngreso.Columns[4].Width = 74;
-                this.DGDetalleDeIngreso.Columns[5].HeaderText = "Cajas";
-                this.DGDetalleDeIngreso.Columns[5].Width = 90;
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Unidades";
-                this.DGDetalleDeIngreso.Columns[6].Width = 90;
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Precio de Compra";
-                this.DGDetalleDeIngreso.Columns[7].Width = 140;
+                this.DGDetalleDeIngreso.Columns[2].Width = 380;
+                this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
+                this.DGDetalleDeIngreso.Columns[3].Width = 60;
+                this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
+                this.DGDetalleDeIngreso.Columns[4].Width = 60;
+                this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
+                this.DGDetalleDeIngreso.Columns[5].Width = 65;
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Unidad de Compra";
+                this.DGDetalleDeIngreso.Columns[6].Width = 135;
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Desc.";
+                this.DGDetalleDeIngreso.Columns[7].Width = 55;
+                this.DGDetalleDeIngreso.Columns[8].HeaderText = "Valor de Compra";
+                this.DGDetalleDeIngreso.Columns[8].Width = 135;
+                this.DGDetalleDeIngreso.Columns[9].HeaderText = "Total";
+                this.DGDetalleDeIngreso.Columns[9].Width = 135;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -226,14 +228,14 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[4].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[7].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[5].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[9].ReadOnly = true;
 
                 //Formato de Celdas
+                this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
-                //this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
-                //this.DGDetalleDeIngreso.Columns[10].DefaultCellStyle.Format = "##,##0.00";
-                //this.DGDetalleDeIngreso.Columns[11].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -244,6 +246,8 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -254,6 +258,8 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             }
             catch (Exception ex)
@@ -278,7 +284,7 @@ namespace Presentacion
         public void setBodega(string idbodega, string bodega)
         {
             this.TBIdbodega.Text = idbodega;
-            this.TBUbicacion.Text = bodega;
+            this.TBBodega.Text = bodega;
         }
 
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
@@ -302,7 +308,7 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["Precio de Compra"] = valor_compra;
+                    Fila["V. Compra"] = valor_compra;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -472,6 +478,214 @@ namespace Presentacion
         private void CBOperacion_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TBCodigo_Producto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.Agregar_Detalle
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
+                                Convert.ToString(Tabla.Rows[0][4])
+                            );
+
+                        lblTotal.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
+
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[6].Value);
+                        }
+                        //TBValorCompra_Final.Text = Convert.ToString(total);
+                        this.TBValorCompra_Final.Text = total.ToString("##,##0.00");
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo.Text == Campo)
+            {
+                this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Proveedor_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Proveedor.Text == Campo)
+            {
+                this.TBCodigo_Proveedor.BackColor = Color.Azure;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Proveedor.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Proveedor.BackColor = Color.Azure;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Bodega_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Bodega.Text == Campo)
+            {
+                this.TBCodigo_Bodega.BackColor = Color.Azure;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Bodega.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Bodega.BackColor = Color.Azure;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Producto_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Producto.Text == Campo)
+            {
+                this.TBCodigo_Producto.BackColor = Color.Azure;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Producto.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Producto.BackColor = Color.Azure;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBDescripcion_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBDescripcion.Text == Campo)
+            {
+                this.TBDescripcion.BackColor = Color.Azure;
+                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBDescripcion.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBDescripcion.BackColor = Color.Azure;
+                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo.Text = Campo;
+                this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Proveedor_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Proveedor.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Proveedor.Text = Campo;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Bodega_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Bodega.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Bodega.Text = Campo;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Producto_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Producto.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Producto.Text = Campo;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (TBDescripcion.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBDescripcion.Text = Campo;
+                this.TBDescripcion.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)

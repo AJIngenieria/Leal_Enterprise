@@ -65,7 +65,7 @@ namespace Presentacion
         private string Ofertable, UnidadDeVenta, ValorUnidad, VentaImpuesto, ComisionEmpleado = "";
 
         //Panel - Valores
-        private string Valor_Promedio, Valor_Final, Valor_Excento, Valor_NoExcento, Valor_Mayorista, GastoDeEnvio, Comision, Valor_Comision, Minimo_Cliente, Maximo_Cliente, Minimo_Mayorista, Maximo_Mayorista = "";
+        private string Valor_Promedio, Valor_Final, Valor_Excento, Valor_NoExcento, Valor_Mayorista, Comision, Valor_Comision, Minimo_Cliente, Maximo_Cliente, Minimo_Mayorista, Maximo_Mayorista = "";
 
         //Panel - Ubicacion
         private string Ubicacion, Estante, Nivel, Stock_Disponible, Imagen = "";
@@ -78,7 +78,7 @@ namespace Presentacion
 
         //********** Parametros para Formatos de Tipo Moneda ***********************************
 
-        private string Mon_Promedio, Mon_Final, Mon_Excento, Mon_NoExcento, Mon_Mayorista, Mon_Envio, Mon_Comision = "";
+        private string Mon_Promedio, Mon_Final, Mon_Excento, Mon_NoExcento, Mon_Mayorista, Mon_Comision = "";
 
         public frmProductos()
         {
@@ -168,8 +168,6 @@ namespace Presentacion
             this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCantidadMaximaCliente.ReadOnly = false;
             this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBGastodeEnvio.ReadOnly = false;
-            this.TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
 
             //Panel - Ubicacion
             this.TBUbicacion.ReadOnly = false;
@@ -252,7 +250,6 @@ namespace Presentacion
 
                 this.TBCantidadMininaCliente.Clear();
                 this.TBCantidadMaximaCliente.Clear();
-                this.TBGastodeEnvio.Clear();
 
                 //Panel Ubicacion - Imagen
                 this.CBBodega.SelectedIndex = 0;
@@ -423,7 +420,6 @@ namespace Presentacion
             this.Mon_Excento = TBValorVenta_SinImpuesto.Text;
             this.Mon_NoExcento = TBValorVenta.Text;
             this.Mon_Mayorista = TBVentaMayorista.Text;
-            this.Mon_Envio = TBGastodeEnvio.Text;
             this.Mon_Comision = TBValorParaComision.Text;
         }
         
@@ -510,7 +506,7 @@ namespace Presentacion
 
                                  //Panel de Valores
                                  this.Mon_Promedio, this.Mon_Final, this.Mon_Excento, this.Mon_NoExcento, this.Mon_Mayorista,
-                                 this.TBGastodeEnvio.Text, this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                                 this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
                                  this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
                                  //Panel Ubicaciones
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
@@ -549,7 +545,7 @@ namespace Presentacion
 
                                  //Panel de Valores
                                  this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
-                                 this.TBGastodeEnvio.Text, this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                                 this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
                                  this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
                                  //Panel Ubicaciones
                                  this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
@@ -871,13 +867,6 @@ namespace Presentacion
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
             this.TBMaximoMayorista.BackColor = Color.Azure;
-        }
-
-
-        private void TBGastodeEnvio_Enter(object sender, EventArgs e)
-        {
-            //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBGastodeEnvio.BackColor = Color.Azure;
         }
 
         //******************** FOCUS LEAVE DATOS BASICOS ********************
@@ -2693,83 +2682,6 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-
-                    this.TBGastodeEnvio.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
-                {
-                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
-                    //Y se realizara las validaciones en el sistema
-
-                    if (Digitar)
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            if (Guardar == "1")
-                            {
-                                //Llamada de Clase
-                                this.Guardar_SQL();
-                            }
-                            else
-                            {
-                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
-                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
-                                this.Limpiar_Datos();
-                            }
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBVentaMayorista.Select();
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            //Llamada de Clase
-                            this.Digitar = false;
-                            this.Guardar_SQL();
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBVentaMayorista.Select();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        private void TBGastodeEnvio_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
-                {
                     if (CBManejaComision.Checked)
                     {
                         //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
@@ -2779,7 +2691,6 @@ namespace Presentacion
                     {
                         this.TBCantidadMininaCliente.Select();
                     }
-                    
                 }
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
@@ -2820,7 +2731,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBGastodeEnvio.Select();
+                            this.TBVentaMayorista.Select();
                         }
                     }
                     else
@@ -2837,7 +2748,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBGastodeEnvio.Select();
+                            this.TBVentaMayorista.Select();
                         }
                     }
                 }
@@ -3441,36 +3352,6 @@ namespace Presentacion
             tb.Text = string.Format("{0:N2}", numero);
         }
 
-
-        private void TBGastodeEnvio_Leave(object sender, EventArgs e)
-        {
-            //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBGastodeEnvio.BackColor = Color.FromArgb(3, 155, 229);
-
-            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
-            TextBox tb = (TextBox)sender;
-
-            // Primero verificamos si el valor se puede convertir a Decimal.
-            double numero = default(double);
-            bool bln = double.TryParse(tb.Text, out numero);
-
-            if ((!(bln)))
-            {
-                // No es un valor decimal válido; limpiamos el control.
-                //tb.Clear();
-                return;
-            }
-
-            // En la propiedad Tag guardamos el valor con todos los decimales.
-            //
-            tb.Tag = numero;
-
-            // Y acto seguido formateamos el valor
-            // a monetario con dos decimales.
-            //
-            tb.Text = string.Format("{0:N2}", numero);
-        }
-
         private void TBUnidadDeVenta_Enter(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
@@ -3604,27 +3485,26 @@ namespace Presentacion
                     Valor_Excento = Datos.Rows[0][26].ToString();
                     Valor_NoExcento = Datos.Rows[0][27].ToString();
                     Valor_Mayorista = Datos.Rows[0][28].ToString();
-                    GastoDeEnvio = Datos.Rows[0][29].ToString();
-                    Comision = Datos.Rows[0][30].ToString();
-                    Valor_Comision = Datos.Rows[0][31].ToString();
-                    Minimo_Cliente = Datos.Rows[0][32].ToString();
-                    Maximo_Cliente = Datos.Rows[0][33].ToString();
-                    Minimo_Mayorista = Datos.Rows[0][34].ToString();
-                    Maximo_Mayorista = Datos.Rows[0][35].ToString();
+                    Comision = Datos.Rows[0][29].ToString();
+                    Valor_Comision = Datos.Rows[0][30].ToString();
+                    Minimo_Cliente = Datos.Rows[0][31].ToString();
+                    Maximo_Cliente = Datos.Rows[0][32].ToString();
+                    Minimo_Mayorista = Datos.Rows[0][33].ToString();
+                    Maximo_Mayorista = Datos.Rows[0][34].ToString();
 
                     //
-                    Ubicacion = Datos.Rows[0][36].ToString();
-                    Estante = Datos.Rows[0][37].ToString();
-                    Nivel = Datos.Rows[0][38].ToString();
-                    Imagen = Datos.Rows[0][39].ToString();
+                    Ubicacion = Datos.Rows[0][35].ToString();
+                    Estante = Datos.Rows[0][36].ToString();
+                    Nivel = Datos.Rows[0][37].ToString();
+                    Imagen = Datos.Rows[0][38].ToString();
 
                     //
-                    Lote = Datos.Rows[0][40].ToString();
-                    Valor_Lote = Datos.Rows[0][41].ToString();
-                    Fecha_Vencimiento = Datos.Rows[0][42].ToString();
+                    Lote = Datos.Rows[0][39].ToString();
+                    Valor_Lote = Datos.Rows[0][40].ToString();
+                    Fecha_Vencimiento = Datos.Rows[0][41].ToString();
                     
                     //
-                    CodigoDeBarra = Datos.Rows[0][43].ToString();
+                    CodigoDeBarra = Datos.Rows[0][42].ToString();
                     
 
                     //Se procede a completar los campos de texto segun las consulta
@@ -3665,7 +3545,6 @@ namespace Presentacion
                     this.TBValorVenta_SinImpuesto.Text = Valor_Excento;
                     this.TBValorVenta.Text = Valor_NoExcento;
                     this.TBVentaMayorista.Text = Valor_Mayorista;
-                    this.TBGastodeEnvio.Text = GastoDeEnvio;
                     this.TBComision.Text = Comision;
                     this.TBValorParaComision.Text = Valor_Comision;
                     this.TBCantidadMininaCliente.Text = Minimo_Cliente;

@@ -117,7 +117,6 @@ namespace Datos
                 Comando.Parameters.Add("@VenExc", SqlDbType.VarChar).Value = Obj.Venta_Excento;
                 Comando.Parameters.Add("@VenNoExc", SqlDbType.VarChar).Value = Obj.Venta_NoExcento;
                 Comando.Parameters.Add("@VenMayor", SqlDbType.VarChar).Value = Obj.Venta_Mayorista;
-                Comando.Parameters.Add("@GasEnv", SqlDbType.VarChar).Value = Obj.Gasto_Envio;
                 Comando.Parameters.Add("@ComEmp", SqlDbType.VarChar).Value = Obj.Comision;
                 Comando.Parameters.Add("@ValCom", SqlDbType.VarChar).Value = Obj.Comision_Valor;
                 Comando.Parameters.Add("@MinVenta", SqlDbType.VarChar).Value = Obj.Minima_Cliente;
@@ -204,7 +203,6 @@ namespace Datos
                 Comando.Parameters.Add("@VenExc", SqlDbType.VarChar).Value = Obj.Venta_Excento;
                 Comando.Parameters.Add("@VenNoExc", SqlDbType.VarChar).Value = Obj.Venta_NoExcento;
                 Comando.Parameters.Add("@VenMayor", SqlDbType.VarChar).Value = Obj.Venta_Mayorista;
-                Comando.Parameters.Add("@GasEnv", SqlDbType.VarChar).Value = Obj.Gasto_Envio;
                 Comando.Parameters.Add("@ComEmp", SqlDbType.VarChar).Value = Obj.Comision;
                 Comando.Parameters.Add("@ValCom", SqlDbType.VarChar).Value = Obj.Comision_Valor;
                 Comando.Parameters.Add("@MinVenta", SqlDbType.VarChar).Value = Obj.Minima_Cliente;

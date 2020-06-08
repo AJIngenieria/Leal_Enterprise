@@ -39,7 +39,7 @@ namespace Negocio
 
                 //Precios
                 string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
-                string gasto_envio, string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
+                string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
                 string maxima_mayorista,
 
                 //Ubicacion[]
@@ -92,7 +92,6 @@ namespace Negocio
             Obj.Venta_Mayorista = venta_mayorista;
             Obj.Comision = comision;
             Obj.Comision_Valor = comision_valor;
-            Obj.Gasto_Envio = gasto_envio;
             Obj.Minima_Cliente = minima_cliente;
             Obj.Maxima_Cliente = maxima_cliente;
             Obj.Minima_Mayorista = minima_mayorista;
@@ -134,7 +133,7 @@ namespace Negocio
 
                 //Precios
                 string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
-                string gasto_envio, string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
+                string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
                 string maxima_mayorista,
 
                 //Ubicacion[]
@@ -188,7 +187,6 @@ namespace Negocio
             Obj.Venta_Mayorista = venta_mayorista;
             Obj.Comision = comision;
             Obj.Comision_Valor = comision_valor;
-            Obj.Gasto_Envio = gasto_envio;
             Obj.Minima_Cliente = minima_cliente;
             Obj.Maxima_Cliente = maxima_cliente;
             Obj.Minima_Mayorista = minima_mayorista;

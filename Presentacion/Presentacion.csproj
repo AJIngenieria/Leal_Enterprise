@@ -262,6 +262,16 @@
     <Compile Include="Sistema\Informacion_Computer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tablas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Tablas.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Titulos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Titulos.resx</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Archivo\frmBodega.resx">
       <DependentUpon>frmBodega.cs</DependentUpon>
     </EmbeddedResource>
@@ -362,6 +372,14 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Tablas.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Tablas.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Titulos.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Titulos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -467,6 +485,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono_Leal_Enterprise.ico" />
+    <None Include="Resources\Valores - Orden de Compra.jpg" />
+    <None Include="Resources\Producto - Valores  Iniciales.jpg" />
+    <None Include="Resources\Producto - Cantidad de Venta.jpg" />
+    <None Include="Resources\Totalizacion - Orden de Compra.jpg" />
+    <None Include="Resources\Tabla - Orden de Compra.jpg" />
     <None Include="Resources\btnImprimir.png" />
     <None Include="Resources\btnAgregar.png" />
     <None Include="Resources\btnGuardar.png" />
