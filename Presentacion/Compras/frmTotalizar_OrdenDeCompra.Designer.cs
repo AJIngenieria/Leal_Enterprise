@@ -1,6 +1,6 @@
 ﻿namespace Presentacion
 {
-    partial class frmTotalizarOrden
+    partial class frmTotalizar_OrdenDeCompra
     {
         /// <summary>
         /// Required designer variable.
@@ -30,29 +30,29 @@
         {
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.CBRetencion = new System.Windows.Forms.ComboBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.CBRetencion = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.btnGuardar = new System.Windows.Forms.Button();
@@ -83,6 +83,22 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(258, 84);
             this.panel2.TabIndex = 8;
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(3, 30);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(70, 21);
+            this.textBox6.TabIndex = 14;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(3, 57);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(250, 21);
+            this.textBox5.TabIndex = 4;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
             // 
@@ -117,6 +133,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(137, 84);
             this.panel1.TabIndex = 6;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(3, 60);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(82, 15);
+            this.label4.TabIndex = 14;
+            this.label4.Text = "Valor General";
             // 
             // label1
             // 
@@ -157,131 +182,6 @@
             this.panel4.Size = new System.Drawing.Size(400, 56);
             this.panel4.TabIndex = 10;
             // 
-            // panel6
-            // 
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.label7);
-            this.panel6.Controls.Add(this.label6);
-            this.panel6.Controls.Add(this.label5);
-            this.panel6.Location = new System.Drawing.Point(12, 133);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(137, 109);
-            this.panel6.TabIndex = 12;
-            // 
-            // panel7
-            // 
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.checkBox2);
-            this.panel7.Controls.Add(this.checkBox1);
-            this.panel7.Controls.Add(this.textBox7);
-            this.panel7.Controls.Add(this.CBRetencion);
-            this.panel7.Controls.Add(this.textBox4);
-            this.panel7.Location = new System.Drawing.Point(155, 133);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(258, 109);
-            this.panel7.TabIndex = 13;
-            // 
-            // panel3
-            // 
-            this.panel3.BackgroundImage = global::Presentacion.Titulos.Totalizacion___Orden_de_Compra;
-            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(12, 12);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(401, 25);
-            this.panel3.TabIndex = 9;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(3, 57);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(250, 21);
-            this.textBox5.TabIndex = 4;
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 60);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(82, 15);
-            this.label4.TabIndex = 14;
-            this.label4.Text = "Valor General";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(3, 4);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(76, 15);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Retenciones";
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(3, 30);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(70, 21);
-            this.textBox6.TabIndex = 14;
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(3, 34);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 15);
-            this.label6.TabIndex = 1;
-            this.label6.Text = "Valores";
-            // 
-            // CBRetencion
-            // 
-            this.CBRetencion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBRetencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBRetencion.FormattingEnabled = true;
-            this.CBRetencion.Location = new System.Drawing.Point(3, 4);
-            this.CBRetencion.Name = "CBRetencion";
-            this.CBRetencion.Size = new System.Drawing.Size(250, 21);
-            this.CBRetencion.TabIndex = 1;
-            this.CBRetencion.SelectedIndexChanged += new System.EventHandler(this.CBRetencion_SelectedIndexChanged);
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(79, 31);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(174, 21);
-            this.textBox7.TabIndex = 15;
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(3, 59);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(76, 15);
-            this.label7.TabIndex = 16;
-            this.label7.Text = "Aplicaciones";
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(3, 58);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(153, 19);
-            this.checkBox1.TabIndex = 16;
-            this.checkBox1.Text = "Disminuir al Valor Final";
-            this.checkBox1.UseVisualStyleBackColor = true;
-            // 
-            // checkBox2
-            // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(3, 83);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(153, 19);
-            this.checkBox2.TabIndex = 17;
-            this.checkBox2.Text = "Aumentar al Valor Final";
-            this.checkBox2.UseVisualStyleBackColor = true;
-            // 
             // textBox8
             // 
             this.textBox8.Location = new System.Drawing.Point(146, 30);
@@ -297,6 +197,106 @@
             this.label8.Size = new System.Drawing.Size(80, 15);
             this.label8.TabIndex = 6;
             this.label8.Text = "Tipo de Pago";
+            // 
+            // panel6
+            // 
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel6.Controls.Add(this.label7);
+            this.panel6.Controls.Add(this.label6);
+            this.panel6.Controls.Add(this.label5);
+            this.panel6.Location = new System.Drawing.Point(12, 133);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(137, 109);
+            this.panel6.TabIndex = 12;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(3, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(76, 15);
+            this.label7.TabIndex = 16;
+            this.label7.Text = "Aplicaciones";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(3, 34);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(48, 15);
+            this.label6.TabIndex = 1;
+            this.label6.Text = "Valores";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(3, 4);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 15);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Retenciones";
+            // 
+            // panel7
+            // 
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel7.Controls.Add(this.checkBox2);
+            this.panel7.Controls.Add(this.checkBox1);
+            this.panel7.Controls.Add(this.textBox7);
+            this.panel7.Controls.Add(this.CBRetencion);
+            this.panel7.Controls.Add(this.textBox4);
+            this.panel7.Location = new System.Drawing.Point(155, 133);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(258, 109);
+            this.panel7.TabIndex = 13;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(3, 83);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(153, 19);
+            this.checkBox2.TabIndex = 17;
+            this.checkBox2.Text = "Aumentar al Valor Final";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(3, 58);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(153, 19);
+            this.checkBox1.TabIndex = 16;
+            this.checkBox1.Text = "Disminuir al Valor Final";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(79, 31);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(174, 21);
+            this.textBox7.TabIndex = 15;
+            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // CBRetencion
+            // 
+            this.CBRetencion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBRetencion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBRetencion.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBRetencion.FormattingEnabled = true;
+            this.CBRetencion.Location = new System.Drawing.Point(3, 4);
+            this.CBRetencion.Name = "CBRetencion";
+            this.CBRetencion.Size = new System.Drawing.Size(250, 21);
+            this.CBRetencion.TabIndex = 1;
+            this.CBRetencion.SelectedIndexChanged += new System.EventHandler(this.CBRetencion_SelectedIndexChanged);
+            // 
+            // panel3
+            // 
+            this.panel3.BackgroundImage = global::Presentacion.Titulos.Orden_de_Compra___Totalizacion;
+            this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(401, 25);
+            this.panel3.TabIndex = 9;
             // 
             // label9
             // 
@@ -350,7 +350,7 @@
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // frmTotalizarOrden
+            // frmTotalizar_OrdenDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -368,10 +368,10 @@
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MaximizeBox = false;
-            this.Name = "frmTotalizarOrden";
+            this.Name = "frmTotalizar_OrdenDeCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmTotalizarOrden";
-            this.Load += new System.EventHandler(this.frmTotalizarOrden_Load);
+            this.Text = "frmTotalizar_OrdenDeCompra";
+            this.Load += new System.EventHandler(this.frmTotalizar_OrdenDeCompra_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

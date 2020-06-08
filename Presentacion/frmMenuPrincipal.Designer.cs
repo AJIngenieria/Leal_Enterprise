@@ -49,10 +49,11 @@
             this.sucurzalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.devolucionDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.liquidarOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDePedidoToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.devolucionDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.remisionDeMercanciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.anularFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -175,7 +176,6 @@
             this.toolStripSeparator8 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel6 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripLabel7 = new System.Windows.Forms.ToolStripLabel();
-            this.liquidarOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip.SuspendLayout();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
@@ -344,6 +344,19 @@
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(99, 36);
             this.comprasToolStripMenuItem.Text = "Compras";
             // 
+            // devolucionDeComprasToolStripMenuItem
+            // 
+            this.devolucionDeComprasToolStripMenuItem.Name = "devolucionDeComprasToolStripMenuItem";
+            this.devolucionDeComprasToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.devolucionDeComprasToolStripMenuItem.Text = "Devolucion de Compras";
+            // 
+            // liquidarOrdenDeCompraToolStripMenuItem
+            // 
+            this.liquidarOrdenDeCompraToolStripMenuItem.Name = "liquidarOrdenDeCompraToolStripMenuItem";
+            this.liquidarOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.liquidarOrdenDeCompraToolStripMenuItem.Text = "Liquidar Orden de Compra";
+            this.liquidarOrdenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.liquidarOrdenDeCompraToolStripMenuItem_Click);
+            // 
             // ordenDeCompraToolStripMenuItem
             // 
             this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
@@ -362,12 +375,6 @@
             this.comprasToolStripMenuItem1.Name = "comprasToolStripMenuItem1";
             this.comprasToolStripMenuItem1.Size = new System.Drawing.Size(215, 22);
             this.comprasToolStripMenuItem1.Text = "Compras";
-            // 
-            // devolucionDeComprasToolStripMenuItem
-            // 
-            this.devolucionDeComprasToolStripMenuItem.Name = "devolucionDeComprasToolStripMenuItem";
-            this.devolucionDeComprasToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.devolucionDeComprasToolStripMenuItem.Text = "Devolucion de Compras";
             // 
             // remisionDeMercanciaToolStripMenuItem
             // 
@@ -1256,12 +1263,6 @@
             this.toolStripLabel7.Name = "toolStripLabel7";
             this.toolStripLabel7.Size = new System.Drawing.Size(37, 22);
             this.toolStripLabel7.Text = "------";
-            // 
-            // liquidarOrdenDeCompraToolStripMenuItem
-            // 
-            this.liquidarOrdenDeCompraToolStripMenuItem.Name = "liquidarOrdenDeCompraToolStripMenuItem";
-            this.liquidarOrdenDeCompraToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
-            this.liquidarOrdenDeCompraToolStripMenuItem.Text = "Liquidar Orden de Compra";
             // 
             // frmMenuPrincipal
             // 

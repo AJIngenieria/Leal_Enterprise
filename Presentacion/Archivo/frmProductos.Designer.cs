@@ -75,6 +75,8 @@
             this.TBCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TPValores = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.TBMaximoMayorista = new System.Windows.Forms.TextBox();
             this.TBMinimoMayorista = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
@@ -139,8 +141,6 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnExaminar_Impuesto = new System.Windows.Forms.Button();
             this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnEliminar_Ubicacion = new System.Windows.Forms.Button();
             this.btnAgregar_Ubicacion = new System.Windows.Forms.Button();
             this.PB_Imagen = new System.Windows.Forms.PictureBox();
@@ -712,6 +712,24 @@
             this.TPValores.Size = new System.Drawing.Size(411, 365);
             this.TPValores.TabIndex = 3;
             this.TPValores.Text = "Valores y Cantidades";
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::Presentacion.Titulos.Producto___Valores__Iniciales;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(7, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(397, 20);
+            this.panel2.TabIndex = 122;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Presentacion.Titulos.Producto___Valores__Iniciales;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(7, 218);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(397, 20);
+            this.panel1.TabIndex = 121;
             // 
             // TBMaximoMayorista
             // 
@@ -1426,24 +1444,6 @@
             this.btnExaminar_Proveedor.TabIndex = 130;
             this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
             this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::Presentacion.Titulos.Producto___Valores__Iniciales;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(7, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(397, 20);
-            this.panel2.TabIndex = 122;
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Presentacion.Titulos.Producto___Cantidad_de_Venta;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(7, 218);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(397, 20);
-            this.panel1.TabIndex = 121;
             // 
             // btnEliminar_Ubicacion
             // 

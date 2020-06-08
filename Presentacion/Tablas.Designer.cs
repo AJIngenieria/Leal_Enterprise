@@ -63,9 +63,9 @@ namespace Presentacion {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Valores___Orden_de_Compra {
+        internal static System.Drawing.Bitmap Valor_Final___Orden_de_Compra {
             get {
-                object obj = ResourceManager.GetObject("Valores___Orden_de_Compra", resourceCulture);
+                object obj = ResourceManager.GetObject("Valor_Final___Orden_de_Compra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

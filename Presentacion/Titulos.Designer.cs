@@ -63,9 +63,19 @@ namespace Presentacion {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Orden_de_Compra___Totalizacion {
+            get {
+                object obj = ResourceManager.GetObject("Orden_de_Compra___Totalizacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Producto___Cantidad_de_Venta {
             get {
-                object obj = ResourceManager.GetObject("Producto - Cantidad de Venta", resourceCulture);
+                object obj = ResourceManager.GetObject("Producto___Cantidad_de_Venta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -75,17 +85,7 @@ namespace Presentacion {
         /// </summary>
         internal static System.Drawing.Bitmap Producto___Valores__Iniciales {
             get {
-                object obj = ResourceManager.GetObject("Producto - Valores  Iniciales", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Totalizacion___Orden_de_Compra {
-            get {
-                object obj = ResourceManager.GetObject("Totalizacion___Orden_de_Compra", resourceCulture);
+                object obj = ResourceManager.GetObject("Producto___Valores__Iniciales", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

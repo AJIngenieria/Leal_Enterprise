@@ -12,6 +12,18 @@ namespace Presentacion
 {
     public partial class frmFacturaDeCompra : Form
     {
+        //Instancia para el filtro de los productos 
+        private static frmFacturaDeCompra _Instancia;
+
+        public static frmFacturaDeCompra GetInstancia()
+        {
+            if (_Instancia == null)
+            {
+                _Instancia = new frmFacturaDeCompra();
+            }
+            return _Instancia;
+        }
+
         // Variable con la cual se define si el procecimiento 
         // A realizar es Editar, Guardar, Buscar, Eliminar
         private bool Digitar = true;
@@ -96,10 +108,14 @@ namespace Presentacion
             this.TBUnidad_Valor.ForeColor = Color.FromArgb(255, 255, 255);
 
             //
+            this.TBCreditoDisponible.Enabled = false;
+            this.TBCreditoDisponible.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorPromedio_Final.Enabled = false;
-            this.TBValorPromedio_Final.BackColor = Color.FromArgb(224, 255, 255);
+            this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
-            this.TBValorCompra_Final.BackColor = Color.FromArgb(224, 255, 255);
+            this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 255, 255);
+            this.TBValorVenta_Final.Enabled = true;
+            this.TBValorVenta_Final.BackColor = Color.FromArgb(255, 255, 255);
 
             //Texboxt de Consulta
             //this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
@@ -403,8 +419,8 @@ namespace Presentacion
         {
             try
             {
-                frmTotalizarOrden frmTotalizarOrden = new frmTotalizarOrden();
-                frmTotalizarOrden.ShowDialog();
+                frmTotalizar_OrdenDeCompra frmTotalizar_OrdenDeCompra = new frmTotalizar_OrdenDeCompra();
+                frmTotalizar_OrdenDeCompra.ShowDialog();
             }
             catch (Exception ex)
             {

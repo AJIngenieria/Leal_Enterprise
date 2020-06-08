@@ -450,8 +450,8 @@ namespace Presentacion
         {
             try
             {
-                frmTotalizarOrden frmTotalizarOrden = new frmTotalizarOrden();
-                frmTotalizarOrden.ShowDialog();
+                frmTotalizar_OrdenDeCompra frmTotalizar_OrdenDeCompra = new frmTotalizar_OrdenDeCompra();
+                frmTotalizar_OrdenDeCompra.ShowDialog();
             }
             catch (Exception ex)
             {

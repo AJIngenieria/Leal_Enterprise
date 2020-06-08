@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace Presentacion
 {
-    public partial class frmTotalizarOrden : Form
+    public partial class frmTotalizar_OrdenDeCompra : Form
     {
-        public frmTotalizarOrden()
+        public frmTotalizar_OrdenDeCompra()
         {
             InitializeComponent();
         }
 
-        private void frmTotalizarOrden_Load(object sender, EventArgs e)
+        private void frmTotalizar_OrdenDeCompra_Load(object sender, EventArgs e)
         {
 
         }

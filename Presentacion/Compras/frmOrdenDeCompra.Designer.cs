@@ -472,7 +472,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::Presentacion.Tablas.Valores___Orden_de_Compra;
+            this.panel1.BackgroundImage = global::Presentacion.Tablas.Valor_Final___Orden_de_Compra;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Controls.Add(this.TBValorCompra_Final);
             this.panel1.Controls.Add(this.TBValorPromedio_Final);
