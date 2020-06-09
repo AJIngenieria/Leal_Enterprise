@@ -49,6 +49,7 @@
             this.sucurzalToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.zonasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cotizacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.devolucionDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.liquidarOrdenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -332,6 +333,7 @@
             // comprasToolStripMenuItem
             // 
             this.comprasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cotizacionesToolStripMenuItem,
             this.devolucionDeComprasToolStripMenuItem,
             this.liquidarOrdenDeCompraToolStripMenuItem,
             this.ordenDeCompraToolStripMenuItem,
@@ -343,6 +345,13 @@
             this.comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
             this.comprasToolStripMenuItem.Size = new System.Drawing.Size(99, 36);
             this.comprasToolStripMenuItem.Text = "Compras";
+            // 
+            // cotizacionesToolStripMenuItem
+            // 
+            this.cotizacionesToolStripMenuItem.Name = "cotizacionesToolStripMenuItem";
+            this.cotizacionesToolStripMenuItem.Size = new System.Drawing.Size(215, 22);
+            this.cotizacionesToolStripMenuItem.Text = "Cotizaciones";
+            this.cotizacionesToolStripMenuItem.Click += new System.EventHandler(this.cotizacionesToolStripMenuItem_Click);
             // 
             // devolucionDeComprasToolStripMenuItem
             // 
@@ -1441,6 +1450,7 @@
         private System.Windows.Forms.ToolStripMenuItem ordenDeCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioInicialToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem liquidarOrdenDeCompraToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cotizacionesToolStripMenuItem;
     }
 }
 

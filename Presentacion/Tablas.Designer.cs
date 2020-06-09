@@ -63,6 +63,16 @@ namespace Presentacion {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Valor_Final___Cotizacion_de_Compra {
+            get {
+                object obj = ResourceManager.GetObject("Valor Final - Cotizacion de Compra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Valor_Final___Orden_de_Compra {
             get {
                 object obj = ResourceManager.GetObject("Valor_Final___Orden_de_Compra", resourceCulture);

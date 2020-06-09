@@ -114,7 +114,7 @@ namespace Presentacion
             this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
             this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 255, 255);
-            this.TBValorVenta_Final.Enabled = true;
+            this.TBValorVenta_Final.Enabled = false;
             this.TBValorVenta_Final.BackColor = Color.FromArgb(255, 255, 255);
 
             //Texboxt de Consulta
