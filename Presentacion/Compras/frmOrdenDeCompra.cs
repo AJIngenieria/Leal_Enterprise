@@ -192,9 +192,7 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Desc.", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("V. Venta", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Valor de Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
@@ -213,14 +211,10 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[4].Width = 60;
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
                 this.DGDetalleDeIngreso.Columns[5].Width = 65;
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Unidad de Compra";
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Valor de Compra";
                 this.DGDetalleDeIngreso.Columns[6].Width = 135;
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Desc.";
-                this.DGDetalleDeIngreso.Columns[7].Width = 55;
-                this.DGDetalleDeIngreso.Columns[8].HeaderText = "Valor de Compra";
-                this.DGDetalleDeIngreso.Columns[8].Width = 135;
-                this.DGDetalleDeIngreso.Columns[9].HeaderText = "Total";
-                this.DGDetalleDeIngreso.Columns[9].Width = 135;
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Total";
+                this.DGDetalleDeIngreso.Columns[7].Width = 135;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -229,13 +223,10 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[5].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[9].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -246,8 +237,6 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -258,9 +247,6 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalleDeIngreso.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
             }
             catch (Exception ex)
             {
@@ -694,11 +680,6 @@ namespace Presentacion
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnImprimir_Click(object sender, EventArgs e)
         {
 
         }

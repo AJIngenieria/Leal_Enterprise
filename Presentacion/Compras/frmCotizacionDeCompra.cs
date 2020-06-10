@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Negocio;
+
 namespace Presentacion
 {
     public partial class frmCotizacionDeCompra : Form
@@ -423,26 +425,6 @@ namespace Presentacion
 
         }
 
-        private void TBCodigo_Producto_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBCodigo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBCodigo_Proveedor_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void TBCodigo_Bodega_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void CBFechas_CheckedChanged(object sender, EventArgs e)
         {
 
@@ -460,7 +442,8 @@ namespace Presentacion
 
         private void btnExaminar_Producto_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_Producto frmFiltro_Producto = new frmFiltro_Producto();
+            frmFiltro_Producto.ShowDialog();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -476,6 +459,358 @@ namespace Presentacion
         private void btnEliminar_Detalles_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void TBCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.Agregar_Detalle
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
+                                Convert.ToString(Tabla.Rows[0][4])
+                            );
+
+                        lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
+
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalles.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[6].Value);
+                        }
+                        //TBValorCompra_Final.Text = Convert.ToString(total);
+                        this.TBValorFinal.Text = total.ToString("##,##0.00");
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.Agregar_Detalle
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
+                                Convert.ToString(Tabla.Rows[0][4])
+                            );
+
+                        lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
+
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalles.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[6].Value);
+                        }
+                        //TBValorCompra_Final.Text = Convert.ToString(total);
+                        this.TBValorFinal.Text = total.ToString("##,##0.00");
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Bodega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.Agregar_Detalle
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
+                                Convert.ToString(Tabla.Rows[0][4])
+                            );
+
+                        lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
+
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalles.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[6].Value);
+                        }
+                        //TBValorCompra_Final.Text = Convert.ToString(total);
+                        this.TBValorFinal.Text = total.ToString("##,##0.00");
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Producto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.Agregar_Detalle
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3]),
+                                Convert.ToString(Tabla.Rows[0][4])
+                            );
+
+                        lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
+
+                        //Se procede a sumar la columna de valor de compra promedio
+
+                        double total = 0;
+                        foreach (DataGridViewRow row in DGDetalles.Rows)
+                        {
+                            total += Convert.ToDouble(row.Cells[6].Value);
+                        }
+                        //TBValorCompra_Final.Text = Convert.ToString(total);
+                        this.TBValorFinal.Text = total.ToString("##,##0.00");
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBCodigo_Producto.Clear();
+                        this.TBProducto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCodigo_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo.Text == Campo)
+            {
+                this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo.BackColor = Color.Azure;
+                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Proveedor_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Proveedor.Text == Campo)
+            {
+                this.TBCodigo_Proveedor.BackColor = Color.Azure;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Proveedor.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Proveedor.BackColor = Color.Azure;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Bodega_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Bodega.Text == Campo)
+            {
+                this.TBCodigo_Bodega.BackColor = Color.Azure;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Bodega.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Bodega.BackColor = Color.Azure;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Producto_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBCodigo_Producto.Text == Campo)
+            {
+                this.TBCodigo_Producto.BackColor = Color.Azure;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCodigo_Producto.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBCodigo_Producto.BackColor = Color.Azure;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBDescripcion_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBDescripcion.Text == Campo)
+            {
+                this.TBDescripcion.BackColor = Color.Azure;
+                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBDescripcion.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBDescripcion.BackColor = Color.Azure;
+                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBCodigo_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo.Text = Campo;
+                this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Proveedor_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Proveedor.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Proveedor.Text = Campo;
+                this.TBCodigo_Proveedor.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Bodega_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Bodega.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Bodega.Text = Campo;
+                this.TBCodigo_Bodega.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBCodigo_Producto_Leave(object sender, EventArgs e)
+        {
+            if (TBCodigo_Producto.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCodigo_Producto.Text = Campo;
+                this.TBCodigo_Producto.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void TBDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (TBDescripcion.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBDescripcion.Text = Campo;
+                this.TBDescripcion.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+            }
         }
 
         private void btnEliminar_Resultados_Click(object sender, EventArgs e)
