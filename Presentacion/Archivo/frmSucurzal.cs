@@ -639,10 +639,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -716,10 +712,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -793,10 +785,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -870,10 +858,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -947,10 +931,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1024,10 +1004,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1101,10 +1077,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1178,10 +1150,6 @@ namespace Presentacion
 
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
                     this.TBBuscar.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -1240,66 +1208,6 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }
-
-        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-        }
-
-        private void btnGuardar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-        }
-
-        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnGuardar.Image = Properties.Resources.BR_Guardar;
-        }
-
-        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
-        }
-
-        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
-        }
-
-        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
     }
 }

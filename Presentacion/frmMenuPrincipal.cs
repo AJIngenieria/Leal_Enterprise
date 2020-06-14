@@ -380,5 +380,18 @@ namespace Presentacion
             frmCotizacionDeCompra.Consultar = Convert.ToString(this.SQL_Consultar);
             frmCotizacionDeCompra.Imprimir = Convert.ToString(this.SQL_Imprimir);
         }
+
+        private void empaqueToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmEmpaque frmEmpaque = frmEmpaque.GetInstancia();
+            frmEmpaque.MdiParent = this;
+            frmEmpaque.Show();
+
+            frmEmpaque.Guardar = Convert.ToString(this.SQL_Guardar);
+            frmEmpaque.Editar = Convert.ToString(this.SQL_Editar);
+            frmEmpaque.Eliminar = Convert.ToString(this.SQL_Eliminar);
+            frmEmpaque.Consultar = Convert.ToString(this.SQL_Consultar);
+            frmEmpaque.Imprimir = Convert.ToString(this.SQL_Imprimir);
+        }
     }
 }

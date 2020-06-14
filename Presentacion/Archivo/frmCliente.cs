@@ -191,7 +191,6 @@ namespace Presentacion
             {
                 ////El boton btnGuardar Mantendra su imagen original
                 this.btnGuardar.Enabled = true;
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = false;
@@ -201,7 +200,6 @@ namespace Presentacion
             {
                 ////El boton btnGuardar cambiara su imagen original de Guardar a Editar
                 this.btnGuardar.Enabled = true;
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
 
                 this.btnCancelar.Enabled = true;
                 this.btnEliminar.Enabled = false;
@@ -2551,87 +2549,6 @@ namespace Presentacion
         private void TBBuscar_Leave(object sender, EventArgs e)
         {
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
-        }
-
-        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseLeave(object sender, EventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Editar;
-            }
-        }
-
-        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
-        }
-
-        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
-        }
-
-        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
     }
 }

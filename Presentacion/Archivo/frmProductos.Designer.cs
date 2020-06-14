@@ -32,6 +32,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBIdimpuesto = new System.Windows.Forms.TextBox();
             this.TBIdproveedor = new System.Windows.Forms.TextBox();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.TCPrincipal = new System.Windows.Forms.TabControl();
             this.TPDatosBasicos = new System.Windows.Forms.TabPage();
             this.CBManejaComision = new System.Windows.Forms.CheckBox();
@@ -52,6 +53,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.CBVencimiento = new System.Windows.Forms.CheckBox();
             this.label37 = new System.Windows.Forms.Label();
+            this.btnExaminar_Impuesto = new System.Windows.Forms.Button();
+            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
             this.TBImpuesto = new System.Windows.Forms.TextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.TBProveedor = new System.Windows.Forms.TextBox();
@@ -112,8 +115,11 @@
             this.TBEstante = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
+            this.btnEliminar_Ubicacion = new System.Windows.Forms.Button();
+            this.btnAgregar_Ubicacion = new System.Windows.Forms.Button();
             this.TPImagen = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.PB_Imagen = new System.Windows.Forms.PictureBox();
             this.TPLote = new System.Windows.Forms.TabPage();
             this.TBStockLote = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
@@ -125,30 +131,24 @@
             this.label7 = new System.Windows.Forms.Label();
             this.TBLotedeingreso = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnEliminar_Lote = new System.Windows.Forms.Button();
+            this.btnAgregar_Lotes = new System.Windows.Forms.Button();
             this.TPCodigosdeBarra = new System.Windows.Forms.TabPage();
             this.TBCodigodeBarra = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.DGResultados_Codigos = new System.Windows.Forms.DataGridView();
+            this.btnAgregar_CodigoDeBarra = new System.Windows.Forms.Button();
+            this.btnEliminar_CodigosDeBarra = new System.Windows.Forms.Button();
             this.TBIdproducto = new System.Windows.Forms.TextBox();
+            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.DGResultados = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnExaminar_Impuesto = new System.Windows.Forms.Button();
-            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
-            this.btnEliminar_Ubicacion = new System.Windows.Forms.Button();
-            this.btnAgregar_Ubicacion = new System.Windows.Forms.Button();
-            this.PB_Imagen = new System.Windows.Forms.PictureBox();
-            this.btnEliminar_Lote = new System.Windows.Forms.Button();
-            this.btnAgregar_Lotes = new System.Windows.Forms.Button();
-            this.btnAgregar_CodigoDeBarra = new System.Windows.Forms.Button();
-            this.btnEliminar_CodigosDeBarra = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
@@ -157,13 +157,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles_Ubicacion)).BeginInit();
             this.TPImagen.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Imagen)).BeginInit();
             this.TPLote.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles_Lotes)).BeginInit();
             this.TPCodigosdeBarra.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados_Codigos)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Imagen)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -176,7 +176,7 @@
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Location = new System.Drawing.Point(12, 10);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 448);
+            this.groupBox1.Size = new System.Drawing.Size(431, 455);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Leal Enterprise - Registro de Productos";
@@ -194,6 +194,21 @@
             this.TBIdproveedor.Name = "TBIdproveedor";
             this.TBIdproveedor.Size = new System.Drawing.Size(21, 21);
             this.TBIdproveedor.TabIndex = 13;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(102, 419);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
+            this.btnCancelar.TabIndex = 7;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // TCPrincipal
             // 
@@ -464,6 +479,34 @@
             this.label37.Size = new System.Drawing.Size(120, 15);
             this.label37.TabIndex = 132;
             this.label37.Text = "Maneja Vencimiento";
+            // 
+            // btnExaminar_Impuesto
+            // 
+            this.btnExaminar_Impuesto.BackgroundImage = global::Presentacion.Botones.btnExaminar;
+            this.btnExaminar_Impuesto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Impuesto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Impuesto.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Impuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Impuesto.Location = new System.Drawing.Point(366, 168);
+            this.btnExaminar_Impuesto.Name = "btnExaminar_Impuesto";
+            this.btnExaminar_Impuesto.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Impuesto.TabIndex = 131;
+            this.btnExaminar_Impuesto.UseVisualStyleBackColor = true;
+            this.btnExaminar_Impuesto.Click += new System.EventHandler(this.btnExaminar_Impuesto_Click);
+            // 
+            // btnExaminar_Proveedor
+            // 
+            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Botones.btnExaminar;
+            this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(366, 141);
+            this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
+            this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Proveedor.TabIndex = 130;
+            this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
+            this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
             // 
             // TBImpuesto
             // 
@@ -1105,6 +1148,38 @@
             this.label18.TabIndex = 0;
             this.label18.Text = "Ubicacion";
             // 
+            // btnEliminar_Ubicacion
+            // 
+            this.btnEliminar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Ubicacion.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Ubicacion.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(217, 327);
+            this.btnEliminar_Ubicacion.Name = "btnEliminar_Ubicacion";
+            this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Ubicacion.TabIndex = 58;
+            this.btnEliminar_Ubicacion.Text = "Eliminar";
+            this.btnEliminar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnEliminar_Ubicacion.Click += new System.EventHandler(this.btnEliminar_Ubicacion_Click);
+            // 
+            // btnAgregar_Ubicacion
+            // 
+            this.btnAgregar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_Ubicacion.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_Ubicacion.Image = global::Presentacion.Botones.btnAgregar;
+            this.btnAgregar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(313, 327);
+            this.btnAgregar_Ubicacion.Name = "btnAgregar_Ubicacion";
+            this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(90, 30);
+            this.btnAgregar_Ubicacion.TabIndex = 57;
+            this.btnAgregar_Ubicacion.Text = "Agregar";
+            this.btnAgregar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnAgregar_Ubicacion.Click += new System.EventHandler(this.btnAgregar_Ubicacion_Click);
+            // 
             // TPImagen
             // 
             this.TPImagen.Controls.Add(this.groupBox3);
@@ -1125,6 +1200,18 @@
             this.groupBox3.TabIndex = 37;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Imagen del Producto";
+            // 
+            // PB_Imagen
+            // 
+            this.PB_Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PB_Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PB_Imagen.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.PB_Imagen.Location = new System.Drawing.Point(6, 20);
+            this.PB_Imagen.Name = "PB_Imagen";
+            this.PB_Imagen.Size = new System.Drawing.Size(384, 324);
+            this.PB_Imagen.TabIndex = 0;
+            this.PB_Imagen.TabStop = false;
+            this.PB_Imagen.Click += new System.EventHandler(this.PB_Imagen_Click);
             // 
             // TPLote
             // 
@@ -1242,6 +1329,39 @@
             this.label12.TabIndex = 45;
             this.label12.Text = "Lote de Ingreso";
             // 
+            // btnEliminar_Lote
+            // 
+            this.btnEliminar_Lote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEliminar_Lote.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Lote.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Lote.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Lote.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Lote.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Lote.Location = new System.Drawing.Point(219, 329);
+            this.btnEliminar_Lote.Name = "btnEliminar_Lote";
+            this.btnEliminar_Lote.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Lote.TabIndex = 59;
+            this.btnEliminar_Lote.Text = "Eliminar";
+            this.btnEliminar_Lote.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Lote.UseVisualStyleBackColor = true;
+            this.btnEliminar_Lote.Click += new System.EventHandler(this.btnEliminar_Lote_Click);
+            // 
+            // btnAgregar_Lotes
+            // 
+            this.btnAgregar_Lotes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_Lotes.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_Lotes.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_Lotes.Image = global::Presentacion.Botones.btnAgregar;
+            this.btnAgregar_Lotes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_Lotes.Location = new System.Drawing.Point(315, 329);
+            this.btnAgregar_Lotes.Name = "btnAgregar_Lotes";
+            this.btnAgregar_Lotes.Size = new System.Drawing.Size(90, 30);
+            this.btnAgregar_Lotes.TabIndex = 54;
+            this.btnAgregar_Lotes.Text = "Agregar";
+            this.btnAgregar_Lotes.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar_Lotes.UseVisualStyleBackColor = true;
+            this.btnAgregar_Lotes.Click += new System.EventHandler(this.btnAgregar_Lotes_Click);
+            // 
             // TPCodigosdeBarra
             // 
             this.TPCodigosdeBarra.Controls.Add(this.TBCodigodeBarra);
@@ -1301,6 +1421,40 @@
             this.DGResultados_Codigos.Size = new System.Drawing.Size(399, 290);
             this.DGResultados_Codigos.TabIndex = 2;
             // 
+            // btnAgregar_CodigoDeBarra
+            // 
+            this.btnAgregar_CodigoDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnAgregar_CodigoDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_CodigoDeBarra.Image = global::Presentacion.Botones.btnAgregar;
+            this.btnAgregar_CodigoDeBarra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_CodigoDeBarra.Location = new System.Drawing.Point(315, 329);
+            this.btnAgregar_CodigoDeBarra.Name = "btnAgregar_CodigoDeBarra";
+            this.btnAgregar_CodigoDeBarra.Size = new System.Drawing.Size(90, 30);
+            this.btnAgregar_CodigoDeBarra.TabIndex = 15;
+            this.btnAgregar_CodigoDeBarra.Text = "Agregar";
+            this.btnAgregar_CodigoDeBarra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar_CodigoDeBarra.UseVisualStyleBackColor = true;
+            this.btnAgregar_CodigoDeBarra.Click += new System.EventHandler(this.btnAgregar_CodigoDeBarra_Click);
+            // 
+            // btnEliminar_CodigosDeBarra
+            // 
+            this.btnEliminar_CodigosDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.btnEliminar_CodigosDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_CodigosDeBarra.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_CodigosDeBarra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_CodigosDeBarra.Location = new System.Drawing.Point(219, 329);
+            this.btnEliminar_CodigosDeBarra.Name = "btnEliminar_CodigosDeBarra";
+            this.btnEliminar_CodigosDeBarra.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_CodigosDeBarra.TabIndex = 14;
+            this.btnEliminar_CodigosDeBarra.Text = "Eliminar";
+            this.btnEliminar_CodigosDeBarra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_CodigosDeBarra.UseVisualStyleBackColor = true;
+            this.btnEliminar_CodigosDeBarra.Click += new System.EventHandler(this.btnEliminar_CodigosDeBarra_Click);
+            // 
             // TBIdproducto
             // 
             this.TBIdproducto.Location = new System.Drawing.Point(183, 419);
@@ -1308,6 +1462,21 @@
             this.TBIdproducto.Size = new System.Drawing.Size(21, 21);
             this.TBIdproducto.TabIndex = 12;
             this.TBIdproducto.TextChanged += new System.EventHandler(this.TBIdproducto_TextChanged);
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderSize = 0;
+            this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(6, 419);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(90, 30);
+            this.btnGuardar.TabIndex = 5;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // groupBox2
             // 
@@ -1319,10 +1488,25 @@
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Location = new System.Drawing.Point(449, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(617, 446);
+            this.groupBox2.Size = new System.Drawing.Size(617, 453);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leal Enterprise - Consulta de Productos Registrados";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar.Location = new System.Drawing.Point(420, 417);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label14
             // 
@@ -1332,6 +1516,21 @@
             this.label14.Size = new System.Drawing.Size(121, 15);
             this.label14.TabIndex = 11;
             this.label14.Text = "Producto a Consultar";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(516, 417);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(90, 30);
+            this.btnImprimir.TabIndex = 6;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // TBBuscar
             // 
@@ -1346,7 +1545,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 419);
+            this.lblTotal.Location = new System.Drawing.Point(6, 425);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 15);
             this.lblTotal.TabIndex = 14;
@@ -1364,208 +1563,17 @@
             this.DGResultados.Name = "DGResultados";
             this.DGResultados.ReadOnly = true;
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(600, 360);
+            this.DGResultados.Size = new System.Drawing.Size(600, 364);
             this.DGResultados.TabIndex = 13;
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar.Location = new System.Drawing.Point(448, 413);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(76, 26);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            this.btnEliminar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnEliminar_MouseDown);
-            this.btnEliminar.MouseLeave += new System.EventHandler(this.btnEliminar_MouseLeave);
-            this.btnEliminar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnEliminar_MouseMove);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnImprimir.Image = global::Presentacion.Properties.Resources.BV_Imprimir;
-            this.btnImprimir.Location = new System.Drawing.Point(530, 413);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(76, 26);
-            this.btnImprimir.TabIndex = 6;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            this.btnImprimir.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnImprimir_MouseDown);
-            this.btnImprimir.MouseLeave += new System.EventHandler(this.btnImprimir_MouseLeave);
-            this.btnImprimir.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnImprimir_MouseMove);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Image = global::Presentacion.Properties.Resources.BV_Cancelar;
-            this.btnCancelar.Location = new System.Drawing.Point(92, 415);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(76, 26);
-            this.btnCancelar.TabIndex = 7;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            this.btnCancelar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseDown);
-            this.btnCancelar.MouseLeave += new System.EventHandler(this.btnCancelar_MouseLeave);
-            this.btnCancelar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCancelar_MouseMove);
-            // 
-            // btnExaminar_Impuesto
-            // 
-            this.btnExaminar_Impuesto.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
-            this.btnExaminar_Impuesto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExaminar_Impuesto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExaminar_Impuesto.FlatAppearance.BorderSize = 0;
-            this.btnExaminar_Impuesto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Impuesto.Location = new System.Drawing.Point(366, 168);
-            this.btnExaminar_Impuesto.Name = "btnExaminar_Impuesto";
-            this.btnExaminar_Impuesto.Size = new System.Drawing.Size(25, 21);
-            this.btnExaminar_Impuesto.TabIndex = 131;
-            this.btnExaminar_Impuesto.UseVisualStyleBackColor = true;
-            this.btnExaminar_Impuesto.Click += new System.EventHandler(this.btnExaminar_Impuesto_Click);
-            // 
-            // btnExaminar_Proveedor
-            // 
-            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
-            this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
-            this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(366, 141);
-            this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
-            this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
-            this.btnExaminar_Proveedor.TabIndex = 130;
-            this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
-            this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
-            // 
-            // btnEliminar_Ubicacion
-            // 
-            this.btnEliminar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Ubicacion.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Ubicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_Ubicacion.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(243, 327);
-            this.btnEliminar_Ubicacion.Name = "btnEliminar_Ubicacion";
-            this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(77, 27);
-            this.btnEliminar_Ubicacion.TabIndex = 58;
-            this.btnEliminar_Ubicacion.UseVisualStyleBackColor = true;
-            this.btnEliminar_Ubicacion.Click += new System.EventHandler(this.btnEliminar_Ubicacion_Click);
-            // 
-            // btnAgregar_Ubicacion
-            // 
-            this.btnAgregar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregar_Ubicacion.FlatAppearance.BorderSize = 0;
-            this.btnAgregar_Ubicacion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar_Ubicacion.Image = global::Presentacion.Properties.Resources.BV_Agregar;
-            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(326, 327);
-            this.btnAgregar_Ubicacion.Name = "btnAgregar_Ubicacion";
-            this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(77, 27);
-            this.btnAgregar_Ubicacion.TabIndex = 57;
-            this.btnAgregar_Ubicacion.UseVisualStyleBackColor = true;
-            this.btnAgregar_Ubicacion.Click += new System.EventHandler(this.btnAgregar_Ubicacion_Click);
-            // 
-            // PB_Imagen
-            // 
-            this.PB_Imagen.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PB_Imagen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PB_Imagen.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.PB_Imagen.Location = new System.Drawing.Point(6, 20);
-            this.PB_Imagen.Name = "PB_Imagen";
-            this.PB_Imagen.Size = new System.Drawing.Size(384, 324);
-            this.PB_Imagen.TabIndex = 0;
-            this.PB_Imagen.TabStop = false;
-            this.PB_Imagen.Click += new System.EventHandler(this.PB_Imagen_Click);
-            // 
-            // btnEliminar_Lote
-            // 
-            this.btnEliminar_Lote.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnEliminar_Lote.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Lote.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Lote.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Lote.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_Lote.Image = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar_Lote.Location = new System.Drawing.Point(245, 329);
-            this.btnEliminar_Lote.Name = "btnEliminar_Lote";
-            this.btnEliminar_Lote.Size = new System.Drawing.Size(77, 27);
-            this.btnEliminar_Lote.TabIndex = 59;
-            this.btnEliminar_Lote.UseVisualStyleBackColor = true;
-            this.btnEliminar_Lote.Click += new System.EventHandler(this.btnEliminar_Lote_Click);
-            // 
-            // btnAgregar_Lotes
-            // 
-            this.btnAgregar_Lotes.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar_Lotes.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregar_Lotes.FlatAppearance.BorderSize = 0;
-            this.btnAgregar_Lotes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar_Lotes.Image = global::Presentacion.Properties.Resources.BV_Agregar;
-            this.btnAgregar_Lotes.Location = new System.Drawing.Point(328, 329);
-            this.btnAgregar_Lotes.Name = "btnAgregar_Lotes";
-            this.btnAgregar_Lotes.Size = new System.Drawing.Size(77, 27);
-            this.btnAgregar_Lotes.TabIndex = 54;
-            this.btnAgregar_Lotes.UseVisualStyleBackColor = true;
-            this.btnAgregar_Lotes.Click += new System.EventHandler(this.btnAgregar_Lotes_Click);
-            // 
-            // btnAgregar_CodigoDeBarra
-            // 
-            this.btnAgregar_CodigoDeBarra.BackgroundImage = global::Presentacion.Properties.Resources.BV_Agregar;
-            this.btnAgregar_CodigoDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnAgregar_CodigoDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregar_CodigoDeBarra.FlatAppearance.BorderSize = 0;
-            this.btnAgregar_CodigoDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar_CodigoDeBarra.Location = new System.Drawing.Point(328, 329);
-            this.btnAgregar_CodigoDeBarra.Name = "btnAgregar_CodigoDeBarra";
-            this.btnAgregar_CodigoDeBarra.Size = new System.Drawing.Size(77, 27);
-            this.btnAgregar_CodigoDeBarra.TabIndex = 15;
-            this.btnAgregar_CodigoDeBarra.UseVisualStyleBackColor = true;
-            this.btnAgregar_CodigoDeBarra.Click += new System.EventHandler(this.btnAgregar_CodigoDeBarra_Click);
-            // 
-            // btnEliminar_CodigosDeBarra
-            // 
-            this.btnEliminar_CodigosDeBarra.BackgroundImage = global::Presentacion.Properties.Resources.BV_Eliminar;
-            this.btnEliminar_CodigosDeBarra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.btnEliminar_CodigosDeBarra.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_CodigosDeBarra.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_CodigosDeBarra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar_CodigosDeBarra.Location = new System.Drawing.Point(245, 329);
-            this.btnEliminar_CodigosDeBarra.Name = "btnEliminar_CodigosDeBarra";
-            this.btnEliminar_CodigosDeBarra.Size = new System.Drawing.Size(77, 27);
-            this.btnEliminar_CodigosDeBarra.TabIndex = 14;
-            this.btnEliminar_CodigosDeBarra.UseVisualStyleBackColor = true;
-            this.btnEliminar_CodigosDeBarra.Click += new System.EventHandler(this.btnEliminar_CodigosDeBarra_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderSize = 0;
-            this.btnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardar.Image = global::Presentacion.Properties.Resources.BV_Guardar;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 415);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(76, 26);
-            this.btnGuardar.TabIndex = 5;
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            this.btnGuardar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.btnGuardar_MouseDown);
-            this.btnGuardar.MouseLeave += new System.EventHandler(this.btnGuardar_MouseLeave);
-            this.btnGuardar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnGuardar_MouseMove);
             // 
             // frmProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1078, 470);
+            this.ClientSize = new System.Drawing.Size(1078, 475);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1588,6 +1596,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles_Ubicacion)).EndInit();
             this.TPImagen.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.PB_Imagen)).EndInit();
             this.TPLote.ResumeLayout(false);
             this.TPLote.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles_Lotes)).EndInit();
@@ -1597,7 +1606,6 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.PB_Imagen)).EndInit();
             this.ResumeLayout(false);
 
         }

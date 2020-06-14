@@ -348,7 +348,7 @@ namespace Presentacion
         {
             MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
+        
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -396,20 +396,7 @@ namespace Presentacion
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                this.Limpiar_Datos();
-                
-                //Se Limpian las Filas y Columnas de la tabla
-                this.DGResultados.DataSource = null;
-                this.DGResultados.Enabled = false;
-                this.lblTotal.Text = "Datos Registrados: 0";
-                this.TBBuscar.Clear();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -2996,87 +2983,5 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseLeave(object sender, EventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
-        {
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Editar;
-            }
-        }
-
-        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
-        }
-
-        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
-        }
-
-        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
-        }
-
     }
 }

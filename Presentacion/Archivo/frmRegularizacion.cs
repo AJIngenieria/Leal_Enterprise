@@ -16,5 +16,10 @@ namespace Presentacion
         {
             InitializeComponent();
         }
+
+        private void frmRegularizacion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
