@@ -97,6 +97,11 @@
     <Compile Include="Archivo\frmCliente.Designer.cs">
       <DependentUpon>frmCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Botones.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Botones.resx</DependentUpon>
+    </Compile>
     <Compile Include="Filtros\frmFiltro_Bodega.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,6 +297,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Archivo\frmCliente.resx">
       <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Botones.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Botones.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmFacturaDeCompra.resx">
       <DependentUpon>frmFacturaDeCompra.cs</DependentUpon>

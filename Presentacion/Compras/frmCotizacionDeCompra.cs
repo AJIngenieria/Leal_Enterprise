@@ -170,7 +170,7 @@ namespace Presentacion
             {
                 this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Descripcion", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.Int32"));
@@ -184,7 +184,7 @@ namespace Presentacion
                 this.DGDetalles.Columns[0].Width = 50;
                 this.DGDetalles.Columns[1].HeaderText = "Codigo";
                 this.DGDetalles.Columns[1].Width = 88;
-                this.DGDetalles.Columns[2].HeaderText = "Descripcion";
+                this.DGDetalles.Columns[2].HeaderText = "Descripción";
                 this.DGDetalles.Columns[2].Width = 380;
                 this.DGDetalles.Columns[3].HeaderText = "Medida";
                 this.DGDetalles.Columns[3].Width = 65;

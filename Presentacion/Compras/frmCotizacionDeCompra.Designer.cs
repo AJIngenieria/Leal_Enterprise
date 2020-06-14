@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizacionDeCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.TBIdbodega = new System.Windows.Forms.TextBox();
             this.TBIdproveedor = new System.Windows.Forms.TextBox();
@@ -154,7 +155,7 @@
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Image = global::Presentacion.Properties.Resources.btnGuardar;
+            this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(515, 438);
             this.btnGuardar.Name = "btnGuardar";
@@ -170,7 +171,7 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Image = global::Presentacion.Properties.Resources.btnCancelar;
+            this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(611, 438);
             this.btnCancelar.Name = "btnCancelar";
@@ -186,7 +187,7 @@
             this.btnEliminar_Detalles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar_Detalles.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar_Detalles.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Detalles.Image = global::Presentacion.Properties.Resources.btnEliminar;
+            this.btnEliminar_Detalles.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar_Detalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar_Detalles.Location = new System.Drawing.Point(707, 438);
             this.btnEliminar_Detalles.Name = "btnEliminar_Detalles";
@@ -199,7 +200,7 @@
             // 
             // btnExaminar_Proveedor
             // 
-            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Botones.btnExaminar;
             this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
@@ -310,6 +311,7 @@
             // 
             this.DGDetalles.AllowUserToAddRows = false;
             this.DGDetalles.AllowUserToDeleteRows = false;
+            this.DGDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGDetalles.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -317,14 +319,13 @@
             this.DGDetalles.Name = "DGDetalles";
             this.DGDetalles.ReadOnly = true;
             this.DGDetalles.RowHeadersVisible = false;
-            this.DGDetalles.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DGDetalles.Size = new System.Drawing.Size(791, 304);
             this.DGDetalles.TabIndex = 177;
             this.DGDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellContentClick);
             // 
             // btnExaminar_Producto
             // 
-            this.btnExaminar_Producto.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.btnExaminar_Producto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Producto.BackgroundImage")));
             this.btnExaminar_Producto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExaminar_Producto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Producto.FlatAppearance.BorderSize = 0;
@@ -338,7 +339,7 @@
             // 
             // btnExaminar_Bodega
             // 
-            this.btnExaminar_Bodega.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.btnExaminar_Bodega.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Bodega.BackgroundImage")));
             this.btnExaminar_Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExaminar_Bodega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Bodega.FlatAppearance.BorderSize = 0;
@@ -436,7 +437,7 @@
             this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Resultados.Image = global::Presentacion.Properties.Resources.btnEliminar;
+            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
             this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
@@ -461,7 +462,7 @@
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.Image = global::Presentacion.Properties.Resources.btnImprimir;
+            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnImprimir.Location = new System.Drawing.Point(397, 438);
             this.btnImprimir.Name = "btnImprimir";

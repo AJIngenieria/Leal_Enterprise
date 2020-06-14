@@ -294,7 +294,7 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["V. Compra"] = valor_compra;
+                    Fila["Valor de Compra"] = valor_compra;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();

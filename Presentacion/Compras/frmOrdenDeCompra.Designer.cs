@@ -73,7 +73,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar_Resultados = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -95,7 +94,7 @@
             this.TBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBDescripcion.Location = new System.Drawing.Point(215, 20);
             this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(331, 21);
+            this.TBDescripcion.Size = new System.Drawing.Size(310, 21);
             this.TBDescripcion.TabIndex = 175;
             this.TBDescripcion.Enter += new System.EventHandler(this.TBDescripcion_Enter);
             this.TBDescripcion.Leave += new System.EventHandler(this.TBDescripcion_Leave);
@@ -214,20 +213,22 @@
             this.TBProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBProducto.Location = new System.Drawing.Point(215, 101);
             this.TBProducto.Name = "TBProducto";
-            this.TBProducto.Size = new System.Drawing.Size(300, 21);
+            this.TBProducto.Size = new System.Drawing.Size(280, 21);
             this.TBProducto.TabIndex = 150;
             this.TBProducto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DGDetalleDeIngreso
             // 
             this.DGDetalleDeIngreso.AllowUserToAddRows = false;
+            this.DGDetalleDeIngreso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGDetalleDeIngreso.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalleDeIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalleDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGDetalleDeIngreso.Location = new System.Drawing.Point(6, 128);
             this.DGDetalleDeIngreso.Name = "DGDetalleDeIngreso";
             this.DGDetalleDeIngreso.RowHeadersVisible = false;
-            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(816, 250);
+            this.DGDetalleDeIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
+            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(795, 250);
             this.DGDetalleDeIngreso.TabIndex = 141;
             // 
             // TBCodigo
@@ -244,7 +245,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 21);
+            this.label7.Location = new System.Drawing.Point(6, 23);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 15);
             this.label7.TabIndex = 138;
@@ -267,7 +268,7 @@
             this.TBProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TBProveedor.Location = new System.Drawing.Point(214, 47);
             this.TBProveedor.Name = "TBProveedor";
-            this.TBProveedor.Size = new System.Drawing.Size(300, 21);
+            this.TBProveedor.Size = new System.Drawing.Size(280, 21);
             this.TBProveedor.TabIndex = 126;
             this.TBProveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -311,7 +312,6 @@
             this.groupBox1.Controls.Add(this.label31);
             this.groupBox1.Controls.Add(this.btnEliminar);
             this.groupBox1.Controls.Add(this.TBIdbodega);
-            this.groupBox1.Controls.Add(this.btnImprimir);
             this.groupBox1.Controls.Add(this.TBMarca);
             this.groupBox1.Controls.Add(this.TBIdproveedor);
             this.groupBox1.Controls.Add(this.TBGrupo);
@@ -342,7 +342,7 @@
             this.groupBox1.Controls.Add(this.TBProducto);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(832, 490);
+            this.groupBox1.Size = new System.Drawing.Size(810, 490);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Ordenes de Compra - Leal Enterprise";
@@ -380,7 +380,7 @@
             this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Image = global::Presentacion.Properties.Resources.btnGuardar;
+            this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGuardar.Location = new System.Drawing.Point(534, 441);
             this.btnGuardar.Name = "btnGuardar";
@@ -396,7 +396,7 @@
             this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Image = global::Presentacion.Properties.Resources.btnCancelar;
+            this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(630, 441);
             this.btnCancelar.Name = "btnCancelar";
@@ -412,7 +412,7 @@
             this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.Image = global::Presentacion.Properties.Resources.btnEliminar;
+            this.btnEliminar.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.Location = new System.Drawing.Point(338, 441);
             this.btnEliminar.Name = "btnEliminar";
@@ -428,9 +428,9 @@
             this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.Image = global::Presentacion.Properties.Resources.btnImprimir;
+            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(434, 441);
+            this.btnImprimir.Location = new System.Drawing.Point(397, 438);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(90, 30);
             this.btnImprimir.TabIndex = 187;
@@ -454,7 +454,7 @@
             this.panel1.Controls.Add(this.TBValorCompra_Final);
             this.panel1.Controls.Add(this.TBValorPromedio_Final);
             this.panel1.Controls.Add(this.TBCreditoDisponible);
-            this.panel1.Location = new System.Drawing.Point(552, 20);
+            this.panel1.Location = new System.Drawing.Point(531, 20);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(270, 104);
             this.panel1.TabIndex = 196;
@@ -505,12 +505,12 @@
             // 
             // button1
             // 
-            this.button1.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.button1.BackgroundImage = global::Presentacion.Botones.btnExaminar;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(521, 74);
+            this.button1.Location = new System.Drawing.Point(500, 74);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 21);
             this.button1.TabIndex = 190;
@@ -520,7 +520,7 @@
             // 
             this.TBBodega.Location = new System.Drawing.Point(215, 74);
             this.TBBodega.Name = "TBBodega";
-            this.TBBodega.Size = new System.Drawing.Size(300, 21);
+            this.TBBodega.Size = new System.Drawing.Size(280, 21);
             this.TBBodega.TabIndex = 189;
             // 
             // label16
@@ -534,12 +534,12 @@
             // 
             // btnExaminar_Proveedor
             // 
-            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Botones.btnExaminar;
             this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
             this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(521, 47);
+            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(500, 47);
             this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
             this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
             this.btnExaminar_Proveedor.TabIndex = 129;
@@ -548,12 +548,12 @@
             // 
             // btnExaminar_Producto
             // 
-            this.btnExaminar_Producto.BackgroundImage = global::Presentacion.Properties.Resources.btnExaminar;
+            this.btnExaminar_Producto.BackgroundImage = global::Presentacion.Botones.btnExaminar;
             this.btnExaminar_Producto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnExaminar_Producto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Producto.FlatAppearance.BorderSize = 0;
             this.btnExaminar_Producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Producto.Location = new System.Drawing.Point(521, 101);
+            this.btnExaminar_Producto.Location = new System.Drawing.Point(500, 101);
             this.btnExaminar_Producto.Name = "btnExaminar_Producto";
             this.btnExaminar_Producto.Size = new System.Drawing.Size(25, 21);
             this.btnExaminar_Producto.TabIndex = 131;
@@ -564,7 +564,6 @@
             // 
             this.groupBox2.Controls.Add(this.btnEliminar_Resultados);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
             this.groupBox2.Controls.Add(this.dateTimePicker1);
@@ -572,9 +571,10 @@
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.CBFechas);
             this.groupBox2.Controls.Add(this.label12);
+            this.groupBox2.Controls.Add(this.btnImprimir);
             this.groupBox2.Controls.Add(this.TBBuscar);
             this.groupBox2.Controls.Add(this.label13);
-            this.groupBox2.Location = new System.Drawing.Point(850, 12);
+            this.groupBox2.Location = new System.Drawing.Point(828, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(493, 474);
             this.groupBox2.TabIndex = 3;
@@ -586,7 +586,7 @@
             this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Resultados.Image = global::Presentacion.Properties.Resources.btnEliminar;
+            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
             this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
@@ -604,21 +604,6 @@
             this.label9.Size = new System.Drawing.Size(192, 15);
             this.label9.TabIndex = 9;
             this.label9.Text = "Datos Registrados en el Sistema: ";
-            // 
-            // button2
-            // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.Image = global::Presentacion.Properties.Resources.btnImprimir;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(397, 438);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 30);
-            this.button2.TabIndex = 193;
-            this.button2.Text = "Imprimir";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // DGResultados
             // 
@@ -712,7 +697,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1354, 514);
+            this.ClientSize = new System.Drawing.Size(1330, 514);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -780,7 +765,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnEliminar_Resultados;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView DGResultados;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;

@@ -117,31 +117,26 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnExaminar_Producto.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAGtSURBVEhLY4CDVesNGFaurWJYtaaDQlzDsGKtPtRUKFi1
-        poxh1dr/VMUr15ZADQe6HJsCSvGK1f8YVq7XZYAECxYFVMFrKkDBAww3bJJUwCvWtgwuC9S27/zfePXa
-        /zn37v+vuHTlv+SmrVjVwTEpFqScPvt/6cNH/4137/0vunHLf+cDh/9vf/7iv/uhI1jVgzGxFhju2vt/
-        4YOHGOJCGzb/3wa0RHzTFgw5MCbWghl37/1X2roDRUxwwyawj0A+KL5wCUUOjom1YPOz51jF1zx+8l9u
-        y/b/U+/cxSpPtAVzgZGKHqEgH4AscDxw6H/ZxcsocnBMrAX2+w/+n3jrDoa4GDCyQZZIb96GIQfGxFjA
-        vHrd/xWPHv8HgSm37/6X3QIxDJRkFwEj3v/IMQw9cEzIAmTD+2/dBidREL0MGLmt125gRDwGxmcBsuET
-        gIZiU0MQ47Og6ep1sOHYwp5ojM8Cy737/+efv4ghThImJpIpwvSyoAarJFUwsCoG2qKPXZJCDK4yV2pB
-        6mVQBQ0SwKaQHAw2fG0exHAYAFXQoDoUFG6UYFCwwF3OwAAAKJkmer782zMAAAAASUVORK5CYII=
-</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="btnAgregar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnAgregar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="btnExaminar_Bodega.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAGtSURBVEhLY4CDVesNGFaurWJYtaaDQlzDsGKtPtRUKFi1
-        poxh1dr/VMUr15ZADQe6HJsCSvGK1f8YVq7XZYAECxYFVMFrKkDBAww3bJJUwCvWtgwuC9S27/zfePXa
-        /zn37v+vuHTlv+SmrVjVwTEpFqScPvt/6cNH/4137/0vunHLf+cDh/9vf/7iv/uhI1jVgzGxFhju2vt/
-        4YOHGOJCGzb/3wa0RHzTFgw5MCbWghl37/1X2roDRUxwwyawj0A+KL5wCUUOjom1YPOz51jF1zx+8l9u
-        y/b/U+/cxSpPtAVzgZGKHqEgH4AscDxw6H/ZxcsocnBMrAX2+w/+n3jrDoa4GDCyQZZIb96GIQfGxFjA
-        vHrd/xWPHv8HgSm37/6X3QIxDJRkFwEj3v/IMQw9cEzIAmTD+2/dBidREL0MGLmt125gRDwGxmcBsuET
-        gIZiU0MQ47Og6ep1sOHYwp5ojM8Cy737/+efv4ghThImJpIpwvSyoAarJFUwsCoG2qKPXZJCDK4yV2pB
-        6mVQBQ0SwKaQHAw2fG0exHAYAFXQoDoUFG6UYFCwwF3OwAAAKJkmer782zMAAAAASUVORK5CYII=
-</value>
+  <data name="btnCancelar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnCancelar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEditar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnEditar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnEliminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnEliminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnExaminar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnExaminar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnGuardar" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnGuardar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btnImprimir" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\btnImprimir.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
