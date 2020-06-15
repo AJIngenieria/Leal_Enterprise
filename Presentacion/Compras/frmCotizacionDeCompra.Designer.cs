@@ -278,10 +278,10 @@
             // 
             this.TBValorFinal.BackColor = System.Drawing.Color.Silver;
             this.TBValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBValorFinal.Location = new System.Drawing.Point(109, 79);
+            this.TBValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBValorFinal.Location = new System.Drawing.Point(106, 81);
             this.TBValorFinal.Name = "TBValorFinal";
-            this.TBValorFinal.Size = new System.Drawing.Size(150, 19);
+            this.TBValorFinal.Size = new System.Drawing.Size(155, 16);
             this.TBValorFinal.TabIndex = 2;
             this.TBValorFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -289,10 +289,10 @@
             // 
             this.TBDescuento.BackColor = System.Drawing.Color.Silver;
             this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescuento.Location = new System.Drawing.Point(109, 54);
+            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
             this.TBDescuento.Name = "TBDescuento";
-            this.TBDescuento.Size = new System.Drawing.Size(150, 19);
+            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
             this.TBDescuento.TabIndex = 1;
             this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -300,10 +300,10 @@
             // 
             this.TBSubTotal.BackColor = System.Drawing.Color.Silver;
             this.TBSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBSubTotal.Location = new System.Drawing.Point(109, 29);
+            this.TBSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBSubTotal.Location = new System.Drawing.Point(106, 30);
             this.TBSubTotal.Name = "TBSubTotal";
-            this.TBSubTotal.Size = new System.Drawing.Size(150, 19);
+            this.TBSubTotal.Size = new System.Drawing.Size(155, 16);
             this.TBSubTotal.TabIndex = 0;
             this.TBSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -317,11 +317,11 @@
             this.DGDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGDetalles.Location = new System.Drawing.Point(6, 128);
             this.DGDetalles.Name = "DGDetalles";
-            this.DGDetalles.ReadOnly = true;
             this.DGDetalles.RowHeadersVisible = false;
             this.DGDetalles.Size = new System.Drawing.Size(791, 304);
             this.DGDetalles.TabIndex = 177;
             this.DGDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellContentClick);
+            this.DGDetalles.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellEndEdit);
             // 
             // btnExaminar_Producto
             // 
@@ -576,6 +576,7 @@
             this.Name = "frmCotizacionDeCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Archivo - Cotizacion de Compra";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmCotizacionDeCompra_FormClosing);
             this.Load += new System.EventHandler(this.frmCotizacionDeCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -157,6 +157,7 @@ namespace Datos
             }
             return Rpta;
         }
+
         public string Editar_DatosBasicos(Entidad_Productos Obj)
         {
             string Rpta = "";

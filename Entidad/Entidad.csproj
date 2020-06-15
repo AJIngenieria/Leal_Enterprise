@@ -49,6 +49,7 @@
     <Compile Include="Archivo\Entidad_Empaque.cs" />
     <Compile Include="Archivo\Entidad_TipoDeProducto.cs" />
     <Compile Include="Archivo\Entidad_Grupo.cs" />
+    <Compile Include="Compra\Entidad_CotizacionDeCompra.cs" />
     <Compile Include="Sistema\Entidad_TipoDeCliente.cs" />
     <Compile Include="Archivo\Entidad_Productos.cs" />
     <Compile Include="Gestion Humana\Entidad_Empleados.cs" />

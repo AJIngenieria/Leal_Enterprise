@@ -40,17 +40,24 @@ namespace Presentacion
         {
             try
             {
-                frmInventario_Ingreso frmBI = new frmInventario_Ingreso();
-                
-                //string Codigo, Nombre;
-                //int precio;
-
-                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
+                //Variables Para Los Filtros
                 string idbodega, bodega, documento;
+
+
+                //
+                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
                 idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
                 bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
                 documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
                 form.setBodega(idbodega, bodega, documento);
+                this.Hide();
+
+                //
+                frmCotizacionDeCompra frmCComp = frmCotizacionDeCompra.GetInstancia();
+                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
+                documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
+                frmCComp.setBodega(idbodega, bodega, documento);
                 this.Hide();
 
             }

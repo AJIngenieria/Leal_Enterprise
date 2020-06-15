@@ -109,8 +109,9 @@ namespace Presentacion
         {
             try
             {
-                frmInventario_Ingreso frmBI = frmInventario_Ingreso.GetInstancia();
                 frmOrdenDeCompra frmOC = frmOrdenDeCompra.GetInstancia();
+                frmInventario_Ingreso frmBI = frmInventario_Ingreso.GetInstancia();
+                frmCotizacionDeCompra frmCot = frmCotizacionDeCompra.GetInstancia();
 
                 if (frmBI.Examinar)
                 {
@@ -127,6 +128,15 @@ namespace Presentacion
                     idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
                     producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
                     frmOC.setProducto(idproducto, producto);
+                    this.Hide();
+                }
+
+                if (frmCot.Examinar)
+                {
+                    string idproducto, producto;
+                    idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
+                    frmCot.setProducto(idproducto, producto);
                     this.Hide();
                 }
             }

@@ -113,7 +113,6 @@ namespace Presentacion
             {
                 //Panel - Datos Basicos
 
-
                 this.TBIdbodega.Clear();
                 this.TBIddetalle.Clear();
                 this.TBIdproducto.Clear();
@@ -173,7 +172,7 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
@@ -181,19 +180,19 @@ namespace Presentacion
 
                 this.DGDetalles.Columns[0].Visible = false;
                 this.DGDetalles.Columns[0].HeaderText = "Idproducto";
-                this.DGDetalles.Columns[0].Width = 50;
+                //this.DGDetalles.Columns[0].Width = 50;
                 this.DGDetalles.Columns[1].HeaderText = "Codigo";
-                this.DGDetalles.Columns[1].Width = 88;
+                //this.DGDetalles.Columns[1].Width = 88;
                 this.DGDetalles.Columns[2].HeaderText = "Descripción";
-                this.DGDetalles.Columns[2].Width = 380;
+                //this.DGDetalles.Columns[2].Width = 380;
                 this.DGDetalles.Columns[3].HeaderText = "Medida";
-                this.DGDetalles.Columns[3].Width = 65;
+                //this.DGDetalles.Columns[3].Width = 65;
                 this.DGDetalles.Columns[4].HeaderText = "Cantidad";
-                this.DGDetalles.Columns[4].Width = 65;
+                //this.DGDetalles.Columns[4].Width = 65;
                 this.DGDetalles.Columns[5].HeaderText = "V. Compra";
-                this.DGDetalles.Columns[5].Width = 90;
+                //this.DGDetalles.Columns[5].Width = 90;
                 this.DGDetalles.Columns[6].HeaderText = "Total";
-                this.DGDetalles.Columns[6].Width = 110;
+                //this.DGDetalles.Columns[6].Width = 110;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -201,14 +200,13 @@ namespace Presentacion
                 this.DGDetalles.Columns[1].ReadOnly = true;
                 this.DGDetalles.Columns[2].ReadOnly = true;
                 this.DGDetalles.Columns[3].ReadOnly = true;
-                this.DGDetalles.Columns[5].ReadOnly = true;
+                this.DGDetalles.Columns[4].ReadOnly = false;
+                this.DGDetalles.Columns[5].ReadOnly = false;
                 this.DGDetalles.Columns[6].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalles.Columns[5].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalles.Columns[6].DefaultCellStyle.Format = "##,##0.00";
-                //this.DGDetalles.Columns[8].DefaultCellStyle.Format = "##,##0.00";
-                //this.DGDetalles.Columns[9].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalles.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -218,9 +216,6 @@ namespace Presentacion
                 this.DGDetalles.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalles.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -230,9 +225,6 @@ namespace Presentacion
                 this.DGDetalles.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                //this.DGDetalles.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
             }
             catch (Exception ex)
@@ -254,16 +246,22 @@ namespace Presentacion
             this.TBCodigo_Proveedor.Text = documento;
         }
 
-        public void setBodega(string idbodega, string bodega)
+        public void setBodega(string idbodega, string bodega, string documento)
         {
             this.TBIdbodega.Text = idbodega;
             this.TBBodega.Text = bodega;
+            this.TBCodigo_Bodega.Text = documento;
         }
 
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
             {
+                //
+                decimal Cantidad = 0;
+                decimal Valor_Compra = 0;
+                decimal Operacion = 0;
+
                 bool Agregar = true;
                 foreach (DataRow FilaTemporal in DtDetalle.Rows)
                 {
@@ -274,6 +272,8 @@ namespace Presentacion
                     }
                 }
 
+                Operacion = Cantidad * Valor_Compra;
+
                 if (Agregar)
                 {
                     DataRow Fila = DtDetalle.NewRow();
@@ -281,10 +281,13 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripción"] = nombre;
                     Fila["Medida"] = unidad;
+                    Fila["Cantidad"] = Cantidad;
                     Fila["V. Compra"] = valor_compra;
+                    Fila["Total"] = Operacion;
                     this.DtDetalle.Rows.Add(Fila);
 
-                    //this.Calculo_Totales();
+                    //
+                    this.Calculo_Totales();
                 }
             }
             catch (Exception ex)
@@ -297,23 +300,16 @@ namespace Presentacion
         {
             try
             {
-                int Total = 0;
-                decimal SubTotal = 0;
+                //Se procede a sumar la columna de valor de compra promedio
 
-                if (DGDetalles.Rows.Count == 0)
+                double total = 0;
+                foreach (DataGridViewRow row in DGDetalles.Rows)
                 {
-                    Total = 0;
+                    total += Convert.ToDouble(row.Cells[6].Value);
                 }
-                else
-                {
-                    foreach (DataRow FilaTemporal in DtDetalle.Rows)
-                    {
-                        Total = Total + Convert.ToInt32(FilaTemporal["Total"]);
-                    }
 
-                    //SubTotal = Total/(1+tbimpuesto.text));
-                    //this.TBValorVenta_Final.Text = Total.ToString("#0.00#");
-                }
+                this.TBValorFinal.Text = total.ToString("##,##0.00");
+
             }
             catch (Exception ex)
             {
@@ -432,12 +428,14 @@ namespace Presentacion
 
         private void btnExaminar_Proveedor_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_Proveedor frmFiltro_Proveedor = new frmFiltro_Proveedor();
+            frmFiltro_Proveedor.ShowDialog();
         }
 
         private void btnExaminar_Bodega_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_Bodega frmFiltro_Bodega = new frmFiltro_Bodega();
+            frmFiltro_Bodega.ShowDialog();
         }
 
         private void btnExaminar_Producto_Click(object sender, EventArgs e)
@@ -486,20 +484,10 @@ namespace Presentacion
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                        //Se procede a sumar la columna de valor de compra promedio
-
-                        double total = 0;
-                        foreach (DataGridViewRow row in DGDetalles.Rows)
-                        {
-                            total += Convert.ToDouble(row.Cells[6].Value);
-                        }
-                        //TBValorCompra_Final.Text = Convert.ToString(total);
-                        this.TBValorFinal.Text = total.ToString("##,##0.00");
-
                         //Se procede a limpiar los campos de texto utilizados para el filtro
 
-                        this.TBCodigo_Producto.Clear();
-                        this.TBProducto.Clear();
+                        this.TBCodigo.Clear();
+                        this.TBDescripcion.Clear();
                     }
                 }
             }
@@ -534,20 +522,10 @@ namespace Presentacion
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                        //Se procede a sumar la columna de valor de compra promedio
-
-                        double total = 0;
-                        foreach (DataGridViewRow row in DGDetalles.Rows)
-                        {
-                            total += Convert.ToDouble(row.Cells[6].Value);
-                        }
-                        //TBValorCompra_Final.Text = Convert.ToString(total);
-                        this.TBValorFinal.Text = total.ToString("##,##0.00");
-
                         //Se procede a limpiar los campos de texto utilizados para el filtro
 
-                        this.TBCodigo_Producto.Clear();
-                        this.TBProducto.Clear();
+                        this.TBCodigo_Proveedor.Clear();
+                        this.TBProveedor.Clear();
                     }
                 }
             }
@@ -581,16 +559,6 @@ namespace Presentacion
                             );
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
-
-                        //Se procede a sumar la columna de valor de compra promedio
-
-                        double total = 0;
-                        foreach (DataGridViewRow row in DGDetalles.Rows)
-                        {
-                            total += Convert.ToDouble(row.Cells[6].Value);
-                        }
-                        //TBValorCompra_Final.Text = Convert.ToString(total);
-                        this.TBValorFinal.Text = total.ToString("##,##0.00");
 
                         //Se procede a limpiar los campos de texto utilizados para el filtro
 
@@ -630,15 +598,15 @@ namespace Presentacion
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                        //Se procede a sumar la columna de valor de compra promedio
+                        ////Se procede a sumar la columna de valor de compra promedio
 
-                        double total = 0;
-                        foreach (DataGridViewRow row in DGDetalles.Rows)
-                        {
-                            total += Convert.ToDouble(row.Cells[6].Value);
-                        }
-                        //TBValorCompra_Final.Text = Convert.ToString(total);
-                        this.TBValorFinal.Text = total.ToString("##,##0.00");
+                        //double total = 0;
+                        //foreach (DataGridViewRow row in DGDetalles.Rows)
+                        //{
+                        //    total += Convert.ToDouble(row.Cells[6].Value);
+                        //}
+
+                        //this.TBValorFinal.Text = total.ToString("##,##0.00");
 
                         //Se procede a limpiar los campos de texto utilizados para el filtro
 
@@ -810,6 +778,56 @@ namespace Presentacion
             else
             {
                 this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+            }
+        }
+
+        private void frmCotizacionDeCompra_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            _Instancia = null;
+        }
+
+        private void DGDetalles_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //
+                int cantidad = 0;
+                decimal precio_unit = 0;
+                decimal precio_total = 0;
+                decimal valor = 0;
+                
+                if (DGDetalles.Columns[e.ColumnIndex].Name == "Cantidad")
+                {
+                    try
+                    {
+                        cantidad = int.Parse(DGDetalles.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese la Cantidad a Cotizar");
+                    }
+
+                    try
+                    {
+                        precio_unit = decimal.Parse(DGDetalles.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese el Valor de Compra");
+                    }
+
+                    if (!(cantidad == 0) && !(precio_unit == 0))
+                    {
+                        precio_total = cantidad * precio_unit;
+                        this.DGDetalles.Rows[e.RowIndex].Cells[6].Value = precio_total.ToString("##,##0.00");
+
+                        this.Calculo_Totales();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
 
