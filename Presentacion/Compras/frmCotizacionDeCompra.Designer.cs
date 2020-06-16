@@ -47,7 +47,6 @@
             this.TBDescripcion = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.TBValorFinal = new System.Windows.Forms.TextBox();
-            this.TBDescuento = new System.Windows.Forms.TextBox();
             this.TBSubTotal = new System.Windows.Forms.TextBox();
             this.DGDetalles = new System.Windows.Forms.DataGridView();
             this.btnExaminar_Producto = new System.Windows.Forms.Button();
@@ -60,7 +59,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar_Resultados = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
+            this.lblTotal = new System.Windows.Forms.Label();
             this.btnImprimir = new System.Windows.Forms.Button();
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
@@ -71,6 +70,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.TBDescuento = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
@@ -266,8 +266,8 @@
             // 
             this.panel1.BackgroundImage = global::Presentacion.Tablas.Valor_Final___Cotizacion_de_Compra;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.TBValorFinal);
             this.panel1.Controls.Add(this.TBDescuento);
+            this.panel1.Controls.Add(this.TBValorFinal);
             this.panel1.Controls.Add(this.TBSubTotal);
             this.panel1.Location = new System.Drawing.Point(528, 20);
             this.panel1.Name = "panel1";
@@ -285,17 +285,6 @@
             this.TBValorFinal.TabIndex = 2;
             this.TBValorFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // TBDescuento
-            // 
-            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
-            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
-            this.TBDescuento.Name = "TBDescuento";
-            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
-            this.TBDescuento.TabIndex = 1;
-            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
             // TBSubTotal
             // 
             this.TBSubTotal.BackColor = System.Drawing.Color.Silver;
@@ -310,7 +299,6 @@
             // DGDetalles
             // 
             this.DGDetalles.AllowUserToAddRows = false;
-            this.DGDetalles.AllowUserToDeleteRows = false;
             this.DGDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.DGDetalles.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -414,7 +402,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar_Resultados);
-            this.groupBox2.Controls.Add(this.label9);
+            this.groupBox2.Controls.Add(this.lblTotal);
             this.groupBox2.Controls.Add(this.btnImprimir);
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Controls.Add(this.dateTimePicker2);
@@ -448,14 +436,14 @@
             this.btnEliminar_Resultados.UseVisualStyleBackColor = true;
             this.btnEliminar_Resultados.Click += new System.EventHandler(this.btnEliminar_Resultados_Click);
             // 
-            // label9
+            // lblTotal
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 446);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(192, 15);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "Datos Registrados en el Sistema: ";
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(6, 446);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(114, 15);
+            this.lblTotal.TabIndex = 9;
+            this.lblTotal.Text = "Datos Registrados: ";
             // 
             // btnImprimir
             // 
@@ -563,6 +551,17 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cotización de Compra";
             // 
+            // TBDescuento
+            // 
+            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
+            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
+            this.TBDescuento.Name = "TBDescuento";
+            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
+            this.TBDescuento.TabIndex = 3;
+            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // frmCotizacionDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -611,7 +610,7 @@
         private System.Windows.Forms.TextBox TBCodigo_Producto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView DGResultados;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -632,7 +631,7 @@
         public System.Windows.Forms.TextBox TBIddetalle;
         public System.Windows.Forms.TextBox TBIdproducto;
         private System.Windows.Forms.TextBox TBValorFinal;
-        private System.Windows.Forms.TextBox TBDescuento;
         private System.Windows.Forms.TextBox TBSubTotal;
+        private System.Windows.Forms.TextBox TBDescuento;
     }
 }

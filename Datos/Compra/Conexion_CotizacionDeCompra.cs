@@ -63,7 +63,7 @@ namespace Datos
                 Comando.Parameters.Add("@Idproveedor", SqlDbType.Int).Value = Obj.Idproveedor;
                 Comando.Parameters.Add("@Codigo", SqlDbType.VarChar).Value = Obj.Codigo;
                 Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
-                Comando.Parameters.Add("@Precio_Final", SqlDbType.Decimal).Value = Obj.PrecioFinal;
+                Comando.Parameters.Add("@Precio_Final", SqlDbType.VarChar).Value = Obj.PrecioFinal;
                 Comando.Parameters.Add("@Descuento", SqlDbType.VarChar).Value = Obj.Descuento;
                 Comando.Parameters.Add("@Detalle", SqlDbType.Structured).Value = Obj.Cotizacion_Detalles;
                 

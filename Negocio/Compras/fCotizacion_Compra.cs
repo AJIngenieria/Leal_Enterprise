@@ -26,7 +26,7 @@ namespace Negocio
 
                 //Datos Basicos
                 string codigo, string descripcion,
-                decimal precio_final, string descuento,
+                string precio_final, string descuento,
 
                 //Datos Auxiliares
                 DataTable Detalles, int auto

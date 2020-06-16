@@ -3433,8 +3433,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-
+        
         private void TBIdproducto_TextChanged(object sender, EventArgs e)
         {
             try

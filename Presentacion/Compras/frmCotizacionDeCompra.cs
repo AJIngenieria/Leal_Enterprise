@@ -59,9 +59,9 @@ namespace Presentacion
             this.TBCodigo.Select();
 
             //Ocultacion de Texboxt
-            this.TBIdproducto.Visible = false;
-            this.TBIdbodega.Visible = false;
-            this.TBIdproveedor.Visible = false;
+            //this.TBIdproducto.Visible = false;
+            //this.TBIdbodega.Visible = false;
+            //this.TBIdproveedor.Visible = false;
             this.TBIddetalle.Visible = false;
         }
 
@@ -171,7 +171,7 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
@@ -258,9 +258,9 @@ namespace Presentacion
             try
             {
                 //
-                decimal Cantidad = 0;
-                decimal Valor_Compra = 0;
-                decimal Operacion = 0;
+                double Cantidad = 0;
+                double Valor_Compra = 0;
+                double Operacion = 0;
 
                 bool Agregar = true;
                 foreach (DataRow FilaTemporal in DtDetalle.Rows)
@@ -300,16 +300,25 @@ namespace Presentacion
         {
             try
             {
-                //Se procede a sumar la columna de valor de compra promedio
-
-                double total = 0;
-                foreach (DataGridViewRow row in DGDetalles.Rows)
+                if (TBDescuento.Text == string.Empty)
                 {
-                    total += Convert.ToDouble(row.Cells[6].Value);
+                    this.TBDescuento.Text = "0";
                 }
 
-                this.TBValorFinal.Text = total.ToString("##,##0.00");
+                else
+                {
+                    double total = 0;
 
+                    //Se procede a sumar la columna de valor de compra promedio
+
+                    foreach (DataGridViewRow row in DGDetalles.Rows)
+                    {
+                        total += Convert.ToDouble(row.Cells[6].Value);
+                    }
+
+                    this.TBDescuento.Text = total.ToString("##,##0.00");
+                    this.TBValorFinal.Text = total.ToString("##,##0.00");
+                }
             }
             catch (Exception ex)
             {
@@ -328,85 +337,82 @@ namespace Presentacion
         {
             MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-
-
+        
         private void Guardar_SQL()
         {
             try
             {
-                //string rptaDatosBasicos = "";
+                string rptaDatosBasicos = "";
 
-                //// <<<<<<------ Panel Datos Basicos ------>>>>>
+                // <<<<<<------ Panel Datos Basicos ------>>>>>
 
-                //if (this.TBTipo.Text == Campo)
-                //{
-                //    MensajeError("Ingrese el tipo del Cliente a registrar");
-                //}
-                //else if (this.TBDescripcion.Text == Campo)
-                //{
-                //    MensajeError("Ingrese la descripcion del Cliente a registrar");
-                //}
-                //else if (this.TBCodigo.Text == Campo)
-                //{
-                //    MensajeError("Ingrese el Codigo del tipo de Cliente");
-                //}
+                if (this.TBCodigo.Text == Campo)
+                {
+                    MensajeError("Por favor ingrese el Codigo de la Cotizacion a Registrar");
+                }
+                else if (this.TBCodigo_Bodega.Text == Campo)
+                {
+                    MensajeError("Por favor ingrese La Bodega de Almacenamiento");
+                }
+                else if (this.TBCodigo_Proveedor.Text == Campo)
+                {
+                    MensajeError("Por favor ingreso el nombre del Proveedor");
+                }
 
-                //else
-                //{
-                //    if (this.Digitar)
-                //    {
-                //        rptaDatosBasicos = fTipoDeCliente.Guardar_DatosBasicos
+                else
+                {
+                    if (this.Digitar)
+                    {
+                        rptaDatosBasicos = fCotizacion_Compra.Guardar_DatosBasicos
 
-                //            (
-                //                 //Datos Auxiliares
-                //                 1,
+                            (
+                                 //Panel Datos Basicos
+                                 Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.TBIdproveedor.Text), this.TBCodigo.Text, this.TBDescripcion.Text,
+                                 this.TBValorFinal.Text, TBDescuento.Text, DtDetalle,
 
-                //                 //Panel Datos Basicos
-                //                 this.TBCodigo.Text, this.TBTipo.Text, this.TBDescripcion.Text, this.TBObservacion.Text,
+                                 //Datos Auxiliares
+                                 1
+                            );
+                    }
 
-                //                 //
-                //                 1
-                //            );
-                //    }
+                    //else
+                    //{
+                    //    rptaDatosBasicos = fCotizacion_Compra.Editar_DatosBasicos
 
-                //    else
-                //    {
-                //        rptaDatosBasicos = fTipoDeCliente.Editar_DatosBasicos
+                    //        (
+                    //             Datos Auxiliares
+                    //             2, Convert.ToInt32(this.TBIdtipodecliente.Text),
 
-                //            (
-                //                 //Datos Auxiliares
-                //                 2, Convert.ToInt32(this.TBIdtipodecliente.Text),
+                    //             Panel Datos Basicos
+                    //             this.TBCodigo.Text, this.TBTipo.Text, this.TBDescripcion.Text, this.TBObservacion.Text,
 
-                //                 //Panel Datos Basicos
-                //                 this.TBCodigo.Text, this.TBTipo.Text, this.TBDescripcion.Text, this.TBObservacion.Text,
 
-                //                 //
-                //                 1
-                //            );
-                //    }
+                    //             1
+                    //        );
+                    //}
 
-                //    if (rptaDatosBasicos.Equals("OK"))
-                //    {
-                //        if (this.Digitar)
-                //        {
-                //            this.MensajeOk("Registro Exitoso");
-                //        }
+                    if (rptaDatosBasicos.Equals("OK"))
+                    {
+                        if (this.Digitar)
+                        {
+                            this.MensajeOk("Registro Exitoso");
+                        }
 
-                //        else
-                //        {
-                //            this.MensajeOk("Registro Actualizado");
-                //        }
-                //    }
+                        //else
+                        //{
+                        //    this.MensajeOk("Registro Actualizado");
+                        //}
+                    }
 
-                //    else
-                //    {
-                //        this.MensajeError(rptaDatosBasicos);
-                //    }
+                    else
+                    {
+                        this.MensajeError(rptaDatosBasicos);
+                    }
 
-                //    //Llamada de Clase
-                //    this.Digitar = false;
-                //    this.Limpiar_Datos();
-                //}
+                    //Llamada de Clase
+                    this.Digitar = false;
+                    this.Limpiar_Datos();
+                }
 
             }
             catch (Exception ex)
@@ -418,7 +424,44 @@ namespace Presentacion
 
         private void TBBuscar_TextChanged(object sender, EventArgs e)
         {
+            try
+            {
+                if (Consultar == "1")
+                {
+                    if (TBBuscar.Text != "")
+                    {
+                        this.DGResultados.DataSource = fCotizacion_Compra.Buscar(this.TBBuscar.Text, 1);
+                        this.DGResultados.Columns[0].Visible = false;
 
+                        lblTotal.Text = "Datos Registrados: " + Convert.ToString(DGResultados.Rows.Count);
+
+                        this.btnEliminar_Resultados.Enabled = true;
+                        this.btnImprimir.Enabled = true;
+                        this.DGResultados.Enabled = true;
+                    }
+                    else
+                    {
+                        this.Limpiar_Datos();
+
+                        //Se Limpian las Filas y Columnas de la tabla
+                        this.DGResultados.DataSource = null;
+                        this.DGResultados.Enabled = false;
+                        this.lblTotal.Text = "Datos Registrados: 0";
+
+                        this.btnEliminar_Resultados.Enabled = false;
+                        this.btnImprimir.Enabled = false;
+                    }
+                }
+
+                else
+                {
+                    MessageBox.Show(" El Usuario Iniciado no Contiene Permisos Para Realizar Consultas", "Leal Enterprise - 'Acceso Denegado' ", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void CBFechas_CheckedChanged(object sender, EventArgs e)
@@ -446,7 +489,47 @@ namespace Presentacion
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (Digitar)
+                {
+                    if (Guardar == "1")
+                    {
+                        //Metodo Guardar y editar
+                        this.Guardar_SQL();
+                    }
 
+                    else
+                    {
+                        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                        //Llamada de Clase
+                        this.Digitar = false;
+                        this.Limpiar_Datos();
+                    }
+                }
+
+                //else
+                //{
+                //    if (Editar == "1")
+                //    {
+                //        //Metodo Guardar y editar
+                //        this.Guardar_SQL();
+                //    }
+                //    else
+                //    {
+                //        MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Editar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                //        //Llamada de Clase
+                //        this.Digitar = false;
+                //        this.Limpiar_Datos();
+                //    }
+                //}
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -792,9 +875,9 @@ namespace Presentacion
             {
                 //
                 int cantidad = 0;
-                decimal precio_unit = 0;
-                decimal precio_total = 0;
-                decimal valor = 0;
+                double precio_unit = 0;
+                double precio_total = 0;
+                double valor = 0;
                 
                 if (DGDetalles.Columns[e.ColumnIndex].Name == "Cantidad")
                 {
@@ -809,7 +892,7 @@ namespace Presentacion
 
                     try
                     {
-                        precio_unit = decimal.Parse(DGDetalles.Rows[e.RowIndex].Cells[5].Value.ToString());
+                        precio_unit = double.Parse(DGDetalles.Rows[e.RowIndex].Cells[5].Value.ToString());
                     }
                     catch (Exception)
                     {

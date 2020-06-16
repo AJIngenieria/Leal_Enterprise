@@ -22,7 +22,7 @@ namespace Entidad
         private string codigo;
         private string descripcion;
         private string descuento;
-        private decimal precioFinal;
+        private string precioFinal;
         private string estado;
 
         //Datos Auxiliares
@@ -36,7 +36,7 @@ namespace Entidad
         public string Codigo { get => codigo; set => codigo = value; }
         public string Descripcion { get => descripcion; set => descripcion = value; }
         public string Descuento { get => descuento; set => descuento = value; }
-        public decimal PrecioFinal { get => precioFinal; set => precioFinal = value; }
+        public string PrecioFinal { get => precioFinal; set => precioFinal = value; }
         public int Auto { get => auto; set => auto = value; }
         public string Estado { get => estado; set => estado = value; }
         public DataTable Cotizacion_Detalles { get => cotizacion_Detalles; set => cotizacion_Detalles = value; }
