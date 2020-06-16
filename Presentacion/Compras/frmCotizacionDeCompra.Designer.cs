@@ -561,6 +561,7 @@
             this.TBDescuento.Size = new System.Drawing.Size(155, 16);
             this.TBDescuento.TabIndex = 3;
             this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
             // 
             // frmCotizacionDeCompra
             // 

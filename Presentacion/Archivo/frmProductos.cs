@@ -34,6 +34,11 @@ namespace Presentacion
         public bool Filtro = true;
         public bool Examinar = true;
 
+        //Variable para Agregar los Detalles a la Base de Datos
+        private DataTable DtDetalle_Lote = new DataTable();
+        private DataTable DtDetalle_Bodega = new DataTable();
+        private DataTable DtDetalle_CodigoDeBarra = new DataTable();
+
         //Variables de Validaciones
         public int Idempleado; //Variable para Captura el Empleado Logueado
         private string Campo = "Campo Obligatorio - Leal Enterprise";
@@ -265,7 +270,7 @@ namespace Presentacion
 
                 //Panel - Codigo de Barra
                 this.TBCodigodeBarra.Clear();
-                this.DGResultados_Codigos.DataSource = null;
+                this.DGDetalles_CodigoDeBarra.DataSource = null;
 
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
@@ -420,7 +425,137 @@ namespace Presentacion
             this.Mon_Mayorista = TBVentaMayorista.Text;
             this.Mon_Comision = TBValorParaComision.Text;
         }
-        
+
+
+        private void Diseño_TablasGenerales()
+        {
+            try
+            {
+                //this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Bodega.Columns.Add("Ubicacion", System.Type.GetType("System.String"));
+                this.DtDetalle_Bodega.Columns.Add("Estante", System.Type.GetType("System.String"));
+                this.DtDetalle_Bodega.Columns.Add("Nivel", System.Type.GetType("System.String"));
+
+                //
+                this.DtDetalle_Lote.Columns.Add("Codigo", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Lote", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Valor", System.Type.GetType("System.String"));
+
+                //
+                this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo", System.Type.GetType("System.String"));
+                this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo de Barra", System.Type.GetType("System.String"));
+
+                //Medidas de las Columnas - Ubicacion
+                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Bodega;
+                this.DGDetalles_Ubicacion.Columns[0].HeaderText = "Ubicacion";
+                this.DGDetalles_Ubicacion.Columns[0].Width = 50;
+                this.DGDetalles_Ubicacion.Columns[1].HeaderText = "Estante";
+                this.DGDetalles_Ubicacion.Columns[1].Width = 88;
+                this.DGDetalles_Ubicacion.Columns[2].HeaderText = "Nivel";
+                this.DGDetalles_Ubicacion.Columns[2].Width = 380;
+
+                //Medidas de las Columnas - Lote
+                this.DGDetalles_Lotes.DataSource = this.DtDetalle_Lote;
+                this.DGDetalles_Lotes.Columns[0].HeaderText = "Codigo";
+                this.DGDetalles_Lotes.Columns[0].Width = 65;
+                this.DGDetalles_Lotes.Columns[1].HeaderText = "Lote";
+                this.DGDetalles_Lotes.Columns[1].Width = 65;
+                this.DGDetalles_Lotes.Columns[2].HeaderText = "Valor";
+                this.DGDetalles_Lotes.Columns[2].Width = 90;
+
+                //Medidas de las Columnas - Lote
+                this.DGDetalles_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
+                this.DGDetalles_CodigoDeBarra.Columns[0].HeaderText = "Codigo";
+                this.DGDetalles_CodigoDeBarra.Columns[0].Width = 65;
+                this.DGDetalles_CodigoDeBarra.Columns[1].HeaderText = "Codigo de Barra";
+                this.DGDetalles_CodigoDeBarra.Columns[1].Width = 65;
+                
+                //Formato de Celdas
+                this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Format = "##,##0.00";
+
+                //Aliniacion de las Celdas de Cada Columna - Panel de Ubicacion
+                this.DGDetalles_Ubicacion.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Ubicacion.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Ubicacion.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Aliniacion de las Celdas de Cada Columna - Panel Lotes
+                this.DGDetalles_Lotes.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Aliniacion de las Celdas de Cada Columna - Panel Codigo de Barra
+                this.DGDetalles_CodigoDeBarra.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_CodigoDeBarra.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Detalle_CodigoDeBarra(string codigodebarra)
+        {
+            try
+            {
+                //
+                bool Agregar_CodigoDeBarra = true;
+
+                //Panel Codigo de Barra
+                foreach (DataRow FilaTemporal in DtDetalle_CodigoDeBarra.Rows)
+                {
+                    if (Convert.ToString(FilaTemporal["Codigo"]) == codigodebarra)
+                    {
+                        Agregar_CodigoDeBarra = false;
+                        this.MensajeError("El Codigo de Barra ya se Encuentra Agregado en la Lista");
+                    }
+                }
+
+                if (Agregar_CodigoDeBarra)
+                {
+                    DataRow Fila = DtDetalle_CodigoDeBarra.NewRow();
+                    Fila["Codigo de Barra"] = codigodebarra;
+                    this.DtDetalle_CodigoDeBarra.Rows.Add(Fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Detalle_Ubicacion(int idbodega, string ubicacion, string estante, string nivel)
+        {
+            try
+            {
+                //
+                bool Agregar_Ubicacion = true;
+                                
+                //Panel Ubicacion
+                foreach (DataRow FilaTemporal in DtDetalle_Bodega.Rows)
+                {
+                    if (Convert.ToInt32(FilaTemporal["Codigo"]) == idbodega)
+                    {
+                        Agregar_Ubicacion = false;
+                        this.MensajeError("La Ubicación del Producto ya se Encuentra en la Lista");
+                    }
+                }
+
+                if (Agregar_Ubicacion)
+                {
+                    DataRow Fila = DtDetalle_Bodega.NewRow();
+                    Fila["Codigo"] = idbodega;
+                    Fila["Ubicacion"] = ubicacion;
+                    Fila["Estante"] = estante;
+                    Fila["Nivel"] = nivel;
+                    this.DtDetalle_Bodega.Rows.Add(Fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
         private void Guardar_SQL()
         {
             try
@@ -680,7 +815,28 @@ namespace Presentacion
 
         private void btnAgregar_Ubicacion_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable Tabla = new DataTable();
 
+                this.Detalle_Ubicacion
+                    (
+                        Convert.ToInt32(Tabla.Rows[0][0]),
+                        Convert.ToString(Tabla.Rows[0][1]),
+                        Convert.ToString(Tabla.Rows[0][2]),
+                        Convert.ToString(Tabla.Rows[0][3])
+                    );
+
+                //
+                this.TBUbicacion.Clear();
+                this.TBEstante.Clear();
+                this.TBNivel.Clear();
+                this.TBStock.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEliminar_Ubicacion_Click(object sender, EventArgs e)
@@ -690,7 +846,19 @@ namespace Presentacion
 
         private void btnAgregar_CodigoDeBarra_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DataTable Tabla = new DataTable();
 
+                this.Detalle_CodigoDeBarra(Convert.ToString(Tabla.Rows[0][0]));
+
+                //
+                this.TBCodigodeBarra.Clear();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEliminar_CodigosDeBarra_Click(object sender, EventArgs e)
@@ -3128,7 +3296,15 @@ namespace Presentacion
         {
             try
             {
-                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    if (TBCodigodeBarra.Text==string.Empty)
+                    {
+                        MensajeError("Por favor digite el Codigo de Barra que desea registrar");
+                        this.TBCodigodeBarra.Focus();
+                    }
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
                 {
                     //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
                     //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt

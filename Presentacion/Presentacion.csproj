@@ -216,10 +216,10 @@
     <Compile Include="Archivo\frmGrupo.Designer.cs">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="General\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="General\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
     <Compile Include="Archivo\frmProveedor.cs">
@@ -264,10 +264,10 @@
     <Compile Include="Gestion Humana\frmDepartamento.Designer.cs">
       <DependentUpon>frmDepartamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMenuPrincipal.cs">
+    <Compile Include="General\frmMenuPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMenuPrincipal.Designer.cs">
+    <Compile Include="General\frmMenuPrincipal.Designer.cs">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </Compile>
     <Compile Include="Gestion Humana\frmEmpleados.cs">
@@ -356,7 +356,7 @@
     <EmbeddedResource Include="Archivo\frmGrupo.resx">
       <DependentUpon>frmGrupo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="General\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Archivo\frmProveedor.resx">
@@ -380,7 +380,7 @@
     <EmbeddedResource Include="Gestion Humana\frmDepartamento.resx">
       <DependentUpon>frmDepartamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMenuPrincipal.resx">
+    <EmbeddedResource Include="General\frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Gestion Humana\frmEmpleados.resx">

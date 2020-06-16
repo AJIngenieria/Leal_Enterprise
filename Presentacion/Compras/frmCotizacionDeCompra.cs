@@ -32,7 +32,7 @@ namespace Presentacion
         public bool Filtro = true;
         public bool Examinar = true;
 
-        //
+        //Variable para Agregar los Detalles a la Base de Datos
         private DataTable DtDetalle = new DataTable();
 
         //Variables de Validaciones
@@ -300,25 +300,31 @@ namespace Presentacion
         {
             try
             {
-                if (TBDescuento.Text == string.Empty)
+                double SubTotal = 0;
+                double Descuento = 0;
+                double Operacion = 0;
+                double Porcentaje = 0;
+
+                //Se procede a sumar la columna de valor de compra promedio
+
+                foreach (DataGridViewRow row in DGDetalles.Rows)
                 {
-                    this.TBDescuento.Text = "0";
+                    SubTotal += Convert.ToDouble(row.Cells[6].Value);
                 }
 
-                else
-                {
-                    double total = 0;
+                //Se establece el valor predeterminado del descuento o del campo
+                this.TBDescuento.Text = "0";
+                
+                //
+                this.TBSubTotal.Text= Convert.ToString(SubTotal);
 
-                    //Se procede a sumar la columna de valor de compra promedio
+                Descuento = Convert.ToDouble(this.TBDescuento.Text);
+                Porcentaje = SubTotal * Descuento / 100;
+                Operacion = SubTotal - Porcentaje;
 
-                    foreach (DataGridViewRow row in DGDetalles.Rows)
-                    {
-                        total += Convert.ToDouble(row.Cells[6].Value);
-                    }
-
-                    this.TBDescuento.Text = total.ToString("##,##0.00");
-                    this.TBValorFinal.Text = total.ToString("##,##0.00");
-                }
+                //Se les da Formato a los campo de texto en este caso con Miles y Dos Decimales
+                this.TBSubTotal.Text = Operacion.ToString("##,##0.00");
+                this.TBValorFinal.Text = Operacion.ToString("##,##0.00");
             }
             catch (Exception ex)
             {
@@ -877,7 +883,6 @@ namespace Presentacion
                 int cantidad = 0;
                 double precio_unit = 0;
                 double precio_total = 0;
-                double valor = 0;
                 
                 if (DGDetalles.Columns[e.ColumnIndex].Name == "Cantidad")
                 {
@@ -906,6 +911,34 @@ namespace Presentacion
 
                         this.Calculo_Totales();
                     }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBDescuento_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    double SubTotal;
+                    double Descuento;
+                    double Operacion = 0;
+                    double Porcentaje;
+
+                    //
+                    Descuento = Convert.ToDouble(this.TBDescuento.Text);
+                    SubTotal = Convert.ToDouble(this.TBSubTotal.Text);
+                    Porcentaje = SubTotal * Descuento / 100;
+                    Operacion = SubTotal - Porcentaje;
+
+                    //Se les da Formato a los campo de texto en este caso con Miles y Dos Decimales
+                    //this.TBSubTotal.Text = Operacion.ToString("##,##0.00");
+                    this.TBValorFinal.Text = Operacion.ToString("##,##0.00");
                 }
             }
             catch (Exception ex)
