@@ -89,5 +89,15 @@ namespace Presentacion {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Totalizacion___Cotizacion_de_Compra {
+            get {
+                object obj = ResourceManager.GetObject("Totalizacion - Cotizacion de Compra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }

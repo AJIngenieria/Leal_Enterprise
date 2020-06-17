@@ -138,6 +138,12 @@
     <Compile Include="Compras\frmCotizacionDeCompra.Designer.cs">
       <DependentUpon>frmCotizacionDeCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Compras\frmTotalizar_CotizacionDeCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Compras\frmTotalizar_CotizacionDeCompra.Designer.cs">
+      <DependentUpon>frmTotalizar_CotizacionDeCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\frmInventario_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -316,6 +322,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Compras\frmCotizacionDeCompra.resx">
       <DependentUpon>frmCotizacionDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Compras\frmTotalizar_CotizacionDeCompra.resx">
+      <DependentUpon>frmTotalizar_CotizacionDeCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmGastosDeIngreso.resx">
       <DependentUpon>frmGastosDeIngreso.cs</DependentUpon>
@@ -509,6 +518,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono_Leal_Enterprise.ico" />
+    <None Include="Resources\Totalizacion - Cotizacion de Compra.jpg" />
     <None Include="Resources\Valor Final - Cotizacion de Compra.jpg" />
     <None Include="Resources\Orden de Compra - Totalizacion.jpg" />
     <None Include="Resources\Producto - Valores  Iniciales.jpg" />

@@ -30,27 +30,28 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizacionDeCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.TBIdbodega = new System.Windows.Forms.TextBox();
             this.TBIdproveedor = new System.Windows.Forms.TextBox();
             this.TBIddetalle = new System.Windows.Forms.TextBox();
             this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.lblTotal_Detalles = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEliminar_Detalles = new System.Windows.Forms.Button();
-            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
             this.TBProducto = new System.Windows.Forms.TextBox();
             this.TBCodigo_Producto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TBBodega = new System.Windows.Forms.TextBox();
             this.TBProveedor = new System.Windows.Forms.TextBox();
             this.TBDescripcion = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TBValorFinal = new System.Windows.Forms.TextBox();
-            this.TBSubTotal = new System.Windows.Forms.TextBox();
             this.DGDetalles = new System.Windows.Forms.DataGridView();
-            this.btnExaminar_Producto = new System.Windows.Forms.Button();
-            this.btnExaminar_Bodega = new System.Windows.Forms.Button();
             this.TBCodigo_Bodega = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TBCodigo_Proveedor = new System.Windows.Forms.TextBox();
@@ -58,9 +59,7 @@
             this.TBCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnEliminar_Resultados = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
-            this.btnImprimir = new System.Windows.Forms.Button();
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -70,20 +69,37 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnEliminar_Resultados = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar_Detalles = new System.Windows.Forms.Button();
+            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.TBDescuento = new System.Windows.Forms.TextBox();
+            this.TBValorFinal = new System.Windows.Forms.TextBox();
+            this.TBSubTotal = new System.Windows.Forms.TextBox();
+            this.btnExaminar_Producto = new System.Windows.Forms.Button();
+            this.btnExaminar_Bodega = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TBIdbodega);
-            this.groupBox1.Controls.Add(this.TBIdproveedor);
-            this.groupBox1.Controls.Add(this.TBIddetalle);
-            this.groupBox1.Controls.Add(this.TBIdproducto);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblTotal_Detalles);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.btnCancelar);
@@ -112,30 +128,117 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cotizacion de Compra - Leal Enterprise";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(221, 23);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(105, 15);
+            this.label14.TabIndex = 212;
+            this.label14.Text = "Orden de Compra";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(642, 152);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(155, 21);
+            this.textBox4.TabIndex = 210;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(528, 155);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(108, 15);
+            this.label13.TabIndex = 209;
+            this.label13.Text = "Credito Disponible";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(642, 126);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(155, 21);
+            this.textBox3.TabIndex = 208;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(528, 128);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(95, 15);
+            this.label12.TabIndex = 207;
+            this.label12.Text = "Credito en Mora";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(75, 125);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(140, 21);
+            this.comboBox1.TabIndex = 204;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(6, 126);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(36, 15);
+            this.label10.TabIndex = 203;
+            this.label10.Text = "Pago";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(221, 98);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(301, 21);
+            this.textBox1.TabIndex = 202;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(75, 98);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(140, 21);
+            this.textBox2.TabIndex = 200;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 101);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 15);
+            this.label9.TabIndex = 199;
+            this.label9.Text = "Almacen";
+            // 
             // TBIdbodega
             // 
-            this.TBIdbodega.Location = new System.Drawing.Point(344, 443);
+            this.TBIdbodega.Location = new System.Drawing.Point(141, 440);
             this.TBIdbodega.Name = "TBIdbodega";
             this.TBIdbodega.Size = new System.Drawing.Size(10, 21);
             this.TBIdbodega.TabIndex = 198;
             // 
             // TBIdproveedor
             // 
-            this.TBIdproveedor.Location = new System.Drawing.Point(392, 443);
+            this.TBIdproveedor.Location = new System.Drawing.Point(189, 440);
             this.TBIdproveedor.Name = "TBIdproveedor";
             this.TBIdproveedor.Size = new System.Drawing.Size(10, 21);
             this.TBIdproveedor.TabIndex = 197;
             // 
             // TBIddetalle
             // 
-            this.TBIddetalle.Location = new System.Drawing.Point(376, 443);
+            this.TBIddetalle.Location = new System.Drawing.Point(173, 440);
             this.TBIddetalle.Name = "TBIddetalle";
             this.TBIddetalle.Size = new System.Drawing.Size(10, 21);
             this.TBIddetalle.TabIndex = 196;
             // 
             // TBIdproducto
             // 
-            this.TBIdproducto.Location = new System.Drawing.Point(360, 443);
+            this.TBIdproducto.Location = new System.Drawing.Point(157, 440);
             this.TBIdproducto.Name = "TBIdproducto";
             this.TBIdproducto.Size = new System.Drawing.Size(10, 21);
             this.TBIdproducto.TabIndex = 195;
@@ -148,6 +251,295 @@
             this.lblTotal_Detalles.Size = new System.Drawing.Size(130, 15);
             this.lblTotal_Detalles.TabIndex = 194;
             this.lblTotal_Detalles.Text = "Productos Agregados: ";
+            // 
+            // TBProducto
+            // 
+            this.TBProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBProducto.Location = new System.Drawing.Point(221, 152);
+            this.TBProducto.Name = "TBProducto";
+            this.TBProducto.Size = new System.Drawing.Size(270, 21);
+            this.TBProducto.TabIndex = 184;
+            // 
+            // TBCodigo_Producto
+            // 
+            this.TBCodigo_Producto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigo_Producto.Location = new System.Drawing.Point(75, 152);
+            this.TBCodigo_Producto.Name = "TBCodigo_Producto";
+            this.TBCodigo_Producto.Size = new System.Drawing.Size(140, 21);
+            this.TBCodigo_Producto.TabIndex = 183;
+            this.TBCodigo_Producto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCodigo_Producto.Enter += new System.EventHandler(this.TBCodigo_Producto_Enter);
+            this.TBCodigo_Producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Producto_KeyPress);
+            this.TBCodigo_Producto.Leave += new System.EventHandler(this.TBCodigo_Producto_Leave);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 155);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 15);
+            this.label5.TabIndex = 182;
+            this.label5.Text = "Producto";
+            // 
+            // TBBodega
+            // 
+            this.TBBodega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBBodega.Location = new System.Drawing.Point(221, 72);
+            this.TBBodega.Name = "TBBodega";
+            this.TBBodega.Size = new System.Drawing.Size(270, 21);
+            this.TBBodega.TabIndex = 181;
+            // 
+            // TBProveedor
+            // 
+            this.TBProveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBProveedor.Location = new System.Drawing.Point(221, 46);
+            this.TBProveedor.Name = "TBProveedor";
+            this.TBProveedor.Size = new System.Drawing.Size(270, 21);
+            this.TBProveedor.TabIndex = 180;
+            // 
+            // TBDescripcion
+            // 
+            this.TBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescripcion.Location = new System.Drawing.Point(332, 20);
+            this.TBDescripcion.Name = "TBDescripcion";
+            this.TBDescripcion.Size = new System.Drawing.Size(190, 21);
+            this.TBDescripcion.TabIndex = 179;
+            this.TBDescripcion.Enter += new System.EventHandler(this.TBDescripcion_Enter);
+            this.TBDescripcion.Leave += new System.EventHandler(this.TBDescripcion_Leave);
+            // 
+            // DGDetalles
+            // 
+            this.DGDetalles.AllowUserToAddRows = false;
+            this.DGDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGDetalles.BackgroundColor = System.Drawing.Color.White;
+            this.DGDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGDetalles.Location = new System.Drawing.Point(6, 179);
+            this.DGDetalles.Name = "DGDetalles";
+            this.DGDetalles.RowHeadersVisible = false;
+            this.DGDetalles.Size = new System.Drawing.Size(791, 253);
+            this.DGDetalles.TabIndex = 177;
+            this.DGDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellContentClick);
+            this.DGDetalles.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellEndEdit);
+            // 
+            // TBCodigo_Bodega
+            // 
+            this.TBCodigo_Bodega.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigo_Bodega.Location = new System.Drawing.Point(75, 72);
+            this.TBCodigo_Bodega.Name = "TBCodigo_Bodega";
+            this.TBCodigo_Bodega.Size = new System.Drawing.Size(140, 21);
+            this.TBCodigo_Bodega.TabIndex = 7;
+            this.TBCodigo_Bodega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCodigo_Bodega.Enter += new System.EventHandler(this.TBCodigo_Bodega_Enter);
+            this.TBCodigo_Bodega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Bodega_KeyPress);
+            this.TBCodigo_Bodega.Leave += new System.EventHandler(this.TBCodigo_Bodega_Leave);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(6, 75);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(50, 15);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Bodega";
+            // 
+            // TBCodigo_Proveedor
+            // 
+            this.TBCodigo_Proveedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigo_Proveedor.Location = new System.Drawing.Point(75, 46);
+            this.TBCodigo_Proveedor.Name = "TBCodigo_Proveedor";
+            this.TBCodigo_Proveedor.Size = new System.Drawing.Size(140, 21);
+            this.TBCodigo_Proveedor.TabIndex = 3;
+            this.TBCodigo_Proveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCodigo_Proveedor.Enter += new System.EventHandler(this.TBCodigo_Proveedor_Enter);
+            this.TBCodigo_Proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Proveedor_KeyPress);
+            this.TBCodigo_Proveedor.Leave += new System.EventHandler(this.TBCodigo_Proveedor_Leave);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 49);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(63, 15);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Proveedor";
+            // 
+            // TBCodigo
+            // 
+            this.TBCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigo.Location = new System.Drawing.Point(75, 20);
+            this.TBCodigo.Name = "TBCodigo";
+            this.TBCodigo.Size = new System.Drawing.Size(140, 21);
+            this.TBCodigo.TabIndex = 1;
+            this.TBCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCodigo.Enter += new System.EventHandler(this.TBCodigo_Enter);
+            this.TBCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_KeyPress);
+            this.TBCodigo.Leave += new System.EventHandler(this.TBCodigo_Leave);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(46, 15);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Codigo";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.btnEliminar_Resultados);
+            this.groupBox2.Controls.Add(this.lblTotal);
+            this.groupBox2.Controls.Add(this.btnImprimir);
+            this.groupBox2.Controls.Add(this.DGResultados);
+            this.groupBox2.Controls.Add(this.dateTimePicker2);
+            this.groupBox2.Controls.Add(this.dateTimePicker1);
+            this.groupBox2.Controls.Add(this.label8);
+            this.groupBox2.Controls.Add(this.label7);
+            this.groupBox2.Controls.Add(this.CBFechas);
+            this.groupBox2.Controls.Add(this.label6);
+            this.groupBox2.Controls.Add(this.TBBuscar);
+            this.groupBox2.Controls.Add(this.label3);
+            this.groupBox2.Controls.Add(this.TBIdbodega);
+            this.groupBox2.Controls.Add(this.TBIdproducto);
+            this.groupBox2.Controls.Add(this.TBIdproveedor);
+            this.groupBox2.Controls.Add(this.TBIddetalle);
+            this.groupBox2.Location = new System.Drawing.Point(822, 12);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(493, 474);
+            this.groupBox2.TabIndex = 1;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Consulta de Cotizacion de Compra - Leal Enterprise";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Location = new System.Drawing.Point(6, 446);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(114, 15);
+            this.lblTotal.TabIndex = 9;
+            this.lblTotal.Text = "Datos Registrados: ";
+            // 
+            // DGResultados
+            // 
+            this.DGResultados.AllowUserToAddRows = false;
+            this.DGResultados.AllowUserToDeleteRows = false;
+            this.DGResultados.BackgroundColor = System.Drawing.Color.White;
+            this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGResultados.Location = new System.Drawing.Point(6, 74);
+            this.DGResultados.Name = "DGResultados";
+            this.DGResultados.ReadOnly = true;
+            this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.DGResultados.Size = new System.Drawing.Size(481, 358);
+            this.DGResultados.TabIndex = 8;
+            this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker2.Location = new System.Drawing.Point(386, 47);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(101, 21);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(244, 47);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(99, 21);
+            this.dateTimePicker1.TabIndex = 6;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(359, 50);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(24, 15);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Fin";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(202, 49);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(36, 15);
+            this.label7.TabIndex = 4;
+            this.label7.Text = "Inicio";
+            // 
+            // CBFechas
+            // 
+            this.CBFechas.AutoSize = true;
+            this.CBFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.CBFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBFechas.Location = new System.Drawing.Point(141, 47);
+            this.CBFechas.Name = "CBFechas";
+            this.CBFechas.Size = new System.Drawing.Size(55, 17);
+            this.CBFechas.TabIndex = 3;
+            this.CBFechas.Text = "Si - No";
+            this.CBFechas.UseVisualStyleBackColor = true;
+            this.CBFechas.CheckedChanged += new System.EventHandler(this.CBFechas_CheckedChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(129, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Consulta entre Fechas";
+            // 
+            // TBBuscar
+            // 
+            this.TBBuscar.Location = new System.Drawing.Point(140, 20);
+            this.TBBuscar.Name = "TBBuscar";
+            this.TBBuscar.Size = new System.Drawing.Size(347, 21);
+            this.TBBuscar.TabIndex = 1;
+            this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(128, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Cotización de Compra";
+            // 
+            // btnEliminar_Resultados
+            // 
+            this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
+            this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
+            this.btnEliminar_Resultados.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Resultados.TabIndex = 192;
+            this.btnEliminar_Resultados.Text = "Eliminar";
+            this.btnEliminar_Resultados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Resultados.UseVisualStyleBackColor = true;
+            this.btnEliminar_Resultados.Click += new System.EventHandler(this.btnEliminar_Resultados_Click);
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(397, 438);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(90, 30);
+            this.btnImprimir.TabIndex = 193;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // btnGuardar
             // 
@@ -205,62 +597,12 @@
             this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
             this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(497, 47);
+            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(497, 46);
             this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
             this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
             this.btnExaminar_Proveedor.TabIndex = 185;
             this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
             this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
-            // 
-            // TBProducto
-            // 
-            this.TBProducto.Location = new System.Drawing.Point(221, 101);
-            this.TBProducto.Name = "TBProducto";
-            this.TBProducto.Size = new System.Drawing.Size(270, 21);
-            this.TBProducto.TabIndex = 184;
-            // 
-            // TBCodigo_Producto
-            // 
-            this.TBCodigo_Producto.Location = new System.Drawing.Point(75, 101);
-            this.TBCodigo_Producto.Name = "TBCodigo_Producto";
-            this.TBCodigo_Producto.Size = new System.Drawing.Size(140, 21);
-            this.TBCodigo_Producto.TabIndex = 183;
-            this.TBCodigo_Producto.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBCodigo_Producto.Enter += new System.EventHandler(this.TBCodigo_Producto_Enter);
-            this.TBCodigo_Producto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Producto_KeyPress);
-            this.TBCodigo_Producto.Leave += new System.EventHandler(this.TBCodigo_Producto_Leave);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 104);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 15);
-            this.label5.TabIndex = 182;
-            this.label5.Text = "Producto";
-            // 
-            // TBBodega
-            // 
-            this.TBBodega.Location = new System.Drawing.Point(221, 74);
-            this.TBBodega.Name = "TBBodega";
-            this.TBBodega.Size = new System.Drawing.Size(270, 21);
-            this.TBBodega.TabIndex = 181;
-            // 
-            // TBProveedor
-            // 
-            this.TBProveedor.Location = new System.Drawing.Point(221, 47);
-            this.TBProveedor.Name = "TBProveedor";
-            this.TBProveedor.Size = new System.Drawing.Size(270, 21);
-            this.TBProveedor.TabIndex = 180;
-            // 
-            // TBDescripcion
-            // 
-            this.TBDescripcion.Location = new System.Drawing.Point(221, 20);
-            this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(301, 21);
-            this.TBDescripcion.TabIndex = 179;
-            this.TBDescripcion.Enter += new System.EventHandler(this.TBDescripcion_Enter);
-            this.TBDescripcion.Leave += new System.EventHandler(this.TBDescripcion_Leave);
             // 
             // panel1
             // 
@@ -273,6 +615,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(269, 102);
             this.panel1.TabIndex = 178;
+            // 
+            // TBDescuento
+            // 
+            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
+            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
+            this.TBDescuento.Name = "TBDescuento";
+            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
+            this.TBDescuento.TabIndex = 3;
+            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
             // 
             // TBValorFinal
             // 
@@ -296,21 +650,6 @@
             this.TBSubTotal.TabIndex = 0;
             this.TBSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // DGDetalles
-            // 
-            this.DGDetalles.AllowUserToAddRows = false;
-            this.DGDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGDetalles.BackgroundColor = System.Drawing.Color.White;
-            this.DGDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGDetalles.Location = new System.Drawing.Point(6, 128);
-            this.DGDetalles.Name = "DGDetalles";
-            this.DGDetalles.RowHeadersVisible = false;
-            this.DGDetalles.Size = new System.Drawing.Size(791, 304);
-            this.DGDetalles.TabIndex = 177;
-            this.DGDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellContentClick);
-            this.DGDetalles.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellEndEdit);
-            // 
             // btnExaminar_Producto
             // 
             this.btnExaminar_Producto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Producto.BackgroundImage")));
@@ -318,7 +657,7 @@
             this.btnExaminar_Producto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Producto.FlatAppearance.BorderSize = 0;
             this.btnExaminar_Producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Producto.Location = new System.Drawing.Point(497, 101);
+            this.btnExaminar_Producto.Location = new System.Drawing.Point(497, 152);
             this.btnExaminar_Producto.Name = "btnExaminar_Producto";
             this.btnExaminar_Producto.Size = new System.Drawing.Size(25, 21);
             this.btnExaminar_Producto.TabIndex = 176;
@@ -332,236 +671,12 @@
             this.btnExaminar_Bodega.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnExaminar_Bodega.FlatAppearance.BorderSize = 0;
             this.btnExaminar_Bodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Bodega.Location = new System.Drawing.Point(497, 74);
+            this.btnExaminar_Bodega.Location = new System.Drawing.Point(497, 72);
             this.btnExaminar_Bodega.Name = "btnExaminar_Bodega";
             this.btnExaminar_Bodega.Size = new System.Drawing.Size(25, 21);
             this.btnExaminar_Bodega.TabIndex = 175;
             this.btnExaminar_Bodega.UseVisualStyleBackColor = true;
             this.btnExaminar_Bodega.Click += new System.EventHandler(this.btnExaminar_Bodega_Click);
-            // 
-            // TBCodigo_Bodega
-            // 
-            this.TBCodigo_Bodega.Location = new System.Drawing.Point(75, 74);
-            this.TBCodigo_Bodega.Name = "TBCodigo_Bodega";
-            this.TBCodigo_Bodega.Size = new System.Drawing.Size(140, 21);
-            this.TBCodigo_Bodega.TabIndex = 7;
-            this.TBCodigo_Bodega.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBCodigo_Bodega.Enter += new System.EventHandler(this.TBCodigo_Bodega_Enter);
-            this.TBCodigo_Bodega.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Bodega_KeyPress);
-            this.TBCodigo_Bodega.Leave += new System.EventHandler(this.TBCodigo_Bodega_Leave);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 77);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(50, 15);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Bodega";
-            // 
-            // TBCodigo_Proveedor
-            // 
-            this.TBCodigo_Proveedor.Location = new System.Drawing.Point(75, 47);
-            this.TBCodigo_Proveedor.Name = "TBCodigo_Proveedor";
-            this.TBCodigo_Proveedor.Size = new System.Drawing.Size(140, 21);
-            this.TBCodigo_Proveedor.TabIndex = 3;
-            this.TBCodigo_Proveedor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBCodigo_Proveedor.Enter += new System.EventHandler(this.TBCodigo_Proveedor_Enter);
-            this.TBCodigo_Proveedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_Proveedor_KeyPress);
-            this.TBCodigo_Proveedor.Leave += new System.EventHandler(this.TBCodigo_Proveedor_Leave);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 15);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Proveedor";
-            // 
-            // TBCodigo
-            // 
-            this.TBCodigo.Location = new System.Drawing.Point(75, 20);
-            this.TBCodigo.Name = "TBCodigo";
-            this.TBCodigo.Size = new System.Drawing.Size(140, 21);
-            this.TBCodigo.TabIndex = 1;
-            this.TBCodigo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBCodigo.Enter += new System.EventHandler(this.TBCodigo_Enter);
-            this.TBCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCodigo_KeyPress);
-            this.TBCodigo.Leave += new System.EventHandler(this.TBCodigo_Leave);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Codigo";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.btnEliminar_Resultados);
-            this.groupBox2.Controls.Add(this.lblTotal);
-            this.groupBox2.Controls.Add(this.btnImprimir);
-            this.groupBox2.Controls.Add(this.DGResultados);
-            this.groupBox2.Controls.Add(this.dateTimePicker2);
-            this.groupBox2.Controls.Add(this.dateTimePicker1);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.CBFechas);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.TBBuscar);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Location = new System.Drawing.Point(822, 12);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(493, 474);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Consulta de Cotizacion de Compra - Leal Enterprise";
-            // 
-            // btnEliminar_Resultados
-            // 
-            this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
-            this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
-            this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
-            this.btnEliminar_Resultados.Size = new System.Drawing.Size(90, 30);
-            this.btnEliminar_Resultados.TabIndex = 192;
-            this.btnEliminar_Resultados.Text = "Eliminar";
-            this.btnEliminar_Resultados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Resultados.UseVisualStyleBackColor = true;
-            this.btnEliminar_Resultados.Click += new System.EventHandler(this.btnEliminar_Resultados_Click);
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 446);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(114, 15);
-            this.lblTotal.TabIndex = 9;
-            this.lblTotal.Text = "Datos Registrados: ";
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(397, 438);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(90, 30);
-            this.btnImprimir.TabIndex = 193;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // DGResultados
-            // 
-            this.DGResultados.AllowUserToAddRows = false;
-            this.DGResultados.AllowUserToDeleteRows = false;
-            this.DGResultados.BackgroundColor = System.Drawing.Color.White;
-            this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGResultados.Location = new System.Drawing.Point(6, 74);
-            this.DGResultados.Name = "DGResultados";
-            this.DGResultados.ReadOnly = true;
-            this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(481, 358);
-            this.DGResultados.TabIndex = 8;
-            this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(386, 47);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(101, 21);
-            this.dateTimePicker2.TabIndex = 7;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(252, 47);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(101, 21);
-            this.dateTimePicker1.TabIndex = 6;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(359, 50);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(24, 15);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Fin";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(210, 47);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 15);
-            this.label7.TabIndex = 4;
-            this.label7.Text = "Inicio";
-            // 
-            // CBFechas
-            // 
-            this.CBFechas.AutoSize = true;
-            this.CBFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.CBFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBFechas.Location = new System.Drawing.Point(141, 47);
-            this.CBFechas.Name = "CBFechas";
-            this.CBFechas.Size = new System.Drawing.Size(55, 17);
-            this.CBFechas.TabIndex = 3;
-            this.CBFechas.Text = "Si - No";
-            this.CBFechas.UseVisualStyleBackColor = true;
-            this.CBFechas.CheckedChanged += new System.EventHandler(this.CBFechas_CheckedChanged);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 47);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 15);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Consulta entre Fechas";
-            // 
-            // TBBuscar
-            // 
-            this.TBBuscar.Location = new System.Drawing.Point(140, 20);
-            this.TBBuscar.Name = "TBBuscar";
-            this.TBBuscar.Size = new System.Drawing.Size(347, 21);
-            this.TBBuscar.TabIndex = 1;
-            this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 15);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Cotización de Compra";
-            // 
-            // TBDescuento
-            // 
-            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
-            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
-            this.TBDescuento.Name = "TBDescuento";
-            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
-            this.TBDescuento.TabIndex = 3;
-            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
             // 
             // frmCotizacionDeCompra
             // 
@@ -580,12 +695,12 @@
             this.Load += new System.EventHandler(this.frmCotizacionDeCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -634,5 +749,15 @@
         private System.Windows.Forms.TextBox TBValorFinal;
         private System.Windows.Forms.TextBox TBSubTotal;
         private System.Windows.Forms.TextBox TBDescuento;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
     }
 }

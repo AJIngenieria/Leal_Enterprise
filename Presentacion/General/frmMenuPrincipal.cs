@@ -45,6 +45,9 @@ namespace Presentacion
 
         private void frmMenuPrincipal_Load(object sender, EventArgs e)
         {
+            toolStripComboBox1.SelectedIndex = 0;
+
+            //
             this.TSEmpleado.Text = Empleado;
             this.TSUsuario.Text = UsuarioLogueado;
 
