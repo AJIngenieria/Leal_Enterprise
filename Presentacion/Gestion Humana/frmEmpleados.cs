@@ -73,10 +73,6 @@ namespace Presentacion
         private void Habilitar()
         {
             //Panel - Datos Basicos
-            this.TBCodigo.ReadOnly = false;
-            this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBCodigo.Text = Campo;
             this.TBEmpleado.ReadOnly = false;
             this.TBEmpleado.BackColor = Color.FromArgb(3, 155, 229);
             this.TBEmpleado.ForeColor = Color.FromArgb(255, 255, 255);
@@ -97,8 +93,6 @@ namespace Presentacion
             this.TBCorreo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBDireccion01.ReadOnly = false;
             this.TBDireccion01.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBDireccion02.ReadOnly = false;
-            this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
 
             //Panel - Datos Financieros - Otros Datos
             this.TBComision.ReadOnly = false;
@@ -130,8 +124,6 @@ namespace Presentacion
             {
                 
                 //Panel - Datos Basicos
-                this.TBCodigo.Clear();
-                this.TBCodigo.Text = Campo;
                 this.TBEmpleado.Clear();
                 this.TBEmpleado.Text = Campo;
                 this.TBDocumento.Clear();
@@ -142,7 +134,6 @@ namespace Presentacion
                 this.TBMovil.Clear();
                 this.TBCorreo.Clear();
                 this.TBDireccion01.Clear();
-                this.TBDireccion02.Clear();
 
                 //Panel - Datos Financieros - Otros Datos
                 this.TBComision.Clear();
@@ -211,46 +202,42 @@ namespace Presentacion
                 {
                     MensajeError("Por favor el numero de Orden o Matricula del Alumno");
                 }
-                else if (this.TBCodigo.Text == Campo)
-                {
-                    MensajeError("Por favor ingrese el codigo del Empleado a Registrar");
-                }
 
                 else
                 {
-                    if (this.Digitar)
-                    {
-                        rptaDatosBasicos = fGestion_Empleados.Guardar_DatosBasicos
+                    //if (this.Digitar)
+                    //{
+                    //    rptaDatosBasicos = fGestion_Empleados.Guardar_DatosBasicos
 
-                            (
-                                 //Datos Auxiliares
-                                 1,
+                    //        (
+                    //             //Datos Auxiliares
+                    //             1,
 
-                                 //Panel Datos Basicos
-                                 Convert.ToInt32(CBDepartamento.SelectedValue), this.TBCodigo.Text, this.TBEmpleado.Text, this.TBDocumento.Text,
-                                 this.TBCargo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBProfesion.Text, this.TBFijo.Text,
-                                 this.TBMovil.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
-                                 this.CBBancoPrincipal.Text, this.CBBancoAuxiliar.Text, this.TBComision.Text, this.TBDescuento.Text,
-                                 this.TBCuentaPrincipal.Text, this.TBCuentaAuxiliar.Text, 1
-                            );
-                    }
+                    //             //Panel Datos Basicos
+                    //             Convert.ToInt32(CBDepartamento.SelectedValue), this.TBCodigo.Text, this.TBEmpleado.Text, this.TBDocumento.Text,
+                    //             this.TBCargo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBProfesion.Text, this.TBFijo.Text,
+                    //             this.TBMovil.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                    //             this.CBBancoPrincipal.Text, this.CBBancoAuxiliar.Text, this.TBComision.Text, this.TBDescuento.Text,
+                    //             this.TBCuentaPrincipal.Text, this.TBCuentaAuxiliar.Text, 1
+                    //        );
+                    //}
 
-                    else
-                    {
-                        rptaDatosBasicos = fGestion_Empleados.Editar_DatosBasicos
+                    //else
+                    //{
+                    //    rptaDatosBasicos = fGestion_Empleados.Editar_DatosBasicos
 
-                            (
-                                 //Datos Auxiliares y llave primaria
-                                 2, Convert.ToInt32(TBIdempleado.Text),
+                    //        (
+                    //             //Datos Auxiliares y llave primaria
+                    //             2, Convert.ToInt32(TBIdempleado.Text),
 
-                                 //Panel Datos Basicos
-                                 Convert.ToInt32(CBDepartamento.SelectedValue), this.TBCodigo.Text, this.TBEmpleado.Text, this.TBDocumento.Text,
-                                 this.TBCargo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBProfesion.Text, this.TBFijo.Text,
-                                 this.TBMovil.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
-                                 this.CBBancoPrincipal.Text, this.CBBancoAuxiliar.Text, this.TBComision.Text, this.TBDescuento.Text,
-                                 this.TBCuentaPrincipal.Text, this.TBCuentaAuxiliar.Text, 1
-                            );
-                    }
+                    //             //Panel Datos Basicos
+                    //             Convert.ToInt32(CBDepartamento.SelectedValue), this.TBCodigo.Text, this.TBEmpleado.Text, this.TBDocumento.Text,
+                    //             this.TBCargo.Text, this.TBPais.Text, this.TBCiudad.Text, this.TBProfesion.Text, this.TBFijo.Text,
+                    //             this.TBMovil.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text,
+                    //             this.CBBancoPrincipal.Text, this.CBBancoAuxiliar.Text, this.TBComision.Text, this.TBDescuento.Text,
+                    //             this.TBCuentaPrincipal.Text, this.TBCuentaAuxiliar.Text, 1
+                    //        );
+                    //}
 
                     if (rptaDatosBasicos.Equals("OK"))
                     {
@@ -478,23 +465,6 @@ namespace Presentacion
             }
         }
 
-        //**************************** FOCUS ENTER - Datos Basicos*******************************
-        private void TBCodigo_Enter(object sender, EventArgs e)
-        {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBCodigo.Text == Campo)
-            {
-                this.TBCodigo.BackColor = Color.Azure;
-                this.TBCodigo.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBCodigo.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBCodigo.BackColor = Color.Azure;
-            }
-        }
-
         private void TBEmpleado_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
@@ -623,22 +593,6 @@ namespace Presentacion
             }
         }
 
-        private void TBDireccion02_Enter(object sender, EventArgs e)
-        {
-            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBDireccion02.Text == Campo)
-            {
-                this.TBDireccion02.BackColor = Color.Azure;
-                this.TBDireccion02.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBDireccion02.Clear();
-            }
-            else
-            {
-                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBDireccion02.BackColor = Color.Azure;
-            }
-        }
-
         //**************************** FOCUS ENTER - Datos Financieros *******************************
         private void TBComision_Enter(object sender, EventArgs e)
         {
@@ -753,22 +707,7 @@ namespace Presentacion
         }
 
         //**************************** FOCUS LEAVE - Datos Basicos *******************************
-        private void TBCodigo_Leave(object sender, EventArgs e)
-        {
-            if (TBCodigo.Text == string.Empty)
-            {
-                //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBCodigo.Text = Campo;
-                this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
-            }
-
-            else
-            {
-                TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
-            }
-        }
-
+        
         private void TBEmpleado_Leave(object sender, EventArgs e)
         {
             if (TBEmpleado.Text == string.Empty)
@@ -837,12 +776,6 @@ namespace Presentacion
             this.TBDireccion01.BackColor = Color.FromArgb(3, 155, 229);
         }
 
-        private void TBDireccion02_Leave(object sender, EventArgs e)
-        {
-            //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
-        }
-
         //**************************** FOCUS Leave - Datos Financieros *******************************
         private void TBComision_Leave(object sender, EventArgs e)
         {
@@ -885,82 +818,6 @@ namespace Presentacion
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
 
-        private void TBCodigo_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
-                {
-                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-
-                    this.TBEmpleado.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
-                {
-                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
-                    //Y se realizara las validaciones en el sistema
-
-                    if (Digitar)
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            if (Guardar == "1")
-                            {
-                                //Clases y Focus
-                                this.Guardar_SQL();
-                            }
-                            else
-                            {
-                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
-                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
-                                this.Limpiar_Datos();
-                            }
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCodigo.Select();
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            //Clases y Focus
-                            this.Guardar_SQL();
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCodigo.Select();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
         private void TBEmpleado_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -972,14 +829,6 @@ namespace Presentacion
                     this.TBDocumento.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1048,14 +897,6 @@ namespace Presentacion
                     this.TBPais.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1124,14 +965,6 @@ namespace Presentacion
                     this.TBCiudad.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1200,14 +1033,6 @@ namespace Presentacion
                     this.TBFijo.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1276,14 +1101,6 @@ namespace Presentacion
                     this.TBMovil.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1352,14 +1169,6 @@ namespace Presentacion
                     this.TBCorreo.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1428,14 +1237,6 @@ namespace Presentacion
                     this.TBDireccion01.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1501,93 +1302,9 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBDireccion02.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
-                {
-                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
-                    //Y se realizara las validaciones en el sistema
-
-                    if (Digitar)
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            if (Guardar == "1")
-                            {
-                                //Clases y Focus
-                                this.Guardar_SQL();
-                            }
-                            else
-                            {
-                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
-                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
-                                this.Digitar = false;
-                                this.Limpiar_Datos();
-                            }
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBDireccion01.Select();
-                        }
-                    }
-                    else
-                    {
-                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (result == DialogResult.Yes)
-                        {
-                            //Clases y Focus
-                            this.Guardar_SQL();
-                        }
-                        else
-                        {
-                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
-                            //Donde se realizo la operacion o combinacion de teclas
-                            this.TBDireccion01.Select();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
-        }
-
-        private void TBDireccion02_KeyUp(object sender, KeyEventArgs e)
-        {
-            try
-            {
-                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
-                {
-                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-
                     this.TBEmpleado.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBComision.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1618,7 +1335,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBDireccion02.Select();
+                            this.TBDireccion01.Select();
                         }
                     }
                     else
@@ -1634,7 +1351,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBDireccion02.Select();
+                            this.TBDireccion01.Select();
                         }
                     }
                 }
@@ -1656,14 +1373,6 @@ namespace Presentacion
                     this.TBDescuento.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1732,14 +1441,6 @@ namespace Presentacion
                     this.TBProfesion.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1808,14 +1509,6 @@ namespace Presentacion
                     this.TBCargo.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1884,14 +1577,6 @@ namespace Presentacion
                     this.TBCuentaPrincipal.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1960,14 +1645,6 @@ namespace Presentacion
                     this.TBCuentaAuxiliar.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2036,14 +1713,6 @@ namespace Presentacion
                     this.TBComision.Select();
                 }
 
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBBuscar.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2111,107 +1780,11 @@ namespace Presentacion
 
                     //this.TBComision.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia las pestaña del TapControl
-                    //Y se realiza Focus al primer Texboxt de la segunda pestaña del TapControl
-
-                    this.TCPrincipal.SelectedIndex = 0;
-                    this.TBEmpleado.Select();
-                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
-        }
-
-        private void btnGuardar_MouseDown(object sender, MouseEventArgs e)
-        {
-            //Si se estan registrando los datos su imagen por defecto seria Guardar
-            //De lo contrario seria Editar
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseLeave(object sender, EventArgs e)
-        {
-            //Si se estan registrando los datos su imagen por defecto seria Guardar
-            //De lo contrario seria Editar
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BV_Editar;
-            }
-        }
-
-        private void btnGuardar_MouseMove(object sender, MouseEventArgs e)
-        {
-            //Si se estan registrando los datos su imagen por defecto seria Guardar
-            //De lo contrario seria Editar
-            if (Digitar)
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Guardar;
-            }
-            else
-            {
-                this.btnGuardar.Image = Properties.Resources.BR_Editar;
-            }
-        }
-
-        private void btnCancelar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BV_Cancelar;
-        }
-
-        private void btnCancelar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnCancelar.Image = Properties.Resources.BR_Cancelar;
-        }
-
-        private void btnEliminar_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BV_Eliminar;
-        }
-
-        private void btnEliminar_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnEliminar.Image = Properties.Resources.BR_Eliminar;
-        }
-
-        private void btnImprimir_MouseDown(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseLeave(object sender, EventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BV_Imprimir;
-        }
-
-        private void btnImprimir_MouseMove(object sender, MouseEventArgs e)
-        {
-            this.btnImprimir.Image = Properties.Resources.BR_Imprimir;
         }
 
     }

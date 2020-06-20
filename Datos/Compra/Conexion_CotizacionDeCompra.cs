@@ -61,10 +61,28 @@ namespace Datos
                 //Panel Datos Basicos -- Campos Obligatorios
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
                 Comando.Parameters.Add("@Idproveedor", SqlDbType.Int).Value = Obj.Idproveedor;
+                Comando.Parameters.Add("@Idtipodepago", SqlDbType.Int).Value = Obj.Idtipodepago;
+                Comando.Parameters.Add("@Idordendecompra", SqlDbType.Int).Value = Obj.Idordendecompra;
+                Comando.Parameters.Add("@Idempleado", SqlDbType.Int).Value = Obj.Idempleado;
                 Comando.Parameters.Add("@Codigo", SqlDbType.VarChar).Value = Obj.Codigo;
-                Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
-                Comando.Parameters.Add("@Precio_Final", SqlDbType.VarChar).Value = Obj.PrecioFinal;
+                Comando.Parameters.Add("@Almacen", SqlDbType.VarChar).Value = Obj.Almacen;
+                Comando.Parameters.Add("@Codigo_Almacen", SqlDbType.VarChar).Value = Obj.Codigo_Almacen;
+
+                //
+                Comando.Parameters.Add("@SubTotal", SqlDbType.VarChar).Value = Obj.SubTotal;
                 Comando.Parameters.Add("@Descuento", SqlDbType.VarChar).Value = Obj.Descuento;
+                Comando.Parameters.Add("@Desc_Aplicado", SqlDbType.VarChar).Value = Obj.Descuento_Aplicado;
+                Comando.Parameters.Add("@Impuesto", SqlDbType.VarChar).Value = Obj.Impuesto;
+                Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Obj.Valor;
+                Comando.Parameters.Add("@Mora", SqlDbType.VarChar).Value = Obj.Mora;
+                Comando.Parameters.Add("@Disponible", SqlDbType.VarChar).Value = Obj.Disponible;
+                Comando.Parameters.Add("@Flete", SqlDbType.VarChar).Value = Obj.Flete;
+                Comando.Parameters.Add("@Pago", SqlDbType.VarChar).Value = Obj.Pago;
+                Comando.Parameters.Add("@Dias", SqlDbType.VarChar).Value = Obj.Dias;
+                Comando.Parameters.Add("@Vence", SqlDbType.Int).Value = Obj.Vence;
+                Comando.Parameters.Add("@Fecha", SqlDbType.DateTime).Value = Obj.Fecha;
+
+                //Detalle de Cotizacion de Compra
                 Comando.Parameters.Add("@Detalle", SqlDbType.Structured).Value = Obj.Cotizacion_Detalles;
                 
                 SqlCon.Open();

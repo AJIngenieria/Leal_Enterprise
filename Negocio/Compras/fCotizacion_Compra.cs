@@ -22,12 +22,17 @@ namespace Negocio
             (
 
                 //Datos Auxiliares y Llaves Primaria
-                int idbodega, int idproveedor,
+                int idbodega, int idproveedor, int idtipodepago,
+                int idordendecompra, int idempleado,
 
                 //Datos Basicos
-                string codigo, string descripcion,
-                string precio_final, string descuento,
+                string codigo, string codigo_almacen, string almacen,
 
+                //Totalizacion de Compra
+                string subtotal, string descuento, string descuento_aplicado,
+                string impuesto, string valor, string mora, string disponible,
+                string flete, string pago, string dias, int vence, DateTime fecha,
+                
                 //Datos Auxiliares
                 DataTable Detalles, int auto
             )
@@ -39,12 +44,32 @@ namespace Negocio
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
 
+            //Datos Auxiliares y Llaves Primaria
+            Obj.Idbodega = idbodega;
+            Obj.Idproveedor = idproveedor;
+            Obj.Idtipodepago = idtipodepago;
+            Obj.Idordendecompra = idordendecompra;
+            Obj.Idempleado = idempleado;
+
             //Datos Basicos
             Obj.Codigo = codigo;
-            Obj.Descripcion = descripcion;
-            Obj.PrecioFinal = precio_final;
+            Obj.Codigo_Almacen = codigo_almacen;
+            Obj.Almacen = almacen;
+
+            //Totalizacion de Compra
+            Obj.SubTotal = subtotal;
             Obj.Descuento = descuento;
-            
+            Obj.Descuento_Aplicado = descuento_aplicado;
+            Obj.Impuesto = impuesto;
+            Obj.Valor = valor;
+            Obj.Mora = mora;
+            Obj.Disponible = disponible;
+            Obj.Flete = flete;
+            Obj.Pago = pago;
+            Obj.Dias = dias;
+            Obj.Vence = vence;
+            Obj.Fecha = fecha;
+                
             //Datos Auxiliares
             Obj.Auto = auto;
             Obj.Cotizacion_Detalles = Detalles;

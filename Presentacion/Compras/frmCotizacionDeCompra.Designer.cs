@@ -30,36 +30,50 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizacionDeCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.CBEmpleado = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.TBCreditoEnMora = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBTipodepago = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.TBAlmacen = new System.Windows.Forms.TextBox();
+            this.TBCodigo_Almacen = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.TBIdbodega = new System.Windows.Forms.TextBox();
-            this.TBIdproveedor = new System.Windows.Forms.TextBox();
-            this.TBIddetalle = new System.Windows.Forms.TextBox();
-            this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.lblTotal_Detalles = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnEliminar_Detalles = new System.Windows.Forms.Button();
+            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
             this.TBProducto = new System.Windows.Forms.TextBox();
             this.TBCodigo_Producto = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TBBodega = new System.Windows.Forms.TextBox();
             this.TBProveedor = new System.Windows.Forms.TextBox();
-            this.TBDescripcion = new System.Windows.Forms.TextBox();
+            this.TBOrdendecompra = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.TBDescuento = new System.Windows.Forms.TextBox();
+            this.TBValorFinal = new System.Windows.Forms.TextBox();
+            this.TBSubTotal = new System.Windows.Forms.TextBox();
             this.DGDetalles = new System.Windows.Forms.DataGridView();
+            this.btnExaminar_Producto = new System.Windows.Forms.Button();
+            this.btnExaminar_Bodega = new System.Windows.Forms.Button();
             this.TBCodigo_Bodega = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.TBCodigo_Proveedor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.TBCodigo = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.TBIdbodega = new System.Windows.Forms.TextBox();
+            this.TBIdproveedor = new System.Windows.Forms.TextBox();
+            this.TBIddetalle = new System.Windows.Forms.TextBox();
+            this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnEliminar_Resultados = new System.Windows.Forms.Button();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.btnImprimir = new System.Windows.Forms.Button();
             this.DGResultados = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -69,36 +83,26 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.btnEliminar_Resultados = new System.Windows.Forms.Button();
-            this.btnImprimir = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnEliminar_Detalles = new System.Windows.Forms.Button();
-            this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.TBDescuento = new System.Windows.Forms.TextBox();
-            this.TBValorFinal = new System.Windows.Forms.TextBox();
-            this.TBSubTotal = new System.Windows.Forms.TextBox();
-            this.btnExaminar_Producto = new System.Windows.Forms.Button();
-            this.btnExaminar_Bodega = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.CBEmpleado);
+            this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label14);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.TBCreditoDisponible);
             this.groupBox1.Controls.Add(this.label13);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.TBCreditoEnMora);
             this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.CBTipodepago);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.TBAlmacen);
+            this.groupBox1.Controls.Add(this.TBCodigo_Almacen);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.lblTotal_Detalles);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -110,7 +114,7 @@
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TBBodega);
             this.groupBox1.Controls.Add(this.TBProveedor);
-            this.groupBox1.Controls.Add(this.TBDescripcion);
+            this.groupBox1.Controls.Add(this.TBOrdendecompra);
             this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.DGDetalles);
             this.groupBox1.Controls.Add(this.btnExaminar_Producto);
@@ -128,6 +132,26 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cotizacion de Compra - Leal Enterprise";
             // 
+            // CBEmpleado
+            // 
+            this.CBEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBEmpleado.FormattingEnabled = true;
+            this.CBEmpleado.Location = new System.Drawing.Point(287, 125);
+            this.CBEmpleado.Name = "CBEmpleado";
+            this.CBEmpleado.Size = new System.Drawing.Size(235, 21);
+            this.CBEmpleado.TabIndex = 214;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(221, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 15);
+            this.label11.TabIndex = 213;
+            this.label11.Text = "Vendedor";
+            // 
             // label14
             // 
             this.label14.AutoSize = true;
@@ -137,12 +161,13 @@
             this.label14.TabIndex = 212;
             this.label14.Text = "Orden de Compra";
             // 
-            // textBox4
+            // TBCreditoDisponible
             // 
-            this.textBox4.Location = new System.Drawing.Point(642, 152);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(155, 21);
-            this.textBox4.TabIndex = 210;
+            this.TBCreditoDisponible.Location = new System.Drawing.Point(642, 152);
+            this.TBCreditoDisponible.Name = "TBCreditoDisponible";
+            this.TBCreditoDisponible.Size = new System.Drawing.Size(155, 21);
+            this.TBCreditoDisponible.TabIndex = 210;
+            this.TBCreditoDisponible.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -153,12 +178,13 @@
             this.label13.TabIndex = 209;
             this.label13.Text = "Credito Disponible";
             // 
-            // textBox3
+            // TBCreditoEnMora
             // 
-            this.textBox3.Location = new System.Drawing.Point(642, 126);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(155, 21);
-            this.textBox3.TabIndex = 208;
+            this.TBCreditoEnMora.Location = new System.Drawing.Point(642, 126);
+            this.TBCreditoEnMora.Name = "TBCreditoEnMora";
+            this.TBCreditoEnMora.Size = new System.Drawing.Size(155, 21);
+            this.TBCreditoEnMora.TabIndex = 208;
+            this.TBCreditoEnMora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -169,16 +195,16 @@
             this.label12.TabIndex = 207;
             this.label12.Text = "Credito en Mora";
             // 
-            // comboBox1
+            // CBTipodepago
             // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(75, 125);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 204;
+            this.CBTipodepago.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CBTipodepago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBTipodepago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CBTipodepago.FormattingEnabled = true;
+            this.CBTipodepago.Location = new System.Drawing.Point(75, 125);
+            this.CBTipodepago.Name = "CBTipodepago";
+            this.CBTipodepago.Size = new System.Drawing.Size(140, 21);
+            this.CBTipodepago.TabIndex = 204;
             // 
             // label10
             // 
@@ -189,22 +215,22 @@
             this.label10.TabIndex = 203;
             this.label10.Text = "Pago";
             // 
-            // textBox1
+            // TBAlmacen
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(221, 98);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(301, 21);
-            this.textBox1.TabIndex = 202;
+            this.TBAlmacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBAlmacen.Location = new System.Drawing.Point(221, 98);
+            this.TBAlmacen.Name = "TBAlmacen";
+            this.TBAlmacen.Size = new System.Drawing.Size(301, 21);
+            this.TBAlmacen.TabIndex = 202;
             // 
-            // textBox2
+            // TBCodigo_Almacen
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(75, 98);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(140, 21);
-            this.textBox2.TabIndex = 200;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCodigo_Almacen.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBCodigo_Almacen.Location = new System.Drawing.Point(75, 98);
+            this.TBCodigo_Almacen.Name = "TBCodigo_Almacen";
+            this.TBCodigo_Almacen.Size = new System.Drawing.Size(140, 21);
+            this.TBCodigo_Almacen.TabIndex = 200;
+            this.TBCodigo_Almacen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -215,34 +241,6 @@
             this.label9.TabIndex = 199;
             this.label9.Text = "Almacen";
             // 
-            // TBIdbodega
-            // 
-            this.TBIdbodega.Location = new System.Drawing.Point(141, 440);
-            this.TBIdbodega.Name = "TBIdbodega";
-            this.TBIdbodega.Size = new System.Drawing.Size(10, 21);
-            this.TBIdbodega.TabIndex = 198;
-            // 
-            // TBIdproveedor
-            // 
-            this.TBIdproveedor.Location = new System.Drawing.Point(189, 440);
-            this.TBIdproveedor.Name = "TBIdproveedor";
-            this.TBIdproveedor.Size = new System.Drawing.Size(10, 21);
-            this.TBIdproveedor.TabIndex = 197;
-            // 
-            // TBIddetalle
-            // 
-            this.TBIddetalle.Location = new System.Drawing.Point(173, 440);
-            this.TBIddetalle.Name = "TBIddetalle";
-            this.TBIddetalle.Size = new System.Drawing.Size(10, 21);
-            this.TBIddetalle.TabIndex = 196;
-            // 
-            // TBIdproducto
-            // 
-            this.TBIdproducto.Location = new System.Drawing.Point(157, 440);
-            this.TBIdproducto.Name = "TBIdproducto";
-            this.TBIdproducto.Size = new System.Drawing.Size(10, 21);
-            this.TBIdproducto.TabIndex = 195;
-            // 
             // lblTotal_Detalles
             // 
             this.lblTotal_Detalles.AutoSize = true;
@@ -251,6 +249,69 @@
             this.lblTotal_Detalles.Size = new System.Drawing.Size(130, 15);
             this.lblTotal_Detalles.TabIndex = 194;
             this.lblTotal_Detalles.Text = "Productos Agregados: ";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(515, 438);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(90, 30);
+            this.btnGuardar.TabIndex = 188;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(611, 438);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
+            this.btnCancelar.TabIndex = 190;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnEliminar_Detalles
+            // 
+            this.btnEliminar_Detalles.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Detalles.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Detalles.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Detalles.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Detalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Detalles.Location = new System.Drawing.Point(707, 438);
+            this.btnEliminar_Detalles.Name = "btnEliminar_Detalles";
+            this.btnEliminar_Detalles.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Detalles.TabIndex = 189;
+            this.btnEliminar_Detalles.Text = "Eliminar";
+            this.btnEliminar_Detalles.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Detalles.UseVisualStyleBackColor = true;
+            this.btnEliminar_Detalles.Click += new System.EventHandler(this.btnEliminar_Detalles_Click);
+            // 
+            // btnExaminar_Proveedor
+            // 
+            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Botones.btnExaminar;
+            this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(497, 46);
+            this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
+            this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Proveedor.TabIndex = 185;
+            this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
+            this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
             // 
             // TBProducto
             // 
@@ -297,15 +358,61 @@
             this.TBProveedor.Size = new System.Drawing.Size(270, 21);
             this.TBProveedor.TabIndex = 180;
             // 
-            // TBDescripcion
+            // TBOrdendecompra
             // 
-            this.TBDescripcion.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescripcion.Location = new System.Drawing.Point(332, 20);
-            this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(190, 21);
-            this.TBDescripcion.TabIndex = 179;
-            this.TBDescripcion.Enter += new System.EventHandler(this.TBDescripcion_Enter);
-            this.TBDescripcion.Leave += new System.EventHandler(this.TBDescripcion_Leave);
+            this.TBOrdendecompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBOrdendecompra.Location = new System.Drawing.Point(332, 20);
+            this.TBOrdendecompra.Name = "TBOrdendecompra";
+            this.TBOrdendecompra.Size = new System.Drawing.Size(190, 21);
+            this.TBOrdendecompra.TabIndex = 179;
+            this.TBOrdendecompra.Enter += new System.EventHandler(this.TBDescripcion_Enter);
+            this.TBOrdendecompra.Leave += new System.EventHandler(this.TBDescripcion_Leave);
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::Presentacion.Tablas.Valor_Final___Cotizacion_de_Compra;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Controls.Add(this.TBDescuento);
+            this.panel1.Controls.Add(this.TBValorFinal);
+            this.panel1.Controls.Add(this.TBSubTotal);
+            this.panel1.Location = new System.Drawing.Point(528, 20);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(269, 102);
+            this.panel1.TabIndex = 178;
+            // 
+            // TBDescuento
+            // 
+            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
+            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
+            this.TBDescuento.Name = "TBDescuento";
+            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
+            this.TBDescuento.TabIndex = 3;
+            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
+            // 
+            // TBValorFinal
+            // 
+            this.TBValorFinal.BackColor = System.Drawing.Color.Silver;
+            this.TBValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBValorFinal.Location = new System.Drawing.Point(106, 81);
+            this.TBValorFinal.Name = "TBValorFinal";
+            this.TBValorFinal.Size = new System.Drawing.Size(155, 16);
+            this.TBValorFinal.TabIndex = 2;
+            this.TBValorFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // TBSubTotal
+            // 
+            this.TBSubTotal.BackColor = System.Drawing.Color.Silver;
+            this.TBSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TBSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TBSubTotal.Location = new System.Drawing.Point(106, 30);
+            this.TBSubTotal.Name = "TBSubTotal";
+            this.TBSubTotal.Size = new System.Drawing.Size(155, 16);
+            this.TBSubTotal.TabIndex = 0;
+            this.TBSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DGDetalles
             // 
@@ -321,6 +428,34 @@
             this.DGDetalles.TabIndex = 177;
             this.DGDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellContentClick);
             this.DGDetalles.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalles_CellEndEdit);
+            // 
+            // btnExaminar_Producto
+            // 
+            this.btnExaminar_Producto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Producto.BackgroundImage")));
+            this.btnExaminar_Producto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Producto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Producto.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Producto.Location = new System.Drawing.Point(497, 152);
+            this.btnExaminar_Producto.Name = "btnExaminar_Producto";
+            this.btnExaminar_Producto.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Producto.TabIndex = 176;
+            this.btnExaminar_Producto.UseVisualStyleBackColor = true;
+            this.btnExaminar_Producto.Click += new System.EventHandler(this.btnExaminar_Producto_Click);
+            // 
+            // btnExaminar_Bodega
+            // 
+            this.btnExaminar_Bodega.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Bodega.BackgroundImage")));
+            this.btnExaminar_Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Bodega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Bodega.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Bodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Bodega.Location = new System.Drawing.Point(497, 72);
+            this.btnExaminar_Bodega.Name = "btnExaminar_Bodega";
+            this.btnExaminar_Bodega.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Bodega.TabIndex = 175;
+            this.btnExaminar_Bodega.UseVisualStyleBackColor = true;
+            this.btnExaminar_Bodega.Click += new System.EventHandler(this.btnExaminar_Bodega_Click);
             // 
             // TBCodigo_Bodega
             // 
@@ -385,6 +520,34 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Codigo";
             // 
+            // TBIdbodega
+            // 
+            this.TBIdbodega.Location = new System.Drawing.Point(141, 440);
+            this.TBIdbodega.Name = "TBIdbodega";
+            this.TBIdbodega.Size = new System.Drawing.Size(10, 21);
+            this.TBIdbodega.TabIndex = 198;
+            // 
+            // TBIdproveedor
+            // 
+            this.TBIdproveedor.Location = new System.Drawing.Point(189, 440);
+            this.TBIdproveedor.Name = "TBIdproveedor";
+            this.TBIdproveedor.Size = new System.Drawing.Size(10, 21);
+            this.TBIdproveedor.TabIndex = 197;
+            // 
+            // TBIddetalle
+            // 
+            this.TBIddetalle.Location = new System.Drawing.Point(173, 440);
+            this.TBIddetalle.Name = "TBIddetalle";
+            this.TBIddetalle.Size = new System.Drawing.Size(10, 21);
+            this.TBIddetalle.TabIndex = 196;
+            // 
+            // TBIdproducto
+            // 
+            this.TBIdproducto.Location = new System.Drawing.Point(157, 440);
+            this.TBIdproducto.Name = "TBIdproducto";
+            this.TBIdproducto.Size = new System.Drawing.Size(10, 21);
+            this.TBIdproducto.TabIndex = 195;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.btnEliminar_Resultados);
@@ -410,6 +573,22 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Consulta de Cotizacion de Compra - Leal Enterprise";
             // 
+            // btnEliminar_Resultados
+            // 
+            this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
+            this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
+            this.btnEliminar_Resultados.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Resultados.TabIndex = 192;
+            this.btnEliminar_Resultados.Text = "Eliminar";
+            this.btnEliminar_Resultados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Resultados.UseVisualStyleBackColor = true;
+            this.btnEliminar_Resultados.Click += new System.EventHandler(this.btnEliminar_Resultados_Click);
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -418,6 +597,22 @@
             this.lblTotal.Size = new System.Drawing.Size(114, 15);
             this.lblTotal.TabIndex = 9;
             this.lblTotal.Text = "Datos Registrados: ";
+            // 
+            // btnImprimir
+            // 
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnImprimir.FlatAppearance.BorderSize = 0;
+            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(397, 438);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Size = new System.Drawing.Size(90, 30);
+            this.btnImprimir.TabIndex = 193;
+            this.btnImprimir.Text = "Imprimir";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = true;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
             // DGResultados
             // 
@@ -509,175 +704,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cotización de Compra";
             // 
-            // btnEliminar_Resultados
-            // 
-            this.btnEliminar_Resultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Resultados.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Resultados.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Resultados.Image = global::Presentacion.Botones.btnEliminar;
-            this.btnEliminar_Resultados.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Resultados.Location = new System.Drawing.Point(301, 438);
-            this.btnEliminar_Resultados.Name = "btnEliminar_Resultados";
-            this.btnEliminar_Resultados.Size = new System.Drawing.Size(90, 30);
-            this.btnEliminar_Resultados.TabIndex = 192;
-            this.btnEliminar_Resultados.Text = "Eliminar";
-            this.btnEliminar_Resultados.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Resultados.UseVisualStyleBackColor = true;
-            this.btnEliminar_Resultados.Click += new System.EventHandler(this.btnEliminar_Resultados_Click);
-            // 
-            // btnImprimir
-            // 
-            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnImprimir.FlatAppearance.BorderSize = 0;
-            this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
-            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(397, 438);
-            this.btnImprimir.Name = "btnImprimir";
-            this.btnImprimir.Size = new System.Drawing.Size(90, 30);
-            this.btnImprimir.TabIndex = 193;
-            this.btnImprimir.Text = "Imprimir";
-            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnImprimir.UseVisualStyleBackColor = true;
-            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.BackColor = System.Drawing.Color.Transparent;
-            this.btnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
-            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(515, 438);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(90, 30);
-            this.btnGuardar.TabIndex = 188;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnGuardar.UseVisualStyleBackColor = false;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnCancelar.FlatAppearance.BorderSize = 0;
-            this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(611, 438);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(90, 30);
-            this.btnCancelar.TabIndex = 190;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnEliminar_Detalles
-            // 
-            this.btnEliminar_Detalles.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Detalles.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Detalles.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Detalles.Image = global::Presentacion.Botones.btnEliminar;
-            this.btnEliminar_Detalles.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Detalles.Location = new System.Drawing.Point(707, 438);
-            this.btnEliminar_Detalles.Name = "btnEliminar_Detalles";
-            this.btnEliminar_Detalles.Size = new System.Drawing.Size(90, 30);
-            this.btnEliminar_Detalles.TabIndex = 189;
-            this.btnEliminar_Detalles.Text = "Eliminar";
-            this.btnEliminar_Detalles.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Detalles.UseVisualStyleBackColor = true;
-            this.btnEliminar_Detalles.Click += new System.EventHandler(this.btnEliminar_Detalles_Click);
-            // 
-            // btnExaminar_Proveedor
-            // 
-            this.btnExaminar_Proveedor.BackgroundImage = global::Presentacion.Botones.btnExaminar;
-            this.btnExaminar_Proveedor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExaminar_Proveedor.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExaminar_Proveedor.FlatAppearance.BorderSize = 0;
-            this.btnExaminar_Proveedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Proveedor.Location = new System.Drawing.Point(497, 46);
-            this.btnExaminar_Proveedor.Name = "btnExaminar_Proveedor";
-            this.btnExaminar_Proveedor.Size = new System.Drawing.Size(25, 21);
-            this.btnExaminar_Proveedor.TabIndex = 185;
-            this.btnExaminar_Proveedor.UseVisualStyleBackColor = true;
-            this.btnExaminar_Proveedor.Click += new System.EventHandler(this.btnExaminar_Proveedor_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::Presentacion.Tablas.Valor_Final___Cotizacion_de_Compra;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Controls.Add(this.TBDescuento);
-            this.panel1.Controls.Add(this.TBValorFinal);
-            this.panel1.Controls.Add(this.TBSubTotal);
-            this.panel1.Location = new System.Drawing.Point(528, 20);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(269, 102);
-            this.panel1.TabIndex = 178;
-            // 
-            // TBDescuento
-            // 
-            this.TBDescuento.BackColor = System.Drawing.Color.Silver;
-            this.TBDescuento.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBDescuento.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBDescuento.Location = new System.Drawing.Point(106, 56);
-            this.TBDescuento.Name = "TBDescuento";
-            this.TBDescuento.Size = new System.Drawing.Size(155, 16);
-            this.TBDescuento.TabIndex = 3;
-            this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
-            // 
-            // TBValorFinal
-            // 
-            this.TBValorFinal.BackColor = System.Drawing.Color.Silver;
-            this.TBValorFinal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBValorFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBValorFinal.Location = new System.Drawing.Point(106, 81);
-            this.TBValorFinal.Name = "TBValorFinal";
-            this.TBValorFinal.Size = new System.Drawing.Size(155, 16);
-            this.TBValorFinal.TabIndex = 2;
-            this.TBValorFinal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TBSubTotal
-            // 
-            this.TBSubTotal.BackColor = System.Drawing.Color.Silver;
-            this.TBSubTotal.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.TBSubTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TBSubTotal.Location = new System.Drawing.Point(106, 30);
-            this.TBSubTotal.Name = "TBSubTotal";
-            this.TBSubTotal.Size = new System.Drawing.Size(155, 16);
-            this.TBSubTotal.TabIndex = 0;
-            this.TBSubTotal.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // btnExaminar_Producto
-            // 
-            this.btnExaminar_Producto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Producto.BackgroundImage")));
-            this.btnExaminar_Producto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExaminar_Producto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExaminar_Producto.FlatAppearance.BorderSize = 0;
-            this.btnExaminar_Producto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Producto.Location = new System.Drawing.Point(497, 152);
-            this.btnExaminar_Producto.Name = "btnExaminar_Producto";
-            this.btnExaminar_Producto.Size = new System.Drawing.Size(25, 21);
-            this.btnExaminar_Producto.TabIndex = 176;
-            this.btnExaminar_Producto.UseVisualStyleBackColor = true;
-            this.btnExaminar_Producto.Click += new System.EventHandler(this.btnExaminar_Producto_Click);
-            // 
-            // btnExaminar_Bodega
-            // 
-            this.btnExaminar_Bodega.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnExaminar_Bodega.BackgroundImage")));
-            this.btnExaminar_Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnExaminar_Bodega.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExaminar_Bodega.FlatAppearance.BorderSize = 0;
-            this.btnExaminar_Bodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExaminar_Bodega.Location = new System.Drawing.Point(497, 72);
-            this.btnExaminar_Bodega.Name = "btnExaminar_Bodega";
-            this.btnExaminar_Bodega.Size = new System.Drawing.Size(25, 21);
-            this.btnExaminar_Bodega.TabIndex = 175;
-            this.btnExaminar_Bodega.UseVisualStyleBackColor = true;
-            this.btnExaminar_Bodega.Click += new System.EventHandler(this.btnExaminar_Bodega_Click);
-            // 
             // frmCotizacionDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -695,12 +721,12 @@
             this.Load += new System.EventHandler(this.frmCotizacionDeCompra_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -720,7 +746,7 @@
         private System.Windows.Forms.DataGridView DGDetalles;
         private System.Windows.Forms.TextBox TBBodega;
         private System.Windows.Forms.TextBox TBProveedor;
-        private System.Windows.Forms.TextBox TBDescripcion;
+        private System.Windows.Forms.TextBox TBOrdendecompra;
         private System.Windows.Forms.Button btnExaminar_Proveedor;
         private System.Windows.Forms.TextBox TBProducto;
         private System.Windows.Forms.TextBox TBCodigo_Producto;
@@ -746,18 +772,20 @@
         public System.Windows.Forms.TextBox TBIdproveedor;
         public System.Windows.Forms.TextBox TBIddetalle;
         public System.Windows.Forms.TextBox TBIdproducto;
-        private System.Windows.Forms.TextBox TBValorFinal;
-        private System.Windows.Forms.TextBox TBSubTotal;
-        private System.Windows.Forms.TextBox TBDescuento;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox TBAlmacen;
+        private System.Windows.Forms.TextBox TBCodigo_Almacen;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBTipodepago;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.ComboBox CBEmpleado;
+        private System.Windows.Forms.Label label11;
+        public System.Windows.Forms.TextBox TBValorFinal;
+        public System.Windows.Forms.TextBox TBSubTotal;
+        public System.Windows.Forms.TextBox TBDescuento;
+        public System.Windows.Forms.TextBox TBCreditoDisponible;
+        public System.Windows.Forms.TextBox TBCreditoEnMora;
     }
 }
