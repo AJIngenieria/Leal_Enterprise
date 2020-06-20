@@ -54,6 +54,7 @@ namespace Presentacion
             this.Botones();
             this.Habilitar();
             this.CrearTabla();
+            this.AutoCompletar_Combobox();
 
             //Focus a Texboxt y Combobox
             this.TBCodigo.Select();
@@ -138,6 +139,9 @@ namespace Presentacion
                 this.TBCreditoEnMora.Clear();
                 this.TBCreditoDisponible.Clear();
 
+                //Se procede a limpiar la Tabla de Detalles
+                this.DGDetalles.DataSource = null;
+
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
                 this.Botones();
@@ -167,7 +171,57 @@ namespace Presentacion
 
                 this.btnCancelar.Enabled = true;
                 this.btnEliminar_Detalles.Enabled = true;
-                this.btnImprimir.Enabled = false;
+            }
+        }
+
+        private void AutoCompletar_Combobox()
+        {
+            try
+            {
+                this.CBEmpleado.DataSource = fGestion_Empleados.Lista();
+                this.CBEmpleado.ValueMember = "Codigo";
+                this.CBEmpleado.DisplayMember = "Empleado";
+
+                this.CBTipodepago.DataSource = fTipoDePago.Lista();
+                this.CBTipodepago.ValueMember = "Codigo";
+                this.CBTipodepago.DisplayMember = "Tipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Auto_CodigoAlmacen()
+        {
+            try
+            {
+                DataTable Datos = Negocio.fBodega.Buscar(this.TBCodigo_Bodega.Text.Trim(), 4);
+                if (Datos.Rows.Count <= 0)
+                {
+                    this.MensajeError("La Bodega que desea agregar no se encuentra registrada en su Base de Datos");
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    this.TBIdbodega.Text = Datos.Rows[0][0].ToString();
+                    this.TBBodega.Text = Datos.Rows[0][1].ToString();
+                    this.TBCodigo_Almacen.Text = Datos.Rows[0][2].ToString();
+                    this.TBAlmacen.Text = Datos.Rows[0][3].ToString();
+                    this.TBCodigo_Almacen.Text = Datos.Rows[0][4].ToString();
+
+                    this.lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
+
+                    //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                    this.TBCodigo_Producto.Clear();
+                    this.TBProducto.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
@@ -696,30 +750,7 @@ namespace Presentacion
             {
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
-                    DataTable Tabla = new DataTable();
-                    Tabla = fProductos.Buscar(this.TBCodigo_Producto.Text.Trim(), 4);
-                    if (Tabla.Rows.Count <= 0)
-                    {
-                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
-                    }
-                    else
-                    {
-                        this.Agregar_Detalle
-                            (
-                                Convert.ToInt32(Tabla.Rows[0][0]),
-                                Convert.ToString(Tabla.Rows[0][1]),
-                                Convert.ToString(Tabla.Rows[0][2]),
-                                Convert.ToString(Tabla.Rows[0][3]),
-                                Convert.ToString(Tabla.Rows[0][4])
-                            );
-
-                        lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
-
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
-
-                        this.TBCodigo_Producto.Clear();
-                        this.TBProducto.Clear();
-                    }
+                    this.Auto_CodigoAlmacen();
                 }
             }
             catch (Exception ex)
@@ -1006,6 +1037,18 @@ namespace Presentacion
                     //this.TBSubTotal.Text = Operacion.ToString("##,##0.00");
                     this.TBValorFinal.Text = Operacion.ToString("##,##0.00");
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.Auto_CodigoAlmacen();
             }
             catch (Exception ex)
             {

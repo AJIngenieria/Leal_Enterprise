@@ -10,7 +10,7 @@ using System.Data.SqlClient;
 
 namespace Datos
 {
-    public class Conexion_TipoDePago
+    public class Conexion_TipoDeProducto
     {
         public DataTable Lista()
         {

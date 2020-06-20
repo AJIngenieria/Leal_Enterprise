@@ -14,13 +14,13 @@ namespace Negocio
     {
         public static DataTable Lista()
         {
-            Conexion_TipoDePago Datos = new Conexion_TipoDePago();
+            Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
             return Datos.Lista();
         }
 
         public static DataTable Buscar(string filtro, int auto)
         {
-            Conexion_TipoDePago Datos = new Conexion_TipoDePago();
+            Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
             return Datos.Buscar(filtro, auto);
         }
 
@@ -33,7 +33,7 @@ namespace Negocio
                 string tipo, string descripcion, string observacion, int estado
             )
         {
-            Conexion_TipoDePago Datos = new Conexion_TipoDePago();
+            Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
             Entidad_TipoDeProducto Obj = new Entidad_TipoDeProducto();
 
             Obj.Tipo = tipo;
@@ -54,7 +54,7 @@ namespace Negocio
                 string tipo, string descripcion, string observacion, int estado
             )
         {
-            Conexion_TipoDePago Datos = new Conexion_TipoDePago();
+            Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
             Entidad_TipoDeProducto Obj = new Entidad_TipoDeProducto();
 
             Obj.Idtipo =idtipo ;
@@ -69,7 +69,7 @@ namespace Negocio
 
         public static string Eliminar(int IDEliminar_SQL, int auto)
         {
-            Conexion_TipoDePago Datos = new Conexion_TipoDePago();
+            Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
             return Datos.Eliminar(IDEliminar_SQL, auto);
         }
     }

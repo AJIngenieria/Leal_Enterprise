@@ -45,6 +45,7 @@
     <Compile Include="Archivo\fCliente.cs" />
     <Compile Include="Archivo\fProveedor.cs" />
     <Compile Include="Compras\fCotizacion_Compra.cs" />
+    <Compile Include="Archivo\fTipoDePago.cs" />
     <Compile Include="Inventario\fIngreso_Bodega.cs" />
     <Compile Include="Archivo\fEmpaque.cs" />
     <Compile Include="Archivo\fGrupo.cs" />

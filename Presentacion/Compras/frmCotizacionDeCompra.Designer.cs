@@ -83,6 +83,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
@@ -92,6 +93,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.CBEmpleado);
             this.groupBox1.Controls.Add(this.label11);
             this.groupBox1.Controls.Add(this.label14);
@@ -704,6 +706,14 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cotización de Compra";
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(296, 445);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 21);
+            this.textBox1.TabIndex = 215;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // frmCotizacionDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -787,5 +797,6 @@
         public System.Windows.Forms.TextBox TBDescuento;
         public System.Windows.Forms.TextBox TBCreditoDisponible;
         public System.Windows.Forms.TextBox TBCreditoEnMora;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

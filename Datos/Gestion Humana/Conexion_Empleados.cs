@@ -20,7 +20,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Gestion.LA_Empleados", SqlCon);
+                SqlCommand Comando = new SqlCommand("Consulta.Empleado", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
                 SqlCon.Open();
                 Resultado = Comando.ExecuteReader();
@@ -48,7 +48,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Consulta.Alumno", SqlCon);
+                SqlCommand Comando = new SqlCommand("Consulta.Empleado", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Auto;
@@ -79,7 +79,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Gestion.LA_Empleado", SqlCon);
+                SqlCommand Comando = new SqlCommand("Gestion.LI_Empleado", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
@@ -132,7 +132,7 @@ namespace Datos
             try
             {
                 SqlCon = Conexion_SQLServer.getInstancia().Conexion();
-                SqlCommand Comando = new SqlCommand("Gestion.LA_Empleado", SqlCon);
+                SqlCommand Comando = new SqlCommand("Gestion.LI_Empleado", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
                 //Datos Auxiliares
