@@ -40,26 +40,39 @@ namespace Presentacion
         {
             try
             {
+                frmOrdenDeCompra frmOComp = frmOrdenDeCompra.GetInstancia();
+                frmInventario_Ingreso frmInv = frmInventario_Ingreso.GetInstancia();
+                frmCotizacionDeCompra frmCComp = frmCotizacionDeCompra.GetInstancia();
+                
                 //Variables Para Los Filtros
                 string idbodega, bodega, documento;
 
+                if (frmInv.Filtro)
+                {
+                    idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
+                    documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
+                    frmInv.setBodega(idbodega, bodega, documento);
+                    this.Hide();
+                }
 
-                //
-                frmInventario_Ingreso form = frmInventario_Ingreso.GetInstancia();
-                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
-                bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
-                documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
-                form.setBodega(idbodega, bodega, documento);
-                this.Hide();
+                if (frmCComp.Filtro)
+                {
+                    idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
+                    documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
+                    frmCComp.setBodega(idbodega, bodega, documento);
+                    this.Hide();
+                }
 
-                //
-                frmCotizacionDeCompra frmCComp = frmCotizacionDeCompra.GetInstancia();
-                idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
-                bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
-                documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
-                frmCComp.setBodega(idbodega, bodega, documento);
-                this.Hide();
-
+                if (frmOComp.Filtro)
+                {
+                    idbodega = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
+                    bodega = this.DGFiltro_Resultados.CurrentRow.Cells[1].Value.ToString();
+                    documento = this.DGFiltro_Resultados.CurrentRow.Cells[2].Value.ToString();
+                    frmOComp.setBodega(idbodega, bodega, documento);
+                    this.Hide();
+                }
             }
             catch (Exception ex)
             {

@@ -75,7 +75,7 @@ namespace Presentacion {
         /// </summary>
         internal static System.Drawing.Bitmap Valor_Final___Orden_de_Compra {
             get {
-                object obj = ResourceManager.GetObject("Valor_Final___Orden_de_Compra", resourceCulture);
+                object obj = ResourceManager.GetObject("Valor Final - Orden de Compra", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

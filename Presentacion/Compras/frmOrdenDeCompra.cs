@@ -43,6 +43,10 @@ namespace Presentacion
 
         public string Guardar, Editar, Consultar, Eliminar, Imprimir = "";
 
+        //********** Variable para Filtrar los Datos de los Productos en SQL *******************************
+        private string Marca, Grupo, Referencia, Stock, Bodega, Estante, Nivel = "";
+        private string ValorPromedio, ValorCompra, ValorVenta = "";
+
         public frmOrdenDeCompra()
         {
             InitializeComponent();
@@ -105,16 +109,14 @@ namespace Presentacion
             this.TBUbicacion.BackColor = Color.FromArgb(72, 209, 204);
             this.TBEstante.Enabled = false;
             this.TBEstante.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBReferencia.Enabled = false;
-            this.TBReferencia.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBStock.Enabled = false;
+            this.TBStock.BackColor = Color.FromArgb(72, 209, 204);
             this.TBNivel.Enabled = false;
             this.TBNivel.BackColor = Color.FromArgb(72, 209, 204);
             this.TBGrupo.Enabled = false;
             this.TBGrupo.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBCreditoDisponible.Enabled = false;
-            this.TBCreditoDisponible.BackColor = Color.FromArgb(255, 255, 255);
-            this.TBValorPromedio_Final.Enabled = false;
-            this.TBValorPromedio_Final.BackColor = Color.FromArgb(255, 255, 255);
+            this.TBValorCotizado.Enabled = false;
+            this.TBValorCotizado.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
             this.TBValorCompra_Final.BackColor = Color.FromArgb(255, 255, 255);
         }
@@ -146,7 +148,7 @@ namespace Presentacion
                 //Panel Datos Basicos - Parte Inferior
                 this.TBEstante.Clear();
                 this.TBNivel.Clear();
-                this.TBReferencia.Clear();
+                this.TBStock.Clear();
                                             
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
@@ -200,21 +202,13 @@ namespace Presentacion
 
                 this.DGDetalleDeIngreso.Columns[0].Visible = false;
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
-                this.DGDetalleDeIngreso.Columns[0].Width = 50;
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
-                this.DGDetalleDeIngreso.Columns[1].Width = 88;
                 this.DGDetalleDeIngreso.Columns[2].HeaderText = "Descripcion";
-                this.DGDetalleDeIngreso.Columns[2].Width = 380;
                 this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
-                this.DGDetalleDeIngreso.Columns[3].Width = 60;
                 this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
-                this.DGDetalleDeIngreso.Columns[4].Width = 60;
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
-                this.DGDetalleDeIngreso.Columns[5].Width = 65;
                 this.DGDetalleDeIngreso.Columns[6].HeaderText = "V. de Compra";
-                this.DGDetalleDeIngreso.Columns[6].Width = 135;
                 this.DGDetalleDeIngreso.Columns[7].HeaderText = "Total";
-                this.DGDetalleDeIngreso.Columns[7].Width = 135;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -222,7 +216,8 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[5].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[4].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[7].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Format = "##,##0.00";
@@ -267,10 +262,11 @@ namespace Presentacion
             this.TBCodigo_Proveedor.Text = documento;
         }
 
-        public void setBodega(string idbodega, string bodega)
+        public void setBodega(string idbodega, string bodega, string documento)
         {
             this.TBIdbodega.Text = idbodega;
             this.TBBodega.Text = bodega;
+            this.TBCodigo_Bodega.Text = documento;
         }
         
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
@@ -294,7 +290,7 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["Valor de Compra"] = valor_compra;
+                    Fila["V. de Compra"] = valor_compra;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -310,23 +306,22 @@ namespace Presentacion
         {
             try
             {
-                int Total = 0;
-                decimal SubTotal = 0;
+                double SubTotal = 0;
+                double Operacion = 0;
 
-                if (DGDetalleDeIngreso.Rows.Count == 0)
-                {
-                    Total = 0;
-                }
-                else
-                {
-                    foreach (DataRow FilaTemporal in DtDetalle.Rows)
-                    {
-                        Total = Total + Convert.ToInt32(FilaTemporal["Total"]);
-                    }
+                //Se procede a sumar la columna de valor de compra promedio
 
-                    //SubTotal = Total/(1+tbimpuesto.text));
-                    //this.TBValorVenta_Final.Text = Total.ToString("#0.00#");
+                foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
+                {
+                    SubTotal += Convert.ToDouble(row.Cells[6].Value);
                 }
+
+                //
+                this.TBValorCompra_Final.Text = Convert.ToString(SubTotal);
+                
+                //Se les da Formato a los campo de texto en este caso con Miles y Dos Decimales
+                this.TBValorCotizado.Text = Operacion.ToString("##,##0.00");
+                this.TBValorCompra_Final.Text = Operacion.ToString("##,##0.00");
             }
             catch (Exception ex)
             {
@@ -436,7 +431,7 @@ namespace Presentacion
         {
             try
             {
-                frmTotalizar_OrdenDeCompra frmTotalizar_OrdenDeCompra = new frmTotalizar_OrdenDeCompra();
+                frmTotalizar_OrdenDeCompra frmTotalizar_OrdenDeCompra = frmTotalizar_OrdenDeCompra.GetInstancia();
                 frmTotalizar_OrdenDeCompra.ShowDialog();
             }
             catch (Exception ex)
@@ -499,7 +494,7 @@ namespace Presentacion
                                 Convert.ToString(Tabla.Rows[0][4])
                             );
 
-                        lblTotal.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
+                        lblTotal_Detalles.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
 
                         //Se procede a sumar la columna de valor de compra promedio
 
@@ -673,6 +668,94 @@ namespace Presentacion
         {
             frmFiltro_Bodega frmFiltro_Bodega = new frmFiltro_Bodega();
             frmFiltro_Bodega.ShowDialog();
+        }
+
+        private void TBCodigo_Bodega_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                DataTable Datos = Negocio.fBodega.Buscar(this.TBCodigo_Bodega.Text.Trim(), 4);
+                if (Datos.Rows.Count <= 0)
+                {
+                    this.MensajeError("La Bodega que desea agregar no se encuentra registrada en su Base de Datos");
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    this.TBIdbodega.Text = Datos.Rows[0][0].ToString();
+                    this.TBBodega.Text = Datos.Rows[0][1].ToString();
+
+                    this.lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnExaminar_Cotizacion_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DGDetalleDeIngreso_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                this.TBIdproducto.Text = this.DGDetalleDeIngreso.CurrentRow.Cells[0].Value.ToString();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBIdproducto_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable Datos = Negocio.fProductos.Buscar(this.TBIdproducto.Text, 2);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+
+                    //Panel Datos Basicos
+                    Referencia = Datos.Rows[0][9].ToString();
+                    Stock = Datos.Rows[0][14].ToString();
+                    ValorPromedio = Datos.Rows[0][25].ToString();
+                    ValorCompra = Datos.Rows[0][26].ToString();
+                    ValorVenta = Datos.Rows[0][27].ToString();
+                    Estante = Datos.Rows[0][37].ToString();
+                    Nivel = Datos.Rows[0][38].ToString();
+                    Marca = Datos.Rows[0][44].ToString();
+                    Grupo = Datos.Rows[0][44].ToString();
+
+                    //Se lleva acabo el complemento de los campos de Texto
+
+                    this.TBMarca.Text = Marca;
+                    this.TBGrupo.Text = Grupo;
+                    this.TBStock.Text = Stock;
+
+                    this.TBBodega.Text = Bodega;
+                    this.TBEstante.Text = Estante;
+                    this.TBNivel.Text = Nivel;
+
+                    this.TBValorPromedio.Text = ValorPromedio;
+                    this.TBValorCompra.Text = ValorCompra;
+                    this.TBValorVenta.Text = ValorVenta;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void TBDescripcion_Leave(object sender, EventArgs e)

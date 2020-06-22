@@ -113,9 +113,11 @@ namespace Presentacion
                 frmInventario_Ingreso frmBI = frmInventario_Ingreso.GetInstancia();
                 frmCotizacionDeCompra frmCot = frmCotizacionDeCompra.GetInstancia();
 
+                //Variables Para Los Filtros
+                string idproducto, producto;
+
                 if (frmBI.Examinar)
-                {
-                    string idproducto, producto;
+                {   
                     idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
                     producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
                     frmBI.setProducto(idproducto, producto);
@@ -124,7 +126,6 @@ namespace Presentacion
 
                 if (frmOC.Examinar)
                 {
-                    string idproducto, producto;
                     idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
                     producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
                     frmOC.setProducto(idproducto, producto);
@@ -133,7 +134,6 @@ namespace Presentacion
 
                 if (frmCot.Examinar)
                 {
-                    string idproducto, producto;
                     idproducto = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
                     producto = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
                     frmCot.setProducto(idproducto, producto);

@@ -518,6 +518,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono_Leal_Enterprise.ico" />
+    <None Include="Resources\Valor Final - Orden de Compra.jpg" />
     <None Include="Resources\Empleados - Datos Financieros1.jpg" />
     <None Include="Resources\Empleados - Datos Financieros.jpg" />
     <None Include="Resources\Totalizacion - Cotizacion de Compra.jpg" />
@@ -525,10 +526,7 @@
     <None Include="Resources\Orden de Compra - Totalizacion.jpg" />
     <None Include="Resources\Producto - Valores  Iniciales.jpg" />
     <None Include="Resources\Producto - Cantidad de Venta.jpg" />
-    <None Include="Resources\Valor Final - Orden de Compra.jpg" />
-    <None Include="Resources\Valores - Orden de Compra.jpg" />
     <None Include="Resources\Totalizacion - Orden de Compra.jpg" />
-    <None Include="Resources\Tabla - Orden de Compra.jpg" />
     <None Include="Resources\btnImprimir.png" />
     <None Include="Resources\btnAgregar.png" />
     <None Include="Resources\btnGuardar.png" />
