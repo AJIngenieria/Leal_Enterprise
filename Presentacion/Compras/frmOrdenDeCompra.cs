@@ -192,7 +192,7 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Valor de Compra", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("V. de Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
@@ -211,7 +211,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[4].Width = 60;
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
                 this.DGDetalleDeIngreso.Columns[5].Width = 65;
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Valor de Compra";
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "V. de Compra";
                 this.DGDetalleDeIngreso.Columns[6].Width = 135;
                 this.DGDetalleDeIngreso.Columns[7].HeaderText = "Total";
                 this.DGDetalleDeIngreso.Columns[7].Width = 135;
@@ -272,7 +272,7 @@ namespace Presentacion
             this.TBIdbodega.Text = idbodega;
             this.TBBodega.Text = bodega;
         }
-
+        
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
@@ -447,12 +447,22 @@ namespace Presentacion
 
         private void btnEliminar_Datos_Click(object sender, EventArgs e)
         {
+            try
+            {
+                DGDetalleDeIngreso.Rows.RemoveAt(DGDetalleDeIngreso.CurrentRow.Index);
 
+                this.Calculo_Totales();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void btnExaminar_Proveedor_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_Proveedor frmFiltro_Proveedor = new frmFiltro_Proveedor();
+            frmFiltro_Proveedor.ShowDialog();
         }
 
         private void btnExaminar_Producto_Click(object sender, EventArgs e)
@@ -657,6 +667,12 @@ namespace Presentacion
             {
                 this.TBCodigo_Producto.BackColor = Color.FromArgb(3, 155, 229);
             }
+        }
+
+        private void btnExaminar_Bodega_Click(object sender, EventArgs e)
+        {
+            frmFiltro_Bodega frmFiltro_Bodega = new frmFiltro_Bodega();
+            frmFiltro_Bodega.ShowDialog();
         }
 
         private void TBDescripcion_Leave(object sender, EventArgs e)

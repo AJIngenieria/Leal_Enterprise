@@ -22,8 +22,7 @@ namespace Negocio
             (
 
                 //Datos Auxiliares y Llaves Primaria
-                int idbodega, int idproveedor, int idtipodepago,
-                int idordendecompra, int idempleado,
+                int idbodega, int idproveedor, int idtipodepago, int idempleado,
 
                 //Datos Basicos
                 string codigo, string codigo_almacen, string almacen,
@@ -48,11 +47,10 @@ namespace Negocio
             Obj.Idbodega = idbodega;
             Obj.Idproveedor = idproveedor;
             Obj.Idtipodepago = idtipodepago;
-            Obj.Idordendecompra = idordendecompra;
             Obj.Idempleado = idempleado;
 
             //Datos Basicos
-            Obj.Codigo = codigo;
+            Obj.Codigo_CotizacionDeCompra = codigo;
             Obj.Codigo_Almacen = codigo_almacen;
             Obj.Almacen = almacen;
 

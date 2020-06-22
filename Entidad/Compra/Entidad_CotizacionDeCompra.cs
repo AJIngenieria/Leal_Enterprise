@@ -22,7 +22,7 @@ namespace Entidad
         private int _Idempleado;
 
         //Datos Basicos
-        private string _Codigo;
+        private string _Codigo_CotizacionDeCompra;
         private string _Codigo_Almacen;
         private string _Almacen;
         private string _PrecioFinal;
@@ -54,7 +54,6 @@ namespace Entidad
         public int Idordendecompra { get => _Idordendecompra; set => _Idordendecompra = value; }
         public int Idtipodepago { get => _Idtipodepago; set => _Idtipodepago = value; }
         public int Idempleado { get => _Idempleado; set => _Idempleado = value; }
-        public string Codigo { get => _Codigo; set => _Codigo = value; }
         public string Codigo_Almacen { get => _Codigo_Almacen; set => _Codigo_Almacen = value; }
         public string Almacen { get => _Almacen; set => _Almacen = value; }
         public string PrecioFinal { get => _PrecioFinal; set => _PrecioFinal = value; }
@@ -73,5 +72,6 @@ namespace Entidad
         public DateTime Fecha { get => _Fecha; set => _Fecha = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public DataTable Cotizacion_Detalles { get => _Cotizacion_Detalles; set => _Cotizacion_Detalles = value; }
+        public string Codigo_CotizacionDeCompra { get => _Codigo_CotizacionDeCompra; set => _Codigo_CotizacionDeCompra = value; }
     }
 }

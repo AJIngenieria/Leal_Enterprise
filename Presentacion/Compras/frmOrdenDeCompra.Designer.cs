@@ -64,7 +64,7 @@
             this.TBValorPromedio_Final = new System.Windows.Forms.TextBox();
             this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
             this.TBCodigo_Bodega = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExaminar_Bodega = new System.Windows.Forms.Button();
             this.TBBodega = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.btnExaminar_Proveedor = new System.Windows.Forms.Button();
@@ -82,8 +82,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalleDeIngreso)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -226,11 +224,11 @@
             this.DGDetalleDeIngreso.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalleDeIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalleDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGDetalleDeIngreso.Location = new System.Drawing.Point(6, 158);
+            this.DGDetalleDeIngreso.Location = new System.Drawing.Point(6, 130);
             this.DGDetalleDeIngreso.Name = "DGDetalleDeIngreso";
             this.DGDetalleDeIngreso.RowHeadersVisible = false;
             this.DGDetalleDeIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
-            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(795, 250);
+            this.DGDetalleDeIngreso.Size = new System.Drawing.Size(795, 278);
             this.DGDetalleDeIngreso.TabIndex = 141;
             // 
             // TBCodigo
@@ -305,8 +303,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.comboBox1);
-            this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TBUbicacion);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label8);
@@ -328,7 +324,7 @@
             this.groupBox1.Controls.Add(this.TBReferencia);
             this.groupBox1.Controls.Add(this.TBNivel);
             this.groupBox1.Controls.Add(this.TBCodigo_Bodega);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnExaminar_Bodega);
             this.groupBox1.Controls.Add(this.TBBodega);
             this.groupBox1.Controls.Add(this.label16);
             this.groupBox1.Controls.Add(this.lblTotal);
@@ -492,18 +488,19 @@
             this.TBCodigo_Bodega.Enter += new System.EventHandler(this.TBCodigo_Bodega_Enter);
             this.TBCodigo_Bodega.Leave += new System.EventHandler(this.TBCodigo_Bodega_Leave);
             // 
-            // button1
+            // btnExaminar_Bodega
             // 
-            this.button1.BackgroundImage = global::Presentacion.Botones.btnExaminar;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(500, 74);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 21);
-            this.button1.TabIndex = 190;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExaminar_Bodega.BackgroundImage = global::Presentacion.Botones.btnExaminar;
+            this.btnExaminar_Bodega.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnExaminar_Bodega.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnExaminar_Bodega.FlatAppearance.BorderSize = 0;
+            this.btnExaminar_Bodega.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExaminar_Bodega.Location = new System.Drawing.Point(500, 74);
+            this.btnExaminar_Bodega.Name = "btnExaminar_Bodega";
+            this.btnExaminar_Bodega.Size = new System.Drawing.Size(25, 21);
+            this.btnExaminar_Bodega.TabIndex = 190;
+            this.btnExaminar_Bodega.UseVisualStyleBackColor = true;
+            this.btnExaminar_Bodega.Click += new System.EventHandler(this.btnExaminar_Bodega_Click);
             // 
             // TBBodega
             // 
@@ -696,26 +693,6 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Cotización de Compra";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 15);
-            this.label5.TabIndex = 201;
-            this.label5.Text = "Pago";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(69, 128);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(140, 21);
-            this.comboBox1.TabIndex = 202;
-            // 
             // frmOrdenDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -774,7 +751,7 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnExaminar_Bodega;
         private System.Windows.Forms.TextBox TBBodega;
         private System.Windows.Forms.Label label16;
         public System.Windows.Forms.TextBox TBCodigo_Bodega;
@@ -798,7 +775,5 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TBBuscar;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox1;
     }
 }

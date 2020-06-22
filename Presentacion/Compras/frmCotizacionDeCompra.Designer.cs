@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCotizacionDeCompra));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.CBEmpleado = new System.Windows.Forms.ComboBox();
-            this.label11 = new System.Windows.Forms.Label();
+            this.TBIdordendecompra = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -83,7 +82,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
@@ -93,9 +91,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.CBEmpleado);
-            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.TBIdordendecompra);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.TBCreditoDisponible);
             this.groupBox1.Controls.Add(this.label13);
@@ -134,25 +130,13 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cotizacion de Compra - Leal Enterprise";
             // 
-            // CBEmpleado
+            // TBIdordendecompra
             // 
-            this.CBEmpleado.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBEmpleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBEmpleado.FormattingEnabled = true;
-            this.CBEmpleado.Location = new System.Drawing.Point(287, 125);
-            this.CBEmpleado.Name = "CBEmpleado";
-            this.CBEmpleado.Size = new System.Drawing.Size(235, 21);
-            this.CBEmpleado.TabIndex = 214;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(221, 126);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 15);
-            this.label11.TabIndex = 213;
-            this.label11.Text = "Vendedor";
+            this.TBIdordendecompra.Location = new System.Drawing.Point(296, 445);
+            this.TBIdordendecompra.Name = "TBIdordendecompra";
+            this.TBIdordendecompra.Size = new System.Drawing.Size(100, 21);
+            this.TBIdordendecompra.TabIndex = 215;
+            this.TBIdordendecompra.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label14
             // 
@@ -165,33 +149,33 @@
             // 
             // TBCreditoDisponible
             // 
-            this.TBCreditoDisponible.Location = new System.Drawing.Point(642, 152);
+            this.TBCreditoDisponible.Location = new System.Drawing.Point(611, 126);
             this.TBCreditoDisponible.Name = "TBCreditoDisponible";
-            this.TBCreditoDisponible.Size = new System.Drawing.Size(155, 21);
+            this.TBCreditoDisponible.Size = new System.Drawing.Size(186, 21);
             this.TBCreditoDisponible.TabIndex = 210;
             this.TBCreditoDisponible.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(528, 155);
+            this.label13.Location = new System.Drawing.Point(528, 128);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(108, 15);
+            this.label13.Size = new System.Drawing.Size(77, 15);
             this.label13.TabIndex = 209;
-            this.label13.Text = "Credito Disponible";
+            this.label13.Text = "Credito Disp.";
             // 
             // TBCreditoEnMora
             // 
-            this.TBCreditoEnMora.Location = new System.Drawing.Point(642, 126);
+            this.TBCreditoEnMora.Location = new System.Drawing.Point(322, 125);
             this.TBCreditoEnMora.Name = "TBCreditoEnMora";
-            this.TBCreditoEnMora.Size = new System.Drawing.Size(155, 21);
+            this.TBCreditoEnMora.Size = new System.Drawing.Size(200, 21);
             this.TBCreditoEnMora.TabIndex = 208;
             this.TBCreditoEnMora.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(528, 128);
+            this.label12.Location = new System.Drawing.Point(221, 126);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(95, 15);
             this.label12.TabIndex = 207;
@@ -206,6 +190,7 @@
             this.CBTipodepago.Location = new System.Drawing.Point(75, 125);
             this.CBTipodepago.Name = "CBTipodepago";
             this.CBTipodepago.Size = new System.Drawing.Size(140, 21);
+            this.CBTipodepago.Sorted = true;
             this.CBTipodepago.TabIndex = 204;
             // 
             // label10
@@ -392,7 +377,9 @@
             this.TBDescuento.Size = new System.Drawing.Size(155, 16);
             this.TBDescuento.TabIndex = 3;
             this.TBDescuento.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBDescuento.Enter += new System.EventHandler(this.TBDescuento_Enter);
             this.TBDescuento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBDescuento_KeyPress);
+            this.TBDescuento.Leave += new System.EventHandler(this.TBDescuento_Leave);
             // 
             // TBValorFinal
             // 
@@ -706,18 +693,12 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Cotización de Compra";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(296, 445);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 21);
-            this.textBox1.TabIndex = 215;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
             // frmCotizacionDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1327, 497);
             this.Controls.Add(this.groupBox2);
@@ -790,13 +771,11 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.ComboBox CBEmpleado;
-        private System.Windows.Forms.Label label11;
         public System.Windows.Forms.TextBox TBValorFinal;
         public System.Windows.Forms.TextBox TBSubTotal;
         public System.Windows.Forms.TextBox TBDescuento;
         public System.Windows.Forms.TextBox TBCreditoDisponible;
         public System.Windows.Forms.TextBox TBCreditoEnMora;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TBIdordendecompra;
     }
 }

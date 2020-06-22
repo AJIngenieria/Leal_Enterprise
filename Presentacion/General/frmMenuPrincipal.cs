@@ -382,6 +382,7 @@ namespace Presentacion
             frmCotizacionDeCompra.Eliminar = Convert.ToString(this.SQL_Eliminar);
             frmCotizacionDeCompra.Consultar = Convert.ToString(this.SQL_Consultar);
             frmCotizacionDeCompra.Imprimir = Convert.ToString(this.SQL_Imprimir);
+            frmCotizacionDeCompra.Idempleado = Convert.ToInt32(this.Idempleado);
         }
 
         private void empaqueToolStripMenuItem_Click(object sender, EventArgs e)

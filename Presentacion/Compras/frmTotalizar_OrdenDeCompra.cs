@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+using Negocio;
+
 namespace Presentacion
 {
     public partial class frmTotalizar_OrdenDeCompra : Form
@@ -19,7 +21,21 @@ namespace Presentacion
 
         private void frmTotalizar_OrdenDeCompra_Load(object sender, EventArgs e)
         {
+            this.AutoCompletar_Combobox();
+        }
 
+        private void AutoCompletar_Combobox()
+        {
+            try
+            {
+                this.CBTipodepago.DataSource = fTipoDePago.Lista();
+                this.CBTipodepago.ValueMember = "Codigo";
+                this.CBTipodepago.DisplayMember = "Tipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         private void CBRetencion_SelectedIndexChanged(object sender, EventArgs e)

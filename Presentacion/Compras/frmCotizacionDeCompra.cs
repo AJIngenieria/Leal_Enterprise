@@ -92,8 +92,8 @@ namespace Presentacion
             this.TBCodigo_Almacen.BackColor = Color.FromArgb(72, 209, 204);
 
             //
-            this.TBOrdendecompra.Enabled = true;
-            this.TBOrdendecompra.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBOrdendecompra.Enabled = false;
+            this.TBOrdendecompra.BackColor = Color.FromArgb(72, 209, 204);
             this.TBBodega.Enabled = false;
             this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
             this.TBProveedor.Enabled = false;
@@ -102,7 +102,11 @@ namespace Presentacion
             this.TBProducto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBAlmacen.Enabled = false;
             this.TBAlmacen.BackColor = Color.FromArgb(72, 209, 204);
-            
+            this.TBCreditoEnMora.ReadOnly = false;
+            this.TBCreditoEnMora.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCreditoDisponible.ReadOnly = false;
+            this.TBCreditoDisponible.BackColor = Color.FromArgb(3, 155, 229);
+
             //Valores Finales
             this.TBSubTotal.Enabled = false;
             this.TBSubTotal.BackColor = Color.FromArgb(255, 255, 255);
@@ -110,6 +114,9 @@ namespace Presentacion
             this.TBDescuento.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorFinal.Enabled = false;
             this.TBValorFinal.BackColor = Color.FromArgb(255, 255, 255);
+
+            //
+            this.TBDescuento.Text = "0";
         }
 
         private void Limpiar_Datos()
@@ -133,11 +140,16 @@ namespace Presentacion
                 this.TBCodigo_Proveedor.Text = Campo;
                 this.TBCodigo_Almacen.Clear();
                 this.TBAlmacen.Clear();
+                this.TBBodega.Clear();
                 this.TBOrdendecompra.Clear();
                 this.TBProducto.Clear();
                 this.TBProveedor.Clear();
                 this.TBCreditoEnMora.Clear();
                 this.TBCreditoDisponible.Clear();
+
+                //
+                this.TBSubTotal.Clear();
+                this.TBValorFinal.Clear();
 
                 //Se procede a limpiar la Tabla de Detalles
                 this.DGDetalles.DataSource = null;
@@ -178,10 +190,6 @@ namespace Presentacion
         {
             try
             {
-                this.CBEmpleado.DataSource = fGestion_Empleados.Lista();
-                this.CBEmpleado.ValueMember = "Codigo";
-                this.CBEmpleado.DisplayMember = "Empleado";
-
                 this.CBTipodepago.DataSource = fTipoDePago.Lista();
                 this.CBTipodepago.ValueMember = "Codigo";
                 this.CBTipodepago.DisplayMember = "Tipo";
@@ -242,19 +250,12 @@ namespace Presentacion
 
                 this.DGDetalles.Columns[0].Visible = false;
                 this.DGDetalles.Columns[0].HeaderText = "Idproducto";
-                //this.DGDetalles.Columns[0].Width = 50;
                 this.DGDetalles.Columns[1].HeaderText = "Codigo";
-                //this.DGDetalles.Columns[1].Width = 88;
                 this.DGDetalles.Columns[2].HeaderText = "Descripción";
-                //this.DGDetalles.Columns[2].Width = 380;
                 this.DGDetalles.Columns[3].HeaderText = "Medida";
-                //this.DGDetalles.Columns[3].Width = 65;
                 this.DGDetalles.Columns[4].HeaderText = "Cantidad";
-                //this.DGDetalles.Columns[4].Width = 65;
                 this.DGDetalles.Columns[5].HeaderText = "V. Compra";
-                //this.DGDetalles.Columns[5].Width = 90;
                 this.DGDetalles.Columns[6].HeaderText = "Total";
-                //this.DGDetalles.Columns[6].Width = 110;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -396,9 +397,6 @@ namespace Presentacion
                 {
                     SubTotal += Convert.ToDouble(row.Cells[6].Value);
                 }
-
-                //Se establece el valor predeterminado del descuento o del campo
-                this.TBDescuento.Text = "0";
                 
                 //
                 this.TBSubTotal.Text= Convert.ToString(SubTotal);
@@ -454,6 +452,11 @@ namespace Presentacion
                 {
                     if (this.Digitar)
                     {
+                        if (TBIdordendecompra.Text == string.Empty)
+                        {
+                            this.TBIdordendecompra.Text = "0";
+                        }
+
                         //Se establece la variable para poder utilizar los campos de texto del segundo formulario
                         frmTotalizar_CotizacionDeCompra frmTotCoti = frmTotalizar_CotizacionDeCompra.GetInstancia();
 
@@ -461,7 +464,7 @@ namespace Presentacion
 
                             (
                                  //Panel Datos Basicos
-                                 Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.TBIdproveedor.Text), Convert.ToInt32(CBTipodepago.SelectedValue), Convert.ToInt32(TBOrdendecompra.Text), Convert.ToInt32(CBEmpleado.SelectedValue), this.TBCodigo.Text, this.TBCodigo_Almacen.Text, this.TBAlmacen.Text,
+                                 Convert.ToInt32(this.TBIdbodega.Text), Convert.ToInt32(this.TBIdproveedor.Text), Convert.ToInt32(this.CBTipodepago.SelectedValue),Idempleado, this.TBCodigo.Text, this.TBCodigo_Almacen.Text, this.TBAlmacen.Text,
 
                                  //Formulario de Totalizacion
                                  frmTotCoti.TBSubTotal.Text, frmTotCoti.TBDescuento_Porcentaje.Text, frmTotCoti.TBDescuento.Text, frmTotCoti.TBImpuesto_Valor.Text, frmTotCoti.TBValorGeneral.Text, frmTotCoti.TBCreditoMora.Text, frmTotCoti.TBCreditoDisponible.Text, frmTotCoti.TBValorDeEnvio.Text, frmTotCoti.TBTipoDePago.Text, frmTotCoti.TBDiasDeEntrega.Text, Convert.ToInt32(frmTotCoti.Vencimiento), frmTotCoti.dateTimePicker3.Value, DtDetalle,
@@ -657,10 +660,9 @@ namespace Presentacion
         {
             try
             {
-                foreach (DataGridViewRow item in this.DGDetalles.SelectedRows)
-                {
-                    DGDetalles.Rows.RemoveAt(item.Index);
-                }
+                DGDetalles.Rows.RemoveAt(DGDetalles.CurrentRow.Index);
+
+                this.Calculo_Totales();
             }
             catch (Exception ex)
             {
@@ -1053,6 +1055,38 @@ namespace Presentacion
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBDescuento_Enter(object sender, EventArgs e)
+        {
+            //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
+            if (TBDescuento.Text == "0")
+            {
+                this.TBDescuento.BackColor = Color.Azure;
+                this.TBDescuento.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBDescuento.Clear();
+            }
+            else
+            {
+                //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
+                this.TBDescuento.BackColor = Color.Azure;
+                this.TBDescuento.ForeColor = Color.FromArgb(0, 0, 0);
+            }
+        }
+
+        private void TBDescuento_Leave(object sender, EventArgs e)
+        {
+            if (TBDescuento.Text == string.Empty)
+            {
+                //Color de texboxt cuando este posee el FOCUS Activado
+                this.TBDescuento.BackColor = Color.FromArgb(255, 255, 255);
+                this.TBDescuento.Text = "0";
+                //this.TBDescuento.ForeColor = Color.FromArgb(255, 255, 255);
+            }
+            else
+            {
+                this.TBDescuento.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 

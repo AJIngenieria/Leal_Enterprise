@@ -127,6 +127,9 @@ namespace Presentacion
             {
                 frmCotizacionDeCompra frmCotCompra = frmCotizacionDeCompra.GetInstancia();
                 frmCotCompra.Guardar_SQL();
+
+                //Se cierra el formulario de totalizacion
+                this.Close();
             }
             catch (Exception ex)
             {
