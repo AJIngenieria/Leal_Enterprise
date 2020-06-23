@@ -31,10 +31,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmFiltro_Producto));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.DGFiltro_Resultados = new System.Windows.Forms.DataGridView();
+            this.TBIdproducto = new System.Windows.Forms.TextBox();
             this.lblTotal = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.TBIdproducto = new System.Windows.Forms.TextBox();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.TBPresentacion = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.TBDescripcion01 = new System.Windows.Forms.TextBox();
@@ -66,7 +67,6 @@
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGFiltro_Resultados)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -103,6 +103,14 @@
             this.DGFiltro_Resultados.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGFiltro_Resultados_CellClick);
             this.DGFiltro_Resultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
             // 
+            // TBIdproducto
+            // 
+            this.TBIdproducto.Location = new System.Drawing.Point(421, 345);
+            this.TBIdproducto.Name = "TBIdproducto";
+            this.TBIdproducto.Size = new System.Drawing.Size(65, 21);
+            this.TBIdproducto.TabIndex = 5;
+            this.TBIdproducto.TextChanged += new System.EventHandler(this.TBIdproducto_TextChanged);
+            // 
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
@@ -131,13 +139,20 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Producto a Consultar";
             // 
-            // TBIdproducto
+            // btnAgregar
             // 
-            this.TBIdproducto.Location = new System.Drawing.Point(421, 345);
-            this.TBIdproducto.Name = "TBIdproducto";
-            this.TBIdproducto.Size = new System.Drawing.Size(65, 21);
-            this.TBIdproducto.TabIndex = 5;
-            this.TBIdproducto.TextChanged += new System.EventHandler(this.TBIdproducto_TextChanged);
+            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
+            this.btnAgregar.Image = global::Presentacion.Properties.Resources.btnAgregar;
+            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar.Location = new System.Drawing.Point(6, 339);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(140, 30);
+            this.btnAgregar.TabIndex = 4;
+            this.btnAgregar.Text = "Agregar Producto";
+            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // TBPresentacion
             // 
@@ -424,21 +439,6 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Cantidades Autorizadas del Producto - Leal Enterprise";
             // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar.FlatAppearance.BorderSize = 0;
-            this.btnAgregar.Image = global::Presentacion.Properties.Resources.btnAgregar;
-            this.btnAgregar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar.Location = new System.Drawing.Point(6, 339);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(140, 30);
-            this.btnAgregar.TabIndex = 4;
-            this.btnAgregar.Text = "Agregar Producto";
-            this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
             // frmFiltro_Producto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -451,6 +451,7 @@
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmFiltro_Producto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Filtro de Producto - Leal Enterprise";

@@ -44,7 +44,7 @@ namespace Presentacion
         public string Guardar, Editar, Consultar, Eliminar, Imprimir = "";
 
         //********** Variable para Filtrar los Datos de los Productos en SQL *******************************
-        private string Marca, Grupo, Referencia, Stock, Bodega, Estante, Nivel = "";
+        private string Marca, Grupo, Referencia, Stock = "";
         private string ValorPromedio, ValorCompra, ValorVenta = "";
 
         public frmOrdenDeCompra()
@@ -63,10 +63,12 @@ namespace Presentacion
             this.TBCodigo.Select();
 
             //Ocultacion de Texboxt
-            this.TBIdproducto.Visible = false;
             this.TBIdbodega.Visible = false;
-            this.TBIdproveedor.Visible = false;
             this.TBIddetalle.Visible = false;
+            this.TBIdproducto.Visible = false;
+            this.TBIdproveedor.Visible = false;
+            this.TBIdcotizacion.Visible = false;
+            this.TBIdordendecompra.Visible = false;
         }
 
         private void Habilitar()
@@ -92,8 +94,8 @@ namespace Presentacion
             this.TBCodigo_Bodega.Text = Campo;
 
             //
-            this.TBDescripcion.Enabled = true;
-            this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCotizacion.Enabled = false;
+            this.TBCotizacion.BackColor = Color.FromArgb(72, 209, 204);
             this.TBBodega.Enabled = false;
             this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
             this.TBProveedor.Enabled = false;
@@ -105,16 +107,18 @@ namespace Presentacion
 
             this.TBMarca.Enabled = false;
             this.TBMarca.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBUbicacion.Enabled = false;
-            this.TBUbicacion.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBEstante.Enabled = false;
-            this.TBEstante.BackColor = Color.FromArgb(72, 209, 204);
             this.TBStock.Enabled = false;
             this.TBStock.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBNivel.Enabled = false;
-            this.TBNivel.BackColor = Color.FromArgb(72, 209, 204);
             this.TBGrupo.Enabled = false;
             this.TBGrupo.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorPromedio.Enabled = false;
+            this.TBValorPromedio.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorCompra.Enabled = false;
+            this.TBValorCompra.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorVenta.Enabled = false;
+            this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
+
+            //
             this.TBValorCotizado.Enabled = false;
             this.TBValorCotizado.BackColor = Color.FromArgb(255, 255, 255);
             this.TBValorCompra_Final.Enabled = false;
@@ -141,13 +145,11 @@ namespace Presentacion
                 this.TBCodigo_Producto.Text = Campo;
                 this.TBCodigo_Proveedor.Clear();
                 this.TBCodigo_Proveedor.Text = Campo;
-                this.TBDescripcion.Clear();
+                this.TBCotizacion.Clear();
                 this.TBProducto.Clear();
                 this.TBProveedor.Clear();
                 
                 //Panel Datos Basicos - Parte Inferior
-                this.TBEstante.Clear();
-                this.TBNivel.Clear();
                 this.TBStock.Clear();
                                             
                 //Se habilitan los botones a su estado por DEFAULT
@@ -194,7 +196,8 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("V. de Compra", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Val. Cotizado", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Val. de Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
@@ -207,8 +210,9 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
                 this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "V. de Compra";
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Total";
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Val. Cotizado";
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Val. de Compra";
+                this.DGDetalleDeIngreso.Columns[8].HeaderText = "Total";
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -216,12 +220,16 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[1].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[2].ReadOnly = true;
                 this.DGDetalleDeIngreso.Columns[3].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[4].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[7].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[4].ReadOnly = false;
+                this.DGDetalleDeIngreso.Columns[5].ReadOnly = false;
+                this.DGDetalleDeIngreso.Columns[6].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[7].ReadOnly = false;
+                this.DGDetalleDeIngreso.Columns[8].ReadOnly = true;
 
                 //Formato de Celdas
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -232,6 +240,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -242,6 +251,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -269,11 +279,22 @@ namespace Presentacion
             this.TBCodigo_Bodega.Text = documento;
         }
         
+        public void setCotizacion(string idcotizacion, string cotizacion)
+        {
+            this.TBIdcotizacion.Text = idcotizacion;
+            this.TBCotizacion.Text = cotizacion;
+        }
+
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
             {
                 bool Agregar = true;
+
+                double Cajas = 0;
+                double Unidades = 0;
+                double Total = 0;
+
                 foreach (DataRow FilaTemporal in DtDetalle.Rows)
                 {
                     if (Convert.ToInt32(FilaTemporal["Idproducto"]) == idproducto)
@@ -290,7 +311,11 @@ namespace Presentacion
                     Fila["Codigo"] = codigo;
                     Fila["Descripcion"] = nombre;
                     Fila["Medida"] = unidad;
-                    Fila["V. de Compra"] = valor_compra;
+                    Fila["Cajas"] = Cajas;
+                    Fila["Unidades"] = Unidades;
+                    Fila["Val. Cotizado"] = valor_compra;
+                    Fila["Val. de Compra"] = valor_compra;
+                    Fila["Total"] = Total;
                     this.DtDetalle.Rows.Add(Fila);
 
                     //this.Calculo_Totales();
@@ -306,22 +331,27 @@ namespace Presentacion
         {
             try
             {
-                double SubTotal = 0;
+                double ValorFinal = 0;
+                double ValorCotizado = 0;
                 double Operacion = 0;
 
                 //Se procede a sumar la columna de valor de compra promedio
 
                 foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
                 {
-                    SubTotal += Convert.ToDouble(row.Cells[6].Value);
+                    ValorFinal += Convert.ToDouble(row.Cells[8].Value);
+                    ValorCotizado += Convert.ToDouble(row.Cells[6].Value);
                 }
 
                 //
-                this.TBValorCompra_Final.Text = Convert.ToString(SubTotal);
+                this.TBValorCompra_Final.Text = Convert.ToString(ValorFinal);
+                this.TBValorCotizado.Text = Convert.ToString(ValorCotizado);
                 
                 //Se les da Formato a los campo de texto en este caso con Miles y Dos Decimales
-                this.TBValorCotizado.Text = Operacion.ToString("##,##0.00");
-                this.TBValorCompra_Final.Text = Operacion.ToString("##,##0.00");
+
+                //this.TBValorCotizado.Text = Operacion.ToString("##,##0.00");
+                this.TBValorCompra_Final.Text = ValorFinal.ToString("##,##0.00");
+                this.TBValorCotizado.Text = ValorCotizado.ToString("##,##0.00");
             }
             catch (Exception ex)
             {
@@ -494,14 +524,14 @@ namespace Presentacion
                                 Convert.ToString(Tabla.Rows[0][4])
                             );
 
-                        lblTotal_Detalles.Text = "Productos Ingresados: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
+                        lblTotal_Detalles.Text = "Productos: " + Convert.ToString(DGDetalleDeIngreso.Rows.Count);
 
                         //Se procede a sumar la columna de valor de compra promedio
 
                         double total = 0;
                         foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
                         {
-                            total += Convert.ToDouble(row.Cells[6].Value);
+                            total += Convert.ToDouble(row.Cells[7].Value);
                         }
                         //TBValorCompra_Final.Text = Convert.ToString(total);
                         this.TBValorCompra_Final.Text = total.ToString("##,##0.00");
@@ -590,17 +620,17 @@ namespace Presentacion
         private void TBDescripcion_Enter(object sender, EventArgs e)
         {
             //Se evalua si el campo de texto esta vacio y se espeicifca que es obligatorio en la base de datos
-            if (TBDescripcion.Text == Campo)
+            if (TBCotizacion.Text == Campo)
             {
-                this.TBDescripcion.BackColor = Color.Azure;
-                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
-                this.TBDescripcion.Clear();
+                this.TBCotizacion.BackColor = Color.Azure;
+                this.TBCotizacion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCotizacion.Clear();
             }
             else
             {
                 //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-                this.TBDescripcion.BackColor = Color.Azure;
-                this.TBDescripcion.ForeColor = Color.FromArgb(0, 0, 0);
+                this.TBCotizacion.BackColor = Color.Azure;
+                this.TBCotizacion.ForeColor = Color.FromArgb(0, 0, 0);
             }
         }
 
@@ -664,6 +694,50 @@ namespace Presentacion
             }
         }
 
+        private void DGDetalleDeIngreso_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                //
+                int cantidad = 0;
+                double precio_unit = 0;
+                double precio_total = 0;
+
+                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "Cajas")
+                {
+                    try
+                    {
+                        cantidad = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese la Cantidad a Cotizar");
+                    }
+
+                    try
+                    {
+                        precio_unit = double.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[7].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese el Valor de Compra");
+                    }
+
+                    if (!(cantidad == 0) && !(precio_unit == 0))
+                    {
+                        precio_total = cantidad * precio_unit;
+                        this.DGDetalleDeIngreso.Rows[e.RowIndex].Cells[8].Value = precio_total.ToString("##,##0.00");
+
+                        this.Calculo_Totales();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
         private void btnExaminar_Bodega_Click(object sender, EventArgs e)
         {
             frmFiltro_Bodega frmFiltro_Bodega = new frmFiltro_Bodega();
@@ -697,7 +771,8 @@ namespace Presentacion
 
         private void btnExaminar_Cotizacion_Click(object sender, EventArgs e)
         {
-
+            frmFiltro_CotizacionDeCompra frmFiltro_CotizacionDeCompra = new frmFiltro_CotizacionDeCompra();
+            frmFiltro_CotizacionDeCompra.ShowDialog();
         }
 
         private void DGDetalleDeIngreso_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -732,8 +807,6 @@ namespace Presentacion
                     ValorPromedio = Datos.Rows[0][25].ToString();
                     ValorCompra = Datos.Rows[0][26].ToString();
                     ValorVenta = Datos.Rows[0][27].ToString();
-                    Estante = Datos.Rows[0][37].ToString();
-                    Nivel = Datos.Rows[0][38].ToString();
                     Marca = Datos.Rows[0][44].ToString();
                     Grupo = Datos.Rows[0][44].ToString();
 
@@ -742,10 +815,6 @@ namespace Presentacion
                     this.TBMarca.Text = Marca;
                     this.TBGrupo.Text = Grupo;
                     this.TBStock.Text = Stock;
-
-                    this.TBBodega.Text = Bodega;
-                    this.TBEstante.Text = Estante;
-                    this.TBNivel.Text = Nivel;
 
                     this.TBValorPromedio.Text = ValorPromedio;
                     this.TBValorCompra.Text = ValorCompra;
@@ -760,16 +829,16 @@ namespace Presentacion
 
         private void TBDescripcion_Leave(object sender, EventArgs e)
         {
-            if (TBDescripcion.Text == string.Empty)
+            if (TBCotizacion.Text == string.Empty)
             {
                 //Color de texboxt cuando este posee el FOCUS Activado
-                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
-                this.TBDescripcion.Text = Campo;
-                this.TBDescripcion.ForeColor = Color.FromArgb(255, 255, 255);
+                this.TBCotizacion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCotizacion.Text = Campo;
+                this.TBCotizacion.ForeColor = Color.FromArgb(255, 255, 255);
             }
             else
             {
-                this.TBDescripcion.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBCotizacion.BackColor = Color.FromArgb(3, 155, 229);
             }
         }
 

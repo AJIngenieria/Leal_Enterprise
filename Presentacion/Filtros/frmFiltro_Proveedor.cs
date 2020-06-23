@@ -71,11 +71,13 @@ namespace Presentacion
                 frmProductos frmPro = frmProductos.GetInstancia();
                 frmInventario_Ingreso frmInv = frmInventario_Ingreso.GetInstancia();
                 frmCotizacionDeCompra frmCot = frmCotizacionDeCompra.GetInstancia();
+                frmOrdenDeCompra frmOCom = frmOrdenDeCompra.GetInstancia();
 
+                //Variables para realizar los filtro 
+                string idproveedor, proveedor, documento;
 
                 if (frmPro.Examinar)
                 {
-                    string idproveedor, proveedor;
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                     proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
                     frmPro.setProveedor(idproveedor, proveedor);
@@ -83,8 +85,7 @@ namespace Presentacion
                 }
 
                 if (frmInv.Examinar)
-                {
-                    string idproveedor, proveedor, documento;
+                {   
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                     proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
                     documento = this.DGFiltro_Resultados.CurrentRow.Cells["Documento"].Value.ToString();
@@ -94,11 +95,19 @@ namespace Presentacion
 
                 if (frmCot.Examinar)
                 {
-                    string idproveedor, proveedor, documento;
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
                     proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
                     documento = this.DGFiltro_Resultados.CurrentRow.Cells["Documento"].Value.ToString();
                     frmCot.setProveedor(idproveedor, proveedor, documento);
+                    this.Hide();
+                }
+
+                if (frmOCom.Examinar)
+                {
+                    idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
+                    proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
+                    documento = this.DGFiltro_Resultados.CurrentRow.Cells["Documento"].Value.ToString();
+                    frmOCom.setProveedor(idproveedor, proveedor, documento);
                     this.Hide();
                 }
             }
