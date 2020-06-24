@@ -58,6 +58,7 @@ namespace Presentacion
             this.Botones();
             this.Habilitar();
             this.CrearTabla();
+            this.AutoCompletar_Combobox();
 
             //Focus a Texboxt y Combobox
             this.TBCodigo.Select();
@@ -92,6 +93,10 @@ namespace Presentacion
             this.TBCodigo_Bodega.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo_Bodega.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBCodigo_Bodega.Text = Campo;
+            this.TBCreditoEnMora.ReadOnly = false;
+            this.TBCreditoEnMora.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCreditoDisponible.ReadOnly = false;
+            this.TBCreditoDisponible.BackColor = Color.FromArgb(3, 155, 229);
 
             //
             this.TBCotizacion.Enabled = false;
@@ -283,6 +288,20 @@ namespace Presentacion
         {
             this.TBIdcotizacion.Text = idcotizacion;
             this.TBCotizacion.Text = cotizacion;
+        }
+
+        private void AutoCompletar_Combobox()
+        {
+            try
+            {
+                this.CBTipodepago.DataSource = fTipoDePago.Lista();
+                this.CBTipodepago.ValueMember = "Codigo";
+                this.CBTipodepago.DisplayMember = "Tipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
         }
 
         public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
@@ -731,6 +750,23 @@ namespace Presentacion
                         this.Calculo_Totales();
                     }
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBIdordendecompra_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBIdcotizacion_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+
             }
             catch (Exception ex)
             {

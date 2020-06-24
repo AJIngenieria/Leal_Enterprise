@@ -30,7 +30,40 @@ namespace Presentacion
 
         private void frmFiltro_CotizacionDeCompra_Load(object sender, EventArgs e)
         {
+            //Ocultacion de Texboxt
+            this.TBIdcotizacion.Visible = false;
+            //Inicio de Claes
+            this.Habilitar();
+        }
 
+        private void Habilitar()
+        {
+            this.TBCodigo.ReadOnly = true;
+            this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBProveedor.ReadOnly = true;
+            this.TBProveedor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBodega.ReadOnly = true;
+            this.TBBodega.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBAlmacen.ReadOnly = true;
+            this.TBAlmacen.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBTipodepago.ReadOnly = true;
+            this.TBTipodepago.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBMora.ReadOnly = true;
+            this.TBMora.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDisponible.ReadOnly = true;
+            this.TBDisponible.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBEnvio.ReadOnly = true;
+            this.TBEnvio.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBSubTotal.ReadOnly = true;
+            this.TBSubTotal.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDescuento_Porcentaje.ReadOnly = true;
+            this.TBDescuento_Porcentaje.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBDescuento.ReadOnly = true;
+            this.TBDescuento.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBImpuesto_Valor.ReadOnly = true;
+            this.TBImpuesto_Valor.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorGeneral.ReadOnly = true;
+            this.TBValorGeneral.BackColor = Color.FromArgb(3, 155, 229);
         }
         
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -45,7 +78,7 @@ namespace Presentacion
                 if (frmOC.Examinar)
                 {
                     idcotizacion = this.DGFiltro_Resultados.CurrentRow.Cells[0].Value.ToString();
-                    cotizacion = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[1].Value);
+                    cotizacion = Convert.ToString(this.DGFiltro_Resultados.CurrentRow.Cells[2].Value);
                     frmOC.setCotizacion(idcotizacion, cotizacion);
                     this.Hide();
                 }
@@ -131,19 +164,20 @@ namespace Presentacion
                     //Panel Datos Basicos
                     Codigo = Datos.Rows[0][6].ToString();
                     Almacen = Datos.Rows[0][8].ToString();
-                    Bodega = Datos.Rows[0][11].ToString();
-                    Proveedor = Datos.Rows[0][13].ToString();
-                    TipoDePago = Datos.Rows[0][15].ToString();
-                    SubTotal = Datos.Rows[0][18].ToString();
-                    Descuento_Porcentaje = Datos.Rows[0][19].ToString();
-                    Descuento = Datos.Rows[0][20].ToString();
-                    Impuesto = Datos.Rows[0][21].ToString();
-                    Valor = Datos.Rows[0][22].ToString();
-                    Mora = Datos.Rows[0][23].ToString();
-                    Disponible = Datos.Rows[0][24].ToString();
-                    Envio = Datos.Rows[0][25].ToString();
-                    Vencimiento = Datos.Rows[0][28].ToString();
-                    Fecha = Datos.Rows[0][29].ToString();
+                    SubTotal = Datos.Rows[0][11].ToString();
+                    Descuento_Porcentaje = Datos.Rows[0][12].ToString();
+                    Descuento = Datos.Rows[0][13].ToString();
+                    Impuesto = Datos.Rows[0][14].ToString();
+                    Valor = Datos.Rows[0][15].ToString();
+                    Mora = Datos.Rows[0][16].ToString();
+                    Disponible = Datos.Rows[0][17].ToString();
+                    Envio = Datos.Rows[0][18].ToString();
+                    TipoDePago = Datos.Rows[0][19].ToString();
+                    Vencimiento = Datos.Rows[0][21].ToString();
+                    Fecha = Datos.Rows[0][22].ToString();
+                    Bodega = Datos.Rows[0][23].ToString();
+                    Proveedor = Datos.Rows[0][25].ToString();
+                    
 
                     //Se lleva acabo el complemento de los campos de Texto
                     this.TBCodigo.Text = Codigo;
@@ -160,6 +194,7 @@ namespace Presentacion
                     this.TBImpuesto_Valor.Text = Impuesto;
                     this.TBValorGeneral.Text = Valor;
                     this.dateTimePicker3.Text = Fecha;
+                                      
 
                     if (Vencimiento == "1")
                     {

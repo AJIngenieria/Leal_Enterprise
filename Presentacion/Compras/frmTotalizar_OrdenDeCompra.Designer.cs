@@ -48,29 +48,29 @@
             this.TBImpuesto_Cotizado = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TBAdelanto = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.CBTipodepago = new System.Windows.Forms.ComboBox();
-            this.TBEfectivo = new System.Windows.Forms.TextBox();
-            this.TBCredito = new System.Windows.Forms.TextBox();
-            this.TBCheques = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.DTVencimiento = new System.Windows.Forms.DateTimePicker();
-            this.TBAdelanto_Porcentaje = new System.Windows.Forms.TextBox();
-            this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.TBTransferencia = new System.Windows.Forms.TextBox();
-            this.label17 = new System.Windows.Forms.Label();
-            this.TBDescuento_Final = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
             this.TBValorGeneral = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.TBDescuento_Final = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.TBTransferencia = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.TBAdelanto_Porcentaje = new System.Windows.Forms.TextBox();
+            this.DTVencimiento = new System.Windows.Forms.DateTimePicker();
+            this.label6 = new System.Windows.Forms.Label();
+            this.TBCheques = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.TBCredito = new System.Windows.Forms.TextBox();
+            this.TBEfectivo = new System.Windows.Forms.TextBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TBAdelanto = new System.Windows.Forms.TextBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.TBTipodepago = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -313,6 +313,7 @@
             this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Controls.Add(this.TBTipodepago);
             this.groupBox2.Controls.Add(this.TBValorGeneral);
             this.groupBox2.Controls.Add(this.label13);
             this.groupBox2.Controls.Add(this.TBDescuento_Final);
@@ -328,7 +329,6 @@
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.TBCredito);
             this.groupBox2.Controls.Add(this.TBEfectivo);
-            this.groupBox2.Controls.Add(this.CBTipodepago);
             this.groupBox2.Controls.Add(this.label16);
             this.groupBox2.Controls.Add(this.label15);
             this.groupBox2.Controls.Add(this.label14);
@@ -343,187 +343,27 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Finales Auxiliares - Leal Enterprise";
             // 
-            // label14
+            // TBValorGeneral
             // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TBValorGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 77);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(49, 15);
-            this.label14.TabIndex = 19;
-            this.label14.Text = "Efectivo";
+            this.TBValorGeneral.Location = new System.Drawing.Point(100, 263);
+            this.TBValorGeneral.Name = "TBValorGeneral";
+            this.TBValorGeneral.Size = new System.Drawing.Size(250, 21);
+            this.TBValorGeneral.TabIndex = 38;
             // 
-            // TBAdelanto
+            // label13
             // 
-            this.TBAdelanto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBAdelanto.Location = new System.Drawing.Point(176, 47);
-            this.TBAdelanto.Name = "TBAdelanto";
-            this.TBAdelanto.Size = new System.Drawing.Size(174, 21);
-            this.TBAdelanto.TabIndex = 20;
-            // 
-            // label15
-            // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 50);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(61, 15);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Adelantos";
-            // 
-            // label16
-            // 
-            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 104);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(46, 15);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Credito";
-            // 
-            // CBTipodepago
-            // 
-            this.CBTipodepago.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.CBTipodepago.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.CBTipodepago.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBTipodepago.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBTipodepago.FormattingEnabled = true;
-            this.CBTipodepago.Location = new System.Drawing.Point(100, 20);
-            this.CBTipodepago.Name = "CBTipodepago";
-            this.CBTipodepago.Size = new System.Drawing.Size(250, 21);
-            this.CBTipodepago.Sorted = true;
-            this.CBTipodepago.TabIndex = 24;
-            // 
-            // TBEfectivo
-            // 
-            this.TBEfectivo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBEfectivo.Location = new System.Drawing.Point(100, 74);
-            this.TBEfectivo.Name = "TBEfectivo";
-            this.TBEfectivo.Size = new System.Drawing.Size(250, 21);
-            this.TBEfectivo.TabIndex = 25;
-            // 
-            // TBCredito
-            // 
-            this.TBCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBCredito.Location = new System.Drawing.Point(100, 101);
-            this.TBCredito.Name = "TBCredito";
-            this.TBCredito.Size = new System.Drawing.Size(250, 21);
-            this.TBCredito.TabIndex = 26;
-            // 
-            // TBCheques
-            // 
-            this.TBCheques.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBCheques.Location = new System.Drawing.Point(100, 128);
-            this.TBCheques.Name = "TBCheques";
-            this.TBCheques.Size = new System.Drawing.Size(250, 21);
-            this.TBCheques.TabIndex = 28;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 131);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(56, 15);
-            this.label5.TabIndex = 27;
-            this.label5.Text = "Cheques";
-            // 
-            // label6
-            // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 239);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 15);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Vencimiento";
-            // 
-            // DTVencimiento
-            // 
-            this.DTVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.DTVencimiento.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DTVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DTVencimiento.Location = new System.Drawing.Point(100, 236);
-            this.DTVencimiento.Name = "DTVencimiento";
-            this.DTVencimiento.Size = new System.Drawing.Size(100, 21);
-            this.DTVencimiento.TabIndex = 30;
-            // 
-            // TBAdelanto_Porcentaje
-            // 
-            this.TBAdelanto_Porcentaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBAdelanto_Porcentaje.Location = new System.Drawing.Point(100, 47);
-            this.TBAdelanto_Porcentaje.Name = "TBAdelanto_Porcentaje";
-            this.TBAdelanto_Porcentaje.Size = new System.Drawing.Size(70, 21);
-            this.TBAdelanto_Porcentaje.TabIndex = 23;
-            this.TBAdelanto_Porcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // TBCreditoDisponible
-            // 
-            this.TBCreditoDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBCreditoDisponible.Location = new System.Drawing.Point(100, 182);
-            this.TBCreditoDisponible.Name = "TBCreditoDisponible";
-            this.TBCreditoDisponible.Size = new System.Drawing.Size(250, 21);
-            this.TBCreditoDisponible.TabIndex = 32;
-            // 
-            // label7
-            // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 15);
-            this.label7.TabIndex = 31;
-            this.label7.Text = "Credito Dispo.";
-            // 
-            // TBTransferencia
-            // 
-            this.TBTransferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBTransferencia.Location = new System.Drawing.Point(100, 155);
-            this.TBTransferencia.Name = "TBTransferencia";
-            this.TBTransferencia.Size = new System.Drawing.Size(250, 21);
-            this.TBTransferencia.TabIndex = 34;
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(6, 158);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(82, 15);
-            this.label17.TabIndex = 33;
-            this.label17.Text = "Transferencia";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 266);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(82, 15);
+            this.label13.TabIndex = 37;
+            this.label13.Text = "Valor General";
             // 
             // TBDescuento_Final
             // 
@@ -547,27 +387,172 @@
             this.label18.TabIndex = 35;
             this.label18.Text = "Desc. Final";
             // 
-            // TBValorGeneral
+            // TBTransferencia
             // 
-            this.TBValorGeneral.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TBTransferencia.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.TBValorGeneral.Location = new System.Drawing.Point(100, 263);
-            this.TBValorGeneral.Name = "TBValorGeneral";
-            this.TBValorGeneral.Size = new System.Drawing.Size(250, 21);
-            this.TBValorGeneral.TabIndex = 38;
+            this.TBTransferencia.Location = new System.Drawing.Point(100, 155);
+            this.TBTransferencia.Name = "TBTransferencia";
+            this.TBTransferencia.Size = new System.Drawing.Size(250, 21);
+            this.TBTransferencia.TabIndex = 34;
             // 
-            // label13
+            // label17
             // 
-            this.label13.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 266);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(82, 15);
-            this.label13.TabIndex = 37;
-            this.label13.Text = "Valor General";
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(6, 158);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(82, 15);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Transferencia";
+            // 
+            // TBCreditoDisponible
+            // 
+            this.TBCreditoDisponible.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBCreditoDisponible.Location = new System.Drawing.Point(100, 182);
+            this.TBCreditoDisponible.Name = "TBCreditoDisponible";
+            this.TBCreditoDisponible.Size = new System.Drawing.Size(250, 21);
+            this.TBCreditoDisponible.TabIndex = 32;
+            // 
+            // label7
+            // 
+            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(6, 185);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(84, 15);
+            this.label7.TabIndex = 31;
+            this.label7.Text = "Credito Dispo.";
+            // 
+            // TBAdelanto_Porcentaje
+            // 
+            this.TBAdelanto_Porcentaje.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBAdelanto_Porcentaje.Location = new System.Drawing.Point(100, 47);
+            this.TBAdelanto_Porcentaje.Name = "TBAdelanto_Porcentaje";
+            this.TBAdelanto_Porcentaje.Size = new System.Drawing.Size(70, 21);
+            this.TBAdelanto_Porcentaje.TabIndex = 23;
+            this.TBAdelanto_Porcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // DTVencimiento
+            // 
+            this.DTVencimiento.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DTVencimiento.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DTVencimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DTVencimiento.Location = new System.Drawing.Point(100, 236);
+            this.DTVencimiento.Name = "DTVencimiento";
+            this.DTVencimiento.Size = new System.Drawing.Size(100, 21);
+            this.DTVencimiento.TabIndex = 30;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(6, 239);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 15);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "Vencimiento";
+            // 
+            // TBCheques
+            // 
+            this.TBCheques.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBCheques.Location = new System.Drawing.Point(100, 128);
+            this.TBCheques.Name = "TBCheques";
+            this.TBCheques.Size = new System.Drawing.Size(250, 21);
+            this.TBCheques.TabIndex = 28;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 131);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(56, 15);
+            this.label5.TabIndex = 27;
+            this.label5.Text = "Cheques";
+            // 
+            // TBCredito
+            // 
+            this.TBCredito.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBCredito.Location = new System.Drawing.Point(100, 101);
+            this.TBCredito.Name = "TBCredito";
+            this.TBCredito.Size = new System.Drawing.Size(250, 21);
+            this.TBCredito.TabIndex = 26;
+            // 
+            // TBEfectivo
+            // 
+            this.TBEfectivo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBEfectivo.Location = new System.Drawing.Point(100, 74);
+            this.TBEfectivo.Name = "TBEfectivo";
+            this.TBEfectivo.Size = new System.Drawing.Size(250, 21);
+            this.TBEfectivo.TabIndex = 25;
+            // 
+            // label16
+            // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(6, 104);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(46, 15);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Credito";
+            // 
+            // label15
+            // 
+            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 50);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(61, 15);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Adelantos";
+            // 
+            // label14
+            // 
+            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 77);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(49, 15);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Efectivo";
+            // 
+            // TBAdelanto
+            // 
+            this.TBAdelanto.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBAdelanto.Location = new System.Drawing.Point(176, 47);
+            this.TBAdelanto.Name = "TBAdelanto";
+            this.TBAdelanto.Size = new System.Drawing.Size(174, 21);
+            this.TBAdelanto.TabIndex = 20;
             // 
             // btnGuardar
             // 
@@ -619,6 +604,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(357, 25);
             this.panel3.TabIndex = 9;
+            // 
+            // TBTipodepago
+            // 
+            this.TBTipodepago.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.TBTipodepago.Location = new System.Drawing.Point(100, 20);
+            this.TBTipodepago.Name = "TBTipodepago";
+            this.TBTipodepago.Size = new System.Drawing.Size(250, 21);
+            this.TBTipodepago.TabIndex = 39;
             // 
             // frmTotalizar_OrdenDeCompra
             // 
@@ -679,7 +674,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox TBAdelanto;
         private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox CBTipodepago;
         private System.Windows.Forms.TextBox TBCheques;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox TBCredito;
@@ -695,5 +689,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TBValorGeneral;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox TBTipodepago;
     }
 }

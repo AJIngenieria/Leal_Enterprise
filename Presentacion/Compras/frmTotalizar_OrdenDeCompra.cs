@@ -35,28 +35,29 @@ namespace Presentacion
         {
             //Inicio de Clase y Botones
             this.Habilitar();
-            this.AutoCompletar_Combobox();
         }
 
         private void Habilitar()
         {
             //
-            this.TBValorCotizado.ReadOnly = false;
-            this.TBValorCotizado.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBDescuento_Porcentaje.ReadOnly = false;
-            this.TBDescuento_Porcentaje.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBDescuento_Cotizado.ReadOnly = false;
-            this.TBDescuento_Cotizado.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorFinal_Cotizado.ReadOnly = false;
-            this.TBValorFinal_Cotizado.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBImpuesto_Cotizado.ReadOnly = false;
-            this.TBImpuesto_Cotizado.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBTipoDePago_Cotizado.ReadOnly = false;
-            this.TBTipoDePago_Cotizado.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBEnvio_Cotizado.ReadOnly = false;
-            this.TBEnvio_Cotizado.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorCotizado.Enabled = false;
+            this.TBValorCotizado.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBDescuento_Porcentaje.Enabled = false;
+            this.TBDescuento_Porcentaje.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBDescuento_Cotizado.Enabled = false;
+            this.TBDescuento_Cotizado.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorFinal_Cotizado.Enabled = false;
+            this.TBValorFinal_Cotizado.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBImpuesto_Cotizado.Enabled = false;
+            this.TBImpuesto_Cotizado.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBTipoDePago_Cotizado.Enabled = false;
+            this.TBTipoDePago_Cotizado.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBEnvio_Cotizado.Enabled = false;
+            this.TBEnvio_Cotizado.BackColor = Color.FromArgb(72, 209, 204);
 
             //
+            this.TBTipodepago.ReadOnly = false;
+            this.TBTipodepago.BackColor = Color.FromArgb(3, 155, 229);
             this.TBAdelanto.ReadOnly = false;
             this.TBAdelanto.BackColor = Color.FromArgb(3, 155, 229);
             this.TBAdelanto_Porcentaje.ReadOnly = false;
@@ -77,20 +78,6 @@ namespace Presentacion
             this.TBDias.BackColor = Color.FromArgb(3, 155, 229);
             this.TBValorGeneral.ReadOnly = false;
             this.TBValorGeneral.BackColor = Color.FromArgb(3, 155, 229);
-        }
-
-        private void AutoCompletar_Combobox()
-        {
-            try
-            {
-                this.CBTipodepago.DataSource = fTipoDePago.Lista();
-                this.CBTipodepago.ValueMember = "Codigo";
-                this.CBTipodepago.DisplayMember = "Tipo";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message + ex.StackTrace);
-            }
         }
 
         private void CBRetencion_SelectedIndexChanged(object sender, EventArgs e)
