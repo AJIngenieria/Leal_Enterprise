@@ -12,6 +12,18 @@ namespace Negocio
 {
     public class fCotizacion_Compra
     {
+        public static DataTable Auto_ConsultaEnOrden(string filtro)
+        {
+            Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();
+            return Datos.Auto_ConsultaEnOrden(filtro);
+        }
+
+        public static DataTable Auto_ConsultaDetalle(string filtro)
+        {
+            Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();
+            return Datos.Auto_ConsultaDetalle(filtro);
+        }
+
         public static DataTable Buscar(string filtro, int auto)
         {
             Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();

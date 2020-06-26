@@ -12,6 +12,67 @@ namespace Datos
 {
     public class Conexion_CotizacionDeCompra
     {
+        public DataTable Auto_ConsultaEnOrden(string Valor)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.OrdenDeCompra", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Filtro", SqlDbType.VarChar).Value = Valor;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
+
+        public DataTable Auto_ConsultaDetalle(string Valor)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.OrdenDeCompra", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Detalle", SqlDbType.VarChar).Value = Valor;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
 
         public DataTable Buscar(string Valor, int Auto)
         {

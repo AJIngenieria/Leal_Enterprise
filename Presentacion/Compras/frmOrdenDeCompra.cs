@@ -99,8 +99,8 @@ namespace Presentacion
             this.TBCreditoDisponible.BackColor = Color.FromArgb(3, 155, 229);
 
             //
-            this.TBCotizacion.Enabled = false;
-            this.TBCotizacion.BackColor = Color.FromArgb(72, 209, 204);
+            //this.TBCotizacion.Enabled = false;
+            //this.TBCotizacion.BackColor = Color.FromArgb(72, 209, 204);
             this.TBBodega.Enabled = false;
             this.TBBodega.BackColor = Color.FromArgb(72, 209, 204);
             this.TBProveedor.Enabled = false;
@@ -304,7 +304,7 @@ namespace Presentacion
             }
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
+        private void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
         {
             try
             {
@@ -334,6 +334,48 @@ namespace Presentacion
                     Fila["Unidades"] = Unidades;
                     Fila["Val. Cotizado"] = valor_compra;
                     Fila["Val. de Compra"] = valor_compra;
+                    Fila["Total"] = Total;
+                    this.DtDetalle.Rows.Add(Fila);
+
+                    //this.Calculo_Totales();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void Detalle_SQL(int idproducto, string codigo, string nombre, string Medida, string valor_cotizado)
+        {
+            try
+            {
+                bool Agregar = true;
+
+                double Cajas = 0;
+                double Unidades = 0;
+                double Total = 0;
+
+                foreach (DataRow FilaTemporal in DtDetalle.Rows)
+                {
+                    if (Convert.ToInt32(FilaTemporal["Idproducto"]) == idproducto)
+                    {
+                        Agregar = false;
+                        this.MensajeError("El Producto ya se encuentra agregado en la lista.");
+                    }
+                }
+
+                if (Agregar)
+                {
+                    DataRow Fila = DtDetalle.NewRow();
+                    Fila["Idproducto"] = idproducto;
+                    Fila["Codigo"] = codigo;
+                    Fila["Descripcion"] = nombre;
+                    Fila["Medida"] = Medida;
+                    //Fila["Cajas"] = Cajas;
+                    Fila["Unidades"] = Unidades;
+                    Fila["Val. Cotizado"] = valor_cotizado;
+                    //Fila["Val. de Compra"] = valor_compra;
                     Fila["Total"] = Total;
                     this.DtDetalle.Rows.Add(Fila);
 
@@ -767,6 +809,53 @@ namespace Presentacion
             try
             {
 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBCotizacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Datos = new DataTable();
+                    Datos = fCotizacion_Compra.Auto_ConsultaEnOrden(this.TBCotizacion.Text.Trim());
+                    if (Datos.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        //Captura de Valores en la Base de Datos
+
+                        this.TBIdcotizacion.Text = Datos.Rows[0][0].ToString();
+                        this.TBIdbodega.Text = Datos.Rows[0][1].ToString();
+                        this.TBIdproveedor.Text = Datos.Rows[0][2].ToString();
+                        this.CBTipodepago.Text = Datos.Rows[0][3].ToString();
+                        this.TBProveedor.Text = Datos.Rows[0][4].ToString();
+                        this.TBCodigo_Proveedor.Text = Datos.Rows[0][5].ToString();
+                        this.TBBodega.Text = Datos.Rows[0][6].ToString();
+                        this.TBCodigo_Bodega.Text = Datos.Rows[0][7].ToString();
+
+                        this.TBIddetalle.Text = TBIdcotizacion.Text;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBIddetalle_TextChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                this.DGDetalleDeIngreso.DataSource = fCotizacion_Compra.Auto_ConsultaDetalle(this.TBIddetalle.Text);
             }
             catch (Exception ex)
             {
