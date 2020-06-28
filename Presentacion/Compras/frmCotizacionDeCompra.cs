@@ -237,25 +237,37 @@ namespace Presentacion
         {
             try
             {
+                this.DGDetalles.DataSource = this.DtDetalle;
+
                 this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Descripción", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Unidad", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("V. Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
-                this.DGDetalles.DataSource = this.DtDetalle;
-
                 this.DGDetalles.Columns[0].Visible = false;
+                this.DGDetalles.Columns[1].Visible = false;
                 this.DGDetalles.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalles.Columns[1].HeaderText = "Codigo";
                 this.DGDetalles.Columns[2].HeaderText = "Descripción";
+                this.DGDetalles.Columns[2].Width = 280;
                 this.DGDetalles.Columns[3].HeaderText = "Medida";
-                this.DGDetalles.Columns[4].HeaderText = "Cantidad";
-                this.DGDetalles.Columns[5].HeaderText = "V. Compra";
-                this.DGDetalles.Columns[6].HeaderText = "Total";
+                this.DGDetalles.Columns[3].Width = 60;
+                this.DGDetalles.Columns[4].HeaderText = "Cajas";
+                this.DGDetalles.Columns[4].Width = 60;
+                this.DGDetalles.Columns[5].HeaderText = "Unidad";
+                this.DGDetalles.Columns[5].Width = 60;
+                this.DGDetalles.Columns[6].HeaderText = "Cantidad";
+                this.DGDetalles.Columns[6].Width = 60;
+                this.DGDetalles.Columns[7].HeaderText = "V. Compra";
+                this.DGDetalles.Columns[7].Width = 110;
+                this.DGDetalles.Columns[8].HeaderText = "Total";
+                this.DGDetalles.Columns[8].Width = 110;
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -266,10 +278,12 @@ namespace Presentacion
                 this.DGDetalles.Columns[4].ReadOnly = false;
                 this.DGDetalles.Columns[5].ReadOnly = false;
                 this.DGDetalles.Columns[6].ReadOnly = true;
+                this.DGDetalles.Columns[7].ReadOnly = false;
+                this.DGDetalles.Columns[8].ReadOnly = true;
 
                 //Formato de Celdas
-                this.DGDetalles.Columns[5].DefaultCellStyle.Format = "##,##0.00";
-                this.DGDetalles.Columns[6].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalles.Columns[7].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalles.Columns[8].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalles.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -279,6 +293,8 @@ namespace Presentacion
                 this.DGDetalles.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[5].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalles.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -288,6 +304,9 @@ namespace Presentacion
                 this.DGDetalles.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[5].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
 
             }
             catch (Exception ex)
@@ -339,7 +358,7 @@ namespace Presentacion
             }
         }
 
-        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string unidad, string valor_compra)
+        public void Agregar_Detalle(int idproducto, string codigo, string nombre, string medida, string valor_compra)
         {
             try
             {
@@ -347,6 +366,8 @@ namespace Presentacion
                 double Cantidad = 0;
                 double Valor_Compra = 0;
                 double Operacion = 0;
+                double Caja = 0;
+                double Unidad = 0;
 
                 bool Agregar = true;
                 foreach (DataRow FilaTemporal in DtDetalle.Rows)
@@ -366,7 +387,9 @@ namespace Presentacion
                     Fila["Idproducto"] = idproducto;
                     Fila["Codigo"] = codigo;
                     Fila["Descripción"] = nombre;
-                    Fila["Medida"] = unidad;
+                    Fila["Medida"] = medida;
+                    Fila["Cajas"] = Caja;
+                    Fila["Unidad"] = Unidad;
                     Fila["Cantidad"] = Cantidad;
                     Fila["V. Compra"] = valor_compra;
                     Fila["Total"] = Operacion;
@@ -395,7 +418,7 @@ namespace Presentacion
 
                 foreach (DataGridViewRow row in DGDetalles.Rows)
                 {
-                    SubTotal += Convert.ToDouble(row.Cells[6].Value);
+                    SubTotal += Convert.ToDouble(row.Cells[7].Value);
                 }
                 
                 //

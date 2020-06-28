@@ -82,6 +82,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.btnPrecios = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalles)).BeginInit();
@@ -91,6 +92,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnPrecios);
             this.groupBox1.Controls.Add(this.TBIdordendecompra);
             this.groupBox1.Controls.Add(this.label14);
             this.groupBox1.Controls.Add(this.TBCreditoDisponible);
@@ -245,7 +247,7 @@
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(515, 438);
+            this.btnGuardar.Location = new System.Drawing.Point(419, 438);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(90, 30);
             this.btnGuardar.TabIndex = 188;
@@ -261,7 +263,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(611, 438);
+            this.btnCancelar.Location = new System.Drawing.Point(515, 438);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 30);
             this.btnCancelar.TabIndex = 190;
@@ -406,7 +408,7 @@
             // DGDetalles
             // 
             this.DGDetalles.AllowUserToAddRows = false;
-            this.DGDetalles.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGDetalles.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGDetalles.BackgroundColor = System.Drawing.Color.White;
             this.DGDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGDetalles.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -610,11 +612,11 @@
             this.DGResultados.BackgroundColor = System.Drawing.Color.White;
             this.DGResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DGResultados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGResultados.Location = new System.Drawing.Point(6, 74);
+            this.DGResultados.Location = new System.Drawing.Point(6, 101);
             this.DGResultados.Name = "DGResultados";
             this.DGResultados.ReadOnly = true;
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(481, 358);
+            this.DGResultados.Size = new System.Drawing.Size(400, 331);
             this.DGResultados.TabIndex = 8;
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             // 
@@ -622,7 +624,7 @@
             // 
             this.dateTimePicker2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(386, 47);
+            this.dateTimePicker2.Location = new System.Drawing.Point(190, 74);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(101, 21);
             this.dateTimePicker2.TabIndex = 7;
@@ -631,15 +633,15 @@
             // 
             this.dateTimePicker1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(244, 47);
+            this.dateTimePicker1.Location = new System.Drawing.Point(48, 74);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(99, 21);
+            this.dateTimePicker1.Size = new System.Drawing.Size(109, 21);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(359, 50);
+            this.label8.Location = new System.Drawing.Point(163, 77);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(24, 15);
             this.label8.TabIndex = 5;
@@ -648,7 +650,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(202, 49);
+            this.label7.Location = new System.Drawing.Point(6, 78);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(36, 15);
             this.label7.TabIndex = 4;
@@ -659,7 +661,7 @@
             this.CBFechas.AutoSize = true;
             this.CBFechas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.CBFechas.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CBFechas.Location = new System.Drawing.Point(141, 47);
+            this.CBFechas.Location = new System.Drawing.Point(141, 50);
             this.CBFechas.Name = "CBFechas";
             this.CBFechas.Size = new System.Drawing.Size(55, 17);
             this.CBFechas.TabIndex = 3;
@@ -670,7 +672,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 47);
+            this.label6.Location = new System.Drawing.Point(6, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 15);
             this.label6.TabIndex = 2;
@@ -680,7 +682,7 @@
             // 
             this.TBBuscar.Location = new System.Drawing.Point(140, 20);
             this.TBBuscar.Name = "TBBuscar";
-            this.TBBuscar.Size = new System.Drawing.Size(347, 21);
+            this.TBBuscar.Size = new System.Drawing.Size(266, 21);
             this.TBBuscar.TabIndex = 1;
             this.TBBuscar.TextChanged += new System.EventHandler(this.TBBuscar_TextChanged);
             // 
@@ -692,6 +694,25 @@
             this.label3.Size = new System.Drawing.Size(128, 15);
             this.label3.TabIndex = 0;
             this.label3.Text = "Cotización de Compra";
+            // 
+            // btnPrecios
+            // 
+            this.btnPrecios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrecios.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrecios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrecios.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPrecios.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPrecios.Image = global::Presentacion.Botones.btnPrecios;
+            this.btnPrecios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrecios.Location = new System.Drawing.Point(611, 438);
+            this.btnPrecios.Name = "btnPrecios";
+            this.btnPrecios.Size = new System.Drawing.Size(90, 30);
+            this.btnPrecios.TabIndex = 220;
+            this.btnPrecios.Text = "Precios";
+            this.btnPrecios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrecios.UseVisualStyleBackColor = false;
             // 
             // frmCotizacionDeCompra
             // 
@@ -777,5 +798,6 @@
         public System.Windows.Forms.TextBox TBCreditoDisponible;
         public System.Windows.Forms.TextBox TBCreditoEnMora;
         private System.Windows.Forms.TextBox TBIdordendecompra;
+        private System.Windows.Forms.Button btnPrecios;
     }
 }

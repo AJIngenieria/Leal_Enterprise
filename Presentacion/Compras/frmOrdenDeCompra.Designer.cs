@@ -49,6 +49,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnPrecios = new System.Windows.Forms.Button();
             this.TBCreditoDisponible = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.TBCreditoEnMora = new System.Windows.Forms.TextBox();
@@ -59,8 +60,6 @@
             this.TBIdordendecompra = new System.Windows.Forms.TextBox();
             this.btnExaminar_Cotizacion = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label17 = new System.Windows.Forms.Label();
             this.TBValorCompra = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.TBValorVenta = new System.Windows.Forms.TextBox();
@@ -94,6 +93,7 @@
             this.btnImprimir = new System.Windows.Forms.Button();
             this.TBBuscar = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.Medida = new System.Windows.Forms.DataGridViewComboBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.DGDetalleDeIngreso)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -164,7 +164,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotal_Detalles.AutoSize = true;
-            this.lblTotal_Detalles.Location = new System.Drawing.Point(491, 417);
+            this.lblTotal_Detalles.Location = new System.Drawing.Point(516, 458);
             this.lblTotal_Detalles.Name = "lblTotal_Detalles";
             this.lblTotal_Detalles.Size = new System.Drawing.Size(68, 15);
             this.lblTotal_Detalles.TabIndex = 118;
@@ -236,13 +236,14 @@
             this.DGDetalleDeIngreso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.DGDetalleDeIngreso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGDetalleDeIngreso.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.DGDetalleDeIngreso.BackgroundColor = System.Drawing.Color.White;
+            this.DGDetalleDeIngreso.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Medida});
             this.DGDetalleDeIngreso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.DGDetalleDeIngreso.Location = new System.Drawing.Point(6, 155);
             this.DGDetalleDeIngreso.Name = "DGDetalleDeIngreso";
             this.DGDetalleDeIngreso.RowHeadersVisible = false;
-            this.DGDetalleDeIngreso.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders;
             this.DGDetalleDeIngreso.Size = new System.Drawing.Size(795, 253);
             this.DGDetalleDeIngreso.TabIndex = 141;
             this.DGDetalleDeIngreso.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGDetalleDeIngreso_CellClick);
@@ -344,6 +345,7 @@
             this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.Controls.Add(this.btnPrecios);
             this.groupBox1.Controls.Add(this.TBCreditoDisponible);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.TBCreditoEnMora);
@@ -354,8 +356,6 @@
             this.groupBox1.Controls.Add(this.TBIdordendecompra);
             this.groupBox1.Controls.Add(this.btnExaminar_Cotizacion);
             this.groupBox1.Controls.Add(this.label19);
-            this.groupBox1.Controls.Add(this.label18);
-            this.groupBox1.Controls.Add(this.label17);
             this.groupBox1.Controls.Add(this.TBValorCompra);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.TBValorVenta);
@@ -395,6 +395,26 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de Ordenes de Compra - Leal Enterprise";
+            // 
+            // btnPrecios
+            // 
+            this.btnPrecios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnPrecios.BackColor = System.Drawing.Color.Transparent;
+            this.btnPrecios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnPrecios.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnPrecios.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnPrecios.Image = global::Presentacion.Botones.btnPrecios;
+            this.btnPrecios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnPrecios.Location = new System.Drawing.Point(711, 414);
+            this.btnPrecios.Name = "btnPrecios";
+            this.btnPrecios.Size = new System.Drawing.Size(90, 30);
+            this.btnPrecios.TabIndex = 219;
+            this.btnPrecios.Text = "Precios";
+            this.btnPrecios.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPrecios.UseVisualStyleBackColor = false;
+            this.btnPrecios.Click += new System.EventHandler(this.btnPrecios_Click);
             // 
             // TBCreditoDisponible
             // 
@@ -453,7 +473,7 @@
             // 
             // TBIdcotizacion
             // 
-            this.TBIdcotizacion.Location = new System.Drawing.Point(642, 465);
+            this.TBIdcotizacion.Location = new System.Drawing.Point(609, 455);
             this.TBIdcotizacion.Name = "TBIdcotizacion";
             this.TBIdcotizacion.Size = new System.Drawing.Size(13, 21);
             this.TBIdcotizacion.TabIndex = 212;
@@ -461,7 +481,7 @@
             // 
             // TBIdordendecompra
             // 
-            this.TBIdordendecompra.Location = new System.Drawing.Point(623, 465);
+            this.TBIdordendecompra.Location = new System.Drawing.Point(590, 455);
             this.TBIdordendecompra.Name = "TBIdordendecompra";
             this.TBIdordendecompra.Size = new System.Drawing.Size(13, 21);
             this.TBIdordendecompra.TabIndex = 211;
@@ -495,30 +515,6 @@
             this.label19.Size = new System.Drawing.Size(64, 15);
             this.label19.TabIndex = 209;
             this.label19.Text = "Cotización";
-            // 
-            // label18
-            // 
-            this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(491, 471);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(95, 15);
-            this.label18.TabIndex = 208;
-            this.label18.Text = "Credito en Mora";
-            // 
-            // label17
-            // 
-            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(491, 444);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(108, 15);
-            this.label17.TabIndex = 207;
-            this.label17.Text = "Credito Disponible";
             // 
             // TBValorCompra
             // 
@@ -615,7 +611,7 @@
             this.btnGuardar.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(623, 414);
+            this.btnGuardar.Location = new System.Drawing.Point(519, 414);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(90, 30);
             this.btnGuardar.TabIndex = 176;
@@ -634,7 +630,7 @@
             this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(714, 414);
+            this.btnCancelar.Location = new System.Drawing.Point(615, 414);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 30);
             this.btnCancelar.TabIndex = 181;
@@ -653,7 +649,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(714, 450);
+            this.btnEliminar.Location = new System.Drawing.Point(711, 450);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(90, 30);
             this.btnEliminar.TabIndex = 180;
@@ -995,6 +991,11 @@
             this.label13.TabIndex = 0;
             this.label13.Text = "Cotización de Compra";
             // 
+            // Medida
+            // 
+            this.Medida.HeaderText = "Medida";
+            this.Medida.Name = "Medida";
+            // 
             // frmOrdenDeCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -1078,8 +1079,6 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox TBValorPromedio;
-        private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Button btnExaminar_Cotizacion;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.TextBox TBIdordendecompra;
@@ -1090,5 +1089,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox CBTipodepago;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Button btnPrecios;
+        private System.Windows.Forms.DataGridViewComboBoxColumn Medida;
     }
 }

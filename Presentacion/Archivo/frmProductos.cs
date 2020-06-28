@@ -36,18 +36,20 @@ namespace Presentacion
 
         //Variable para Agregar los Detalles a la Base de Datos
         private DataTable DtDetalle_Lote = new DataTable();
-        private DataTable DtDetalle_Bodega = new DataTable();
+        private DataTable DtDetalle_Impuesto = new DataTable();
+        private DataTable DtDetalle_Igualdad = new DataTable();
+        private DataTable DtDetalle_Ubicacion = new DataTable();
+        private DataTable DtDetalle_Proveedor = new DataTable();
         private DataTable DtDetalle_CodigoDeBarra = new DataTable();
 
         //Variables de Validaciones
         public int Idempleado; //Variable para Captura el Empleado Logueado
-        private string Campo = "Campo Obligatorio - Leal Enterprise";
-        private string Campo_Obligatorio = "Campo Obligatorio";
+        private string Campo = "Campo Obligatorio";
 
         //********** Variables para la Validacion de los checkbox en el Pane Datos Basicos
 
         private string Checkbox_Vencimiento, Checkbox_Ofertable, Checkbox_Impuesto, Checkbox_Importado = "";
-        private string Checkbox_Comision, Checkbox_VentaImpuesto, Checkbox_Exportado = "";
+        private string Checkbox_Comision, Checkbox_Exportado = "";
 
         //********** Variables para AutoComplementar Combobox y Chexboxt segun la Consulta en SQL **********
 
@@ -67,7 +69,7 @@ namespace Presentacion
         //Panel Datos Basicos
         private string Codigo, Nombre, Referencia, Descripcion, Presentacion = "";
         private string ManejaVencimiento, Importado, Exportado, ManjenaImpuesto = "";
-        private string Ofertable, UnidadDeVenta, ValorUnidad, VentaImpuesto, ComisionEmpleado = "";
+        private string Ofertable, UnidadDeVenta, ValorUnidad, ComisionEmpleado = "";
 
         //Panel - Valores
         private string Valor_Promedio, Valor_Final, Valor_Excento, Valor_NoExcento, Valor_Mayorista, Comision, Valor_Comision, Minimo_Cliente, Maximo_Cliente, Minimo_Mayorista, Maximo_Mayorista = "";
@@ -79,7 +81,7 @@ namespace Presentacion
         private string Lote, Valor_Lote, Stock_Lote, Fecha_Vencimiento = "";
 
         //Panel - Codigo de Barra y Datos Auxiliares de Llaves Primarias
-        private string CodigoDeBarra, Proveedor, Impuesto, Impuesto_Valor = "";
+        private string CodigoDeBarra, Proveedor, Impuesto = "";
 
         //********** Parametros para Formatos de Tipo Moneda ***********************************
 
@@ -139,9 +141,7 @@ namespace Presentacion
             this.TBImpuesto.Enabled = false;
             this.TBImpuesto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBImpuesto.Text = Campo_Obligatorio;
-            this.TBImpuesto_Valor.Enabled = false;
-            this.TBImpuesto_Valor.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBImpuesto.Text = Campo;
 
             this.TBUnidadDeVenta.Enabled = false;
             this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
@@ -181,8 +181,6 @@ namespace Presentacion
             this.TBEstante.BackColor = Color.FromArgb(3, 155, 229);
             this.TBNivel.ReadOnly = false;
             this.TBNivel.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBStock.Enabled = false;
-            this.TBStock.BackColor = Color.FromArgb(72, 209, 204);
 
             //Panel - Lote
             this.TBLotedeingreso.ReadOnly = false;
@@ -222,8 +220,7 @@ namespace Presentacion
                 this.TBProveedor.Clear();
                 this.TBProveedor.Text = Campo;
                 this.TBImpuesto.Clear();
-                this.TBImpuesto.Text = Campo_Obligatorio;
-                this.TBImpuesto_Valor.Clear();
+                this.TBImpuesto.Text = Campo;
                 this.TBUnidadDeVenta.Clear();
 
                 this.CBMarca.SelectedItem = 0;
@@ -238,7 +235,6 @@ namespace Presentacion
                 this.CBImportado.Checked = false;
                 this.CBExportado.Checked = false;
                 this.CBManejaComision.Checked = false;
-                this.CBVentaImpuesto.Checked = false;
 
                 //Panel - Valores
                 this.TBCompraPromedio.Clear();
@@ -346,7 +342,7 @@ namespace Presentacion
         {
             this.TBIdimpuesto.Text = idimpuesto;
             this.TBImpuesto.Text = impuesto;
-            this.TBImpuesto_Valor.Text = valor;
+            //this.TBImpuesto_Valor.Text = valor;
         }
                 
         private void Validaciones_SQL()
@@ -398,16 +394,7 @@ namespace Presentacion
             {
                 this.Checkbox_Ofertable = "0";
             }
-
-            if (CBVentaImpuesto.Checked)
-            {
-                this.Checkbox_VentaImpuesto = "1";
-            }
-            else
-            {
-                this.Checkbox_VentaImpuesto = "0";
-            }
-
+            
             if (CBManejaComision.Checked)
             {
                 this.Checkbox_Comision = "1";
@@ -431,10 +418,11 @@ namespace Presentacion
         {
             try
             {
+                //Panel Ubicacion
                 //this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
-                this.DtDetalle_Bodega.Columns.Add("Ubicacion", System.Type.GetType("System.String"));
-                this.DtDetalle_Bodega.Columns.Add("Estante", System.Type.GetType("System.String"));
-                this.DtDetalle_Bodega.Columns.Add("Nivel", System.Type.GetType("System.String"));
+                this.DtDetalle_Ubicacion.Columns.Add("Ubicacion", System.Type.GetType("System.String"));
+                this.DtDetalle_Ubicacion.Columns.Add("Estante", System.Type.GetType("System.String"));
+                this.DtDetalle_Ubicacion.Columns.Add("Nivel", System.Type.GetType("System.String"));
 
                 //
                 this.DtDetalle_Lote.Columns.Add("Codigo", System.Type.GetType("System.String"));
@@ -446,7 +434,7 @@ namespace Presentacion
                 this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo de Barra", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas - Ubicacion
-                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Bodega;
+                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Ubicacion;
                 this.DGDetalles_Ubicacion.Columns[0].HeaderText = "Ubicacion";
                 this.DGDetalles_Ubicacion.Columns[0].Width = 50;
                 this.DGDetalles_Ubicacion.Columns[1].HeaderText = "Estante";
@@ -463,7 +451,7 @@ namespace Presentacion
                 this.DGDetalles_Lotes.Columns[2].HeaderText = "Valor";
                 this.DGDetalles_Lotes.Columns[2].Width = 90;
 
-                //Medidas de las Columnas - Lote
+                //Medidas de las Columnas - Codigo de Barra
                 this.DGDetalles_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
                 this.DGDetalles_CodigoDeBarra.Columns[0].HeaderText = "Codigo";
                 this.DGDetalles_CodigoDeBarra.Columns[0].Width = 65;
@@ -531,7 +519,7 @@ namespace Presentacion
                 bool Agregar_Ubicacion = true;
                                 
                 //Panel Ubicacion
-                foreach (DataRow FilaTemporal in DtDetalle_Bodega.Rows)
+                foreach (DataRow FilaTemporal in DtDetalle_Ubicacion.Rows)
                 {
                     if (Convert.ToInt32(FilaTemporal["Codigo"]) == idbodega)
                     {
@@ -542,12 +530,12 @@ namespace Presentacion
 
                 if (Agregar_Ubicacion)
                 {
-                    DataRow Fila = DtDetalle_Bodega.NewRow();
+                    DataRow Fila = DtDetalle_Ubicacion.NewRow();
                     Fila["Codigo"] = idbodega;
                     Fila["Ubicacion"] = ubicacion;
                     Fila["Estante"] = estante;
                     Fila["Nivel"] = nivel;
-                    this.DtDetalle_Bodega.Rows.Add(Fila);
+                    this.DtDetalle_Ubicacion.Rows.Add(Fila);
                 }
             }
             catch (Exception ex)
@@ -621,77 +609,77 @@ namespace Presentacion
 
                     if (this.Digitar)
                     {
-                        rptaDatosBasicos = fProductos.Guardar_DatosBasicos
+                        //rptaDatosBasicos = fProductos.Guardar_DatosBasicos
 
-                            (
-                                 //Datos Auxiliares
-                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
-                                 Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
-                                 Convert.ToInt32(this.CBTipo.SelectedValue),
+                        //    (
+                        //         //Datos Auxiliares
+                        //         Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
+                        //         Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
+                        //         Convert.ToInt32(this.CBTipo.SelectedValue),
 
-                                 //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
-                                 this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
+                        //         //Panel Datos Basicos
+                        //         this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
+                        //         this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
 
-                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
-                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
-                                 Convert.ToInt32(Checkbox_Comision),
+                        //         Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
+                        //         Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
+                        //         Convert.ToInt32(Checkbox_Comision),
 
-                                 //Panel de Valores
-                                 this.Mon_Promedio, this.Mon_Final, this.Mon_Excento, this.Mon_NoExcento, this.Mon_Mayorista,
-                                 this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                                 this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
-                                 //Panel Ubicaciones
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
+                        //         //Panel de Valores
+                        //         this.Mon_Promedio, this.Mon_Final, this.Mon_Excento, this.Mon_NoExcento, this.Mon_Mayorista,
+                        //         this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                        //         this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
+                        //         //Panel Ubicaciones
+                        //         this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
 
-                                 //Panel de Lotes
-                                 this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
+                        //         //Panel de Lotes
+                        //         this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
 
-                                 //Panel Codigo de Barra
-                                 this.TBCodigodeBarra.Text,
+                        //         //Panel Codigo de Barra
+                        //         this.TBCodigodeBarra.Text,
 
-                                 //Si es igual a 1 se registraran los datos en la base de datos
-                                 1
-                            );
+                        //         //Si es igual a 1 se registraran los datos en la base de datos
+                        //         1
+                        //    );
                     }
 
                     else
                     {
-                        rptaDatosBasicos = fProductos.Editar_DatosBasicos
+                        //rptaDatosBasicos = fProductos.Editar_DatosBasicos
 
-                            (
-                                 //Llave Primaria
-                                 Convert.ToInt32(this.TBIdproducto.Text),
+                        //    (
+                        //         //Llave Primaria
+                        //         Convert.ToInt32(this.TBIdproducto.Text),
 
-                                 //Datos Auxiliares
-                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
-                                 Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
-                                 Convert.ToInt32(this.CBTipo.SelectedValue),
+                        //         //Datos Auxiliares
+                        //         Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
+                        //         Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
+                        //         Convert.ToInt32(this.CBTipo.SelectedValue),
 
-                                 //Panel Datos Basicos
-                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
-                                 this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
+                        //         //Panel Datos Basicos
+                        //         this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
+                        //         this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
 
-                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
-                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
-                                 Convert.ToInt32(Checkbox_Comision),
+                        //         Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
+                        //         Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
+                        //         Convert.ToInt32(Checkbox_Comision),
 
-                                 //Panel de Valores
-                                 this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
-                                 this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                                 this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
-                                 //Panel Ubicaciones
-                                 this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
+                        //         //Panel de Valores
+                        //         this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
+                        //         this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
+                        //         this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
+                        //         //Panel Ubicaciones
+                        //         this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
 
-                                 //Panel de Lotes
-                                 this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
+                        //         //Panel de Lotes
+                        //         this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
 
-                                 //Panel Codigo de Barra
-                                 this.TBCodigodeBarra.Text,
+                        //         //Panel Codigo de Barra
+                        //         this.TBCodigodeBarra.Text,
 
-                                 //Si es igual a 1 se registraran los datos en la base de datos
-                                 2
-                            );
+                        //         //Si es igual a 2 se Editaran los datos en la base de datos
+                        //         2
+                        //    );
                     }
 
                     if (rptaDatosBasicos.Equals("OK"))
@@ -831,7 +819,6 @@ namespace Presentacion
                 this.TBUbicacion.Clear();
                 this.TBEstante.Clear();
                 this.TBNivel.Clear();
-                this.TBStock.Clear();
             }
             catch (Exception ex)
             {
@@ -1118,15 +1105,6 @@ namespace Presentacion
 
                     this.TBNombre.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBValorFinal.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1194,15 +1172,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBReferencia.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBCompraPromedio.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1272,15 +1241,6 @@ namespace Presentacion
 
                     this.TBDescripcion01.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBCompraPromedio.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1349,15 +1309,6 @@ namespace Presentacion
 
                     this.TBPresentacion.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBCompraPromedio.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1425,15 +1376,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBNombre.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                    this.TBCompraPromedio.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1504,15 +1446,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
                     this.TBValorFinal.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1578,24 +1511,7 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    if (CBVentaImpuesto.Checked)
-                    {
-                        //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                        this.TBValorVenta.Select();
-                    }
-                    else
-                    {
-                        this.TBVentaMayorista.Select();
-                    }
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
+                    
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1665,15 +1581,6 @@ namespace Presentacion
 
                     this.TBValorVenta_SinImpuesto.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1741,15 +1648,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBVentaMayorista.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1819,15 +1717,6 @@ namespace Presentacion
 
                     this.TBCantidadMaximaCliente.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1896,15 +1785,6 @@ namespace Presentacion
 
                     this.TBMinimoMayorista.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1972,15 +1852,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBValorFinal.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2052,15 +1923,6 @@ namespace Presentacion
 
                     this.TBEstante.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 4;
-                    this.TBLotedeingreso.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2129,15 +1991,6 @@ namespace Presentacion
 
                     this.TBNivel.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 4;
-                    this.TBLotedeingreso.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2205,15 +2058,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBUbicacion.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 4;
-                    this.TBLotedeingreso.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2285,15 +2129,6 @@ namespace Presentacion
 
                     this.TBValor_Lote.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 5;
-                    this.TBCodigodeBarra.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2361,15 +2196,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBLotedeingreso.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 5;
-                    this.TBCodigodeBarra.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2720,20 +2546,6 @@ namespace Presentacion
 
         }
 
-        private void CBVentaImpuesto_CheckedChanged(object sender, EventArgs e)
-        {
-            if (CBVentaImpuesto.Checked)
-            {
-                this.TBValorVenta.Enabled = true;
-                this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
-            }
-            else
-            {
-                this.TBValorVenta.Enabled = false;
-                this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
-            }
-        }
-
         private void CBManejaComision_CheckedChanged(object sender, EventArgs e)
         {
             if (CBManejaComision.Checked)
@@ -2858,15 +2670,6 @@ namespace Presentacion
                         this.TBCantidadMininaCliente.Select();
                     }
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -2941,15 +2744,6 @@ namespace Presentacion
                         this.TBCantidadMininaCliente.Select();
                     }
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -3017,15 +2811,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBCantidadMininaCliente.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -3095,15 +2880,6 @@ namespace Presentacion
 
                     this.TBMaximoMayorista.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -3171,15 +2947,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBCompraPromedio.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                    this.TBUbicacion.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -3303,14 +3070,6 @@ namespace Presentacion
                         MensajeError("Por favor digite el Codigo de Barra que desea registrar");
                         this.TBCodigodeBarra.Focus();
                     }
-                }
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 0;
-                    this.TBNombre.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -3641,7 +3400,7 @@ namespace Presentacion
                     Presentacion = Datos.Rows[0][11].ToString();
                     Proveedor = Datos.Rows[0][12].ToString();
                     Impuesto = Datos.Rows[0][13].ToString();
-                    Impuesto_Valor = Datos.Rows[0][14].ToString();
+                    //Impuesto_Valor = Datos.Rows[0][14].ToString();
                     UnidadDeVenta = Datos.Rows[0][15].ToString();
                     ValorUnidad = Datos.Rows[0][16].ToString();
                     ManejaVencimiento = Datos.Rows[0][17].ToString();
@@ -3649,7 +3408,7 @@ namespace Presentacion
                     Importado = Datos.Rows[0][19].ToString();
                     Exportado = Datos.Rows[0][20].ToString();
                     Ofertable = Datos.Rows[0][21].ToString();
-                    VentaImpuesto = Datos.Rows[0][22].ToString();
+                    //VentaImpuesto = Datos.Rows[0][22].ToString();
                     ComisionEmpleado = Datos.Rows[0][23].ToString();
 
                     //Panel - Valores
@@ -3740,7 +3499,6 @@ namespace Presentacion
                     this.TBCodigodeBarra.Text = CodigoDeBarra;
                     this.TBProveedor.Text = Proveedor;
                     this.TBImpuesto.Text = Impuesto;
-                    this.TBImpuesto_Valor.Text = Impuesto_Valor;
 
                     //Se proceden a Validar los Chexboxt si estan activos o no
 
@@ -3787,15 +3545,6 @@ namespace Presentacion
                     else
                     {
                         this.CBOfertable.Checked = true;
-                    }
-
-                    if (VentaImpuesto == "0")
-                    {
-                        this.CBVentaImpuesto.Checked = false;
-                    }
-                    else
-                    {
-                        this.CBVentaImpuesto.Checked = true;
                     }
 
                     if (ComisionEmpleado == "0")

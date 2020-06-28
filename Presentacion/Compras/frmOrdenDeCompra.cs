@@ -153,15 +153,15 @@ namespace Presentacion
                 this.TBCotizacion.Clear();
                 this.TBProducto.Clear();
                 this.TBProveedor.Clear();
-                
+
                 //Panel Datos Basicos - Parte Inferior
                 this.TBStock.Clear();
-                                            
+
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
                 this.Botones();
                 this.Habilitar();
-                
+
                 //Se realiza el FOCUS al panel y campo de texto iniciales
                 this.TBCodigo.Select();
             }
@@ -199,10 +199,11 @@ namespace Presentacion
                 this.DtDetalle.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Descripcion", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Medida", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.Int32"));
-                this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.Int32"));
+                this.DtDetalle.Columns.Add("Cajas", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Unidades", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Cantidad", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Val. Cotizado", System.Type.GetType("System.String"));
-                this.DtDetalle.Columns.Add("Val. de Compra", System.Type.GetType("System.String"));
+                this.DtDetalle.Columns.Add("Val. Compra", System.Type.GetType("System.String"));
                 this.DtDetalle.Columns.Add("Total", System.Type.GetType("System.String"));
 
                 //Medidas de las Columnas
@@ -211,13 +212,23 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[0].Visible = false;
                 this.DGDetalleDeIngreso.Columns[0].HeaderText = "Idproducto";
                 this.DGDetalleDeIngreso.Columns[1].HeaderText = "Codigo";
+                this.DGDetalleDeIngreso.Columns[1].Width = 65;
                 this.DGDetalleDeIngreso.Columns[2].HeaderText = "Descripcion";
+                this.DGDetalleDeIngreso.Columns[2].Width = 270;
                 this.DGDetalleDeIngreso.Columns[3].HeaderText = "Medida";
+                this.DGDetalleDeIngreso.Columns[3].Width = 55;
                 this.DGDetalleDeIngreso.Columns[4].HeaderText = "Cajas";
+                this.DGDetalleDeIngreso.Columns[4].Width = 50;
                 this.DGDetalleDeIngreso.Columns[5].HeaderText = "Unidades";
-                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Val. Cotizado";
-                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Val. de Compra";
-                this.DGDetalleDeIngreso.Columns[8].HeaderText = "Total";
+                this.DGDetalleDeIngreso.Columns[5].Width = 60;
+                this.DGDetalleDeIngreso.Columns[6].HeaderText = "Cantidad";
+                this.DGDetalleDeIngreso.Columns[6].Width = 55;
+                this.DGDetalleDeIngreso.Columns[7].HeaderText = "Val. Cotizado";
+                this.DGDetalleDeIngreso.Columns[7].Width = 95;
+                this.DGDetalleDeIngreso.Columns[8].HeaderText = "Val. Compra";
+                this.DGDetalleDeIngreso.Columns[8].Width = 95;
+                this.DGDetalleDeIngreso.Columns[9].HeaderText = "Total";
+                this.DGDetalleDeIngreso.Columns[9].AutoSizeMode.ToString();
 
                 //Se Desabilita las columnas especificadas para evitar la edicion
                 //Del Campo por parte del Usuario
@@ -228,13 +239,14 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[4].ReadOnly = false;
                 this.DGDetalleDeIngreso.Columns[5].ReadOnly = false;
                 this.DGDetalleDeIngreso.Columns[6].ReadOnly = true;
-                this.DGDetalleDeIngreso.Columns[7].ReadOnly = false;
-                this.DGDetalleDeIngreso.Columns[8].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[7].ReadOnly = true;
+                this.DGDetalleDeIngreso.Columns[8].ReadOnly = false;
+                this.DGDetalleDeIngreso.Columns[9].ReadOnly = true;
 
                 //Formato de Celdas
-                this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Format = "##,##0.00";
                 this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Format = "##,##0.00";
+                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -246,6 +258,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[6].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[8].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[9].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Alineacion de los Encabezados de Cada Columna
                 this.DGDetalleDeIngreso.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -257,6 +270,7 @@ namespace Presentacion
                 this.DGDetalleDeIngreso.Columns[6].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[7].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalleDeIngreso.Columns[8].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalleDeIngreso.Columns[9].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -283,7 +297,7 @@ namespace Presentacion
             this.TBBodega.Text = bodega;
             this.TBCodigo_Bodega.Text = documento;
         }
-        
+
         public void setCotizacion(string idcotizacion, string cotizacion)
         {
             this.TBIdcotizacion.Text = idcotizacion;
@@ -310,8 +324,9 @@ namespace Presentacion
             {
                 bool Agregar = true;
 
-                double Cajas = 0;
-                double Unidades = 0;
+                int Cajas = 0;
+                int Cantidad = 0;
+                int Unidades = 0;
                 double Total = 0;
 
                 foreach (DataRow FilaTemporal in DtDetalle.Rows)
@@ -332,12 +347,13 @@ namespace Presentacion
                     Fila["Medida"] = unidad;
                     Fila["Cajas"] = Cajas;
                     Fila["Unidades"] = Unidades;
+                    Fila["Cantidad"] = Cantidad;
                     Fila["Val. Cotizado"] = valor_compra;
-                    Fila["Val. de Compra"] = valor_compra;
+                    Fila["Val. Compra"] = valor_compra;
                     Fila["Total"] = Total;
                     this.DtDetalle.Rows.Add(Fila);
 
-                    //this.Calculo_Totales();
+                    this.Calculo_Totales();
                 }
             }
             catch (Exception ex)
@@ -394,20 +410,19 @@ namespace Presentacion
             {
                 double ValorFinal = 0;
                 double ValorCotizado = 0;
-                double Operacion = 0;
 
                 //Se procede a sumar la columna de valor de compra promedio
 
                 foreach (DataGridViewRow row in DGDetalleDeIngreso.Rows)
                 {
-                    ValorFinal += Convert.ToDouble(row.Cells[8].Value);
-                    ValorCotizado += Convert.ToDouble(row.Cells[6].Value);
+                    ValorFinal += Convert.ToDouble(row.Cells[9].Value);
+                    ValorCotizado += Convert.ToDouble(row.Cells[7].Value);
                 }
 
                 //
                 this.TBValorCompra_Final.Text = Convert.ToString(ValorFinal);
                 this.TBValorCotizado.Text = Convert.ToString(ValorCotizado);
-                
+
                 //Se les da Formato a los campo de texto en este caso con Miles y Dos Decimales
 
                 //this.TBValorCotizado.Text = Operacion.ToString("##,##0.00");
@@ -761,33 +776,77 @@ namespace Presentacion
             {
                 //
                 int cantidad = 0;
-                double precio_unit = 0;
+                double Ingreso_Stock = 0;
+                double Cajas = 0;
+                double Unidades = 0;
+                double Val_Compra = 0;
+                double Val_CompraFinal = 0;
+                double Operacion_Final = 0;
                 double precio_total = 0;
 
                 if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "Cajas")
                 {
                     try
                     {
-                        cantidad = int.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
+                        Cajas = Convert.ToDouble(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Por Favor Ingrese la Cantidad a Cotizar");
+                        MessageBox.Show("Por Favor Ingrese la Cantidad de Cajas o Paquetes a Ordenar");
                     }
 
                     try
                     {
-                        precio_unit = double.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[7].Value.ToString());
+                        Unidades = Convert.ToDouble(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[5].Value.ToString());
                     }
                     catch (Exception)
                     {
-                        MessageBox.Show("Por Favor Ingrese el Valor de Compra");
+                        MessageBox.Show("Por Favor Ingrese las Unidades Pertenecientes a las Cajas o Paquetes Ordenados");
                     }
 
-                    if (!(cantidad == 0) && !(precio_unit == 0))
+                    if (!(Cajas == 0) && !(Unidades == 0))
                     {
-                        precio_total = cantidad * precio_unit;
-                        this.DGDetalleDeIngreso.Rows[e.RowIndex].Cells[8].Value = precio_total.ToString("##,##0.00");
+                        Ingreso_Stock = Unidades * Cajas;
+                        this.DGDetalleDeIngreso.Rows[e.RowIndex].Cells[6].Value = Ingreso_Stock.ToString();
+                    }
+                }
+
+                if (DGDetalleDeIngreso.Columns[e.ColumnIndex].Name == "Unidades")
+                {
+                    try
+                    {
+                        Cajas = Convert.ToDouble(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[4].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese la Cantidad de Cajas o Paquetes a Ordenar");
+                    }
+
+                    try
+                    {
+                        Unidades = Convert.ToDouble(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[5].Value.ToString());
+                    }
+                    catch (Exception)
+                    {
+                        MessageBox.Show("Por Favor Ingrese las Unidades Pertenecientes a las Cajas o Paquetes Ordenados");
+                    }
+
+                    if (!(Cajas == 0) && !(Unidades == 0))
+                    {
+                        Ingreso_Stock = Unidades * Cajas;
+                        this.DGDetalleDeIngreso.Rows[e.RowIndex].Cells[6].Value = Ingreso_Stock.ToString();
+                    }
+
+                    //*******************************************************************************************
+
+                    cantidad = Convert.ToInt32(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[6].Value.ToString());
+                    Val_Compra = double.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[8].Value.ToString());
+                    Val_CompraFinal = double.Parse(DGDetalleDeIngreso.Rows[e.RowIndex].Cells[9].Value.ToString());
+
+                    if (!(cantidad == 0) && !(Val_Compra == 0))
+                    {
+                        precio_total = Val_Compra * cantidad;
+                        this.DGDetalleDeIngreso.Rows[e.RowIndex].Cells[9].Value = precio_total.ToString("##,##0.00");
 
                         this.Calculo_Totales();
                     }
@@ -861,6 +920,12 @@ namespace Presentacion
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnPrecios_Click(object sender, EventArgs e)
+        {
+            frmFiltro_ActualizarPrecios frmFiltro_ActualizarPrecios = new frmFiltro_ActualizarPrecios();
+            frmFiltro_ActualizarPrecios.ShowDialog();
         }
 
         private void btnExaminar_Bodega_Click(object sender, EventArgs e)
@@ -976,12 +1041,12 @@ namespace Presentacion
         {
 
         }
-        
+
         private void frmOrdenDeCompra_FormClosing(object sender, FormClosingEventArgs e)
         {
             _Instancia = null;
         }
-        
+
 
     }
 }

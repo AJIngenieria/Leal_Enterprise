@@ -150,6 +150,12 @@
     <Compile Include="Filtros\frmFiltro_CotizacionDeCompra.Designer.cs">
       <DependentUpon>frmFiltro_CotizacionDeCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Filtros\frmFiltro_ActualizarPrecios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Filtros\frmFiltro_ActualizarPrecios.Designer.cs">
+      <DependentUpon>frmFiltro_ActualizarPrecios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inventario\frmInventario_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -334,6 +340,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Filtros\frmFiltro_CotizacionDeCompra.resx">
       <DependentUpon>frmFiltro_CotizacionDeCompra.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Filtros\frmFiltro_ActualizarPrecios.resx">
+      <DependentUpon>frmFiltro_ActualizarPrecios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Inventario\frmGastosDeIngreso.resx">
       <DependentUpon>frmGastosDeIngreso.cs</DependentUpon>
@@ -527,6 +536,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icono_Leal_Enterprise.ico" />
+    <None Include="Resources\btnPrecios.png" />
     <None Include="Resources\Valor Final - Orden de Compra.jpg" />
     <None Include="Resources\Empleados - Datos Financieros1.jpg" />
     <None Include="Resources\Empleados - Datos Financieros.jpg" />
