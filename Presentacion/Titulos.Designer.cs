@@ -83,6 +83,16 @@ namespace Presentacion {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Producto___Cantidad_de_Compra {
+            get {
+                object obj = ResourceManager.GetObject("Producto - Cantidad de Compra", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Producto___Cantidad_de_Venta {
             get {
                 object obj = ResourceManager.GetObject("Producto___Cantidad_de_Venta", resourceCulture);

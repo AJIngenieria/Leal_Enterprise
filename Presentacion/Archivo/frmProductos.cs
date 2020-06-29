@@ -69,7 +69,7 @@ namespace Presentacion
         //Panel Datos Basicos
         private string Codigo, Nombre, Referencia, Descripcion, Presentacion = "";
         private string ManejaVencimiento, Importado, Exportado, ManjenaImpuesto = "";
-        private string Ofertable, UnidadDeVenta, ValorUnidad, ComisionEmpleado = "";
+        private string Ofertable, UnidadDeVenta, ComisionEmpleado = "";
 
         //Panel - Valores
         private string Valor_Promedio, Valor_Final, Valor_Excento, Valor_NoExcento, Valor_Mayorista, Comision, Valor_Comision, Minimo_Cliente, Maximo_Cliente, Minimo_Mayorista, Maximo_Mayorista = "";
@@ -98,6 +98,7 @@ namespace Presentacion
             this.Botones();
             this.Habilitar();
             this.AutoCompletar_Combobox();
+            this.Diseño_TablasGenerales();
 
             //Focus a Texboxt y Combobox
             this.TBNombre.Select();
@@ -109,7 +110,6 @@ namespace Presentacion
 
             //Panel - Cantidades - Otros Datos
             this.CBUnidad.SelectedIndex = 0;
-            this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
         }
 
         private void Habilitar()
@@ -142,9 +142,6 @@ namespace Presentacion
             this.TBImpuesto.BackColor = Color.FromArgb(72, 209, 204);
             this.TBImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
             this.TBImpuesto.Text = Campo;
-
-            this.TBUnidadDeVenta.Enabled = false;
-            this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
 
             //Panel - Valores
 
@@ -221,7 +218,6 @@ namespace Presentacion
                 this.TBProveedor.Text = Campo;
                 this.TBImpuesto.Clear();
                 this.TBImpuesto.Text = Campo;
-                this.TBUnidadDeVenta.Clear();
 
                 this.CBMarca.SelectedItem = 0;
                 this.CBGrupo.SelectedItem = 0;
@@ -266,7 +262,7 @@ namespace Presentacion
 
                 //Panel - Codigo de Barra
                 this.TBCodigodeBarra.Clear();
-                this.DGDetalles_CodigoDeBarra.DataSource = null;
+                this.DGDetalle_CodigoDeBarra.DataSource = null;
 
                 //Se habilitan los botones a su estado por DEFAULT
                 this.Digitar = true;
@@ -419,44 +415,45 @@ namespace Presentacion
             try
             {
                 //Panel Ubicacion
-                //this.DtDetalle.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Ubicacion.Columns.Add("Idbodega", System.Type.GetType("System.Int32"));
                 this.DtDetalle_Ubicacion.Columns.Add("Ubicacion", System.Type.GetType("System.String"));
                 this.DtDetalle_Ubicacion.Columns.Add("Estante", System.Type.GetType("System.String"));
                 this.DtDetalle_Ubicacion.Columns.Add("Nivel", System.Type.GetType("System.String"));
 
-                //
+                //Panel Lote
                 this.DtDetalle_Lote.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle_Lote.Columns.Add("Lote", System.Type.GetType("System.String"));
                 this.DtDetalle_Lote.Columns.Add("Valor", System.Type.GetType("System.String"));
 
-                //
+                //Panel Codigo de Barra
                 this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo de Barra", System.Type.GetType("System.String"));
 
-                //Medidas de las Columnas - Ubicacion
-                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Ubicacion;
-                this.DGDetalles_Ubicacion.Columns[0].HeaderText = "Ubicacion";
-                this.DGDetalles_Ubicacion.Columns[0].Width = 50;
-                this.DGDetalles_Ubicacion.Columns[1].HeaderText = "Estante";
-                this.DGDetalles_Ubicacion.Columns[1].Width = 88;
-                this.DGDetalles_Ubicacion.Columns[2].HeaderText = "Nivel";
-                this.DGDetalles_Ubicacion.Columns[2].Width = 380;
+                //Panel Proveedores
+                this.DtDetalle_Proveedor.Columns.Add("Idproveedor", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Proveedor.Columns.Add("Proveedor", System.Type.GetType("System.String"));
+                this.DtDetalle_Proveedor.Columns.Add("Documento", System.Type.GetType("System.String"));
 
-                //Medidas de las Columnas - Lote
+                //Panel Impuesto
+                this.DtDetalle_Impuesto.Columns.Add("Idimpuesto", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Impuesto.Columns.Add("Impuesto", System.Type.GetType("System.String"));
+                this.DtDetalle_Impuesto.Columns.Add("Valor", System.Type.GetType("System.String"));
+
+                //Panel Igualdad
+                this.DtDetalle_Igualdad.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Igualdad.Columns.Add("Producto", System.Type.GetType("System.String"));
+                this.DtDetalle_Igualdad.Columns.Add("Marca", System.Type.GetType("System.String"));
+
+                //Captura de los Datos en las Tablas
+                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Ubicacion;
                 this.DGDetalles_Lotes.DataSource = this.DtDetalle_Lote;
-                this.DGDetalles_Lotes.Columns[0].HeaderText = "Codigo";
-                this.DGDetalles_Lotes.Columns[0].Width = 65;
-                this.DGDetalles_Lotes.Columns[1].HeaderText = "Lote";
-                this.DGDetalles_Lotes.Columns[1].Width = 65;
-                this.DGDetalles_Lotes.Columns[2].HeaderText = "Valor";
-                this.DGDetalles_Lotes.Columns[2].Width = 90;
 
                 //Medidas de las Columnas - Codigo de Barra
-                this.DGDetalles_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
-                this.DGDetalles_CodigoDeBarra.Columns[0].HeaderText = "Codigo";
-                this.DGDetalles_CodigoDeBarra.Columns[0].Width = 65;
-                this.DGDetalles_CodigoDeBarra.Columns[1].HeaderText = "Codigo de Barra";
-                this.DGDetalles_CodigoDeBarra.Columns[1].Width = 65;
+                this.DGDetalle_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
+                this.DGDetalle_CodigoDeBarra.Columns[0].HeaderText = "Codigo";
+                this.DGDetalle_CodigoDeBarra.Columns[0].Width = 100;
+                this.DGDetalle_CodigoDeBarra.Columns[1].HeaderText = "Codigo de Barra";
+                this.DGDetalle_CodigoDeBarra.Columns[1].Width = 150;
                 
                 //Formato de Celdas
                 this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Format = "##,##0.00";
@@ -472,8 +469,8 @@ namespace Presentacion
                 this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Aliniacion de las Celdas de Cada Columna - Panel Codigo de Barra
-                this.DGDetalles_CodigoDeBarra.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalles_CodigoDeBarra.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_CodigoDeBarra.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_CodigoDeBarra.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
             }
             catch (Exception ex)
             {
@@ -1086,11 +1083,6 @@ namespace Presentacion
             {
                 TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
             }
-        }
-
-        private void TBUnidadDeVenta_Leave(object sender, EventArgs e)
-        {
-            this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         //************************ SALTO DE LINEAS - PANEL DATOS BASICOS ************************
@@ -3236,20 +3228,6 @@ namespace Presentacion
             _Instancia = null;
         }
 
-        private void CBUnidad_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (CBUnidad.SelectedIndex == 0)
-            {
-                this.TBUnidadDeVenta.Enabled = false;
-                this.TBUnidadDeVenta.BackColor = Color.FromArgb(72, 209, 204);
-            }
-            else
-            {
-                this.TBUnidadDeVenta.Enabled = true;
-                this.TBUnidadDeVenta.BackColor = Color.FromArgb(3, 155, 229);
-            }
-        }
-
         private void TBValorVenta_SinImpuesto_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
@@ -3283,12 +3261,6 @@ namespace Presentacion
             // a monetario con dos decimales.
             //
             tb.Text = string.Format("{0:N2}", numero);
-        }
-
-        private void TBUnidadDeVenta_Enter(object sender, EventArgs e)
-        {
-            //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBUnidadDeVenta.BackColor = Color.Azure;
         }
      
         //******************** FOCUS LEAVE UBICACION ********************
@@ -3402,7 +3374,7 @@ namespace Presentacion
                     Impuesto = Datos.Rows[0][13].ToString();
                     //Impuesto_Valor = Datos.Rows[0][14].ToString();
                     UnidadDeVenta = Datos.Rows[0][15].ToString();
-                    ValorUnidad = Datos.Rows[0][16].ToString();
+                    //ValorUnidad = Datos.Rows[0][16].ToString();
                     ManejaVencimiento = Datos.Rows[0][17].ToString();
                     ManjenaImpuesto = Datos.Rows[0][18].ToString();
                     Importado = Datos.Rows[0][19].ToString();
@@ -3469,7 +3441,6 @@ namespace Presentacion
                     this.TBDescripcion01.Text = Descripcion;
                     this.TBPresentacion.Text = Presentacion;
                     this.CBUnidad.Text = UnidadDeVenta;
-                    this.TBUnidadDeVenta.Text = ValorUnidad;
                     
                     //Panel - Valores
                     this.TBCompraPromedio.Text = Valor_Promedio;
