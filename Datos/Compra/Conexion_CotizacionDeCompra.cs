@@ -123,7 +123,6 @@ namespace Datos
                 Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
                 Comando.Parameters.Add("@Idproveedor", SqlDbType.Int).Value = Obj.Idproveedor;
                 Comando.Parameters.Add("@Idtipodepago", SqlDbType.Int).Value = Obj.Idtipodepago;
-                //Comando.Parameters.Add("@Idordendecompra", SqlDbType.Int).Value = Obj.Idordendecompra;
                 Comando.Parameters.Add("@Idempleado", SqlDbType.Int).Value = Obj.Idempleado;
                 Comando.Parameters.Add("@Codigo", SqlDbType.VarChar).Value = Obj.Codigo_CotizacionDeCompra;
                 Comando.Parameters.Add("@Cod_Almacen", SqlDbType.VarChar).Value = Obj.Codigo_Almacen;

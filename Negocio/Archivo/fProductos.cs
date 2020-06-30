@@ -26,30 +26,39 @@ namespace Negocio
 
         public static string Guardar_DatosBasicos
             (
-
-                //Datos Auxiliares y Llaves Primaria
-                int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque, int idgrupo, int idtipo,
-
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion,
-                string presentacion, string unidad, string pesounidad,
+                int idmarca, int idempaque, int idgrupo, int idtipo, string codigo, string producto, string referencia, string descripcion,
+                string presentacion, string unidad, string comision, int comision_porcentaje, int manejavencimiento, int manejaimpuesto,
+                int importado, int exportado, int ofertable, int manejacomision,
 
-                int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
-                int ventaimpuesto, int manejacomision,
+                //Valores
+                string compra_promedio, string Compra_final, string Venta_excento, string venta_noexcento, string venta_mayorista,
+                string fabricacion, string materiales, string exportacion, string importacion, string seguro, string gastos,
 
-                //Precios
-                string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
-                string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
-                string maxima_mayorista,
+                //Cantidades
+                string venta_minimacliente, string venta_maximacliente, string venta_minimamayorista, string venta_maximamayorista,
+                string compra_minimacliente, string compra_maximacliente, string compra_minimamayorista, string compra_maximamayorista,
+
+                //Panel Lote
+                DataTable detalle_lote,
+
+                //Panel Impuestos
+                DataTable detalle_impuesto,
+
+                //Panel Igualdad
+                DataTable detalle_igualdad,
+
+                //Panel Proveedor
+                DataTable detalle_proveedor,
 
                 //Ubicacion[]
-                string ubicacion, string estante, string nivel, byte[] imagen,
-
-                //Lote
-                string lote, string lote_valorinicial, DateTime lote_fechavencimiento,
+                DataTable detalle_ubicacion,
 
                 //Panel Codigo de Barra
-                string codigodebarra,
+                DataTable detalle_codigodebarra,
+
+                //Panel Imagen
+                Byte[] imagen,
 
                 //Datos Auxiliares
                 int auto
@@ -60,9 +69,6 @@ namespace Negocio
 
             //Datos Auxiliares y Llaves Primaria
             Obj.Idmarca = idmarca;
-            Obj.Idbodega = idbodega;
-            Obj.Idproveedor = idproveedor;
-            Obj.Idimpuesto = idimpuesto;
             Obj.Idempaque = idempaque;
             Obj.Idgrupo = idgrupo;
             Obj.Idtipo = idtipo;
@@ -74,42 +80,59 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Presentacion = presentacion;
             Obj.Unidad = unidad;
-            Obj.PesoUnidad = pesounidad;
+            Obj.Comision = comision;
+            Obj.Comision_Porcentaje = comision_porcentaje;
 
             Obj.ManejaVencimiento = manejavencimiento;
             Obj.ManejaImpuesto = manejaimpuesto;
-            Obj.ManejaComision = manejacomision;
             Obj.Importado = importado;
             Obj.Exportado = exportado;
             Obj.Ofertable = ofertable;
-            Obj.VentaImpuesto = ventaimpuesto;
+            Obj.ManejaComision = manejacomision;
 
             //Valores
             Obj.Compra_Promedio = compra_promedio;
-            Obj.Compra_Final = compra_final;
-            Obj.Venta_Excento = venta_excento;
+            Obj.Compra_Final = Compra_final;
+            Obj.Venta_Excento = Venta_excento;
             Obj.Venta_NoExcento = venta_noexcento;
             Obj.Venta_Mayorista = venta_mayorista;
-            Obj.Comision = comision;
-            Obj.Comision_Valor = comision_valor;
-            Obj.Minima_Cliente = minima_cliente;
-            Obj.Maxima_Cliente = maxima_cliente;
-            Obj.Minima_Mayorista = minima_mayorista;
-            Obj.Maxima_Mayorista = maxima_mayorista;
+            Obj.Fabricacion = fabricacion;
+            Obj.Materiales = materiales;
+            Obj.Exportacion = exportacion;
+            Obj.Importacion = importacion;
+            Obj.Seguro = seguro;
+            Obj.Gastos = gastos;
 
-            //Ubicacion[]
-            Obj.Ubicacion = ubicacion;
-            Obj.Estante = estante;
-            Obj.Nivel = nivel;
-            Obj.Imagen = imagen;
+            //Cantidades
+            Obj.Venta_MinimaCliente = venta_minimacliente;
+            Obj.Venta_MaximaCliente = venta_maximacliente;
+            Obj.Venta_MinimaMayorista = venta_minimamayorista;
+            Obj.Venta_MaximaMayorista = venta_maximamayorista;
+            Obj.Compra_MinimaCliente = compra_minimacliente;
+            Obj.Compra_MaximaCliente = compra_maximacliente;
+            Obj.Compra_MinimaMayorista = compra_minimamayorista;
+            Obj.Compra_MaximaMayorista = compra_maximamayorista;
 
             //Panel Lote
-            Obj.Lote = lote;
-            Obj.Lote_ValorInicial = lote_valorinicial;
-            Obj.FechaVencimiento = lote_fechavencimiento;
+            Obj.Detalle_Lote = detalle_lote;
+
+            //Panel Impuestos
+            Obj.Detalle_Impuesto = detalle_impuesto;
+
+            //Panel Igualdad
+            Obj.Detalle_Igualdad = detalle_igualdad;
+
+            //Panel Proveedor
+            Obj.Detalle_Proveedor = detalle_proveedor;
+
+            //Ubicacion[]
+            Obj.Detalle_Ubicacion = detalle_ubicacion;
 
             //Panel Codigo de Barra
-            Obj.CodigoDeBarra = codigodebarra;
+            Obj.Detalle_CodigoDeBarra = detalle_codigodebarra;
+
+            //Panel Imagen
+            Obj.Imagen = imagen;
 
             //Datos Auxiliares
             Obj.Auto = auto;
@@ -119,31 +142,42 @@ namespace Negocio
 
         public static string Editar_DatosBasicos
             (
-
-
-                //Datos Auxiliares y Llaves Primaria
-                int idproducto, int idmarca, int idbodega, int idproveedor, int idimpuesto, int idempaque, int idgrupo, int idtipo,
+                //Llave Primaria
+                int idproducto,
 
                 //Datos Basicos
-                string codigo, string producto, string referencia, string descripcion,
-                string presentacion, string unidad, string pesounidad,
+                int idmarca, int idempaque, int idgrupo, int idtipo, string codigo, string producto, string referencia, string descripcion,
+                string presentacion, string unidad, string comision, int comision_porcentaje, int manejavencimiento, int manejaimpuesto,
+                int importado, int exportado, int ofertable, int manejacomision,
 
-                int manejavencimiento, int manejaimpuesto, int importado, int exportado, int ofertable,
-                int ventaimpuesto, int manejacomision,
+                //Valores
+                string compra_promedio, string Compra_final, string Venta_excento, string venta_noexcento, string venta_mayorista,
+                string fabricacion, string materiales, string exportacion, string importacion, string seguro, string gastos,
 
-                //Precios
-                string compra_promedio, string compra_final, string venta_excento, string venta_noexcento, string venta_mayorista,
-                string comision, string comision_valor, string minima_cliente, string maxima_cliente, string minima_mayorista,
-                string maxima_mayorista,
+                //Cantidades
+                string venta_minimacliente, string venta_maximacliente, string venta_minimamayorista, string venta_maximamayorista,
+                string compra_minimacliente, string compra_maximacliente, string compra_minimamayorista, string compra_maximamayorista,
+
+                //Panel Lote
+                DataTable detalle_lote,
+
+                //Panel Impuestos
+                DataTable detalle_impuesto,
+
+                //Panel Igualdad
+                DataTable detalle_igualdad,
+
+                //Panel Proveedor
+                DataTable detalle_proveedor,
 
                 //Ubicacion[]
-                string ubicacion, string estante, string nivel, byte[] imagen,
-
-                //Lote
-                string lote, string lote_valorinicial, DateTime lote_fechavencimiento,
+                DataTable detalle_ubicacion,
 
                 //Panel Codigo de Barra
-                string codigodebarra,
+                DataTable detalle_codigodebarra,
+
+                //Panel Imagen
+                Byte[] imagen,
 
                 //Datos Auxiliares
                 int auto
@@ -155,9 +189,6 @@ namespace Negocio
             //Datos Auxiliares y Llaves Primaria
             Obj.Idproducto = idproducto;
             Obj.Idmarca = idmarca;
-            Obj.Idbodega = idbodega;
-            Obj.Idproveedor = idproveedor;
-            Obj.Idimpuesto = idimpuesto;
             Obj.Idempaque = idempaque;
             Obj.Idgrupo = idgrupo;
             Obj.Idtipo = idtipo;
@@ -169,42 +200,59 @@ namespace Negocio
             Obj.Descripcion = descripcion;
             Obj.Presentacion = presentacion;
             Obj.Unidad = unidad;
-            Obj.PesoUnidad = pesounidad;
+            Obj.Comision = comision;
+            Obj.Comision_Porcentaje = comision_porcentaje;
 
             Obj.ManejaVencimiento = manejavencimiento;
             Obj.ManejaImpuesto = manejaimpuesto;
-            Obj.ManejaComision = manejacomision;
             Obj.Importado = importado;
             Obj.Exportado = exportado;
             Obj.Ofertable = ofertable;
-            Obj.VentaImpuesto = ventaimpuesto;
+            Obj.ManejaComision = manejacomision;
 
             //Valores
             Obj.Compra_Promedio = compra_promedio;
-            Obj.Compra_Final = compra_final;
-            Obj.Venta_Excento = venta_excento;
+            Obj.Compra_Final = Compra_final;
+            Obj.Venta_Excento = Venta_excento;
             Obj.Venta_NoExcento = venta_noexcento;
             Obj.Venta_Mayorista = venta_mayorista;
-            Obj.Comision = comision;
-            Obj.Comision_Valor = comision_valor;
-            Obj.Minima_Cliente = minima_cliente;
-            Obj.Maxima_Cliente = maxima_cliente;
-            Obj.Minima_Mayorista = minima_mayorista;
-            Obj.Maxima_Mayorista = maxima_mayorista;
+            Obj.Fabricacion = fabricacion;
+            Obj.Materiales = materiales;
+            Obj.Exportacion = exportacion;
+            Obj.Importacion = importacion;
+            Obj.Seguro = seguro;
+            Obj.Gastos = gastos;
 
-            //Ubicacion[]
-            Obj.Ubicacion = ubicacion;
-            Obj.Estante = estante;
-            Obj.Nivel = nivel;
-            Obj.Imagen = imagen;
+            //Cantidades
+            Obj.Venta_MinimaCliente = venta_minimacliente;
+            Obj.Venta_MaximaCliente = venta_maximacliente;
+            Obj.Venta_MinimaMayorista = venta_minimamayorista;
+            Obj.Venta_MaximaMayorista = venta_maximamayorista;
+            Obj.Compra_MinimaCliente = compra_minimacliente;
+            Obj.Compra_MaximaCliente = compra_maximacliente;
+            Obj.Compra_MinimaMayorista = compra_minimamayorista;
+            Obj.Compra_MaximaMayorista = compra_maximamayorista;
 
             //Panel Lote
-            Obj.Lote = lote;
-            Obj.Lote_ValorInicial = lote_valorinicial;
-            Obj.FechaVencimiento = lote_fechavencimiento;
+            Obj.Detalle_Lote = detalle_lote;
+
+            //Panel Impuestos
+            Obj.Detalle_Impuesto = detalle_impuesto;
+
+            //Panel Igualdad
+            Obj.Detalle_Igualdad = detalle_igualdad;
+
+            //Panel Proveedor
+            Obj.Detalle_Proveedor = detalle_proveedor;
+
+            //Ubicacion[]
+            Obj.Detalle_Ubicacion = detalle_ubicacion;
 
             //Panel Codigo de Barra
-            Obj.CodigoDeBarra = codigodebarra;
+            Obj.Detalle_CodigoDeBarra = detalle_codigodebarra;
+
+            //Panel Imagen
+            Obj.Imagen = imagen;
 
             //Datos Auxiliares
             Obj.Auto = auto;

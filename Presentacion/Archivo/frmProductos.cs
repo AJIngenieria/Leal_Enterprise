@@ -116,7 +116,6 @@ namespace Presentacion
         {
                         
             //Panel - Datos Basicos
-
             this.TBCodigo.ReadOnly = false;
             this.TBCodigo.BackColor = Color.FromArgb(3, 155, 229);
             this.TBCodigo.ForeColor = Color.FromArgb(255, 255, 255);
@@ -133,43 +132,75 @@ namespace Presentacion
             this.TBReferencia.BackColor = Color.FromArgb(3, 155, 229);
             this.TBPresentacion.ReadOnly = false;
             this.TBPresentacion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBComision_Porcentaje.Enabled = false;
+            this.TBComision_Porcentaje.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBComision_Valor.Enabled = false;
+            this.TBComision_Valor.BackColor = Color.FromArgb(3, 155, 229);
 
-            this.TBProveedor.Enabled = false;
-            this.TBProveedor.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBProveedor.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBProveedor.Text = Campo;
-            this.TBImpuesto.Enabled = false;
-            this.TBImpuesto.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBImpuesto.ForeColor = Color.FromArgb(255, 255, 255);
-            this.TBImpuesto.Text = Campo;
+            //Panel Proveedor
+            this.TBBuscar_Proveedor.ReadOnly = false;
+            this.TBBuscar_Proveedor.BackColor = Color.FromArgb(72, 209, 204);
+
+            //Panel Impuesto
+            this.TBBuscar_Impuesto.ReadOnly = false;
+            this.TBBuscar_Impuesto.BackColor = Color.FromArgb(72, 209, 204);
 
             //Panel - Valores
-
             this.TBCompraPromedio.ReadOnly = false;
             this.TBCompraPromedio.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorFinal.ReadOnly = false;
-            this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBValorVenta.Enabled = false;
-            this.TBValorVenta.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorVenta_SinImpuesto.ReadOnly = false;
-            this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
-            
-            this.TBComision.Enabled = false;
-            this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
-            this.TBValorParaComision.Enabled = false;
-            this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
-
+            this.TBCompraFinal.ReadOnly = false;
+            this.TBCompraFinal.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorVenta_NoExcento.Enabled = false;
+            this.TBValorVenta_NoExcento.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBValorVenta_Excento.ReadOnly = false;
+            this.TBValorVenta_Excento.BackColor = Color.FromArgb(3, 155, 229);
             this.TBVentaMayorista.ReadOnly = false;
             this.TBVentaMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBMaximoMayorista.ReadOnly = false;
-            this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBMinimoMayorista.ReadOnly = false;
-            this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCosto_Fabricacion.ReadOnly = false;
+            this.TBCosto_Fabricacion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCostos_Materiales.ReadOnly = false;
+            this.TBCostos_Materiales.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCostos_Exportacion.ReadOnly = false;
+            this.TBCostos_Exportacion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCostos_Imprtacion.ReadOnly = false;
+            this.TBCostos_Imprtacion.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCostos_Seguridad.ReadOnly = false;
+            this.TBCostos_Seguridad.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCostos_Adicional.ReadOnly = false;
+            this.TBCostos_Adicional.BackColor = Color.FromArgb(3, 155, 229);
 
-            this.TBCantidadMininaCliente.ReadOnly = false;
-            this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBCantidadMaximaCliente.ReadOnly = false;
-            this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
+            // Panel Cantidades
+            this.TBVentaMaxima_Mayorista.ReadOnly = false;
+            this.TBVentaMaxima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMinima_Mayorista.ReadOnly = false;
+            this.TBVentaMinima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMinina_Cliente.ReadOnly = false;
+            this.TBVentaMinina_Cliente.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMaxima_Cliente.ReadOnly = false;
+            this.TBVentaMaxima_Cliente.BackColor = Color.FromArgb(3, 155, 229);
+
+            this.TBCompraMinima_Cliente.ReadOnly = false;
+            this.TBCompraMinima_Cliente.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCompraMinima_Mayorista.ReadOnly = false;
+            this.TBCompraMinima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCompraMaxima_Mayorista.ReadOnly = false;
+            this.TBCompraMaxima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Panel Igualdad
+            this.TBBuscar_Igualdad.ReadOnly = false;
+            this.TBBuscar_Igualdad.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Panel Impuesto
+            this.TBBuscar_Impuesto.ReadOnly = false;
+            this.TBBuscar_Impuesto.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Panel Proveedor
+            this.TBBuscar_Proveedor.ReadOnly = false;
+            this.TBBuscar_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+
+            //Panel Codigo de Barra
+            this.TBBuscar_CodigodeBarra.ReadOnly = false;
+            this.TBBuscar_CodigodeBarra.BackColor = Color.FromArgb(3, 155, 229);
 
             //Panel - Ubicacion
             this.TBUbicacion.ReadOnly = false;
@@ -184,117 +215,126 @@ namespace Presentacion
             this.TBLotedeingreso.BackColor = Color.FromArgb(3, 155, 229);
             this.TBValor_Lote.ReadOnly = false;
             this.TBValor_Lote.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBStockLote.Enabled = false;
-            this.TBStockLote.BackColor = Color.FromArgb(72, 209, 204);
-            this.DTFechaDeVencimiento.Enabled = true;
-            this.DTFechaDeVencimiento.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBLote_Stock.Enabled = false;
+            this.TBLote_Stock.BackColor = Color.FromArgb(72, 209, 204);
+            this.DTLote_Vencimiento.Enabled = true;
+            this.DTLote_Vencimiento.BackColor = Color.FromArgb(3, 155, 229);
 
-            //Panel - Codigo de Barra
-
-            this.TBCodigodeBarra.ReadOnly = false;
-            this.TBCodigodeBarra.BackColor = Color.FromArgb(3, 155, 229);
-
-            //Texboxt de Consulta
+            //Panel de Consulta General
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void Limpiar_Datos()
         {
-            if (!Digitar)
-            {
-                //Panel - Datos Basicos
+            //Panel - Datos Basicos
 
-                this.TBIdproducto.Clear();
+            this.TBIdproducto.Clear();
 
-                this.TBCodigo.Clear();
-                this.TBCodigo.Text = Campo;
-                this.TBNombre.Clear();
-                this.TBNombre.Text = Campo;
-                this.TBDescripcion01.Clear();
-                this.TBDescripcion01.Text = Campo;
-                this.TBReferencia.Clear();
-                this.TBPresentacion.Clear();
-                this.TBProveedor.Clear();
-                this.TBProveedor.Text = Campo;
-                this.TBImpuesto.Clear();
-                this.TBImpuesto.Text = Campo;
+            this.TBCodigo.Clear();
+            this.TBNombre.Clear();
+            this.TBDescripcion01.Clear();
+            this.TBReferencia.Clear();
+            this.TBPresentacion.Clear();
+            this.TBComision_Porcentaje.Enabled = false;
+            this.TBComision_Valor.Enabled = false;
 
-                this.CBMarca.SelectedItem = 0;
-                this.CBGrupo.SelectedItem = 0;
-                this.CBEmpaque.SelectedItem = 0;
-                this.CBTipo.SelectedItem = 0;
-                this.CBUnidad.SelectedItem = 0;
+            this.CBMarca.SelectedItem = 0;
+            this.CBGrupo.SelectedItem = 0;
+            this.CBEmpaque.SelectedItem = 0;
+            this.CBTipo.SelectedItem = 0;
+            this.CBUnidad.SelectedItem = 0;
 
-                this.CBVencimiento.Checked = false;
-                this.CBImpuesto.Checked = false;
-                this.CBOfertable.Checked = false;
-                this.CBImportado.Checked = false;
-                this.CBExportado.Checked = false;
-                this.CBManejaComision.Checked = false;
+            this.CBVencimiento.Checked = false;
+            this.CBImpuesto.Checked = false;
+            this.CBOfertable.Checked = false;
+            this.CBImportado.Checked = false;
+            this.CBExportado.Checked = false;
+            this.CBManejaComision.Checked = false;
 
-                //Panel - Valores
-                this.TBCompraPromedio.Clear();
-                this.TBValorFinal.Clear();
-                this.TBValorVenta.Clear();
-                this.TBValorVenta_SinImpuesto.Clear();
+            //Panel Proveedor
+            this.TBBuscar_Proveedor.Clear();
 
-                this.TBComision.Clear();
-                this.TBValorParaComision.Clear();
+            //Panel Impuesto
+            this.TBBuscar_Impuesto.Clear();
 
-                this.TBVentaMayorista.Clear();
-                this.TBMaximoMayorista.Clear();
-                this.TBMinimoMayorista.Clear();
+            //Panel - Valores
+            this.TBCompraPromedio.Clear();
+            this.TBCompraFinal.Clear();
+            this.TBValorVenta_NoExcento.Enabled = false;
+            this.TBValorVenta_Excento.Clear();
+            this.TBVentaMayorista.Clear();
+            this.TBCosto_Fabricacion.Clear();
+            this.TBCostos_Materiales.Clear();
+            this.TBCostos_Exportacion.Clear();
+            this.TBCostos_Imprtacion.Clear();
+            this.TBCostos_Seguridad.Clear();
+            this.TBCostos_Adicional.Clear();
 
-                this.TBCantidadMininaCliente.Clear();
-                this.TBCantidadMaximaCliente.Clear();
+            // Panel Cantidades
+            this.TBVentaMaxima_Mayorista.Clear();
+            this.TBVentaMinima_Mayorista.Clear();
+            this.TBVentaMinina_Cliente.Clear();
+            this.TBVentaMaxima_Cliente.Clear();
 
-                //Panel Ubicacion - Imagen
-                this.CBBodega.SelectedIndex = 0;
-                this.TBUbicacion.Clear();
-                this.TBEstante.Clear();
-                this.TBNivel.Clear();
+            this.TBCompraMinima_Cliente.Clear();
+            this.TBCompraMinima_Mayorista.Clear();
+            this.TBCompraMaxima_Cliente.Clear();
+            this.TBCompraMaxima_Mayorista.Clear();
 
-                //Panel - Lote
-                this.TBLotedeingreso.Clear();
-                this.TBValor_Lote.Clear();
-                this.TBStockLote.Clear();
-                this.DGDetalles_Lotes.DataSource = null;
+            //Panel Igualdad
+            this.TBBuscar_Igualdad.Clear();
+            this.DGDetalle_Igualdad.DataSource = null;
 
-                //Panel - Codigo de Barra
-                this.TBCodigodeBarra.Clear();
-                this.DGDetalle_CodigoDeBarra.DataSource = null;
+            //Panel Impuesto
+            this.TBBuscar_Impuesto.Clear();
+            this.DGDetalle_Impuesto.DataSource = null;
 
-                //Se habilitan los botones a su estado por DEFAULT
-                this.Digitar = true;
-                this.Botones();
-                this.Habilitar();
-                this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
+            //Panel Proveedor
+            this.TBBuscar_Proveedor.Clear();
+            this.DGDetalle_Proveedor.DataSource = null;
 
-                //Se realiza el FOCUS al panel y campo de texto iniciales
-                this.TBPresentacion.Select();
-                this.TCPrincipal.SelectedIndex = 0;
-            }
+            //Panel Codigo de Barra
+            this.TBBuscar_CodigodeBarra.Clear();
+            this.DGDetalle_CodigoDeBarra.DataSource = null;
+
+            //Panel - Ubicacion
+            this.CBBodega.SelectedIndex = 0;
+            this.TBUbicacion.Clear();
+            this.TBEstante.Clear();
+            this.TBNivel.Clear();
+            this.DGDetalles_Ubicacion.DataSource = null;
+
+            //Panel - Lote
+            this.TBLotedeingreso.Clear();
+            this.TBValor_Lote.Clear();
+            this.TBLote_Stock.Clear();
+            this.DTLote_Vencimiento.Enabled = true;
+            this.DGDetalles_Lotes.DataSource = null;
+
+            this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
+
+            //Se realiza el FOCUS al panel y campo de texto iniciales
+            this.TBNombre.Select();
+            this.TCPrincipal.SelectedIndex = 0;
         }
 
         private void Botones()
         {
             if (Digitar)
             {
-                ////El boton btnGuardar Mantendra su imagen original
-                //this.btnGuardar.Enabled = true;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Text = "Guardar";
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = false;
-                this.btnImprimir.Enabled = false;
             }
             else if (!Digitar)
             {
-                ////El boton btnGuardar cambiara su imagen original de Guardar a Editar
-                //this.btnGuardar.Enabled = true;
+                this.btnGuardar.Enabled = true;
+                this.btnGuardar.Text = "Editar";
 
                 this.btnEliminar.Enabled = false;
                 this.btnCancelar.Enabled = true;
-                this.btnImprimir.Enabled = false;
             }
         }
 
@@ -331,13 +371,13 @@ namespace Presentacion
         public void setProveedor(string idproveedor, string proveedor)
         {
             this.TBIdproveedor.Text = idproveedor;
-            this.TBProveedor.Text = proveedor;
+            this.TBBuscar_Proveedor.Text = proveedor;
         }
 
         public void setImpuesto(string idimpuesto, string impuesto, string valor)
         {
             this.TBIdimpuesto.Text = idimpuesto;
-            this.TBImpuesto.Text = impuesto;
+            this.TBBuscar_Impuesto.Text = impuesto;
             //this.TBImpuesto_Valor.Text = valor;
         }
                 
@@ -402,11 +442,11 @@ namespace Presentacion
 
             //
             this.Mon_Promedio = TBCompraPromedio.Text;
-            this.Mon_Final = TBValorFinal.Text;
-            this.Mon_Excento = TBValorVenta_SinImpuesto.Text;
-            this.Mon_NoExcento = TBValorVenta.Text;
+            this.Mon_Final = TBCompraFinal.Text;
+            this.Mon_Excento = TBValorVenta_Excento.Text;
+            this.Mon_NoExcento = TBValorVenta_NoExcento.Text;
             this.Mon_Mayorista = TBVentaMayorista.Text;
-            this.Mon_Comision = TBValorParaComision.Text;
+            this.Mon_Comision = TBComision_Valor.Text;
         }
 
 
@@ -421,12 +461,10 @@ namespace Presentacion
                 this.DtDetalle_Ubicacion.Columns.Add("Nivel", System.Type.GetType("System.String"));
 
                 //Panel Lote
-                this.DtDetalle_Lote.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle_Lote.Columns.Add("Lote", System.Type.GetType("System.String"));
-                this.DtDetalle_Lote.Columns.Add("Valor", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Stock", System.Type.GetType("System.String"));
 
                 //Panel Codigo de Barra
-                this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo de Barra", System.Type.GetType("System.String"));
 
                 //Panel Proveedores
@@ -441,22 +479,30 @@ namespace Presentacion
 
                 //Panel Igualdad
                 this.DtDetalle_Igualdad.Columns.Add("Idproducto", System.Type.GetType("System.Int32"));
+                this.DtDetalle_Igualdad.Columns.Add("Codigo", System.Type.GetType("System.String"));
                 this.DtDetalle_Igualdad.Columns.Add("Producto", System.Type.GetType("System.String"));
                 this.DtDetalle_Igualdad.Columns.Add("Marca", System.Type.GetType("System.String"));
-
+                
                 //Captura de los Datos en las Tablas
-                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Ubicacion;
                 this.DGDetalles_Lotes.DataSource = this.DtDetalle_Lote;
+                this.DGDetalle_Impuesto.DataSource = this.DtDetalle_Impuesto;
+                this.DGDetalle_Igualdad.DataSource = this.DtDetalle_Igualdad;
+                this.DGDetalle_Proveedor.DataSource = this.DtDetalle_Proveedor;
+                this.DGDetalles_Ubicacion.DataSource = this.DtDetalle_Ubicacion;
+                this.DGDetalle_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
+                
 
                 //Medidas de las Columnas - Codigo de Barra
-                this.DGDetalle_CodigoDeBarra.DataSource = this.DtDetalle_CodigoDeBarra;
-                this.DGDetalle_CodigoDeBarra.Columns[0].HeaderText = "Codigo";
-                this.DGDetalle_CodigoDeBarra.Columns[0].Width = 100;
-                this.DGDetalle_CodigoDeBarra.Columns[1].HeaderText = "Codigo de Barra";
-                this.DGDetalle_CodigoDeBarra.Columns[1].Width = 150;
-                
+                this.DGDetalle_CodigoDeBarra.Columns[0].HeaderText = "Codigo de Barra";
+                this.DGDetalle_CodigoDeBarra.Columns[0].Width = 295;
+
+                this.DGDetalle_Proveedor.Columns[1].HeaderText = "Proveedor";
+                this.DGDetalle_Proveedor.Columns[1].Width = 295;
+                this.DGDetalle_Impuesto.Columns[1].HeaderText = "Impuesto";
+                this.DGDetalle_Impuesto.Columns[1].Width = 295;
+
                 //Formato de Celdas
-                this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Format = "##,##0.00";
+                //this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Format = "##,##0.00";
 
                 //Aliniacion de las Celdas de Cada Columna - Panel de Ubicacion
                 this.DGDetalles_Ubicacion.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
@@ -466,11 +512,17 @@ namespace Presentacion
                 //Aliniacion de las Celdas de Cada Columna - Panel Lotes
                 this.DGDetalles_Lotes.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles_Lotes.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
                 //Aliniacion de las Celdas de Cada Columna - Panel Codigo de Barra
                 this.DGDetalle_CodigoDeBarra.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalle_CodigoDeBarra.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+
+                //Ocultacion de Columnas
+                this.DGDetalle_Igualdad.Columns[0].Visible = false;
+                this.DGDetalle_Impuesto.Columns[0].Visible = false;
+                this.DGDetalle_Proveedor.Columns[0].Visible = false;
+                this.DGDetalles_Ubicacion.Columns[0].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -514,11 +566,13 @@ namespace Presentacion
             {
                 //
                 bool Agregar_Ubicacion = true;
-                                
+
+                idbodega = Convert.ToInt32(this.CBBodega.SelectedValue);
+                
                 //Panel Ubicacion
                 foreach (DataRow FilaTemporal in DtDetalle_Ubicacion.Rows)
                 {
-                    if (Convert.ToInt32(FilaTemporal["Codigo"]) == idbodega)
+                    if (Convert.ToInt32(FilaTemporal["Idbodega"]) == idbodega)
                     {
                         Agregar_Ubicacion = false;
                         this.MensajeError("La Ubicación del Producto ya se Encuentra en la Lista");
@@ -528,7 +582,7 @@ namespace Presentacion
                 if (Agregar_Ubicacion)
                 {
                     DataRow Fila = DtDetalle_Ubicacion.NewRow();
-                    Fila["Codigo"] = idbodega;
+                    Fila["Idbodega"] = idbodega;
                     Fila["Ubicacion"] = ubicacion;
                     Fila["Estante"] = estante;
                     Fila["Nivel"] = nivel;
@@ -606,77 +660,74 @@ namespace Presentacion
 
                     if (this.Digitar)
                     {
-                        //rptaDatosBasicos = fProductos.Guardar_DatosBasicos
+                        rptaDatosBasicos = fProductos.Guardar_DatosBasicos
 
-                        //    (
-                        //         //Datos Auxiliares
-                        //         Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
-                        //         Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
-                        //         Convert.ToInt32(this.CBTipo.SelectedValue),
+                            (
+                                 //Datos Auxiliares
+                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(this.CBTipo.SelectedValue),
 
-                        //         //Panel Datos Basicos
-                        //         this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
-                        //         this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
+                                 //Panel Datos Basicos
+                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
+                                 this.CBUnidad.Text, this.TBComision_Valor.Text, Convert.ToInt32(this.TBComision_Porcentaje.Text),
 
-                        //         Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
-                        //         Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
-                        //         Convert.ToInt32(Checkbox_Comision),
+                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
+                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_Comision),
 
-                        //         //Panel de Valores
-                        //         this.Mon_Promedio, this.Mon_Final, this.Mon_Excento, this.Mon_NoExcento, this.Mon_Mayorista,
-                        //         this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                        //         this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
-                        //         //Panel Ubicaciones
-                        //         this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
+                                 //Panel de Valores
+                                 this.TBCompraPromedio.Text, this.TBCompraFinal.Text, this.TBValorVenta_Excento.Text, this.TBValorVenta_NoExcento.Text, this.TBVentaMayorista.Text,
+                                 this.TBCosto_Fabricacion.Text, this.TBCostos_Materiales.Text, this.TBCostos_Exportacion.Text, this.TBCostos_Imprtacion.Text,
+                                 this.TBCostos_Seguridad.Text, this.TBCostos_Adicional.Text,
 
-                        //         //Panel de Lotes
-                        //         this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
+                                 //Panel Cantidades
+                                 this.TBVentaMinina_Cliente.Text, this.TBVentaMaxima_Cliente.Text, this.TBVentaMinima_Mayorista.Text, this.TBVentaMaxima_Mayorista.Text, this.TBCompraMinima_Cliente.Text, this.TBCompraMaxima_Cliente.Text, this.TBCompraMinima_Mayorista.Text, this.TBCompraMaxima_Mayorista.Text,
 
-                        //         //Panel Codigo de Barra
-                        //         this.TBCodigodeBarra.Text,
+                                 //Tabla de Detalles - Lote, Impuesto, Igualdad, Proveedor, Ubicacion, Codigo de Barra
+                                 this.DtDetalle_Lote, this.DtDetalle_Impuesto, this.DtDetalle_Igualdad, this.DtDetalle_Proveedor, this.DtDetalle_Ubicacion, this.DtDetalle_CodigoDeBarra,
 
-                        //         //Si es igual a 1 se registraran los datos en la base de datos
-                        //         1
-                        //    );
+                                 //Panel de Imagen
+                                 Imagen_Producto,
+
+                                 //Si es igual a 1 se registraran los datos en la base de datos
+                                 1
+                            );
                     }
 
                     else
                     {
-                        //rptaDatosBasicos = fProductos.Editar_DatosBasicos
+                        rptaDatosBasicos = fProductos.Editar_DatosBasicos
 
-                        //    (
-                        //         //Llave Primaria
-                        //         Convert.ToInt32(this.TBIdproducto.Text),
+                            (
+                                 //Llave Primaria
+                                 Convert.ToInt32(this.TBIdproducto.Text),
 
-                        //         //Datos Auxiliares
-                        //         Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBBodega.SelectedValue), Convert.ToInt32(this.TBIdproveedor.Text),
-                        //         Convert.ToInt32(this.TBIdimpuesto.Text), Convert.ToInt32(CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue),
-                        //         Convert.ToInt32(this.CBTipo.SelectedValue),
+                                 //Datos Auxiliares
+                                 Convert.ToInt32(this.CBMarca.SelectedValue), Convert.ToInt32(this.CBEmpaque.SelectedValue), Convert.ToInt32(this.CBGrupo.SelectedValue), Convert.ToInt32(this.CBTipo.SelectedValue),
 
-                        //         //Panel Datos Basicos
-                        //         this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
-                        //         this.CBUnidad.Text, this.TBUnidadDeVenta.Text,
+                                 //Panel Datos Basicos
+                                 this.TBCodigo.Text, this.TBNombre.Text, this.TBReferencia.Text, this.TBDescripcion01.Text, this.TBPresentacion.Text,
+                                 this.CBUnidad.Text, this.TBComision_Valor.Text, Convert.ToInt32(this.TBComision_Porcentaje.Text),
 
-                        //         Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
-                        //         Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_VentaImpuesto),
-                        //         Convert.ToInt32(Checkbox_Comision),
+                                 Convert.ToInt32(Checkbox_Vencimiento), Convert.ToInt32(Checkbox_Impuesto), Convert.ToInt32(Checkbox_Importado),
+                                 Convert.ToInt32(Checkbox_Exportado), Convert.ToInt32(Checkbox_Ofertable), Convert.ToInt32(Checkbox_Comision),
 
-                        //         //Panel de Valores
-                        //         this.TBCompraPromedio.Text, this.TBValorFinal.Text, this.TBValorVenta_SinImpuesto.Text, this.TBValorVenta.Text, this.TBVentaMayorista.Text,
-                        //         this.TBComision.Text, this.TBValorParaComision.Text, this.TBCantidadMininaCliente.Text, this.TBCantidadMaximaCliente.Text,
-                        //         this.TBMinimoMayorista.Text, this.TBMaximoMayorista.Text,
-                        //         //Panel Ubicaciones
-                        //         this.TBUbicacion.Text, this.TBEstante.Text, this.TBNivel.Text, Imagen_Producto,
+                                 //Panel de Valores
+                                 this.TBCompraPromedio.Text, this.TBCompraFinal.Text, this.TBValorVenta_Excento.Text, this.TBValorVenta_NoExcento.Text, this.TBVentaMayorista.Text,
+                                 this.TBCosto_Fabricacion.Text, this.TBCostos_Materiales.Text, this.TBCostos_Exportacion.Text, this.TBCostos_Imprtacion.Text,
+                                 this.TBCostos_Seguridad.Text, this.TBCostos_Adicional.Text,
 
-                        //         //Panel de Lotes
-                        //         this.TBLotedeingreso.Text, this.TBValor_Lote.Text, this.DTFechaDeVencimiento.Value,
+                                 //Panel Cantidades
+                                 this.TBVentaMinina_Cliente.Text, this.TBVentaMaxima_Cliente.Text, this.TBVentaMinima_Mayorista.Text, this.TBVentaMaxima_Mayorista.Text, this.TBCompraMinima_Cliente.Text, this.TBCompraMaxima_Cliente.Text, this.TBCompraMinima_Mayorista.Text, this.TBCompraMaxima_Mayorista.Text,
 
-                        //         //Panel Codigo de Barra
-                        //         this.TBCodigodeBarra.Text,
+                                 //Tabla de Detalles - Lote, Impuesto, Igualdad, Proveedor, Ubicacion, Codigo de Barra
+                                 this.DtDetalle_Lote, this.DtDetalle_Impuesto, this.DtDetalle_Igualdad, this.DtDetalle_Proveedor, this.DtDetalle_Ubicacion, this.DtDetalle_CodigoDeBarra,
 
-                        //         //Si es igual a 2 se Editaran los datos en la base de datos
-                        //         2
-                        //    );
+                                 //Panel de Imagen
+                                 Imagen_Producto,
+
+
+                                 //Si es igual a 2 se Editaran los datos en la base de datos
+                                 2
+                            );
                     }
 
                     if (rptaDatosBasicos.Equals("OK"))
@@ -698,7 +749,8 @@ namespace Presentacion
                     }
 
                     //Llamada de Clase
-                    this.Digitar = false;
+                    this.Digitar = true;
+                    this.Botones();
                     this.Limpiar_Datos();
                 }
 
@@ -737,7 +789,8 @@ namespace Presentacion
                         MessageBox.Show("El Usuario Iniciado Actualmente no Contiene Permisos Para Guardar Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                         //Llamada de Clase
-                        this.Digitar = false;
+                        this.Digitar = true;
+                        this.Botones();
                         this.Limpiar_Datos();
                     }
                 }
@@ -802,20 +855,39 @@ namespace Presentacion
         {
             try
             {
-                DataTable Tabla = new DataTable();
+                if (this.CBBodega.SelectedIndex == 0)
+                {
+                    this.MensajeError("Por favor seleccione la Bodega perteneciente a la Ubicación que desea generar");
+                }
+                else if (this.TBUbicacion.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique la Ubicación dentro de la Bodega seleccionada");
+                }
+                else
+                {
+                    bool agregar = true;
+                    foreach (DataRow Fila in DtDetalle_Ubicacion.Rows)
+                    {
+                        if (Convert.ToString(Fila["Idbodega"]) == CBBodega.SelectedValue.ToString())
+                        {
+                            this.MensajeError("La Ubicacion que desea agregar, ya se encuentra en la lista");
+                        }
+                    }
+                    if (agregar)
+                    {
+                        DataRow fila = this.DtDetalle_Ubicacion.NewRow();
+                        fila["Idbodega"] = Convert.ToInt32(this.CBBodega.SelectedValue);
+                        fila["Ubicacion"] = this.TBUbicacion.Text;
+                        fila["Estante"] = this.TBEstante.Text;
+                        fila["Nivel"] = this.TBNivel.Text;
+                        this.DtDetalle_Ubicacion.Rows.Add(fila);
+                    }
 
-                this.Detalle_Ubicacion
-                    (
-                        Convert.ToInt32(Tabla.Rows[0][0]),
-                        Convert.ToString(Tabla.Rows[0][1]),
-                        Convert.ToString(Tabla.Rows[0][2]),
-                        Convert.ToString(Tabla.Rows[0][3])
-                    );
-
-                //
-                this.TBUbicacion.Clear();
-                this.TBEstante.Clear();
-                this.TBNivel.Clear();
+                    //
+                    this.TBUbicacion.Clear();
+                    this.TBEstante.Clear();
+                    this.TBNivel.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -825,7 +897,18 @@ namespace Presentacion
 
         private void btnEliminar_Ubicacion_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int Fila = this.DGDetalles_Ubicacion.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_Ubicacion.Rows[Fila];
 
+                //Se remueve la fila
+                this.DtDetalle_Ubicacion.Rows.Remove(row);
+            }
+            catch (Exception ex)
+            {
+                MensajeError("Por favor seleccione la Ubicacion que desea Remover del registo");
+            }
         }
 
         private void btnAgregar_CodigoDeBarra_Click(object sender, EventArgs e)
@@ -837,7 +920,7 @@ namespace Presentacion
                 this.Detalle_CodigoDeBarra(Convert.ToString(Tabla.Rows[0][0]));
 
                 //
-                this.TBCodigodeBarra.Clear();
+                this.TBBuscar_CodigodeBarra.Clear();
             }
             catch (Exception ex)
             {
@@ -849,12 +932,7 @@ namespace Presentacion
         {
 
         }
-
-        private void btnEliminar_Lote_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnAgregar_Lotes_Click(object sender, EventArgs e)
         {
 
@@ -940,19 +1018,19 @@ namespace Presentacion
         private void TBValor01_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBValorVenta.BackColor = Color.Azure;
+            this.TBValorVenta_NoExcento.BackColor = Color.Azure;
         }
 
         private void TBCantidadMininaCliente_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBCantidadMininaCliente.BackColor = Color.Azure;
+            this.TBVentaMinina_Cliente.BackColor = Color.Azure;
         }
 
         private void TBCantidadMaximaCliente_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBCantidadMaximaCliente.BackColor = Color.Azure;
+            this.TBVentaMaxima_Cliente.BackColor = Color.Azure;
         }
         
         //******************** FOCUS ENTER UBICACION ********************
@@ -992,13 +1070,13 @@ namespace Presentacion
         private void TBValorParaComision_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBValorParaComision.BackColor = Color.Azure;
+            this.TBComision_Valor.BackColor = Color.Azure;
         }
 
         private void TBValordecompra_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBValorFinal.BackColor = Color.Azure;
+            this.TBCompraFinal.BackColor = Color.Azure;
         }
         
         private void TBVentaMayorista_Enter(object sender, EventArgs e)
@@ -1010,13 +1088,13 @@ namespace Presentacion
         private void TBMinimoMayorista_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBMinimoMayorista.BackColor = Color.Azure;
+            this.TBVentaMinima_Mayorista.BackColor = Color.Azure;
         }
 
         private void TBMaximoMayorista_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBMaximoMayorista.BackColor = Color.Azure;
+            this.TBVentaMaxima_Mayorista.BackColor = Color.Azure;
         }
 
         //******************** FOCUS LEAVE DATOS BASICOS ********************
@@ -1436,7 +1514,7 @@ namespace Presentacion
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                    this.TBValorFinal.Select();
+                    this.TBCompraFinal.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1535,7 +1613,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorVenta_SinImpuesto.Select();
+                            this.TBValorVenta_Excento.Select();
                         }
                     }
                     else
@@ -1552,7 +1630,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorVenta_SinImpuesto.Select();
+                            this.TBValorVenta_Excento.Select();
                         }
                     }
                 }
@@ -1571,7 +1649,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBValorVenta_SinImpuesto.Select();
+                    this.TBValorVenta_Excento.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1603,7 +1681,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorFinal.Select();
+                            this.TBCompraFinal.Select();
                         }
                     }
                     else
@@ -1620,7 +1698,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorFinal.Select();
+                            this.TBCompraFinal.Select();
                         }
                     }
                 }
@@ -1671,7 +1749,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorVenta.Select();
+                            this.TBValorVenta_NoExcento.Select();
                         }
                     }
                     else
@@ -1688,7 +1766,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorVenta.Select();
+                            this.TBValorVenta_NoExcento.Select();
                         }
                     }
                 }
@@ -1707,7 +1785,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBCantidadMaximaCliente.Select();
+                    this.TBVentaMaxima_Cliente.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1739,7 +1817,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMininaCliente.Select();
+                            this.TBVentaMinina_Cliente.Select();
                         }
                     }
                     else
@@ -1756,7 +1834,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMininaCliente.Select();
+                            this.TBVentaMinina_Cliente.Select();
                         }
                     }
                 }
@@ -1775,7 +1853,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBMinimoMayorista.Select();
+                    this.TBVentaMinima_Mayorista.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1807,7 +1885,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMaximaCliente.Select();
+                            this.TBVentaMaxima_Cliente.Select();
                         }
                     }
                     else
@@ -1824,7 +1902,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBCantidadMaximaCliente.Select();
+                            this.TBVentaMaxima_Cliente.Select();
                         }
                     }
                 }
@@ -1843,7 +1921,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBValorFinal.Select();
+                    this.TBCompraFinal.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2277,6 +2355,109 @@ namespace Presentacion
             }
         }
 
+        private void TBLote_Venta_Enter(object sender, EventArgs e)
+        {
+            this.TBLote_Venta.BackColor = Color.Azure;
+        }
+
+        private void TBLote_Stock_Enter(object sender, EventArgs e)
+        {
+            this.TBLote_Stock.BackColor = Color.Azure;
+        }
+
+        private void TBLote_Venta_Leave(object sender, EventArgs e)
+        {
+            this.TBLote_Venta.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBLote_Stock_Leave(object sender, EventArgs e)
+        {
+            this.TBLote_Stock.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBBuscar_Proveedor_Enter(object sender, EventArgs e)
+        {
+            this.TBBuscar_Proveedor.BackColor = Color.Azure;
+        }
+
+        private void TBBuscar_Proveedor_Leave(object sender, EventArgs e)
+        {
+            this.TBBuscar_Proveedor.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBBuscar_Impuesto_Enter(object sender, EventArgs e)
+        {
+            this.TBBuscar_Impuesto.BackColor = Color.Azure;
+        }
+
+        private void TBBuscar_Impuesto_Leave(object sender, EventArgs e)
+        {
+            this.TBBuscar_Impuesto.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void TBBuscar_Igualdad_Enter(object sender, EventArgs e)
+        {
+            this.TBBuscar_Igualdad.BackColor = Color.Azure;
+        }
+
+        private void TBBuscar_Igualdad_Leave(object sender, EventArgs e)
+        {
+            this.TBBuscar_Igualdad.BackColor = Color.FromArgb(3, 155, 229);
+        }
+
+        private void btnAgregar_Igualdad_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Impuesto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Proveedor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAgregar_Lote_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnEliminar_Lote_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //int Fila=this.dgd.curr
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnImprimir_Igualdad_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnEliminar_Igualdad_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Fila = this.DGDetalle_Igualdad.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_Igualdad.Rows[Fila];
+
+                //Se remueve la fila
+                this.DtDetalle_Igualdad.Rows.Remove(row);
+            }
+            catch (Exception ex)
+            {
+                MensajeError("Por favor seleccione la Igualdad que desea Remover del registo");
+            }
+        }
+
         private void TBValorVenta_SinImpuesto_KeyPress(object sender, KeyPressEventArgs e)
         {
             //Para obligar a que sólo se introduzcan números
@@ -2542,19 +2723,19 @@ namespace Presentacion
         {
             if (CBManejaComision.Checked)
             {
-                this.TBComision.Enabled = true;
-                this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBComision_Porcentaje.Enabled = true;
+                this.TBComision_Porcentaje.BackColor = Color.FromArgb(3, 155, 229);
                 
-                this.TBValorParaComision.Enabled = true;
-                this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
+                this.TBComision_Valor.Enabled = true;
+                this.TBComision_Valor.BackColor = Color.FromArgb(3, 155, 229);
             }
             else
             {
-                this.TBComision.Enabled = false;
-                this.TBComision.BackColor = Color.FromArgb(72, 209, 204);
+                this.TBComision_Porcentaje.Enabled = false;
+                this.TBComision_Porcentaje.BackColor = Color.FromArgb(72, 209, 204);
 
-                this.TBValorParaComision.Enabled = false;
-                this.TBValorParaComision.BackColor = Color.FromArgb(72, 209, 204);
+                this.TBComision_Valor.Enabled = false;
+                this.TBComision_Valor.BackColor = Color.FromArgb(72, 209, 204);
             }
         }
 
@@ -2637,13 +2818,13 @@ namespace Presentacion
         private void TBComision_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBComision.BackColor = Color.Azure;
+            this.TBComision_Porcentaje.BackColor = Color.Azure;
         }
 
         private void TBComision_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBComision.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBComision_Porcentaje.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBVentaMayorista_KeyUp(object sender, KeyEventArgs e)
@@ -2655,11 +2836,11 @@ namespace Presentacion
                     if (CBManejaComision.Checked)
                     {
                         //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                        this.TBComision.Select();
+                        this.TBComision_Porcentaje.Select();
                     }
                     else if (CBManejaComision.Checked == false)
                     {
-                        this.TBCantidadMininaCliente.Select();
+                        this.TBVentaMinina_Cliente.Select();
                     }
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -2729,11 +2910,11 @@ namespace Presentacion
                     if (CBManejaComision.Checked)
                     {
                         //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                        this.TBValorParaComision.Select();
+                        this.TBComision_Valor.Select();
                     }
                     else
                     {
-                        this.TBCantidadMininaCliente.Select();
+                        this.TBVentaMinina_Cliente.Select();
                     }
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -2766,7 +2947,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBComision.Select();
+                            this.TBComision_Porcentaje.Select();
                         }
                     }
                     else
@@ -2783,7 +2964,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBComision.Select();
+                            this.TBComision_Porcentaje.Select();
                         }
                     }
                 }
@@ -2802,7 +2983,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBCantidadMininaCliente.Select();
+                    this.TBVentaMinina_Cliente.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2834,7 +3015,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorParaComision.Select();
+                            this.TBComision_Valor.Select();
                         }
                     }
                     else
@@ -2851,7 +3032,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBValorParaComision.Select();
+                            this.TBComision_Valor.Select();
                         }
                     }
                 }
@@ -2870,7 +3051,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBMaximoMayorista.Select();
+                    this.TBVentaMaxima_Mayorista.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2902,7 +3083,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBMinimoMayorista.Select();
+                            this.TBVentaMinima_Mayorista.Select();
                         }
                     }
                     else
@@ -2919,7 +3100,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBMinimoMayorista.Select();
+                            this.TBVentaMinima_Mayorista.Select();
                         }
                     }
                 }
@@ -2970,7 +3151,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBMaximoMayorista.Select();
+                            this.TBVentaMaxima_Mayorista.Select();
                         }
                     }
                     else
@@ -2987,7 +3168,7 @@ namespace Presentacion
                         {
                             //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
                             //Donde se realizo la operacion o combinacion de teclas
-                            this.TBMaximoMayorista.Select();
+                            this.TBVentaMaxima_Mayorista.Select();
                         }
                     }
                 }
@@ -3001,7 +3182,7 @@ namespace Presentacion
         private void TBValorParaComision_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBValorParaComision.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBComision_Valor.BackColor = Color.FromArgb(3, 155, 229);
 
             // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
             TextBox tb = (TextBox)sender;
@@ -3030,25 +3211,25 @@ namespace Presentacion
         private void TBCantidadMininaCliente_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBCantidadMininaCliente.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMinina_Cliente.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBCantidadMaximaCliente_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBCantidadMaximaCliente.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMaxima_Cliente.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBMinimoMayorista_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBMinimoMayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMinima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBMaximoMayorista_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBMaximoMayorista.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBVentaMaxima_Mayorista.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void TBCodigodeBarra_KeyUp(object sender, KeyEventArgs e)
@@ -3057,10 +3238,10 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    if (TBCodigodeBarra.Text==string.Empty)
+                    if (TBBuscar_CodigodeBarra.Text==string.Empty)
                     {
                         MensajeError("Por favor digite el Codigo de Barra que desea registrar");
-                        this.TBCodigodeBarra.Focus();
+                        this.TBBuscar_CodigodeBarra.Focus();
                     }
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
@@ -3138,7 +3319,7 @@ namespace Presentacion
         private void TBValordecompra_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBValorFinal.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBCompraFinal.BackColor = Color.FromArgb(3, 155, 229);
 
             // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
             TextBox tb = (TextBox)sender;
@@ -3167,7 +3348,7 @@ namespace Presentacion
         private void TBValorVenta_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBValorVenta.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorVenta_NoExcento.BackColor = Color.FromArgb(3, 155, 229);
 
             // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
             TextBox tb = (TextBox)sender;
@@ -3215,12 +3396,12 @@ namespace Presentacion
 
         private void TBCodigodeBarra_Enter(object sender, EventArgs e)
         {
-            this.TBCodigodeBarra.BackColor = Color.Azure;
+            this.TBBuscar_CodigodeBarra.BackColor = Color.Azure;
         }
 
         private void TBCodigodeBarra_Leave(object sender, EventArgs e)
         {
-            this.TBCodigodeBarra.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBBuscar_CodigodeBarra.BackColor = Color.FromArgb(3, 155, 229);
         }
 
         private void frmProductos_FormClosing(object sender, FormClosingEventArgs e)
@@ -3231,13 +3412,13 @@ namespace Presentacion
         private void TBValorVenta_SinImpuesto_Enter(object sender, EventArgs e)
         {
             //Color de fondo del Texboxt cuando este tiene el FOCUS Activado
-            this.TBValorVenta_SinImpuesto.BackColor = Color.Azure;
+            this.TBValorVenta_Excento.BackColor = Color.Azure;
         }
 
         private void TBValorVenta_SinImpuesto_Leave(object sender, EventArgs e)
         {
             //Color de texboxt cuando este posee el FOCUS Activado
-            this.TBValorVenta_SinImpuesto.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBValorVenta_Excento.BackColor = Color.FromArgb(3, 155, 229);
 
             // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
             TextBox tb = (TextBox)sender;
@@ -3444,16 +3625,16 @@ namespace Presentacion
                     
                     //Panel - Valores
                     this.TBCompraPromedio.Text = Valor_Promedio;
-                    this.TBValorFinal.Text = Valor_Final;
-                    this.TBValorVenta_SinImpuesto.Text = Valor_Excento;
-                    this.TBValorVenta.Text = Valor_NoExcento;
+                    this.TBCompraFinal.Text = Valor_Final;
+                    this.TBValorVenta_Excento.Text = Valor_Excento;
+                    this.TBValorVenta_NoExcento.Text = Valor_NoExcento;
                     this.TBVentaMayorista.Text = Valor_Mayorista;
-                    this.TBComision.Text = Comision;
-                    this.TBValorParaComision.Text = Valor_Comision;
-                    this.TBCantidadMininaCliente.Text = Minimo_Cliente;
-                    this.TBCantidadMaximaCliente.Text = Maximo_Cliente;
-                    this.TBMinimoMayorista.Text = Minimo_Mayorista;
-                    this.TBMaximoMayorista.Text = Maximo_Mayorista;
+                    this.TBComision_Porcentaje.Text = Comision;
+                    this.TBComision_Valor.Text = Valor_Comision;
+                    this.TBVentaMinina_Cliente.Text = Minimo_Cliente;
+                    this.TBVentaMaxima_Cliente.Text = Maximo_Cliente;
+                    this.TBVentaMinima_Mayorista.Text = Minimo_Mayorista;
+                    this.TBVentaMaxima_Mayorista.Text = Maximo_Mayorista;
 
                     //
                     this.TBUbicacion.Text = Ubicacion;
@@ -3464,12 +3645,12 @@ namespace Presentacion
                     //
                     this.TBLotedeingreso.Text = Lote;
                     this.TBValor_Lote.Text = Valor_Lote;
-                    this.DTFechaDeVencimiento.Text = Fecha_Vencimiento;
+                    this.DTLote_Vencimiento.Text = Fecha_Vencimiento;
 
                     //
-                    this.TBCodigodeBarra.Text = CodigoDeBarra;
-                    this.TBProveedor.Text = Proveedor;
-                    this.TBImpuesto.Text = Impuesto;
+                    this.TBBuscar_CodigodeBarra.Text = CodigoDeBarra;
+                    this.TBBuscar_Proveedor.Text = Proveedor;
+                    this.TBBuscar_Impuesto.Text = Impuesto;
 
                     //Se proceden a Validar los Chexboxt si estan activos o no
 
