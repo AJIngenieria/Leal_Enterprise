@@ -25,6 +25,11 @@ namespace Negocio
             return Datos.Buscar(filtro, auto);
         }
 
+        public static DataTable BuscarExistencia_SQL(string filtro)
+        {
+            Conexion_Proveedor Datos = new Conexion_Proveedor();
+            return Datos.BuscarExistencia_SQL(filtro);
+        }
 
         public static string Guardar_DatosBasicos
             (

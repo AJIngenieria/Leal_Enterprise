@@ -71,13 +71,12 @@ namespace Presentacion
                 frmProductos frmPro = frmProductos.GetInstancia();
                 if (frmPro.Examinar)
                 {
-                    string idimpuesto, impuesto,valor;
-                    idimpuesto = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
+                    string impuesto;
                     impuesto = this.DGFiltro_Resultados.CurrentRow.Cells["Impuesto"].Value.ToString();
-                    valor = this.DGFiltro_Resultados.CurrentRow.Cells["Valor"].Value.ToString();
-                    frmPro.setImpuesto(idimpuesto, impuesto,valor);
+                    frmPro.setImpuesto(impuesto);
                     this.Hide();
                 }
+
             }
             catch (Exception ex)
             {

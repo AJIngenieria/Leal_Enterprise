@@ -24,6 +24,12 @@ namespace Negocio
             return Datos.Buscar(filtro, auto);
         }
 
+        public static DataTable Buscar_Igualdad(string filtro)
+        {
+            Conexion_Producto Datos = new Conexion_Producto();
+            return Datos.Buscar_Igualdad(filtro);
+        }
+
         public static string Guardar_DatosBasicos
             (
                 //Datos Basicos

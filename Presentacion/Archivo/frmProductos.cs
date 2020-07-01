@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using System.Globalization;
-
 using Negocio;
 
 namespace Presentacion
@@ -110,6 +108,9 @@ namespace Presentacion
 
             //Panel - Cantidades - Otros Datos
             this.CBUnidad.SelectedIndex = 0;
+
+            //
+            this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
         }
 
         private void Habilitar()
@@ -215,8 +216,10 @@ namespace Presentacion
             this.TBLotedeingreso.BackColor = Color.FromArgb(3, 155, 229);
             this.TBValor_Lote.ReadOnly = false;
             this.TBValor_Lote.BackColor = Color.FromArgb(3, 155, 229);
-            this.TBLote_Stock.Enabled = false;
-            this.TBLote_Stock.BackColor = Color.FromArgb(72, 209, 204);
+            this.TBLote_Venta.ReadOnly = false;
+            this.TBLote_Venta.BackColor = Color.FromArgb(3, 155, 229);
+            this.TBLote_Stock.ReadOnly = false;
+            this.TBLote_Stock.BackColor = Color.FromArgb(3, 155, 229);
             this.DTLote_Vencimiento.Enabled = true;
             this.DTLote_Vencimiento.BackColor = Color.FromArgb(3, 155, 229);
 
@@ -311,7 +314,7 @@ namespace Presentacion
             this.DTLote_Vencimiento.Enabled = true;
             this.DGDetalles_Lotes.DataSource = null;
 
-            this.PB_Imagen.Image = Properties.Resources.Logo_Leal_Enterprise;
+            this.PB_Imagen.BackgroundImage = Properties.Resources.Logo_Leal_Enterprise;
 
             //Se realiza el FOCUS al panel y campo de texto iniciales
             this.TBNombre.Select();
@@ -374,11 +377,9 @@ namespace Presentacion
             this.TBBuscar_Proveedor.Text = proveedor;
         }
 
-        public void setImpuesto(string idimpuesto, string impuesto, string valor)
+        public void setImpuesto(string impuesto)
         {
-            this.TBIdimpuesto.Text = idimpuesto;
             this.TBBuscar_Impuesto.Text = impuesto;
-            //this.TBImpuesto_Valor.Text = valor;
         }
                 
         private void Validaciones_SQL()
@@ -463,6 +464,9 @@ namespace Presentacion
                 //Panel Lote
                 this.DtDetalle_Lote.Columns.Add("Lote", System.Type.GetType("System.String"));
                 this.DtDetalle_Lote.Columns.Add("Stock", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Valor de Compra", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Valor de Venta", System.Type.GetType("System.String"));
+                this.DtDetalle_Lote.Columns.Add("Vencimiento", System.Type.GetType("System.String"));
 
                 //Panel Codigo de Barra
                 this.DtDetalle_CodigoDeBarra.Columns.Add("Codigo de Barra", System.Type.GetType("System.String"));
@@ -493,31 +497,94 @@ namespace Presentacion
                 
 
                 //Medidas de las Columnas - Codigo de Barra
-                this.DGDetalle_CodigoDeBarra.Columns[0].HeaderText = "Codigo de Barra";
-                this.DGDetalle_CodigoDeBarra.Columns[0].Width = 295;
+                this.DGDetalle_CodigoDeBarra.Columns[0].Width = 370;
 
-                this.DGDetalle_Proveedor.Columns[1].HeaderText = "Proveedor";
-                this.DGDetalle_Proveedor.Columns[1].Width = 295;
-                this.DGDetalle_Impuesto.Columns[1].HeaderText = "Impuesto";
-                this.DGDetalle_Impuesto.Columns[1].Width = 295;
+                this.DGDetalle_Proveedor.Columns[1].Width = 270;
+                this.DGDetalle_Proveedor.Columns[2].Width = 100;
+
+                this.DGDetalles_Ubicacion.Columns[1].Width = 220;
+                this.DGDetalles_Ubicacion.Columns[2].Width = 75;
+                this.DGDetalles_Ubicacion.Columns[3].Width = 75;
+
+                this.DGDetalle_Impuesto.Columns[1].Width = 270;
+                this.DGDetalle_Impuesto.Columns[2].Width = 100;
+
+                this.DGDetalle_Igualdad.Columns[1].Width = 115;
+                this.DGDetalle_Igualdad.Columns[2].Width = 255;
+                this.DGDetalle_Igualdad.Columns[3].Width = 100;
+
+                this.DGDetalles_Lotes.Columns[0].Width = 80;
+                this.DGDetalles_Lotes.Columns[1].Width = 80;
+                this.DGDetalles_Lotes.Columns[2].Width = 130;
+                this.DGDetalles_Lotes.Columns[3].Width = 130;
+                this.DGDetalles_Lotes.Columns[4].Width = 130;
 
                 //Formato de Celdas
                 //this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Format = "##,##0.00";
 
-                //Aliniacion de las Celdas de Cada Columna - Panel de Ubicacion
-                this.DGDetalles_Ubicacion.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                //************************************* Alineacion de las Celdas *************************************
+
+                //Panel Codigo de Barra
+                this.DGDetalle_CodigoDeBarra.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Proveedores
+                this.DGDetalle_Proveedor.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Proveedor.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Ubicaciones
                 this.DGDetalles_Ubicacion.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles_Ubicacion.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Ubicacion.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                //Aliniacion de las Celdas de Cada Columna - Panel Lotes
+                //Panel Impuestos
+                this.DGDetalle_Impuesto.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Impuesto.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Igualdad
+                this.DGDetalle_Igualdad.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Igualdad.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Igualdad.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Lotes
                 this.DGDetalles_Lotes.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
                 this.DGDetalles_Lotes.Columns[1].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[2].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[3].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[4].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                //Aliniacion de las Celdas de Cada Columna - Panel Codigo de Barra
+
+
+                //************************************* Aliniacion de Emcabezados *************************************
+
+                //Panel Codigo de Barra
                 this.DGDetalle_CodigoDeBarra.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
+                //Panel Proveedores
+                this.DGDetalle_Proveedor.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Proveedor.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
 
-                //Ocultacion de Columnas
+                //Panel Ubicaciones
+                this.DGDetalles_Ubicacion.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Ubicacion.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Ubicacion.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Impuestos
+                this.DGDetalle_Impuesto.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Impuesto.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Igualdad
+                this.DGDetalle_Igualdad.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Igualdad.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalle_Igualdad.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //Panel Lotes
+                this.DGDetalles_Lotes.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[3].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                this.DGDetalles_Lotes.Columns[4].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
+
+                //************************************* Ocultacion de Columnas *************************************
                 this.DGDetalle_Igualdad.Columns[0].Visible = false;
                 this.DGDetalle_Impuesto.Columns[0].Visible = false;
                 this.DGDetalle_Proveedor.Columns[0].Visible = false;
@@ -530,28 +597,27 @@ namespace Presentacion
             }
         }
 
-        private void Detalle_CodigoDeBarra(string codigodebarra)
+        public void DetalleIgualdad_SQL(int idproducto, string codigo, string producto, string marca)
         {
             try
             {
-                //
-                bool Agregar_CodigoDeBarra = true;
-
-                //Panel Codigo de Barra
-                foreach (DataRow FilaTemporal in DtDetalle_CodigoDeBarra.Rows)
+                bool Agregar = true;
+                foreach (DataRow FilaTemporal in DtDetalle_Igualdad.Rows)
                 {
-                    if (Convert.ToString(FilaTemporal["Codigo"]) == codigodebarra)
+                    if (Convert.ToInt32(FilaTemporal["Idproducto"]) == idproducto)
                     {
-                        Agregar_CodigoDeBarra = false;
-                        this.MensajeError("El Codigo de Barra ya se Encuentra Agregado en la Lista");
+                        Agregar = false;
+                        this.MensajeError("El Producto ya se encuentra agregado en la lista.");
                     }
                 }
 
-                if (Agregar_CodigoDeBarra)
+                if (Agregar)
                 {
-                    DataRow Fila = DtDetalle_CodigoDeBarra.NewRow();
-                    Fila["Codigo de Barra"] = codigodebarra;
-                    this.DtDetalle_CodigoDeBarra.Rows.Add(Fila);
+                    DataRow Fila = DtDetalle_Igualdad.NewRow();
+                    Fila["Idproducto"] = idproducto;
+                    Fila["Producto"] = producto;
+                    Fila["Marca"] = marca;
+                    this.DtDetalle_Igualdad.Rows.Add(Fila);                    
                 }
             }
             catch (Exception ex)
@@ -560,33 +626,56 @@ namespace Presentacion
             }
         }
 
-        private void Detalle_Ubicacion(int idbodega, string ubicacion, string estante, string nivel)
+        public void DetalleImpuesto_SQL(int idimpuesto, string impuesto, string valor)
         {
             try
             {
-                //
-                bool Agregar_Ubicacion = true;
-
-                idbodega = Convert.ToInt32(this.CBBodega.SelectedValue);
-                
-                //Panel Ubicacion
-                foreach (DataRow FilaTemporal in DtDetalle_Ubicacion.Rows)
+                bool Agregar = true;
+                foreach (DataRow FilaTemporal in DtDetalle_Impuesto.Rows)
                 {
-                    if (Convert.ToInt32(FilaTemporal["Idbodega"]) == idbodega)
+                    if (Convert.ToInt32(FilaTemporal["Idimpuesto"]) == idimpuesto)
                     {
-                        Agregar_Ubicacion = false;
-                        this.MensajeError("La Ubicación del Producto ya se Encuentra en la Lista");
+                        Agregar = false;
+                        this.MensajeError("El Impuesto ya se encuentra agregado en la lista.");
                     }
                 }
 
-                if (Agregar_Ubicacion)
+                if (Agregar)
                 {
-                    DataRow Fila = DtDetalle_Ubicacion.NewRow();
-                    Fila["Idbodega"] = idbodega;
-                    Fila["Ubicacion"] = ubicacion;
-                    Fila["Estante"] = estante;
-                    Fila["Nivel"] = nivel;
-                    this.DtDetalle_Ubicacion.Rows.Add(Fila);
+                    DataRow Fila = DtDetalle_Impuesto.NewRow();
+                    Fila["Idimpuesto"] = idimpuesto;
+                    Fila["Impuesto"] = impuesto;
+                    Fila["Valor"] = valor;
+                    this.DtDetalle_Impuesto.Rows.Add(Fila);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        public void DetalleProveedor_SQL(int idproveedor, string proveedor, string documento)
+        {
+            try
+            {
+                bool Agregar = true;
+                foreach (DataRow FilaTemporal in DtDetalle_Proveedor.Rows)
+                {
+                    if (Convert.ToInt32(FilaTemporal["Idproveedor"]) == idproveedor)
+                    {
+                        Agregar = false;
+                        this.MensajeError("El Proveedor ya se encuentra agregado en la lista.");
+                    }
+                }
+
+                if (Agregar)
+                {
+                    DataRow Fila = DtDetalle_Proveedor.NewRow();
+                    Fila["Idproveedor"] = idproveedor;
+                    Fila["Proveedor"] = proveedor;
+                    Fila["Documento"] = documento;
+                    this.DtDetalle_Proveedor.Rows.Add(Fila);
                 }
             }
             catch (Exception ex)
@@ -862,26 +951,17 @@ namespace Presentacion
                 else if (this.TBUbicacion.Text == String.Empty)
                 {
                     this.MensajeError("Por favor Especifique la Ubicación dentro de la Bodega seleccionada");
+                    this.TBUbicacion.Select();
                 }
                 else
                 {
-                    bool agregar = true;
-                    foreach (DataRow Fila in DtDetalle_Ubicacion.Rows)
-                    {
-                        if (Convert.ToString(Fila["Idbodega"]) == CBBodega.SelectedValue.ToString())
-                        {
-                            this.MensajeError("La Ubicacion que desea agregar, ya se encuentra en la lista");
-                        }
-                    }
-                    if (agregar)
-                    {
-                        DataRow fila = this.DtDetalle_Ubicacion.NewRow();
-                        fila["Idbodega"] = Convert.ToInt32(this.CBBodega.SelectedValue);
-                        fila["Ubicacion"] = this.TBUbicacion.Text;
-                        fila["Estante"] = this.TBEstante.Text;
-                        fila["Nivel"] = this.TBNivel.Text;
-                        this.DtDetalle_Ubicacion.Rows.Add(fila);
-                    }
+
+                    DataRow fila = this.DtDetalle_Ubicacion.NewRow();
+                    fila["Idbodega"] = Convert.ToInt32(this.CBBodega.SelectedValue);
+                    fila["Ubicacion"] = this.TBUbicacion.Text;
+                    fila["Estante"] = this.TBEstante.Text;
+                    fila["Nivel"] = this.TBNivel.Text;
+                    this.DtDetalle_Ubicacion.Rows.Add(fila);
 
                     //
                     this.TBUbicacion.Clear();
@@ -915,12 +995,32 @@ namespace Presentacion
         {
             try
             {
-                DataTable Tabla = new DataTable();
+                if (this.TBBuscar_CodigodeBarra.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el Codigo de Barra que desea agregar");
+                    this.TBBuscar_CodigodeBarra.Select();
+                }
+                
+                else
+                {
+                    bool agregar = true;
+                    foreach (DataRow Fila in DtDetalle_CodigoDeBarra.Rows)
+                    {
+                        if (Convert.ToString(Fila["Codigo de Barra"]) == TBBuscar_CodigodeBarra.Text)
+                        {
+                            this.MensajeError("El Codigo de Barra que desea agregar ya se encuentra en la lista");
+                        }
+                    }
+                    if (agregar)
+                    {
+                        DataRow fila = this.DtDetalle_CodigoDeBarra.NewRow();
+                        fila["Codigo de Barra"] = this.TBBuscar_CodigodeBarra.Text;
+                        this.DtDetalle_CodigoDeBarra.Rows.Add(fila);
+                    }
 
-                this.Detalle_CodigoDeBarra(Convert.ToString(Tabla.Rows[0][0]));
-
-                //
-                this.TBBuscar_CodigodeBarra.Clear();
+                    //
+                    this.TBBuscar_CodigodeBarra.Clear();
+                }
             }
             catch (Exception ex)
             {
@@ -930,7 +1030,18 @@ namespace Presentacion
 
         private void btnEliminar_CodigosDeBarra_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int Fila = this.DGDetalle_CodigoDeBarra.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_CodigoDeBarra.Rows[Fila];
 
+                //Se remueve la fila
+                this.DtDetalle_CodigoDeBarra.Rows.Remove(row);
+            }
+            catch (Exception ex)
+            {
+                MensajeError("Por favor seleccione el Codigo de Barra que desea Remover del registo");
+            }
         }
         
         private void btnAgregar_Lotes_Click(object sender, EventArgs e)
@@ -1581,7 +1692,14 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    
+                    if (CBImpuesto.Checked)
+                    {
+                        this.TBValorVenta_NoExcento.Select();
+                    }
+                    else
+                    {
+                        this.TBVentaMayorista.Select();
+                    }
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2265,7 +2383,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBLotedeingreso.Select();
+                    this.TBLote_Venta.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -2367,7 +2485,31 @@ namespace Presentacion
 
         private void TBLote_Venta_Leave(object sender, EventArgs e)
         {
+            //Color de texboxt cuando este posee el FOCUS Activado
             this.TBLote_Venta.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBLote_Stock_Leave(object sender, EventArgs e)
@@ -2407,7 +2549,45 @@ namespace Presentacion
 
         private void btnAgregar_Igualdad_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (this.TBBuscar_Igualdad.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el Producto o Servicio de Igualdad que desea Agregar");
+                    this.TBBuscar_Igualdad.Select();
+                }
+                else
+                {
+                    bool agregar = true;
+                    foreach (DataRow Fila in DtDetalle_Igualdad.Rows)
+                    {
+                        if (Convert.ToString(Fila["Codigo"]) == TBBuscar_Igualdad.Text)
+                        {
+                            this.MensajeError("El producto o servicio que desea agregar ya se encuentra en la lista");
+                        }
+                        else if(Convert.ToString(Fila["Producto"]) == TBBuscar_Igualdad.Text)
+                        {
+                            this.MensajeError("El producto o servicio que desea agregar ya se encuentra en la lista");
+                        }
+                    }
+                    if (agregar)
+                    {
+                        DataRow fila = this.DtDetalle_Igualdad.NewRow();
+                        fila["Idproducto"] = Convert.ToInt32(this.TBIdproducto.Text);
+                        fila["Codigo"] = this.TBUbicacion.Text;
+                        fila["Producto"] = this.TBEstante.Text;
+                        fila["Marca"] = this.TBNivel.Text;
+                        this.DtDetalle_Igualdad.Rows.Add(fila);
+                    }
 
+                    //
+                    this.TBBuscar_Igualdad.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAgregar_Impuesto_Click(object sender, EventArgs e)
@@ -2417,23 +2597,114 @@ namespace Presentacion
 
         private void btnAgregar_Proveedor_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (this.TBBuscar_Proveedor.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el Proveedor que desea Agregar");
+                    this.TBBuscar_Proveedor.Select();
+                }
+                else
+                {
+                    bool agregar = true;
+                    foreach (DataRow Fila in DtDetalle_Proveedor.Rows)
+                    {
+                        if (Convert.ToString(Fila["Codigo"]) == TBBuscar_Igualdad.Text)
+                        {
+                            this.MensajeError("El producto o servicio que desea agregar ya se encuentra en la lista");
+                        }
+                        else if (Convert.ToString(Fila["Producto"]) == TBBuscar_Igualdad.Text)
+                        {
+                            this.MensajeError("El producto o servicio que desea agregar ya se encuentra en la lista");
+                        }
+                    }
+                    if (agregar)
+                    {
+                        DataRow fila = this.DtDetalle_Proveedor.NewRow();
+                        fila["Idproveedor"] = Convert.ToInt32(this.TBIdproveedor.Text);
+                        fila["Proveedor"] = this.TBBuscar_Proveedor.Text;
+                        fila["Documento"] = this.TBEstante.Text;
+                        this.DtDetalle_Proveedor.Rows.Add(fila);
+                    }
 
+                    //
+                    this.TBBuscar_Proveedor.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnAgregar_Lote_Click(object sender, EventArgs e)
         {
+            try
+            {
+                if (this.TBLotedeingreso.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el numero de Lote que desea agregar");
+                    this.TBLotedeingreso.Select();
+                }
+                else if (this.TBValor_Lote.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el valor de compra del Lote que desea agregar");
+                    this.TBValor_Lote.Select();
+                }
+                else if (this.TBLote_Venta.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique el valor de venta del Lote que desea agregar");
+                    this.TBLote_Venta.Select();
+                }
+                else if (this.TBLote_Stock.Text == String.Empty)
+                {
+                    this.MensajeError("Por favor Especifique la Cantidad de Productos que ingresaran con el Lote que desea agregar");
+                    this.TBLote_Stock.Select();
+                }
+                else
+                {
+                    bool agregar = true;
+                    foreach (DataRow Fila in DtDetalle_Lote.Rows)
+                    {
+                        if (Convert.ToString(Fila["Lote"]) == TBLotedeingreso.Text)
+                        {
+                            this.MensajeError("El Nº de Lote que desea agregar ya se encuentra en la lista");
+                        }
+                    }
+                    if (agregar)
+                    {
+                        DataRow fila = this.DtDetalle_Lote.NewRow();
+                        fila["Lote"] = this.TBLotedeingreso.Text;
+                        fila["Valor de Compra"] = this.TBValor_Lote.Text;
+                        fila["Valor de Venta"] = this.TBLote_Venta.Text;
+                        fila["Stock"] = this.TBLote_Stock.Text;
+                        fila["Vencimiento"] = this.DTLote_Vencimiento.Value.ToString("dd/MM/yyyy");
+                        this.DtDetalle_Lote.Rows.Add(fila);
+                    }
 
+                    //
+                    this.TBBuscar_Proveedor.Clear();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void btnEliminar_Lote_Click(object sender, EventArgs e)
         {
             try
             {
-                //int Fila=this.dgd.curr
+                int Fila = this.DGDetalles_Lotes.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_Lote.Rows[Fila];
+
+                //Se remueve la fila
+                this.DtDetalle_Lote.Rows.Remove(row);
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message + ex.StackTrace);
+                MensajeError("Por favor seleccione el Nº de Lote que desea Remover del registo");
             }
         }
 
@@ -2456,6 +2727,1072 @@ namespace Presentacion
             {
                 MensajeError("Por favor seleccione la Igualdad que desea Remover del registo");
             }
+        }
+
+        private void TBBuscar_Igualdad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProductos.Buscar_Igualdad(this.TBBuscar_Igualdad.Text.Trim());
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.DetalleIgualdad_SQL
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2]),
+                                Convert.ToString(Tabla.Rows[0][3])
+                            );
+
+                        lblTotalIgualdad.Text = "Productos Agregados: " + Convert.ToString(DGDetalle_Igualdad.Rows.Count);
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBBuscar_Igualdad.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBBuscar_Impuesto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fImpuesto.BuscarExistencia_SQL(this.TBBuscar_Impuesto.Text.Trim());
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El Impuesto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.DetalleImpuesto_SQL
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2])
+                            );
+
+                        lblTotalImpuesto.Text = "Impuestos Agregados: " + Convert.ToString(DGDetalle_Impuesto.Rows.Count);
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBBuscar_Impuesto.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void TBBuscar_Proveedor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == Convert.ToChar(Keys.Enter))
+                {
+                    DataTable Tabla = new DataTable();
+                    Tabla = fProveedor.BuscarExistencia_SQL(this.TBBuscar_Proveedor.Text.Trim());
+                    if (Tabla.Rows.Count <= 0)
+                    {
+                        this.MensajeError("El producto el cual desea agregar no se encuentra registrado en su Base de Datos");
+                    }
+                    else
+                    {
+                        this.DetalleProveedor_SQL
+                            (
+                                Convert.ToInt32(Tabla.Rows[0][0]),
+                                Convert.ToString(Tabla.Rows[0][1]),
+                                Convert.ToString(Tabla.Rows[0][2])
+                            );
+
+                        lblTotalProveedor.Text = "Proveedores Agregados: " + Convert.ToString(DGDetalle_Proveedor.Rows.Count);
+
+                        //Se procede a limpiar los campos de texto utilizados para el filtro
+
+                        this.TBBuscar_Proveedor.Clear();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEliminar_Impuesto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Fila = this.DGDetalle_Impuesto.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_Impuesto.Rows[Fila];
+
+                //Se remueve la fila
+                this.DtDetalle_Impuesto.Rows.Remove(row);
+            }
+            catch (Exception ex)
+            {
+                MensajeError("Por favor seleccione el Impuesto que desea Remover del registo");
+            }
+        }
+
+        private void btnEliminar_Proveedor_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int Fila = this.DGDetalle_Proveedor.CurrentCell.RowIndex;
+                DataRow row = this.DtDetalle_Proveedor.Rows[Fila];
+
+                //Se remueve la fila
+                this.DtDetalle_Impuesto.Rows.Remove(row);
+            }
+            catch (Exception ex)
+            {
+                MensajeError("Por favor seleccione el Proveedor que desea Remover del registo");
+            }
+        }
+
+        private void TBCosto_Fabricacion_Enter(object sender, EventArgs e)
+        {
+            this.TBCosto_Fabricacion.BackColor = Color.Azure;
+        }
+
+        private void TBCostos_Materiales_Enter(object sender, EventArgs e)
+        {
+            this.TBCostos_Materiales.BackColor = Color.Azure;
+        }
+
+        private void TBCostos_Exportacion_Enter(object sender, EventArgs e)
+        {
+            this.TBCostos_Exportacion.BackColor = Color.Azure;
+        }
+
+        private void TBCostos_Imprtacion_Enter(object sender, EventArgs e)
+        {
+            this.TBCostos_Imprtacion.BackColor = Color.Azure;
+        }
+
+        private void TBCostos_Seguridad_Enter(object sender, EventArgs e)
+        {
+            this.TBCostos_Seguridad.BackColor = Color.Azure;
+        }
+
+        private void TBCostos_Adicional_Enter(object sender, EventArgs e)
+        {
+            this.TBCostos_Adicional.BackColor = Color.Azure;
+        }
+
+        private void TBCosto_Fabricacion_Leave(object sender, EventArgs e)
+        {
+            this.TBCosto_Fabricacion.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCostos_Materiales_Leave(object sender, EventArgs e)
+        {
+            this.TBCostos_Materiales.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCostos_Exportacion_Leave(object sender, EventArgs e)
+        {
+            this.TBCostos_Exportacion.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCostos_Imprtacion_Leave(object sender, EventArgs e)
+        {
+            this.TBCostos_Imprtacion.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCostos_Seguridad_Leave(object sender, EventArgs e)
+        {
+            this.TBCostos_Seguridad.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCostos_Adicional_Leave(object sender, EventArgs e)
+        {
+            this.TBCostos_Adicional.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
+        }
+
+        private void TBCosto_Fabricacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCostos_Materiales_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCostos_Exportacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCostos_Imprtacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCostos_Seguridad_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCostos_Adicional_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBCosto_Fabricacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCostos_Materiales.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCosto_Fabricacion.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCosto_Fabricacion.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCostos_Exportacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCostos_Imprtacion.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Exportacion.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Exportacion.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCostos_Imprtacion_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCostos_Seguridad.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Imprtacion.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Imprtacion.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCostos_Seguridad_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCostos_Adicional.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Seguridad.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Seguridad.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCostos_Materiales_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCostos_Exportacion.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Materiales.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Materiales.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBCostos_Adicional_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    this.TBCompraPromedio.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Adicional.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBCostos_Adicional.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnExaminar_Igualdad_Click(object sender, EventArgs e)
+        {
+            frmFiltro_Producto frmFiltro_Producto = new frmFiltro_Producto();
+            frmFiltro_Producto.ShowDialog();
+        }
+
+        private void TBValor_Lote_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBLote_Venta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBLote_Stock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+
+            //permitir teclas de control como retroceso
+            else if (Char.IsControl(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TBLote_Venta_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+
+                    this.TBLote_Stock.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBLote_Venta.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBLote_Venta.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void TBLote_Stock_KeyUp(object sender, KeyEventArgs e)
+        {
+            try
+            {
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+
+                    this.TBLotedeingreso.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+                                this.Digitar = false;
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBLote_Stock.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBLote_Stock.Select();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + ex.StackTrace);
+            }
+        }
+
+        private void btnExaminar_Proveedor_Click(object sender, EventArgs e)
+        {
+            frmFiltro_Proveedor frmFiltro_Proveedor = new frmFiltro_Proveedor();
+            frmFiltro_Proveedor.ShowDialog();
+        }
+
+        private void btnExaminar_Impuesto_Click(object sender, EventArgs e)
+        {
+            frmFiltro_Impuestos frmFiltro_Impuestos = new frmFiltro_Impuestos();
+            frmFiltro_Impuestos.ShowDialog();
         }
 
         private void TBValorVenta_SinImpuesto_KeyPress(object sender, KeyPressEventArgs e)
@@ -2833,15 +4170,7 @@ namespace Presentacion
             {
                 if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
                 {
-                    if (CBManejaComision.Checked)
-                    {
-                        //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
-                        this.TBComision_Porcentaje.Select();
-                    }
-                    else if (CBManejaComision.Checked == false)
-                    {
-                        this.TBVentaMinina_Cliente.Select();
-                    }
+                    this.TBCosto_Fabricacion.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -3302,18 +4631,6 @@ namespace Presentacion
             }
         }
 
-        private void btnExaminar_Proveedor_Click(object sender, EventArgs e)
-        {
-            frmFiltro_Proveedor frmFiltro_Proveedor = new frmFiltro_Proveedor();
-            frmFiltro_Proveedor.ShowDialog();
-        }
-
-        private void btnExaminar_Impuesto_Click(object sender, EventArgs e)
-        {
-            frmFiltro_Impuestos frmFiltro_Impuestos = new frmFiltro_Impuestos();
-            frmFiltro_Impuestos.ShowDialog();
-        }
-
         //******************** FOCUS LEAVE VALORES ********************
 
         private void TBValordecompra_Leave(object sender, EventArgs e)
@@ -3391,7 +4708,31 @@ namespace Presentacion
 
         private void TBValor_Lote_Leave(object sender, EventArgs e)
         {
+            //Color de texboxt cuando este posee el FOCUS Activado
             this.TBValor_Lote.BackColor = Color.FromArgb(3, 155, 229);
+
+            // El control TextBox ha perdido el foco. Referenciamos el control TextBox que ha desencadenado el evento.
+            TextBox tb = (TextBox)sender;
+
+            // Primero verificamos si el valor se puede convertir a Decimal.
+            double numero = default(double);
+            bool bln = double.TryParse(tb.Text, out numero);
+
+            if ((!(bln)))
+            {
+                // No es un valor decimal válido; limpiamos el control.
+                //tb.Clear();
+                return;
+            }
+
+            // En la propiedad Tag guardamos el valor con todos los decimales.
+            //
+            tb.Tag = numero;
+
+            // Y acto seguido formateamos el valor
+            // a monetario con dos decimales.
+            //
+            tb.Text = string.Format("{0:N2}", numero);
         }
 
         private void TBCodigodeBarra_Enter(object sender, EventArgs e)
@@ -3495,11 +4836,10 @@ namespace Presentacion
 
                         this.btnEliminar.Enabled = true;
                         this.btnImprimir.Enabled = true;
-                        this.DGResultados.Enabled = true;
                     }
                     else
                     {
-                        this.Limpiar_Datos();
+                        //this.Limpiar_Datos();
 
                         //Se Limpian las Filas y Columnas de la tabla
                         this.DGResultados.DataSource = null;

@@ -69,9 +69,9 @@ namespace Presentacion
             try
             {
                 frmProductos frmPro = frmProductos.GetInstancia();
+                frmOrdenDeCompra frmOCom = frmOrdenDeCompra.GetInstancia();
                 frmInventario_Ingreso frmInv = frmInventario_Ingreso.GetInstancia();
                 frmCotizacionDeCompra frmCot = frmCotizacionDeCompra.GetInstancia();
-                frmOrdenDeCompra frmOCom = frmOrdenDeCompra.GetInstancia();
 
                 //Variables para realizar los filtro 
                 string idproveedor, proveedor, documento;
@@ -79,7 +79,7 @@ namespace Presentacion
                 if (frmPro.Examinar)
                 {
                     idproveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Codigo"].Value.ToString();
-                    proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Proveedor"].Value.ToString();
+                    proveedor = this.DGFiltro_Resultados.CurrentRow.Cells["Documento"].Value.ToString();
                     frmPro.setProveedor(idproveedor, proveedor);
                     this.Hide();
                 }

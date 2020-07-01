@@ -72,6 +72,37 @@ namespace Datos
             }
         }
 
+        public DataTable Buscar_Igualdad(string Valor)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.Producto", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Filtro", SqlDbType.VarChar).Value = Valor;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
+
         public string Guardar_DatosBasicos(Entidad_Productos Obj)
         {
             string Rpta = "";
