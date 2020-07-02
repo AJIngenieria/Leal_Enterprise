@@ -40,7 +40,7 @@ namespace Datos
             }
         }
 
-        public DataTable Buscar(string Valor, int Auto)
+        public DataTable Buscar(string Valor)
         {
             SqlDataReader Resultado;
             DataTable Tabla = new DataTable();
@@ -51,7 +51,6 @@ namespace Datos
                 SqlCommand Comando = new SqlCommand("Consulta.Impuesto", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Auto;
                 Comando.Parameters.Add("@Filtro", SqlDbType.VarChar).Value = Valor;
 
                 SqlCon.Open();
@@ -113,15 +112,20 @@ namespace Datos
                 SqlCommand Comando = new SqlCommand("Archivo.LI_Impuesto", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                //Datos Auxiliares
+                //Datos Auxiliares y Llave Primaria
                 Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Obj.Auto;
+                Comando.Parameters.Add("@Idimpuesto", SqlDbType.Int).Value = Obj.Idimpuesto;
 
                 //Panel Datos Basicos
                 Comando.Parameters.Add("@Impuesto", SqlDbType.VarChar).Value = Obj.Impuesto;
                 Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Obj.Valor;
                 Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
-                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
-
+                Comando.Parameters.Add("@MinCom", SqlDbType.VarChar).Value = Obj.MontoDeCompra;
+                Comando.Parameters.Add("@MinVen", SqlDbType.VarChar).Value = Obj.MontoDeVenta;
+                Comando.Parameters.Add("@MinSer", SqlDbType.VarChar).Value = Obj.MontoDeServicio;
+                Comando.Parameters.Add("@Compra", SqlDbType.VarChar).Value = Obj.Compra;
+                Comando.Parameters.Add("@Venta", SqlDbType.VarChar).Value = Obj.Venta;
+                Comando.Parameters.Add("@Servicio", SqlDbType.VarChar).Value = Obj.Servicio;
 
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "Error al Realizar el Registro";
@@ -153,10 +157,16 @@ namespace Datos
                 Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Obj.Auto;
 
                 //Panel Datos Basicos
+                Comando.Parameters.Add("@Idimpuesto", SqlDbType.VarChar).Value = Obj.Idimpuesto;
                 Comando.Parameters.Add("@Impuesto", SqlDbType.VarChar).Value = Obj.Impuesto;
                 Comando.Parameters.Add("@Valor", SqlDbType.VarChar).Value = Obj.Valor;
                 Comando.Parameters.Add("@Descripcion", SqlDbType.VarChar).Value = Obj.Descripcion;
-                Comando.Parameters.Add("@Estado", SqlDbType.Int).Value = Obj.Estado;
+                Comando.Parameters.Add("@MinCom", SqlDbType.VarChar).Value = Obj.MontoDeCompra;
+                Comando.Parameters.Add("@MinVen", SqlDbType.VarChar).Value = Obj.MontoDeVenta;
+                Comando.Parameters.Add("@MinSer", SqlDbType.VarChar).Value = Obj.MontoDeServicio;
+                Comando.Parameters.Add("@Compra", SqlDbType.VarChar).Value = Obj.Compra;
+                Comando.Parameters.Add("@Venta", SqlDbType.VarChar).Value = Obj.Venta;
+                Comando.Parameters.Add("@Servicio", SqlDbType.VarChar).Value = Obj.Servicio;
 
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() == 1 ? "OK" : "Error al Actualizar el Registro";

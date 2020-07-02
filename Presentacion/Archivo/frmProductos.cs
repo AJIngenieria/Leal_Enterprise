@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class frmProductos : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmProductos _Instancia;
 
         public static frmProductos GetInstancia()
@@ -380,6 +380,7 @@ namespace Presentacion
         public void setImpuesto(string impuesto)
         {
             this.TBBuscar_Impuesto.Text = impuesto;
+            this.TBIdimpuesto.Text = impuesto;
         }
                 
         private void Validaciones_SQL()
@@ -2753,7 +2754,7 @@ namespace Presentacion
 
                         lblTotalIgualdad.Text = "Productos Agregados: " + Convert.ToString(DGDetalle_Igualdad.Rows.Count);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBBuscar_Igualdad.Clear();
                     }
@@ -2772,7 +2773,7 @@ namespace Presentacion
                 if (e.KeyChar == Convert.ToChar(Keys.Enter))
                 {
                     DataTable Tabla = new DataTable();
-                    Tabla = fImpuesto.BuscarExistencia_SQL(this.TBBuscar_Impuesto.Text.Trim());
+                    Tabla = fImpuesto.BuscarExistencia_SQL(this.TBIdimpuesto.Text.Trim());
                     if (Tabla.Rows.Count <= 0)
                     {
                         this.MensajeError("El Impuesto el cual desea agregar no se encuentra registrado en su Base de Datos");
@@ -2788,7 +2789,7 @@ namespace Presentacion
 
                         lblTotalImpuesto.Text = "Impuestos Agregados: " + Convert.ToString(DGDetalle_Impuesto.Rows.Count);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBBuscar_Impuesto.Clear();
                     }
@@ -2823,7 +2824,7 @@ namespace Presentacion
 
                         lblTotalProveedor.Text = "Proveedores Agregados: " + Convert.ToString(DGDetalle_Proveedor.Rows.Count);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBBuscar_Proveedor.Clear();
                     }

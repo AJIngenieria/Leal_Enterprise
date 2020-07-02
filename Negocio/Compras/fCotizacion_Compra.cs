@@ -12,22 +12,22 @@ namespace Negocio
 {
     public class fCotizacion_Compra
     {
-        public static DataTable Auto_ConsultaEnOrden(string filtro)
+        public static DataTable Auto_ConsultaEnOrden(string Filtro)
         {
             Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();
-            return Datos.Auto_ConsultaEnOrden(filtro);
+            return Datos.Auto_ConsultaEnOrden(Filtro);
         }
 
-        public static DataTable Auto_ConsultaDetalle(string filtro)
+        public static DataTable Auto_ConsultaDetalle(string Filtro)
         {
             Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();
-            return Datos.Auto_ConsultaDetalle(filtro);
+            return Datos.Auto_ConsultaDetalle(Filtro);
         }
 
-        public static DataTable Buscar(string filtro, int auto)
+        public static DataTable Buscar(string Filtro, int auto)
         {
             Conexion_CotizacionDeCompra Datos = new Conexion_CotizacionDeCompra();
-            return Datos.Buscar(filtro, auto);
+            return Datos.Buscar(Filtro, auto);
         }
 
         public static string Guardar_DatosBasicos

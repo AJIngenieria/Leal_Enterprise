@@ -18,16 +18,16 @@ namespace Negocio
             return Datos.Lista();
         }
 
-        public static DataTable Buscar(string filtro, int auto)
+        public static DataTable Buscar(string Filtro)
         {
             Conexion_Impuesto Datos = new Conexion_Impuesto();
-            return Datos.Buscar(filtro, auto);
+            return Datos.Buscar(Filtro);
         }
 
-        public static DataTable BuscarExistencia_SQL(string filtro)
+        public static DataTable BuscarExistencia_SQL(string Filtro)
         {
             Conexion_Impuesto Datos = new Conexion_Impuesto();
-            return Datos.BuscarExistencia_SQL(filtro);
+            return Datos.BuscarExistencia_SQL(Filtro);
         }
 
         public static string Guardar_DatosBasicos
@@ -36,8 +36,8 @@ namespace Negocio
                 int auto,
 
                 //Datos Basicos
-                string impuesto, string valor, string descripcion,
-                int estado
+                string impuesto, string valor, string descripcion, string montodecompra,
+                string montodeventa, string montodeservicio, string compra, string venta, string servicio
             )
         {
             Conexion_Impuesto Datos = new Conexion_Impuesto();
@@ -46,7 +46,12 @@ namespace Negocio
             Obj.Impuesto = impuesto;
             Obj.Valor = valor;
             Obj.Descripcion = descripcion;
-            Obj.Estado = estado;
+            Obj.MontoDeCompra = montodecompra;
+            Obj.MontoDeVenta = montodeventa;
+            Obj.MontoDeServicio = montodeservicio;
+            Obj.Compra = compra;
+            Obj.Venta = venta;
+            Obj.Servicio = servicio;
 
             Obj.Auto = auto;
             return Datos.Guardar_DatosBasicos(Obj);
@@ -58,8 +63,8 @@ namespace Negocio
                 int auto, int idimpuesto,
 
                 //Datos Basicos
-                string impuesto, string valor, string descripcion,
-                int estado
+                string impuesto, string valor, string descripcion, string montodecompra,
+                string montodeventa, string montodeservicio, string compra, string venta, string servicio
             )
         {
             Conexion_Impuesto Datos = new Conexion_Impuesto();
@@ -69,7 +74,12 @@ namespace Negocio
             Obj.Impuesto = impuesto;
             Obj.Valor = valor;
             Obj.Descripcion = descripcion;
-            Obj.Estado = estado;
+            Obj.MontoDeCompra = montodecompra;
+            Obj.MontoDeVenta = montodeventa;
+            Obj.MontoDeServicio = montodeservicio;
+            Obj.Compra = compra;
+            Obj.Venta = venta;
+            Obj.Servicio = servicio;
 
             Obj.Auto = auto;
             return Datos.Editar_DatosBasicos(Obj);

@@ -18,10 +18,10 @@ namespace Negocio
             return Datos.Lista();
         }
 
-        public static DataTable Buscar(string filtro, int auto)
+        public static DataTable Buscar(string Filtro, int auto)
         {
             Conexion_TipoDeProducto Datos = new Conexion_TipoDeProducto();
-            return Datos.Buscar(filtro, auto);
+            return Datos.Buscar(Filtro, auto);
         }
 
         public static string Guardar_DatosBasicos

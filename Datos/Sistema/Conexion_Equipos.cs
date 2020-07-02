@@ -105,7 +105,7 @@ namespace Datos
             }
         }
 
-        public DataTable Buscar(string filtro)
+        public DataTable Buscar(string Filtro)
         {
             SqlDataReader Resultado;
             DataTable Tabla = new DataTable();
@@ -116,7 +116,7 @@ namespace Datos
                 SqlCommand Comando = new SqlCommand("Seguridad.SQL_Equipo", SqlCon);
                 Comando.CommandType = CommandType.StoredProcedure;
 
-                Comando.Parameters.Add("@Equipo_SQL", SqlDbType.VarChar).Value = filtro;
+                Comando.Parameters.Add("@Equipo_SQL", SqlDbType.VarChar).Value = Filtro;
 
                 SqlCon.Open();
                 Resultado = Comando.ExecuteReader();

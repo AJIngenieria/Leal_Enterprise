@@ -73,7 +73,7 @@ namespace Presentacion
                 frmInventario_Ingreso frmInv = frmInventario_Ingreso.GetInstancia();
                 frmCotizacionDeCompra frmCot = frmCotizacionDeCompra.GetInstancia();
 
-                //Variables para realizar los filtro 
+                //Variables para realizar los Filtro 
                 string idproveedor, proveedor, documento;
 
                 if (frmPro.Examinar)

@@ -12,7 +12,7 @@ namespace Presentacion
 {
     public partial class frmInventario_Inicial : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmInventario_Inicial _Instancia;
 
         public static frmInventario_Inicial GetInstancia()

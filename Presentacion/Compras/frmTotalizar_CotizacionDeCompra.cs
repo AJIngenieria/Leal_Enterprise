@@ -15,7 +15,7 @@ namespace Presentacion
         //
         public int Vencimiento;
         
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmTotalizar_CotizacionDeCompra _Instancia;
 
         public static frmTotalizar_CotizacionDeCompra GetInstancia()

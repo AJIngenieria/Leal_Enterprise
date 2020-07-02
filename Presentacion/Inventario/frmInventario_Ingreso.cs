@@ -608,7 +608,7 @@ namespace Presentacion
                         }
                         TBValorPromedio_Final.Text = Convert.ToString(total);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBCodigo_Producto.Clear();
                         this.TBProducto.Clear();

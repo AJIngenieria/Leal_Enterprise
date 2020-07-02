@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class frmOrdenDeCompra : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmOrdenDeCompra _Instancia;
 
         public static frmOrdenDeCompra GetInstancia()
@@ -612,7 +612,7 @@ namespace Presentacion
                         //TBValorCompra_Final.Text = Convert.ToString(total);
                         this.TBValorCompra_Final.Text = total.ToString("##,##0.00");
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBCodigo_Producto.Clear();
                         this.TBProducto.Clear();

@@ -18,10 +18,10 @@ namespace Negocio
             return Datos.Lista();
         }
 
-        public static DataTable Buscar(string filtro)
+        public static DataTable Buscar(string Filtro)
         {
             Conexion_Equipos Datos = new Conexion_Equipos();
-            return Datos.Buscar(filtro);
+            return Datos.Buscar(Filtro);
         }
 
         public static DataTable Seguridad_SQL(string equipo, string hdd, string macseguridad)

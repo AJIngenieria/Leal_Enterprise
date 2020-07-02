@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class frmEmpaque : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmEmpaque _Instancia;
 
         public static frmEmpaque GetInstancia()

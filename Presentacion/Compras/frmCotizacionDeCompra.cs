@@ -14,7 +14,7 @@ namespace Presentacion
 {
     public partial class frmCotizacionDeCompra : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmCotizacionDeCompra _Instancia;
 
         public static frmCotizacionDeCompra GetInstancia()
@@ -221,7 +221,7 @@ namespace Presentacion
 
                     this.lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                    //Se procede a limpiar los campos de texto utilizados para el filtro
+                    //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                     this.TBCodigo_Producto.Clear();
                     this.TBProducto.Clear();
@@ -718,7 +718,7 @@ namespace Presentacion
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBCodigo.Clear();
                         this.TBOrdendecompra.Clear();
@@ -756,7 +756,7 @@ namespace Presentacion
 
                         lblTotal_Detalles.Text = "Productos Agregados: " + Convert.ToString(DGDetalles.Rows.Count);
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBCodigo_Proveedor.Clear();
                         this.TBProveedor.Clear();
@@ -819,7 +819,7 @@ namespace Presentacion
 
                         //this.TBValorFinal.Text = total.ToString("##,##0.00");
 
-                        //Se procede a limpiar los campos de texto utilizados para el filtro
+                        //Se procede a limpiar los campos de texto utilizados para el Filtro
 
                         this.TBCodigo_Producto.Clear();
                         this.TBProducto.Clear();

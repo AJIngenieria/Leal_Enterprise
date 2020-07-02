@@ -19,16 +19,16 @@ namespace Negocio
             return Datos.Lista();
         }
 
-        public static DataTable Buscar(string filtro, int auto)
+        public static DataTable Buscar(string Filtro, int auto)
         {
             Conexion_Proveedor Datos = new Conexion_Proveedor();
-            return Datos.Buscar(filtro, auto);
+            return Datos.Buscar(Filtro, auto);
         }
 
-        public static DataTable BuscarExistencia_SQL(string filtro)
+        public static DataTable BuscarExistencia_SQL(string Filtro)
         {
             Conexion_Proveedor Datos = new Conexion_Proveedor();
-            return Datos.BuscarExistencia_SQL(filtro);
+            return Datos.BuscarExistencia_SQL(Filtro);
         }
 
         public static string Guardar_DatosBasicos

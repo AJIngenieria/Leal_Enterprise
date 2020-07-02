@@ -12,7 +12,7 @@ namespace Presentacion
 {
     public partial class frmFacturaDeCompra : Form
     {
-        //Instancia para el filtro de los productos 
+        //Instancia para el Filtro de los productos 
         private static frmFacturaDeCompra _Instancia;
 
         public static frmFacturaDeCompra GetInstancia()
