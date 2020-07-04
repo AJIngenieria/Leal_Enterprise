@@ -18,6 +18,19 @@ namespace Negocio
             return Datos.Lista();
         }
 
+        public static DataTable AutoComplementar_SQL(string Filtro)
+        {
+            Conexion_Bodega Datos = new Conexion_Bodega();
+            return Datos.AutoComplementar_SQL(Filtro);
+        }
+
+
+        public static DataTable AutoDetalle_SQL(string Filtro, int auto)
+        {
+            Conexion_Bodega Datos = new Conexion_Bodega();
+            return Datos.AutoDetalle_SQL(Filtro, auto);
+        }
+
         public static DataTable Buscar(string Filtro, int auto)
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -36,9 +49,8 @@ namespace Negocio
                 string recepcion, string despacho, string iniciolaboral,
                 string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
 
-                //
-                string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
-                string celulares, string balanzadigital, string balanzamanual, string montacarga
+                //Panel Equipos
+                DataTable detalle_equipos
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -69,18 +81,11 @@ namespace Negocio
             Obj.Direccion02 = direccion02;
 
             //Equipos Electronicos
-            Obj.PCDeMeza = pcdemeza;
-            Obj.PCPortatiles = pcportatiles;
-            Obj.ImpresoraLaser = impresoralaser;
-            Obj.ImpresoraCartucho = impresoracartucho;
-            Obj.ImpresoraTiquetes = impresoratiquetes;
-            Obj.Marquilladora = marquilladora;
-            Obj.Celulares = celulares;
-            Obj.BalanzaDigital = balanzadigital;
-            Obj.BalanzaManual = balanzamanual;
-            Obj.MontaCarga = montacarga;
+            Obj.Detalle_Equipos = detalle_equipos;
 
+            //Datos Auxiliares
             Obj.Auto = auto;
+
             return Datos.Guardar_DatosBasicos(Obj);
         }
 
@@ -96,15 +101,14 @@ namespace Negocio
                 string recepcion, string despacho, string iniciolaboral,
                 string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
 
-                //
-                string pcdemeza, string pcportatiles, string impresoralaser, string impresoracartucho, string impresoratiquetes, string marquilladora,
-                string celulares, string balanzadigital, string balanzamanual, string montacarga
+                //Panel Equipos
+                DataTable detalle_equipos
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
             Entidad_Bodega Obj = new Entidad_Bodega();
 
-            //Llaves Auxiliares
+            //Llaves Auxiliares y Llave Primaria
             Obj.Idbodega = idbodega;
             Obj.Idsucurzal = idsucurzal;
 
@@ -130,17 +134,9 @@ namespace Negocio
             Obj.Direccion02 = direccion02;
 
             //Equipos Electronicos
-            Obj.PCDeMeza = pcdemeza;
-            Obj.PCPortatiles = pcportatiles;
-            Obj.ImpresoraLaser = impresoralaser;
-            Obj.ImpresoraCartucho = impresoracartucho;
-            Obj.ImpresoraTiquetes = impresoratiquetes;
-            Obj.Marquilladora = marquilladora;
-            Obj.Celulares = celulares;
-            Obj.BalanzaDigital = balanzadigital;
-            Obj.BalanzaManual = balanzamanual;
-            Obj.MontaCarga = montacarga;
+            Obj.Detalle_Equipos = detalle_equipos;
 
+            //Datos Auxiliares
             Obj.Auto = auto;
             return Datos.Editar_DatosBasicos(Obj);
         }

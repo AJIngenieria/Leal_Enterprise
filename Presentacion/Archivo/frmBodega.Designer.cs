@@ -69,26 +69,16 @@
             this.TBInicioLaboral = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.TPEquiposElectronicos = new System.Windows.Forms.TabPage();
-            this.TBMontaCarga = new System.Windows.Forms.TextBox();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.TBBalanzaDigital = new System.Windows.Forms.TextBox();
-            this.TBBalanzaManual = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.TBMarquilladora = new System.Windows.Forms.TextBox();
-            this.TBImpresoraTickets = new System.Windows.Forms.TextBox();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.TBImpresoraCartucho = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.TBPcportatiles = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TBPcdemeza = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.TBCelulares = new System.Windows.Forms.TextBox();
+            this.btnEliminar_Ubicacion = new System.Windows.Forms.Button();
+            this.btnAgregar_Ubicacion = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
-            this.TBImpresoraLaser = new System.Windows.Forms.TextBox();
+            this.TBElectronicos_Descripcion = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.TBElectronicos_Tipo = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.TBElectronicos = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.DGDetalle_Equipos = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.TBIdbodega = new System.Windows.Forms.TextBox();
@@ -99,24 +89,27 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
+            this.TBIddetalle = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
             this.TPDatosAuxiliares.SuspendLayout();
             this.TPEquiposElectronicos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGDetalle_Equipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.TBIddetalle);
             this.groupBox1.Controls.Add(this.TCPrincipal);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.TBIdbodega);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(426, 380);
+            this.groupBox1.Size = new System.Drawing.Size(363, 403);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Leal Enterprise - Registro de Bodegas";
@@ -129,7 +122,7 @@
             this.TCPrincipal.Location = new System.Drawing.Point(10, 23);
             this.TCPrincipal.Name = "TCPrincipal";
             this.TCPrincipal.SelectedIndex = 0;
-            this.TCPrincipal.Size = new System.Drawing.Size(409, 313);
+            this.TCPrincipal.Size = new System.Drawing.Size(348, 338);
             this.TCPrincipal.TabIndex = 42;
             // 
             // TPDatosBasicos
@@ -155,22 +148,22 @@
             this.TPDatosBasicos.Location = new System.Drawing.Point(4, 24);
             this.TPDatosBasicos.Name = "TPDatosBasicos";
             this.TPDatosBasicos.Padding = new System.Windows.Forms.Padding(3);
-            this.TPDatosBasicos.Size = new System.Drawing.Size(401, 285);
+            this.TPDatosBasicos.Size = new System.Drawing.Size(340, 310);
             this.TPDatosBasicos.TabIndex = 0;
             this.TPDatosBasicos.Text = "Datos Basicos";
             this.TPDatosBasicos.UseVisualStyleBackColor = true;
             // 
             // TBDocumento
             // 
-            this.TBDocumento.Location = new System.Drawing.Point(85, 65);
+            this.TBDocumento.Location = new System.Drawing.Point(85, 63);
             this.TBDocumento.Name = "TBDocumento";
-            this.TBDocumento.Size = new System.Drawing.Size(300, 21);
+            this.TBDocumento.Size = new System.Drawing.Size(250, 21);
             this.TBDocumento.TabIndex = 17;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(6, 68);
+            this.label29.Location = new System.Drawing.Point(6, 66);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(71, 15);
             this.label29.TabIndex = 16;
@@ -188,7 +181,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 92);
+            this.label10.Location = new System.Drawing.Point(7, 90);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 15);
             this.label10.TabIndex = 15;
@@ -196,9 +189,9 @@
             // 
             // TBDescripcion
             // 
-            this.TBDescripcion.Location = new System.Drawing.Point(85, 92);
+            this.TBDescripcion.Location = new System.Drawing.Point(85, 90);
             this.TBDescripcion.Name = "TBDescripcion";
-            this.TBDescripcion.Size = new System.Drawing.Size(300, 21);
+            this.TBDescripcion.Size = new System.Drawing.Size(250, 21);
             this.TBDescripcion.TabIndex = 14;
             this.TBDescripcion.Enter += new System.EventHandler(this.TBDescripcion_Enter);
             this.TBDescripcion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDescripcion_KeyUp);
@@ -207,7 +200,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Location = new System.Drawing.Point(6, 36);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 15);
             this.label1.TabIndex = 0;
@@ -215,9 +208,9 @@
             // 
             // TBBodega
             // 
-            this.TBBodega.Location = new System.Drawing.Point(84, 38);
+            this.TBBodega.Location = new System.Drawing.Point(84, 36);
             this.TBBodega.Name = "TBBodega";
-            this.TBBodega.Size = new System.Drawing.Size(300, 21);
+            this.TBBodega.Size = new System.Drawing.Size(250, 21);
             this.TBBodega.TabIndex = 1;
             this.TBBodega.Enter += new System.EventHandler(this.TBBodega_Enter);
             this.TBBodega.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBBodega_KeyUp);
@@ -227,19 +220,20 @@
             // 
             this.CBSucurzal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.CBSucurzal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBSucurzal.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CBSucurzal.FormattingEnabled = true;
             this.CBSucurzal.Location = new System.Drawing.Point(84, 9);
             this.CBSucurzal.Name = "CBSucurzal";
-            this.CBSucurzal.Size = new System.Drawing.Size(300, 23);
+            this.CBSucurzal.Size = new System.Drawing.Size(251, 21);
             this.CBSucurzal.Sorted = true;
             this.CBSucurzal.TabIndex = 3;
             this.CBSucurzal.SelectedIndexChanged += new System.EventHandler(this.CBSucurzal_SelectedIndexChanged);
             // 
             // TBCorreo
             // 
-            this.TBCorreo.Location = new System.Drawing.Point(85, 227);
+            this.TBCorreo.Location = new System.Drawing.Point(85, 225);
             this.TBCorreo.Name = "TBCorreo";
-            this.TBCorreo.Size = new System.Drawing.Size(300, 21);
+            this.TBCorreo.Size = new System.Drawing.Size(250, 21);
             this.TBCorreo.TabIndex = 13;
             this.TBCorreo.Enter += new System.EventHandler(this.TBCorreo_Enter);
             this.TBCorreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCorreo_KeyUp);
@@ -248,7 +242,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 146);
+            this.label3.Location = new System.Drawing.Point(7, 144);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 15);
             this.label3.TabIndex = 4;
@@ -257,7 +251,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 227);
+            this.label7.Location = new System.Drawing.Point(7, 225);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 12;
@@ -265,9 +259,9 @@
             // 
             // TBCiudad
             // 
-            this.TBCiudad.Location = new System.Drawing.Point(85, 146);
+            this.TBCiudad.Location = new System.Drawing.Point(85, 144);
             this.TBCiudad.Name = "TBCiudad";
-            this.TBCiudad.Size = new System.Drawing.Size(300, 21);
+            this.TBCiudad.Size = new System.Drawing.Size(250, 21);
             this.TBCiudad.TabIndex = 5;
             this.TBCiudad.Enter += new System.EventHandler(this.TBCiudad_Enter);
             this.TBCiudad.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCiudad_KeyUp);
@@ -276,7 +270,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 119);
+            this.label6.Location = new System.Drawing.Point(7, 117);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 11;
@@ -284,9 +278,9 @@
             // 
             // TBMovil
             // 
-            this.TBMovil.Location = new System.Drawing.Point(85, 173);
+            this.TBMovil.Location = new System.Drawing.Point(85, 171);
             this.TBMovil.Name = "TBMovil";
-            this.TBMovil.Size = new System.Drawing.Size(300, 21);
+            this.TBMovil.Size = new System.Drawing.Size(250, 21);
             this.TBMovil.TabIndex = 8;
             this.TBMovil.Enter += new System.EventHandler(this.TBMovil_Enter);
             this.TBMovil.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMovil_KeyUp);
@@ -295,7 +289,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 200);
+            this.label4.Location = new System.Drawing.Point(7, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 6;
@@ -303,9 +297,9 @@
             // 
             // TBDirector
             // 
-            this.TBDirector.Location = new System.Drawing.Point(85, 119);
+            this.TBDirector.Location = new System.Drawing.Point(85, 117);
             this.TBDirector.Name = "TBDirector";
-            this.TBDirector.Size = new System.Drawing.Size(300, 21);
+            this.TBDirector.Size = new System.Drawing.Size(250, 21);
             this.TBDirector.TabIndex = 10;
             this.TBDirector.Enter += new System.EventHandler(this.TBDirector_Enter);
             this.TBDirector.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDirector_KeyUp);
@@ -314,7 +308,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 173);
+            this.label5.Location = new System.Drawing.Point(7, 171);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 15);
             this.label5.TabIndex = 9;
@@ -322,9 +316,9 @@
             // 
             // TBTelefono
             // 
-            this.TBTelefono.Location = new System.Drawing.Point(85, 200);
+            this.TBTelefono.Location = new System.Drawing.Point(85, 198);
             this.TBTelefono.Name = "TBTelefono";
-            this.TBTelefono.Size = new System.Drawing.Size(300, 21);
+            this.TBTelefono.Size = new System.Drawing.Size(250, 21);
             this.TBTelefono.TabIndex = 7;
             this.TBTelefono.Enter += new System.EventHandler(this.TBTelefono_Enter);
             this.TBTelefono.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBTelefono_KeyUp);
@@ -353,7 +347,7 @@
             this.TPDatosAuxiliares.Location = new System.Drawing.Point(4, 24);
             this.TPDatosAuxiliares.Name = "TPDatosAuxiliares";
             this.TPDatosAuxiliares.Padding = new System.Windows.Forms.Padding(3);
-            this.TPDatosAuxiliares.Size = new System.Drawing.Size(401, 285);
+            this.TPDatosAuxiliares.Size = new System.Drawing.Size(340, 310);
             this.TPDatosAuxiliares.TabIndex = 1;
             this.TPDatosAuxiliares.Text = "Datos Auxiliares";
             this.TPDatosAuxiliares.UseVisualStyleBackColor = true;
@@ -362,7 +356,7 @@
             // 
             this.TBDiaDespacho.Location = new System.Drawing.Point(120, 171);
             this.TBDiaDespacho.Name = "TBDiaDespacho";
-            this.TBDiaDespacho.Size = new System.Drawing.Size(272, 21);
+            this.TBDiaDespacho.Size = new System.Drawing.Size(214, 21);
             this.TBDiaDespacho.TabIndex = 47;
             this.TBDiaDespacho.Enter += new System.EventHandler(this.TBDiaDespacho_Enter);
             this.TBDiaDespacho.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDiaDespacho_KeyUp);
@@ -390,7 +384,7 @@
             // 
             this.TBDireccion01.Location = new System.Drawing.Point(92, 198);
             this.TBDireccion01.Name = "TBDireccion01";
-            this.TBDireccion01.Size = new System.Drawing.Size(300, 21);
+            this.TBDireccion01.Size = new System.Drawing.Size(242, 21);
             this.TBDireccion01.TabIndex = 44;
             this.TBDireccion01.Enter += new System.EventHandler(this.TBDireccion01_Enter);
             this.TBDireccion01.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDireccion01_KeyUp_1);
@@ -409,7 +403,7 @@
             // 
             this.TBDireccion02.Location = new System.Drawing.Point(92, 225);
             this.TBDireccion02.Name = "TBDireccion02";
-            this.TBDireccion02.Size = new System.Drawing.Size(300, 21);
+            this.TBDireccion02.Size = new System.Drawing.Size(242, 21);
             this.TBDireccion02.TabIndex = 43;
             this.TBDireccion02.Enter += new System.EventHandler(this.TBDireccion02_Enter);
             this.TBDireccion02.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDireccion02_KeyUp_1);
@@ -428,7 +422,7 @@
             // 
             this.TBMedidas.Location = new System.Drawing.Point(92, 117);
             this.TBMedidas.Name = "TBMedidas";
-            this.TBMedidas.Size = new System.Drawing.Size(300, 21);
+            this.TBMedidas.Size = new System.Drawing.Size(242, 21);
             this.TBMedidas.TabIndex = 41;
             this.TBMedidas.Enter += new System.EventHandler(this.TBMedidas_Enter);
             this.TBMedidas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMedidas_KeyUp);
@@ -438,7 +432,7 @@
             // 
             this.TBRecepcion.Location = new System.Drawing.Point(92, 9);
             this.TBRecepcion.Name = "TBRecepcion";
-            this.TBRecepcion.Size = new System.Drawing.Size(300, 21);
+            this.TBRecepcion.Size = new System.Drawing.Size(242, 21);
             this.TBRecepcion.TabIndex = 22;
             this.TBRecepcion.Enter += new System.EventHandler(this.TBRecepcion_Enter);
             this.TBRecepcion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBRecepcion_KeyUp);
@@ -466,7 +460,7 @@
             // 
             this.TBDespacho.Location = new System.Drawing.Point(92, 36);
             this.TBDespacho.Name = "TBDespacho";
-            this.TBDespacho.Size = new System.Drawing.Size(300, 21);
+            this.TBDespacho.Size = new System.Drawing.Size(242, 21);
             this.TBDespacho.TabIndex = 24;
             this.TBDespacho.Enter += new System.EventHandler(this.TBDespacho_Enter);
             this.TBDespacho.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDespacho_KeyUp);
@@ -476,7 +470,7 @@
             // 
             this.TBDiadepagos.Location = new System.Drawing.Point(92, 144);
             this.TBDiadepagos.Name = "TBDiadepagos";
-            this.TBDiadepagos.Size = new System.Drawing.Size(300, 21);
+            this.TBDiadepagos.Size = new System.Drawing.Size(242, 21);
             this.TBDiadepagos.TabIndex = 39;
             this.TBDiadepagos.Enter += new System.EventHandler(this.TBDiadepagos_Enter);
             this.TBDiadepagos.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDiadepagos_KeyUp);
@@ -495,7 +489,7 @@
             // 
             this.TBFinalHorarioLaboral.Location = new System.Drawing.Point(92, 90);
             this.TBFinalHorarioLaboral.Name = "TBFinalHorarioLaboral";
-            this.TBFinalHorarioLaboral.Size = new System.Drawing.Size(300, 21);
+            this.TBFinalHorarioLaboral.Size = new System.Drawing.Size(242, 21);
             this.TBFinalHorarioLaboral.TabIndex = 37;
             this.TBFinalHorarioLaboral.Enter += new System.EventHandler(this.TBFinalHorarioLaboral_Enter);
             this.TBFinalHorarioLaboral.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBFinalHorarioLaboral_KeyUp);
@@ -514,7 +508,7 @@
             // 
             this.TBInicioLaboral.Location = new System.Drawing.Point(92, 63);
             this.TBInicioLaboral.Name = "TBInicioLaboral";
-            this.TBInicioLaboral.Size = new System.Drawing.Size(300, 21);
+            this.TBInicioLaboral.Size = new System.Drawing.Size(242, 21);
             this.TBInicioLaboral.TabIndex = 35;
             this.TBInicioLaboral.Enter += new System.EventHandler(this.TBInicioLaboral_Enter);
             this.TBInicioLaboral.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBInicioLaboral_KeyUp);
@@ -531,229 +525,138 @@
             // 
             // TPEquiposElectronicos
             // 
-            this.TPEquiposElectronicos.Controls.Add(this.TBMontaCarga);
-            this.TPEquiposElectronicos.Controls.Add(this.label27);
-            this.TPEquiposElectronicos.Controls.Add(this.label26);
-            this.TPEquiposElectronicos.Controls.Add(this.TBBalanzaDigital);
-            this.TPEquiposElectronicos.Controls.Add(this.TBBalanzaManual);
-            this.TPEquiposElectronicos.Controls.Add(this.label18);
-            this.TPEquiposElectronicos.Controls.Add(this.label25);
-            this.TPEquiposElectronicos.Controls.Add(this.TBMarquilladora);
-            this.TPEquiposElectronicos.Controls.Add(this.TBImpresoraTickets);
-            this.TPEquiposElectronicos.Controls.Add(this.label24);
-            this.TPEquiposElectronicos.Controls.Add(this.label23);
-            this.TPEquiposElectronicos.Controls.Add(this.TBImpresoraCartucho);
-            this.TPEquiposElectronicos.Controls.Add(this.label13);
-            this.TPEquiposElectronicos.Controls.Add(this.TBPcportatiles);
-            this.TPEquiposElectronicos.Controls.Add(this.label14);
-            this.TPEquiposElectronicos.Controls.Add(this.TBPcdemeza);
-            this.TPEquiposElectronicos.Controls.Add(this.label15);
-            this.TPEquiposElectronicos.Controls.Add(this.TBCelulares);
+            this.TPEquiposElectronicos.Controls.Add(this.btnEliminar_Ubicacion);
+            this.TPEquiposElectronicos.Controls.Add(this.btnAgregar_Ubicacion);
             this.TPEquiposElectronicos.Controls.Add(this.label16);
-            this.TPEquiposElectronicos.Controls.Add(this.TBImpresoraLaser);
+            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos_Descripcion);
+            this.TPEquiposElectronicos.Controls.Add(this.label15);
+            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos_Tipo);
+            this.TPEquiposElectronicos.Controls.Add(this.label14);
+            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos);
+            this.TPEquiposElectronicos.Controls.Add(this.label13);
+            this.TPEquiposElectronicos.Controls.Add(this.DGDetalle_Equipos);
             this.TPEquiposElectronicos.Location = new System.Drawing.Point(4, 24);
             this.TPEquiposElectronicos.Name = "TPEquiposElectronicos";
             this.TPEquiposElectronicos.Padding = new System.Windows.Forms.Padding(3);
-            this.TPEquiposElectronicos.Size = new System.Drawing.Size(401, 285);
+            this.TPEquiposElectronicos.Size = new System.Drawing.Size(340, 310);
             this.TPEquiposElectronicos.TabIndex = 2;
-            this.TPEquiposElectronicos.Text = "Equipos Electronicos";
+            this.TPEquiposElectronicos.Text = "Equipos - Herramientas";
             this.TPEquiposElectronicos.UseVisualStyleBackColor = true;
             // 
-            // TBMontaCarga
+            // btnEliminar_Ubicacion
             // 
-            this.TBMontaCarga.Location = new System.Drawing.Point(121, 249);
-            this.TBMontaCarga.Name = "TBMontaCarga";
-            this.TBMontaCarga.Size = new System.Drawing.Size(274, 21);
-            this.TBMontaCarga.TabIndex = 65;
-            this.TBMontaCarga.Enter += new System.EventHandler(this.TBMontaCarga_Enter);
-            this.TBMontaCarga.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMontaCarga_KeyUp);
-            this.TBMontaCarga.Leave += new System.EventHandler(this.TBMontaCarga_Leave);
+            this.btnEliminar_Ubicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnEliminar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnEliminar_Ubicacion.FlatAppearance.BorderSize = 0;
+            this.btnEliminar_Ubicacion.Image = global::Presentacion.Botones.btnEliminar;
+            this.btnEliminar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(244, 274);
+            this.btnEliminar_Ubicacion.Name = "btnEliminar_Ubicacion";
+            this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(90, 30);
+            this.btnEliminar_Ubicacion.TabIndex = 60;
+            this.btnEliminar_Ubicacion.Text = "Eliminar";
+            this.btnEliminar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnEliminar_Ubicacion.Click += new System.EventHandler(this.btnEliminar_Ubicacion_Click);
             // 
-            // label27
+            // btnAgregar_Ubicacion
             // 
-            this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(6, 252);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(78, 15);
-            this.label27.TabIndex = 64;
-            this.label27.Text = "Monta Carga";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(6, 198);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(109, 15);
-            this.label26.TabIndex = 63;
-            this.label26.Text = "Balanzas Digitales";
-            // 
-            // TBBalanzaDigital
-            // 
-            this.TBBalanzaDigital.Location = new System.Drawing.Point(121, 195);
-            this.TBBalanzaDigital.Name = "TBBalanzaDigital";
-            this.TBBalanzaDigital.Size = new System.Drawing.Size(274, 21);
-            this.TBBalanzaDigital.TabIndex = 62;
-            this.TBBalanzaDigital.Enter += new System.EventHandler(this.TBBalanzaDigital_Enter);
-            this.TBBalanzaDigital.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBBalanzaDigital_KeyUp);
-            this.TBBalanzaDigital.Leave += new System.EventHandler(this.TBBalanzaDigital_Leave);
-            // 
-            // TBBalanzaManual
-            // 
-            this.TBBalanzaManual.Location = new System.Drawing.Point(121, 222);
-            this.TBBalanzaManual.Name = "TBBalanzaManual";
-            this.TBBalanzaManual.Size = new System.Drawing.Size(274, 21);
-            this.TBBalanzaManual.TabIndex = 60;
-            this.TBBalanzaManual.Enter += new System.EventHandler(this.TBBalanzaManual_Enter);
-            this.TBBalanzaManual.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBBalanzaManual_KeyUp);
-            this.TBBalanzaManual.Leave += new System.EventHandler(this.TBBalanzaManual_Leave);
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(6, 225);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(97, 15);
-            this.label18.TabIndex = 61;
-            this.label18.Text = "Balanza Manual";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(6, 144);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(84, 15);
-            this.label25.TabIndex = 49;
-            this.label25.Text = "Marquilladora";
-            // 
-            // TBMarquilladora
-            // 
-            this.TBMarquilladora.Location = new System.Drawing.Point(121, 141);
-            this.TBMarquilladora.Name = "TBMarquilladora";
-            this.TBMarquilladora.Size = new System.Drawing.Size(274, 21);
-            this.TBMarquilladora.TabIndex = 48;
-            this.TBMarquilladora.Enter += new System.EventHandler(this.TBMarquilladora_Enter);
-            this.TBMarquilladora.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBMarquilladora_KeyUp);
-            this.TBMarquilladora.Leave += new System.EventHandler(this.TBMarquilladora_Leave);
-            // 
-            // TBImpresoraTickets
-            // 
-            this.TBImpresoraTickets.Location = new System.Drawing.Point(121, 114);
-            this.TBImpresoraTickets.Name = "TBImpresoraTickets";
-            this.TBImpresoraTickets.Size = new System.Drawing.Size(274, 21);
-            this.TBImpresoraTickets.TabIndex = 47;
-            this.TBImpresoraTickets.Enter += new System.EventHandler(this.TBImpresoraTickets_Enter);
-            this.TBImpresoraTickets.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBImpresoraTickets_KeyUp);
-            this.TBImpresoraTickets.Leave += new System.EventHandler(this.TBImpresoraTickets_Leave);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(6, 117);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(100, 15);
-            this.label24.TabIndex = 46;
-            this.label24.Text = "Impr. de Ticketes";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(6, 90);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(104, 15);
-            this.label23.TabIndex = 45;
-            this.label23.Text = "Impr. de Cartucho";
-            // 
-            // TBImpresoraCartucho
-            // 
-            this.TBImpresoraCartucho.Location = new System.Drawing.Point(121, 87);
-            this.TBImpresoraCartucho.Name = "TBImpresoraCartucho";
-            this.TBImpresoraCartucho.Size = new System.Drawing.Size(274, 21);
-            this.TBImpresoraCartucho.TabIndex = 44;
-            this.TBImpresoraCartucho.Enter += new System.EventHandler(this.TBImpresoraCartucho_Enter);
-            this.TBImpresoraCartucho.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBImpresoraCartucho_KeyUp);
-            this.TBImpresoraCartucho.Leave += new System.EventHandler(this.TBImpresoraCartucho_Leave);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 36);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(64, 15);
-            this.label13.TabIndex = 43;
-            this.label13.Text = "PC Portatil";
-            // 
-            // TBPcportatiles
-            // 
-            this.TBPcportatiles.Location = new System.Drawing.Point(121, 33);
-            this.TBPcportatiles.Name = "TBPcportatiles";
-            this.TBPcportatiles.Size = new System.Drawing.Size(274, 21);
-            this.TBPcportatiles.TabIndex = 42;
-            this.TBPcportatiles.Enter += new System.EventHandler(this.TBPcportatiles_Enter);
-            this.TBPcportatiles.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBPcportatiles_KeyUp);
-            this.TBPcportatiles.Leave += new System.EventHandler(this.TBPcportatiles_Leave);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 9);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 15);
-            this.label14.TabIndex = 34;
-            this.label14.Text = "PC de Meza";
-            // 
-            // TBPcdemeza
-            // 
-            this.TBPcdemeza.Location = new System.Drawing.Point(121, 6);
-            this.TBPcdemeza.Name = "TBPcdemeza";
-            this.TBPcdemeza.Size = new System.Drawing.Size(274, 21);
-            this.TBPcdemeza.TabIndex = 35;
-            this.TBPcdemeza.Enter += new System.EventHandler(this.TBPcdemeza_Enter);
-            this.TBPcdemeza.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBPcdemeza_KeyUp);
-            this.TBPcdemeza.Leave += new System.EventHandler(this.TBPcdemeza_Leave);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 171);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(59, 15);
-            this.label15.TabIndex = 36;
-            this.label15.Text = "Celulares";
-            // 
-            // TBCelulares
-            // 
-            this.TBCelulares.Location = new System.Drawing.Point(121, 168);
-            this.TBCelulares.Name = "TBCelulares";
-            this.TBCelulares.Size = new System.Drawing.Size(274, 21);
-            this.TBCelulares.TabIndex = 37;
-            this.TBCelulares.Enter += new System.EventHandler(this.TBCelulares_Enter);
-            this.TBCelulares.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCelulares_KeyUp);
-            this.TBCelulares.Leave += new System.EventHandler(this.TBCelulares_Leave);
+            this.btnAgregar_Ubicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAgregar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnAgregar_Ubicacion.FlatAppearance.BorderSize = 0;
+            this.btnAgregar_Ubicacion.Image = global::Presentacion.Botones.btnAgregar;
+            this.btnAgregar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(148, 274);
+            this.btnAgregar_Ubicacion.Name = "btnAgregar_Ubicacion";
+            this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(90, 30);
+            this.btnAgregar_Ubicacion.TabIndex = 59;
+            this.btnAgregar_Ubicacion.Text = "Agregar";
+            this.btnAgregar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregar_Ubicacion.UseVisualStyleBackColor = true;
+            this.btnAgregar_Ubicacion.Click += new System.EventHandler(this.btnAgregar_Ubicacion_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 63);
+            this.label16.Location = new System.Drawing.Point(6, 282);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(97, 15);
-            this.label16.TabIndex = 38;
-            this.label16.Text = "Impresora Laser";
+            this.label16.Size = new System.Drawing.Size(108, 15);
+            this.label16.TabIndex = 7;
+            this.label16.Text = "Datos Registrados";
             // 
-            // TBImpresoraLaser
+            // TBElectronicos_Descripcion
             // 
-            this.TBImpresoraLaser.Location = new System.Drawing.Point(121, 60);
-            this.TBImpresoraLaser.Name = "TBImpresoraLaser";
-            this.TBImpresoraLaser.Size = new System.Drawing.Size(274, 21);
-            this.TBImpresoraLaser.TabIndex = 39;
-            this.TBImpresoraLaser.Enter += new System.EventHandler(this.TBImpresoraLaser_Enter);
-            this.TBImpresoraLaser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBImpresoraLaser_KeyUp);
-            this.TBImpresoraLaser.Leave += new System.EventHandler(this.TBImpresoraLaser_Leave);
+            this.TBElectronicos_Descripcion.Location = new System.Drawing.Point(84, 60);
+            this.TBElectronicos_Descripcion.Name = "TBElectronicos_Descripcion";
+            this.TBElectronicos_Descripcion.Size = new System.Drawing.Size(250, 21);
+            this.TBElectronicos_Descripcion.TabIndex = 6;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(6, 63);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(72, 15);
+            this.label15.TabIndex = 5;
+            this.label15.Text = "Descripción";
+            // 
+            // TBElectronicos_Tipo
+            // 
+            this.TBElectronicos_Tipo.Location = new System.Drawing.Point(84, 33);
+            this.TBElectronicos_Tipo.Name = "TBElectronicos_Tipo";
+            this.TBElectronicos_Tipo.Size = new System.Drawing.Size(250, 21);
+            this.TBElectronicos_Tipo.TabIndex = 4;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(6, 36);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(31, 15);
+            this.label14.TabIndex = 3;
+            this.label14.Text = "Tipo";
+            // 
+            // TBElectronicos
+            // 
+            this.TBElectronicos.Location = new System.Drawing.Point(84, 6);
+            this.TBElectronicos.Name = "TBElectronicos";
+            this.TBElectronicos.Size = new System.Drawing.Size(250, 21);
+            this.TBElectronicos.TabIndex = 2;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(6, 9);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(52, 15);
+            this.label13.TabIndex = 1;
+            this.label13.Text = "Nombre";
+            // 
+            // DGDetalle_Equipos
+            // 
+            this.DGDetalle_Equipos.AllowUserToAddRows = false;
+            this.DGDetalle_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.DGDetalle_Equipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.DGDetalle_Equipos.BackgroundColor = System.Drawing.Color.White;
+            this.DGDetalle_Equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGDetalle_Equipos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.DGDetalle_Equipos.Location = new System.Drawing.Point(6, 87);
+            this.DGDetalle_Equipos.Name = "DGDetalle_Equipos";
+            this.DGDetalle_Equipos.ReadOnly = true;
+            this.DGDetalle_Equipos.Size = new System.Drawing.Size(328, 181);
+            this.DGDetalle_Equipos.TabIndex = 0;
             // 
             // btnCancelar
             // 
             this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(325, 342);
+            this.btnCancelar.Location = new System.Drawing.Point(268, 367);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(90, 30);
             this.btnCancelar.TabIndex = 4;
@@ -766,7 +669,7 @@
             // 
             this.btnGuardar.Image = global::Presentacion.Botones.btnGuardar;
             this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGuardar.Location = new System.Drawing.Point(10, 342);
+            this.btnGuardar.Location = new System.Drawing.Point(10, 367);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(90, 30);
             this.btnGuardar.TabIndex = 3;
@@ -777,7 +680,7 @@
             // 
             // TBIdbodega
             // 
-            this.TBIdbodega.Location = new System.Drawing.Point(202, 345);
+            this.TBIdbodega.Location = new System.Drawing.Point(202, 370);
             this.TBIdbodega.Name = "TBIdbodega";
             this.TBIdbodega.Size = new System.Drawing.Size(29, 21);
             this.TBIdbodega.TabIndex = 31;
@@ -786,7 +689,7 @@
             // lblTotal
             // 
             this.lblTotal.AutoSize = true;
-            this.lblTotal.Location = new System.Drawing.Point(6, 350);
+            this.lblTotal.Location = new System.Drawing.Point(6, 375);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(31, 15);
             this.lblTotal.TabIndex = 3;
@@ -804,7 +707,7 @@
             this.DGResultados.Name = "DGResultados";
             this.DGResultados.ReadOnly = true;
             this.DGResultados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGResultados.Size = new System.Drawing.Size(500, 289);
+            this.DGResultados.Size = new System.Drawing.Size(500, 314);
             this.DGResultados.TabIndex = 2;
             this.DGResultados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGResultados_CellDoubleClick);
             this.DGResultados.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.DGResultados_KeyPress);
@@ -837,9 +740,9 @@
             this.groupBox2.Controls.Add(this.label21);
             this.groupBox2.Controls.Add(this.DGResultados);
             this.groupBox2.Controls.Add(this.TBBuscar);
-            this.groupBox2.Location = new System.Drawing.Point(444, 12);
+            this.groupBox2.Location = new System.Drawing.Point(381, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(514, 380);
+            this.groupBox2.Size = new System.Drawing.Size(514, 403);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Leal Enterprise - Consulta de Bodegas Registrados";
@@ -848,7 +751,7 @@
             // 
             this.btnEliminar.Image = global::Presentacion.Botones.btnEliminar;
             this.btnEliminar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar.Location = new System.Drawing.Point(320, 342);
+            this.btnEliminar.Location = new System.Drawing.Point(322, 367);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(90, 30);
             this.btnEliminar.TabIndex = 6;
@@ -861,7 +764,7 @@
             // 
             this.btnImprimir.Image = global::Presentacion.Botones.btnImprimir;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(416, 342);
+            this.btnImprimir.Location = new System.Drawing.Point(418, 367);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Size = new System.Drawing.Size(90, 30);
             this.btnImprimir.TabIndex = 5;
@@ -870,12 +773,20 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
+            // TBIddetalle
+            // 
+            this.TBIddetalle.Location = new System.Drawing.Point(106, 369);
+            this.TBIddetalle.Name = "TBIddetalle";
+            this.TBIddetalle.Size = new System.Drawing.Size(65, 21);
+            this.TBIddetalle.TabIndex = 18;
+            this.TBIddetalle.TextChanged += new System.EventHandler(this.TBIddetalle_TextChanged);
+            // 
             // frmBodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(968, 401);
+            this.ClientSize = new System.Drawing.Size(904, 427);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -893,6 +804,7 @@
             this.TPDatosAuxiliares.PerformLayout();
             this.TPEquiposElectronicos.ResumeLayout(false);
             this.TPEquiposElectronicos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGDetalle_Equipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -941,30 +853,10 @@
         private System.Windows.Forms.TabPage TPDatosBasicos;
         private System.Windows.Forms.TabPage TPDatosAuxiliares;
         private System.Windows.Forms.TabPage TPEquiposElectronicos;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TBPcdemeza;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox TBCelulares;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.TextBox TBImpresoraLaser;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TBDireccion02;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox TBDireccion01;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox TBPcportatiles;
-        private System.Windows.Forms.TextBox TBImpresoraTickets;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.TextBox TBImpresoraCartucho;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox TBMarquilladora;
-        private System.Windows.Forms.TextBox TBMontaCarga;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.TextBox TBBalanzaDigital;
-        private System.Windows.Forms.TextBox TBBalanzaManual;
-        private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox TBDiaDespacho;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.TextBox TBDocumento;
@@ -973,5 +865,16 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnImprimir;
+        private System.Windows.Forms.TextBox TBElectronicos_Descripcion;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox TBElectronicos_Tipo;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox TBElectronicos;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.DataGridView DGDetalle_Equipos;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Button btnEliminar_Ubicacion;
+        private System.Windows.Forms.Button btnAgregar_Ubicacion;
+        private System.Windows.Forms.TextBox TBIddetalle;
     }
 }

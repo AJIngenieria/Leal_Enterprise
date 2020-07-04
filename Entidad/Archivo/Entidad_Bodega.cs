@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Data;
+
 namespace Entidad
 {
     public class Entidad_Bodega
@@ -36,16 +38,7 @@ namespace Entidad
         private string _Direccion02;
 
         //Equipos Electronicos
-        private string _PCDeMeza;
-        private string _PCPortatiles;
-        private string _ImpresoraLaser;
-        private string _ImpresoraCartucho;
-        private string _ImpresoraTiquetes;
-        private string _Marquilladora;
-        private string _Celulares;
-        private string _BalanzaDigital;
-        private string _BalanzaManual;
-        private string _MontaCarga;
+        private DataTable _Detalle_Equipos;
 
         //Datos Auxiliares
         private int _Auto;
@@ -55,6 +48,7 @@ namespace Entidad
         public int Idbodega { get => _Idbodega; set => _Idbodega = value; }
         public int Idsucurzal { get => _Idsucurzal; set => _Idsucurzal = value; }
         public string Bodega { get => _Bodega; set => _Bodega = value; }
+        public string Documento { get => _Documento; set => _Documento = value; }
         public string Descripcion { get => _Descripcion; set => _Descripcion = value; }
         public string Director { get => _Director; set => _Director = value; }
         public string Ciudad { get => _Ciudad; set => _Ciudad = value; }
@@ -70,19 +64,9 @@ namespace Entidad
         public string DiaDeDespacho { get => _DiaDeDespacho; set => _DiaDeDespacho = value; }
         public string Direccion01 { get => _Direccion01; set => _Direccion01 = value; }
         public string Direccion02 { get => _Direccion02; set => _Direccion02 = value; }
-        public string PCDeMeza { get => _PCDeMeza; set => _PCDeMeza = value; }
-        public string PCPortatiles { get => _PCPortatiles; set => _PCPortatiles = value; }
-        public string ImpresoraLaser { get => _ImpresoraLaser; set => _ImpresoraLaser = value; }
-        public string ImpresoraCartucho { get => _ImpresoraCartucho; set => _ImpresoraCartucho = value; }
-        public string ImpresoraTiquetes { get => _ImpresoraTiquetes; set => _ImpresoraTiquetes = value; }
-        public string Celulares { get => _Celulares; set => _Celulares = value; }
-        public string BalanzaDigital { get => _BalanzaDigital; set => _BalanzaDigital = value; }
-        public string BalanzaManual { get => _BalanzaManual; set => _BalanzaManual = value; }
-        public string MontaCarga { get => _MontaCarga; set => _MontaCarga = value; }
+        public DataTable Detalle_Equipos { get => _Detalle_Equipos; set => _Detalle_Equipos = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }
-        public string Marquilladora { get => _Marquilladora; set => _Marquilladora = value; }
-        public string Documento { get => _Documento; set => _Documento = value; }
     }
 }

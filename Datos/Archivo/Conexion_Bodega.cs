@@ -40,6 +40,69 @@ namespace Datos
             }
         }
 
+        public DataTable AutoDetalle_SQL(string Valor, int auto)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.Bodega", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Auto", SqlDbType.VarChar).Value = auto;
+                Comando.Parameters.Add("@Filtro", SqlDbType.VarChar).Value = Valor;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
+
+        public DataTable AutoComplementar_SQL(string Valor)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.Bodega", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Filtro", SqlDbType.VarChar).Value = Valor;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
+
         public DataTable Buscar(string Valor, int Auto)
         {
             SqlDataReader Resultado;
@@ -106,19 +169,10 @@ namespace Datos
                 Comando.Parameters.Add("@DiaDeDespacho", SqlDbType.VarChar).Value = Obj.DiaDeDespacho;
                 Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
                 Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
-                
-                //Panel Equipos Electronicos
-                Comando.Parameters.Add("@PC", SqlDbType.VarChar).Value = Obj.PCDeMeza;
-                Comando.Parameters.Add("@Portatiles", SqlDbType.VarChar).Value = Obj.PCPortatiles;
-                Comando.Parameters.Add("@Laser", SqlDbType.VarChar).Value = Obj.ImpresoraLaser;
-                Comando.Parameters.Add("@Cartucho", SqlDbType.VarChar).Value = Obj.ImpresoraCartucho;
-                Comando.Parameters.Add("@Tickets", SqlDbType.VarChar).Value = Obj.ImpresoraTiquetes;
-                Comando.Parameters.Add("@Marquilladora", SqlDbType.VarChar).Value = Obj.Marquilladora;
-                Comando.Parameters.Add("@Celulares", SqlDbType.VarChar).Value = Obj.Celulares;
-                Comando.Parameters.Add("@Balanza_Digital", SqlDbType.VarChar).Value = Obj.BalanzaDigital;
-                Comando.Parameters.Add("@Balanza_Manual", SqlDbType.VarChar).Value = Obj.BalanzaManual;
-                Comando.Parameters.Add("@Monta_Carga", SqlDbType.VarChar).Value = Obj.MontaCarga;
-                
+
+                //Panel Impuestos -- Campos NO Obligatorios
+                Comando.Parameters.Add("@Det_Equipos", SqlDbType.Structured).Value = Obj.Detalle_Equipos;
+
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Realizar el Registro";
             }
@@ -147,9 +201,9 @@ namespace Datos
 
                 //Datos Auxiliares
                 Comando.Parameters.Add("@Auto", SqlDbType.Int).Value = Obj.Auto;
+                Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
 
                 //Panel Datos Basicos
-                Comando.Parameters.Add("@Idbodega", SqlDbType.Int).Value = Obj.Idbodega;
                 Comando.Parameters.Add("@Idsucurzal", SqlDbType.Int).Value = Obj.Idsucurzal;
                 Comando.Parameters.Add("@Bodega", SqlDbType.VarChar).Value = Obj.Bodega;
                 Comando.Parameters.Add("@Documento", SqlDbType.VarChar).Value = Obj.Documento;
@@ -171,17 +225,8 @@ namespace Datos
                 Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
                 Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
 
-                //Panel Equipos Electronicos
-                Comando.Parameters.Add("@PC", SqlDbType.VarChar).Value = Obj.PCDeMeza;
-                Comando.Parameters.Add("@Portatiles", SqlDbType.VarChar).Value = Obj.PCPortatiles;
-                Comando.Parameters.Add("@Laser", SqlDbType.VarChar).Value = Obj.ImpresoraLaser;
-                Comando.Parameters.Add("@Cartucho", SqlDbType.VarChar).Value = Obj.ImpresoraCartucho;
-                Comando.Parameters.Add("@Tickets", SqlDbType.VarChar).Value = Obj.ImpresoraTiquetes;
-                Comando.Parameters.Add("@Marquilladora", SqlDbType.VarChar).Value = Obj.Marquilladora;
-                Comando.Parameters.Add("@Celulares", SqlDbType.VarChar).Value = Obj.Celulares;
-                Comando.Parameters.Add("@Balanza_Digital", SqlDbType.VarChar).Value = Obj.BalanzaDigital;
-                Comando.Parameters.Add("@Balanza_Manual", SqlDbType.VarChar).Value = Obj.BalanzaManual;
-                Comando.Parameters.Add("@Monta_Carga", SqlDbType.VarChar).Value = Obj.MontaCarga;
+                //Panel Impuestos -- Campos NO Obligatorios
+                Comando.Parameters.Add("@Det_Equipos", SqlDbType.Structured).Value = Obj.Detalle_Equipos;
 
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Actualizar el Registro";

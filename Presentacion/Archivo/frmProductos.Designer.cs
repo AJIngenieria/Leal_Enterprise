@@ -339,6 +339,9 @@
             this.TBComision_Valor.Size = new System.Drawing.Size(199, 21);
             this.TBComision_Valor.TabIndex = 156;
             this.TBComision_Valor.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBComision_Valor.Enter += new System.EventHandler(this.TBComision_Valor_Enter);
+            this.TBComision_Valor.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBComision_Valor_KeyUp);
+            this.TBComision_Valor.Leave += new System.EventHandler(this.TBComision_Valor_Leave);
             // 
             // TBComision_Porcentaje
             // 
@@ -350,6 +353,9 @@
             this.TBComision_Porcentaje.Size = new System.Drawing.Size(79, 21);
             this.TBComision_Porcentaje.TabIndex = 155;
             this.TBComision_Porcentaje.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBComision_Porcentaje.Enter += new System.EventHandler(this.TBComision_Porcentaje_Enter);
+            this.TBComision_Porcentaje.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBComision_Porcentaje_KeyUp);
+            this.TBComision_Porcentaje.Leave += new System.EventHandler(this.TBComision_Porcentaje_Leave);
             // 
             // label48
             // 
@@ -1392,6 +1398,10 @@
             this.TBCompraMaxima_Mayorista.Size = new System.Drawing.Size(252, 21);
             this.TBCompraMaxima_Mayorista.TabIndex = 139;
             this.TBCompraMaxima_Mayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCompraMaxima_Mayorista.Enter += new System.EventHandler(this.TBCompraMaxima_Mayorista_Enter);
+            this.TBCompraMaxima_Mayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCompraMaxima_Mayorista_KeyPress);
+            this.TBCompraMaxima_Mayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraMaxima_Mayorista_KeyUp);
+            this.TBCompraMaxima_Mayorista.Leave += new System.EventHandler(this.TBCompraMaxima_Mayorista_Leave);
             // 
             // TBCompraMinima_Mayorista
             // 
@@ -1403,6 +1413,10 @@
             this.TBCompraMinima_Mayorista.Size = new System.Drawing.Size(252, 21);
             this.TBCompraMinima_Mayorista.TabIndex = 138;
             this.TBCompraMinima_Mayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCompraMinima_Mayorista.Enter += new System.EventHandler(this.TBCompraMinima_Mayorista_Enter);
+            this.TBCompraMinima_Mayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCompraMinima_Mayorista_KeyPress);
+            this.TBCompraMinima_Mayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraMinima_Mayorista_KeyUp);
+            this.TBCompraMinima_Mayorista.Leave += new System.EventHandler(this.TBCompraMinima_Mayorista_Leave);
             // 
             // label43
             // 
@@ -1438,6 +1452,10 @@
             this.TBCompraMaxima_Cliente.Size = new System.Drawing.Size(252, 21);
             this.TBCompraMaxima_Cliente.TabIndex = 135;
             this.TBCompraMaxima_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCompraMaxima_Cliente.Enter += new System.EventHandler(this.TBCompraMaxima_Cliente_Enter);
+            this.TBCompraMaxima_Cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCompraMaxima_Cliente_KeyPress);
+            this.TBCompraMaxima_Cliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraMaxima_Cliente_KeyUp);
+            this.TBCompraMaxima_Cliente.Leave += new System.EventHandler(this.TBCompraMaxima_Cliente_Leave);
             // 
             // TBCompraMinima_Cliente
             // 
@@ -1449,6 +1467,10 @@
             this.TBCompraMinima_Cliente.Size = new System.Drawing.Size(252, 21);
             this.TBCompraMinima_Cliente.TabIndex = 134;
             this.TBCompraMinima_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBCompraMinima_Cliente.Enter += new System.EventHandler(this.TBCompraMinima_Cliente_Enter);
+            this.TBCompraMinima_Cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBCompraMinima_Cliente_KeyPress);
+            this.TBCompraMinima_Cliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBCompraMinima_Cliente_KeyUp);
+            this.TBCompraMinima_Cliente.Leave += new System.EventHandler(this.TBCompraMinima_Cliente_Leave);
             // 
             // label46
             // 
@@ -1508,6 +1530,10 @@
             this.TBVentaMaxima_Mayorista.Size = new System.Drawing.Size(252, 21);
             this.TBVentaMaxima_Mayorista.TabIndex = 129;
             this.TBVentaMaxima_Mayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBVentaMaxima_Mayorista.Enter += new System.EventHandler(this.TBVentaMaxima_Mayorista_Enter);
+            this.TBVentaMaxima_Mayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBVentaMaxima_Mayorista_KeyPress);
+            this.TBVentaMaxima_Mayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMaxima_Mayorista_KeyUp);
+            this.TBVentaMaxima_Mayorista.Leave += new System.EventHandler(this.TBVentaMaxima_Mayorista_Leave);
             // 
             // TBVentaMinima_Mayorista
             // 
@@ -1519,6 +1545,10 @@
             this.TBVentaMinima_Mayorista.Size = new System.Drawing.Size(252, 21);
             this.TBVentaMinima_Mayorista.TabIndex = 128;
             this.TBVentaMinima_Mayorista.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBVentaMinima_Mayorista.Enter += new System.EventHandler(this.TBVentaMinima_Mayorista_Enter);
+            this.TBVentaMinima_Mayorista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBVentaMinima_Mayorista_KeyPress);
+            this.TBVentaMinima_Mayorista.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMinima_Mayorista_KeyUp);
+            this.TBVentaMinima_Mayorista.Leave += new System.EventHandler(this.TBVentaMinima_Mayorista_Leave);
             // 
             // label40
             // 
@@ -1554,6 +1584,10 @@
             this.TBVentaMaxima_Cliente.Size = new System.Drawing.Size(252, 21);
             this.TBVentaMaxima_Cliente.TabIndex = 125;
             this.TBVentaMaxima_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBVentaMaxima_Cliente.Enter += new System.EventHandler(this.TBVentaMaxima_Cliente_Enter);
+            this.TBVentaMaxima_Cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBVentaMaxima_Cliente_KeyPress);
+            this.TBVentaMaxima_Cliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMaxima_Cliente_KeyUp);
+            this.TBVentaMaxima_Cliente.Leave += new System.EventHandler(this.TBVentaMaxima_Cliente_Leave);
             // 
             // TBVentaMinina_Cliente
             // 
@@ -1565,6 +1599,10 @@
             this.TBVentaMinina_Cliente.Size = new System.Drawing.Size(252, 21);
             this.TBVentaMinina_Cliente.TabIndex = 124;
             this.TBVentaMinina_Cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.TBVentaMinina_Cliente.Enter += new System.EventHandler(this.TBVentaMinina_Cliente_Enter);
+            this.TBVentaMinina_Cliente.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBVentaMinina_Cliente_KeyPress);
+            this.TBVentaMinina_Cliente.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBVentaMinina_Cliente_KeyUp);
+            this.TBVentaMinina_Cliente.Leave += new System.EventHandler(this.TBVentaMinina_Cliente_Leave);
             // 
             // label17
             // 
