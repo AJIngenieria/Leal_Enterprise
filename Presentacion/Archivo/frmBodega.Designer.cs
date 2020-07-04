@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.TBIdbodegaSQL = new System.Windows.Forms.TextBox();
             this.TCPrincipal = new System.Windows.Forms.TabControl();
             this.TPDatosBasicos = new System.Windows.Forms.TabPage();
             this.TBDocumento = new System.Windows.Forms.TextBox();
@@ -68,17 +69,6 @@
             this.label9 = new System.Windows.Forms.Label();
             this.TBInicioLaboral = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.TPEquiposElectronicos = new System.Windows.Forms.TabPage();
-            this.btnEliminar_Ubicacion = new System.Windows.Forms.Button();
-            this.btnAgregar_Ubicacion = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.TBElectronicos_Descripcion = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.TBElectronicos_Tipo = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.TBElectronicos = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.DGDetalle_Equipos = new System.Windows.Forms.DataGridView();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.TBIdbodega = new System.Windows.Forms.TextBox();
@@ -89,20 +79,17 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnImprimir = new System.Windows.Forms.Button();
-            this.TBIddetalle = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.TCPrincipal.SuspendLayout();
             this.TPDatosBasicos.SuspendLayout();
             this.TPDatosAuxiliares.SuspendLayout();
-            this.TPEquiposElectronicos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGDetalle_Equipos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.TBIddetalle);
+            this.groupBox1.Controls.Add(this.TBIdbodegaSQL);
             this.groupBox1.Controls.Add(this.TCPrincipal);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnGuardar);
@@ -114,11 +101,17 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Leal Enterprise - Registro de Bodegas";
             // 
+            // TBIdbodegaSQL
+            // 
+            this.TBIdbodegaSQL.Location = new System.Drawing.Point(106, 369);
+            this.TBIdbodegaSQL.Name = "TBIdbodegaSQL";
+            this.TBIdbodegaSQL.Size = new System.Drawing.Size(65, 21);
+            this.TBIdbodegaSQL.TabIndex = 18;
+            // 
             // TCPrincipal
             // 
             this.TCPrincipal.Controls.Add(this.TPDatosBasicos);
             this.TCPrincipal.Controls.Add(this.TPDatosAuxiliares);
-            this.TCPrincipal.Controls.Add(this.TPEquiposElectronicos);
             this.TCPrincipal.Location = new System.Drawing.Point(10, 23);
             this.TCPrincipal.Name = "TCPrincipal";
             this.TCPrincipal.SelectedIndex = 0;
@@ -159,6 +152,9 @@
             this.TBDocumento.Name = "TBDocumento";
             this.TBDocumento.Size = new System.Drawing.Size(250, 21);
             this.TBDocumento.TabIndex = 17;
+            this.TBDocumento.Enter += new System.EventHandler(this.TBDocumento_Enter);
+            this.TBDocumento.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TBDocumento_KeyUp);
+            this.TBDocumento.Leave += new System.EventHandler(this.TBDocumento_Leave);
             // 
             // label29
             // 
@@ -181,7 +177,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(7, 90);
+            this.label10.Location = new System.Drawing.Point(3, 93);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(72, 15);
             this.label10.TabIndex = 15;
@@ -242,7 +238,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 144);
+            this.label3.Location = new System.Drawing.Point(6, 147);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 15);
             this.label3.TabIndex = 4;
@@ -251,7 +247,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 225);
+            this.label7.Location = new System.Drawing.Point(6, 228);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(44, 15);
             this.label7.TabIndex = 12;
@@ -270,7 +266,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(7, 117);
+            this.label6.Location = new System.Drawing.Point(6, 120);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(50, 15);
             this.label6.TabIndex = 11;
@@ -289,7 +285,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(7, 198);
+            this.label4.Location = new System.Drawing.Point(6, 201);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(55, 15);
             this.label4.TabIndex = 6;
@@ -308,7 +304,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 171);
+            this.label5.Location = new System.Drawing.Point(6, 174);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(36, 15);
             this.label5.TabIndex = 9;
@@ -523,135 +519,6 @@
             this.label17.TabIndex = 34;
             this.label17.Text = "Inicio Horario";
             // 
-            // TPEquiposElectronicos
-            // 
-            this.TPEquiposElectronicos.Controls.Add(this.btnEliminar_Ubicacion);
-            this.TPEquiposElectronicos.Controls.Add(this.btnAgregar_Ubicacion);
-            this.TPEquiposElectronicos.Controls.Add(this.label16);
-            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos_Descripcion);
-            this.TPEquiposElectronicos.Controls.Add(this.label15);
-            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos_Tipo);
-            this.TPEquiposElectronicos.Controls.Add(this.label14);
-            this.TPEquiposElectronicos.Controls.Add(this.TBElectronicos);
-            this.TPEquiposElectronicos.Controls.Add(this.label13);
-            this.TPEquiposElectronicos.Controls.Add(this.DGDetalle_Equipos);
-            this.TPEquiposElectronicos.Location = new System.Drawing.Point(4, 24);
-            this.TPEquiposElectronicos.Name = "TPEquiposElectronicos";
-            this.TPEquiposElectronicos.Padding = new System.Windows.Forms.Padding(3);
-            this.TPEquiposElectronicos.Size = new System.Drawing.Size(340, 310);
-            this.TPEquiposElectronicos.TabIndex = 2;
-            this.TPEquiposElectronicos.Text = "Equipos - Herramientas";
-            this.TPEquiposElectronicos.UseVisualStyleBackColor = true;
-            // 
-            // btnEliminar_Ubicacion
-            // 
-            this.btnEliminar_Ubicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnEliminar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnEliminar_Ubicacion.FlatAppearance.BorderSize = 0;
-            this.btnEliminar_Ubicacion.Image = global::Presentacion.Botones.btnEliminar;
-            this.btnEliminar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminar_Ubicacion.Location = new System.Drawing.Point(244, 274);
-            this.btnEliminar_Ubicacion.Name = "btnEliminar_Ubicacion";
-            this.btnEliminar_Ubicacion.Size = new System.Drawing.Size(90, 30);
-            this.btnEliminar_Ubicacion.TabIndex = 60;
-            this.btnEliminar_Ubicacion.Text = "Eliminar";
-            this.btnEliminar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar_Ubicacion.UseVisualStyleBackColor = true;
-            this.btnEliminar_Ubicacion.Click += new System.EventHandler(this.btnEliminar_Ubicacion_Click);
-            // 
-            // btnAgregar_Ubicacion
-            // 
-            this.btnAgregar_Ubicacion.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgregar_Ubicacion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAgregar_Ubicacion.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAgregar_Ubicacion.FlatAppearance.BorderSize = 0;
-            this.btnAgregar_Ubicacion.Image = global::Presentacion.Botones.btnAgregar;
-            this.btnAgregar_Ubicacion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregar_Ubicacion.Location = new System.Drawing.Point(148, 274);
-            this.btnAgregar_Ubicacion.Name = "btnAgregar_Ubicacion";
-            this.btnAgregar_Ubicacion.Size = new System.Drawing.Size(90, 30);
-            this.btnAgregar_Ubicacion.TabIndex = 59;
-            this.btnAgregar_Ubicacion.Text = "Agregar";
-            this.btnAgregar_Ubicacion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregar_Ubicacion.UseVisualStyleBackColor = true;
-            this.btnAgregar_Ubicacion.Click += new System.EventHandler(this.btnAgregar_Ubicacion_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(6, 282);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(108, 15);
-            this.label16.TabIndex = 7;
-            this.label16.Text = "Datos Registrados";
-            // 
-            // TBElectronicos_Descripcion
-            // 
-            this.TBElectronicos_Descripcion.Location = new System.Drawing.Point(84, 60);
-            this.TBElectronicos_Descripcion.Name = "TBElectronicos_Descripcion";
-            this.TBElectronicos_Descripcion.Size = new System.Drawing.Size(250, 21);
-            this.TBElectronicos_Descripcion.TabIndex = 6;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(6, 63);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(72, 15);
-            this.label15.TabIndex = 5;
-            this.label15.Text = "Descripción";
-            // 
-            // TBElectronicos_Tipo
-            // 
-            this.TBElectronicos_Tipo.Location = new System.Drawing.Point(84, 33);
-            this.TBElectronicos_Tipo.Name = "TBElectronicos_Tipo";
-            this.TBElectronicos_Tipo.Size = new System.Drawing.Size(250, 21);
-            this.TBElectronicos_Tipo.TabIndex = 4;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 36);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(31, 15);
-            this.label14.TabIndex = 3;
-            this.label14.Text = "Tipo";
-            // 
-            // TBElectronicos
-            // 
-            this.TBElectronicos.Location = new System.Drawing.Point(84, 6);
-            this.TBElectronicos.Name = "TBElectronicos";
-            this.TBElectronicos.Size = new System.Drawing.Size(250, 21);
-            this.TBElectronicos.TabIndex = 2;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(6, 9);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(52, 15);
-            this.label13.TabIndex = 1;
-            this.label13.Text = "Nombre";
-            // 
-            // DGDetalle_Equipos
-            // 
-            this.DGDetalle_Equipos.AllowUserToAddRows = false;
-            this.DGDetalle_Equipos.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.DGDetalle_Equipos.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.DGDetalle_Equipos.BackgroundColor = System.Drawing.Color.White;
-            this.DGDetalle_Equipos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DGDetalle_Equipos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.DGDetalle_Equipos.Location = new System.Drawing.Point(6, 87);
-            this.DGDetalle_Equipos.Name = "DGDetalle_Equipos";
-            this.DGDetalle_Equipos.ReadOnly = true;
-            this.DGDetalle_Equipos.Size = new System.Drawing.Size(328, 181);
-            this.DGDetalle_Equipos.TabIndex = 0;
-            // 
             // btnCancelar
             // 
             this.btnCancelar.Image = global::Presentacion.Botones.btnCancelar;
@@ -773,14 +640,6 @@
             this.btnImprimir.UseVisualStyleBackColor = true;
             this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
             // 
-            // TBIddetalle
-            // 
-            this.TBIddetalle.Location = new System.Drawing.Point(106, 369);
-            this.TBIddetalle.Name = "TBIddetalle";
-            this.TBIddetalle.Size = new System.Drawing.Size(65, 21);
-            this.TBIddetalle.TabIndex = 18;
-            this.TBIddetalle.TextChanged += new System.EventHandler(this.TBIddetalle_TextChanged);
-            // 
             // frmBodega
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -802,9 +661,6 @@
             this.TPDatosBasicos.PerformLayout();
             this.TPDatosAuxiliares.ResumeLayout(false);
             this.TPDatosAuxiliares.PerformLayout();
-            this.TPEquiposElectronicos.ResumeLayout(false);
-            this.TPEquiposElectronicos.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.DGDetalle_Equipos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGResultados)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -852,7 +708,6 @@
         private System.Windows.Forms.TabControl TCPrincipal;
         private System.Windows.Forms.TabPage TPDatosBasicos;
         private System.Windows.Forms.TabPage TPDatosAuxiliares;
-        private System.Windows.Forms.TabPage TPEquiposElectronicos;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox TBDireccion02;
         private System.Windows.Forms.Label label11;
@@ -865,16 +720,6 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnImprimir;
-        private System.Windows.Forms.TextBox TBElectronicos_Descripcion;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox TBElectronicos_Tipo;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox TBElectronicos;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView DGDetalle_Equipos;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.Button btnEliminar_Ubicacion;
-        private System.Windows.Forms.Button btnAgregar_Ubicacion;
-        private System.Windows.Forms.TextBox TBIddetalle;
+        private System.Windows.Forms.TextBox TBIdbodegaSQL;
     }
 }

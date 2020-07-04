@@ -71,6 +71,37 @@ namespace Datos
                 }
             }
         }
+        
+        public DataTable Auto_IncrementableSQL(int auto)
+        {
+            SqlDataReader Resultado;
+            DataTable Tabla = new DataTable();
+            SqlConnection SqlCon = new SqlConnection();
+            try
+            {
+                SqlCon = Conexion_SQLServer.getInstancia().Conexion();
+                SqlCommand Comando = new SqlCommand("Consulta.Bodega", SqlCon);
+                Comando.CommandType = CommandType.StoredProcedure;
+
+                Comando.Parameters.Add("@Auto", SqlDbType.VarChar).Value = auto;
+
+                SqlCon.Open();
+                Resultado = Comando.ExecuteReader();
+                Tabla.Load(Resultado);
+                return Tabla;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                if (SqlCon.State == ConnectionState.Open)
+                {
+                    SqlCon.Close();
+                }
+            }
+        }
 
         public DataTable AutoComplementar_SQL(string Valor)
         {
@@ -170,8 +201,8 @@ namespace Datos
                 Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
                 Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
 
-                //Panel Impuestos -- Campos NO Obligatorios
-                Comando.Parameters.Add("@Det_Equipos", SqlDbType.Structured).Value = Obj.Detalle_Equipos;
+                ////Panel Impuestos -- Campos NO Obligatorios
+                //Comando.Parameters.Add("@Det_Equipos", SqlDbType.Structured).Value = Obj.Detalle_Equipos;
 
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Realizar el Registro";
@@ -189,6 +220,7 @@ namespace Datos
             }
             return Rpta;
         }
+
         public string Editar_DatosBasicos(Entidad_Bodega Obj)
         {
             string Rpta = "";
@@ -224,9 +256,6 @@ namespace Datos
                 Comando.Parameters.Add("@DiaDeDespacho", SqlDbType.VarChar).Value = Obj.DiaDeDespacho;
                 Comando.Parameters.Add("@Direccion01", SqlDbType.VarChar).Value = Obj.Direccion01;
                 Comando.Parameters.Add("@Direccion02", SqlDbType.VarChar).Value = Obj.Direccion02;
-
-                //Panel Impuestos -- Campos NO Obligatorios
-                Comando.Parameters.Add("@Det_Equipos", SqlDbType.Structured).Value = Obj.Detalle_Equipos;
 
                 SqlCon.Open();
                 Rpta = Comando.ExecuteNonQuery() != 1 ? "OK" : "Error al Actualizar el Registro";

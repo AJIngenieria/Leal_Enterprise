@@ -37,12 +37,10 @@ namespace Entidad
         private string _Direccion01;
         private string _Direccion02;
 
-        //Equipos Electronicos
-        private DataTable _Detalle_Equipos;
-
         //Datos Auxiliares
         private int _Auto;
         private int _Eliminar;
+        private int _Validacion_SQL;
         private string _Filtro;
 
         public int Idbodega { get => _Idbodega; set => _Idbodega = value; }
@@ -64,9 +62,9 @@ namespace Entidad
         public string DiaDeDespacho { get => _DiaDeDespacho; set => _DiaDeDespacho = value; }
         public string Direccion01 { get => _Direccion01; set => _Direccion01 = value; }
         public string Direccion02 { get => _Direccion02; set => _Direccion02 = value; }
-        public DataTable Detalle_Equipos { get => _Detalle_Equipos; set => _Detalle_Equipos = value; }
         public int Auto { get => _Auto; set => _Auto = value; }
         public int Eliminar { get => _Eliminar; set => _Eliminar = value; }
         public string Filtro { get => _Filtro; set => _Filtro = value; }
+        public int Validacion_SQL { get => _Validacion_SQL; set => _Validacion_SQL = value; }
     }
 }

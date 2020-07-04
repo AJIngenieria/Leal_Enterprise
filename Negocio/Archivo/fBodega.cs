@@ -18,13 +18,18 @@ namespace Negocio
             return Datos.Lista();
         }
 
+        public static DataTable Auto_IncrementableSQL(int Auto)
+        {
+            Conexion_Bodega Datos = new Conexion_Bodega();
+            return Datos.Auto_IncrementableSQL(Auto);
+        }
+
         public static DataTable AutoComplementar_SQL(string Filtro)
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
             return Datos.AutoComplementar_SQL(Filtro);
         }
-
-
+        
         public static DataTable AutoDetalle_SQL(string Filtro, int auto)
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -47,15 +52,18 @@ namespace Negocio
                 string telefono, string correo, string direccion01, string direccion02, 
                 
                 string recepcion, string despacho, string iniciolaboral,
-                string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
+                string finlaboral, string diadepagos, string diadedespacho, string dimensiones
 
-                //Panel Equipos
-                DataTable detalle_equipos
+                ////Panel Equipos
+                //DataTable detalle_equipos
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
             Entidad_Bodega Obj = new Entidad_Bodega();
-            
+
+            //Datos Auxiliares
+            Obj.Auto = auto;
+
             //Llaves Auxiliares
             Obj.Idsucurzal = idsucurzal;
 
@@ -80,12 +88,9 @@ namespace Negocio
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
 
-            //Equipos Electronicos
-            Obj.Detalle_Equipos = detalle_equipos;
-
-            //Datos Auxiliares
-            Obj.Auto = auto;
-
+            ////Equipos Electronicos
+            //Obj.Detalle_Equipos = detalle_equipos;
+            
             return Datos.Guardar_DatosBasicos(Obj);
         }
 
@@ -99,10 +104,7 @@ namespace Negocio
                 string telefono, string correo, string direccion01, string direccion02,
 
                 string recepcion, string despacho, string iniciolaboral,
-                string finlaboral, string diadepagos, string diadedespacho, string dimensiones,
-
-                //Panel Equipos
-                DataTable detalle_equipos
+                string finlaboral, string diadepagos, string diadedespacho, string dimensiones
             )
         {
             Conexion_Bodega Datos = new Conexion_Bodega();
@@ -132,9 +134,6 @@ namespace Negocio
             Obj.DiaDeDespacho = diadedespacho;
             Obj.Direccion01 = direccion01;
             Obj.Direccion02 = direccion02;
-
-            //Equipos Electronicos
-            Obj.Detalle_Equipos = detalle_equipos;
 
             //Datos Auxiliares
             Obj.Auto = auto;

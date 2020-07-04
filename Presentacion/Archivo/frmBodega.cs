@@ -18,12 +18,9 @@ namespace Presentacion
         // A realizar es Editar, Guardar, Buscar,Eliminar
         private bool Digitar = true;
         private string Campo = "Campo Obligatorio";
-        
+
         //Variable para Captura el Empleado Logueado
         public int Idempleado;
-
-        //Variable para Agregar los Detalles a la Base de Datos
-        private DataTable DtDetalle_Equipos = new DataTable();
 
         //Variable para Metodo SQL Guardar, Eliminar, Editar, Consultar
         public string Guardar, Editar, Consultar, Eliminar, Imprimir = "";
@@ -62,13 +59,14 @@ namespace Presentacion
             this.Botones();
             this.Habilitar();
             this.Combobox_Sucurzal();
-            this.Diseño_TablasGenerales();
+            this.Auto_Incrementable();
 
             //Focus a Texboxt y Combobox
             this.TBBodega.Select();
 
             //Ocultacion de Texboxt
             this.TBIdbodega.Visible = false;
+            this.TBIdbodegaSQL.Visible = false;
         }
 
         private void Habilitar()
@@ -119,9 +117,6 @@ namespace Presentacion
             this.TBMedidas.ReadOnly = false;
             this.TBMedidas.BackColor = Color.FromArgb(3, 155, 229);
 
-            //
-
-
             //Texboxt de Consulta
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
         }
@@ -134,7 +129,6 @@ namespace Presentacion
             this.CBSucurzal.SelectedIndex = 0;
             this.TBBodega.Clear();
             this.TBDocumento.Clear();
-            //this.TBBodega.Text = Campo;
             this.TBDescripcion.Clear();
             this.TBDescripcion.Text = Campo;
             this.TBDirector.Clear();
@@ -156,46 +150,32 @@ namespace Presentacion
             this.TBDiaDespacho.Clear();
             this.TBMedidas.Clear();
 
-            //
-            
-
-            //Se habilitan los botones a su estado por DEFAULT
-            this.Digitar = true;
-            this.Habilitar();
-            this.Botones();
-
             //Se realiza el FOCUS al panel y campo de texto iniciales
             this.TCPrincipal.SelectedIndex = 0;
             this.TBBodega.Select();
         }
-
-        private void Diseño_TablasGenerales()
+        
+        private void Auto_Incrementable()
         {
             try
             {
-                //Panel Equipos - Herramientas
-                this.DtDetalle_Equipos.Columns.Add("Nombre", System.Type.GetType("System.String"));
-                this.DtDetalle_Equipos.Columns.Add("Tipo", System.Type.GetType("System.String"));
-                this.DtDetalle_Equipos.Columns.Add("Descripción", System.Type.GetType("System.String"));
-
-                //Captura de los Datos en las Tablas
-                this.DGDetalle_Equipos.DataSource = this.DtDetalle_Equipos;
-
-                //************************************* Aliniacion de Emcabezados *************************************
-
-                //Panel Equipos - Herramientas
-                this.DGDetalle_Equipos.Columns[0].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalle_Equipos.Columns[1].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-                this.DGDetalle_Equipos.Columns[2].HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleCenter;
-
+                DataTable Datos = Negocio.fBodega.Auto_IncrementableSQL(0);
+                //Evaluamos si  existen los Datos
+                if (Datos.Rows.Count == 0)
+                {
+                    MessageBox.Show("Actualmente no se encuentran registros en la Base de Datos", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    //Captura de Valores en la Base de Datos
+                    TBIdbodegaSQL.Text = Datos.Rows[0][0].ToString();
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-
-
         private void Botones()
         {
             if (Digitar)
@@ -259,16 +239,16 @@ namespace Presentacion
                     if (this.Digitar)
                     {
                         rptaDatosBasicos = fBodega.Guardar_DatosBasicos
+                                (
 
-                            (
                                  //Datos Auxiliares
                                  1,
 
                                  //Panel Datos Basicos
                                  Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDocumento.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
-                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, DtDetalle_Equipos
-                            );
+                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text
+                                );
                     }
 
                     else
@@ -282,7 +262,7 @@ namespace Presentacion
                                  //Panel Datos Basicos
                                  Convert.ToInt32(this.CBSucurzal.SelectedValue), this.TBBodega.Text, this.TBDocumento.Text, this.TBDescripcion.Text, this.TBDirector.Text, this.TBCiudad.Text, this.TBMovil.Text,
                                  this.TBTelefono.Text, this.TBCorreo.Text, this.TBDireccion01.Text, this.TBDireccion02.Text, this.TBRecepcion.Text, this.TBDespacho.Text, this.TBInicioLaboral.Text,
-                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text, DtDetalle_Equipos
+                                 this.TBFinalHorarioLaboral.Text, this.TBDiadepagos.Text, this.TBDiaDespacho.Text, this.TBMedidas.Text
                             );
                     }
 
@@ -305,6 +285,8 @@ namespace Presentacion
                     }
 
                     //Llamada de Clase
+                    this.Digitar = true;
+                    this.Botones();
                     this.Limpiar_Datos();
                 }
             }
@@ -325,7 +307,7 @@ namespace Presentacion
         {
             MessageBox.Show(mensaje, "Leal Enterprise - Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
-        
+
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -519,7 +501,7 @@ namespace Presentacion
                     this.TBDireccion01.Text = Direccion01;
                     this.TBDireccion02.Text = Direccion02;
 
-                }            
+                }
             }
             catch (Exception ex)
             {
@@ -540,7 +522,7 @@ namespace Presentacion
                     //Se procede a completar los campos de textos segun
                     //la consulta realizada en la base de datos
                     this.TBIdbodega.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                    this.TBIddetalle.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                    this.TBIdbodegaSQL.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
 
                 }
                 else
@@ -569,7 +551,7 @@ namespace Presentacion
                         //Se procede a completar los campos de textos segun
                         //la consulta realizada en la base de datos
                         this.TBIdbodega.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
-                        this.TBIddetalle.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
+                        this.TBIdbodegaSQL.Text = Convert.ToString(this.DGResultados.CurrentRow.Cells["Codigo"].Value);
 
                     }
                     else
@@ -583,7 +565,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-        
+
         private void CBSucurzal_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (this.CBSucurzal.SelectedIndex == 0)
@@ -701,7 +683,7 @@ namespace Presentacion
         {
             this.TBDiaDespacho.BackColor = Color.Azure;
         }
-        
+
         private void TBDireccion01_Enter(object sender, EventArgs e)
         {
             this.TBDireccion01.BackColor = Color.Azure;
@@ -799,7 +781,7 @@ namespace Presentacion
         {
             this.TBDespacho.BackColor = Color.FromArgb(3, 155, 229);
         }
-        
+
         private void TBInicioLaboral_Leave(object sender, EventArgs e)
         {
             this.TBInicioLaboral.BackColor = Color.FromArgb(3, 155, 229);
@@ -819,7 +801,7 @@ namespace Presentacion
         {
             this.TBDiadepagos.BackColor = Color.FromArgb(3, 155, 229);
         }
-        
+
         private void TBDiaDespacho_Leave(object sender, EventArgs e)
         {
             this.TBDiaDespacho.BackColor = Color.FromArgb(3, 155, 229);
@@ -834,7 +816,7 @@ namespace Presentacion
         {
             this.TBDireccion02.BackColor = Color.FromArgb(3, 155, 229);
         }
-                
+
         private void TBBuscar_Leave(object sender, EventArgs e)
         {
             this.TBBuscar.BackColor = Color.FromArgb(3, 155, 229);
@@ -870,15 +852,7 @@ namespace Presentacion
                 {
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
-                    this.TBDescripcion.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
+                    this.TBDocumento.Select();
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -946,14 +920,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBDirector.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1023,14 +989,6 @@ namespace Presentacion
 
                     this.TBCiudad.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1098,14 +1056,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBMovil.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1175,14 +1125,6 @@ namespace Presentacion
 
                     this.TBTelefono.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1250,14 +1192,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBCorreo.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1327,14 +1261,6 @@ namespace Presentacion
 
                     this.TBBodega.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 1;
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1402,14 +1328,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBDespacho.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1479,14 +1397,6 @@ namespace Presentacion
 
                     this.TBInicioLaboral.Select();
                 }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
-                }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
                     //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
@@ -1544,7 +1454,7 @@ namespace Presentacion
                 MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
-        
+
         private void TBInicioLaboral_KeyUp(object sender, KeyEventArgs e)
         {
             try
@@ -1554,14 +1464,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBFinalHorarioLaboral.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1630,14 +1532,6 @@ namespace Presentacion
                     //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
 
                     this.TBMedidas.Select();
-                }
-
-                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Tab))
-                {
-                    //Al precionar la tecla Control+TAB Se cambia al campo de Texto TBBuscar
-                    //Para realizar consultas en el sistema Y se realiza Focus al primer Texboxt
-
-                    this.TCPrincipal.SelectedIndex = 2;
                 }
                 else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
                 {
@@ -1774,67 +1668,81 @@ namespace Presentacion
             }
         }
 
-        private void btnAgregar_Ubicacion_Click(object sender, EventArgs e)
+        private void TBDocumento_Enter(object sender, EventArgs e)
         {
-            try
-            {
-                if (this.TBElectronicos.Text == String.Empty)
-                {
-                    this.MensajeError("Por favor especifique el Nombre del Objeto que desea agregar");
-                    this.TBElectronicos.Select();
-                }
-                else if (this.TBElectronicos_Tipo.Text == String.Empty)
-                {
-                    this.MensajeError("Por favor Especifique el Tipo del Objeto que desea agregar");
-                    this.TBElectronicos_Tipo.Select();
-                }
-                else
-                {
-
-                    DataRow fila = this.DtDetalle_Equipos.NewRow();
-                    fila["Nombre"] = this.TBElectronicos.Text;
-                    fila["Tipo"] = this.TBElectronicos_Tipo.Text;
-                    fila["Descripción"] = this.TBElectronicos_Descripcion.Text;
-                    this.DtDetalle_Equipos.Rows.Add(fila);
-
-                    //
-                    this.TBElectronicos.Clear();
-                    this.TBElectronicos_Descripcion.Clear();
-                    this.TBElectronicos_Tipo.Clear();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            this.TBDocumento.BackColor = Color.Azure;
         }
 
-        private void btnEliminar_Ubicacion_Click(object sender, EventArgs e)
+        private void TBDocumento_Leave(object sender, EventArgs e)
         {
-            try
-            {
-                int Fila = this.DGDetalle_Equipos.CurrentCell.RowIndex;
-                DataRow row = this.DtDetalle_Equipos.Rows[Fila];
-
-                //Se remueve la fila
-                this.DtDetalle_Equipos.Rows.Remove(row);
-            }
-            catch (Exception ex)
-            {
-                MensajeError("Por favor seleccione el Registro que desea Remover");
-            }
+            this.TBDocumento.BackColor = Color.FromArgb(3, 155, 229);
         }
 
-        private void TBIddetalle_TextChanged(object sender, EventArgs e)
+        private void TBDocumento_KeyUp(object sender, KeyEventArgs e)
         {
             try
             {
-                //
-                this.DGDetalle_Equipos.DataSource = fBodega.AutoDetalle_SQL(this.TBIddetalle.Text, 2);
+                if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar la tecla Enter se realiza Focus al Texboxt Siguiente
+
+                    this.TBDescripcion.Select();
+                }
+                else if (Convert.ToInt32(e.KeyData) == Convert.ToInt32(Keys.Control) + Convert.ToInt32(Keys.Enter))
+                {
+                    //Al precionar las teclas Control+Enter se realizara el registro en la base de datos
+                    //Y se realizara las validaciones en el sistema
+
+                    if (Digitar)
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea registrar los campos digitados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            if (Guardar == "1")
+                            {
+                                //Llamada de Clase
+                                this.Guardar_SQL();
+                            }
+                            else
+                            {
+                                MessageBox.Show("El usuario iniciado no contiene permisos para Guardar datos en el sistema", "Leal Enterprise", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                                //Al realizar la validacion en la base de datos y encontrar que no hay acceso a al operacion solicitada
+                                //se procede limpiar los campos de texto y habilitaciond de los botones a su estado por DEFECTO.
+
+                                this.Limpiar_Datos();
+                            }
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDocumento.Select();
+                        }
+                    }
+                    else
+                    {
+                        DialogResult result = MessageBox.Show("¿Desea Actualizar los campos consultados?", "Leal Enterprise", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (result == DialogResult.Yes)
+                        {
+                            //Llamada de Clase
+                            this.Digitar = false;
+                            this.Guardar_SQL();
+                        }
+                        else
+                        {
+                            //Se el usuario presiona NO en el mensaje el FOCUS regresara al campo de texto
+                            //Donde se realizo la operacion o combinacion de teclas
+                            this.TBDocumento.Select();
+                        }
+                    }
+                }
             }
             catch (Exception ex)
             {
-                MensajeError("Por favor seleccione el Registro que desea Remover");
+                MessageBox.Show(ex.Message + ex.StackTrace);
             }
         }
 
